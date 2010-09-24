@@ -1,0 +1,29 @@
+<%= form_for(@usersession) do |f| %>
+  <% if @usersession.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@usersession.errors.count, "error") %> prohibited this usersession from being saved:</h2>
+
+      <ul>
+      <% @usersession.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :remember_me %><br />
+    <%= f.text_field :remember_me %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
