@@ -6,14 +6,20 @@ class ApplicationController < ActionController::Base
   private
     def current_user_session
       logger.debug "ApplicationController::current_user_session"
+      logger.debug "#{@current_user_session.inspect}"
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
     end
 
     def current_user
       logger.debug "ApplicationController::current_user"
+      logger.debug "preguntando por quien es el current user: #{@current_user.inspect}"
       return @current_user if defined?(@current_user)
+      logger.debug "No parece que este definido resetamos @current_user"
       @current_user = current_user_session && current_user_session.user
+      logger.debug "ahora es current user: #{@current_user.inspect}"
+
+      return @current_user if defined?(@current_user)
     end
 
     def require_user
@@ -21,17 +27,18 @@ class ApplicationController < ActionController::Base
       unless current_user
         store_location
         flash[:notice] = "Debes entrar en el sistema para poder acceder a esta página"
-        redirect_to new_user_session_url
+        redirect_to '/login'
         return false
       end
     end
 
     def require_no_user
       logger.debug "ApplicationController::require_no_user"
+      logger.debug ""
       if current_user
         store_location
         flash[:notice] = "Debes entrar en el sistema para poder acceder a esta página"
-        redirect_to account_url
+        redirect_to "/home"
         return false
       end
     end

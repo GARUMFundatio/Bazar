@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ruby on Rails: Welcome aboard</title>
+    <title>Bazar</title>
     <style type="text/css" media="screen">
       body {
         margin: 0;
@@ -187,6 +187,11 @@
     <div id="page">
       <div id="sidebar">
         <ul id="sidebar-items">
+		  <li>
+	            <ul class="links">
+	              <li><a href="/login">Entrar</a></li>
+	            </ul>
+	          </li>	
           <li>
             <h3>Modulos de Bazar</h3>
             <ul class="links">
@@ -202,13 +207,14 @@
       <div id="content">
         <div id="header">
           <h1>Bienvenidos a Bazar</h1>
-          <h2>Herramientas para generar mercado</h2>
+          <h2>Herramientas que generan mercado</h2>
         </div>
 
         <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
+      
+		<%= yield %>
+
+		</div>
 
       </div>
 

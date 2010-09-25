@@ -1,7 +1,7 @@
 <%= form_for(@usersession) do |f| %>
   <% if @usersession.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@usersession.errors.count, "error") %> prohibited this usersession from being saved:</h2>
+      <h2><%= pluralize(@usersession.errors.count, "error") %> prohibited this user session from being saved:</h2>
 
       <ul>
       <% @usersession.errors.full_messages.each do |msg| %>
@@ -10,17 +10,17 @@
       </ul>
     </div>
   <% end %>
-
+<%= flash[:notice] %>
   <div class="field">
-    <%= f.label :login %><br />
+    <%= f.label :Usuario %><br />
     <%= f.text_field :login %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :clave %><br />
     <%= f.text_field :password %>
   </div>
   <div class="field">
-    <%= f.label :remember_me %><br />
+    <%= f.label :Recuerdame %><br />
     <%= f.text_field :remember_me %>
   </div>
   <div class="actions">

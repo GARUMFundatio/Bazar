@@ -1,4 +1,15 @@
 Bazar::Application.routes.draw do
+  resources :user_sessions
+
+  get 'login(.:format)' => 'user_sessions#new', :as => :login
+  post 'login(.:format)' => 'user_sessions#create', :as => :login
+  delete 'logout(.:format)' => 'user_sessions#destroy', :as => :logout
+
+  match 'login' => "user_sessions#new",      :as => :login
+  match 'logout' => "user_sessions#destroy", :as => :logout
+  match 'home' => "home#index"
+
+  # root :to => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
