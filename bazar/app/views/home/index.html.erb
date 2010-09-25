@@ -1,2 +1,60 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bazar</title>
+	<LINK REL=StyleSheet HREF="bazar.css" TYPE="text/css" MEDIA=screen>
+	
+    <script type="text/javascript">
+      function about() {
+        info = document.getElementById('about-content');
+        if (window.XMLHttpRequest)
+          { xhr = new XMLHttpRequest(); }
+        else
+          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+        xhr.open("GET","rails/info/properties",false);
+        xhr.send("");
+        info.innerHTML = xhr.responseText;
+        info.style.display = 'block'
+      }
+    </script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="sidebar">
+        <ul id="sidebar-items">
+		  <li>
+	            <ul class="links">
+	              <li><a href="/logout">Salir</a></li>
+	            </ul>
+	          </li>	
+          <li>
+            <h3>Modulos de Bazar</h3>
+            <ul class="links">
+              <li><a href="http://api.rubyonrails.org/">Ofertas/Demandas</a></li>
+              <li><a href="http://stdlib.rubyonrails.org/">Perfiles</a></li>
+              <li><a href="http://corelib.rubyonrails.org/">Rating</a></li>
+              <li><a href="http://guides.rubyonrails.org/">Busquedas</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div id="content">
+        <div id="header">
+          <h1>Bienvenidos a Bazar</h1>
+          <h2>Herramientas que generan mercado</h2>
+        </div>
+
+        <div id="about">
+      
+		<%= yield %>
+
+		</div>
+
+      </div>
+
+      <div id="footer">&nbsp;</div>
+    </div>
+  </body>
+</html>
+
