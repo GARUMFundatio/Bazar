@@ -201,8 +201,21 @@
           <h2>Herramientas que generan mercado</h2>
         </div>
 
-        <div id="about">
+        <div id="login" style="display:none">
+			<h1>Entrar en Bazar</h1>
+			<form accept-charset="UTF-8" action="/user_sessions" class="new_user_session" id="new_user_session" method="post"><div style="margin: 0pt; padding: 0pt; display: inline;"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="+WoqRlMO/FfPVfma4VagC4lWTaGG9rj7z9a0znrpquc=" type="hidden"></div>  
+			  <label for="user_session_Usuario">Usuario</label><br>
+			  <input id="user_session_login" name="user_session[login]" size="30" type="text"><br>
+			  <br>
+			  <label for="user_session_Contraseña">Contraseña</label><br>
+			  <input id="user_session_password" name="user_session[password]" size="30" type="password"><br>
+			  <br>
 
+			  <input name="user_session[remember_me]" value="0" type="hidden"><input id="user_session_remember_me" name="user_session[remember_me]" value="1" type="checkbox"><label for="user_session_Recuerdame">Recuerdame</label><br>
+			  <br>
+			  <input id="user_session_submit" name="commit" value="Entrar" type="submit">
+			</form>
+			
 		</div>
 
       </div>
