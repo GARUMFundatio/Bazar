@@ -1,7 +1,7 @@
 <%= form_for(@rol) do |f| %>
   <% if @rol.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@rol.errors.count, "error") %> prohibited this rol from being saved:</h2>
+      <h2><%= pluralize(@rol.errors.count, "error") %> No se ha podido salvar el rol:</h2>
 
       <ul>
       <% @rol.errors.full_messages.each do |msg| %>
@@ -19,6 +19,7 @@
     <%= f.label :rol %><br />
     <%= f.text_field :rol %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

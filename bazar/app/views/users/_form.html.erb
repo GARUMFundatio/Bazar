@@ -1,7 +1,7 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> No se ha podido salvar los datos del usuario:</h2>
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
@@ -10,6 +10,24 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= f.label :usuario %>: <%= @user.login %>
+  </div>
+  <div class="field">
+    <%= f.label :correo %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+
+ 	<% for role in Rol.all %>
+		<%= check_box_tag "user[rol_ids][]", role.id, @user.roles.include?(role) %>  
+		
+		
+		
+	    <%= role.rol %>
+ 		
+	<% end %>
+	</div>
 
   <div class="actions">
     <%= f.submit %>

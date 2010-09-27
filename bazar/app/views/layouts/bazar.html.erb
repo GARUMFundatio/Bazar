@@ -27,18 +27,28 @@
         <ul id="sidebar-items">
 		  <li>
 	            <ul class="links">
-	              <li><%= usercurrent.login %><a href="/logout">Salir</a></li>
+	              <li>
+						<% if !current_user.nil? %>
+							<%= link_to current_user.login,  {:controller=>"users",  :action => 'edit', :id => current_user.id } %> 
+						
+							<%= link_to 'Salir',  "/logout" %></li>
+						<% end %>
 	            </ul>
 	          </li>	
           <li>
+			<% if !current_user.nil? %>
+			
             <h3>Modulos de Bazar</h3>
             <ul class="links">
-			    <li><a href="/micuenta/">Mi cuenta</a></li>
+			    <li><%= link_to "Mi cuenta",  {:controller=>"users",  :action => 'edit', :id=>current_user.id} %> </li>
 			    <li><a href="http://stdlib.rubyonrails.org/">Perfiles</a></li>
                 <li><a href="http://api.rubyonrails.org/">Ofertas/Demandas</a></li>
                 <li><a href="http://corelib.rubyonrails.org/">Rating</a></li>
                 <li><a href="http://guides.rubyonrails.org/">Búsquedas</a></li>
+
             </ul>
+
+			<% end %>
           </li>
         </ul>
       </div>
