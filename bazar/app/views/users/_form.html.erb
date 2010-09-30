@@ -11,21 +11,31 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :usuario %>: <%= @user.login %>
+    <%= f.label :usuario %>: <%= @user.login %></br>
+	<%= f.text_field :login %>
   </div>
   <div class="field">
     <%= f.label :correo %><br />
     <%= f.text_field :email %>
   </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confirmación %><br />
+    <%= f.text_field :password_confirmation %>
+  </div>
+  </div>
+
+
   <div class="field">
 
  	<% for role in Rol.all %>
-		<%= check_box_tag "user[rol_ids][]", role.id, @user.roles.include?(role) %>  
-		
-		
-		
-	    <%= role.rol %>
- 		
+		<%= check_box_tag "user[rol_ids][]", role.id, @user.roles.include?(role) %>
+	    <%= role.rol %>	<br/>
 	<% end %>
 	</div>
 

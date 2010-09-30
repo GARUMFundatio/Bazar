@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user, :current_user_is_admin
 
   private
     def current_user_session
@@ -20,6 +20,19 @@ class ApplicationController < ActionController::Base
       logger.debug "ahora es current user: #{@current_user.inspect}"
 
       return @current_user if defined?(@current_user)
+    end
+
+    def current_user_is_admin
+      logger.debug "ApplicationController::current_user_is_Admin"
+      if (!current_user.nil?)
+        user = User.find_by_login(current_user.login)
+        user.roles.each do |r|
+          if r[:rol] == 'admin'
+            return true
+          end 
+        end
+      end   
+      return false
     end
 
     def require_user

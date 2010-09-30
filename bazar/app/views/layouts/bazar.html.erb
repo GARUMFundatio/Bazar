@@ -50,6 +50,18 @@
 
 			<% end %>
           </li>
+         <li>
+			<% if current_user_is_admin %>
+
+            <h3>Administración</h3>
+            <ul class="links">
+			    <li><%= link_to "Usuarios",  {:controller=>"users"} %> </li>
+                <li><a href="http://api.rubyonrails.org/">Configuración del Sistema</a></li>
+
+            </ul>
+
+			<% end %>
+          </li>
         </ul>
       </div>
 
