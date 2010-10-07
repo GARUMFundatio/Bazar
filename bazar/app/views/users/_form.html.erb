@@ -31,13 +31,15 @@
   </div>
 
 
+  <% if current_user_is_admin %>
   <div class="field">
 
  	<% for role in Rol.all %>
 		<%= check_box_tag "user[rol_ids][]", role.id, @user.roles.include?(role) %>
 	    <%= role.rol %>	<br/>
 	<% end %>
-	</div>
+  </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

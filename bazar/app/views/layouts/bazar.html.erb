@@ -37,6 +37,8 @@
 	          </li>	
           <li>
 			<% if !current_user.nil? %>
+
+			<% if !current_user_is_invitado %>
 			
             <h3>Modulos de Bazar</h3>
             <ul class="links">
@@ -47,10 +49,12 @@
                 <li><a href="http://guides.rubyonrails.org/">Búsquedas</a></li>
 
             </ul>
+			<% end %>
 
 			<% end %>
           </li>
-         <li>
+
+          <li>
 			<% if current_user_is_admin %>
 
             <h3>Administración</h3>
@@ -62,6 +66,34 @@
 
 			<% end %>
           </li>
+
+
+         <li>
+			<% if current_user_is_dinamizador %>
+
+            <h3>Dinamización</h3>
+            <ul class="links">
+			    <li><%= link_to "Actividad Usuarios",  {:controller=>"users"} %> </li>
+                <li><a href="http://api.rubyonrails.org/">Mailing</a></li>
+
+            </ul>
+
+			<% end %>
+          </li>
+
+         <li>
+			<% if current_user_is_invitado %>
+
+            <h3>Bienvenido a Bazar</h3>
+            <ul class="links">
+                <li><a href="http://api.rubyonrails.org/">Que es Bazar</a></li>
+			    <li><%= link_to "Registrate",  {:controller=>"users", :action => "new"} %> </li>
+            </ul>
+
+			<% end %>
+          </li>
+
+
         </ul>
       </div>
 
