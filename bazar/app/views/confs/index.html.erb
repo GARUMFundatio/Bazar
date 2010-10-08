@@ -1,14 +1,12 @@
-<h1>Listing confs</h1>
+<h1>Parámetros del sistemas</h1>
 
 <table>
   <tr>
-    <th>Nombre</th>
+    <th>Parametro</th>
     <th>Grupo</th>
     <th>Tipo</th>
     <th>Valor</th>
     <th>Desc</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -19,13 +17,14 @@
     <td><%= conf.tipo %></td>
     <td><%= conf.valor %></td>
     <td><%= conf.desc %></td>
-    <td><%= link_to 'Show', conf %></td>
     <td><%= link_to 'Edit', edit_conf_path(conf) %></td>
-    <td><%= link_to 'Destroy', conf, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
+
 <%= link_to 'New Conf', new_conf_path %>
+
+* Estoy hay que quitarlo cuando esten todos los parametros igual que borrar. 

@@ -1,8 +1,8 @@
 Bazar::Application.routes.draw do
+  resources :gruposconfs
+  resources :confs
   resources :roles_users
-
   resources :roles
-
   resources :user_sessions
 
   get 'login(.:format)' => 'user_sessions#new', :as => :login

@@ -10,7 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100927214050) do
+ActiveRecord::Schema.define(:version => 20101008171403) do
+
+  create_table "confs", :force => true do |t|
+    t.string   "nombre"
+    t.integer  "grupo_id"
+    t.string   "tipo"
+    t.string   "valor"
+    t.string   "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gruposconfs", :force => true do |t|
+    t.string   "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "rol"
