@@ -1,0 +1,1 @@
+parametros = Conf.all  
