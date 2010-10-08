@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @conf.nombre %>
+</p>
+
+<p>
+  <b>Grupo:</b>
+  <%= @conf.grupo_id %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @conf.tipo %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%= @conf.valor %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @conf.desc %>
+</p>
+
+
+<%= link_to 'Edit', edit_conf_path(@conf) %> |
+<%= link_to 'Back', confs_path %>

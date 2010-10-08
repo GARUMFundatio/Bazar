@@ -1,0 +1,2 @@
+module GruposconfsHelper
+end
