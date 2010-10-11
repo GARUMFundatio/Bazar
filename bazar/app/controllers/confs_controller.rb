@@ -3,7 +3,8 @@ class ConfsController < ApplicationController
   # GET /confs.xml
   def index
     @confs = Conf.all
-
+    @grupos = Gruposconf.all
+    puts @grupos.inspect
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @confs }
@@ -25,7 +26,7 @@ class ConfsController < ApplicationController
   # GET /confs/new.xml
   def new
     @conf = Conf.new
-
+    @grupos = Gruposconf.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @conf }
@@ -35,16 +36,17 @@ class ConfsController < ApplicationController
   # GET /confs/1/edit
   def edit
     @conf = Conf.find(params[:id])
+    @grupos = Gruposconf.all
   end
 
   # POST /confs
   # POST /confs.xml
   def create
     @conf = Conf.new(params[:conf])
-
+    
     respond_to do |format|
       if @conf.save
-        format.html { redirect_to(@conf, :notice => 'Conf was successfully created.') }
+        format.html { redirect_to(@conf, :notice => 'Parametro actualizado correctamente.') }
         format.xml  { render :xml => @conf, :status => :created, :location => @conf }
       else
         format.html { render :action => "new" }
@@ -57,10 +59,12 @@ class ConfsController < ApplicationController
   # PUT /confs/1.xml
   def update
     @conf = Conf.find(params[:id])
-
+    
+    # @conf.grupo_id = params[:grupo_id][:id]
+    
     respond_to do |format|
       if @conf.update_attributes(params[:conf])
-        format.html { redirect_to(@conf, :notice => 'Conf was successfully updated.') }
+        format.html { redirect_to(@conf, :notice => 'Parametro actualizado correctamente') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

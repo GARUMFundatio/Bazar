@@ -1,4 +1,4 @@
-<h1>Parámetros del sistemas</h1>
+<h1>Parámetros de Bazar</h1>
 
 <table>
   <tr>
@@ -13,7 +13,7 @@
 <% @confs.each do |conf| %>
   <tr>
     <td><%= conf.nombre %></td>
-    <td><%= conf.grupo_id %></td>
+    <td><%= conf.gruposconfs.desc %></td>
     <td><%= conf.tipo %></td>
     <td><%= conf.valor %></td>
     <td><%= conf.desc %></td>

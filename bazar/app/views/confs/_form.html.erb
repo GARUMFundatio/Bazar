@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :grupo_id %><br />
-    <%= f.text_field :grupo_id %>
+    <%= collection_select(:conf, :grupo_id, @grupos, :id, :desc, options ={:prompt => "-Seleccione un Grupo"}, :class =>"grupos") %>
   </div>
   <div class="field">
     <%= f.label :tipo %><br />
