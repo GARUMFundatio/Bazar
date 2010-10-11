@@ -1,7 +1,7 @@
 <%= form_for(@conf) do |f| %>
   <% if @conf.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@conf.errors.count, "error") %> prohibited this conf from being saved:</h2>
+      <h2><%= pluralize(@conf.errors.count, "error") %> No se ha podido guardar:</h2>
 
       <ul>
       <% @conf.errors.full_messages.each do |msg| %>
@@ -12,24 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+   <%= @conf.desc %> (<%= @conf.nombre %>)<br />
   </div>
   <div class="field">
-    <%= f.label :grupo_id %><br />
-    <%= collection_select(:conf, :grupo_id, @grupos, :id, :desc, options ={:prompt => "-Seleccione un Grupo"}, :class =>"grupos") %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo %><br />
-    <%= f.text_field :tipo %>
-  </div>
-  <div class="field">
-    <%= f.label :valor %><br />
+    <%= f.label :valor %>
     <%= f.text_field :valor %>
-  </div>
-  <div class="field">
-    <%= f.label :desc %><br />
-    <%= f.text_field :desc %>
   </div>
   <div class="actions">
     <%= f.submit %>

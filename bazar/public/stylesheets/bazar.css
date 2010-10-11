@@ -162,3 +162,25 @@ a:hover {
 #sidebar ul.links li {
   margin-bottom: 5px;
 }
+
+table.tabla {
+    border: 1px solid darkblue;
+    background: white;
+}
+
+table.tabla th {
+    background: darkblue;
+    color: white;
+}
+
+table.tabla tr {
+    background: white;
+}
+
+table.tabla td {
+    background: #e9e9e9;
+}
+
+table.tabla tr:hover {
+    border: 1px solid green;
+}

@@ -1,16 +1,29 @@
 class ConfsController < ApplicationController
   # GET /confs
   # GET /confs.xml
+  
+  layout "bazar"
+  
   def index
-    @confs = Conf.all
+    @confs = Conf.order(:grupo_id)
     @grupos = Gruposconf.all
-    puts @grupos.inspect
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @confs }
     end
   end
 
+  def bulk
+    @confs = Conf.order(:grupo_id)
+    @grupos = Gruposconf.all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @confs }
+    end
+  end
+  
   # GET /confs/1
   # GET /confs/1.xml
   def show

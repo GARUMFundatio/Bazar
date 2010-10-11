@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado
+  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado, :BZ_param
 
+  def BZ_param(clave)
+    conf = Conf.find_by_nombre(clave)
+    return conf.valor || nil   
+  end
+    
   private
     def current_user_session
       logger.debug "ApplicationController::current_user_session"
@@ -91,5 +96,6 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
+  
 end
 

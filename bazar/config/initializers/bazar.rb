@@ -1,7 +1,7 @@
-parametros = {}
+@parametros = {}
 Conf.all.each do |c|
-  parametros[c.nombre] = c
-  puts parametros.inspect
+  @parametros[c.nombre] = c.valor
+  puts @parametros.inspect
 end  
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bazar</title>
+    <title><%= h BZ_param("Titular") %></title>
 	<LINK REL=StyleSheet HREF="stylesheets/bazar.css" TYPE="text/css" MEDIA=screen>
 	
     <script type="text/javascript">
@@ -60,7 +60,7 @@
             <h3>Administración</h3>
             <ul class="links">
 			    <li><%= link_to "Usuarios",  {:controller=>"users"} %> </li>
-                <li><a href="http://api.rubyonrails.org/">Configuración del Sistema</a></li>
+                <li><a href="/confs">Configuración del Sistema</a></li>
 
             </ul>
 
@@ -99,8 +99,8 @@
 
       <div id="content">
         <div id="header">
-          <h1>Bienvenidos a Bazar</h1>
-          <h2>Herramientas que generan mercado</h2>
+          <h1><%= h BZ_param("Titular") %></h1>
+          <h2><%= h BZ_param("Subtitular") %></h2>
         </div>
 
         <div id="contenido">
