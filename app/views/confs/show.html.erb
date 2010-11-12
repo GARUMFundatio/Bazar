@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<b>Parámetro:</b> <%= @conf.desc %>
+<br />
+
+<b><%= @conf.nombre %></b> = <%= @conf.valor %>
+
+<br />
+<br />
+
+<%= link_to 'Volver a Editar', edit_conf_path(@conf) %> |
+<%= link_to 'Listado de Parámetros', confs_path %>

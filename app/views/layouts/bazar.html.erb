@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= h BZ_param("Titular") %></title>
+	<LINK REL=StyleSheet HREF="stylesheets/bazar.css" TYPE="text/css" MEDIA=screen>
+	
+    <script type="text/javascript">
+      function about() {
+        info = document.getElementById('about-content');
+        if (window.XMLHttpRequest)
+          { xhr = new XMLHttpRequest(); }
+        else
+          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+        xhr.open("GET","rails/info/properties",false);
+        xhr.send("");
+        info.innerHTML = xhr.responseText;
+        info.style.display = 'block'
+      }
+    </script>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+  </head>
+  <body>
+		
+   <div class="container">
+
+	  <div id="header" class="span-24 last">
+	    <div class="span-23 prepend-1">
+	      <div class="span-23 last">
+			<br/>
+		      <h1 align="center"><%= h BZ_param("Titular") %></h1>
+	          <h2 align="center"><%= h BZ_param("Subtitular") %></h2>
+			<br/>
+	      </div>
+	    </div>
+	  </div>
+ 
+	  <div id="content" class="span-24 last">	
+			<div class="body">
+
+			<div id="contenido" >
+				<br />
+				<%= yield %>
+				<br/>
+				<br/>
+	  		
+			</div>
+			<div id="sidebar" >
+	        <ul id="sidebar-items">
+			  <li>
+		            <ul class="links">
+		              <li>
+							<% if !current_user.nil? %>
+								<%= link_to current_user.login,  {:controller=>"users",  :action => 'edit', :id => current_user.id } %> 
+
+								<%= link_to 'Salir',  "/logout" %></li>
+							<% end %>
+		            </ul>
+		          </li>	
+	          <li>
+				<% if !current_user.nil? %>
+
+				<% if !current_user_is_invitado %>
+
+	            <h3>Modulos de Bazar</h3>
+	            <ul class="links">
+				    <li><%= link_to "Mi cuenta",  {:controller=>"users",  :action => 'edit', :id=>current_user.id} %> </li>
+				    <li><a href="http://stdlib.rubyonrails.org/">Perfiles</a></li>
+	                <li><a href="http://api.rubyonrails.org/">Ofertas/Demandas</a></li>
+	                <li><a href="http://corelib.rubyonrails.org/">Rating</a></li>
+	                <li><a href="http://guides.rubyonrails.org/">Búsquedas</a></li>
+
+	            </ul>
+				<% end %>
+
+				<% end %>
+	          </li>
+
+	          <li>
+				<% if current_user_is_admin %>
+
+	            <h3>Administración</h3>
+	            <ul class="links">
+				    <li><%= link_to "Usuarios",  {:controller=>"users"} %> </li>
+	                <li><a href="/confs">Configuración del Sistema</a></li>
+
+	            </ul>
+
+				<% end %>
+	          </li>
+
+
+	         <li>
+				<% if current_user_is_dinamizador %>
+
+	            <h3>Dinamización</h3>
+	            <ul class="links">
+				    <li><%= link_to "Actividad Usuarios",  {:controller=>"users"} %> </li>
+	                <li><a href="http://api.rubyonrails.org/">Mailing</a></li>
+
+	            </ul>
+
+				<% end %>
+	          </li>
+
+	          <li>
+				<% if current_user_is_invitado %>
+
+	            <h3>Bienvenido a Bazar</h3>
+	            <ul class="links">
+	                <li><a href="http://api.rubyonrails.org/">Que es Bazar</a></li>
+				    <li><%= link_to "Registrate",  {:controller=>"users", :action => "new"} %> </li>
+	            </ul>
+
+				<% end %>
+	         </li>
+
+	        </ul>
+	     </div>	
+			</div>
+			
+			
+			
+			
+	  </div>
+
+		<div id="footer" class="span-24 last">
+	 		<div class="span-5 append-1 append-bottom">
+	    		&nbsp;&nbsp;&nbsp;&nbsp;Garum Fundazioa
+	 		</div>
+		</div> <!-- fin footer-->
+
+	
+
+  </div> <!-- fin container -->
+
+  </body>
+</html>
+
+
+

@@ -1,0 +1,14 @@
+
+<%- flash[:notice] %>
+<% form_for @user_session, :url => user_sessions_path do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :Usuario %><br />
+  <%= f.text_field :login %><br />
+  <br />
+  <%= f.label :Contraseña %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.check_box :remember_me %><%= f.label :Recuerdame %><br />
+  <br />
+  <%= f.submit "Entrar" %>
+<% end %>

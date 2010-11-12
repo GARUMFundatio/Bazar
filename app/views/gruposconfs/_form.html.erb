@@ -1,0 +1,21 @@
+<%= form_for(@gruposconf) do |f| %>
+  <% if @gruposconf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gruposconf.errors.count, "error") %> prohibited this gruposconf from being saved:</h2>
+
+      <ul>
+      <% @gruposconf.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

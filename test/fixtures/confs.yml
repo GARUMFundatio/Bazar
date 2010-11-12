@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  grupo_id: 1
+  tipo: MyString
+  valor: MyString
+  desc: MyString
+
+two:
+  nombre: MyString
+  grupo_id: 1
+  tipo: MyString
+  valor: MyString
+  desc: MyString
