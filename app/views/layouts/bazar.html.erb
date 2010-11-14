@@ -41,7 +41,7 @@
 
 			<div id="contenido" >
 				<br />
-				<%= yield %>
+				<%= content_for?(:bazarcontent) ? yield(:bazarcontent) : yield %>
 				<br/>
 				<br/>
 	  		
@@ -52,7 +52,7 @@
 		            <ul class="links">
 		              <li>
 							<% if !current_user.nil? %>
-								<%= link_to current_user.login,  {:controller=>"users",  :action => 'edit', :id => current_user.id } %> 
+								<%= link_to current_user.login,  edit_user_path(current_user.id) %> 
 
 								<%= link_to 'Salir',  "/logout" %></li>
 							<% end %>
@@ -65,7 +65,8 @@
 
 	            <h3>Modulos de Bazar</h3>
 	            <ul class="links">
-				    <li><%= link_to "Mi cuenta",  {:controller=>"users",  :action => 'edit', :id=>current_user.id} %> </li>
+				    <li><%= link_to "Mi cuenta",  edit_user_path(current_user.id) %> </li>
+				    <li><%= link_to "Mi empresa",  {:controller=>"bazarcms/empresas",  :action => 'edit', :id=>current_user.id} %> </li>
 				    <li><a href="http://stdlib.rubyonrails.org/">Perfiles</a></li>
 	                <li><a href="http://api.rubyonrails.org/">Ofertas/Demandas</a></li>
 	                <li><a href="http://corelib.rubyonrails.org/">Rating</a></li>
@@ -82,7 +83,7 @@
 
 	            <h3>Administración</h3>
 	            <ul class="links">
-				    <li><%= link_to "Usuarios",  {:controller=>"users"} %> </li>
+				    <li><%= link_to "Usuarios",  user_path %> </li>
 	                <li><a href="/confs">Configuración del Sistema</a></li>
 
 	            </ul>
@@ -96,7 +97,7 @@
 
 	            <h3>Dinamización</h3>
 	            <ul class="links">
-				    <li><%= link_to "Actividad Usuarios",  {:controller=>"users"} %> </li>
+				    <li><%= link_to "Actividad Usuarios",  user_path %> </li>
 	                <li><a href="http://api.rubyonrails.org/">Mailing</a></li>
 
 	            </ul>
@@ -110,7 +111,7 @@
 	            <h3>Bienvenido a Bazar</h3>
 	            <ul class="links">
 	                <li><a href="http://api.rubyonrails.org/">Que es Bazar</a></li>
-				    <li><%= link_to "Registrate",  {:controller=>"users", :action => "new"} %> </li>
+				    <li><%= link_to "Registrate",  new_user_path %> </li>
 	            </ul>
 
 				<% end %>
