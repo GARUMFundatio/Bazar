@@ -4,8 +4,9 @@
     background: #F9F9F9;
 }
 
-#header {                
-    background-color: #5990B9;
+#header {     
+	color: #FBD600;           
+    background-color: #810E13;
     border-top-right-radius: 1em;
     border-top-left-radius: 1em;
     -moz-border-radius-topright: 1em;
@@ -43,8 +44,8 @@
 
 #footer {
     border-top: 1px solid black;
-    color: #f8f8ff;
-    background-color: #5990B9;
+    color: #FBD600;
+    background-color: #810E13;
     border-bottom-right-radius: 1em;
     border-bottom-left-radius: 1em;
     -moz-border-radius-bottomright: 1em;

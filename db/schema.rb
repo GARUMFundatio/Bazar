@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101008171403) do
+ActiveRecord::Schema.define(:version => 20101111073536) do
 
   create_table "confs", :force => true do |t|
     t.string   "nombre"
@@ -21,6 +21,28 @@ ActiveRecord::Schema.define(:version => 20101008171403) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "empresas", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "nombre"
+    t.text     "desc"
+    t.integer  "fundada"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "empresas", ["user_id"], :name => "index_empresas_on_user_id"
+
+  create_table "empresasdatos", :force => true do |t|
+    t.integer  "empresa_id"
+    t.integer  "periodo"
+    t.integer  "ventas"
+    t.integer  "compras"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "empresasdatos", ["empresa_id"], :name => "index_empresasdatos_on_empresa_id"
 
   create_table "gruposconfs", :force => true do |t|
     t.string   "desc"

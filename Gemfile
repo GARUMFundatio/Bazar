@@ -6,8 +6,6 @@ gem 'rails', '3.0.0.rc2'
 
 gem 'mysql2'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-# Use unicorn as the web server
-# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -27,3 +25,5 @@ gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => '
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem "bazarcms", :path => '../bazarcms'
