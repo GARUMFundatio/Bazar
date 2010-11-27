@@ -1,0 +1,8 @@
+
+2010-11-27 
+----------
+
+* Eliminamos acts_as_taggable_on_steroids por acts-as-taggable-on 
+* Incluimos una shell de instalación install.sh 
+* Incluimos un fichero con instrucciones de instalación INSTALL 
+
