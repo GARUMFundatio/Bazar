@@ -1,14 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.rc2'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'acts-as-taggable-on' 
+gem 'jquery-rails'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'

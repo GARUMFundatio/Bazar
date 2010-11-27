@@ -22,7 +22,9 @@ inflect.irregular 'account', 'accounts'
 inflect.irregular 'password', 'passwords'
 inflect.irregular 'conf', 'confs'
 inflect.irregular 'session', 'sessions'
-
+inflect.irregular 'tagging', 'taggings'
+inflect.irregular 'tag', 'tags'
+inflect.irregular 'interes', 'intereses'
 end
 
 
