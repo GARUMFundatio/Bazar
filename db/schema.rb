@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205192850) do
+ActiveRecord::Schema.define(:version => 20101205205517) do
 
   create_table "confs", :force => true do |t|
     t.string   "nombre"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20101205192850) do
     t.string   "texto"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "asunto"
   end
 
   add_index "mensajes", ["de", "fecha"], :name => "index_mensaje_de"

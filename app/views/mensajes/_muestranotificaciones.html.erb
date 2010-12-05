@@ -1,0 +1,45 @@
+<div>
+	
+<table class="tabla">
+  <tr>
+    <th>Fecha</th>
+    <th>De</th>
+    <th>Asunto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mensajes.each do |mensaje| %>
+
+
+<% if (!mensaje.leido.nil?) %>
+  <tr>
+<% else %>
+  <tr style="font-weight:bold">
+<% end %>
+    <td>
+		<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
+	</td>
+    
+	<td>
+		<%= User::find_by_id(mensaje.de).login %>
+	</td>
+  
+	<td>
+		<%= mensaje.asunto %>
+	</td>
+
+    <td><a href="#" onclick="$('#men<%= mensaje.id -%>').toggle(); $().load(/mensaje/leido/<%= mensaje.id -%>);"> <%= image_tag("lupa.png") -%></a></td>
+    <td><%= link_to(image_tag("pencil.png"), edit_mensaje_path(mensaje)) %></td>
+    <td><%= link_to(image_tag("papelera.png"), mensaje, :confirm => 'Are you sure?', :method => :delete) %></td>
+  </tr>
+
+  <tr id="men<%= mensaje.id -%>" style="display: none">
+    <td style="text-align:left; background-color: #fff;" colspan="3"><%= mensaje.texto %></td>
+  </tr>
+
+<% end %>
+</table>
+
+</div>

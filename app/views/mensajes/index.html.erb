@@ -1,34 +1,12 @@
-<h1>Listing mensajes</h1>
 
-<table>
+<table class="tabla">
   <tr>
-    <th>Fecha</th>
-    <th>Tipo</th>
-    <th>Borrado</th>
-    <th>Leido</th>
-    <th>De</th>
-    <th>Para</th>
-    <th>Texto</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3">Notificaciones</th>
+    <th colspan="3">Correos</th>
   </tr>
-
-<% @mensajes.each do |mensaje| %>
-  <tr>
-    <td><%= mensaje.fecha %></td>
-    <td><%= mensaje.tipo %></td>
-    <td><%= mensaje.borrado %></td>
-    <td><%= mensaje.leido %></td>
-    <td><%= mensaje.de %></td>
-    <td><%= mensaje.para %></td>
-    <td><%= mensaje.texto %></td>
-    <td><%= link_to 'Show', mensaje %></td>
-    <td><%= link_to 'Edit', edit_mensaje_path(mensaje) %></td>
-    <td><%= link_to 'Destroy', mensaje, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
 </table>
+
+<%= render 'muestranotificaciones' %>
 
 <br />
 
