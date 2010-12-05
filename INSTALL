@@ -1,7 +1,31 @@
+Como instalar ruby enterprise + passenger + nginx en Debian 
+
+Nuestra recomendación es usar: 
+
+* ruby enterprise 1.8.7 o superior
+* passenger 
+* nginx 
+
+
+(1) Instalamos 
+
+apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev
+
+(2) Descargamos ruby enterprise y lo instalamos
+
+wget http://rubyforge.org/frs/download.php/71096/ruby-enterprise-1.8.7-2010.02.tar.gz
+tar zxvf ruby-enterprise-1.8.7-2010.02.tar.gz
+
+
+./ruby-enterprise-1.8.7-2010.02/installer
+
+
+/opt/ruby-enterprise-1.8.7-2010.02/bin/passenger-install-nginx-module
+
+
 Como instalar Bazar
 
-
-(1) Obtener la applicación: 
+(1) Obtener la aplicación: 
 
 1.a Versión Estable 
 
@@ -10,5 +34,4 @@ Como instalar Bazar
 (2) Ejecutar 
 
 ./install.sh 
-
 
