@@ -1,0 +1,26 @@
+
+<table class="tabla">
+  <tr>
+    <th>Fecha</th>
+    <th>De</th>
+    <th>Texto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mensajes.each do |mensaje| %>
+  <tr>
+    <td><%= mensaje.fecha %></td>
+    <td><%= mensaje.de %></td>
+    <td><%= mensaje.texto %></td>
+    <td><%= link_to 'Show', mensaje %></td>
+    <td><%= link_to 'Edit', edit_mensaje_path(mensaje) %></td>
+    <td><%= link_to 'Destroy', mensaje, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mensaje', new_mensaje_path %>

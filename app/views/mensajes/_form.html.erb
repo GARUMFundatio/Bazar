@@ -1,45 +1,12 @@
 <%= form_for(@mensaje) do |f| %>
-  <% if @mensaje.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@mensaje.errors.count, "error") %> prohibited this mensaje from being saved:</h2>
 
-      <ul>
-      <% @mensaje.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :fecha %><br />
-    <%= f.datetime_select :fecha %>
-  </div>
-  <div class="field">
-    <%= f.label :tipo %><br />
-    <%= f.text_field :tipo %>
-  </div>
-  <div class="field">
-    <%= f.label :borrado %><br />
-    <%= f.datetime_select :borrado %>
-  </div>
-  <div class="field">
-    <%= f.label :leido %><br />
-    <%= f.datetime_select :leido %>
-  </div>
-  <div class="field">
-    <%= f.label :de %><br />
-    <%= f.text_field :de %>
-  </div>
-  <div class="field">
-    <%= f.label :para %><br />
-    <%= f.text_field :para %>
-  </div>
   <div class="field">
     <%= f.label :texto %><br />
-    <%= f.text_field :texto %>
+    <%= f.text_area :texto, :size => "60x10" %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

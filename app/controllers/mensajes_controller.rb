@@ -1,6 +1,5 @@
 class MensajesController < ApplicationController
-  # GET /mensajes
-  # GET /mensajes.xml
+
   def index
     @mensajes = Mensaje.all
 
@@ -8,10 +7,16 @@ class MensajesController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @mensajes }
     end
+
   end
 
-  # GET /mensajes/1
-  # GET /mensajes/1.xml
+  def editanotificacion
+  
+    
+  end
+  
+
+  
   def show
     @mensaje = Mensaje.find(params[:id])
 
@@ -21,8 +26,6 @@ class MensajesController < ApplicationController
     end
   end
 
-  # GET /mensajes/new
-  # GET /mensajes/new.xml
   def new
     @mensaje = Mensaje.new
 
@@ -32,13 +35,10 @@ class MensajesController < ApplicationController
     end
   end
 
-  # GET /mensajes/1/edit
   def edit
     @mensaje = Mensaje.find(params[:id])
   end
 
-  # POST /mensajes
-  # POST /mensajes.xml
   def create
     @mensaje = Mensaje.new(params[:mensaje])
 
