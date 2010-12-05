@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101204192110) do
+ActiveRecord::Schema.define(:version => 20101205192850) do
 
   create_table "confs", :force => true do |t|
     t.string   "nombre"
@@ -68,6 +68,21 @@ ActiveRecord::Schema.define(:version => 20101204192110) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "mensajes", :force => true do |t|
+    t.datetime "fecha"
+    t.string   "tipo"
+    t.datetime "borrado"
+    t.datetime "leido"
+    t.integer  "de"
+    t.integer  "para"
+    t.string   "texto"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "mensajes", ["de", "fecha"], :name => "index_mensaje_de"
+  add_index "mensajes", ["para", "fecha"], :name => "index_mensaje_para"
 
   create_table "roles", :force => true do |t|
     t.string   "rol"

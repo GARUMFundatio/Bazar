@@ -9,7 +9,7 @@ Nuestra recomendación es usar:
 
 (1) Instalamos 
 
-apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev
+apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev git-core
 
 (2) Descargamos ruby enterprise y lo instalamos
 
@@ -25,13 +25,13 @@ tar zxvf ruby-enterprise-1.8.7-2010.02.tar.gz
 
 Como instalar Bazar
 
-(1) Obtener la aplicación: 
 
-1.a Versión Estable 
 
-1.b Versión en Desarrollo 
+(2) Obtener la aplicación: 
 
-(2) Ejecutar 
+git clone https://github.com/GARUMFundatio/Bazar.git
+
+(3) Ejecutar 
 
 ./install.sh 
 

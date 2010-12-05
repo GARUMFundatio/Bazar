@@ -1,4 +1,6 @@
 Bazar::Application.routes.draw do
+  resources :mensajes
+
   resources :gruposconfs
   resources :confs
   resources :roles_users
