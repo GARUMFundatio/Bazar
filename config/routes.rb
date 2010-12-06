@@ -16,7 +16,8 @@ Bazar::Application.routes.draw do
   match 'login' => "user_sessions#new",      :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
   match 'home' => "home#index"
-
+  match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
+  
   # root :to => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

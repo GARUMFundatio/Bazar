@@ -14,9 +14,9 @@
 
 
 <% if (!mensaje.leido.nil?) %>
-  <tr>
+  <tr id="head<%= mensaje.id -%>">
 <% else %>
-  <tr style="font-weight:bold">
+  <tr id="head<%= mensaje.id -%>" style="font-weight:bold">
 <% end %>
     <td>
 		<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
@@ -30,7 +30,7 @@
 		<%= mensaje.asunto %>
 	</td>
 
-    <td><a href="#" onclick="$('#men<%= mensaje.id -%>').toggle(); $().load(/mensaje/leido/<%= mensaje.id -%>);"> <%= image_tag("lupa.png") -%></a></td>
+    <td><a href="#" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a></td>
     <td><%= link_to(image_tag("pencil.png"), edit_mensaje_path(mensaje)) %></td>
     <td><%= link_to(image_tag("papelera.png"), mensaje, :confirm => 'Are you sure?', :method => :delete) %></td>
   </tr>

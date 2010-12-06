@@ -15,7 +15,13 @@ class MensajesController < ApplicationController
     
   end
   
-
+  def leido 
+    puts "leido #{params[:id]}"
+    @mensaje = Mensaje.find(params[:id])
+    @mensaje.leido = DateTime.now 
+    @mensaje.save
+    
+  end 
   
   def show
     @mensaje = Mensaje.find(params[:id])
