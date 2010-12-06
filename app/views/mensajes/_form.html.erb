@@ -1,7 +1,15 @@
 <%= form_for(@mensaje) do |f| %>
+ <% @mensaje.asunto = "RE: "+@mensaje.asunto %>
+ <div class="field">
+	De: <%= User.find(@mensaje.para).login -%> a <%= User.find(@mensaje.de).login -%>
+ </div> 
 
   <div class="field">
-    <%= f.label :texto %><br />
+    <%= f.label :Asunto %>:  <%= f.text_field :asunto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Texto %><br />
     <%= f.text_area :texto, :size => "60x10" %>
   </div>
 

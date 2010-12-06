@@ -66,11 +66,19 @@ class MensajesController < ApplicationController
   # PUT /mensajes/1
   # PUT /mensajes/1.xml
   def update
+    
     @mensaje = Mensaje.find(params[:id])
-
+    @mensaje2 = Mensaje.new(params[:mensaje])
+    @mensaje2.fecha = DateTime.now
+    @mensaje2.de = @mensaje.para
+    @mensaje2.para = @mensaje.de 
+    @mensaje2.tipo = @mensaje.tipo
+    @mensaje2.leido = nil 
+    @mensaje2.borrado = nil
+    
     respond_to do |format|
-      if @mensaje.update_attributes(params[:mensaje])
-        format.html { redirect_to(@mensaje, :notice => 'Mensaje was successfully updated.') }
+      if @mensaje2.save
+        format.html { redirect_to(@mensaje, :notice => 'Mensaje ha sido enviado.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
