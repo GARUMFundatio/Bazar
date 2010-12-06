@@ -22,6 +22,9 @@
     
 	<td style="text-align:left;">
 		<%= User::find_by_id(mensaje.de).login %>
+		<% if (!Bazarcms::Empresa::find_by_id(mensaje.de).nil?) %>
+			(<%= Bazarcms::Empresa::find(mensaje.de).nombre %>)<%= link_to(image_tag("lupa.png"), bazarcms_empresa_path(mensaje.de)) %>
+		<% end %>
 	</td>
   
 	<td style="text-align:left;">
@@ -34,7 +37,7 @@
 
     <td><a href="#" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a></td>
     <td><%= link_to(image_tag("enviarcorreo.png"), edit_mensaje_path(mensaje)) %></td>
-    <td><%= link_to(image_tag("papelera.png"), mensaje, :confirm => 'Are you sure?', :method => :delete) %></td>
+    <td><%= link_to(image_tag("papelera.png"), mensaje, :confirm => 'Seguro?', :method => :delete) %></td>
   </tr>
 
   <tr id="men<%= mensaje.id -%>" style="display: none">
