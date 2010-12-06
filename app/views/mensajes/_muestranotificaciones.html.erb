@@ -14,19 +14,19 @@
 
 
 <% if (!mensaje.leido.nil?) %>
-  <tr id="head<%= mensaje.id -%>">
+  <tr id="head<%= mensaje.id -%>" style="text-align:left;">
 <% else %>
-  <tr id="head<%= mensaje.id -%>" style="font-weight:bold">
+  <tr id="head<%= mensaje.id -%>" style="font-weight:bold; text-align:left;">
 <% end %>
-    <td>
+    <td style="text-align:left;">
 		<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
 	</td>
     
-	<td>
+	<td style="text-align:left;">
 		<%= User::find_by_id(mensaje.de).login %>
 	</td>
   
-	<td>
+	<td style="text-align:left;">
 		<%= mensaje.asunto %>
 	</td>
 
@@ -36,7 +36,7 @@
   </tr>
 
   <tr id="men<%= mensaje.id -%>" style="display: none">
-    <td style="text-align:left; background-color: #fff;" colspan="3"><%= mensaje.texto %></td>
+    <td width="300" style="text-align:left; background-color: #fff;" colspan="3"><%= mensaje.texto %></td>
   </tr>
 
 <% end %>

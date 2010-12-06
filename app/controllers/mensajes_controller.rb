@@ -1,7 +1,7 @@
 class MensajesController < ApplicationController
 
   def index
-    @mensajes = Mensaje.all
+    @mensajes = Mensaje.where('para = ?',[current_user.id])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,10 +17,14 @@ class MensajesController < ApplicationController
   
   def leido 
     puts "leido #{params[:id]}"
+    puts "Usuario actual #{current_user.id}"
     @mensaje = Mensaje.find(params[:id])
-    @mensaje.leido = DateTime.now 
-    @mensaje.save
-    
+    if(@mensaje.para == current_user.id)
+      @mensaje.leido = DateTime.now 
+      @mensaje.save
+    else 
+      puts "Este mensaje #{@mensaje.para} No era del usuario #{current_user.id}"
+    end 
   end 
   
   def show
