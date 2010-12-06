@@ -1,13 +1,17 @@
 
 <table class="tabla">
   <tr>
-    <th colspan="3">Notificaciones</th>
-    <th colspan="3">Correos</th>
+	<% if (params[:tipo] == 'N') %>
+    	<th colspan="3">Notificaciones</th>
+		<td colspan="3"><%= link_to("Ver Mensajes", "/mensajes?tipo=M") %></td>
+    <% else %>
+		<th colspan="3">Mensajes</th>
+		<td colspan="3"><%= link_to("Ver Notificaciones", "/mensajes?tipo=N") %></td>
+	<% end %>
+	
   </tr>
 </table>
 
 <%= render 'muestranotificaciones' %>
 
 <br />
-
-<%= link_to 'New Mensaje', new_mensaje_path %>

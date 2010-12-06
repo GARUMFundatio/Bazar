@@ -1,10 +1,11 @@
 <div>
-	
+
+<% if @mensajes.count > 0 %>	
 <table class="tabla">
   <tr>
-    <th>Fecha</th>
     <th>De</th>
     <th>Asunto</th>
+    <th>Fecha</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,9 +19,6 @@
 <% else %>
   <tr id="head<%= mensaje.id -%>" style="font-weight:bold; text-align:left;">
 <% end %>
-    <td style="text-align:left;">
-		<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
-	</td>
     
 	<td style="text-align:left;">
 		<%= User::find_by_id(mensaje.de).login %>
@@ -30,8 +28,12 @@
 		<%= mensaje.asunto %>
 	</td>
 
+    <td style="text-align:left;">
+		<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
+	</td>
+
     <td><a href="#" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a></td>
-    <td><%= link_to(image_tag("pencil.png"), edit_mensaje_path(mensaje)) %></td>
+    <td><%= link_to(image_tag("enviarcorreo.png"), edit_mensaje_path(mensaje)) %></td>
     <td><%= link_to(image_tag("papelera.png"), mensaje, :confirm => 'Are you sure?', :method => :delete) %></td>
   </tr>
 
@@ -43,4 +45,13 @@
 </table>
 
 <%= will_paginate @mensajes %>
+
+<% else %>
+	<% if params[:tipo] == 'N' %>
+		<br/>No hay notificaciones. 
+	<% else %>
+		</br>No hay mensajes.
+	<% end %>
+<% end %>
+
 </div>

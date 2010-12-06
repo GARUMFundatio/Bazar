@@ -1,7 +1,7 @@
 
 <%- flash[:notice] %>
 <% form_for @user_session, :url => user_sessions_path do |f| %>
-  <%= f.error_messages %>
+  
   <%= f.label :Usuario %><br />
   <%= f.text_field :login %><br />
   <br />

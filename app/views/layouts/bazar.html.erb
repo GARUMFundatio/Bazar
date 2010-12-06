@@ -54,13 +54,13 @@
 							<% if !current_user.nil? %>
 								<li>
 								<%= link_to current_user.login,  edit_user_path(current_user.id) %>
-								<%= link_to (image_tag('logout.png'),  "/logout") %>
+								<%= link_to(image_tag('logout.png'),  "/logout") %>
 								</li>
 								<li>
-								<%= link_to (image_tag('notificacion.png'),  "/notificaciones") %>
+								<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N") %>
 								(<%= Mensaje.notificacionessinleer(current_user.id).count -%>/<%=  Mensaje.notificacionestotal(current_user.id).count -%>) 
 								
-								<%= link_to (image_tag('email.png'),  "/mensajes") %>
+								<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M") %>
 								(<%= Mensaje.mensajessinleer(current_user.id).count -%>/<%=  Mensaje.mensajestotal(current_user.id).count -%>) 
 
 								</li>

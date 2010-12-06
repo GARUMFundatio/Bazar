@@ -1,7 +1,19 @@
 class MensajesController < ApplicationController
   layout "bazar"
   def index
-    @mensajes = Mensaje.where('para = ? and tipo = "N"',[current_user.id]).order('fecha desc').paginate(:page => params[:page], :per_page => 15)
+    puts "-------> parametros: ("+params.inspect+")"
+    if (!params[:tipo].nil?)
+      if (params[:tipo] == 'N')
+        puts "Buscando notificaciones"
+        @mensajes = Mensaje.notificacionestotal(current_user.id).order('fecha desc').paginate(:page => params[:page], :per_page => 15)
+      else 
+        puts "Buscando Mensajes"
+        @mensajes = Mensaje.mensajestotal(current_user.id).order('fecha desc').paginate(:page => params[:page], :per_page => 15)      
+      end 
+    else 
+      puts "No esta definido tipo"
+      @mensajes = Mensaje.where('para = ? and tipo = "N"',[current_user.id]).order('fecha desc').paginate(:page => params[:page], :per_page => 15)
+    end 
     
     respond_to do |format|
       format.html # index.html.erb
@@ -11,7 +23,6 @@ class MensajesController < ApplicationController
   end
 
   def editanotificacion
-  
     
   end
   
