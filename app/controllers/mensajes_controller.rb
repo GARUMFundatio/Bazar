@@ -1,8 +1,8 @@
 class MensajesController < ApplicationController
-
+  layout "bazar"
   def index
-    @mensajes = Mensaje.where('para = ?',[current_user.id])
-
+    @mensajes = Mensaje.where('para = ? and tipo = "N"',[current_user.id]).order('fecha desc').paginate(:page => params[:page], :per_page => 15)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @mensajes }
