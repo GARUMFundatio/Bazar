@@ -10,7 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101205205517) do
+ActiveRecord::Schema.define(:version => 20101207231807) do
+
+  create_table "ciudades", :force => true do |t|
+    t.string   "descripcion",              :default => "", :null => false
+    t.integer  "pais_id",                                  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitud"
+    t.float    "longitud"
+    t.string   "geocode"
+    t.string   "pais_codigo", :limit => 2
+  end
+
+  add_index "ciudades", ["pais_id"], :name => "index_ciudades_pais_id"
 
   create_table "confs", :force => true do |t|
     t.string   "nombre"
@@ -85,6 +98,16 @@ ActiveRecord::Schema.define(:version => 20101205205517) do
   add_index "mensajes", ["de", "fecha"], :name => "index_mensaje_de"
   add_index "mensajes", ["para", "fecha"], :name => "index_mensaje_para"
 
+  create_table "paises", :force => true do |t|
+    t.string   "descripcion", :limit => 100, :null => false
+    t.string   "codigo",      :limit => 2,   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "capital"
+  end
+
+  add_index "paises", ["codigo"], :name => "index_paises_codigo_pais_id"
+
   create_table "roles", :force => true do |t|
     t.string   "rol"
     t.datetime "created_at"
@@ -114,6 +137,17 @@ ActiveRecord::Schema.define(:version => 20101205205517) do
   create_table "tags", :force => true do |t|
     t.string "name"
   end
+
+  create_table "ubicaciones", :force => true do |t|
+    t.integer  "empresa_id"
+    t.string   "ciudad_id"
+    t.text     "desc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ubicaciones", ["ciudad_id"], :name => "index_ubicaciones_on_ciudad_id"
+  add_index "ubicaciones", ["empresa_id"], :name => "index_ubicaciones_on_empresa_id"
 
   create_table "users", :force => true do |t|
     t.string   "login",                              :null => false

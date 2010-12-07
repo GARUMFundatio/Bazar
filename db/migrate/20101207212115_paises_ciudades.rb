@@ -22,7 +22,7 @@ class PaisesCiudades < ActiveRecord::Migration
       t.string   "capital"
     end
 
-    add_index "ciudades", ["codigo"], :name => "index_paises_codigo_pais_id"
+    add_index "paises", ["codigo"], :name => "index_paises_codigo_pais_id"
 
   end
 
