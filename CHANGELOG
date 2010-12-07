@@ -1,9 +1,17 @@
 2010-12-06 
 ----------
 
+* Incluidas las ubicaciones en el core para que se puedan utilizar por distintos módulos.
+ 
+
+2010-12-06 
+----------
+
 * Display de notificaciones y mensajes pendientes y total
 * Implementanda respuesta a notificaciones y mensajes en local
 * Navegabilidad entre vistas de mensajes y notificaciones
+* Acceso directo a la información de la empresa desde un correo. 
+
 
 2010-12-05 
 ----------

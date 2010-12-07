@@ -1,6 +1,4 @@
 Bazar::Application.routes.draw do
-  resources :ubicaciones
-
   resources :mensajes
   resources :gruposconfs
   resources :confs
