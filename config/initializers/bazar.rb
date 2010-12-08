@@ -1,11 +1,10 @@
 @parametros = {}
 
-
-
   begin
     Conf.all.each do |c|
       @parametros[c.nombre] = c.valor
-      puts @parametros.inspect
+    end 
+    puts @parametros.inspect
   rescue
     printf "[FALLO]\n"
     printf "No existe el fichero de configuración!"
@@ -13,8 +12,4 @@
   else
     printf "Configuración [OK]\n"
   end
-
-
-end  
-
 
