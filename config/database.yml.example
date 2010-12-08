@@ -1,3 +1,6 @@
+# esta es la configuración de ejemplo 
+# modificala de acuerdo con tu configuración
+# de mysql 
 
 defaults: &defaults
  adapter: mysql2
