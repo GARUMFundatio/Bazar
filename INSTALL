@@ -9,7 +9,7 @@ Nuestra recomendación es usar:
 
 (1) Instalamos 
 
-apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev git-core mysql-client
+apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev git-core mysql-client libmysqlclient15-dev
 
 (2) Descargamos ruby enterprise y lo instalamos
 
@@ -22,10 +22,13 @@ tar zxvf ruby-enterprise-1.8.7-2010.02.tar.gz
 
 /opt/ruby-enterprise-1.8.7-2010.02/bin/passenger-install-nginx-module
 
+ln -sf /opt/ruby-enterprise-1.8.7-2010.02/bin/rake /usr/bin/rake
+ln -sf /opt/ruby-enterprise-1.8.7-2010.02/bin/rails /usr/bin/rails
+ln -sf /opt/ruby-enterprise-1.8.7-2010.02/bin/ruby /usr/bin/ruby
+ln -sf /opt/ruby-enterprise-1.8.7-2010.02/bin/bundle /usr/bin/bundle
+
 
 Como instalar Bazar
-
-
 
 (2) Obtener la aplicación: 
 
