@@ -3,6 +3,7 @@ echo "Instalación de Bazar"
 echo "Compilando las dependencias en el directorio vendor" 
 
 bundle install --path vendor 
+mkdir -p log 
 
 echo "Haciendo el setup de bazar" 
 
