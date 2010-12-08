@@ -15,3 +15,9 @@ rake bazar:setup_dirs
 
 echo "Creando usuarios en la BD" 
 rake bazar:create_users 
+
+
+echo "Creando las tablas de la base de datos" 
+rake db:migrate
+
+
