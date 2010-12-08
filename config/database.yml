@@ -11,9 +11,9 @@ development:
   reconnect: false
   database: bazar_development
   pool: 5
-  username: root
-  password: jt
-  host: localhost
+  username: bazar
+  password: secreta
+  host: mysql
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

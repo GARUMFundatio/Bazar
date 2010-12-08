@@ -9,7 +9,7 @@ Nuestra recomendación es usar:
 
 (1) Instalamos 
 
-apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev git-core
+apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev git-core mysql-client
 
 (2) Descargamos ruby enterprise y lo instalamos
 
