@@ -1,7 +1,12 @@
+2010-12-07 
+----------
+
+* Incluida la gema de ruby-debug 
+ 
 2010-12-06 
 ----------
 
-* Incluidas las ubicaciones en el core para que se puedan utilizar por distintos módulos.
+* Añadidos países y ciudades. Estos común para todos los módulos.
  
 
 2010-12-06 

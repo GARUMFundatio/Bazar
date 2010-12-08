@@ -25,6 +25,7 @@ inflect.irregular 'session', 'sessions'
 inflect.irregular 'tagging', 'taggings'
 inflect.irregular 'tag', 'tags'
 inflect.irregular 'interes', 'intereses'
+inflect.irregular 'ubicacion', 'ubicaciones'
 end
 
 
