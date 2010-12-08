@@ -36,5 +36,5 @@ git clone https://github.com/GARUMFundatio/Bazar.git
 
 (3) Ejecutar 
 
-./install.sh 
+sh -x install.sh 
 
