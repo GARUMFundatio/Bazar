@@ -15,7 +15,7 @@ namespace :bazar do
    printf "Cambiando los permisos de los ficheros... ".ljust(75)
    FileUtils.chown 'www-data', 'www-data', File.join('.','tmp')
    FileUtils.chown_R 'www-data', 'www-data', File.join('.','log')
-   FileUtils.chmod_R '0666', File.join('.','log')
+   FileUtils.chmod_R  0666, File.join('.','log')
    FileUtils.chown_R 'www-data', 'www-data', File.join('.','public/system')
    FileUtils.chown 'www-data', 'www-data', File.join('config','database.yml')
    FileUtils.chown 'www-data', 'www-data', File.join('config','environment.rb')
