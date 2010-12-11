@@ -30,12 +30,11 @@ class ApplicationController < ActionController::Base
     def current_user_is_admin
       logger.debug "ApplicationController::current_user_is_Admin"
       if (!current_user.nil?)
-        user = User.find_by_login(current_user.login)
-        user.roles.each do |r|
-          if r[:rol] == 'admin'
-            return true
-          end 
-        end
+        current_user.roles.select{|i| 
+          if (i.rol == 'admin') 
+            return true 
+          end
+          }
       end   
       return false
     end
@@ -43,26 +42,23 @@ class ApplicationController < ActionController::Base
     def current_user_is_dinamizador
       logger.debug "ApplicationController::current_user_is_dinamizador"
       if (!current_user.nil?)
-        user = User.find_by_login(current_user.login)
-        user.roles.each do |r|
-          if r[:rol] == 'dinamizador'
-            return true
-          end 
-        end
+        current_user.roles.select{|i| 
+          if (i.rol == 'dinamizador') 
+            return true 
+          end
+          }
       end   
       return false
     end
 
-
     def current_user_is_invitado
       logger.debug "ApplicationController::current_user_is_invitado"
       if (!current_user.nil?)
-        user = User.find_by_login(current_user.login)
-        user.roles.each do |r|
-          if r[:rol] == 'invitado'
-            return true
-          end 
-        end
+        current_user.roles.select{|i| 
+          if (i.rol == 'invitado') 
+            return true 
+          end
+          }
       end   
       return false
     end
