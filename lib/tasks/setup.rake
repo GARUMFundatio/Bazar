@@ -19,3 +19,4 @@ namespace :bazar do
 
 
 end
+
