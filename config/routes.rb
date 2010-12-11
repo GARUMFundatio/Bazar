@@ -6,6 +6,7 @@ Bazar::Application.routes.draw do
   resources :roles
   resources :user_sessions
 
+  root :to => 'home#index'
   get 'login(.:format)' => 'user_sessions#new', :as => :login
   post 'login(.:format)' => 'user_sessions#create', :as => :login
   delete 'logout(.:format)' => 'user_sessions#destroy', :as => :logout
