@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
     def current_user
       logger.debug "ApplicationController::current_user"
-      logger.debug "preguntando por quien es el current user: #{@current_user.inspect}"
+      # logger.debug "preguntando por quien es el current user: #{@current_user.inspect}"
       return @current_user if defined?(@current_user)
       logger.debug "No parece que este definido resetamos @current_user"
       @current_user = current_user_session && current_user_session.user
