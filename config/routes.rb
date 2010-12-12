@@ -5,7 +5,8 @@ Bazar::Application.routes.draw do
   resources :roles_users
   resources :roles
   resources :user_sessions
-
+  resources :ciudades
+  
   root :to => 'home#index'
   
   # get 'login(.:format)' => 'user_sessions#new', :as => :login
@@ -19,5 +20,6 @@ Bazar::Application.routes.draw do
   match 'logout' => "user_sessions#destroy", :as => :logout
   match 'home' => "home#index"
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
+  match 'busquedaciudades' => 'ciudades#busqueda', :as => :busquedaciudades
   
 end
