@@ -4,6 +4,7 @@ echo "Compilando las dependencias en el directorio vendor"
 
 bundle install --path vendor 
 bundle exec aaf_install
+rails generate autocomplete
 
 mkdir -p log 
 

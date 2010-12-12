@@ -10,6 +10,7 @@ gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'acts_as_ferret', '= 0.5.2', :git => "git://github.com/primerano/acts_as_ferret.git"
 gem 'delayed_job' 
 gem 'will_paginate', "~> 3.0.pre2"
+gem 'rails3-jquery-autocomplete'
 
 gem "bazarcms", :path => '../bazarcms'
 
