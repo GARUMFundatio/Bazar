@@ -1,6 +1,6 @@
 <br/>
-
-<b>Listo de Bazares</b>
+<b>Listado de Bazares</b>
+<br/>
 
 <table class="tabla" width="650px">
   <tr>
@@ -36,7 +36,8 @@
   </tr>
 <% end %>
 </table>
-
+<br/>
+<%= will_paginate @clusters %>
 <br />
 
 <%= link_to 'Nuevo Cluster', new_cluster_path %>

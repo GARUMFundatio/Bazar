@@ -3,7 +3,7 @@ class ClustersController < ApplicationController
   layout "bazar"
   
   def index
-    @clusters = Cluster.all
+    @clusters = Cluster.all.paginate(:page => params[:page], :per_page => 15)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -48,7 +48,7 @@ class ClustersController < ApplicationController
   end
 
   def update
-    @cluster = Cluster.find(params[:id])
+    @cluster = Cluster.find(params[:id]).paginate(:page => params[:page], :per_page => 15)
 
     respond_to do |format|
       if @cluster.update_attributes(params[:cluster])
