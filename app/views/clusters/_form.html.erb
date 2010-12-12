@@ -1,0 +1,45 @@
+<%= form_for(@cluster) do |f| %>
+  <% if @cluster.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cluster.errors.count, "error") %> prohibited this cluster from being saved:</h2>
+
+      <ul>
+      <% @cluster.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <%= f.label :activo %><br />
+    <%= f.text_field :activo %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="field">
+    <%= f.label :miclave %><br />
+    <%= f.text_field :miclave %>
+  </div>
+  <div class="field">
+    <%= f.label :suclave %><br />
+    <%= f.text_field :suclave %>
+  </div>
+  <div class="field">
+    <%= f.label :empresas %><br />
+    <%= f.text_field :empresas %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @cluster.nombre %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @cluster.desc %>
+</p>
+
+<p>
+  <b>Activo:</b>
+  <%= @cluster.activo %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @cluster.url %>
+</p>
+
+<p>
+  <b>Miclave:</b>
+  <%= @cluster.miclave %>
+</p>
+
+<p>
+  <b>Suclave:</b>
+  <%= @cluster.suclave %>
+</p>
+
+<p>
+  <b>Empresas:</b>
+  <%= @cluster.empresas %>
+</p>
+
+
+<%= link_to 'Edit', edit_cluster_path(@cluster) %> |
+<%= link_to 'Back', clusters_path %>

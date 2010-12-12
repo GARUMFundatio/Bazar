@@ -1,0 +1,35 @@
+<h1>Listing clusters</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Desc</th>
+    <th>Activo</th>
+    <th>Url</th>
+    <th>Miclave</th>
+    <th>Suclave</th>
+    <th>Empresas</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clusters.each do |cluster| %>
+  <tr>
+    <td><%= cluster.nombre %></td>
+    <td><%= cluster.desc %></td>
+    <td><%= cluster.activo %></td>
+    <td><%= cluster.url %></td>
+    <td><%= cluster.miclave %></td>
+    <td><%= cluster.suclave %></td>
+    <td><%= cluster.empresas %></td>
+    <td><%= link_to 'Show', cluster %></td>
+    <td><%= link_to 'Edit', edit_cluster_path(cluster) %></td>
+    <td><%= link_to 'Destroy', cluster, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cluster', new_cluster_path %>

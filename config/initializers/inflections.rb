@@ -27,6 +27,7 @@ inflect.irregular 'tag', 'tags'
 inflect.irregular 'interes', 'intereses'
 inflect.irregular 'ciudad', 'ciudades'
 inflect.irregular 'pais', 'paises'
+inflect.irregular 'cluster', 'clusters'
 
 
 # inflect.irregular 'ubicacion', 'ubicaciones'

@@ -1,4 +1,6 @@
 Bazar::Application.routes.draw do
+  resources :clusters
+
   resources :mensajes
   resources :gruposconfs
   resources :confs

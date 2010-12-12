@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  desc: MyString
+  activo: MyString
+  url: MyString
+  miclave: MyString
+  suclave: MyString
+  empresas: 1
+
+two:
+  nombre: MyString
+  desc: MyString
+  activo: MyString
+  url: MyString
+  miclave: MyString
+  suclave: MyString
+  empresas: 1
