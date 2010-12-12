@@ -67,11 +67,6 @@
 					<li><%= link_to "Página Principal", "/home" %></li>
 				    <li><%= link_to "Mi cuenta",  edit_user_path(current_user.id) %> </li>
 				    <li><%= link_to "Mi empresa", edit_bazarcms_empresa_path(current_user.id) %> </li>
-				    <li><a href="http://stdlib.rubyonrails.org/">Perfiles</a></li>
-	                <li><a href="http://api.rubyonrails.org/">Ofertas/Demandas</a></li>
-	                <li><a href="http://corelib.rubyonrails.org/">Rating</a></li>
-	                <li><a href="http://guides.rubyonrails.org/">Búsquedas</a></li>
-
 	            </ul>
 				<% end %>
 
@@ -82,9 +77,11 @@
 				<% if current_user_is_admin %>
 
 	            <h3>Administración</h3>
+	
 	            <ul class="links">
 				    <li><%= link_to "Usuarios", users_path %> </li>
 				    <li><%= link_to "Configuración del Sistema", confs_path %> </li>
+					 <li><%= link_to "Gestión Bazares", clusters_path %> </li>
 	            </ul>
 
 				<% end %>

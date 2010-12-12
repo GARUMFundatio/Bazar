@@ -1,6 +1,5 @@
 class RolesUsersController < ApplicationController
-  # GET /roles_users
-  # GET /roles_users.xml
+
   def index
     @roles_users = RolesUser.all
 
@@ -10,8 +9,6 @@ class RolesUsersController < ApplicationController
     end
   end
 
-  # GET /roles_users/1
-  # GET /roles_users/1.xml
   def show
     @roles_user = RolesUser.find(params[:id])
 
@@ -21,8 +18,6 @@ class RolesUsersController < ApplicationController
     end
   end
 
-  # GET /roles_users/new
-  # GET /roles_users/new.xml
   def new
     @roles_user = RolesUser.new
 
@@ -32,13 +27,10 @@ class RolesUsersController < ApplicationController
     end
   end
 
-  # GET /roles_users/1/edit
   def edit
     @roles_user = RolesUser.find(params[:id])
   end
 
-  # POST /roles_users
-  # POST /roles_users.xml
   def create
     @roles_user = RolesUser.new(params[:roles_user])
 
@@ -53,8 +45,6 @@ class RolesUsersController < ApplicationController
     end
   end
 
-  # PUT /roles_users/1
-  # PUT /roles_users/1.xml
   def update
     @roles_user = RolesUser.find(params[:id])
 
@@ -69,8 +59,6 @@ class RolesUsersController < ApplicationController
     end
   end
 
-  # DELETE /roles_users/1
-  # DELETE /roles_users/1.xml
   def destroy
     @roles_user = RolesUser.find(params[:id])
     @roles_user.destroy

@@ -1,21 +1,25 @@
-<h1>Listing clusters</h1>
+<br/>
 
-<table>
+<b>Listo de Bazares</b>
+
+<table class="tabla" width="650px">
   <tr>
     <th>Nombre</th>
-    <th>Desc</th>
-    <th>Activo</th>
+    <th>Descripción</th>
+    <th>Act</th>
     <th>Url</th>
     <th>Miclave</th>
     <th>Suclave</th>
-    <th>Empresas</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>#</th>
+    <th colspan="2">Acciones</th>
   </tr>
 
 <% @clusters.each do |cluster| %>
-  <tr>
+ <% if (cluster.activo == "N") %>
+  <tr style="text-align:left;">
+<% else %>
+  <tr style="font-weight:bold; text-align:left;">
+<% end %>   
     <td><%= cluster.nombre %></td>
     <td><%= cluster.desc %></td>
     <td><%= cluster.activo %></td>
@@ -23,13 +27,16 @@
     <td><%= cluster.miclave %></td>
     <td><%= cluster.suclave %></td>
     <td><%= cluster.empresas %></td>
-    <td><%= link_to 'Show', cluster %></td>
-    <td><%= link_to 'Edit', edit_cluster_path(cluster) %></td>
-    <td><%= link_to 'Destroy', cluster, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag('pencil.png'), edit_cluster_path(cluster) %></td>
+	<% if (cluster.activo == "S")%>
+    	<td><%= link_to image_tag('delete.png'), cluster, :confirm => 'Esta seguro de desactivarlo?', :method => :delete %></td>
+	<% else %>
+		<td><%= link_to image_tag('add.png'), '/clusters/activar/'+cluster.id.to_s %></td>
+	<% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Cluster', new_cluster_path %>
+<%= link_to 'Nuevo Cluster', new_cluster_path %>

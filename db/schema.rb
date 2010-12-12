@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101207231807) do
+ActiveRecord::Schema.define(:version => 20101212202115) do
 
   create_table "ciudades", :force => true do |t|
     t.string   "descripcion",              :default => "", :null => false
@@ -23,7 +23,17 @@ ActiveRecord::Schema.define(:version => 20101207231807) do
     t.string   "pais_codigo", :limit => 2
   end
 
-  add_index "ciudades", ["pais_id"], :name => "index_ciudades_pais_id"
+  create_table "clusters", :force => true do |t|
+    t.string   "nombre"
+    t.string   "desc"
+    t.string   "activo"
+    t.string   "url"
+    t.string   "miclave"
+    t.string   "suclave"
+    t.integer  "empresas"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "confs", :force => true do |t|
     t.string   "nombre"
@@ -105,8 +115,6 @@ ActiveRecord::Schema.define(:version => 20101207231807) do
     t.datetime "updated_at"
     t.string   "capital"
   end
-
-  add_index "paises", ["codigo"], :name => "index_paises_codigo_pais_id"
 
   create_table "roles", :force => true do |t|
     t.string   "rol"

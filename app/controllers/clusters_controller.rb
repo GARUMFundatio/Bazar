@@ -1,6 +1,7 @@
 class ClustersController < ApplicationController
-  # GET /clusters
-  # GET /clusters.xml
+
+  layout "bazar"
+  
   def index
     @clusters = Cluster.all
 
@@ -10,8 +11,6 @@ class ClustersController < ApplicationController
     end
   end
 
-  # GET /clusters/1
-  # GET /clusters/1.xml
   def show
     @cluster = Cluster.find(params[:id])
 
@@ -21,8 +20,6 @@ class ClustersController < ApplicationController
     end
   end
 
-  # GET /clusters/new
-  # GET /clusters/new.xml
   def new
     @cluster = Cluster.new
 
@@ -32,19 +29,16 @@ class ClustersController < ApplicationController
     end
   end
 
-  # GET /clusters/1/edit
   def edit
     @cluster = Cluster.find(params[:id])
   end
 
-  # POST /clusters
-  # POST /clusters.xml
   def create
     @cluster = Cluster.new(params[:cluster])
 
     respond_to do |format|
       if @cluster.save
-        format.html { redirect_to(@cluster, :notice => 'Cluster was successfully created.') }
+        format.html { redirect_to(clusters_url, :notice => 'Cluster was successfully created.') }
         format.xml  { render :xml => @cluster, :status => :created, :location => @cluster }
       else
         format.html { render :action => "new" }
@@ -53,14 +47,12 @@ class ClustersController < ApplicationController
     end
   end
 
-  # PUT /clusters/1
-  # PUT /clusters/1.xml
   def update
     @cluster = Cluster.find(params[:id])
 
     respond_to do |format|
       if @cluster.update_attributes(params[:cluster])
-        format.html { redirect_to(@cluster, :notice => 'Cluster was successfully updated.') }
+        format.html { redirect_to(clusters_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -69,15 +61,26 @@ class ClustersController < ApplicationController
     end
   end
 
-  # DELETE /clusters/1
-  # DELETE /clusters/1.xml
+  def activar 
+      @cluster = Cluster.find(params[:id])
+      @cluster.activo = "S"
+      @cluster.save
+      puts "Activado el cluster #{params[:id]}"
+      respond_to do |format|
+        format.html { redirect_to(clusters_url) }
+        format.xml  { head :ok }
+      end
+  end
+  
   def destroy
     @cluster = Cluster.find(params[:id])
-    @cluster.destroy
+    @cluster.activo = "N"
+    @cluster.save
 
     respond_to do |format|
       format.html { redirect_to(clusters_url) }
       format.xml  { head :ok }
     end
   end
+  
 end
