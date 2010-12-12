@@ -11,6 +11,7 @@
       </ul>
     </div>
   <% end %>
+
   <div class="field">
     <%= f.label :usuario %>: <%= @user.login %></br>
 	<%= f.text_field :login %>
@@ -29,8 +30,6 @@
     <%= f.label :confirmación %><br />
     <%= f.text_field :password_confirmation %>
   </div>
-  </div>
-
 
   <% if current_user_is_admin %>
   <div class="field">
