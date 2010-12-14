@@ -49,13 +49,70 @@ class MensajesController < ApplicationController
 
   def new
     @mensaje = Mensaje.new
-
+    @mensaje.de = current_user.id
+    if (!params[:aquien].nil?)
+      @mensaje.para = params[:aquien]
+    else
+      @mensaje.para = 0
+    end
+    if (!params[:tipo].nil?)
+      @mensaje.tipo = params[:tipo]
+    else
+      @mensaje.tipo = 'M'
+    end
+    
+    @mensaje.fecha = DateTime.now
+    @mensaje.leido = nil 
+    @mensaje.borrado = nil
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @mensaje }
     end
   end
 
+  def notificacion 
+    @mensaje = Mensaje.new
+    @mensaje.de = current_user.id
+    @mensaje.para = -1
+
+    if (!params[:tipo].nil?)
+      @mensaje.tipo = params[:tipo]
+    else
+      @mensaje.tipo = 'M'
+    end
+    
+    @mensaje.fecha = DateTime.now
+    @mensaje.leido = nil 
+    @mensaje.borrado = nil
+    
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @mensaje }
+    end
+
+  end
+  
+  def enviarnotificacion
+
+    for user in User::all 
+      @mensaje = Mensaje.new(params[:mensaje])
+      @mensaje.para = user.id 
+      @mensaje.save
+    end 
+
+    respond_to do |format|
+      if @mensaje.tipo == 'M'
+        format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
+      else
+        format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
+      end
+      format.xml  { render :xml => @mensaje, :status => :created, :location => @mensaje }
+    end
+    
+  end
+  
+  
   def edit
     @mensaje = Mensaje.find(params[:id])
   end
@@ -65,7 +122,11 @@ class MensajesController < ApplicationController
 
     respond_to do |format|
       if @mensaje.save
-        format.html { redirect_to(@mensaje, :notice => 'Mensaje was successfully created.') }
+        if @mensaje.tipo == 'M'
+          format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
+        else
+          format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
+        end
         format.xml  { render :xml => @mensaje, :status => :created, :location => @mensaje }
       else
         format.html { render :action => "new" }
@@ -89,7 +150,11 @@ class MensajesController < ApplicationController
     
     respond_to do |format|
       if @mensaje2.save
-        format.html { redirect_to(@mensaje, :notice => 'Mensaje ha sido enviado.') }
+        if @mensaje2.tipo == 'M'
+          format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
+        else
+          format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
+        end
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

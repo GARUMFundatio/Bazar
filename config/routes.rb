@@ -24,5 +24,7 @@ Bazar::Application.routes.draw do
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
   match 'busquedaciudades' => 'ciudades#busqueda', :as => :busquedaciudades
   match '/clusters/activar/:id' => 'clusters#activar', :constrants => { :id => /\d+/ }, :as => :activar_cluster
+  match '/notificacion' => 'mensajes#notificacion', :as => :notificacion
+  match '/enviarnotificacion' => 'mensajes#enviarnotificacion', :as => :enviarnotificacion
   
 end

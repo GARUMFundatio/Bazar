@@ -80,9 +80,10 @@
 	            <h3>Administración</h3>
 	
 	            <ul class="links">
-				    <li><%= link_to "Usuarios", users_path %> </li>
-				    <li><%= link_to "Configuración del Sistema", confs_path %> </li>
-					 <li><%= link_to "Gestión Bazares", clusters_path %> </li>
+				  <li><%= link_to "Usuarios", users_path %> </li>
+				  <li><%= link_to "Configuración del Sistema", confs_path %> </li>
+				  <li><%= link_to "Gestión Bazares", clusters_path %> </li>
+				  <li><%= link_to "Notificacion a Usuarios", '/notificacion?tipo=N' %> </li>
 	            </ul>
 
 				<% end %>
@@ -94,9 +95,8 @@
 
 	            <h3>Dinamización</h3>
 	            <ul class="links">
-				    <li><%= link_to "Actividad Usuarios",  user_path(current_user.id) %> </li>
-	                <li><a href="http://api.rubyonrails.org/">Mailing</a></li>
-
+				    <li><%= link_to "Actividad Usuarios", user_path(current_user.id) %> </li>
+				    <li><%= link_to "Mailing a Usuarios", '/notificacion?tipo=M' %> </li>
 	            </ul>
 
 				<% end %>

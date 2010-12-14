@@ -1,15 +1,14 @@
 <% if @mensaje.tipo == 'M' %>
-	<b>Enviar Mensaje</b>
+	<b>Enviar Mensaje a todos los Usuarios</b>
 <% else %>
-	<b>Enviar Notificación</b>
+	<b>Enviar Notificación a todos los Usuarios</b>
 <% end %>
 
 <br />
-<%= render 'form2' %>
+<%= render 'form3' %>
 
 <% if @mensaje.tipo == 'M' %>
 	<%= link_to 'Volver a la lista de mensajes',"/mensajes?tipo=M" %>
 <% else %>
 	<%= link_to 'Volver a la lista de notificaciones',"/mensajes?tipo=N" %>
 <% end %>
-
