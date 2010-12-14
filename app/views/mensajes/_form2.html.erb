@@ -1,8 +1,5 @@
-<% if (@mensaje.para < 0) %>
-	<%= form_for(@mensaje) do |f| %>
-<% else %>
-	<%= form_for(@mensaje) do |f| %>
-<% end %>
+<%= form_for(@mensaje) do |f| %>
+
 
 <div class="field">
     <%= f.hidden_field :de %>
