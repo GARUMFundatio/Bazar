@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101212202115) do
+ActiveRecord::Schema.define(:version => 20101217203620) do
 
   create_table "ciudades", :force => true do |t|
     t.string   "descripcion",              :default => "", :null => false
@@ -73,6 +73,21 @@ ActiveRecord::Schema.define(:version => 20101212202115) do
 
   add_index "empresas", ["user_id"], :name => "index_empresas_on_user_id"
 
+  create_table "empresasconsultas", :force => true do |t|
+    t.integer  "empresa_id"
+    t.string   "desc"
+    t.integer  "total_consultas"
+    t.integer  "total_respuestas"
+    t.integer  "total_resultados"
+    t.datetime "fecha_inicio"
+    t.datetime "fecha_fin"
+    t.text     "sql"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "empresasconsultas", ["empresa_id", "fecha_inicio"], :name => "index_empresasconsultas_on_empresa_id_and_fecha_inicio"
+
   create_table "empresasdatos", :force => true do |t|
     t.integer  "empresa_id"
     t.integer  "periodo"
@@ -85,6 +100,19 @@ ActiveRecord::Schema.define(:version => 20101212202115) do
   end
 
   add_index "empresasdatos", ["empresa_id", "periodo"], :name => "index_empresasdatos_on_empresa_id_and_periodo"
+
+  create_table "empresasresultados", :force => true do |t|
+    t.integer  "empresasconsulta_id"
+    t.integer  "cluster_id"
+    t.integer  "empresa_id"
+    t.string   "orden"
+    t.string   "enlace"
+    t.string   "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "empresasresultados", ["empresasconsulta_id", "orden"], :name => "index_empresasresultados_on_empresasconsulta_id_and_orden"
 
   create_table "gruposconfs", :force => true do |t|
     t.string   "desc"

@@ -158,6 +158,10 @@ form label:hover {
    display:none;
 }
 
+img {
+	border-width:0px;
+}
+
 input {
     cursor: pointer !important;
 }
