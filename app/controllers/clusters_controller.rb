@@ -48,7 +48,7 @@ class ClustersController < ApplicationController
   end
 
   def update
-    @cluster = Cluster.find(params[:id]).paginate(:page => params[:page], :per_page => 15)
+    @cluster = Cluster.find(params[:id])
 
     respond_to do |format|
       if @cluster.update_attributes(params[:cluster])
