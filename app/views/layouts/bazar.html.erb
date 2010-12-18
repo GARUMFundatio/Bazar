@@ -68,6 +68,7 @@
 				    <li><%= link_to "Mi cuenta",  edit_user_path(current_user.id) %> </li>
 				    <li><%= link_to "Mi empresa", edit_bazarcms_empresa_path(current_user.id) %> </li>
 					<li><%= link_to "Buscador Empresas", '/bazarcms/buscadorempresas' %> </li>
+					<li><%= link_to "Consultas Realizadas", bazarcms_empresasconsultas_path %> </li>
 	            </ul>
 				<% end %>
 
