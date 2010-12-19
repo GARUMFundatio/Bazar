@@ -26,5 +26,6 @@ Bazar::Application.routes.draw do
   match '/clusters/activar/:id' => 'clusters#activar', :constrants => { :id => /\d+/ }, :as => :activar_cluster
   match '/notificacion' => 'mensajes#notificacion', :as => :notificacion
   match '/enviarnotificacion' => 'mensajes#enviarnotificacion', :as => :enviarnotificacion
+  match '/updateinfo' => 'clusters#updateinfo', :as => :updateinfo
   
 end
