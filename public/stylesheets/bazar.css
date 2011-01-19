@@ -5,8 +5,8 @@
 }
 
 #header {     
-	color: #FBD600;           
-    background-color: #810E13;
+	color: #FDD900;           
+    background-color: #30537A;
     border-top-right-radius: 1em;
     border-top-left-radius: 1em;
     -moz-border-radius-topright: 1em;
@@ -44,8 +44,8 @@
 
 #footer {
     border-top: 1px solid black;
-    color: #FBD600;
-    background-color: #810E13;
+    color: #FDD900;
+    background-color: #30537A;
     border-bottom-right-radius: 1em;
     border-bottom-left-radius: 1em;
     -moz-border-radius-bottomright: 1em;
@@ -131,10 +131,7 @@ form > div > label {
     font-size: 13px !important;    
 }
 
-form label:hover {
-    cursor: pointer;
-    color: #5990B9;
-}
+
 
 #maxConcepts {
     width: 180px;
@@ -204,8 +201,8 @@ table.tabla {
 }
 
 table.tabla th {
-    background: #810E13;
-    color: #FBD600;
+    background: #30537A;
+    color: #FDD900;
 }
 
 table.tabla tr {
@@ -217,9 +214,6 @@ table.tabla td {
 	text-align: left;
 }
 
-table.tabla tr:hover {
-    border: 1px solid green;
-}
 
 .datostd {
 	text-align: right;
@@ -257,14 +251,6 @@ ul.tabs li a {
 	border: 1px solid #fff; /*--Gives the bevel look with a 1px white border inside the list item--*/
 	outline: none;
 }
-ul.tabs li a:hover {
-	background: #ccc;
-}
-html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
-	background: #fff;
-	border-bottom: 1px solid #fff; /*--Makes the active tab look like it's connected with its content--*/
-}
-
 .tab_container {
 	border: 1px solid #999;
 	border-top: none;

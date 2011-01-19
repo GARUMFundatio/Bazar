@@ -9,7 +9,7 @@ Bazar::Application.routes.draw do
   resources :user_sessions
   resources :ciudades
   
-  root :to => 'home#index'
+  root :to => 'home#home'
   
   # get 'login(.:format)' => 'user_sessions#new', :as => :login
   # post 'login(.:format)' => 'user_sessions#create', :as => :login

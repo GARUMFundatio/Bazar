@@ -4,6 +4,12 @@ class UserSessionsController < ApplicationController
   layout "bazar"
   def new
     @user_session = UserSession.new
+    if params[:display] == "inside"
+      render :layout => false
+    else
+      render
+    end
+    
   end
   
   def create
