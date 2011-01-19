@@ -131,8 +131,6 @@ form > div > label {
     font-size: 13px !important;    
 }
 
-
-
 #maxConcepts {
     width: 180px;
     background-color: white;
@@ -184,7 +182,7 @@ select {
 }
 #sidebar ul h3 {
   margin-top: 25px;
-  font-size: 16px;
+  font-size: 13px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
 }
@@ -224,7 +222,7 @@ ul.tabs {
 	padding: 0;
 	float: left;
 	list-style: none;
-	height: 32px; /*--Set height of tabs--*/
+	height: 30px; /*--Set height of tabs--*/
 	border-bottom: 1px solid #999;
 	border-left: 1px solid #999;
 	width: 650px;
@@ -233,8 +231,8 @@ ul.tabs li {
 	float: left;
 	margin: 0;
 	padding: 0;
-	height: 31px; /*--Subtract 1px from the height of the unordered list--*/
-	line-height: 31px; /*--Vertically aligns the text within the tab--*/
+	height: 28px; /*--Subtract 1px from the height of the unordered list--*/
+	line-height: 28px; /*--Vertically aligns the text within the tab--*/
 	border: 1px solid #999;
 	border-left: none;
 	margin-bottom: -1px; /*--Pull the list item down 1px--*/
@@ -260,7 +258,7 @@ ul.tabs li a {
 	background: #fff;
 }
 .tab_content {
-	padding: 8px;
+	padding: 6px;
 	font-size: 1.2em;
 }
 
