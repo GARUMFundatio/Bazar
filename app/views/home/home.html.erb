@@ -56,17 +56,18 @@
 		<div class="directorio">
 
 		  <div id="tabs2">
-
+		  <ul>
 		  <% ultima = "" %>
 		  <% @empresas = Bazarcms::Empresa.where("1 = 1").order("nombre asc")  %>
 		  <% for empre in @empresas %>
 			  <% if ultima != empre.nombre[0].chr %>
 			    <% ultima = empre.nombre[0].chr %>
-			    <ul>
+
 				    <li><a href="#tabs2-<%= empre.nombre[0].chr -%>"><%= empre.nombre[0].chr -%></a></li>
 			    </ul>
 		    <% end %>
 		  <% end %>
+	    </ul>
 
 
 			<div id="tabs2-G">
