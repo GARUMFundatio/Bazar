@@ -190,7 +190,7 @@ select {
   list-style-type: none;
 }
 #sidebar ul.links li {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
 table.tabla {
@@ -212,7 +212,6 @@ table.tabla td {
 	text-align: left;
 }
 
-
 .datostd {
 	text-align: right;
 }
@@ -225,7 +224,7 @@ ul.tabs {
 	height: 30px; /*--Set height of tabs--*/
 	border-bottom: 1px solid #999;
 	border-left: 1px solid #999;
-	width: 650px;
+	width: 645px;
 }
 ul.tabs li {
 	float: left;
@@ -245,7 +244,7 @@ ul.tabs li a {
 	color: #000;
 	display: block;
 	font-size: 1em;
-	padding: 0 10px;
+	padding: 0 5px;
 	border: 1px solid #fff; /*--Gives the bevel look with a 1px white border inside the list item--*/
 	outline: none;
 }
@@ -258,7 +257,7 @@ ul.tabs li a {
 	background: #fff;
 }
 .tab_content {
-	padding: 6px;
+	padding: 4px;
 	font-size: 1.2em;
 }
 
