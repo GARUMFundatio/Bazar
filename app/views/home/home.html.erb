@@ -61,19 +61,24 @@
 		  <% ultima = "" %>
 		  <% @empresas = Bazarcms::Empresa.where("1 = 1").order("nombre asc")  %>
 		  <% for empre in @empresas %>
-			  <% if ultima != empre.nombre[0].chr %>
-			    <% ultima = empre.nombre[0].chr %>
+			  <% if ultima != empre.nombre[0].chr.upcase %>
+			    <% ultima = empre.nombre[0].chr.upcase %>
 				<% letras += ultima %>
-				<li><a href="#tabs2-<%= empre.nombre[0].chr -%>"><%= empre.nombre[0].chr -%></a></li>
+				<li><a href="#tabs2-<%= empre.nombre[0].chr.upcase -%>"><%= empre.nombre[0].chr.upcase -%></a></li>
 		    <% end %>
 		  <% end %>
 	    </ul>
 
+		<% for ii in 0..letras.size-1  %>
+			<div id="tabs2-<%= letras[ii].chr -%>">
+				<%= letras[ii].chr -%><br/>
+				<% @empresas = Bazarcms::Empresa.where ('upper(substr(nombre,1,1)) = ?', [ letras[ii].chr ]).order('nombre desc')%>
+				<% for empre in @empresas %>
+					<%= empre.nombre %><br/>
+				<% end %>
 
-			<div id="tabs2-G">
-			<%= letras -%>
 			</div>
-			
+	    <% end %>
 			
 		  </div>	
 		</div>
