@@ -115,6 +115,13 @@ class MensajesController < ApplicationController
   
   def edit
     @mensaje = Mensaje.find(params[:id])
+    texto = "\n\n\n"
+
+    @mensaje.texto.each_line do |l|
+      texto += "> #{l}"
+    end
+    @mensaje.texto = texto
+    
   end
 
   def create
