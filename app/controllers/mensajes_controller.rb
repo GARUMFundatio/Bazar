@@ -112,7 +112,6 @@ class MensajesController < ApplicationController
     
   end
   
-  
   def edit
     @mensaje = Mensaje.find(params[:id])
     texto = "\n\n\n"
@@ -129,6 +128,10 @@ class MensajesController < ApplicationController
 
     respond_to do |format|
       if @mensaje.save
+        BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
+                                  User.find(@mensaje.para).email, 
+                                  @mensaje.asunto, 
+                                  @mensaje.texto).deliver
         if @mensaje.tipo == 'M'
           format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
         else
@@ -157,6 +160,10 @@ class MensajesController < ApplicationController
     
     respond_to do |format|
       if @mensaje2.save
+        BazarMailer.enviamensaje(User.find(@mensaje2.de).email, 
+                                  User.find(@mensaje2.para).email, 
+                                  @mensaje2.asunto, 
+                                  @mensaje2.texto).deliver
         if @mensaje2.tipo == 'M'
           format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
         else

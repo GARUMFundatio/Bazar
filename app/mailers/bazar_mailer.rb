@@ -10,4 +10,15 @@ class BazarMailer < ActionMailer::Base
     mail(:from => "no-replay@garumfundatio.org", :to => "juantomas.garcia@gmail.com", :subject => "Pruebas")
   end
 
+  def enviamensaje(de, para, asunto, texto)  
+    @de = de
+    @para = para
+    @asunto = asunto
+    @texto = texto
+    
+    logger.debug ("Enviando correo De: #{de} a #{para} -> asunto: #{asunto}")
+    
+    mail(:from => de, :to => para, :subject => asunto)  
+  end
+
 end
