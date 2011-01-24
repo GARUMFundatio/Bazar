@@ -1,6 +1,8 @@
 class NoticiasController < ApplicationController
   # GET /noticias
   # GET /noticias.xml
+  
+  layout "bazar"
   def index
     @noticias = Noticia.all
 
@@ -25,7 +27,7 @@ class NoticiasController < ApplicationController
   # GET /noticias/new.xml
   def new
     @noticia = Noticia.new
-
+    @noticia.visible = 1
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @noticia }
@@ -44,7 +46,7 @@ class NoticiasController < ApplicationController
 
     respond_to do |format|
       if @noticia.save
-        format.html { redirect_to(@noticia, :notice => 'Noticia was successfully created.') }
+        format.html { redirect_to(@noticia, :notice => 'Se ha creado correctamente la noticia') }
         format.xml  { render :xml => @noticia, :status => :created, :location => @noticia }
       else
         format.html { render :action => "new" }
@@ -60,7 +62,7 @@ class NoticiasController < ApplicationController
 
     respond_to do |format|
       if @noticia.update_attributes(params[:noticia])
-        format.html { redirect_to(@noticia, :notice => 'Noticia was successfully updated.') }
+        format.html { redirect_to(@noticia, :notice => 'Noticia actualizada correctamente') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

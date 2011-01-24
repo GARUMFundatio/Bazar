@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101217203620) do
+ActiveRecord::Schema.define(:version => 20110124111021) do
 
   create_table "ciudades", :force => true do |t|
     t.string   "descripcion",              :default => "", :null => false
@@ -135,6 +135,17 @@ ActiveRecord::Schema.define(:version => 20101217203620) do
 
   add_index "mensajes", ["de", "fecha"], :name => "index_mensaje_de"
   add_index "mensajes", ["para", "fecha"], :name => "index_mensaje_para"
+
+  create_table "noticias", :force => true do |t|
+    t.text     "titulo"
+    t.text     "texto"
+    t.datetime "fecha"
+    t.integer  "visible"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "noticias", ["fecha"], :name => "index_noticia_fecha"
 
   create_table "paises", :force => true do |t|
     t.string   "descripcion", :limit => 100, :null => false

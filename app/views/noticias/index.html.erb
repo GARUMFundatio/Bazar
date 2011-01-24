@@ -1,8 +1,8 @@
-<h1>Listing noticias</h1>
+<h1>Noticias</h1>
 
-<table>
+<table class="tabla">
   <tr>
-    <th>Titulo</th>
+    <th>Título</th>
     <th>Texto</th>
     <th>Fecha</th>
     <th>Visible</th>
@@ -17,13 +17,13 @@
     <td><%= noticia.texto %></td>
     <td><%= noticia.fecha %></td>
     <td><%= noticia.visible %></td>
-    <td><%= link_to 'Show', noticia %></td>
-    <td><%= link_to 'Edit', edit_noticia_path(noticia) %></td>
-    <td><%= link_to 'Destroy', noticia, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag('lupa.png'), noticia %></td>
+    <td><%= link_to image_tag('pencil.png'), edit_noticia_path(noticia) %></td>
+    <td><%= link_to image_tag('delete.png'), noticia, :confirm => 'Seguro que quiere borrar esta noticia?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Noticia', new_noticia_path %>
+<%= link_to 'Publicar una noticia', new_noticia_path %>
