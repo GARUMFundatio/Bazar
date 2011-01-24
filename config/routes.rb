@@ -1,4 +1,6 @@
 Bazar::Application.routes.draw do
+  resources :noticias
+
   resources :clusters
 
   resources :mensajes

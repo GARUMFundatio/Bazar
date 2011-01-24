@@ -1,0 +1,33 @@
+<%= form_for(@noticia) do |f| %>
+  <% if @noticia.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@noticia.errors.count, "error") %> prohibited this noticia from being saved:</h2>
+
+      <ul>
+      <% @noticia.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br />
+    <%= f.text_area :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :texto %><br />
+    <%= f.text_area :texto %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :visible %><br />
+    <%= f.text_field :visible %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
