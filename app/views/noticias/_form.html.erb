@@ -30,16 +30,20 @@
 			
 		$(function() {
 			$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
-			$( "#fecha" ).datepicker( $.datepicker.regional[ "es" ] );
+			$( "#noticia_fecha" ).datepicker( $.datepicker.regional[ "es" ] );
 		});
 	
 		</script>
-		
-	<input type="text" id="fecha" value="<%= @noticia.fecha.strftime("%d-%m-%Y") -%>"/>
+	
+	<% if !@noticia.fecha.nil? %>	
+		<input type="text" name="noticia[fecha]" id="noticia_fecha" value="<%= @noticia.fecha.strftime("%d-%m-%Y") -%>"/>
+	<% else %>
+		<input type="text" name="noticia[fecha]" id="noticia_fecha" value="<%= DateTime.now.strftime("%d-%m-%Y") -%>"/>
+	<% end %>
 </div>
   <div class="field">
-    <%= f.label :visible %><br />
-    <%= f.check_box :visible %>
+    <%= f.check_box :visible %> <%= f.label :visible %><br />
+    
   </div>
   <div class="actions">
     <%= f.submit %>

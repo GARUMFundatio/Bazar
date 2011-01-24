@@ -4,7 +4,7 @@ class NoticiasController < ApplicationController
   
   layout "bazar"
   def index
-    @noticias = Noticia.all
+    @noticias = Noticia.where("1 = 1").order("fecha desc").paginate(:page => params[:page], :per_page => 15)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,6 +28,7 @@ class NoticiasController < ApplicationController
   def new
     @noticia = Noticia.new
     @noticia.visible = 1
+    @noticia.fecha = DateTime.now
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @noticia }
@@ -43,10 +44,10 @@ class NoticiasController < ApplicationController
   # POST /noticias.xml
   def create
     @noticia = Noticia.new(params[:noticia])
-
+    @noticia.fecha = params[:fecha]
     respond_to do |format|
       if @noticia.save
-        format.html { redirect_to(@noticia, :notice => 'Se ha creado correctamente la noticia') }
+        format.html { redirect_to(noticias_path) }
         format.xml  { render :xml => @noticia, :status => :created, :location => @noticia }
       else
         format.html { render :action => "new" }
@@ -59,10 +60,14 @@ class NoticiasController < ApplicationController
   # PUT /noticias/1.xml
   def update
     @noticia = Noticia.find(params[:id])
-
+    f = params[:noticia][:fecha].split(/-\//)
+    params[:noticia][:fecha]="#{f[2]}-#{f[1]}-#{f[0]}"
+    logger.debug "-----> #{f.inspect} fecha  #{params.inspect}"
+    # @noticia.fecha = params[:fecha]
+    
     respond_to do |format|
       if @noticia.update_attributes(params[:noticia])
-        format.html { redirect_to(@noticia, :notice => 'Noticia actualizada correctamente') }
+        format.html { redirect_to(noticias_path) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
