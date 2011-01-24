@@ -8,6 +8,7 @@ class CreateNoticias < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index "noticias", ["fecha"], :name => "index_noticia_fecha"
   end
 
   def self.down
