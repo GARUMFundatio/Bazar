@@ -1,3 +1,5 @@
+require "rexml/document"
+
 class NoticiasController < ApplicationController
   # GET /noticias
   # GET /noticias.xml
@@ -8,8 +10,10 @@ class NoticiasController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @noticias }
+      format.xml { render :xml => @noticias }
+      format.rss { render :layout => false }
     end
+    
   end
 
   # GET /noticias/1
@@ -20,6 +24,7 @@ class NoticiasController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @noticia }
+      
     end
   end
 
@@ -44,7 +49,9 @@ class NoticiasController < ApplicationController
   # POST /noticias.xml
   def create
     @noticia = Noticia.new(params[:noticia])
-    @noticia.fecha = params[:fecha]
+    f = params[:noticia][:fecha].split(/-\//)
+    params[:noticia][:fecha]="#{f[2]}-#{f[1]}-#{f[0]}"
+    
     respond_to do |format|
       if @noticia.save
         format.html { redirect_to(noticias_path) }
