@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110124111021) do
+ActiveRecord::Schema.define(:version => 20110126163422) do
 
   create_table "ciudades", :force => true do |t|
     t.string   "descripcion",              :default => "", :null => false
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110124111021) do
     t.integer  "moneda"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
   end
 
   add_index "empresas", ["user_id"], :name => "index_empresas_on_user_id"

@@ -40,6 +40,14 @@
 			</div>
 			<div id="sidebar" >
 	        <ul id="sidebar-items">
+			
+				<% if current_user.nil? %>
+				<h3>RSS</h3>
+				<ul class="links">
+					<li><%= image_tag('feed.png')-%> <%= link_to("Noticias", "/noticias.rss") -%></li>
+				</ul>
+			
+				<% end %>
 			  <li>
 		            <ul class="links">
 		              
@@ -130,7 +138,7 @@
 
 		<div id="footer" class="span-24 last">
 	 		<div class="span-5 append-1 append-bottom">
-	    		&nbsp;&nbsp;&nbsp;&nbsp;Garum Fundatio
+	    		&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://garumfundatio.org" style="text-decoration: none">Garum Fundatio</a>
 	 		</div>
 		</div> <!-- fin footer-->
 

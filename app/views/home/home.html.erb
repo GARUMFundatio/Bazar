@@ -65,13 +65,22 @@
 	    </ul>
 
 		<% for ii in 0..letras.size-1  %>
+			<% ll = letras[ii].chr %>
 			<div id="tabs2-<%= letras[ii].chr -%>">
 				
 				<% @empresas = Bazarcms::Empresa.where ('upper(substr(nombre,1,1)) = ?', [ letras[ii].chr ]).order('nombre desc')%>
+				<div id="listadoempresas<%= ll -%>">
+				
 				<% for empre in @empresas %>
-					<%= empre.nombre %><br/>
+					<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#listadoempresas<%= ll -%>').hide();$('#datos<%= ll -%>').load('/bazarcms/empresas/<%= empre.id -%>');$('#datosempresas<%= ll -%>').show();"> <%= image_tag('lupa.png') -%> </a><br/>
 				<% end %>
-
+				
+				</div>
+				<div id="datosempresas<%= ll -%>" style="display:none">
+					<a href="#" onclick="$('#listadoempresas<%= ll -%>').show(); $('#datosempresas<%= ll -%>').hide();">Cerrar Información</a><br/><br/>
+					<div id="datos<%= ll -%>">
+					</div>
+				</div>
 			</div>
 	    <% end %>
 			
