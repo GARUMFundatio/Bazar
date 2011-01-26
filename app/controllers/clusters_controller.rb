@@ -1,5 +1,7 @@
 class ClustersController < ApplicationController
 
+  before_filter :require_user, :only => [:index,:show,:edit,:activar,:create,:update, :destroy, :updateinfo]
+
   layout "bazar"
   
   def index
