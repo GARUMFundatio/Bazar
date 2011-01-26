@@ -1,8 +1,10 @@
 Bazar::Application.routes.draw do
+
+  root :to => 'home#home'
+  match '/noticias.rss' => 'noticias#rss'
+
   resources :noticias
-
   resources :clusters
-
   resources :mensajes
   resources :gruposconfs
   resources :confs
@@ -11,7 +13,6 @@ Bazar::Application.routes.draw do
   resources :user_sessions
   resources :ciudades
   
-  root :to => 'home#home'
   
   # get 'login(.:format)' => 'user_sessions#new', :as => :login
   # post 'login(.:format)' => 'user_sessions#create', :as => :login
@@ -29,5 +30,4 @@ Bazar::Application.routes.draw do
   match '/notificacion' => 'mensajes#notificacion', :as => :notificacion
   match '/enviarnotificacion' => 'mensajes#enviarnotificacion', :as => :enviarnotificacion
   match '/updateinfo' => 'clusters#updateinfo', :as => :updateinfo
-    
 end

@@ -1,6 +1,10 @@
 require "rexml/document"
 
 class NoticiasController < ApplicationController
+  
+  # before_filter :require_no_user, :only => [:index]
+  # before_filter :require_user 
+  
   # GET /noticias
   # GET /noticias.xml
   
@@ -9,13 +13,21 @@ class NoticiasController < ApplicationController
     @noticias = Noticia.where("1 = 1").order("fecha desc").paginate(:page => params[:page], :per_page => 15)
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml { render :xml => @noticias }
-      format.rss { render :layout => false }
+      if current_user_is_admin || current_user_is_dinamizador
+        format.html # index.html.erb
+        format.xml { render :xml => @noticias }
+      else 
+        format.rss { render :layout => false }
+      end 
     end
     
   end
 
+  def rss
+    @noticias = Noticia.where("1 = 1").order("fecha desc").paginate(:page => params[:page], :per_page => 15)
+    render :layout => false
+  end 
+  
   # GET /noticias/1
   # GET /noticias/1.xml
   def show
