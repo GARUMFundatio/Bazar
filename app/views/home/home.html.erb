@@ -72,7 +72,7 @@
 				<div id="listadoempresas<%= ll -%>">
 				
 				<% for empre in @empresas %>
-					<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#listadoempresas<%= ll -%>').hide();$('#datos<%= ll -%>').load('/bazarcms/empresas/<%= empre.id -%>');$('#datosempresas<%= ll -%>').show();"> <%= image_tag('lupa.png') -%> </a><br/>
+					<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#listadoempresas<%= ll -%>').hide();$('#datos<%= ll -%>').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#datosempresas<%= ll -%>').show();"> <%= image_tag('lupa.png') -%> </a><br/>
 				<% end %>
 				
 				</div>
