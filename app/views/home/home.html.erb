@@ -98,13 +98,27 @@
 	
 	<div id="tabs-4">
 	
-	<b>Total Empresas:</b> <%= Bazarcms::Empresa.size %> <br/>
+	<b>Total Empresas:</b> <%= Bazarcms::Empresa.count_by_sql("select count(*) from empresas") %> <br/>
+	<b>Total Consultas Realizadas:</b> <%= Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas") %> <br/>
+	<br/>
+	<b>Nuevas Empresas en este bazar:</b> <br/>
+
+	<% for empre in @ultimas %>
+		<%= link_to(empre.nombre, empre.url) -%><br/>
+	<% end %>
+	
+	<br/>
+	<b>Ultimas Empresas Actualizadas en este bazar:</b> <br/>
+
+	<% for empre in @actualizadas %>
+		<%= link_to(empre.nombre, empre.url) -%><br/>
+	<% end %>
 	
 	</div>
 
 	<div id="tabs-5">
 		<br/>
-		Seguimos en Beta pero ya puedes darte de alta y empezar a usar este Bazar. Todos los días vamos incorporando nuevas funcionalidades. 
+		Estamos en Beta pero ya puedes darte de alta y empezar a usar este Bazar. Todos los días vamos incorporando nuevas funcionalidades. 
 		<br/><br/>
 		¿Quieres ser de los primeros? Envíanos un correo a: info (arroba) garumfundatio.org 
 		<br/><br/>

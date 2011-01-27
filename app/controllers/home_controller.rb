@@ -7,7 +7,8 @@ class HomeController < ApplicationController
   end
 
   def home
-    
+    @ultimas = Bazarcms::Empresa.ultimascreadas
+    @actualizadas = Bazarcms::Empresa.ultimasactualizadas
   end 
   
 end
