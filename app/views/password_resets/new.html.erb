@@ -7,7 +7,7 @@ Introduzca su correo y pulse "Cambiar Contraseña".
 
 <% form_tag password_resets_path do %>
 
-  <%= text_field_tag :email, :size => 45 %>
+  <%= text_field_tag :email %>
   <br/><br/>
   <%= submit_tag "Cambiar Contraseña" %> <%= link_to("Inicio", "/") %>
 <% end %>
