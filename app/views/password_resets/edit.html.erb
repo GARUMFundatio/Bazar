@@ -1,8 +1,11 @@
-<h1>Actualizar Contraseña</h1>
+<h3>Cambiar Contraseña</h3>
 
-<p>Introduzca la nueva contraseña y pulse "Actualizar".</p>
-
-<% form_tag password_reset_path, :method => :put do %>
-  <%= password_field_tag :password %>
-  <%= submit_tag "Actualizar" %>
+<% form_for @user, :url => password_reset_path, :method => :put do |f| %>
+  <%= f.label :password %><br />
+  <%= f.password_field :password %><br />
+  <br />
+  <%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %><br />
+  <br />
+  <%= f.submit "Actualizar y entrar en Bazar" %>
 <% end %>

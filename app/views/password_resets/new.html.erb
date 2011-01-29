@@ -3,11 +3,11 @@
 <%= flash[:error] %><br/>
 
 Introduzca su correo y pulse "Cambiar Contraseña".
-<br/>
+<br/><br/>
 
 <% form_tag password_resets_path do %>
 
-  <%= text_field_tag :email %>
+  <%= text_field_tag :email, :size => 45 %>
   <br/><br/>
-  <%= submit_tag "Cambiar Contraseña" %>
+  <%= submit_tag "Cambiar Contraseña" %> <%= link_to("Inicio", "/") %>
 <% end %>
