@@ -68,7 +68,7 @@
 			<% ll = letras[ii].chr %>
 			<div id="tabs2-<%= letras[ii].chr -%>">
 				
-				<% @empresas = Bazarcms::Empresa.where ('upper(substr(nombre,1,1)) = ?', [ letras[ii].chr ]).order('nombre desc')%>
+				<% @empresas = Bazarcms::Empresa.where('upper(substr(nombre,1,1)) = ?', [ letras[ii].chr ]).order('nombre desc')%>
 				<div id="listadoempresas<%= ll -%>">
 				
 				<% for empre in @empresas %>
