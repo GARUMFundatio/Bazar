@@ -5,7 +5,7 @@ ActiveSupport::Inflector.inflections.clear
 # Agregamos las reglas de inflección
 ActiveSupport::Inflector.inflections do |inflect|
 
-  puts "bazar:: nuevos inflectors"
+puts "bazar:: nuevos inflectors"
 
 inflect.plural /([aeiou])([A-Z]|_|$)/, '\1s\2'
 inflect.plural /([rlnd])([A-Z]|_|$)/, '\1es\2'
@@ -20,6 +20,7 @@ inflect.irregular 'user', 'users'
 inflect.irregular 'rol', 'roles'
 inflect.irregular 'account', 'accounts'
 inflect.irregular 'password', 'passwords'
+inflect.irregular 'password_reset', 'password_resets'
 inflect.irregular 'conf', 'confs'
 inflect.irregular 'session', 'sessions'
 inflect.irregular 'tagging', 'taggings'
@@ -30,7 +31,4 @@ inflect.irregular 'pais', 'paises'
 inflect.irregular 'cluster', 'clusters'
 inflect.irregular 'noticia', 'noticias'
 
-
-
-# inflect.irregular 'ubicacion', 'ubicaciones'
 end

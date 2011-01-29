@@ -1,8 +1,13 @@
-<h1>Cambiar Contraseña</h1>
+<h3>Cambiar Contraseña</h3>
 
-<p>Introduzca su correo y pulse "Cambiar Contraseña".</p>
+<%= flash[:error] %><br/>
+
+Introduzca su correo y pulse "Cambiar Contraseña".
+<br/>
 
 <% form_tag password_resets_path do %>
+
   <%= text_field_tag :email %>
+  <br/>
   <%= submit_tag "Cambiar Contraseña" %>
 <% end %>

@@ -12,7 +12,7 @@ Bazar::Application.routes.draw do
   resources :roles
   resources :user_sessions
   resources :ciudades
-  
+  resources :password_resets
   
   # get 'login(.:format)' => 'user_sessions#new', :as => :login
   # post 'login(.:format)' => 'user_sessions#create', :as => :login

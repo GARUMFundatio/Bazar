@@ -1,9 +1,10 @@
 
 class PasswordResetsController < ApplicationController
-  before_filter :require_no_user
   before_filter :load_user_using_perishable_token, :only => [ :edit, :update ]
+  before_filter :require_no_user
 
   def new
+    render :layout => false 
   end
 
   def create
@@ -11,7 +12,7 @@ class PasswordResetsController < ApplicationController
     if @user
       @user.deliver_password_reset_instructions!
       flash[:notice] = "Se han enviado instrucciones a tu dirección de correo"
-      redirect_to root_path
+      redirect_to "/"
     else
       flash[:error] = "Esta dirección no se corresponde con ningún usuario: #{params[:email]}"
       render :action => :new
@@ -19,6 +20,9 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
+  end
+
+  def show
   end
 
   def update
