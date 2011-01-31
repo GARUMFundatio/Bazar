@@ -20,6 +20,9 @@ RAILS_ENV=production rake bazar:setup_dirs
 echo "Creando usuarios en la BD" 
 RAILS_ENV=production rake bazar:create_users 
 
+echo "Instalando jquery" 
+RAILS_ENV=productionrails generate jquery:install
+
 
 echo "Creando las tablas de la base de datos" 
 RAILS_ENV=production rake db:migrate

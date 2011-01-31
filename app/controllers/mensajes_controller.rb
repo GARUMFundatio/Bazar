@@ -99,6 +99,12 @@ class MensajesController < ApplicationController
       @mensaje = Mensaje.new(params[:mensaje])
       @mensaje.para = user.id 
       @mensaje.save
+      
+      BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
+                                User.find(@mensaje.para).email, 
+                                @mensaje.asunto, 
+                                @mensaje.texto).deliver
+      
     end 
 
     respond_to do |format|
