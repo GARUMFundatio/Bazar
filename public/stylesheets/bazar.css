@@ -5,7 +5,6 @@
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size:   11px;
   line-height: 18px;
 }
@@ -68,7 +67,8 @@ body {
 /*estructura*/
 
 body {
-    text-align: center;}
+    text-align: center;
+}
 
 
 /* jt */ 
@@ -272,11 +272,12 @@ select {
   margin-bottom: 4px;
 }
 
+/* tablas */
+
 table.tabla {
     width: 96%;
     font-size: 16px;
     line-height: 1.2;
-    border: 1px solid #497BAF;
     background: white;
 }
 
@@ -288,6 +289,12 @@ table.tabla th {
     padding:.3em .4em;
     background: #30537A;
     color: #FDD900;
+    -moz-border-radius-topleft:10px;
+    -webkit-border-top-left-radius:10px;
+    border-top-left-radius:10px
+    -moz-border-radius-topright:10px;
+    -webkit-border-top-right-radius:10px;
+    border-top-right-radius:10px
 }
 
 table.tabla tr {
