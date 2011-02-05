@@ -65,9 +65,14 @@ body {
     font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
 }
 
+/*estructura*/
+
+body {
+    text-align: center;}
+
 
 .body {
-	width: 960x;
+	width: 100%;
 	overflow: hidden;
     background: #F9F9F9;
 }
@@ -87,11 +92,10 @@ body {
 
 
 .container {
-	width: 960px;
+	width: 920px;
     font-size: 13px;
     background-color: #FFF;
-    margin-top: 20px !important;
-    margin-bottom: 20px !important;
+    margin: 20px auto !important;
     border: 1px solid black;
     border-radius: 1em;
     -moz-border-radius: 1em;
@@ -99,6 +103,7 @@ body {
     box-shadow: 0px 0px 15px #888;
     -moz-box-shadow: 0px 0px 15px #888;
     -webkit-box-shadow: 0px 0px 15px #888;
+    text-align: right;
 }
 
 #content {
