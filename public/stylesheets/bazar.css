@@ -286,7 +286,7 @@ table.tabla table {
 }
 
 table.tabla th {
-    padding:.3em .4em;
+    padding:.4em .6em;
     background: #30537A;
     color: #FDD900;
     -moz-border-radius-topleft:10px;
@@ -301,8 +301,8 @@ table.tabla tr {
     background: white;
 }
 
-table.tabla td {
-    padding:.3em .4em;
+table.tabla table td {
+    padding:.4em .6em;
     border-bottom: 1px solid #cdcdcd;
 	text-align: left;
 }
