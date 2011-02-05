@@ -71,7 +71,7 @@ body {
 }
 
 
-/* jt */ 
+/* jt */
 
 
 .container {
@@ -205,7 +205,7 @@ body {
 }
 
 form > div > label {
-    font-size: 13px !important;    
+    font-size: 13px !important;
 }
 
 #maxConcepts {
@@ -250,8 +250,11 @@ select {
 #sidebar {
   display: inline;
   float: left;
-  width: 220px;
+  width: 219px;
   padding: 16px 20px;
+  background: #F1E7B5;
+  border-left: 1px solid #DED39B;
+  color: #7D6B5D;
 }
 
 
@@ -260,13 +263,16 @@ select {
   padding-left: 0;
 }
 #sidebar ul h3 {
-  margin-top: 25px;
-  font-size: 13px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ccc;
+  margin: 25px 0 10px;
+  font-size: 16px;
+  padding: 0 2px 8px;
+  border-bottom: 1px solid #DBCE8E;
 }
 #sidebar li {
+  padding: 0 2px;
   list-style-type: none;
+  font-size: 15px;
+  line-height: 1.4;
 }
 #sidebar ul.links li {
   margin-bottom: 4px;
@@ -274,9 +280,9 @@ select {
 
 /* tablas */
 
-table.tabla {
+#contenido table.tabla {
     width: 100%;
-    font-size: 16px;
+    font-size: 50px;
     line-height: 1.1;
     background: white;
 }
@@ -286,26 +292,63 @@ table.tabla table {
 }
 
 table.tabla th {
-    padding:.4em .6em;
-    background: #30537A;
-    color: #FDD900;
+    padding:.4em .8em;
+    border-bottom: 1px solid #A5BFDB;
     -moz-border-radius-topleft:10px;
     -webkit-border-top-left-radius:10px;
     border-top-left-radius:10px;
     -moz-border-radius-topright:10px;
     -webkit-border-top-right-radius:10px;
-    border-top-right-radius:10px
+    border-top-right-radius:10px;
+    text-align: left;
+    background: #30537A;
+    color: #FDD900;
 }
 
 table.tabla tr {
     background: white;
 }
 
+table.tabla td {
+    padding: 0;}
+
 table.tabla table td {
-    padding:.4em .6em;
-    border-bottom: 1px solid #cdcdcd;
+    padding:.4em .6em .5em .8em;
+    border: 1px solid #cdcdcd;
+    border-top: none;
+    font-size: 14px;
 	text-align: left;
 }
+
+table.tabla table tr:last-child td {
+    border-bottom: 2px solid #ccc;
+}
+
+table.tabla table tr:last-child td:first-child {
+    -moz-border-radius-bottomleft:10px;
+    -webkit-border-bottom-left-radius:10px;
+    border-bottom-left-radius:10px;
+}
+
+table.tabla table tr:last-child td:last-child {
+    -moz-border-radius-bottomright:10px;
+    -webkit-border-bottom-right-radius:10px;
+    border-bottom-right-radius:10px;
+}
+
+table.tabla table td a {
+text-decoration: none;}
+
+table.tabla table td a:hover,
+table.tabla table td a:focus,
+table.tabla table td a:active {
+    text-decoration: underline;
+}
+
+table.tabla table tr:hover td {
+    background: #E0E8F0;
+    }
+
 
 .datostd {
 	text-align: right;
