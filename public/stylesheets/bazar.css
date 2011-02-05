@@ -1,9 +1,15 @@
 /* Estilos */
 
+/* =FUENTES
+--------------------------- */
+body {
+    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+}
+
 
 .body {
-	float: top;
 	width: 960x;
+	overflow: hidden;
     background: #F9F9F9;
 }
 
@@ -36,16 +42,11 @@
     -webkit-box-shadow: 0px 0px 15px #888;
 }
 
-#content {
-	float: left;
-    background: #F9F9F9;
-	width: 960px;
-}
-
 #contenido {
-	float: left;
+    float: left;
     background: #F9F9F9;
-	width: 700px;
+	width: 660px;
+	padding: 20px;
 }
 
 #footer {
@@ -177,8 +178,10 @@ select {
 
 
 #sidebar {
+  display: inline;
   float: left;
-  width: 175px;
+  width: 220px;
+  padding: 16px 20px;
 }
 
 
