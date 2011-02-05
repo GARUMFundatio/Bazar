@@ -23,10 +23,8 @@
 	  <div id="header" class="span-24 last">
 	    <div class="span-23 prepend-1">
 	      <div class="span-23 last">
-			<br/>
 		      <h1 align="center"><%= h BZ_param("Titular") %></h1>
 	          <h2 align="center"><%= h BZ_param("Subtitular") %></h2>
-			<br/>
 	      </div>
 	    </div>
 	  </div>
@@ -35,11 +33,7 @@
 			<div class="body">
 
 			<div id="contenido" >
-				<br />
 				<%= content_for?(:bazarcontent) ? yield(:bazarcontent) : yield %>
-				<br/>
-				<br/>
-	  		
 			</div>
 			<div id="sidebar" >
 	        <ul id="sidebar-items">
