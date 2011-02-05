@@ -15,8 +15,8 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
+a { color: #24568E; }
+a:visited { color: #527CAD; }
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -275,9 +275,9 @@ select {
 /* tablas */
 
 table.tabla {
-    width: 96%;
+    width: 100%;
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.1;
     background: white;
 }
 
@@ -291,7 +291,7 @@ table.tabla th {
     color: #FDD900;
     -moz-border-radius-topleft:10px;
     -webkit-border-top-left-radius:10px;
-    border-top-left-radius:10px
+    border-top-left-radius:10px;
     -moz-border-radius-topright:10px;
     -webkit-border-top-right-radius:10px;
     border-top-right-radius:10px
@@ -303,7 +303,7 @@ table.tabla tr {
 
 table.tabla td {
     padding:.3em .4em;
-    background: #e9e9e9;
+    border-bottom: 1px solid #cdcdcd;
 	text-align: left;
 }
 
