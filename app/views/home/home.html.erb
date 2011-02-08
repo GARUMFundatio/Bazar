@@ -20,10 +20,8 @@
 
 		  <% @noticias = Noticia.where("visible = 1").order("fecha desc").limit(5)  %>
 		  <% for noticia in @noticias %>
-			<b><%= noticia.fecha.strftime("%d-%m-%Y") -%> <%= noticia.titulo -%></b> 
-			<br />
-			<%= noticia.texto -%> 
-			<br/><br/>
+			<h3><span class="fecha"><%= noticia.fecha.strftime("%d-%m-%Y") -%></span> <%= noticia.titulo -%></h3>
+			<p><%= noticia.texto -%></p>
 
 		  <% end %>
 		
