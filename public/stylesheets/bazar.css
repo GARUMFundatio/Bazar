@@ -138,6 +138,25 @@ body {
 	padding: 20px;
 }
 
+#contenido #tabs h3 {
+    font-size: 18px;
+}
+
+#contenido #tabs h3 span.fecha {
+    display: inline;
+    float: left;
+    padding: 4px 5px;
+    margin: 3px 7px 0 0;
+    border-radius: .5em;
+    -moz-border-radius: .5em;
+    -webkit-border-radius: .5em;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 13px;
+    background: #648BB7;
+    color: #fff;
+}
+
 #footer {
     border-top: 1px solid black;
     color: #FDD900;
