@@ -157,6 +157,11 @@ body {
     color: #fff;
 }
 
+#contenido #tabs p {
+    margin: .5em 0 1em;
+    font-size: 16px;
+}
+
 #footer {
     border-top: 1px solid black;
     color: #FDD900;
