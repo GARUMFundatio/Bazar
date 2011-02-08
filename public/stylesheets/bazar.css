@@ -91,7 +91,8 @@ body {
 
 
 #header {
-    padding: 2.5em;
+    position: relative;
+    height: 100px;
     color: #FDD900;
     background-color: #30537A;
     border-top-right-radius: 1em;
@@ -103,14 +104,17 @@ body {
 }
 
 #title {
-    margin: 0 0 .2em;
-    font-size: 2.5em;
-    line-height: 1;
-    text-align: left;
-    color: #FDD937;
+    display: inline;
+    float: left;
+    width: 361px;
+    height: 78px;
+    margin: 10px;
+    text-indent: -9999px;
+    background: url(images/logo-bazar.png) no-repeat 0 0;
 }
 
 #slogan {
+    padding: 2.3em 0 0 0;
     margin: 0;
     font-size: 1.5em;
     text-align: left;
@@ -255,6 +259,7 @@ select {
   display: inline;
   float: left;
   width: 219px;
+  height: 100%;
   padding: 16px 20px;
   background: #F1E7B5;
   border-left: 1px solid #DED39B;
