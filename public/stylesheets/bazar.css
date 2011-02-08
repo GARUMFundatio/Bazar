@@ -128,7 +128,7 @@ body {
 .body {
 	width: 100%;
 	overflow: hidden;
-    background: #F9F9F9;
+    background: #fff url(/images/fondo-sidebar.png) repeat-y top right;
 }
 
 #contenido {
