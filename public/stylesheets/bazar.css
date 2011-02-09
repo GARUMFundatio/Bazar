@@ -75,7 +75,8 @@ body {
 
 
 .container {
-	width: 960px;
+    position: relative;
+    width: 960px;
 	overflow: hidden;
     background-color: #FFF;
     margin: 20px auto !important;
