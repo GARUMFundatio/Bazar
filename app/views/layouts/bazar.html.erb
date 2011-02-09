@@ -46,12 +46,12 @@
 			
 				<% end %>
 			  <li>
-		            <ul class="links">
+		            <ul id="user-menu" class="links">
 		              
 							<% if !current_user.nil? %>
 								<li class="user-logout">
 								<%= link_to current_user.login,  edit_user_path(current_user.id) %>
-								<%= link_to(image_tag('logout.png'),  "/logout") %>
+								<%= link_to(image_tag('icono-logout.png'),  "/logout") %>
 								</li>
 								<li class="user-messages">
 								<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N") %>
