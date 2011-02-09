@@ -313,6 +313,10 @@ select {
   margin-bottom: 4px;
 }
 
+#sidebar ul.links li img {
+    vertical-align: middle;
+}
+
 /* menu de usuario logueado */
 #sidebar #sidebar-items #user-menu {
     position: absolute;
@@ -340,6 +344,9 @@ select {
     padding-left: 3px;
     border-left: 1px solid #999;
 }
+#sidebar-items #user-menu .user-logout a:last-child img {
+    padding: 3px 5px 3px;
+}
 
 #sidebar #user-menu a {
     font-size: 13px;
@@ -347,13 +354,9 @@ select {
 }
 
 #sidebar-items #user-menu a img {
-    padding: 3px 6px 3px;
-    vertical-align: middle;
     text-decoration: none;
     background: #244367;
 }
-
-
 /* tablas */
 
 #content h3 {
