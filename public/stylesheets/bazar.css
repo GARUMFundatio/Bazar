@@ -307,9 +307,51 @@ select {
   font-size: 15px;
   line-height: 1.4;
 }
+
 #sidebar ul.links li {
   margin-bottom: 4px;
 }
+
+/* menu de usuario logueado */
+#sidebar #sidebar-items #user-menu {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 222px;
+    padding: 10px;
+    border: 1px solid #1A3655;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    background: #244367;
+    color: #b8cde1;
+}
+
+#sidebar #user-menu .user-messages {
+    margin-bottom: 0;
+}
+
+#sidebar-items #user-menu .user-logout a {
+    margin-right: 8px;
+}
+
+#sidebar-items #user-menu .user-logout a:last-child {
+    padding-left: 3px;
+    border-left: 1px solid #999;
+}
+
+#sidebar #user-menu a {
+    font-size: 13px;
+    color: #b8cde1;
+}
+
+#sidebar-items #user-menu a img {
+    padding: 3px 6px 3px;
+    vertical-align: middle;
+    text-decoration: none;
+    background: #244367;
+}
+
 
 /* tablas */
 
