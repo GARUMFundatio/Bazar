@@ -46,9 +46,8 @@
 			
 				<% end %>
 			  <li>
-		            <ul id="user-menu" class="links">
-		              
 							<% if !current_user.nil? %>
+							<ul id="user-menu" class="links">
 								<li class="user-logout">
 								<%= link_to current_user.login,  edit_user_path(current_user.id) %>
 								<%= link_to(image_tag('icono-logout.png'),  "/logout") %>
@@ -61,9 +60,8 @@
 								(<%= Mensaje.mensajessinleer(current_user.id).count -%>/<%=  Mensaje.mensajestotal(current_user.id).count -%>) 
 
 								</li>
+                            </ul>
 							<% end %>
-						
-		            </ul>
 		          </li>	
 	          <li>
 				<% if !current_user.nil? %>
