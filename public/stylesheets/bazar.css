@@ -163,6 +163,12 @@ body {
     font-size: 16px;
 }
 
+/* pestaña de Empresas*/
+
+#tabs #tabs-3 p {
+font-size: 14px;
+}
+
 #footer {
     border-top: 1px solid black;
     color: #FDD900;
