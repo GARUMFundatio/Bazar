@@ -195,17 +195,14 @@ font-size: 14px;
     border: 1px solid #527CAD;
 }
 
-#contenido #new_user_session p + p + p {
-    margin-top: -5px;
+#new_user_session #user_session_remember_me {
+    margin-right: 5px;
+    vertical-align: bottom;
+}
+
+#new_user_session #user_session_remember_me + label {
+    font-size: 12px;
     line-height: 1;
-}
-
-#user_session_remember_me {
-    vertical-align: middle;
-}
-
-#user_session_remember_me + label {
-    font-size: 13px;
 }
 
 #user_session_submit {
@@ -220,13 +217,14 @@ font-size: 14px;
     font-size: 20px;
     line-height: 1;
     text-align: center;
-    background: #30537A url(/images/gradient-garum-azul-oscuro.png) repeat-x center center;
+    background: #30537A url(images/gradient-garum-azul-oscuro.png) repeat-x center center;
     color: #FDD937;
 }
 
 #user_session_submit + a {
     line-height: 37px;
 }
+
 
 
 #footer {
