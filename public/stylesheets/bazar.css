@@ -169,6 +169,10 @@ body {
 font-size: 14px;
 }
 
+/* tabs dentro empresas */
+#tabs-3 .ui-tabs .ui-tabs-nav li a { padding: .3em .7em; font-size: 11px; }  /* achica pestañas con font-size y menos padding */
+
+
 #footer {
     border-top: 1px solid black;
     color: #FDD900;
