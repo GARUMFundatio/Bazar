@@ -64,6 +64,10 @@ body {
     font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
 }
 
+#user_session_submit {
+    font-family: "Liberation Serif", georgia, serif;
+}
+
 /*estructura*/
 
 body {
@@ -171,6 +175,58 @@ font-size: 14px;
 
 /* tabs dentro empresas */
 .directorio .ui-tabs .ui-tabs-nav li a { padding: .3em .7em; font-size: 11px; }  /* achica pestañas con font-size y menos padding */
+
+/* formulario de entrada */
+#new_user_session {
+    width: 100%;
+    overflow: hidden;
+}
+
+#user_session_login,
+#user_session_password {
+    padding: 4px 4px 5px;
+    border: 1px solid #cdcdcd;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+#new_user_session input:focus,
+#new_user_session input:active {
+    border: 1px solid #527CAD;
+}
+
+#contenido #new_user_session p + p + p {
+    margin-top: -5px;
+    line-height: 1;
+}
+
+#user_session_remember_me {
+    vertical-align: middle;
+}
+
+#user_session_remember_me + label {
+    font-size: 13px;
+}
+
+#user_session_submit {
+    display: inline;
+    float: left;
+    padding: .3em 1em;
+    margin: 0 10px 0 0;
+    border: none;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    background: #30537A url(/images/gradient-garum-azul-oscuro.png) repeat-x center center;
+    color: #FDD937;
+}
+
+#user_session_submit + a {
+    line-height: 37px;
+}
 
 
 #footer {
@@ -562,7 +618,7 @@ ul.tabs li a {
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
 .ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_glass_75_ffffff_1x400.png) 50% 50% repeat-x; color: #222222; }
 .ui-widget-content a { color: #222222; }
-.ui-widget-header { border: 1px solid #ccc; background: #cccccc url(/images/ui-bg_azul-garum.png) 50% 50% repeat-x; color: #222222; font-weight: bold; }
+.ui-widget-header { border: 1px solid #ccc; background: #cccccc url(/images/gradient-garum-azul-oscuro.png) 50% 50% repeat-x; color: #222222; font-weight: bold; }
 .ui-widget-header a { color: #222222; }
 
 /* Interaction states
