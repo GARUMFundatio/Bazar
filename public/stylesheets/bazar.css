@@ -789,9 +789,10 @@ ul.tabs li a {
 .ui-corner-bottom { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
 .ui-corner-right {  -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
 .ui-corner-left { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
+.home .ui-tabs div.ui-corner-all:first-child, /* panel dentro de panel con bordes redondeados normales */
 .ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 
-/*bordes de abajo del panel más redondeados*/
+/* bordes de abajo del panel más redondeados*/
 .home div.ui-corner-all:first-child {
     -moz-border-radius-bottomleft: 20px;
     -webkit-border-bottom-left-radius: 20px;
