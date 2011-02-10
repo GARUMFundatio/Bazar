@@ -64,7 +64,8 @@ body {
     font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
 }
 
-#user_session_submit {
+#user_session_submit,
+#footer {
     font-family: "Liberation Serif", georgia, serif;
 }
 
@@ -228,18 +229,27 @@ font-size: 14px;
 
 
 #footer {
-    border-top: 1px solid black;
+    clear: both;
+    width: 98%;
+    overflow: hidden;
+    padding: 1em 1% 1.2em;
+    border-top: 1px solid #000;
     color: #FDD900;
     background-color: #30537A;
-    border-bottom-right-radius: 1em;
-    border-bottom-left-radius: 1em;
-    -moz-border-radius-bottomright: 1em;
-    -moz-border-radius-bottomleft: 1em;
-    -webkit-border-bottom-right-radius: 1em;
-    -webkit-border-bottom-left-radius: 1em;
+    border-bottom-right-radius: .9em;
+    border-bottom-left-radius: .9em;
+    -moz-border-radius-bottomright: .9em;
+    -moz-border-radius-bottomleft: .9em;
+    -webkit-border-bottom-right-radius: .9em;
+    -webkit-border-bottom-left-radius: .9em;
+    font-size: 14px;
 }
 
-/* ? */
+#footer a {
+    font-weight: bold;
+    color: #FDD900;
+}
+
 #abstractText {
     width: 100%;
     height: 90px !important;
