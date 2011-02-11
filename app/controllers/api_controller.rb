@@ -13,7 +13,7 @@ class ApiController < ApplicationController
     
     respond_to do |format|
         format.html # info.html.erb
-        format.xml { render :xml => @info }
+        format.xml { render }
         format.json { render :json => @info }
     end
         
