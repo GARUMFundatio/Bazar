@@ -11,6 +11,7 @@ gem 'acts_as_ferret', '= 0.5.2', :git => "git://github.com/primerano/acts_as_fer
 gem 'delayed_job' 
 gem 'will_paginate', "~> 3.0.pre2"
 gem 'json'
+gem 'fastercsv'
 
 gem "bazarcms", :path => '../bazarcms'
 
