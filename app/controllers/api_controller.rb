@@ -14,6 +14,10 @@ class ApiController < ApplicationController
     render :layout => 'bazar'
   end 
   
+  def ejemploinfo
+    render :layout => 'bazar'
+  end 
+  
   # /api/info devuelve la información básica de un bazar
   
   def info
