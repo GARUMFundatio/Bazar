@@ -1,9 +1,20 @@
 require "rexml/document"
 
 class ApiController < ApplicationController
+  
+  # introducción al API del proyecto Bazar
+  
   def index 
     render :layout => 'bazar'
   end 
+  
+  # ejemplos API del proyecto Bazar
+  
+  def ejemplos
+    render :layout => 'bazar'
+  end 
+  
+  # /api/info devuelve la información básica de un bazar
   
   def info
     @info = {}
