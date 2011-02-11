@@ -1,7 +1,10 @@
 require "rexml/document"
 
 class ApiController < ApplicationController
-    
+  def index 
+    render :layout => 'bazar'
+  end 
+  
   def info
     @info = {}
     @info[:nombre] = Cluster.find(BZ_param("BazarId")).nombre

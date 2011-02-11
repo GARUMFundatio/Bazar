@@ -45,6 +45,7 @@
 				</ul>
 			
 				<% end %>
+
 			  <li>
 							<% if !current_user.nil? %>
 							<ul id="user-menu" class="links">
@@ -121,6 +122,15 @@
 
 				<% end %>
 	         </li>
+
+
+			<li>
+				<h3>API</h3>
+				<ul class="links">
+					<li><%= link_to("Como obtener información", "/api/index") -%></li>
+				</ul>
+			</li>
+
 
 	        </ul>
 	     </div>	
