@@ -22,7 +22,13 @@
 	<td><%= cluster.id %></td>
     <td><%= cluster.nombre %></td>
     <td><%= cluster.desc %></td>
-    <td><%= cluster.activo %></td>
+    <td>
+	<% if cluster.activo == 'S' %>
+		<%= image_tag('flag_green.png')%>
+	<% else %>
+		<%= image_tag('flag_red.png')%>
+	<% end %>
+	</td>
     <td><%= cluster.url %></td>
     <td><%= cluster.empresas %></td>
 	<% if (cluster.activo == "S")%>
