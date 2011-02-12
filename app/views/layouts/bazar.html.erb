@@ -50,7 +50,7 @@
 							<% if !current_user.nil? %>
 							<ul id="user-menu" class="links">
 								<li class="user-logout">
-								<%= link_to current_user.login,  edit_user_path(current_user.id) %>
+								<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
 								<%= link_to(image_tag('icono-logout.png'),  "/logout") %>
 								</li>
 								<li class="user-messages">
