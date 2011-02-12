@@ -26,10 +26,7 @@
     <td><%= cluster.desc %></td>
     <td><%= cluster.activo %></td>
     <td><%= cluster.url %></td>
-    <td><%= cluster.miclave %></td>
-    <td><%= cluster.suclave %></td>
     <td><%= cluster.empresas %></td>
-    <td><%= link_to image_tag('pencil.png'), edit_cluster_path(cluster) %></td>
 	<% if (cluster.activo == "S")%>
     	<td><%= link_to image_tag('delete.png'), cluster, :confirm => 'Esta seguro de desactivarlo?', :method => :delete %></td>
 	<% else %>
@@ -41,5 +38,3 @@
 <br/>
 <%= will_paginate @clusters %>
 <br />
-
-<%= link_to 'Nuevo Cluster', new_cluster_path %>
