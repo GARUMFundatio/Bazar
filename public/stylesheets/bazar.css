@@ -487,6 +487,10 @@ table.tabla tr td {
 	text-align: left;
 }
 
+table.tabla tr:first-child td {
+    border-top: 1px solid #cdcdcd;
+}
+
 table.tabla tr th {
     padding:.4em .6em .5em .8em;
     border: 1px solid #cdcdcd;
