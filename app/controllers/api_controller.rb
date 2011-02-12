@@ -30,7 +30,7 @@ class ApiController < ApplicationController
     @info[:clustersactivos] = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ")
     
     respond_to do |format|
-        format.html # info.html.erb
+        format.html { render :layout => false}
         format.xml { render }
         format.json { render :json => @info }
     end
