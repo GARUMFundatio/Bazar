@@ -36,7 +36,9 @@ Bazar::Application.routes.draw do
   match '/api/index' => 'api#index'
   match '/api/info' => 'api#info'
   match '/api/empresas' => 'api#empresas'
+
   match '/api/ejemplos' => 'api#ejemplos'
   match '/api/ejemploinfo' => 'api#ejemploinfo'
+  match '/api/ejemploempresas' => 'api#ejemploempresas'
   
 end
