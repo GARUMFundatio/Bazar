@@ -431,12 +431,13 @@ select {
     text-decoration: none;
     background: #244367;
 }
-/* tablas */
 
 #content h3 {
     margin: 0 0 5px;
     font-size: 1.5em;
 }
+
+/* tablas */
 
 #contenido table {
     width: 100%;
@@ -453,21 +454,24 @@ table tr td:first-child {
     padding-left: 0;
 }
 
-table.tabla th {
+table.tabla tr:first-child th {
     padding:.4em .8em;
+    border: none;
     border-bottom: 1px solid #A5BFDB;
+    font-size: 16px;
     text-align: left;
     background: #30537A;
     color: #FDD900;
 }
 
-table.tabla th:first-child {
+/* bordes redondeados de la tabla arriba */
+table.tabla tr:first-child :first-child {
     -moz-border-radius-topleft:10px;
     -webkit-border-top-left-radius:10px;
     border-top-left-radius:10px;
 }
 
-table.tabla th:last-child {
+table.tabla tr:first-child :last-child {
     -moz-border-radius-topright:10px;
     -webkit-border-top-right-radius:10px;
     border-top-right-radius:10px;
@@ -482,7 +486,16 @@ table.tabla tr td {
 	text-align: left;
 }
 
-table.tabla tr td:last-child {
+table.tabla tr th {
+    padding:.4em .6em .5em .8em;
+    border: 1px solid #cdcdcd;
+    border-top: none;
+    font-size: 14px;
+    font-weight: bold;
+	text-align: left;
+}
+
+table.tabla tr :last-child {
     border-left: none;
 }
 
@@ -490,19 +503,20 @@ table.tabla tr:last-child td {
     border-bottom: 2px solid #ccc;
 }
 
-table.tabla tr:last-child td:first-child {
+/* bordes redondeados de la tabla abajo */
+table.tabla tr:last-child :first-child {
     -moz-border-radius-bottomleft:10px;
     -webkit-border-bottom-left-radius:10px;
     border-bottom-left-radius:10px;
 }
 
-table.tabla tr:last-child td:last-child {
+table.tabla tr:last-child :last-child {
     -moz-border-radius-bottomright:10px;
     -webkit-border-bottom-right-radius:10px;
     border-bottom-right-radius:10px;
 }
 
-table.tabla table td a {
+table.tabla td a {
 text-decoration: none;}
 
 table.tabla td a:hover,
@@ -511,8 +525,13 @@ table.tabla td a:active {
     text-decoration: underline;
 }
 
-table.tabla tr:hover td {
+table.tabla tr:hover td,
+table.tabla tr:hover th {
     background: #E0E8F0;
+}
+
+table.tabla tr:first-child:hover th {
+    background: #30537A;
 }
 
 p.total {
