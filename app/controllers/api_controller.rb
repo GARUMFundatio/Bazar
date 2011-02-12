@@ -45,7 +45,10 @@ class ApiController < ApplicationController
     @empresas = Bazarcms::Empresa.all
     
     for empresa in @empresas
-      @info << [empresa.nombre,empresa.url,empresa.fundada,Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas where empresa_id = #{empresa.id}")]
+      @info << {:nombre => empresa.nombre,
+                :url => empresa.url,
+                :fundada => empresa.fundada,
+                :consultas => Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas where empresa_id = #{empresa.id}")}
     end
     
     respond_to do |format|
