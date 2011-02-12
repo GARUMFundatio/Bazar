@@ -36,5 +36,26 @@ class ApiController < ApplicationController
     end
         
   end
+  
+  # /api/info devuelve la información de las empresas de un bazar
+  
+  def empresas
+    
+    @info = []
+    @empresas = Bazarcms::Empresa.all
+    
+    for empresa in @empresas
+      @info << [empresa.nombre,empresa.url,empresa.fundada,Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas where empresa_id = #{empresa.id}")]
+    end
+    
+    respond_to do |format|
+        format.html # empresas.html.erb
+        format.xml { render }
+        format.json { render :json => @info }
+    end
+        
+  end
+
+  
 
 end
