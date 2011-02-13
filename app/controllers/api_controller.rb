@@ -64,6 +64,36 @@ class ApiController < ApplicationController
         
   end
 
+  # 
+  def infoempresa
+    
+    @empresa = Bazarcms::Empresa.find_by_id(params[:id])
+    
+    if !@empresa.nil?
+    
+      @info = {:id => @empresa.id,
+                  :estado => "OK",
+                  :nombre => @empresa.nombre,
+                  :url => @empresa.url,
+                  :fundada => @empresa.fundada,
+                  :consultas => Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas where empresa_id = #{@empresa.id}")}
+    else
+       
+      @info = {:id => -1,
+                  :estado => "ERROR",
+                  :nombre => "No encontrada",
+                  :url => "",
+                  :fundada => "",
+                  :consultas => ""}
+    end 
+    
+    respond_to do |format|
+        # no tiene mucho sentido format.html # empresas.html.erb
+        format.xml { render }
+        format.json { render :json => @info }
+    end
+        
+  end
   
 
 end
