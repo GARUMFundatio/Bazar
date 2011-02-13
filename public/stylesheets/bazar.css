@@ -66,6 +66,7 @@ body {
 
 #user_session_submit,
 #bazarcms_empresa_submit,
+#cajabusqueda .ui-button,
 #footer {
     font-family: "Liberation Serif", georgia, serif;
 }
@@ -285,11 +286,52 @@ form.edit_bazarcms_empresa div.actions {
     color: #444;
 }
 
+/* Búsqueda de Empresas */
+
+p.busqueda-principal label {
+    display: none;
+}
+
+input#busca {
+    width: 80%;
+    padding: 6px 6px 7px;
+    border: 1px solid #cdcdcd;
+    font-size: 18px;
+    line-height: 26px;
+    font-style: italic;
+    color: #aaa;
+}
+
+input#busca:focus,
+input#busca:active {
+    border: 1px solid #527CAD;
+    font-style: normal;
+    color: #444;
+}
+
+#cajabusqueda table {
+    width: 100%;
+    margin: .2em 0 0;
+}
+
+#cajabusqueda table tr td {
+    padding: .5em .7em .5em .4em;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#cajabusqueda .ui-button {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+
 #footer {
     clear: both;
-    width: 940px;
+    width: 910px;
     overflow: hidden;
-    padding: 1em 10px 1.2em;
+    padding: 1em 25px 1.2em;
     border-top: 1px solid #000;
     color: #FDD900;
     background-color: #30537A;
@@ -521,20 +563,25 @@ select {
 
 /* tablas */
 
-#contenido table {
+#contenido table.base,
+#contenido table.tabla {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.1;
     background: white;
 }
 
-table tr td {
+#contenido table.tabla {
+    margin-bottom: 20px;
+}
+
+
+.base tr td {
     padding-left: 14px;
 }
 
-table tr td:first-child {
+.base tr td:first-child {
     padding-left: 0;
 }
 
@@ -562,7 +609,7 @@ table.tabla tr:first-child :last-child {
 }
 
 
-table.tabla tr td {
+#contenido table.tabla tr td {
     padding:.4em .6em .5em .8em;
     border: 1px solid #cdcdcd;
     border-top: none;
@@ -571,11 +618,11 @@ table.tabla tr td {
 	text-align: left;
 }
 
-table.tabla tr:first-child td {
+#contenido table.tabla tr:first-child td {
     border-top: 1px solid #cdcdcd;
 }
 
-table.tabla tr th {
+#contenido table.tabla tr th {
     padding:.4em .6em .5em .8em;
     border: 1px solid #cdcdcd;
     border-top: none;
@@ -584,11 +631,11 @@ table.tabla tr th {
 	text-align: left;
 }
 
-table.tabla tr td:last-child {
+#contenido table.tabla tr td:last-child {
     border-right: 1px solid #cdcdcd;
 }
 
-table.tabla tr:last-child td {
+#contenido table.tabla tr:last-child td {
     border-bottom: 2px solid #ccc;
 }
 
@@ -1165,7 +1212,45 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
 .ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
 .ui-slider-vertical .ui-slider-range-min { bottom: 0; }
-.ui-slider-vertical .ui-slider-range-max { top: 0; }/*
+.ui-slider-vertical .ui-slider-range-max { top: 0; }
+
+/* jQuery UI Slider 1.8.7 con cambios */
+.ui-slider {
+    position: relative;
+    text-align: left;
+    font-size: 19px;
+    background: #e2e2e2 url(/images/bg-slider-garum.png) repeat-x 0 0;
+}
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 23px;
+    height: 23px;
+    border: none;
+    cursor: default;
+    background: url(/images/slider-handle.png) no-repeat center bottom;
+}
+.ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    font-size: 15px;
+    display: block;
+    border: 0;
+    background: #9fafd9 url(/images/bg-slider-garum-rango.png) repeat-x 0 0;
+}
+
+.ui-slider-horizontal { height: 7px; }
+.ui-slider-horizontal .ui-slider-handle { top: -9px; margin-left: -11px; }
+.ui-slider-horizontal .ui-slider-range { top: 0; height: 7px; }
+.ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.ui-slider-horizontal .ui-slider-range-max { right: 0; }
+
+.ui-slider-horizontal .ui-state-focus {
+    background-position: center top;
+}
+
+
+/*
  * jQuery UI Tabs 1.8.7
  *
  * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
