@@ -261,6 +261,7 @@ form.edit_bazarcms_empresa textarea:active {
 #bazarcms_empresa_desc {
     width: 80%;
     height: 10em;
+    font-size: 18px;
 }
 
 form.edit_bazarcms_empresa div.actions {
