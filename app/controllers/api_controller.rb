@@ -21,6 +21,10 @@ class ApiController < ApplicationController
   def ejemploempresas
     render :layout => 'bazar'
   end 
+
+  def ejemploinfoempresa
+    render :layout => 'bazar'
+  end 
   
   # /api/info devuelve la información básica de un bazar
   
@@ -57,7 +61,7 @@ class ApiController < ApplicationController
     end
     
     respond_to do |format|
-        # no tiene mucho sentido format.html # empresas.html.erb
+        format.html { redirect_to "/api/ejemploempresas"}
         format.xml { render }
         format.json { render :json => @info }
     end
@@ -89,6 +93,7 @@ class ApiController < ApplicationController
     
     respond_to do |format|
         # no tiene mucho sentido format.html # empresas.html.erb
+        format.html { redirect_to "/api/ejemploinfoempresa"}
         format.xml { render }
         format.json { render :json => @info }
     end
