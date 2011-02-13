@@ -467,15 +467,11 @@ select {
     margin-bottom: 0;
 }
 
-#sidebar-items #user-menu .user-logout a {
-    margin-right: 8px;
-}
-
-#sidebar-items #user-menu .user-logout a:last-child {
+#sidebar-items #user-menu .logout-link {
     padding-left: 3px;
     border-left: 1px solid #999;
 }
-#sidebar-items #user-menu .user-logout a:last-child img {
+#sidebar-items #user-menu .logout-link img {
     padding: 3px 5px 3px;
 }
 
@@ -487,6 +483,10 @@ select {
 #sidebar-items #user-menu a img {
     text-decoration: none;
     background: #244367;
+}
+
+#sidebar-items #user-menu .msgs-link {
+    margin-left: 8px;
 }
 
 #content h3 {
