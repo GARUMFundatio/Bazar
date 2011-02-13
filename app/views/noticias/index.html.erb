@@ -1,6 +1,6 @@
-<h1>Noticias</h1>
+<h3 class="page-title">Noticias</h3>
 
-<table class="tabla">
+<table class="tabla" cellspacing="0">
   <tr>
     <th>Título</th>
     <th>Texto</th>
@@ -23,9 +23,7 @@
   </tr>
 <% end %>
 </table>
-<br />
+
 <%= will_paginate @noticias %>
-<br />
-<br />
 
 <%= link_to 'Publicar una noticia', new_noticia_path %>
