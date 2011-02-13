@@ -51,7 +51,7 @@
 							<ul id="user-menu" class="links">
 								<li class="user-logout">
 								<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
-								<%= link_to(image_tag('icono-logout.png'),  "/logout") %>
+								<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
 								</li>
 								<li class="user-messages">
 								<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N") %>
