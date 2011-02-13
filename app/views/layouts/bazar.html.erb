@@ -49,15 +49,15 @@
 			  <li>
 							<% if !current_user.nil? %>
 							<ul id="user-menu" class="links">
-								<li class="user-logout">
+								<li class="user-links">
 								<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
 								<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
 								</li>
 								<li class="user-messages">
-								<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N") %>
+								<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones') %>
 								(<%= Mensaje.notificacionessinleer(current_user.id).count -%>/<%=  Mensaje.notificacionestotal(current_user.id).count -%>) 
 								
-								<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M") %>
+								<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M", :class => 'msgs-link', :title => 'Mensajes') %>
 								(<%= Mensaje.mensajessinleer(current_user.id).count -%>/<%=  Mensaje.mensajestotal(current_user.id).count -%>) 
 
 								</li>
