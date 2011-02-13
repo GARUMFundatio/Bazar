@@ -65,6 +65,7 @@ body {
 }
 
 #user_session_submit,
+#bazarcms_empresa_submit,
 #footer {
     font-family: "Liberation Serif", georgia, serif;
 }
@@ -226,7 +227,62 @@ font-size: 14px;
     line-height: 37px;
 }
 
+/* formulario de edición "Mi empresa" */
 
+form.edit_bazarcms_empresa label {
+     display: block;
+     font-size: 14px;
+}
+
+form label .form-help {
+     font-style: italic;
+     color: #999;
+}
+
+.edit_bazarcms_empresa input[type=text],
+.edit_bazarcms_empresa textarea {
+    padding: 4px 4px 5px;
+    border: 1px solid #cdcdcd;
+    font-size: 18px;
+    line-height: 26px;
+    font-style: italic;
+    color: #999;
+}
+
+form.edit_bazarcms_empresa input:focus,
+form.edit_bazarcms_empresa input:active,
+form.edit_bazarcms_empresa textarea:focus,
+form.edit_bazarcms_empresa textarea:active {
+    border: 1px solid #527CAD;
+    font-style: normal;
+    color: #444;
+}
+
+#bazarcms_empresa_desc {
+    width: 80%;
+    height: 10em;
+}
+
+form.edit_bazarcms_empresa div.actions {
+    width: 100%;
+    overflow: hidden;
+}
+
+#bazarcms_empresa_submit {
+    display: inline;
+    float: left;
+    padding: .3em 1em;
+    margin: 0 10px 0 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    background: #30537A url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) repeat-x center center;
+    color: #444;
+}
 
 #footer {
     clear: both;
