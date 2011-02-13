@@ -1,7 +1,5 @@
-<br/>
-<b>Listado de Bazares</b>
-<br/>
-<br/>
+<h3>Listado de Bazares</h3>
+
 <table class="tabla" cellspacing="0">
   <tr>
     <th>Id</th>
@@ -34,11 +32,11 @@
 	<% if (cluster.activo == "S")%>
     	<td><%= link_to image_tag('delete.png'), cluster, :confirm => 'Esta seguro de desactivarlo?', :method => :delete %></td>
 	<% else %>
-		<td><%= link_to image_tag('add.png'), :title => 'Añadir', '/clusters/activar/'+cluster.id.to_s %></td>
+		<td><%= link_to image_tag('add.png'), '/clusters/activar/'+cluster.id.to_s %></td>
 	<% end %>
   </tr>
 <% end %>
 </table>
-<br/>
+
 <%= will_paginate @clusters %>
-<br />
+
