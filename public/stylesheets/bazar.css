@@ -508,6 +508,7 @@ table.tabla tr td {
     padding:.4em .6em .5em .8em;
     border: 1px solid #cdcdcd;
     border-top: none;
+    border-right: none;
     font-size: 14px;
 	text-align: left;
 }
@@ -525,8 +526,8 @@ table.tabla tr th {
 	text-align: left;
 }
 
-table.tabla tr :last-child {
-    border-left: none;
+table.tabla tr td:last-child {
+    border-right: 1px solid #cdcdcd;
 }
 
 table.tabla tr:last-child td {
