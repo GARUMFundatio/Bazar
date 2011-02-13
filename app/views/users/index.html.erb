@@ -1,10 +1,11 @@
-<b>Listado de Usuarios</b>
+<h3 class="page-title">Listado de Usuarios</h3>
 
-<table class="tabla">
+<table class="tabla" cellspacing="0">
   <tr>
     <th>Id</th>
     <th>Usuario</th>
     <th>Correo</th>
+    <th colspan="2"></th>
   </tr>
 
 <% @users.each do |user| %>
@@ -17,7 +18,7 @@
   </tr>
 <% end %>
 </table>
-<br/>
+
 <%= will_paginate @mensajes %>
-<br/>
+
 <%= link_to 'Nuevo Usuario', new_user_path %>
