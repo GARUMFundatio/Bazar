@@ -466,6 +466,7 @@ select {
 
 #contenido table {
     width: 100%;
+    max-width: 100%;
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 1.1;
@@ -481,10 +482,10 @@ table tr td:first-child {
 }
 
 table.tabla tr:first-child th {
-    padding:.4em .8em;
+    padding:.5em .8em;
     border: none;
     border-bottom: 1px solid #A5BFDB;
-    font-size: 16px;
+    font-size: 15px;
     text-align: left;
     background: #30537A;
     color: #FDD900;
