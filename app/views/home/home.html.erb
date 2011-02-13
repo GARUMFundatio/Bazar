@@ -102,24 +102,44 @@
 			<p><strong>Total Empresas:</strong> <%= Bazarcms::Empresa.count_by_sql("select count(*) from empresas") %> <br/>
 			<strong>Total Consultas Realizadas:</strong> <%= Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas") %></p>
 
-			<table>
-			<tr>
-				<td width="200px">
-			<b>Nuevas Empresas:</b> <br/>
+			<table cellspacing="0">
+                <tr>
+                    <td>
+                        <table class="tabla" cellspacing="0">
+                            <tr>
+                                <th>
+                                Nuevas Empresas
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
 
-			<% for empre in @ultimas %>
-				<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#tab4').hide();$('#conte4datos').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#conte4').show();"> <%= image_tag('lupa.png') -%> </a><br/>
-			<% end %>
-				</td>
-				<td width="200px">
-			<b>Empresas Actualizadas:</b> <br/>
+                    			<% for empre in @ultimas %>
+                    				<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#tab4').hide();$('#conte4datos').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#conte4').show();"> <%= image_tag('lupa.png') -%> </a><br/>
+                    			<% end %>
+                				</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table class="tabla" cellspacing="0">
+                            <tr>
+                                <th>
+                                Empresas Actualizadas
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
 
-			<% for empre in @actualizadas %>
-			<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#tab4').hide();$('#conte4datos').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#conte4').show();"> <%= image_tag('lupa.png') -%> </a><br/>
-			<% end %>
-				</td>
-			</tr>
-		</table>
+                    			<% for empre in @actualizadas %>
+                    			<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#tab4').hide();$('#conte4datos').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#conte4').show();"> <%= image_tag('lupa.png') -%> </a><br/>
+                    			<% end %>
+                				</td>
+                			</tr>
+                		</table>
+            		</td>
+        		</tr>
+    		</table>
 		</div>
 	
 		<div id="conte4" style="display: none">
