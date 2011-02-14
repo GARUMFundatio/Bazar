@@ -325,10 +325,21 @@ input#busca:active {
     margin: .2em 0 0;
 }
 
-#cajabusqueda table tr td {
-    padding: .5em .7em .5em .4em;
+#cajabusqueda table tr td { /* Estilos para la celda con el slider */
+    width: 223px;
+    padding: 8px 11px;
     border-bottom: 1px solid #ccc;
     font-size: 16px;
+}
+
+#cajabusqueda table tr td:first-child { /* Estilos para la celda con el "label" */
+    width: 215px;
+    padding: 8px 5px;
+}
+
+#cajabusqueda table tr td:last-child { /* Estilos para la celda con el texto dinámico */
+    width: 180px;
+    padding: 8px 5px;
 }
 
 #cajabusqueda .ui-button {
