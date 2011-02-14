@@ -333,23 +333,25 @@ input#busca:active {
 }
 
 #cajabusqueda table tr td:first-child { /* Estilos para la celda con el "label" */
-    width: 215px;
-    padding: 8px 5px;
-}
-
-#cajabusqueda table tr td:last-child { /* Estilos para la celda con el texto dinámico */
     width: 180px;
     padding: 8px 5px;
 }
 
+#cajabusqueda table tr td:last-child { /* Estilos para la celda con el texto dinámico */
+    width: 211px;
+    padding: 8px 7px;
+}
+
 #cajabusqueda table tr td:last-child input {
-    max-width: 180px !important;
+    max-width: 211px !important;
 }
 
 #cajabusqueda .ui-button {
     margin-top: 20px;
+    padding: 0 30px;
     font-size: 20px;
 }
+
 
 
 
