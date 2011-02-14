@@ -146,6 +146,11 @@ body {
 	padding: 20px;
 }
 
+/* íconos en gral */
+#contenido a img {
+   vertical-align: middle;
+}
+
 /* Titulares de página */
 
 #contenido .page-title {
