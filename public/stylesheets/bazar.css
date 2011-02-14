@@ -688,7 +688,8 @@ table.tabla tr:first-child :last-child {
     border-right: 1px solid #cdcdcd;
 }
 
-#contenido table.tabla tr:last-child td {
+#contenido table.tabla tr:last-child td,
+#contenido table.tabla tr:last-child th {
     border-bottom: 2px solid #ccc;
 }
 
