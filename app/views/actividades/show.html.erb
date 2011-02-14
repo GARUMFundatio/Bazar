@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bazar:</b>
+  <%= @actividad.bazar_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @actividad.user_id %>
+</p>
+
+<p>
+  <b>Local:</b>
+  <%= @actividad.local_id %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @actividad.fecha %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @actividad.desc %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @actividad.tipo %>
+</p>
+
+
+<%= link_to 'Edit', edit_actividad_path(@actividad) %> |
+<%= link_to 'Back', actividades_path %>

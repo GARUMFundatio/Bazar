@@ -1,0 +1,33 @@
+<h1>Listing actividades</h1>
+
+<table>
+  <tr>
+    <th>Bazar</th>
+    <th>User</th>
+    <th>Local</th>
+    <th>Fecha</th>
+    <th>Desc</th>
+    <th>Tipo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @actividades.each do |actividad| %>
+  <tr>
+    <td><%= actividad.bazar_id %></td>
+    <td><%= actividad.user_id %></td>
+    <td><%= actividad.local_id %></td>
+    <td><%= actividad.fecha %></td>
+    <td><%= actividad.desc %></td>
+    <td><%= actividad.tipo %></td>
+    <td><%= link_to 'Show', actividad %></td>
+    <td><%= link_to 'Edit', edit_actividad_path(actividad) %></td>
+    <td><%= link_to 'Destroy', actividad, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Actividad', new_actividad_path %>

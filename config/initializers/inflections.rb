@@ -30,5 +30,6 @@ inflect.irregular 'ciudad', 'ciudades'
 inflect.irregular 'pais', 'paises'
 inflect.irregular 'cluster', 'clusters'
 inflect.irregular 'noticia', 'noticias'
-
+inflect.irregular 'actividad', 'actividades'
+inflect.irregular 'favorito', 'favoritos'
 end

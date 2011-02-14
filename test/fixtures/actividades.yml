@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  bazar_id: 1
+  user_id: 1
+  local_id: 1
+  fecha: 2011-02-14 13:00:54
+  desc: MyString
+  tipo: MyString
+
+two:
+  bazar_id: 1
+  user_id: 1
+  local_id: 1
+  fecha: 2011-02-14 13:00:54
+  desc: MyString
+  tipo: MyString
