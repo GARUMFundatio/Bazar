@@ -302,8 +302,8 @@ form.edit_bazarcms_empresa div.actions {
 
 p.busqueda-principal label {
     display: block;
-    padding-top: 3px;
-    font-size: 13px;
+    padding-top: 4px;
+    font-size: 14px;
 }
 
 input#busca {
@@ -312,8 +312,6 @@ input#busca {
     border: 1px solid #cdcdcd;
     font-size: 18px;
     line-height: 26px;
-    font-style: italic;
-    color: #aaa;
     cursor: auto !important;
 }
 
