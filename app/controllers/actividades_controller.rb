@@ -80,4 +80,26 @@ class ActividadesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def dashboard 
+    @ultimas = Actividad.where("1 = 1").order("fecha desc").limit(10)
+    respond_to do |format|
+      format.html { render :layout => false }
+    end
+  end
+  
+  def graba(texto, tipo)
+    
+    act = Actividad.new
+    
+    act.desc = texto 
+    act.bazar_id = BZ_param("BazarId")
+    act.fecha = DateTime.now
+    act.user_id = user.current_user.id
+    act.local_id = 0
+    
+    act.save
+    
+  end 
+  
 end

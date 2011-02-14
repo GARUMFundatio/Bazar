@@ -1,0 +1,23 @@
+<h3 class="page-title">Actividad en el Bazar</h3>
+
+<table class="tabla" cellspacing="0">
+
+<% for act in @ultimas %>
+<tr>
+
+	<td>
+		<%= link_to Bazarcms::Empresa.find(act.user_id).nombre, bazarcms_empresa_path(act.user_id) %>
+	</td>
+
+	<td>
+		<%= act.desc %>
+	</td>
+
+	<td> 
+		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{act.id}&tipo=M", :title => 'Correo electrónico' %>
+	</td>
+
+</tr>
+<% end %>
+
+</table>
