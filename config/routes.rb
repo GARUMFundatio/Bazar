@@ -1,11 +1,11 @@
 Bazar::Application.routes.draw do
 
-  resources :favoritos
-
-  resources :actividades
 
   root :to => 'home#home'
   match '/noticias.rss' => 'noticias#rss'
+
+  resources :favoritos
+  resources :actividades
 
   resources :noticias
   resources :clusters
@@ -34,7 +34,8 @@ Bazar::Application.routes.draw do
   match '/notificacion' => 'mensajes#notificacion', :as => :notificacion
   match '/enviarnotificacion' => 'mensajes#enviarnotificacion', :as => :enviarnotificacion
   match '/updateinfo' => 'clusters#updateinfo', :as => :updateinfo
-  
+  match "/actividad/dashboard" => "actividades#dashboard"
+
 # API routes
 
   match '/api/index' => 'api#index'
