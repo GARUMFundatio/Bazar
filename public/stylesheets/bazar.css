@@ -681,6 +681,7 @@ table.tabla tr:first-child:hover th {
 }
 
 p.total {
+    margin-top: 0;
     padding-left: 5px;
 }
 
