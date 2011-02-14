@@ -307,18 +307,25 @@ p.busqueda-principal label {
 }
 
 input#busca {
-    width: 80%;
-    padding: 6px 6px 7px;
-    border: 1px solid #cdcdcd;
+    position: relative;
+    left: -2px;
+    width: 93%;
+    padding: 8px 10px 10px;
+    border: 1px solid #ccc;
+    border-top: 2px solid #aaa;
+    border-radius: 18px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
     font-size: 18px;
     line-height: 26px;
     cursor: auto !important;
+    background: url(images/busqueda-bg-lupa.png) no-repeat right top;
 }
 
 input#busca:focus,
 input#busca:active {
-    border: 1px solid #527CAD;
     font-style: normal;
+    background-color: #F2F0E3;
     color: #444;
 }
 
