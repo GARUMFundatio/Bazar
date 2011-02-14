@@ -678,6 +678,7 @@ table.tabla tr:first-child :last-child {
     padding:.4em .6em .5em .8em;
     border: 1px solid #cdcdcd;
     border-top: none;
+    border-right: none;
     font-size: 14px;
     font-weight: bold;
 	text-align: left;
