@@ -301,7 +301,8 @@ form.edit_bazarcms_empresa div.actions {
 /* Búsqueda de Empresas */
 
 p.busqueda-principal label {
-    display: none;
+    display: block;
+    font-size: 13px;
 }
 
 input#busca {
