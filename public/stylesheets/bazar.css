@@ -356,7 +356,8 @@ input#busca:active {
     cursor: auto !important;
 }
 
-#cajabusqueda .ui-button {
+#cajabusqueda .ui-button,
+#cajabusqueda .ui-button .ui-state-default {
     margin-top: 20px;
     padding: 0 30px;
     border-color: #999;
@@ -364,7 +365,7 @@ input#busca:active {
     -moz-border-radius: 14px;
     -webkit-border-radius: 14px;
     font-size: 20px;
-    background-image: url(/images/ui-bg_glass_75_dadada_1x400.png);
+    background-image: url(images/ui-bg_glass_75_dadada_1x400.png);
 }
 
 #cajabusqueda .ui-button:hover,
