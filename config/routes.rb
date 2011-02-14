@@ -1,5 +1,7 @@
 Bazar::Application.routes.draw do
 
+  resources :actividades
+
   root :to => 'home#home'
   match '/noticias.rss' => 'noticias#rss'
 
