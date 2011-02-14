@@ -302,6 +302,7 @@ form.edit_bazarcms_empresa div.actions {
 
 p.busqueda-principal label {
     display: block;
+    padding-top: 3px;
     font-size: 13px;
 }
 
