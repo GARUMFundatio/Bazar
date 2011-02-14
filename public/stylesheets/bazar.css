@@ -309,6 +309,7 @@ input#busca {
     line-height: 26px;
     font-style: italic;
     color: #aaa;
+    cursor: auto !important;
 }
 
 input#busca:focus,
@@ -1256,6 +1257,17 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 
 .ui-slider-horizontal .ui-state-focus {
     background-position: center top;
+}
+
+.ui-slider-horizontal .ui-slider-handle:hover {
+    cursor: pointer;
+}
+
+.ui-slider-horizontal .ui-slider-handle:hover,
+.ui-slider-horizontal .ui-slider-handle:focus,
+.ui-slider-horizontal .ui-slider-handle:active {
+    background-position: center top;
+    outline: none;
 }
 
 
