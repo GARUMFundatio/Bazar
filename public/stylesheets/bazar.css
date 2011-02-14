@@ -562,6 +562,10 @@ select {
 }
 
 #sidebar-items #user-menu .logout-link {
+    margin-right: 8px;
+}
+
+#sidebar-items #user-menu .logout-link {
     padding-left: 3px;
     border-left: 1px solid #999;
 }
