@@ -344,6 +344,7 @@ input#busca:active {
 
 #cajabusqueda table tr td:last-child input {
     max-width: 211px !important;
+    cursor: auto !important;
 }
 
 #cajabusqueda .ui-button {
