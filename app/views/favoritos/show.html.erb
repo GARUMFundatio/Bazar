@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bazar:</b>
+  <%= @favorito.bazar_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @favorito.user_id %>
+</p>
+
+<p>
+  <b>Empresa:</b>
+  <%= @favorito.empresa_id %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @favorito.fecha %>
+</p>
+
+
+<%= link_to 'Edit', edit_favorito_path(@favorito) %> |
+<%= link_to 'Back', favoritos_path %>
