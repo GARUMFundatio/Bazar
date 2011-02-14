@@ -149,6 +149,7 @@ body {
 /* Titulares de página */
 
 #contenido .page-title {
+    margin-bottom: 15px;
     font-size: 30px;
     line-height: 1.2;
     font-weight: normal;
