@@ -1,0 +1,29 @@
+<h1>Listing favoritos</h1>
+
+<table>
+  <tr>
+    <th>Bazar</th>
+    <th>User</th>
+    <th>Empresa</th>
+    <th>Fecha</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @favoritos.each do |favorito| %>
+  <tr>
+    <td><%= favorito.bazar_id %></td>
+    <td><%= favorito.user_id %></td>
+    <td><%= favorito.empresa_id %></td>
+    <td><%= favorito.fecha %></td>
+    <td><%= link_to 'Show', favorito %></td>
+    <td><%= link_to 'Edit', edit_favorito_path(favorito) %></td>
+    <td><%= link_to 'Destroy', favorito, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Favorito', new_favorito_path %>
