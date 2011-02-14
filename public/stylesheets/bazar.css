@@ -245,7 +245,9 @@ form.edit_bazarcms_empresa label {
      font-size: 14px;
 }
 
-form label .form-help {
+form label .form-help,
+p.form-help,
+.form-help {
      font-style: italic;
      color: #999;
 }
