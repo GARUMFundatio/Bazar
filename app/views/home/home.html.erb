@@ -1,167 +1,48 @@
-<script>
-	$(function() {
-		$( "#tabs" ).tabs();
-	});
-	</script>
 
-<div class="home" style="width:660px;background:white;align:center;margin:0 auto;">
 
-<div id="tabs" style="text-align: left;">
-	<ul>
-		<li><a href="#tabs-1">Noticias</a></li>
-		<li><a href="#tabs-2">¿Qué es Bazar?</a></li>
-		<li><a href="#tabs-3">Empresas</a></li>
-		<li><a href="#tabs-4">Dashboard</a></li>
-		<li><a href="#tabs-5">Registrarse</a></li>
-		<li><a href="/login?display=inside">Entrar</a></li>
-	</ul>
+<div class="contenido-destacado">
+<h3>Qué es Bazar</h3>
+<p><strong>Bazar</strong> es un generador de mercados que sirve a las empresas y los emprendedores para aumentar sus ventas y mejorar sus estrategias de compras, al tiempo que les facilita establecer alianzas, conocer mejor su sector y posicionarse en mercados internacionales vendiendo desde el primer día.</p>
+<p>El corazón de Bazar es un sistema de ofertas y pedidos optimizado para ayudar a cada empresa a encontrar nuevos clientes, distribuidores y proveedores.</p>
+<p>Bazar incorporará módulos de rating, e-learning, arbitraje, mensajería interna, publicación de contenidos y muchos más.</p>
 
-	<div id="tabs-1">
-
-		  <% @noticias = Noticia.where("visible = 1").order("fecha desc").limit(5)  %>
-		  <% for noticia in @noticias %>
-			<h3><span class="fecha"><%= noticia.fecha.strftime("%d-%m-%Y") -%></span> <%= noticia.titulo -%></h3>
-			<p><%= noticia.texto -%></p>
-
-		  <% end %>
-		
-	</div>
-	
-	
-	<div id="tabs-2">
-		<p><a href="http://garumfundatio.org/proyectos/bazar">Bazar</a> es el primer programa desarrollado por <a href="http://garumfundatio.org/">Garum</a>.</p>
-		<p>Es <strong>software libre</strong>, tiene una <strong>estructura distribuida</strong> y sirve para <strong>generar mercados</strong>.</p>
-		<p><strong>Software libre</strong> no sólo quiere decir que el código sea abierto y que no haya que pagar licencias de uso. Quiere decir que hay una comunidad de desarrolladores, alimentada y animada por la fundación, innovando y mejorando las funcionalidades permanentemente. Por eso las empresas locales de desarrolladores pueden dar servicio sobre Bazar y desarrollar, sin costes y con todo el apoyo, nuevas funcionalidades para necesidades específicas. En consecuencia, invertir en una instalación de Bazar para un cluster de empresas o una asociación empresarial significa que el dinero y el I+D se quedarán y desarrollarán en lo local.</p>
-		<p>Que la <strong>estructura sea distribuida</strong> significa que la información y los datos no dependen de una empresa o institución centralizadora externa. Las instalaciones de Bazar son autónomas, aunque se interconecten&#8230; y lo mejor es que se interconectan, <strong>poniendo en contacto a clientes y proveedores en todo el mundo</strong>.</p>
-		<p>Pero realmente, lo más valioso de Bazar es aquello para lo que sirve. <strong>Bazar facilita que las pequeñas empresas y los emprendedores encuentren nuevos mercados a escala global en un entorno confiable sin los costes de la internacionalización física</strong>.</p>
-		<h3>Funcionalidades del proyecto Bazar</h3>
-		<p><a href="http://garumfundatio.org/proyectos/bazar">Bazar</a> se parece a una red social. Cada empresa tiene su ficha, publica sus noticias, busca empresas que puedan estar interesadas en sus productos o que le provean con confiabilidad a mejores precios.</p>
-		<p>Pero a diferencia de una red social Bazar está limitado a empresas y a grupos y asociaciones de empresas. Por eso <strong>el corazón de Bazar es un sistema de ofertas y pedidos optimizado para ayudar a cada empresa a encontrar nuevos clientes, distribuidores y proveedores</strong>.</p>
-		<p>Pero el mercado tradicional no era sólo un lugar para la compraventa. Era también un espacio de interacción política y social y -se olvida demasiado a menudo- el lugar donde maestros, filósofos y jueces arbitraban conflictos y se encontraban con sus discípulos.  El mercado no es exclusivamente una relación monetaria sino sobre todo una relación social.</p>
-		<p>Recogiendo ese espíritu <a href="http://garumfundatio.org/proyectos/bazar">Bazar</a> incorporará módulos de <strong>rating, e-learning, arbitraje, mensajería interna, publicación de contenidos</strong> y muchos más.</p>
-		<p>En pocas palabras: <a href="http://garumfundatio.org/proyectos/bazar">Bazar</a> es un <strong>generador de mercados</strong> que sirve a las empresas y los emprendedores para<strong> aumentar sus ventas y mejorar sus estrategias de compras</strong>, al tiempo que les facilita establecer alianzas, conocer mejor su sector y <strong>posicionarse en mercados internacionales vendiendo desde el primer día</strong>.</p>
-	</div>
-	
-	
-	<div id="tabs-3">
-	
-        <p>Este es el directorio alfábetico de empresas. Haz click en una letra para ver una lista de las empresas cuyo nombre comienza por dicha letra.</p>
-
-        <div class="directorio">
-
-		  <div id="tabs2">
-		  <ul>
-		  <% letras = "" %>
-		  <% ultima = "" %>
-		  <% @empresas = Bazarcms::Empresa.where("1 = 1").order("nombre asc")  %>
-		  <% for empre in @empresas %>
-			  <% if ultima != empre.nombre[0].chr.upcase %>
-			    <% ultima = empre.nombre[0].chr.upcase %>
-				<% letras += ultima %>
-				<li><a href="#tabs2-<%= empre.nombre[0].chr.upcase -%>"><%= empre.nombre[0].chr.upcase -%></a></li>
-		    <% end %>
-		  <% end %>
-	    </ul>
-
-		<% for ii in 0..letras.size-1  %>
-			<% ll = letras[ii].chr %>
-			<div id="tabs2-<%= letras[ii].chr -%>">
-				
-				<% @empresas = Bazarcms::Empresa.where('upper(substr(nombre,1,1)) = ?', [ letras[ii].chr ]).order('nombre desc')%>
-				<div id="listadoempresas<%= ll -%>">
-				
-				<% for empre in @empresas %>
-					<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#listadoempresas<%= ll -%>').hide();$('#datos<%= ll -%>').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#datosempresas<%= ll -%>').show();"> <%= image_tag('lupa.png') -%> </a><br/>
-				<% end %>
-				
-				</div>
-				<div id="datosempresas<%= ll -%>" style="display:none">
-					<a href="#" onclick="$('#listadoempresas<%= ll -%>').show(); $('#datosempresas<%= ll -%>').hide();">Cerrar Información</a><br/><br/>
-					<div id="datos<%= ll -%>">
-					</div>
-				</div>
-			</div>
-	    <% end %>
-			
-		  </div>	
-		</div>
-		
-		<script>
-			$(function() {
-				$( "#tabs2" ).tabs({ selected: 0 });
-			});
-		</script>
-		
-	</div>
-	
-	
-	<div id="tabs-4">
-
-		<div id="tab4">
-		
-			<p><strong>Total Empresas:</strong> <%= Bazarcms::Empresa.count_by_sql("select count(*) from empresas") %> <br/>
-			<strong>Total Consultas Realizadas:</strong> <%= Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas") %></p>
-
-			<table cellspacing="0">
-                <tr>
-                    <td>
-                        <table class="tabla" cellspacing="0">
-                            <tr>
-                                <th>
-                                Nuevas Empresas
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-
-                    			<% for empre in @ultimas %>
-                    				<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#tab4').hide();$('#conte4datos').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#conte4').show();"> <%= image_tag('lupa.png') -%> </a><br/>
-                    			<% end %>
-                				</td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td>
-                        <table class="tabla" cellspacing="0">
-                            <tr>
-                                <th>
-                                Empresas Actualizadas
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-
-                    			<% for empre in @actualizadas %>
-                    			<%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#tab4').hide();$('#conte4datos').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#conte4').show();"> <%= image_tag('lupa.png') -%> </a><br/>
-                    			<% end %>
-                				</td>
-                			</tr>
-                		</table>
-            		</td>
-        		</tr>
-    		</table>
-		</div>
-	
-		<div id="conte4" style="display: none">
-			<a href="#" onclick="$('#tab4').show(); $('#conte4').hide();">Cerrar Información</a><br/><br/>
-			<div id="conte4datos">
-			</div>
-		</div>
-	
-	</div>
-
-	<div id="tabs-5">
-
-		<p>Estamos en Beta pero ya puedes darte de alta y empezar a usar este Bazar. Todos los días vamos incorporando nuevas funcionalidades.</p>
-		<p>¿Quieres ser de los primeros? Envíanos un correo a: info (arroba) garumfundatio.org</p>
-		
-	</div>
-	
-	
-	<div id="tabs-6">
-	
-	</div>	
-	
 </div>
 
-</div> 
+<div class="contenidos-secundarios tres">
+
+<div>
+<h4>Noticias</h4>
+<span class="fecha">11-01-2011</span>
+<h3>¿Quieres empezar a usar Bazar?</h3>
+<p>Si quieres ser de los primeros en usarlo, sugerirnos mejoras o simplemente darle un vistazo, escribenos a info (arroba) garumfundatio.org y te enviaremos una invitación.</p>
+
+<span class="fecha">10-12-2010</span>
+<h3>Ya estamos online</h3>
+<p>La primera de beta de Bazar ya está operativa.</p>
+</div>
+
+<div>
+<h4>Nuevas Empresas</h4>
+<ul>
+<li><a href="#">geofun factory (bazar)</a></li>
+<li><a href="#">Sabor e Arte S. Coop.</a></li>
+<li><a href="#">Jigging Corp</a></li>
+<li><a href="#">El Arte de las Cosas</a></li>
+<li><a href="#">Las Indias</a></li>
+<ul>
+</div>
+
+<div>
+<h4>Sobre este bazar</h4>
+<p>Bazar-Tatooine es un nodo de Bazar impulsado por Tatooine. Este nodo agrupa empresas de dintintos sectores con almenos una sede en Tatooine.</p>
+<p>Si eres una empresa, estas interesada en formar parte de este nodo de Bazar y tienes almenos una sede en Tatooine envianos tus datos de contacto a info@tatooine.gx.</p>
+</div>
+
+</div><!-- fin .contenidos-secundarios -->
+
+<div class="contenidos-terciarios" id="nube">
+<h4>Nube de Tags de este bazar</h4>
+<div>
+               [aquí va la nube de tags]
+</div>
+</div>
