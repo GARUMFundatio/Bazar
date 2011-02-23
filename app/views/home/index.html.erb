@@ -1,3 +1,300 @@
+
+<div id="cajabusqueda">
+<div class="demo">
+
+<h3 class="page-title">Busca Empresas</h3>
+
+<p class="busqueda-principal">
+<input id="busca" name="busqueda" size="30" type="text">
+<label for="busca" class="form-help">Puede introducir varios términos de busqueda separados por espacios. Por ejemplo: madrid web<br />
+Puede usar * para términos parciales. Por ejemplo: herramientas*</label>
+</p>
+
+<h3>Busqueda Avanzada <a id="busqueda-link" href="#busqueda-busqueda">Ver/ocultar</a></h3>
+<script>
+$('#busqueda-link').click(function() {
+  $('#avanzada').toggle();
+});
+</script>
+
+
+	<style>
+	#demo-frame > div.demo { padding: 1px !important; };
+	</style>
+	
+	<script>
+	<%= Bazarcms::Empresasdato.listaRE %>
+	<%= Bazarcms::Empresasdato.listaRD %>
+	
+	$(function() {
+		$( "#slider-range" ).slider({
+			range: true,
+			min: 0,
+			max: maxRE,
+			values: [ 0, maxRE ],
+			slide: function( event, ui ) {
+				$( "#empleados" ).val( "Entre: " + listaRE[ui.values[ 0 ]] + " y " + listaRE2[ui.values[ 1 ]]  );
+				$( "#empleados2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+			}
+		});
+		$( "#empleados" ).val( "Todos");
+		$( "#empleados2" ).val( "0+"+maxRE);
+		
+
+		$( "#slider-range2" ).slider({
+			range: true,
+			min: 0,
+			max: maxRD,
+			values: [ 0, maxRD ],
+			slide: function( event, ui ) {
+				$( "#ventas" ).val( "Entre: " + listaRD[ui.values[ 0 ]] + " y " + listaRD2[ui.values[ 1 ]] );
+				$( "#ventas2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+			}
+		});
+		
+		$( "#compras" ).val( "Todos");
+		$( "#compras2" ).val( "0+"+maxRD);
+
+		$( "#ventas" ).val( "Todos");
+		$( "#ventas2" ).val( "0+"+maxRD);
+
+		$( "#slider-range3" ).slider({
+			range: true,
+			min: 0,
+			max: maxRD,
+			values: [ 0, maxRD ],
+			slide: function( event, ui ) {
+				$( "#compras" ).val( "Entre: " + listaRD[ui.values[ 0 ]] + " y " + listaRD2[ui.values[ 1 ]] );
+				$( "#compras2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+			}
+		});
+
+
+		$( "#slider-range4" ).slider({
+			range: true,
+			min: 0,
+			max: maxRD,
+			values: [ 0, maxRD ],
+			slide: function( event, ui ) {
+				$( "#resultados" ).val( "Entre: " + listaRD[ui.values[ 0 ]] + " y " + listaRD2[ui.values[ 1 ]] );
+				$( "#resultados2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+			}
+		});
+		$( "#resultados" ).val( "Todos");
+		$( "#resultados2" ).val( "0+"+maxRD);
+
+		
+	});
+	
+
+	</script>
+<div id ="avanzada" style="display:none">
+
+<table border="0" cellspacing="0">
+	<tr>
+		<td width="350px">
+			<label for="empleados">Nº Empleados:</label>
+
+		</td>
+		<td width="200px">
+			<div id="slider-range"></div>
+		</td>
+		<td>
+            <input type="text" size="35" id="empleados" readonly="readonly" style="border:0; color:#f6931f; font-weight:bold;" />
+            <input type="hidden" id="empleados2" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="0">
+	<tr>
+		<td width="350px">
+			<label for="compras">Compras:</label>
+		</td>
+		<td width="200px">
+			<div id="slider-range3"></div>
+		</td>
+		<td>
+            <input type="text" size="35" id="compras" readonly="readonly" style="border:0; color:#f6931f; font-weight:bold;" />
+            <input type="hidden" id="compras2" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="0">
+	<tr>
+		<td width="350px">
+			<label for="ventas">Ventas:</label>
+		</td>
+		<td width="200px">
+			<div id="slider-range2"></div>
+		</td>
+        <td>
+            <input type="text" size="35" id="ventas" readonly="readonly" style="border:0; color:#f6931f; font-weight:bold;" />
+            <input type="hidden" id="ventas2" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>
+	</tr>
+</table>
+
+
+<table border="0" cellspacing="0">
+	<tr>
+		<td width="350px">
+			<label for="resultados">Resultados:</label>
+		</td>
+		<td width="200px">
+			<div id="slider-range4"></div>
+		</td>
+		<td>
+            <input type="text" size="35" id="resultados" readonly="readonly" style="border:0; color:#f6931f; font-weight:bold;" />
+            <input type="hidden" id="resultados2" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>
+	</tr>
+</table>
+
+</div>
+
+
+  <input type=radio name=size> Ofertas </label>
+  <input type=radio name=size> Demandas </label>
+  <input type=radio name=size> Empresas</label>
+ <button>Buscar</button>
+</div>
+
+</div>
+
+<br />
+
+<div id="estado" style="display: none; width:550px;" >
+	<style>
+		.ui-progressbar-value { background-image: url(/images/pbar-ani.gif); }
+	</style>
+	<script>
+		$(function() {
+			$( "#progressbar" ).progressbar({ value: 0});
+		});
+	</script>
+	<div id="progressbar" style="display: none"></div>
+	<br/>
+	<div id="estadotexto" style="display: none"></div>
+</div>
+
+<div id="resultados">
+<h3>Ayuda Busqueda <a id="ayuda-busqueda-link" href="#ayuda-busqueda">Ver/ocultar</a></h3>
+<script>
+$('#ayuda-busqueda-link').click(function() {
+  $('#ayuda-busqueda').toggle();
+});
+</script>
+
+     <div id="ayuda-busqueda">
+          <ul id="pasos-container">
+          <li class="paso" id="paso1">
+               <div>Introduzca los términos de la busqueda</div>
+               <img src="/images/ayuda-busqueda-paso1.gif" alt="" />
+          </li>
+          <li class="paso" id="paso2">
+               <div>Puede usar asteriscos o espacios para buscar por varias palabras.</div>
+               <img src="/images/ayuda-busqueda-paso2.gif" alt="" />
+          </li>
+          <li class="paso" id="paso3">
+               <div>Use los desplazadores para limitar la búsqueda.</div>
+               <img src="/images/ayuda-busqueda-paso3.gif" alt="" />
+          </li>
+          <li class="paso" id="paso4">
+               <div>Pulse Buscar para empezar la búsqueda</div>
+               <img src="/images/ayuda-busqueda-paso4.gif" alt="" />
+          </li>
+          <li class="paso" id="paso5">
+               <div>Progreso de la búsqueda</div>
+               <img src="/images/ayuda-busqueda-paso5.gif" alt="" />
+          </li>
+          <li class="paso" id="paso6">
+               <div>Navegue por los resultados.</div>
+               <img src="/images/ayuda-busqueda-paso6.gif" alt="" />
+          </li>
+          </ul>
+
+          <div class="pasos-nav-pyn">
+          <a href="#" id="prev-paso">Anterior</a>
+          <a href="#" id="next-paso">Siguiente</a>
+          </div>
+
+     </div><!-- /#ayuda-busuqeda-->
+
+     <script>
+             $('#pasos-container')
+                .before('<div id="pasos-nav">')
+                .cycle({
+                   fx:     'scrollHorz',
+                   speed:  '500',
+                   timeout: 0,
+                   next:   '#next-paso',
+                   prev:   '#prev-paso',
+                   pager:  '#pasos-nav'
+                });
+     </script>
+
+</div>
+
+<div id="lista">
+
+</div>
+
+<script>
+	$(function() {
+
+		$("button", ".demo").button();
+		$("button", ".demo").click(function() {
+			$('#lista').html('Enviando peticiones a los bazares');
+			// $('#lista').load('/bazarcms/enviabusqueda?q='+escape($("#busca").val()));
+			s = $("#busca").val();
+			if (s.length == 0) {
+				s = '*';
+			}
+			s = s.replace(/ /g, "+");
+			emple = $("#empleados2").val();
+			ventas = $("#ventas2").val();
+			compras = $("#compras2").val();
+			resultados = $("#resultados2").val();
+			
+			$("#estado").show();
+			$("#progressbar").show();
+			$("#estadotexto").show();
+			
+			$("#estadotexto").html('Buscando ...');
+			$.ajax({
+			  async:true, 
+			  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados,
+			  success: function(data) {
+			    $('#lista').html(data);
+				clearInterval(actualiza);
+				
+				$('#progressbar').hide();
+				$("#progressbar").progressbar({ value: 0});
+				
+				$('#estadotexto').hide();
+				$("#estadotexto").html('');
+				
+				clearInterval(actualiza);
+			  }
+			});
+			
+			var actualiza = setInterval(function()
+		    {
+				$.get('/bazarcms/estadobusqueda', function(data) {
+					$("#progressbar").progressbar({ value: (data[0].empresasconsulta.total_respuestas * 100) / data[0].empresasconsulta.total_consultas});
+					$("#estadotexto").html(data[0].empresasconsulta.total_resultados +' Empresas de '+ data[0].empresasconsulta.total_respuestas +' Bazares');
+				});
+		     },1000);
+			
+			
+			return false; 
+		});
+	});
+</script>
+
+
 <% if (!Bazarcms::Empresa.nil?) then %>
 	<div id="empresas">
 	
