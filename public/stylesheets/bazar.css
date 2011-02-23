@@ -143,6 +143,75 @@ body {
     background: #fff url(/images/fondo-sidebar.png) repeat-y top right;
 }
 
+/* menu de usuario en cabecera */
+#nav-usuario {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    color: #B8CDE1;
+}
+
+.anonimo #nav-usuario a.login-link {
+    display: block;
+    height: 20px;
+    margin: 6px 0;
+    padding: 12px 15px;
+    border-radius : 10px;
+	-moz-border-radius : 10px;
+	-webkit-border-radius : 10px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    background: url(images/fondo-login-bazar.png) repeat-x center top;
+}
+
+.anonimo #nav-usuario a.registro-link,
+.logueado #nav-usuario a {
+    color: #B8CDE1;
+}
+
+ul#nav-usuario {
+    list-style-type: none;
+    text-align: left;
+}
+
+ul#nav-usuario a {
+    margin-right: 7px;
+}
+
+ul#nav-usuario a img {
+    vertical-align: middle;
+}
+
+#nav-usuario .user-links,
+#nav-usuario .user-messages {
+    display: inline;
+    float: left;
+    margin-bottom: 7px;
+
+}
+
+#nav-usuario .nav-site {
+    clear: left;
+    padding: 7px 0;
+}
+
+#nav-usuario .user-links {
+    border-right: 1px solid #5A7EA7;
+}
+
+#nav-usuario .user-links  .logout-link {
+    margin-right: 10px;
+}
+
+#nav-usuario .user-messages a {
+    margin: 0 0 0 6px;
+}
+
 /* no cargar fondo sidebar con usuario anonimo */
 .anonimo .body,
 .logueado .body {
@@ -268,17 +337,18 @@ div.contenidos-secundarios h4 {
 #nube {
     width: 100%;
     overflow: hidden;
+    text-align: center;
 }
 
-#nube .css1 { font-size: 1.0em; }
-#nube .css2 { font-size: 1.4em; }
-#nube .css3 { font-size: 1.9em; }
-#nube .css4 { font-size: 2.2em; }
+#nube .css1 { font-size: 1em; }
+#nube .css2 { font-size: 2em; }
+#nube .css3 { font-size: 3em; }
+#nube .css4 { font-size: 4em; }
 
 #nube .css1, #nube .css2, #nube .css3, #nube .css4 {
-    display: inline;
-    float: left;
-    margin: .3em .4em .4em;
+    margin: 0 .8em;
+    line-height: 1.5em;
+    text-decoration: none;
 }
 
 /* íconos en gral */
@@ -819,51 +889,6 @@ select {
 
 #sidebar ul.links li img {
     vertical-align: middle;
-}
-
-/* menu de usuario logueado */
-#sidebar #sidebar-items #user-menu {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 222px;
-    padding: 10px;
-    border: 1px solid #1A3655;
-    border-radius: 12px;
-    -moz-border-radius: 12px;
-    -webkit-border-radius: 12px;
-    background: #244367;
-    color: #b8cde1;
-}
-
-#sidebar #user-menu .user-messages {
-    margin-bottom: 0;
-}
-
-#sidebar-items #user-menu .logout-link {
-    margin-right: 8px;
-}
-
-#sidebar-items #user-menu .logout-link {
-    padding-left: 3px;
-    border-left: 1px solid #999;
-}
-#sidebar-items #user-menu .logout-link img {
-    padding: 3px 5px 3px;
-}
-
-#sidebar #user-menu a {
-    font-size: 13px;
-    color: #b8cde1;
-}
-
-#sidebar-items #user-menu a img {
-    text-decoration: none;
-    background: #244367;
-}
-
-#sidebar-items #user-menu .msgs-link {
-    margin-left: 8px;
 }
 
 #content h3 {
