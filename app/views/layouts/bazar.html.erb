@@ -56,9 +56,12 @@
 
 				</li>
 				<li class="nav-site">
-    			<a href="#" class="home-link" title="Ir a la Página principal"><img alt="Página principal" src="/images/icono-home.png"></a>
-                <a href="#" class="account-link" title="Mi cuenta"><img alt="Cuenta de usuario" src="/images/icono-usuario.png"></a>
-                <a href="#" class="empresa-link" title="Mi empresa"><img src="images/group.png" /></a>
+                <%= link_to(image_tag('icono-home.png'), "/home", :class => 'home-link', :title => 'Página Principal') %>
+                <!-- <a href="#" class="home-link" title="Ir a la Página principal"><img alt="Página principal" src="/images/icono-home.png"></a>-->
+                <%= link_to(image_tag('icono-usuario.png'), edit_user_path(current_user.id), :class => 'account-link', :title => 'Mi Cuenta') %>
+                <!-- <a href="#" class="account-link" title="Mi cuenta"><img alt="Cuenta de usuario" src="/images/icono-usuario.png"></a>-->
+                <%= link_to(image_tag('group.png'), edit_bazarcms_empresa_path(current_user.id), :class => 'empresa-link', :title => 'Mi Empresa') %>
+                <!--<a href="#" class="empresa-link" title="Mi empresa"><img src="images/group.png" /></a> -->
                 <a href="#"><img title="Historial de consultas" src="/images/icono-historial.png" /></a>
                 <a href="#"><img title="Crear Oferta/Demanda" src="images/add.png" /></a>
                 </li>
