@@ -7,7 +7,7 @@ class Actividad < ActiveRecord::Base
     act.desc = texto 
     act.bazar_id = cluster
     act.fecha = DateTime.now
-    act.user_id = user.current_user.id
+    act.user_id = current_user.id
     act.local_id = 0
     
     act.save
