@@ -12,23 +12,25 @@
 
 <div>
 <h4>Noticias</h4>
-<span class="fecha">11-01-2011</span>
-<h3>¿Quieres empezar a usar Bazar?</h3>
-<p>Si quieres ser de los primeros en usarlo, sugerirnos mejoras o simplemente darle un vistazo, escribenos a info (arroba) garumfundatio.org y te enviaremos una invitación.</p>
 
-<span class="fecha">10-12-2010</span>
-<h3>Ya estamos online</h3>
-<p>La primera de beta de Bazar ya está operativa.</p>
+<% @noticias = Noticia.where("visible = 1").order("fecha desc").limit(2)  %>
+<% for noticia in @noticias %>
+
+	<h3> <%= noticia.titulo -%></h3> <span class="fecha"><%= noticia.fecha.strftime("%d-%m-%Y") -%></span>
+	<p><%= noticia.texto -%></p>
+
+<% end %>
+
 </div>
 
 <div>
 <h4>Nuevas Empresas</h4>
 <ul>
-<li><a href="#">geofun factory (bazar)</a></li>
-<li><a href="#">Sabor e Arte S. Coop.</a></li>
-<li><a href="#">Jigging Corp</a></li>
-<li><a href="#">El Arte de las Cosas</a></li>
-<li><a href="#">Las Indias</a></li>
+	
+<% for empre in @ultimas %>
+	<li><%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#tab4').hide();$('#conte4datos').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#conte4').show();"> </a></li>
+<% end %>
+
 <ul>
 </div>
 
