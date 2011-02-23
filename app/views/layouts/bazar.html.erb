@@ -17,8 +17,16 @@
 	
 	<%= csrf_meta_tag %>
   </head>
-  <body >
-		
+	
+		<% if !current_user.nil? %>
+			<body class="logueado"><!-- si usuario logueado -->
+			<% if !current_user_is_invitado %>
+				<body class="admin"><!-- si usuario administrador -->
+			<% end %>
+		<% else %>
+			<body class="anonimo"><!-- si es anónimo -->
+		<% end %>
+	
    <div class="container">
 
 	  <div id="header">
