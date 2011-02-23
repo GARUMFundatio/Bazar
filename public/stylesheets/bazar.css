@@ -265,9 +265,21 @@ div.contenidos-secundarios h4 {
     text-align: left;
 }
 
-#nube {}
+#nube {
+    width: 100%;
+    overflow: hidden;
+}
 
-#contenido #nube a  {}
+#nube .css1 { font-size: 1.0em; }
+#nube .css2 { font-size: 1.2em; }
+#nube .css3 { font-size: 1.4em; }
+#nube .css4 { font-size: 1.6em; }
+
+#nube .css1, #nube .css2, #nube .css3 {
+    display: inline;
+    float: left;
+    margin: .3em .4em .4em;
+}
 
 /* íconos en gral */
 #contenido a img {
