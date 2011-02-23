@@ -139,12 +139,131 @@ body {
     background: #fff url(/images/fondo-sidebar.png) repeat-y top right;
 }
 
+/* no cargar fondo sidebar con usuario anonimo */
+.anonimo .body,
+.logueado .body {
+    background: #fff;
+}
+
 #contenido {
     float: left;
     background: #F9F9F9;
 	width: 660px;
 	padding: 20px;
 }
+
+/* ancho del contenido principal con el usuario anonimo */
+.anonimo #contenido,
+.logueado #contenido {
+    display: block;
+    float: none;
+    width: 920px;
+    text-align: left;
+}
+
+#contenido .contenido-destacado {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1.4em;
+    padding-bottom: .6em;
+    border-bottom: 1px solid #ccc;
+
+}
+
+#contenido .contenido-destacado h3 {
+    padding: .3em .6em .4em;
+    background: #30537A;
+    color: #fdd900;
+}
+
+#contenido .contenido-destacado p {
+    padding: 0 .4em;
+    font-size: 1.4em;
+    line-height: 1.3;
+}
+
+.contenidos-secundarios {
+    width: 100%;
+    overflow: hidden;
+}
+
+.contenidos-secundarios div {
+    display: inline;
+    float: left;
+    margin-right: 19px;
+}
+
+div.tres div {
+    width: 294px;
+    overflow: hidden;
+}
+
+div.contenidos-secundarios div:last-child {
+    margin: 0;
+}
+
+div.contenidos-secundarios h4 {
+    margin: 0 0 .8em 0;
+    padding: .3em .6em .4em;
+    font-size: 1.2em;
+    background: #30537A;
+    color: #fdd900;
+}
+
+#contenido div.contenidos-secundarios div h3 {
+    font-size: 1.2em;
+    margin-bottom: .2em;
+}
+
+#contenido div.contenidos-secundarios div .fecha {
+    display: inline;
+    float: right;
+    margin: .2em .7em .3em;
+    padding: .2em .4em;
+    border-radius : 4px;
+	-moz-border-radius : 4px;
+	-webkit-border-radius : 4px;
+    font-size: .8em;
+    line-height: 1.2em;
+    text-align: center;
+    background: #648BB7;
+    color: #fff;
+    background: #aaa;
+    color: #fff;
+}
+
+#contenido div.contenidos-secundarios div p {
+    margin-top: .4em;
+}
+
+#contenido div.contenidos-secundarios div ul {
+    margin: 0;
+    padding: 0;
+}
+
+#contenido div.contenidos-secundarios div li {
+    margin: 0 0 0 20px;
+    padding: .3em;
+    font-size: 1.2em;
+}
+
+#contenido div.contenidos-terciarios {
+    clear: both;
+    margin: 1.2em 0 1em;
+}
+
+#contenido div.contenidos-terciarios h4 {
+    margin: 0 0 .8em 0;
+    padding: .3em .6em .4em;
+    font-size: 1.2em;
+    background: #30537A;
+    color: #fdd900;
+    text-align: left;
+}
+
+#nube {}
+
+#contenido #nube a  {}
 
 /* íconos en gral */
 #contenido a img {
