@@ -37,8 +37,30 @@
       <% if current_user.nil? %>
          <div id="nav-usuario">
            <a class="registro-link" href="#">Registrarse</a> o
-           <a class="login-link" href="#">Entrar</a>
+           <a class="login-link" href="#" onclick="$('#dialog-form').dialog('open');$('#login-content').load('/login?display=inside');
+		">Entrar</a>
          </div>
+		<script>
+		$(function() {
+			$( "#dialog:ui-dialog" ).dialog( "destroy" );
+
+
+			$( "#dialog-form" ).dialog({
+				autoOpen: false,
+				height:320,
+				width: 400,
+				modal: true,
+				close: function() {
+				}
+			});
+
+		});
+		</script>
+		
+		<div id="dialog-form" title="Entrar en Bazar">
+			<div id="login-content">
+			</div>
+		</div>
       <% end %>
 
       <% if !current_user.nil? %>
