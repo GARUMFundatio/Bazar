@@ -33,6 +33,39 @@
 		      <h1 id="title"><%= h BZ_param("Titular") %></h1>
 	          <h2 id="slogan"><%= h BZ_param("Subtitular") %></h2>
 	  </div>
+	  
+      <% if current_user.nil? %>
+         <div id="nav-usuario">
+           <a class="registro-link" href="#">Registrarse</a> o
+           <a class="login-link" href="#">Cerrar</a>
+         </div>
+      <% end %>
+
+      <% if !current_user.nil? %>
+			<ul id="nav-usuario">
+				<li class="user-links">
+				<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
+				<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
+				</li>
+				<li class="user-messages">
+				<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones') %>
+				(<%= Mensaje.notificacionessinleer(current_user.id).count -%>/<%=  Mensaje.notificacionestotal(current_user.id).count -%>)
+
+				<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M", :class => 'msgs-link', :title => 'Mensajes') %>
+				(<%= Mensaje.mensajessinleer(current_user.id).count -%>/<%=  Mensaje.mensajestotal(current_user.id).count -%>)
+
+				</li>
+				<li class="nav-site">
+    			<a href="#" class="home-link" title="Ir a la Página principal"><img alt="Página principal" src="/images/icono-home.png"></a>
+                <a href="#" class="account-link" title="Mi cuenta"><img alt="Cuenta de usuario" src="/images/icono-usuario.png"></a>
+                <a href="#" class="empresa-link" title="Mi empresa"><img src="images/group.png" /></a>
+                <a href="#"><img title="Historial de consultas" src="/images/icono-historial.png" /></a>
+                <a href="#"><img title="Crear Oferta/Demanda" src="images/add.png" /></a>
+                </li>
+            </ul>
+    <% end %>
+	  
+	  
  
 	  <div id="content" class="span-24 last">	
 			<div class="body">
