@@ -43,9 +43,9 @@
 
 </div><!-- fin .contenidos-secundarios -->
 
-<div class="contenidos-terciarios" id="nube">
+<div class="contenidos-terciarios">
 <h4>Nube de Tags de este bazar</h4>
-<div>
+<div id="nube">
 	
 	<% @tags = Bazarcms::Empresa.tag_counts_on(:actividades) %>
 	<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
