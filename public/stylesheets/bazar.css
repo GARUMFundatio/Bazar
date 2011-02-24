@@ -248,10 +248,12 @@ ul#nav-usuario a img {
 
 #contenido .contenido-destacado {
     width: 100%;
+    height: 340px;
     overflow: hidden;
     margin-bottom: 1.4em;
     padding-bottom: .6em;
     border-bottom: 1px solid #ccc;
+    background: url(/images/grafico-home.png) no-repeat 5px 45px;
 
 }
 
@@ -262,8 +264,9 @@ ul#nav-usuario a img {
 }
 
 #contenido .contenido-destacado p {
+    margin: .8em  .8em 0 410px;
     padding: 0 .4em;
-    font-size: 1.4em;
+    font-size: 2.4em;
     line-height: 1.3;
 }
 
