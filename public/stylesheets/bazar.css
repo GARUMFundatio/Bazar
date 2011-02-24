@@ -166,7 +166,9 @@ body {
     font-weight: bold;
     text-decoration: none;
     background: url(/images/fondo-login-bazar.png) repeat-x center top;
+    color: #0E3971;
 }
+
 
 .anonimo #nav-usuario a.registro-link,
 .logueado #nav-usuario a {
@@ -347,6 +349,7 @@ div.contenidos-secundarios h4 {
 #nube {
     width: 100%;
     overflow: hidden;
+    padding: 15px 0;
     text-align: center;
 }
 
@@ -357,7 +360,7 @@ div.contenidos-secundarios h4 {
 
 #nube .css1, #nube .css2, #nube .css3, #nube .css4 {
     display: inline;
-    margin: 0 .8em;
+    margin: 0 .7em;
     line-height: 0.6em;
     text-decoration: none;
 }
