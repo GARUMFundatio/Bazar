@@ -148,8 +148,7 @@ body {
     position: absolute;
     top: 12px;
     right: 18px;
-    width: 200px;
-    height: 60px;
+    width: 220px;
     text-align: center;
     color: #B8CDE1;
 }
@@ -166,7 +165,7 @@ body {
     line-height: 20px;
     font-weight: bold;
     text-decoration: none;
-    background: url(/images/fondo-login-bazar.png) repeat-x center top;
+    background: url(images/fondo-login-bazar.png) repeat-x center top;
 }
 
 .anonimo #nav-usuario a.registro-link,
@@ -175,8 +174,20 @@ body {
 }
 
 ul#nav-usuario {
+    top: 15px;
+    right: 16px;
+    width: 222px;
+    height: 54px;
+    overflow: hidden;
+    margin: 0;
+    padding: 7px 10px;
+    border: 1px solid #1A3655;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
     list-style-type: none;
     text-align: left;
+    background: #244367 url(/images/fondo-nav-usuario.png) repeat-x left bottom;
 }
 
 ul#nav-usuario a {
@@ -192,12 +203,11 @@ ul#nav-usuario a img {
     display: inline;
     float: left;
     margin-bottom: 7px;
-
 }
 
 #nav-usuario .nav-site {
     clear: left;
-    padding: 7px 0;
+    padding: 8px 0 0;
 }
 
 #nav-usuario .user-links {
