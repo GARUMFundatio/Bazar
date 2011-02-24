@@ -165,7 +165,7 @@ body {
     line-height: 20px;
     font-weight: bold;
     text-decoration: none;
-    background: url(images/fondo-login-bazar.png) repeat-x center top;
+    background: url(/images/fondo-login-bazar.png) repeat-x center top;
 }
 
 .anonimo #nav-usuario a.registro-link,
