@@ -346,6 +346,7 @@ div.contenidos-secundarios h4 {
 #nube .css4 { font-size: 4em; }
 
 #nube .css1, #nube .css2, #nube .css3, #nube .css4 {
+    display: inline;
     margin: 0 .8em;
     line-height: 1.5em;
     text-decoration: none;
