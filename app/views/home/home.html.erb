@@ -2,57 +2,8 @@
 
 <div class="contenido-destacado">
 <h3>Bazar es una red en la que puedes:</h3>
-<p>Bazar es una red en la que puedes publicar o buscar ofertas y demandas para vender y comprar</p>
+<p>Bazar es una red de XX empresas en la que puedes publicar o buscar ofertas y demandas para vender y comprar en confianza en todo el mundo.</p>
+<p><a href="#">Muchos bazares, un gran mercado</a> <a href="#">Sociología de Bazar</a>.</p>
 
 </div>
 
-<div class="contenidos-secundarios tres">
-
-<div>
-<h4>Noticias</h4>
-
-<% @noticias = Noticia.where("visible = 1").order("fecha desc").limit(2)  %>
-<% for noticia in @noticias %>
-
-    <span class="fecha"><%= noticia.fecha.strftime("%d-%m-%Y") -%></span>
-    <h3> <%= noticia.titulo -%></h3>
-	<p><%= noticia.texto -%></p>
-
-<% end %>
-
-</div>
-
-<div>
-<h4>Nuevas Empresas</h4>
-<ul>
-	
-<% for empre in @ultimas %>
-	<li><%= link_to(empre.nombre, empre.url) %> <a href="#" onclick="$('#tab4').hide();$('#conte4datos').load('/bazarcms/empresas/show2/<%= empre.id -%>');$('#conte4').show();"> </a></li>
-<% end %>
-
-<ul>
-</div>
-
-<div>
-<h4>Sobre este bazar</h4>
-<p>Bazar-Tatooine es un nodo de Bazar impulsado por Tatooine. Este nodo agrupa empresas de dintintos sectores con almenos una sede en Tatooine.</p>
-<p>Si eres una empresa, estas interesada en formar parte de este nodo de Bazar y tienes almenos una sede en Tatooine envianos tus datos de contacto a info@tatooine.gx.</p>
-</div>
-
-</div><!-- fin .contenidos-secundarios -->
-
-<div class="contenidos-terciarios">
-<h4>Nube de Tags de este bazar</h4>
-<div id="nube">
-	
-	<% @tags = Bazarcms::Empresa.tag_counts_on(:actividades) %>
-	<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-	  <div class="<%= css_class -%>"><%= tag.name %></div>
-	<% end %>
-	<% @tags = Bazarcms::Empresa.tag_counts_on(:intereses) %>
-	<% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-	  <div class="<%= css_class -%>"><%= tag.name %></div>
-	<% end %>
-	
-</div>
-</div>
