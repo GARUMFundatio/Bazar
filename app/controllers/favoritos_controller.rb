@@ -82,7 +82,8 @@ class FavoritosController < ApplicationController
     else 
       logger.debug "Ya estaba en favoritos!!! #{params.inspect}"
     end 
-        
+    
+    render :layout => false  
   end
 
   def delfav
@@ -93,6 +94,7 @@ class FavoritosController < ApplicationController
     else 
       logger.debug "No estaba en favoritos!!! #{params.inspect}"
     end 
+    render :layout => false  
         
   end
 
