@@ -15,6 +15,7 @@
 
 	<td> 
 		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{act.id}&tipo=M", :title => 'Correo electrónico' %>
+		<%= helper_favo(act.bazar_id, act.user_id) %>
 	</td>
 
 </tr>
