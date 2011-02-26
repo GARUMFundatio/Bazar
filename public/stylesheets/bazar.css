@@ -542,8 +542,8 @@ input#busca {
     display: inline;
     float: left;
     width: 403px;
-    margin-right: 170px;
-    margin-bottom: 50px;
+    max-height: 22px;
+    margin: 0 170px 50px 0;
     padding: 8px 60px 10px 10px;
     border: 1px solid #999;
     border-top: 2px solid #aaa;
@@ -599,9 +599,10 @@ input#busca:active {
     top: 31px;
     left: 550px;
     height: 43px;
-    width: 137px;
+    width: 139px;
     overflow: hidden;
     padding: 0;
+    margin: 0;
     border-color: #999;
     border-left-color: #aaa;
     border-radius : 0;
