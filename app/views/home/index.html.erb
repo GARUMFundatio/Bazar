@@ -6,11 +6,10 @@
 
 <p class="busqueda-principal">
 <input id="busca" name="busqueda" size="30" type="text">
-<label for="busca" class="form-help">Puede introducir varios términos de busqueda separados por espacios. Por ejemplo: madrid web<br />
-Puede usar * para términos parciales. Por ejemplo: herramientas*</label>
+
 </p>
 
-<h3>Busqueda Avanzada <a id="busqueda-link" href="#busqueda-busqueda">Ver/ocultar</a></h3>
+<a id="busqueda-link" href="#busqueda-busqueda">Busqueda Avanzada</a>
 <script>
 $('#busqueda-link').click(function() {
   $('#avanzada').toggle();
@@ -152,34 +151,6 @@ $('#busqueda-link').click(function() {
 	</tr>
 </table>
 
-</div>
-
-
-  <input type=radio name=size> Ofertas </label>
-  <input type=radio name=size> Demandas </label>
-  <input type=radio name=size> Empresas</label>
- <button>Buscar</button>
-</div>
-
-</div>
-
-<br />
-
-<div id="estado" style="display: none; width:550px;" >
-	<style>
-		.ui-progressbar-value { background-image: url(/images/pbar-ani.gif); }
-	</style>
-	<script>
-		$(function() {
-			$( "#progressbar" ).progressbar({ value: 0});
-		});
-	</script>
-	<div id="progressbar" style="display: none"></div>
-	<br/>
-	<div id="estadotexto" style="display: none"></div>
-</div>
-
-<div id="resultados">
 <h3>Ayuda Busqueda <a id="ayuda-busqueda-link" href="#ayuda-busqueda">Ver/ocultar</a></h3>
 <script>
 $('#ayuda-busqueda-link').click(function() {
@@ -235,7 +206,39 @@ $('#ayuda-busqueda-link').click(function() {
                 });
      </script>
 
+
+</div><!-- /#avanzada-->
+
+<p id="opciones-busqueda">
+  <input type=radio name=size> Ofertas </label>
+  <input type=radio name=size> Demandas </label>
+  <input type=radio name=size> Empresas</label>
+</p>
+ <button>Buscar</button>
+ <a href="#" id="publicar-link">Publicar Oferta / Demanda</a>
+</div><!-- /.demo -->
+
+</div><!-- /#cajabusqueda -->
+
+<br />
+
+<div id="estado" style="display: none; width:550px;" >
+	<style>
+		.ui-progressbar-value { background-image: url(/images/pbar-ani.gif); }
+	</style>
+	<script>
+		$(function() {
+			$( "#progressbar" ).progressbar({ value: 0});
+		});
+	</script>
+	<div id="progressbar" style="display: none"></div>
+	<br/>
+	<div id="estadotexto" style="display: none"></div>
 </div>
+
+<div id="resultados">
+
+</div><!-- /#resultados-->
 
 <div id="lista">
 
