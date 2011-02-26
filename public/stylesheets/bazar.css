@@ -1081,6 +1081,10 @@ table.tabla tr:first-child :last-child {
 	text-align: left;
 }
 
+#contenido table.tabla tr td div.favoritos { /* div con ícono de favoritos dentro de las celdas */
+    display: inline;
+}
+
 #contenido table.tabla tr:first-child td {
     border-top: 1px solid #cdcdcd;
 }
