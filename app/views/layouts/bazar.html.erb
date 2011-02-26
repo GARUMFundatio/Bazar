@@ -82,9 +82,7 @@
                 <%= link_to(image_tag('icono-usuario.png'), edit_user_path(current_user.id), :class => 'account-link', :title => 'Mi Cuenta') %>
                 <%= link_to(image_tag('group.png'), edit_bazarcms_empresa_path(current_user.id), :class => 'empresa-link', :title => 'Mi Empresa') %>
                 <%= link_to(image_tag('icono-historial.png'), bazarcms_empresasconsultas_path, :class => 'historial-link', :title => 'Historial de Consultas Realizadas') %>
-                <!-- <a href="#"><img title="Historial de consultas" src="/images/icono-historial.png" /></a> -->
                 <%= link_to(image_tag('add.png'), "/home", :class => 'crear-oferta-link', :title => 'Crear Oferta/Demanda') %>
-                <!-- <a href="#"><img title="Crear Oferta/Demanda" src="/images/add.png" /></a> -->
                 </li>
             </ul>
     <% end %>
