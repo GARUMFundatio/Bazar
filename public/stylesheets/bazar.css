@@ -526,6 +526,12 @@ form.edit_bazarcms_empresa div.actions {
 
 /* Búsqueda de Empresas */
 
+p.busqueda-principal {
+    width: 70%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
 p.busqueda-principal label {
     display: block;
     padding-top: 4px;
@@ -533,19 +539,18 @@ p.busqueda-principal label {
 }
 
 input#busca {
-    position: relative;
-    left: -2px;
-    width: 93%;
-    padding: 8px 10px 10px;
-    border: 1px solid #ccc;
+    display: inline;
+    float: left;
+    width: 447px;
+    margin-right: 170px;
+    margin-bottom: 50px;
+    padding: 8px 60px 10px 10px;
+    border: 1px solid #999;
     border-top: 2px solid #aaa;
-    border-radius: 18px;
-    -moz-border-radius: 18px;
-    -webkit-border-radius: 18px;
     font-size: 18px;
     line-height: 26px;
     cursor: auto !important;
-    background: url(/images/busqueda-bg-lupa.png) no-repeat right top;
+    background: url(images/busqueda-bg-lupa.png) no-repeat 467px top;
 }
 
 input#busca:focus,
@@ -553,6 +558,12 @@ input#busca:active {
     font-style: normal;
     background-color: #F2F0E3;
     color: #444;
+}
+
+#cajabusqueda {
+    position: relative;
+    min-height: 100px;
+    padding-top: 31px;
 }
 
 #cajabusqueda table {
@@ -584,13 +595,19 @@ input#busca:active {
 
 #cajabusqueda .ui-button,
 #cajabusqueda .ui-button .ui-state-default {
-    margin-top: 20px;
-    padding: 0 30px;
+    position: absolute;
+    top: 31px;
+    left: 643px;
+    height: 43px;
+    padding: 0 45px 0 40px;
     border-color: #999;
-    border-radius: 14px;
-    -moz-border-radius: 14px;
-    -webkit-border-radius: 14px;
-    font-size: 20px;
+    border-left-color: #aaa;
+    border-left-width: 2px;
+    border-radius : 0;
+	-moz-border-radius : 0; /* Mozilla */
+	-webkit-border-radius : 0; /* Webkit */
+    font-size: 19px;
+    line-height: .1em !important;
     background-image: url(images/ui-bg_glass_75_dadada_1x400.png);
 }
 
@@ -600,9 +617,48 @@ input#busca:active {
 #cajabusqueda .ui-button .ui-state-hover,
 #cajabusqueda .ui-button .ui-state-focus,
 #cajabusqueda .ui-button .ui-state-active {
-    background-image: url(/images/ui-bg_glass_d4d4d4_1x150.png);
+    background-image: url(images/ui-bg_glass_d4d4d4_1x150.png);
     border-color: #777;
+    border-left-color: #aaa;
 }
+
+#cajabusqueda .ui-button .ui-button-text {
+    padding: 0 8px;
+}
+
+/* busqueda avanzada */
+
+#busqueda-link {
+    display: inline;
+    float: right;
+    position: relative;
+    top: -50px;
+    margin: 15px 110px 0 0;
+    padding: 3px 25px 3px 7px;
+    border: thin solid #C1D3E3;
+    border-radius : 5px;
+	-moz-border-radius : 5px; /* Mozilla */
+	-webkit-border-radius : 5px; /* Webkit */
+	text-decoration: none;
+    background: #E0E8F0 url(/images/icono-busqueda-avanzada.png) no-repeat 130px center;
+}
+
+#opciones-busqueda {
+    position: absolute;
+    top: 59px;
+    right: 275px;
+    width: 485px;
+    padding: 10px;
+    border: 1px solid #999;
+    border-top: none;
+    background: #F2F0E3;
+
+}
+
+#opciones-busqueda input {
+    vertical-align:text-bottom;
+}
+
 
 
 /* Ayuda para la búsqueda de Empresas */
