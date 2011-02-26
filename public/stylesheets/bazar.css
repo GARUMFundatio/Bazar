@@ -550,7 +550,7 @@ input#busca {
     font-size: 18px;
     line-height: 26px;
     cursor: auto !important;
-    background: url(images/busqueda-bg-lupa.png) no-repeat 467px top;
+    background: url(/images/busqueda-bg-lupa.png) no-repeat 467px top;
 }
 
 input#busca:focus,
