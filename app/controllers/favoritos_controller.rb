@@ -69,6 +69,35 @@ class FavoritosController < ApplicationController
     end
   end
 
+  def addfav
+    @fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar], params[:empresa])
+
+    if @fav.nil? 
+      @fav = Favorito.new
+      @fav.fecha = DateTime.now 
+      @fav.bazar_id = params[:bazar] 
+      @fav.empresa_id = params[:empresa]
+      @fav.user_id = current_user.id
+      @fav.save 
+    else 
+      logger.debug "Ya estaba en favoritos!!! #{params.inspect}"
+    end 
+        
+  end
+
+  def delfav
+    @fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar], params[:empresa])
+
+    if !@fav.nil? 
+      @fav.destroy 
+    else 
+      logger.debug "No estaba en favoritos!!! #{params.inspect}"
+    end 
+        
+  end
+
+
+
   # DELETE /favoritos/1
   # DELETE /favoritos/1.xml
   def destroy

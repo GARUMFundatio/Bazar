@@ -35,6 +35,8 @@ Bazar::Application.routes.draw do
   match '/enviarnotificacion' => 'mensajes#enviarnotificacion', :as => :enviarnotificacion
   match '/updateinfo' => 'clusters#updateinfo', :as => :updateinfo
   match "/actividad/dashboard" => "actividades#dashboard"
+  match "/favorito/addfav" => "favoritos#addfav"
+  match "/favorito/delfav" => "favoritos#delfav"  
 
 # API routes
 
