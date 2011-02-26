@@ -675,14 +675,13 @@ input#busca:active {
 }
 
 #opciones-busqueda {
-    display: none; /* para mostrar con javascript */
     position: absolute;
     top: 59px;
     right: 370px;
     width: 452px;
     padding: 10px;
     border: 1px solid #999;
-    border-top: none;
+    border-top-color: #DBCE8E;
     background: #F2F0E3;
 
 }
