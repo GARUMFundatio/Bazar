@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado, :BZ_param
+  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado, :BZ_param, :dohttp
+
+  require "net/http"
+  require "uri"
 
   def BZ_param(clave)
     conf = Conf.find_by_nombre(clave)
@@ -92,6 +95,42 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
-  
+
+    
+    def dohttp (bazar, pet)
+      
+      logger.debug "dohttp: bazar #{bazar}: Enviando #{pet}"
+    
+      cluster = Cluster.find(bazar)
+      uri = URI.parse("#{cluster.url}/#{pet}")
+      
+      post_body = []
+      post_body << "Content-Type: text/plain\r\n"
+
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.open_timeout = http.read_timeout = 10
+
+      request = Net::HTTP::Get.new(uri.request_uri)
+      request.body = post_body.join
+      request["Content-Type"] = "text/plain"
+
+      begin 
+
+        res =  Net::HTTP.new(uri.host, uri.port).start {|http| http.request(request) }
+        case res
+        when Net::HTTPSuccess, Net::HTTPRedirection
+          return res.body
+        else
+          logger.debug "dohttp: ERROR en la petición a #{uri}---------->"+res.error!
+          return ""
+        end
+
+      rescue Exception => e
+        logger.debug "dohttp: Exception leyendo #{cluster.url} Got #{e.class}: #{e}"
+        return ""        
+      end
+
+    end 
+        
 end
 

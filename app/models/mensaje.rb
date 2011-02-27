@@ -1,5 +1,8 @@
 class Mensaje < ActiveRecord::Base
   
+  # TODO: ojo con los scopes ahora hace falta controlar el bazar de origen para no sacar
+  # los mensajes de otros usuarios con el mismo id pero distintos bazares
+  
   scope :notificacionessinleer, lambda { |user|
       where("mensajes.leido IS NULL AND mensajes.borrado is NULL AND mensajes.tipo = 'N' and mensajes.para = ?", user)
     }  

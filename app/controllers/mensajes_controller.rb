@@ -49,12 +49,24 @@ class MensajesController < ApplicationController
 
   def new
     @mensaje = Mensaje.new
+    
+    # puts dohttp(3, "/api/empresas.xml")
+    
     @mensaje.de = current_user.id
+    @mensaje.bazar_origen = BZ_param("BazarId")
+    
     if (!params[:aquien].nil?)
       @mensaje.para = params[:aquien]
     else
       @mensaje.para = 0
     end
+    
+    if (!params[:bazar_destino].nil?)
+      @mensaje.bazar_destino = params[:bazar_destino]
+    else
+      @mensaje.bazar_destino = BZ_param("BazarId")
+    end
+    
     if (!params[:tipo].nil?)
       @mensaje.tipo = params[:tipo]
     else
@@ -130,10 +142,16 @@ class MensajesController < ApplicationController
   end
 
   def create
+    
+    # solo grabamos el mensaje en local si el destinatario es local 
+    # si no enviamos la petición al bazar de destino 
+    
     @mensaje = Mensaje.new(params[:mensaje])
 
     respond_to do |format|
       if @mensaje.save
+        
+        # revisamos si el usuario es local si no pedimos a su bazar el correo. 
         BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
                                   User.find(@mensaje.para).email, 
                                   @mensaje.asunto, 
