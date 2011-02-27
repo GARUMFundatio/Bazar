@@ -1,4 +1,16 @@
 <%= form_for(@mensaje) do |f| %>
+
+<div class="field">
+    <%= f.hidden_field :de %>
+    <%= f.hidden_field :para %>
+    <%= f.hidden_field :tipo %>
+    <%= f.hidden_field :fecha %>
+    <%= f.hidden_field :leido %>
+    <%= f.hidden_field :borrado %>
+    <%= f.hidden_field :bazar_origen %>
+    <%= f.hidden_field :bazar_destino %>
+
+</div>
  <% @mensaje.asunto = "RE: "+@mensaje.asunto %>
  <div class="field">
 	De: <%= User.find(@mensaje.para).login -%> a <%= User.find(@mensaje.de).login -%>

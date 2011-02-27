@@ -149,23 +149,40 @@ class MensajesController < ApplicationController
     @mensaje = Mensaje.new(params[:mensaje])
 
     respond_to do |format|
-      if @mensaje.save
+
+      # si el mensaje tiene un destinatario local   
+      
+      logger.debug "----------> (#{@mensaje.bazar_destino}) (#{BZ_param("BazarId")})"
+      if (@mensaje.bazar_destino.to_i == BZ_param("BazarId").to_i)
+        logger.debug "Es un mensaje con destino local!!!"
         
-        # revisamos si el usuario es local si no pedimos a su bazar el correo. 
-        BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
-                                  User.find(@mensaje.para).email, 
-                                  @mensaje.asunto, 
-                                  @mensaje.texto).deliver
-        if @mensaje.tipo == 'M'
-          format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
+        if @mensaje.save
+        
+          BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
+                                    User.find(@mensaje.para).email, 
+                                    @mensaje.asunto, 
+                                    @mensaje.texto).deliver
+          if @mensaje.tipo == 'M'
+            format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
+          else
+            format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
+          end
+          format.xml  { render :xml => @mensaje, :status => :created, :location => @mensaje }
         else
-          format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @mensaje.errors, :status => :unprocessable_entity }
         end
-        format.xml  { render :xml => @mensaje, :status => :created, :location => @mensaje }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @mensaje.errors, :status => :unprocessable_entity }
+      else 
+        # enviamos el mensaje al bazar de destino
+        logger.debug "Enviando el mensaje a #{@mensaje.bazar_destino}"
+        
+        
+        
+        format.html { redirect_to("/home") }
+        
       end
+      
+      
     end
   end
 
