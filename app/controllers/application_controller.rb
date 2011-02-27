@@ -97,7 +97,42 @@ class ApplicationController < ActionController::Base
     end
 
     
-    def dohttp (bazar, pet, body)
+    def dohttppost (bazar, pet, body)
+      
+      logger.debug "dohttp: bazar #{bazar}: Enviando #{pet}"
+    
+      cluster = Cluster.find(bazar)
+      uri = URI.parse("#{cluster.url}/#{pet}")
+      
+      post_body = []
+      post_body << body 
+      
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.open_timeout = http.read_timeout = 10
+
+      request = Net::HTTP::Post.new(uri.request_uri)
+      request.body = post_body.join
+      request["Content-Type"] = "text/plain"
+
+      begin 
+
+        res =  Net::HTTP.new(uri.host, uri.port).start {|http| http.request(request) }
+        case res
+        when Net::HTTPSuccess, Net::HTTPRedirection
+          return res.body
+        else
+          logger.debug "dohttp: ERROR en la petición a #{uri}---------->"+res.error!
+          return ""
+        end
+
+      rescue Exception => e
+        logger.debug "dohttp: Exception leyendo #{cluster.url} Got #{e.class}: #{e}"
+        return ""        
+      end
+
+    end 
+
+    def dohttpget (bazar, pet)
       
       logger.debug "dohttp: bazar #{bazar}: Enviando #{pet}"
     
@@ -106,7 +141,6 @@ class ApplicationController < ActionController::Base
       
       post_body = []
       post_body << "Content-Type: text/plain\r\n"
-      post_body << body 
       
       http = Net::HTTP.new(uri.host, uri.port)
       http.open_timeout = http.read_timeout = 10
@@ -132,6 +166,8 @@ class ApplicationController < ActionController::Base
       end
 
     end 
+
+
         
 end
 

@@ -1,5 +1,8 @@
 class MensajesController < ApplicationController
   layout "bazar"
+  
+  skip_before_filter :verify_authenticity_token, :only => :mensajeremoto
+  
   def index
     puts "-------> parametros: ("+params.inspect+")"
     if (!params[:tipo].nil?)
@@ -50,7 +53,11 @@ class MensajesController < ApplicationController
   def new
     @mensaje = Mensaje.new
     
-    # puts dohttp(3, "/api/empresas.xml")
+    if (!params[:nombre].nil?)
+      @nombre = params[:nombre]
+    else 
+      @nombre = ""
+    end 
     
     @mensaje.de = current_user.id
     @mensaje.bazar_origen = BZ_param("BazarId")
@@ -176,7 +183,7 @@ class MensajesController < ApplicationController
         # enviamos el mensaje al bazar de destino
         logger.debug "Enviando el mensaje a #{@mensaje.bazar_destino}"
         
-        dohttp (@mensaje.bazar_destino, "/mensajeremoto", @mensaje.to_json)
+        dohttppost (@mensaje.bazar_destino, "/mensajeremoto", @mensaje.to_json)
         
         format.html { redirect_to("/home") }
         
@@ -231,7 +238,30 @@ class MensajesController < ApplicationController
   end
   
   def mensajeremoto
-    logger.debug request.inspect 
+    
+    logger.debug "Mensaje remoto <-----------"
+    body = request.body.read
+    logger.debug ">>>#{body}<<<"
+    
+    mensa = JSON.parse(body)
+
+    logger.debug "#{mensa.inspect} <-----------"
+    logger.debug  mensa['mensaje']['asunto'] 
+    
+    @mensaje = Mensaje.new
+    
+    @mensaje.tipo = mensa['mensaje']['tipo']
+    @mensaje.de = mensa['mensaje']['de']
+    @mensaje.para = mensa['mensaje']['para']
+    
+    @mensaje.texto = mensa['mensaje']['texto']
+    @mensaje.asunto = mensa['mensaje']['asunto']
+    @mensaje.fecha = mensa['mensaje']['fecha']
+    @mensaje.bazar_origen = mensa['mensaje']['bazar_origen']
+    @mensaje.bazar_destino = mensa['mensaje']['bazar_destino']
+     
+    @mensaje.save
+    
   end 
   
 end
