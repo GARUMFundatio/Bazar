@@ -285,6 +285,12 @@ class MensajesController < ApplicationController
      
     @mensaje.save
     
+    BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
+                              User.find(@mensaje.para).email, 
+                              @mensaje.asunto, 
+                              @mensaje.texto).deliver
+    
+    
   end 
   
 end
