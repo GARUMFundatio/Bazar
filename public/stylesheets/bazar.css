@@ -1733,17 +1733,17 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 1px; }
 
 /* sobreescribir otros estilos del dialog */
-.anonimo .ui-dialog { position: absolute; padding: 0; width: 300px; overflow: hidden; background: #f1e7b5; }
+.anonimo .ui-dialog { position: absolute; padding: 0; width: 300px; height: 259px; overflow: hidden; background: #f1e7b5; }
 .anonimo .ui-dialog {
-    border-radius: 18px;
-    -moz-border-radius: 18px;
-    -webkit-border-radius: 18px;
+    -moz-border-radius-bottomleft: 18px;
+	-webkit-border-bottom-left-radius: 18px;
+	-moz-border-radius-bottomright: 18px;
+	-webkit-border-bottom-right-radius: 18px;
 }
 .anonimo .ui-dialog .ui-dialog-titlebar { padding: .5em 1em .3em; position: relative; color: #fdd900;  }
 
 body.anonimo div.ui-dialog #dialog-form {
     width: 323px !important;
-    height: 210px;
     padding: 0;
     -moz-border-radius-bottomleft: 18px;
 	-webkit-border-bottom-left-radius: 18px;
