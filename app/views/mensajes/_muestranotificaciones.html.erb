@@ -1,7 +1,7 @@
 <div>
 
 <% if @mensajes.count > 0 %>	
-<table class="tabla">
+<table class="tabla" cellspacing="0">
   <tr>
     <th>De</th>
     <th>Asunto</th>
@@ -51,9 +51,9 @@
 
 <% else %>
 	<% if params[:tipo] == 'N' %>
-		<br/>No hay notificaciones. 
+		<p>No hay notificaciones.</p>
 	<% else %>
-		</br>No hay mensajes.
+  <p>No hay mensajes.</p>
 	<% end %>
 <% end %>
 
