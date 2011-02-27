@@ -1729,6 +1729,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 
 
 /*que el botón de cerrar no se mueva y tenga fondo amarillo garum */
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .55em; }
 .anonimo .ui-dialog-titlebar-close .ui-icon { width: 16px; height: 16px; background-image: url(/images/ui-icons_amarillo-garum.png); }
 .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 1px; background: #30537A; }
 
