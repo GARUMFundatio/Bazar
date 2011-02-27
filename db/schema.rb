@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110227203221) do
+ActiveRecord::Schema.define(:version => 20110227204650) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -156,8 +156,8 @@ ActiveRecord::Schema.define(:version => 20110227203221) do
     t.string   "asunto"
     t.integer  "bazar_origen"
     t.integer  "bazar_destino"
-    t.string   "a_email"
-    t.string   "a_nombre"
+    t.string   "de_email"
+    t.string   "de_nombre"
     t.string   "para_email"
     t.string   "para_nombre"
   end
