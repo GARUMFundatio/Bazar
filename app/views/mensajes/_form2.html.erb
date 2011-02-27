@@ -1,6 +1,5 @@
 <%= form_for(@mensaje) do |f| %>
 
-
 <div class="field">
     <%= f.hidden_field :de %>
     <%= f.hidden_field :para %>
@@ -15,7 +14,12 @@
 
 <% if (@mensaje.para >= 0 ) %>
  <div class="field">
-	De:  <%= User.find(@mensaje.de).login -%> a <%= User.find(@mensaje.para).login -%>
+	De:  <%= User.find(@mensaje.de).login -%> a 
+    <% if @nombre.length > 0 %>
+		<%= @nombre -%>
+	<% else %>
+		<%= User.find(@mensaje.para).login -%>
+	<% end %>
  </div> 
 <% end %>
 
