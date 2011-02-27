@@ -238,9 +238,15 @@ class MensajesController < ApplicationController
   end
   
   def mensajeremoto
+    
     logger.debug "Mensaje remoto <-----------"
-    logger.debug request.inspect 
     logger.debug request.body.read
+    
+    mensa = JSON.parse(request.res.body)
+
+    logger.debug "#{mensa.inspect} <-----------"
+    logger.debug  mensa['mensaje']['asunto'] 
+    
   end 
   
 end
