@@ -248,6 +248,20 @@ class MensajesController < ApplicationController
     logger.debug "#{mensa.inspect} <-----------"
     logger.debug  mensa['mensaje']['asunto'] 
     
+    @mensaje = Mensaje.new
+    
+    @mensaje.tipo = mensa['mensaje']['tipo']
+    @mensaje.de = mensa['mensaje']['de']
+    @mensaje.para = mensa['mensaje']['para']
+    
+    @mensaje.texto = mensa['mensaje']['texto']
+    @mensaje.asunto = mensa['mensaje']['asunto']
+    @mensaje.fecha = mensa['mensaje']['fecha']
+    @mensaje.bazar_origen = mensa['mensaje']['bazar_origen']
+    @mensaje.bazar_destino = mensa['mensaje']['bazar_destino']
+     
+    @mensaje.save
+    
   end 
   
 end
