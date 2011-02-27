@@ -231,7 +231,7 @@ class MensajesController < ApplicationController
   end
   
   def mensajeremoto
-    
+    logger.debug request.inspect 
   end 
   
 end
