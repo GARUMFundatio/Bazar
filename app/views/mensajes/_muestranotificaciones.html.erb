@@ -21,10 +21,7 @@
 <% end %>
     
 	<td style="text-align:left;">
-		<%= User::find_by_id(mensaje.de).login %>
-		<% if (!Bazarcms::Empresa::find_by_id(mensaje.de).nil?) %>
-			(<%= Bazarcms::Empresa::find(mensaje.de).nombre %>)<%= link_to(image_tag("lupa.png"), bazarcms_empresa_path(mensaje.de)) %>
-		<% end %>
+		<%= mensaje.de_nombre %>
 	</td>
   
 	<td style="text-align:left;">

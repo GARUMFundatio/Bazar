@@ -51,15 +51,12 @@ class MensajesController < ApplicationController
   end
 
   def new
+    
     @mensaje = Mensaje.new
     
-    if (!params[:nombre].nil?)
-      @nombre = params[:nombre]
-    else 
-      @nombre = ""
-    end 
-    
     @mensaje.de = current_user.id
+    @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(current_user.id).nombre
+    @mensaje.de_email = current_user.email
     @mensaje.bazar_origen = BZ_param("BazarId")
     
     if (!params[:aquien].nil?)
@@ -73,6 +70,19 @@ class MensajesController < ApplicationController
     else
       @mensaje.bazar_destino = BZ_param("BazarId")
     end
+    
+    if (@mensaje.bazar_destino.to_i == BZ_param("BazarId").to_i)
+      @mensaje.para_nombre = @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(@mensaje.para).nombre
+      @mensaje.para_email = User.find_by_id(@mensaje.para).email
+    else
+      # en este caso el nombre y el email lo fijan en el bazar de destino
+      if !params[:nombre].nil?
+        @mensaje.para_nombre = params[:nombre]
+      else 
+        @mensaje.para_nombre = ""      
+      end
+      @mensaje.para_email = ""
+    end 
     
     if (!params[:tipo].nil?)
       @mensaje.tipo = params[:tipo]
@@ -149,24 +159,23 @@ class MensajesController < ApplicationController
   end
 
   def create
-    
-    # solo grabamos el mensaje en local si el destinatario es local 
-    # si no enviamos la petición al bazar de destino 
-    
-    @mensaje = Mensaje.new(params[:mensaje])
 
+    @mensaje = Mensaje.new(params[:mensaje])
+    
     respond_to do |format|
 
-      # si el mensaje tiene un destinatario local   
+      logger.debug "----------> (#{params[:mensaje][:bazar_destino]}) (#{BZ_param("BazarId")})"
       
-      logger.debug "----------> (#{@mensaje.bazar_destino}) (#{BZ_param("BazarId")})"
-      if (@mensaje.bazar_destino.to_i == BZ_param("BazarId").to_i)
+      if (params[:mensaje][:bazar_destino].to_i == BZ_param("BazarId").to_i)
+
+        # si el mensaje tiene un destinatario local 
+
         logger.debug "Es un mensaje con destino local!!!"
         
         if @mensaje.save
         
-          BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
-                                    User.find(@mensaje.para).email, 
+          BazarMailer.enviamensaje(@mensaje.de_email, 
+                                    @mensaje.para_email, 
                                     @mensaje.asunto, 
                                     @mensaje.texto).deliver
           if @mensaje.tipo == 'M'
@@ -179,16 +188,20 @@ class MensajesController < ApplicationController
           format.html { render :action => "new" }
           format.xml  { render :xml => @mensaje.errors, :status => :unprocessable_entity }
         end
+        
       else 
+        
         # enviamos el mensaje al bazar de destino
+        
         logger.debug "Enviando el mensaje a #{@mensaje.bazar_destino}"
         
         dohttppost (@mensaje.bazar_destino, "/mensajeremoto", @mensaje.to_json)
+
+        @mensaje.destroy
         
         format.html { redirect_to("/home") }
         
       end
-      
       
     end
   end
@@ -201,27 +214,53 @@ class MensajesController < ApplicationController
     @mensaje2 = Mensaje.new(params[:mensaje])
     @mensaje2.fecha = DateTime.now
     @mensaje2.de = @mensaje.para
+    @mensaje2.de_nombre = @mensaje.para_nombre
+    @mensaje2.de_email = @mensaje.para_email
+    
+    @mensaje2.bazar_origen = @mensaje.bazar_destino
     @mensaje2.para = @mensaje.de 
+    @mensaje2.para_nombre = @mensaje.de_nombre 
+    @mensaje2.para_email = @mensaje.de_email 
+    
+    @mensaje2.bazar_destino = @mensaje.bazar_origen
     @mensaje2.tipo = @mensaje.tipo
     @mensaje2.leido = nil 
     @mensaje2.borrado = nil
     
     respond_to do |format|
-      if @mensaje2.save
-        BazarMailer.enviamensaje(User.find(@mensaje2.de).email, 
-                                  User.find(@mensaje2.para).email, 
-                                  @mensaje2.asunto, 
-                                  @mensaje2.texto).deliver
-        if @mensaje2.tipo == 'M'
-          format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
+      
+      # si es un envio local 
+      
+      if (@mensaje2.bazar_destino.to_i == BZ_param("BazarId").to_i)
+      
+        if @mensaje2.save
+          BazarMailer.enviamensaje(@mensaje2.de_email, 
+                                    @mensaje2.para_email, 
+                                    @mensaje2.asunto, 
+                                    @mensaje2.texto).deliver
+          if @mensaje2.tipo == 'M'
+            format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
+          else
+            format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
+          end
+          format.xml  { head :ok }
         else
-          format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @mensaje.errors, :status => :unprocessable_entity }
         end
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @mensaje.errors, :status => :unprocessable_entity }
-      end
+
+      else 
+        # enviamos el mensaje al bazar de destino
+        
+        logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
+        
+        dohttppost (@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
+
+        @mensaje2.destroy
+        
+        format.html { redirect_to("/home") }
+      end 
+
     end
   end
 
@@ -229,10 +268,11 @@ class MensajesController < ApplicationController
   # DELETE /mensajes/1.xml
   def destroy
     @mensaje = Mensaje.find(params[:id])
+    tipo = @mensaje.tipo
     @mensaje.destroy
 
     respond_to do |format|
-      format.html { redirect_to(mensajes_url) }
+      format.html { redirect_to(mensajes_url+"?tipo=#{tipo}") }
       format.xml  { head :ok }
     end
   end
@@ -252,7 +292,12 @@ class MensajesController < ApplicationController
     
     @mensaje.tipo = mensa['mensaje']['tipo']
     @mensaje.de = mensa['mensaje']['de']
+    @mensaje.de_nombre = mensa['mensaje']['de_nombre']
+    @mensaje.de_email = mensa['mensaje']['de_email']
+    
     @mensaje.para = mensa['mensaje']['para']
+    @mensaje.para_nombre = mensa['mensaje']['para_nombre']
+    @mensaje.para_email = User.find(@mensaje.para).email
     
     @mensaje.texto = mensa['mensaje']['texto']
     @mensaje.asunto = mensa['mensaje']['asunto']
@@ -261,6 +306,11 @@ class MensajesController < ApplicationController
     @mensaje.bazar_destino = mensa['mensaje']['bazar_destino']
      
     @mensaje.save
+    
+    BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
+                              @mensaje.para_email, 
+                              @mensaje.asunto, 
+                              @mensaje.texto).deliver
     
   end 
   
