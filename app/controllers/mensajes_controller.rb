@@ -183,7 +183,7 @@ class MensajesController < ApplicationController
         # enviamos el mensaje al bazar de destino
         logger.debug "Enviando el mensaje a #{@mensaje.bazar_destino}"
         
-        dohttppost (@mensaje.bazar_destino, "/mensajeremoto", @mensaje.to_json)
+        dohttppost (@mensaje.bazar_destino, "/mensajeremoto", "[#{@mensaje.to_json}]")
         
         format.html { redirect_to("/home") }
         
@@ -240,7 +240,7 @@ class MensajesController < ApplicationController
   def mensajeremoto
     
     logger.debug "Mensaje remoto <-----------"
-    logger.debug request.body.read
+    logger.debug ">>>#{request.body.read}<<<"
     
     mensa = JSON.parse(request.body.read)
 
