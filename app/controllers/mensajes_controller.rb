@@ -51,15 +51,12 @@ class MensajesController < ApplicationController
   end
 
   def new
+    
     @mensaje = Mensaje.new
     
-    if (!params[:nombre].nil?)
-      @nombre = params[:nombre]
-    else 
-      @nombre = ""
-    end 
-    
     @mensaje.de = current_user.id
+    @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(current_user.id).nombre
+    @mensaje.de_email = current_user.email
     @mensaje.bazar_origen = BZ_param("BazarId")
     
     if (!params[:aquien].nil?)
@@ -73,6 +70,19 @@ class MensajesController < ApplicationController
     else
       @mensaje.bazar_destino = BZ_param("BazarId")
     end
+    
+    if (@mensaje.bazar_destino.to_i == BZ_param("BazarId").to_i)
+      @mensaje.para_nombre = @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(@mensaje.para).nombre
+      @mensaje.para_email = Usuario.find_by_id(@mensaje.para).email
+    else
+      # en este caso el nombre y el email lo fijan en el bazar de destino
+      if !params[:nombre].nil?
+        @mensaje.para_nombre = params[:nombre]
+      else 
+        @mensaje.para_nombre = ""      
+      end
+      @mensaje.para_email = ""
+    end 
     
     if (!params[:tipo].nil?)
       @mensaje.tipo = params[:tipo]
@@ -164,8 +174,8 @@ class MensajesController < ApplicationController
         
         if @mensaje.save
         
-          BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
-                                    User.find(@mensaje.para).email, 
+          BazarMailer.enviamensaje(@mensaje.de_email, 
+                                    @mensaje.para_.email, 
                                     @mensaje.asunto, 
                                     @mensaje.texto).deliver
           if @mensaje.tipo == 'M'
@@ -204,8 +214,14 @@ class MensajesController < ApplicationController
     @mensaje2 = Mensaje.new(params[:mensaje])
     @mensaje2.fecha = DateTime.now
     @mensaje2.de = @mensaje.para
+    @mensaje2.de_nombre = @mensaje.para_nombre
+    @mensaje2.de_email = @mensaje.para_email
+    
     @mensaje2.bazar_origen = @mensaje.bazar_destino
     @mensaje2.para = @mensaje.de 
+    @mensaje2.para_nombre = @mensaje.de_nombre 
+    @mensaje2.para_email = @mensaje.de_email 
+    
     @mensaje2.bazar_destino = @mensaje.bazar_origen
     @mensaje2.tipo = @mensaje.tipo
     @mensaje2.leido = nil 
@@ -218,8 +234,8 @@ class MensajesController < ApplicationController
       if (@mensaje2.bazar_destino.to_i == BZ_param("BazarId").to_i)
       
         if @mensaje2.save
-          BazarMailer.enviamensaje(User.find(@mensaje2.de).email, 
-                                    User.find(@mensaje2.para).email, 
+          BazarMailer.enviamensaje(@mensaje2.de_email, 
+                                    @mensaje2.para_email, 
                                     @mensaje2.asunto, 
                                     @mensaje2.texto).deliver
           if @mensaje2.tipo == 'M'
@@ -275,7 +291,12 @@ class MensajesController < ApplicationController
     
     @mensaje.tipo = mensa['mensaje']['tipo']
     @mensaje.de = mensa['mensaje']['de']
+    @mensaje.de_nombre = mensa['mensaje']['de_nombre']
+    @mensaje.de_email = mensa['mensaje']['de_email']
+    
     @mensaje.para = mensa['mensaje']['para']
+    @mensaje.para_nombre = mensa['mensaje']['para_nombre']
+    @mensaje.para_email = User.find(@mensaje.para).email
     
     @mensaje.texto = mensa['mensaje']['texto']
     @mensaje.asunto = mensa['mensaje']['asunto']
@@ -286,10 +307,9 @@ class MensajesController < ApplicationController
     @mensaje.save
     
     BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
-                              User.find(@mensaje.para).email, 
+                              @mensaje.para_email, 
                               @mensaje.asunto, 
                               @mensaje.texto).deliver
-    
     
   end 
   

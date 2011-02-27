@@ -2,7 +2,13 @@
 
 <div class="field">
     <%= f.hidden_field :de %>
+    <%= f.hidden_field :de_nombre %>
+    <%= f.hidden_field :de_email %>
+
     <%= f.hidden_field :para %>
+    <%= f.hidden_field :para_nombre %>
+    <%= f.hidden_field :para_email %>
+
     <%= f.hidden_field :tipo %>
     <%= f.hidden_field :fecha %>
     <%= f.hidden_field :leido %>
@@ -13,7 +19,7 @@
 </div>
  <% @mensaje.asunto = "RE: "+@mensaje.asunto %>
  <div class="field">
-	De: <%= User.find(@mensaje.para).login -%> a <%= User.find(@mensaje.de).login -%>
+	De: <%= @mensaje.para_nombre -%> a <%= @mensaje.de_nombre -%>
  </div> 
 
   <div class="field">
