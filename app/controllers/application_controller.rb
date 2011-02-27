@@ -97,7 +97,7 @@ class ApplicationController < ActionController::Base
     end
 
     
-    def dohttp (bazar, pet)
+    def dohttp (bazar, pet, body)
       
       logger.debug "dohttp: bazar #{bazar}: Enviando #{pet}"
     
@@ -106,7 +106,8 @@ class ApplicationController < ActionController::Base
       
       post_body = []
       post_body << "Content-Type: text/plain\r\n"
-
+      post_body << body 
+      
       http = Net::HTTP.new(uri.host, uri.port)
       http.open_timeout = http.read_timeout = 10
 

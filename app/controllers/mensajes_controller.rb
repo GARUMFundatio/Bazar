@@ -176,7 +176,7 @@ class MensajesController < ApplicationController
         # enviamos el mensaje al bazar de destino
         logger.debug "Enviando el mensaje a #{@mensaje.bazar_destino}"
         
-        
+        dohttp (@mensaje.bazar_destino, "/mensajeremoto", @mensaje.to_json)
         
         format.html { redirect_to("/home") }
         
@@ -229,4 +229,9 @@ class MensajesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def mensajeremoto
+    
+  end 
+  
 end
