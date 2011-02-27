@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110214120739) do
+ActiveRecord::Schema.define(:version => 20110227083352) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -154,6 +154,8 @@ ActiveRecord::Schema.define(:version => 20110214120739) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "asunto"
+    t.integer  "bazar_origen"
+    t.integer  "bazar_destino"
   end
 
   add_index "mensajes", ["de", "fecha"], :name => "index_mensaje_de"
