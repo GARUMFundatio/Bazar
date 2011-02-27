@@ -73,7 +73,7 @@ class MensajesController < ApplicationController
     
     if (@mensaje.bazar_destino.to_i == BZ_param("BazarId").to_i)
       @mensaje.para_nombre = @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(@mensaje.para).nombre
-      @mensaje.para_email = Usuario.find_by_id(@mensaje.para).email
+      @mensaje.para_email = User.find_by_id(@mensaje.para).email
     else
       # en este caso el nombre y el email lo fijan en el bazar de destino
       if !params[:nombre].nil?
@@ -175,7 +175,7 @@ class MensajesController < ApplicationController
         if @mensaje.save
         
           BazarMailer.enviamensaje(@mensaje.de_email, 
-                                    @mensaje.para_.email, 
+                                    @mensaje.para_email, 
                                     @mensaje.asunto, 
                                     @mensaje.texto).deliver
           if @mensaje.tipo == 'M'
@@ -268,10 +268,11 @@ class MensajesController < ApplicationController
   # DELETE /mensajes/1.xml
   def destroy
     @mensaje = Mensaje.find(params[:id])
+    tipo = @mensaje.tipo
     @mensaje.destroy
 
     respond_to do |format|
-      format.html { redirect_to(mensajes_url) }
+      format.html { redirect_to(mensajes_url+"?tipo=#{tipo}") }
       format.xml  { head :ok }
     end
   end
