@@ -105,7 +105,6 @@ class ApplicationController < ActionController::Base
       uri = URI.parse("#{cluster.url}/#{pet}")
       
       post_body = []
-      post_body << "Content-Type: text/plain\r\n"
       post_body << body 
       
       http = Net::HTTP.new(uri.host, uri.port)
