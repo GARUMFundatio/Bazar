@@ -574,6 +574,13 @@ font-size: 14px;
     width: 400px;
 }
 
+#mensaje_asunto:focus,
+#mensaje_asunto:active,
+#mensaje_texto:focus,
+#mensaje_texto:active {
+    border: 1px solid #527CAD;
+}
+
 #mensaje_submit {
     display: inline;
     float: left;
