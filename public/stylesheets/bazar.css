@@ -110,12 +110,12 @@ body {
     height: 100px;
     color: #FDD900;
     background-color: #30537A;
-    border-bottom-right-radius: 1em;
-    border-bottom-left-radius: 1em;
-    -moz-border-radius-bottomright: 1em;
-    -moz-border-radius-bottomleft: 1em;
-    -webkit-border-bottom-right-radius: 1em;
-    -webkit-border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+    -moz-border-radius-bottomright: 14px;
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    -webkit-border-bottom-left-radius: 14px;
 }
 
 #title {
