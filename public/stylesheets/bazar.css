@@ -597,6 +597,45 @@ font-size: 14px;
     color: #444;
 }
 
+/* formulario de edición "Mi cuenta" */
+
+#edit_user {
+    width: 100%;
+    overflow: hidden;
+}
+
+#edit_user label {
+    line-height: 22px;
+}
+
+#user_login,
+#user_email,
+#user_password,
+#user_password_confirmation {
+    width: 200px;
+    padding: 4px 4px 5px;
+    border: 1px solid #cdcdcd;
+    font-size: 16px;
+    line-height: 22px;
+    cursor: auto !important;
+}
+
+#user_submit {
+    display: inline;
+    float: left;
+    padding: .3em 1em;
+    margin: 0 10px 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    background: #30537A url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) repeat-x center center;
+    color: #444;
+}
+
 /* formulario de edición "Mi empresa" */
 
 form.edit_bazarcms_empresa label {
