@@ -143,7 +143,7 @@ body {
 .body {
 	width: 100%;
 	overflow: hidden;
-    background: #fff url(/images/fondo-sidebar.png) repeat-y top right;
+    background: #fff;
 }
 
 /* menu de usuario en cabecera */
