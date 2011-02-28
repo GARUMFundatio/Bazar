@@ -620,6 +620,13 @@ font-size: 14px;
     cursor: auto !important;
 }
 
+#user_login:focus, #user_login:active,
+#user_email:focus, #user_email:active,
+#user_password:focus, user_password:active,
+#user_password_confirmation:focus, #user_password_confirmation:active {
+    border: 1px solid #527CAD;
+}
+
 #user_submit {
     display: inline;
     float: left;
