@@ -90,9 +90,45 @@
                 <% end %>
                 </li>
             </ul>
-    <% end %>
+      <% end %>
 	  
-	  
+	  <% if current_user_is_admin || current_user_is_dinamizador %>
+        <div id="nav-admin-container">
+             <span class="tapa-blanco"></span>
+             <ul id="nav-admin">
+                 <li><a href="#">Administrador</a>
+                    <ul>
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item bastante más largo</a></li>
+                        <li><a href="#">otro Item</a></li>
+                        <li><a href="#">Item 4</a>
+                           <ul>
+                               <li><a href="#">Item 1</a></li>
+                               <li><a href="#">Item bastante más largo</a></li>
+                               <li><a href="#">otro Item</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="#">Item 5</a></li>
+                    </ul>
+                 </li>
+                 <li><a href="#">Dinamizador</a>
+                    <ul>
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item bastante más largo</a></li>
+                        <li><a href="#">otro Item</a>
+                               <ul>
+                                   <li><a href="#">Item 1</a></li>
+                                   <li><a href="#">Item bastante más largo</a></li>
+                                   <li><a href="#">otro Item</a></li>
+                               </ul>
+                        </li>
+                        <li><a href="#">Item 4</a></li>
+                        <li><a href="#">Item 5</a></li>
+                    </ul>
+                 </li>
+             </ul>
+        </div><!-- /#nav-admin-container -->
+      <% end %>
  
 	  <div id="content" class="span-24 last">	
 			<div class="body">
