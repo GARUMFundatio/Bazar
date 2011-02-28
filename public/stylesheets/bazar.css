@@ -772,8 +772,8 @@ input#busca:active {
 
 /* Ayuda para la búsqueda de Empresas */
 
-#contenido .resultados h3 {
-    margin-bottom: 15px;
+#avanzada h3 {
+    margin: 15px 0 7px;
 }
 
 h3 #ayuda-busqueda-link {
