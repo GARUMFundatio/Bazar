@@ -227,6 +227,127 @@ ul#nav-usuario a img {
     margin: 0 0 0 6px;
 }
 
+/* menu para administradores y dinamizadores */
+
+#nav-admin-container {
+     display: none; /* para mostrar con javascript */
+     position: relative;
+     z-index: 100;
+     top: -15px;
+     width: 930px;
+     height: 30px;
+     padding: 30px 15px 15px;
+     background: #1B3451;
+}
+
+#nav-admin-container span.tapa-blanco {
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 960px;
+     height: 15px;
+     border-bottom-right-radius: 14px;
+     border-bottom-left-radius: 14px;
+    -moz-border-radius-bottomright: 14px;
+    -moz-border-radius-bottomleft: 14px;
+    -webkit-border-bottom-right-radius: 14px;
+    -webkit-border-bottom-left-radius: 14px;
+     background: #30537A;
+}
+
+#nav-admin, #nav-admin ul {
+     position: relative;
+     margin: 0;
+     padding: 0;
+     list-style-type: none;
+     list-style-position: outside;
+     line-height: 30px;
+}
+
+#nav-admin li a:link, #nav-admin li a:active, #nav-admin li a:visited {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    background: #244367;
+    color: #B8CDE1;
+    border: 1px solid #355173;
+}
+
+#nav-admin li li a:link, #nav-admin li li a:active, #nav-admin li li a:visited {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    background: #eee;
+    color: #444;
+    border: none;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+#nav-admin li li a:hover {
+    padding: 0 10px 0 9px;
+    border: 1px solid #1A3658;
+    border-right: none;
+    border-bottom: none;
+    background-color: #30537A;
+    color: #fff;
+}
+
+#nav-admin li{
+    display: inline;
+    float:left;
+    position:relative;
+    margin-right: 15px;
+}
+
+
+#nav-admin ul {
+    display:none;
+    position:absolute;
+    z-index: 10;
+    top: 32px;
+    width: 176px;
+    box-shadow : 1px 2px 5px #333;
+	-webkit-box-shadow : 1px 2px 5px #333;
+    -moz-box-shadow: 1px 2px 5px #333;
+}
+
+#nav-admin ul ul {
+    border-top: 1px solid #aaa;
+}
+
+#nav-admin li ul a{
+    display: inline;
+    float: left;
+    width: 156px;
+    border-bottom: 1px solid #cdcdcd;
+
+}
+
+#nav-admin ul ul{
+	top: auto;
+}
+
+#nav-admin li ul ul {
+    top: -2px;
+    left: 156px;
+    margin: 0px 0 0 15px;
+}
+
+#nav-admin li:hover ul ul,
+#nav-admin li:hover ul ul ul,
+#nav-admin li:hover ul ul ul ul {
+    display: none;
+}
+#nav-admin li:hover ul,
+#nav-admin li li:hover ul,
+#nav-admin li li li:hover ul,
+#nav-admin li li li li:hover ul {
+    display: block;
+}
+
+/* Contenido */
+
 #contenido {
     display: block;
     float: none;
