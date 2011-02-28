@@ -227,22 +227,11 @@ ul#nav-usuario a img {
     margin: 0 0 0 6px;
 }
 
-/* no cargar fondo sidebar con usuario anonimo */
-.anonimo .body,
-.logueado .body {
+.body {
     background: #fff;
 }
 
 #contenido {
-    float: left;
-    background: #fff;
-	width: 660px;
-	padding: 20px;
-}
-
-/* ancho del contenido principal con el usuario anonimo */
-.anonimo #contenido,
-.logueado #contenido {
     display: block;
     float: none;
     width: 920px;
@@ -1133,44 +1122,6 @@ textarea {
 
 select {
     cursor: pointer !important;
-}
-
-
-#sidebar {
-  display: inline;
-  float: left;
-  width: 219px;
-  height: 100%;
-  padding: 16px 20px;
-  background: #F1E7B5;
-  border-left: 1px solid #DED39B;
-  color: #7D6B5D;
-}
-
-
-#sidebar ul {
-  margin-left: 0;
-  padding-left: 0;
-}
-#sidebar ul h3 {
-  margin: 25px 0 10px;
-  font-size: 16px;
-  padding: 0 2px 8px;
-  border-bottom: 1px solid #DBCE8E;
-}
-#sidebar li {
-  padding: 0 2px;
-  list-style-type: none;
-  font-size: 15px;
-  line-height: 1.4;
-}
-
-#sidebar ul.links li {
-  margin-bottom: 4px;
-}
-
-#sidebar ul.links li img {
-    vertical-align: middle;
 }
 
 #content h3 {
