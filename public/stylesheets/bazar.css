@@ -61,6 +61,7 @@ div.field, div.actions {
 
 /* =FUENTES */
 body,
+input,
 #user_session_submit {
     font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
 }
