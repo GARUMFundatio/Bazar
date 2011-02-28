@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :usuario %>: <%= @user.login %></br>
+    <%= f.label :usuario %>: <%= @user.login %><br />
 	<%= f.text_field :login %>
   </div>
   <div class="field">
@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </div>
 
   <div class="field">
     <%= f.label :confirmación %><br />
-    <%= f.text_field :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
   </div>
 
   <% if current_user_is_admin %>
