@@ -408,6 +408,16 @@ div.contenidos-secundarios h4 {
    vertical-align: middle;
 }
 
+/* enlace de volver al home loguado */
+
+#contenido a.volver-home-link {
+    position: relative;
+    top: -5px;
+    display: block;
+    width: 200px;
+    margin-bottom: 20px;
+}
+
 /* Titulares de página */
 
 #contenido .page-title {
