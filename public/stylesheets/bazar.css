@@ -1174,7 +1174,11 @@ table.tabla tr:first-child th[scope="row"] {
     font-size: 14px;
     font-weight: bold;
 	text-align: left;
-	background: none;
+}
+
+table.tabla tr:first-child th[scope="row"] {
+    border-top: 1px solid #cdcdcd;
+    background: none;
 	color: inherit;
 }
 
