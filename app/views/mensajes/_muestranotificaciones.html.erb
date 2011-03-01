@@ -39,7 +39,7 @@
   </tr>
 
   <tr id="men<%= mensaje.id -%>" style="display: none">
-    <td width="300" style="text-align:left; background-color: #fff;" colspan="3"><%= mensaje.texto %></td>
+    <td width="300" style="text-align:left; background-color: #fff;" colspan="3"><%= mensaje.texto.sub("\n","<br/>").html_safe %></td>
   </tr>
 
 <% end %>
