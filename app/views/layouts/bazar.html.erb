@@ -72,11 +72,11 @@
 				<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
 				</li>
 				<li class="user-messages">
-				<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones') %>
-				(<%= Mensaje.notificacionessinleer(current_user.id).count -%>/<%=  Mensaje.notificacionestotal(current_user.id).count -%>)
+				<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones sin leer') %>
+				<strong><%= Mensaje.notificacionessinleer(current_user.id).count -%></strong>
 
-				<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M", :class => 'msgs-link', :title => 'Mensajes') %>
-				(<%= Mensaje.mensajessinleer(current_user.id).count -%>/<%=  Mensaje.mensajestotal(current_user.id).count -%>)
+				<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M", :class => 'msgs-link', :title => 'Mensajes sin leer') %>
+				<strong><%= Mensaje.mensajessinleer(current_user.id).count -%></strong>
 
 				</li>
 				<li class="nav-site">
