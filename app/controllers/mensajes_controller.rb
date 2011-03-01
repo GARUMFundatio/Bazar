@@ -72,7 +72,7 @@ class MensajesController < ApplicationController
     end
     
     if (@mensaje.bazar_destino.to_i == BZ_param("BazarId").to_i)
-      @mensaje.para_nombre = @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(@mensaje.para).nombre
+      @mensaje.para_nombre = Bazarcms::Empresa.find_by_id(@mensaje.para).nombre
       @mensaje.para_email = User.find_by_id(@mensaje.para).email
     else
       # en este caso el nombre y el email lo fijan en el bazar de destino
