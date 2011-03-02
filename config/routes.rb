@@ -29,12 +29,15 @@ Bazar::Application.routes.draw do
   match 'logout' => "user_sessions#destroy", :as => :logout
   match 'home' => "home#index"
   match '/home/bazares' => "home#bazares"
+
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
   match '/mensajeremoto' => "mensajes#mensajeremoto"
-  match 'busquedaciudades' => 'ciudades#busqueda', :as => :busquedaciudades
-  match '/clusters/activar/:id' => 'clusters#activar', :constrants => { :id => /\d+/ }, :as => :activar_cluster
+  match "/mensaje/dashboard" => "mensajes#dashboard"
   match '/notificacion' => 'mensajes#notificacion', :as => :notificacion
   match '/enviarnotificacion' => 'mensajes#enviarnotificacion', :as => :enviarnotificacion
+
+  match 'busquedaciudades' => 'ciudades#busqueda', :as => :busquedaciudades
+  match '/clusters/activar/:id' => 'clusters#activar', :constrants => { :id => /\d+/ }, :as => :activar_cluster
   match '/updateinfo' => 'clusters#updateinfo', :as => :updateinfo
   match "/actividad/dashboard" => "actividades#dashboard"
   

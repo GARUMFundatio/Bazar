@@ -103,6 +103,7 @@ class MensajesController < ApplicationController
   def notificacion 
     @mensaje = Mensaje.new
     @mensaje.de = current_user.id
+    @mensaje.de_nombre = "Sistema"
     @mensaje.para = -1
 
     if (!params[:tipo].nil?)
@@ -126,7 +127,15 @@ class MensajesController < ApplicationController
 
     for user in User::all 
       @mensaje = Mensaje.new(params[:mensaje])
-      @mensaje.para = user.id 
+      @mensaje.para = user.id
+      emp = Bazarcms::Empresa.find_by_id(user.id)
+      
+      if !emp.nil? 
+        @mensaje.para_nombre = emp.nombre
+      else 
+        @mensaje.para_nombre = ""        
+      end 
+      
       @mensaje.save
       
       BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
@@ -313,5 +322,14 @@ class MensajesController < ApplicationController
                               @mensaje.texto).deliver
     
   end 
+  
+  def dashboard
+    
+    @mensajes = Mensaje.where('para = ? and bazar_destino = ? and tipo = "M" and leido is null', current_user.id, BZ_param("BazarId")).order('fecha desc').limit(10)
+    @notificaciones = Mensaje.where('para = ? and bazar_destino = ? and tipo = "N" and leido is null', current_user.id, BZ_param("BazarId")).order('fecha desc').limit(10)
+
+    render :layout => false 
+
+  end
   
 end
