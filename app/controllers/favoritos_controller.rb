@@ -113,4 +113,14 @@ class FavoritosController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  # empresas que sigue un usuario 
+  
+  def dashboard 
+    @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc")
+    respond_to do |format|
+      format.html { render :layout => false }
+    end
+  end
+  
 end
