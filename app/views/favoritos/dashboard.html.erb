@@ -19,7 +19,7 @@
 	<td> 
 		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{fav.user_id}&bazar_destino=#{fav.bazar_id}&nombre=#{fav.nombre_empresa}&tipo=M", :title => 'Correo electrónico' %>
 	
-		<%= helper_favo(fav.bazar_id, fav.user_id, fav.nombre_empresa, "favoritos") %>
+		<%= helper_favo(fav.bazar_id, fav.empresa_id, fav.nombre_empresa, "cajafavoritos") %>
 	</td>
 
 </tr>
