@@ -30,7 +30,14 @@
    <div class="container">
 
 	  <div id="header">
-		      <h1 id="title"><%= h BZ_param("Titular") %></h1>
+		      <h1 id="title"><a
+              <% if !current_user.nil? %>
+                 href="/home"
+              <% else %>
+                 href="/"
+              <% end %>
+              ><%= h BZ_param("Titular") %></a>
+              </h1>
 	          <h2 id="slogan"><%= h BZ_param("Subtitular") %></h2>
 	  </div>
 	  
