@@ -1,6 +1,6 @@
 class Actividad < ActiveRecord::Base
   
-  def self.graba(texto, tipo, cluster, user)
+  def self.graba(texto, tipo, cluster, user, nombre_empresa)
     
     act = Actividad.new
     
@@ -8,6 +8,8 @@ class Actividad < ActiveRecord::Base
     act.bazar_id = cluster
     act.fecha = DateTime.now
     act.user_id = user
+    act.nombre_empresa = nombre_empresa
+    act.tipo = tipo
     act.local_id = 0
     
     act.save
