@@ -1,4 +1,4 @@
-<h3 class="page-title">Empresa que sigo</h3>
+<h3 class="page-title">Empresas que sigo</h3>
 
 <table class="tabla" cellspacing="0">
 
@@ -6,16 +6,20 @@
 <tr>
 
 	<td>
-		<%= link_to Bazarcms::Empresa.find(act.user_id).nombre, bazarcms_empresa_path(act.user_id) %>
-	</td>
 
-	<td>
-		<%= act.desc %>
+		<% if ( fav.bazar_id.to_i == BZ_param("BazarId").to_i ) %>
+			<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.user_id)) %>
+		<% else %> 
+			<!-- TODO: visualizar la info de una empresa remota -->
+			<%= fav.nombre_empresa %>
+		<% end %>
+
 	</td>
 
 	<td> 
-		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{act.user_id}&tipo=M", :title => 'Correo electrónico' %>
-		<%= helper_favo(act.bazar_id, act.user_id, act.nombre_empresa, "actividad") %>
+		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{fav.user_id}&bazar_destino=#{fav.bazar_id}&nombre=#{fav.nombre_empresa}&tipo=M", :title => 'Correo electrónico' %>
+	
+		<%= helper_favo(fav.bazar_id, fav.user_id, fav.nombre_empresa, "favoritos") %>
 	</td>
 
 </tr>

@@ -40,7 +40,7 @@ Bazar::Application.routes.draw do
   
   match "/favorito/addfav" => "favoritos#addfav"
   match "/favorito/delfav" => "favoritos#delfav"  
-  match "/favoritos/dashboard" => "favoritos#dashboard"
+  match "/favorito/dashboard" => "favoritos#dashboard"
 
 # API routes
 
