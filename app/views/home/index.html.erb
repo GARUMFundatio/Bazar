@@ -295,9 +295,10 @@ $('#ayuda-busqueda-link').click(function() {
 	});
 </script>
 
+<!-- eliminado de momento hay que reescribirlo -->
 
 <% if (!Bazarcms::Empresa.nil?) then %>
-	<div id="empresas">
+	<div id="empresas" style="display:none">
 	
 		<script>
 		$('#empresas').load("/bazarcms/dashboard");
@@ -307,9 +308,19 @@ $('#ayuda-busqueda-link').click(function() {
 Instale el módulo de bazarcms, no parece que este instalado.
 <% end %>
 
+<div id="favoritos">
+
+	<script>
+	$('#favoritos').load("/favoritos/dashboard");
+	</script>
+	
+</div>
+
+
 <div id="actividades">
 
 	<script>
 	$('#actividades').load("/actividad/dashboard");
 	</script>
+
 </div>
