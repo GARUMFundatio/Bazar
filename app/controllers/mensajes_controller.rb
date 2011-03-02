@@ -128,6 +128,9 @@ class MensajesController < ApplicationController
     for user in User::all 
       @mensaje = Mensaje.new(params[:mensaje])
       @mensaje.para = user.id
+      @mensaje.bazar_origen = BZ_param("BazarId")
+      @mensaje.bazar_destino = BZ_param("BazarId")
+      
       emp = Bazarcms::Empresa.find_by_id(user.id)
       
       if !emp.nil? 
