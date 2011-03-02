@@ -77,7 +77,7 @@ class FavoritosController < ApplicationController
       @fav.fecha = DateTime.now 
       @fav.bazar_id = params[:bazar] 
       @fav.empresa_id = params[:empresa]
-      @fav.nombre_empresa = params[:nombre_empresa]
+      @fav.nombre_empresa = params[:nombre_empresa].gsub('_',' ')
       @fav.user_id = current_user.id
       @fav.save 
     else 
