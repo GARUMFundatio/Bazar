@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110227204650) do
+ActiveRecord::Schema.define(:version => 20110302142502) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(:version => 20110227204650) do
     t.datetime "fecha"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nombre_empresa"
   end
 
   create_table "gruposconfs", :force => true do |t|
