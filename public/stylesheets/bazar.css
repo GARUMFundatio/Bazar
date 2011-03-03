@@ -1409,6 +1409,18 @@ table.tabla tr:first-child:hover th[scope="row"] {
     background: #E0E8F0;
 }
 
+
+/* Clases para celdas con íconos */
+table.tabla tr td.dos-iconos {
+    width: 55px;
+    text-align: center;
+}
+
+table.tabla tr td.tres-iconos {
+    width: 75px;
+    text-align: center;
+}
+
 p.total {
     margin-top: 0;
     padding-left: 5px;
