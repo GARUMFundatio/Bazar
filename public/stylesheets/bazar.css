@@ -1405,6 +1405,9 @@ table.tabla tr:hover th {
 table.tabla tr:first-child:hover th {
     background: #30537A;
 }
+table.tabla tr:first-child:hover th[scope="row"] {
+    background: #E0E8F0;
+}
 
 p.total {
     margin-top: 0;
