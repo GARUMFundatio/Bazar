@@ -13,8 +13,8 @@
 		<%= act.desc %>
 	</td>
 
-	<td> 
-		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{act.user_id}&tipo=M", :title => 'Correo electrónico' %>
+	<td width="70" style="text-align: center">
+		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{act.user_id}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
 		<%= helper_favo(act.bazar_id, act.user_id, act.nombre_empresa, "actividad") %>
 	</td>
 
