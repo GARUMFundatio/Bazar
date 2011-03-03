@@ -1358,7 +1358,7 @@ table.tabla tr:first-child th[scope="row"] {
 	text-align: left;
 }
 
-table.tabla tr:first-child th[scope="row"] {
+#contenido table.tabla tr:first-child th[scope="row"] {
     border-top: 1px solid #cdcdcd;
     background: none;
 	color: inherit;
