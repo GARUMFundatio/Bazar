@@ -16,7 +16,7 @@
 
 	</td>
 
-	<td width="70" style="text-align: center">
+	<td class="dos-iconos">
 		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{fav.empresa_id}&bazar_destino=#{fav.bazar_id}&nombre=#{fav.nombre_empresa}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
 	
 		<%= helper_favo(fav.bazar_id, fav.empresa_id, fav.nombre_empresa, "cajafavoritos") %>
