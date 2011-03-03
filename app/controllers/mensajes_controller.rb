@@ -104,6 +104,7 @@ class MensajesController < ApplicationController
     @mensaje = Mensaje.new
     @mensaje.de = current_user.id
     @mensaje.de_nombre = "Sistema"
+    @mensaje.de_email = current_user.email
     @mensaje.para = -1
 
     if (!params[:tipo].nil?)
@@ -138,6 +139,7 @@ class MensajesController < ApplicationController
       else 
         @mensaje.para_nombre = ""        
       end 
+      @mensaje.para_email = user.email
       
       @mensaje.save
       
