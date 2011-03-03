@@ -16,7 +16,7 @@
           
           <% if @mensajes.count > 0 %>
           
-          <tr>
+          <tr class="color">
 		    <th>De</th>
 		    <th>Asunto</th>
 		    <th>Fecha</th>
@@ -29,7 +29,7 @@
 		<% if (!mensaje.leido.nil?) %>
 		  <tr id="head<%= mensaje.id -%>" style="text-align:left;">
 		<% else %>
-		  <tr id="head<%= mensaje.id -%>" style="font-weight:bold; text-align:left;">
+		  <tr id="head<%= mensaje.id -%>" style="font-weight:bold; text-align:left;" class="color">
 		<% end %>
 
 			<td style="text-align:left;">
