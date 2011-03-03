@@ -1,18 +1,12 @@
 <a class="volver-home-link" href="/home">Volver a la página de búsquedas</a>
 
-<table class="tabla" cellspacing="0">
-  <tr>
 	<% if (params[:tipo] == 'N') %>
-    	<th colspan="3">Notificaciones</th>
-		<td colspan="3"><%= link_to("Ver Mensajes", "/mensajes?tipo=M") %></td>
+    	<h3 class="page-title">Notificaciones</h3>
+		<div class="opcion-mensajes"><%= link_to("Ver Mensajes", "/mensajes?tipo=M") %></div>
     <% else %>
-		<th colspan="3">Mensajes</th>
-		<td colspan="3"><%= link_to("Ver Notificaciones", "/mensajes?tipo=N") %></td>
+		<h3 class="page-title">Mensajes</h3>
+		<div class="opcion-mensajes"><%= link_to("Ver Notificaciones", "/mensajes?tipo=N") %></div>
 	<% end %>
-	
-  </tr>
-</table>
+
 
 <%= render 'muestranotificaciones' %>
-
-<br />
