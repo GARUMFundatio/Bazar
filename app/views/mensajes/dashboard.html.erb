@@ -51,7 +51,7 @@
 			</td>
 
 			<td style="text-align:left;">
-				<%= mensaje.asunto %>
+				<a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"><%= mensaje.asunto %></a>
 			</td>
 
 		    <td style="text-align:left;">
@@ -100,7 +100,7 @@
 			</td>
 
 			<td style="text-align:left;">
-				<%= mensaje.asunto %>
+				<a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"><%= mensaje.asunto %></a>
 			</td>
 
 		    <td style="text-align:left;">
