@@ -1428,6 +1428,12 @@ table.tabla tr:first-child:hover th[scope="row"] {
     background: #F0EDDB;
 }
 
+/* estilo para la celda que contiene el mensaje */
+
+#contenido table.tabla tr td.celda-mensaje {
+    padding: 20px;
+}
+
 p.total {
     margin-top: 0;
     padding-left: 5px;
