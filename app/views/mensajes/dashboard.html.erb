@@ -4,33 +4,19 @@
 <h3 class="page-title">Mensajes y Notificaciones</h3>
 
 <table class="base" cellspacing="0">
-<tr>
-	<td>
-		<table class="tabla" cellspacing="0">
-		<tr>
-			<th colspan="2">
-				Mensajes
-			</th>
-		</tr>	
-		</table>
-	</td>
 
-	<td>
-		<table class="tabla" cellspacing="0">
-		<tr>
-			<th colspan="2">
-				Notificaciones
-			</th>
-		</tr>	
-		</table>
-	</td>
-<tr/>
 <tr>	
 	<td>
-		
-		<% if @mensajes.count > 0 %>	
+
 		<table class="tabla" cellspacing="0">
-		  <tr>
+
+          <tr>
+            <th class="titular-tabla" colspan="4">Notificaciones</th>
+          </tr>
+          
+          <% if @mensajes.count > 0 %>
+          
+          <tr>
 		    <th>De</th>
 		    <th>Asunto</th>
 		    <th>Fecha</th>
@@ -58,7 +44,7 @@
 				<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
 			</td>
 
-		    <td style="width: 100px; text-align: center;"><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a> <%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %>
+		    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a> <%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %>
 		     <%= link_to(image_tag("papelera.png"), mensaje, :confirm => '¿Está seguro?', :method => :delete, :title => 'Eliminar Mensaje') %></td>
 		  </tr>
 
@@ -75,11 +61,14 @@
 
 	</td>
 	<td>
-
-		<% if @notificaciones.count > 0 %>	
 		
 		<table class="tabla" cellspacing="0">
-		  <tr>
+          <tr>
+            <th class="titular-tabla" colspan="4">Notificaciones</th>
+          </tr>
+          
+          <% if @notificaciones.count > 0 %>
+          <tr>
 		    <th>De</th>
 		    <th>Asunto</th>
 		    <th>Fecha</th>
@@ -107,7 +96,7 @@
 				<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
 			</td>
 
-		    <td><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a> <%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %>
+		    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a> <%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %>
 		     <%= link_to(image_tag("papelera.png"), mensaje, :confirm => '¿Está seguro?', :method => :delete, :title => 'Eliminar Mensaje') %></td>
 		  </tr>
 
