@@ -7,9 +7,7 @@
     <th>De</th>
     <th>Asunto</th>
     <th>Fecha</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <td></td>
   </tr>
 
 <% @mensajes.each do |mensaje| %>
@@ -26,16 +24,16 @@
 	</td>
   
 	<td style="text-align:left;">
-		<%= mensaje.asunto %>
+		<a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"><%= mensaje.asunto %></a>
 	</td>
 
     <td style="text-align:left;">
 		<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
 	</td>
 
-    <td><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a></td>
-    <td><%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %></td>
-    <td><%= link_to(image_tag("papelera.png"), mensaje, :confirm => '¿Está seguro?', :method => :delete, :title => 'Eliminar Mensaje') %></td>
+    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a>
+    <%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %>
+    <%= link_to(image_tag("papelera.png"), mensaje, :confirm => '¿Está seguro?', :method => :delete, :title => 'Eliminar Mensaje') %></td>
   </tr>
 
   <tr id="men<%= mensaje.id -%>" style="display: none">
