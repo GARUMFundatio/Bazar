@@ -1,11 +1,9 @@
 <a class="volver-home-link" href="/home">Volver a la página de búsquedas</a>
 
 	<% if (params[:tipo] == 'N') %>
-    	<h3 class="page-title">Notificaciones</h3>
-		<div class="opcion-mensajes"><%= link_to("Ver Mensajes", "/mensajes?tipo=M") %></div>
+    	<h3 class="page-title">Notificaciones <%= link_to("Ver Mensajes", "/mensajes?tipo=M", :class => "opcion-mensajes") %></h3>
     <% else %>
-		<h3 class="page-title">Mensajes</h3>
-		<div class="opcion-mensajes"><%= link_to("Ver Notificaciones", "/mensajes?tipo=N") %></div>
+		<h3 class="page-title">Mensajes <%= link_to("Ver Notificaciones", "/mensajes?tipo=N", :class => "opcion-mensajes") %></h3>
 	<% end %>
 
 
