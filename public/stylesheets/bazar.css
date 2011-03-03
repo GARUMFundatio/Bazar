@@ -671,9 +671,15 @@ font-size: 14px;
 /* Formulario de Enviar mensaje */
 
 #new_mensaje {
-    width: 100%;
+    width: 480px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    padding: 20px;
+    border: 1px solid #C1D1DE;
+    border-radius: 18px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    background: #E0E8F0;
 }
 
 #new_mensaje label {
@@ -719,6 +725,20 @@ font-size: 14px;
     text-align: center;
     background: #30537A url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) repeat-x center center;
     color: #444;
+}
+
+/* Formulario de Responder mensaje */
+
+#contenido form.edit_mensaje {
+    width: 480px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 20px;
+    border: 1px solid #C1D1DE;
+    border-radius: 18px;
+    -moz-border-radius: 18px;
+    -webkit-border-radius: 18px;
+    background: #E0E8F0;
 }
 
 /* formulario de edición "Mi cuenta" */
