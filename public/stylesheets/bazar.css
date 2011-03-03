@@ -1411,12 +1411,12 @@ table.tabla tr:first-child:hover th[scope="row"] {
 
 
 /* Clases para celdas con íconos */
-table.tabla tr td.dos-iconos {
-    width: 55px;
+#contenido table.tabla tr td.dos-iconos {
+    width: 60px;
     text-align: center;
 }
 
-table.tabla tr td.tres-iconos {
+#contenido table.tabla tr td.tres-iconos {
     width: 75px;
     text-align: center;
 }
