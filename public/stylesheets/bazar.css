@@ -847,6 +847,30 @@ form.edit_bazarcms_empresa div.actions {
     color: #444;
 }
 
+/* enlace para cambiar entre tipos de mensajes */
+
+#contenido h3 a.opcion-mensajes {
+    position: absolute;
+    margin: 4px 0 0 15px;
+    padding: 0 14px;
+    border: 1px solid #C1D1DE;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-size: 13px;
+    line-height: 30px;
+    text-decoration: none;
+    background: #E0E8F0;
+    color: #79A7C4;
+}
+
+#contenido h3 a.opcion-mensajes:hover,
+#contenido h3 a.opcion-mensajes:focus,
+#contenido h3 a.opcion-mensajes:active {
+    border-color: #8BA7BF;
+    color: #24568E;
+}
+
 /* Búsqueda de Empresas */
 
 p.busqueda-principal {
