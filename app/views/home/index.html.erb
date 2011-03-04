@@ -208,9 +208,14 @@ $('#ayuda-busqueda-link').click(function() {
 </div><!-- /#avanzada-->
 
 <p id="opciones-busqueda">
-  <input type=radio name="size"><label> Ofertas </label>
-  <input type=radio name="size"><label> Demandas </label>
-  <input type=radio name="size"><label> Empresas</label>
+  <span><input type=radio name=size><label> Ofertas </label></span>
+  <span><input type=radio name=size><label> Demandas </label></span>
+  <span><input type=radio name=size><label> Empresas</label></span>
+  <script>
+  $('#opciones-busqueda span').click( function(){
+        $(this).children("input[@type=radio]").click();
+    });
+  </script>
 </p>
 
  <button>Buscar</button>
