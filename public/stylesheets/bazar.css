@@ -1100,6 +1100,9 @@ h3 #ayuda-busqueda-link {
 }
 
 #ayuda-busqueda #pasos-nav a.activeSlide {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
     font-weight: bold;
     background: #555;
     color: #fff;
@@ -1107,6 +1110,7 @@ h3 #ayuda-busqueda-link {
 
 #ayuda-busqueda #pasos-container {
     width: 658px;
+    height: 309px;
     margin: 0;
     padding: 0;
     border-top: 1px solid #555;
@@ -1116,7 +1120,7 @@ h3 #ayuda-busqueda-link {
 #ayuda-busqueda li.paso {
     position: relative;
     width: 660px;
-    height: 394px;
+    height: 309px;
 }
 
 #ayuda-busqueda li.paso div {
