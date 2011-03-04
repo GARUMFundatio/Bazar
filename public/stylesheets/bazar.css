@@ -960,13 +960,13 @@ input#busca:active {
     background-image: url(images/ui-bg_glass_75_dadada_1x400.png);
 }
 
-#cajabusqueda .ui-button:hover,
-#cajabusqueda .ui-button:focus,
-#cajabusqueda .ui-button:active,
-#cajabusqueda .ui-button .ui-state-hover,
-#cajabusqueda .ui-button .ui-state-focus,
-#cajabusqueda .ui-button .ui-state-active {
-    background-image: url(images/ui-bg_glass_d4d4d4_1x150.png);
+#contenido #cajabusqueda .ui-button:hover,
+#contenido #cajabusqueda .ui-button:focus,
+#contenido #cajabusqueda .ui-button:active,
+#contenido #cajabusqueda .ui-button .ui-state-hover,
+#contenido #cajabusqueda .ui-button .ui-state-focus,
+#contenido #cajabusqueda .ui-button .ui-state-active {
+    background-image: url(/images/ui-bg_glass_d4d4d4_1x150.png);
     border-color: #777;
     border-left-color: #aaa;
 }
