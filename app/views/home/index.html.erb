@@ -10,7 +10,7 @@
 <a id="busqueda-link" href="#busqueda-busqueda">Búsqueda Avanzada</a>
 <script>
 $('#busqueda-link').click(function() {
-  $('#avanzada').toggle();
+  $('#avanzada').toggle('slow');
 });
 </script>
 
@@ -85,7 +85,241 @@ $('#busqueda-link').click(function() {
 	
 
 	</script>
+
 <div id="avanzada" style="display:none">
+
+<h3>Filtrar por Perfiles</h3>
+
+<div>
+<table border="0" class="tabla">
+	<tr><th>Ofrecen:</th><th>Sectores Seleccionados:</th></tr>
+	<tr>
+		<td>
+		<form action="#loquesea" >
+		 	Buscar en sectores <input type="text" name="q" id="query1" />
+		 </form>
+		</td>					
+		<td>
+			<div id="filtroofertan">
+				<p>Seleccione uno o varios sectores en la caja de búsqueda.</p>
+			</div>
+		</td>
+	</tr>
+</table>
+
+</div>
+
+<table border="0" class="tabla">
+	<tr><th>Demandan:</th><th>Sectores Seleccionados:</th></tr>
+	<tr>
+		<td>
+		<form action="#loquesea" >
+		 	Buscar en sectores <input type="text" name="q" id="query2" />
+		 </form>
+		</td>					
+		<td>
+			<div id="filtrodemandan">
+				<p>Seleccione uno o varios sectores en la caja de búsqueda.</p>
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+<script type="text/javascript">
+ //<![CDATA[
+
+var a1;
+var a2;
+var tot1 = 0; 
+var tot2 = 0;
+var lis1 = [];
+var lab1 = [];
+var html1 = "";
+var lis2 = [];
+var lab2 = [];
+var html2 = "";
+
+function borraofertan(cual) {
+	var ii;
+	if (cual == 0 && tot1 == 0) {
+		tot1 = 0;
+	}
+	else {
+
+		var ii;
+		for (ii = cual; ii < tot1 -1; ii++) {
+			lis1[ii] = lis1[ii+1];
+			lab1[ii] = lab1[ii+1];
+		}
+		tot1 = tot1 - 1;
+		
+	}
+	pintaofertan();
+};
+
+function pintaofertan() {
+
+	
+	if (tot1 == 0) {
+		html1 = "";
+		$('#filtroofertan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>").fadein('slow');
+	}
+	else {
+		html1 = "";
+		var ii = 0;
+		for (ii = 0; ii < tot1; ii++) {
+			html1 += "<p>"+lab1[ii];
+			html1 += " <img src='/images/delete.png' border='0' onclick='borraofertan("+ii+");'></p>";
+		}
+		$('#filtroofertan').html(html1);
+	}
+};
+
+
+function borrademandan(cual) {
+	var ii;
+	if (cual == 0 && tot2 == 0) {
+		tot2 = 0;
+	}
+	else {
+
+		var ii;
+		for (ii = cual; ii < tot2 -1; ii++) {
+			lis2[ii] = lis2[ii+1];
+			lab2[ii] = lab2[ii+1];
+		}
+		tot2 = tot2 - 1;
+		
+	}
+	pintademandan();
+};
+
+function pintademandan() {
+
+	
+	if (tot2 == 0) {
+		html2 = "";
+		$('#filtrodemandan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>").fadein('slow');
+	}
+	else {
+		html2 = "";
+		var ii = 0;
+		for (ii = 0; ii < tot2; ii++) {
+			html2 += "<p>"+lab2[ii];
+			html2 += " <img src='/images/delete.png' border='0' onclick='borrademandan("+ii+");'></p>";
+		}
+		$('#filtrodemandan').html(html2);
+	}
+};
+
+jQuery(function() {
+ 
+	var options = {
+	  width: 300,
+	  delimiter: /(,|;)\s*/,
+	  deferRequestBy: 150, //miliseconds
+	  params: { tipo: 'O' },
+	  source: "/bazarcms/busquedaperfiles.json",
+	  minLength: 2,
+	  select: function(event, ui) {
+
+		lis1[tot1] = ui.item.id;
+		lab1[tot1] = ui.item.label;
+		tot1 += 1;
+		
+		pintaofertan();
+		
+		return false;
+	  },
+	  noCache: false //set to true, to disable caching
+	};
+
+
+	
+	a1 = $('#query1').autocomplete(options);
+  
+	var options2 = {
+	  width: 300,
+	  delimiter: /(,|;)\s*/,
+	  deferRequestBy: 150, //miliseconds
+	  params: { tipo: 'O' },
+	  source: "/bazarcms/busquedaperfiles.json",
+	  minLength: 2,
+	  select: function(event, ui) {
+		
+		lis2[tot2] = ui.item.id;
+		lab2[tot2] = ui.item.label;
+		tot2 += 1;
+
+		pintademandan();
+
+		return false;
+	  },
+	  noCache: false //set to true, to disable caching
+	};
+ 
+	a2 = $('#query2').autocomplete(options2);
+
+});
+ 
+//]]>
+</script>
+
+
+<h3>Filtrar por Páis</h3>
+
+<div>
+
+	<table border="0" class="tabla">
+		<tr><th>Países:</th><th>Países Seleccionados:</th></tr>
+		<tr>
+			<td>
+			<form action="#loquesea" >
+			 	Buscar Países <input type="text" name="q" id="query3" />
+			 </form>
+			</td>					
+			<td>
+				<div id="filtropaises">
+					<p>Seleccione uno o varios países en la caja de búsqueda</p>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+
+</div>
+
+<script type="text/javascript">
+ //<![CDATA[
+
+var a1;
+ 
+jQuery(function() {
+ 
+	var options = {
+	  width: 300,
+	  delimiter: /(,|;)\s*/,
+	  deferRequestBy: 150, //miliseconds
+	  params: { tipo: 'O' },
+	  source: "/bazarcms/busquedaperfiles.json",
+	  minLength: 2,
+	  select: function(event, ui) {
+	    $("#missectores").load('/bazarcms/addperfil?tipo=O&codigo='+ui.item.id);
+		return false;
+	  },
+	  noCache: false //set to true, to disable caching
+	};
+ 
+	a1 = $('#query3').autocomplete(options);
+
+});
+ 
+//]]>
+</script>
+
+
+<h3>Filtrar por Datos Económicos</h3>
 
 <table border="0" cellspacing="0">
 	<tr>
@@ -152,14 +386,14 @@ $('#busqueda-link').click(function() {
 <h3>Ayuda Búsqueda Avanzada <a id="ayuda-busqueda-link" href="#ayuda-busqueda">Ver/ocultar</a></h3>
 <script>
 $('#ayuda-busqueda-link').click(function() {
-  $('#ayuda-busqueda').toggle();
+  $('#ayuda-busqueda').toggle('slow');
 });
 </script>
 
      <div id="ayuda-busqueda">
           <ul id="pasos-container">
           <li class="paso" id="paso1">
-               <div>Introduzca los términos de la busqueda</div>
+               <div>Introduzca los términos de la búsqueda</div>
                <img src="/images/ayuda-busqueda-paso1.gif" alt="" />
           </li>
           <li class="paso" id="paso2">
