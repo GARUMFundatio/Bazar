@@ -208,15 +208,12 @@ $('#ayuda-busqueda-link').click(function() {
 </div><!-- /#avanzada-->
 
 <p id="opciones-busqueda">
-  <span><input type=radio name=size><label> Ofertas </label></span>
-  <span><input type=radio name=size><label> Demandas </label></span>
-  <span><input type=radio name=size><label> Empresas</label></span>
-  <script>
-  $('#opciones-busqueda span').click( function(){
-        $(this).children("input[@type=radio]").click();
-    });
-  </script>
+  <span><label id="check-ofertas"><input type="radio" name="size"> Ofertas </label></span>
+  <span><label id="check-demandas"><input type="radio" name="size"> Demandas </label></span>
+  <span><label id="check-empresas"><input type="radio" name="size"> Empresas</label></span>
 </p>
+
+
  <button>Buscar</button>
  <a href="#" id="publicar-link"><strong>Publicar </strong>Oferta / Demanda</a>
 </div><!-- /.demo -->
