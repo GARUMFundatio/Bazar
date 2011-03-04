@@ -847,6 +847,31 @@ form.edit_bazarcms_empresa div.actions {
     color: #444;
 }
 
+/* formulario de Búsqueda de sectores en Perfiles */
+
+#query1, #query2 {
+    display: inline;
+    float: left;
+    width: 320px;
+    max-height: 18px;
+    margin: 6px 0 0;
+    padding: 6px 60px 8px 10px;
+    border: 1px solid #999;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: auto !important;
+    background: #fff;
+}
+
+
+input#query1:focus, input#query2:focus,
+input#query1:active, input#query2:active {
+    border-color: #527CAD;
+    font-style: normal;
+    background-color: #fff;
+    color: #444;
+}
+
 /* enlace para cambiar entre tipos de mensajes */
 
 #contenido h3 a.opcion-mensajes {
@@ -1947,6 +1972,57 @@ ul.tabs li a {
 .ui-menu .ui-menu-item a.ui-state-active {
 	font-weight: normal;
 	margin: -1px;
+}
+
+
+/* Estilos para el ui-autocomplete de Bazar */
+
+body.logueado ul.ui-autocomplete {
+    padding: 0;
+    border-top: 1px solid #aaa;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    box-shadow : 1px 2px 5px #333;
+	-webkit-box-shadow : 1px 2px 5px #333;
+    -moz-box-shadow: 1px 2px 5px #333;
+    font-size: 12px;
+    line-height: 26px;
+    text-align: left;
+}
+
+body.logueado ul.ui-autocomplete li.ui-menu-item {
+    padding: 0;
+    height: 31px;
+}
+
+body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-corner-all {
+    display: block;
+    height: 26px;
+    padding: 2px 10px;
+    text-decoration: none;
+    border: none;
+    border-bottom: 1px solid #cdcdcd;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    line-height: 26px;
+    background: #eee;
+    color: #444;
+}
+
+body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-corner-all:hover,
+body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-corner-all:focus {
+    padding: 2px 10px;
+    border: 1px solid #1A3658;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    line-height: 26px;
+    background-color: #30537A;
+    color: #fff;
 }
 
 /*
