@@ -13,7 +13,8 @@ module Bazarcms
       inflect.irregular 'empresasdato', 'empresasdatos'
       inflect.irregular 'empresasconsulta', 'empresasconsultas'
       inflect.irregular 'empresasresultado', 'empresasresultados'
-
+      inflect.irregular 'empresasperfil', 'empresasperfiles'
+      inflect.irregular 'perfil', 'perfiles'
     end
      
   end

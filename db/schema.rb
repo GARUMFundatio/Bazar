@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302144722) do
+ActiveRecord::Schema.define(:version => 20110304000001) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -116,6 +116,14 @@ ActiveRecord::Schema.define(:version => 20110302144722) do
 
   add_index "empresasdatos", ["empresa_id", "periodo"], :name => "index_empresasdatos_on_empresa_id_and_periodo"
 
+  create_table "empresasperfiles", :force => true do |t|
+    t.string "empresa_id"
+    t.string "codigo"
+    t.string "tipo"
+  end
+
+  add_index "empresasperfiles", ["empresa_id", "codigo"], :name => "index_empresasperfiles_on_empresa_id_and_codigo"
+
   create_table "empresasresultados", :force => true do |t|
     t.integer  "empresasconsulta_id"
     t.integer  "cluster_id"
@@ -185,6 +193,24 @@ ActiveRecord::Schema.define(:version => 20110302144722) do
     t.datetime "updated_at"
     t.string   "capital"
   end
+
+  create_table "perfiles", :force => true do |t|
+    t.string  "codigo"
+    t.string  "desc"
+    t.integer "nivel"
+    t.text    "ayuda"
+  end
+
+  add_index "perfiles", ["codigo"], :name => "index_perfiles_on_codigo"
+
+  create_table "perfiles_copy", :force => true do |t|
+    t.string  "codigo"
+    t.string  "desc"
+    t.integer "nivel"
+    t.text    "ayuda"
+  end
+
+  add_index "perfiles_copy", ["codigo"], :name => "index_perfiles_on_codigo"
 
   create_table "roles", :force => true do |t|
     t.string   "rol"
