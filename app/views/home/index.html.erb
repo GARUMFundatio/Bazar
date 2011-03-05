@@ -135,9 +135,11 @@ var tot1 = 0;
 var tot2 = 0;
 var lis1 = [];
 var lab1 = [];
+var ayuda1 = [];
 var html1 = "";
 var lis2 = [];
 var lab2 = [];
+var ayuda2 = [];
 var html2 = "";
 
 function borraofertan(cual) {
@@ -151,6 +153,7 @@ function borraofertan(cual) {
 		for (ii = cual; ii < tot1 -1; ii++) {
 			lis1[ii] = lis1[ii+1];
 			lab1[ii] = lab1[ii+1];
+			ayuda1[ii] = ayuda1[ii];
 		}
 		tot1 = tot1 - 1;
 		
@@ -229,7 +232,7 @@ jQuery(function() {
 		tot1 += 1;
 		
 		pintaofertan();
-		
+		$("#query1").val("");
 		return false;
 	  },
 	  noCache: false //set to true, to disable caching
@@ -251,7 +254,7 @@ jQuery(function() {
 		lis2[tot2] = ui.item.id;
 		lab2[tot2] = ui.item.label;
 		tot2 += 1;
-
+		$("#query2").val("");
 		pintademandan();
 
 		return false;
@@ -260,6 +263,18 @@ jQuery(function() {
 	};
  
 	a2 = $('#query2').autocomplete(options2);
+
+    $('#query1').keypress(function (e) {
+        var code = null;
+        code = (e.keyCode ? e.keyCode : e.which);
+        return (code == 13) ? false : true;
+    });
+
+    $('#query2').keypress(function (e) {
+        var code = null;
+        code = (e.keyCode ? e.keyCode : e.which);
+        return (code == 13) ? false : true;
+    });
 
 });
  
@@ -312,6 +327,14 @@ jQuery(function() {
 	};
  
 	a1 = $('#query3').autocomplete(options);
+
+	// desactivamos el enter 
+	
+    $('#query3').keypress(function (e) {
+        var code = null;
+        code = (e.keyCode ? e.keyCode : e.which);
+        return (code == 13) ? false : true;
+    });
 
 });
  
