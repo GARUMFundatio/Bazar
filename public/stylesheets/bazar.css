@@ -2025,7 +2025,9 @@ body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-corner-all {
 }
 
 body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-corner-all:hover,
-body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-corner-all:focus {
+body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-corner-all:focus,
+body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-state-hover,
+body.logueado ul.ui-autocomplete li.ui-menu-item a.ui-state-active {
     padding: 2px 10px;
     border: 1px solid #1A3658;
     border-right: none;
