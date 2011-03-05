@@ -1984,7 +1984,7 @@ ul.tabs li a {
 /* Estilos para el ui-autocomplete de Bazar  */
 
 body.logueado ul.ui-autocomplete {
-    z-index: 10;
+    z-index: 10 !important;
     padding: 0;
     border-top: 1px solid #aaa;
     border-radius: 0;
