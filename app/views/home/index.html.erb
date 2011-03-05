@@ -231,10 +231,10 @@ function pintademandan() {
 			html2 += '<div class="perfil">';
 			html2 += '	<div class="nombre-perfil">'+lab2[ii]+'</div>';
 			html2 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#D"+lis2[ii]+"\').slideToggle(250);\">";
-			html2 += " <img src='/images/papelera.png' border='0' onclick='borraofertan("+ii+");'></span>";
+			html2 += " <img src='/images/papelera.png' border='0' onclick='borrademandan("+ii+");'></span>";
 			html2 += '<div class="descripcion-perfil" id="D'+lis2[ii]+'" style="display:none">';
     		html2 += '<p>'+ayuda2[ii]+'</p>';
-    		html2 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis2[ii]+"\').slideToggle(250);\">Ocultar la descripción</a>";
+    		html2 += "<a class='ocultar-link' href='#' onclick=\"$('#D"+lis2[ii]+"\').slideToggle(250);\">Ocultar la descripción</a>";
     		html2 += "</div>";
 			html2 += "</div>";
 			
