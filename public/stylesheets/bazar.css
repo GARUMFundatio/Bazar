@@ -884,6 +884,72 @@ input#query1:active, input#query2:active, input#query3:active {
     color: #444;
 }
 
+/* Información sobre perfiles seleccionados */
+
+.perfil {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 2px;
+    margin-bottom: 10px;
+}
+
+.perfil:first-child {
+    border: none;
+}
+
+.perfil .nombre-perfil {
+    padding: 7px 90px 7px 60px;
+    border: 1px solid #CEC693;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background: #F0EDDB;
+}
+
+.perfil .nombre-perfil strong {
+    position: relative;
+    left: -50px;
+    display: inline;
+    float: left;
+    width: 50px;
+    margin-right: -50px;
+}
+
+.perfil .opciones-perfil {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    display: inline;
+    float: right;
+}
+
+.perfil .opciones-perfil img:hover {
+    cursor: pointer;
+}
+
+#contenido .perfil .descripcion-perfil {
+    margin: 0 5px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    font-size: 12px;
+    line-height: 1.4;
+    background: #fff;
+}
+
+#content #contenido .perfil .descripcion-perfil p {
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.perfil .descripcion-perfil a.ocultar-link {
+    padding-left: 22px;
+    background: url(/images/ocultar-arriba.png) no-repeat left center;
+}
+
+
 /* enlace para cambiar entre tipos de mensajes */
 
 #contenido h3 a.opcion-mensajes {
