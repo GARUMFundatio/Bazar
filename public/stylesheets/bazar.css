@@ -899,7 +899,7 @@ input#query1:active, input#query2:active, input#query3:active {
 }
 
 .perfil .nombre-perfil {
-    padding: 7px 90px 7px 60px;
+    padding: 7px 62px 7px 60px;
     border: 1px solid #CEC693;
     border-radius: 6px;
     -moz-border-radius: 6px;
