@@ -855,6 +855,11 @@ form.edit_bazarcms_empresa div.actions {
 
 /* formulario de Búsqueda de sectores en Perfiles */
 
+#perfiles-ofertas-form label,
+#perfiles-demandas-form label {
+    display: block;
+}
+
 #query1, #query2 {
     display: inline;
     float: left;
