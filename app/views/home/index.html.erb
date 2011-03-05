@@ -90,7 +90,7 @@ $('#busqueda-link').click(function() {
 
 <h3>Filtrar por Perfiles</h3>
 
-<div>
+<div id="filtro-perfiles">
 <table cellspacing="0" class="tabla">
 	<tr><th>Ofrecen:</th><th>Sectores Seleccionados:</th></tr>
 	<tr>
@@ -107,8 +107,6 @@ $('#busqueda-link').click(function() {
 	</tr>
 </table>
 
-</div>
-
 <table cellspacing="0" class="tabla">
 	<tr><th>Demandan:</th><th>Sectores Seleccionados:</th></tr>
 	<tr>
@@ -124,6 +122,8 @@ $('#busqueda-link').click(function() {
 		</td>
 	</tr>
 </table>
+
+</div><!-- /#filtro-perfiles -->
 
 
 <script type="text/javascript">
@@ -305,7 +305,7 @@ jQuery(function() {
 
 <h3>Filtrar por País</h3>
 
-<div>
+<div id="filtro-pais">
 
 	<table cellspacing="0" class="tabla">
 		<tr><th>Países:</th><th>Países Seleccionados:</th></tr>
@@ -325,7 +325,7 @@ jQuery(function() {
 	</table>
 
 
-</div>
+</div><!-- /#filtro-pais -->
 
 <script type="text/javascript">
  //<![CDATA[
@@ -366,6 +366,7 @@ jQuery(function() {
 
 <h3>Filtrar por Datos Económicos</h3>
 
+<div id="filtro-datos-economicos">
 <table border="0" cellspacing="0">
 	<tr>
 		<td width="350px">
@@ -427,6 +428,7 @@ jQuery(function() {
 		</td>
 	</tr>
 </table>
+</div><!-- /#filtro-datos-economicos -->
 
 <h3>Ayuda Búsqueda Avanzada <a id="ayuda-busqueda-link" href="#ayuda-busqueda">Ver/ocultar</a></h3>
 <script>
