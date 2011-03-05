@@ -1146,6 +1146,10 @@ input#busca:active {
     vertical-align:text-bottom;
 }
 
+#opciones-busqueda label:hover {
+    cursor: pointer;
+}
+
 
 
 /* Ayuda para la búsqueda de Empresas */
