@@ -12,6 +12,7 @@ gem 'delayed_job'
 gem 'will_paginate', "~> 3.0.pre2"
 gem 'json'
 gem 'fastercsv'
+gem 'dynamic_form'
 
 gem "bazarcms", :path => '../bazarcms'
 
