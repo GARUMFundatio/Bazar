@@ -1001,13 +1001,12 @@ input#busca {
     font-size: 18px;
     line-height: 26px;
     cursor: auto !important;
-    background: url(/images/busqueda-bg-lupa.png) no-repeat right top;
+    background: #fff url(/images/busqueda-bg-lupa.png) no-repeat right top;
 }
 
 input#busca:focus,
 input#busca:active {
-    font-style: normal;
-    background-color: #F2F0E3;
+    border-color: #527CAD;
     color: #444;
 }
 
