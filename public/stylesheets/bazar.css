@@ -853,14 +853,15 @@ form.edit_bazarcms_empresa div.actions {
     color: #444;
 }
 
-/* formulario de Búsqueda de sectores en Perfiles */
+/* formulario de Búsqueda de sectores en Perfiles y por Países */
 
 #perfiles-ofertas-form label,
-#perfiles-demandas-form label {
+#perfiles-demandas-form label,
+#paises-form label {
     display: block;
 }
 
-#query1, #query2 {
+#query1, #query2, #query3 {
     display: inline;
     float: left;
     width: 378px;
@@ -875,8 +876,8 @@ form.edit_bazarcms_empresa div.actions {
 }
 
 
-input#query1:focus, input#query2:focus,
-input#query1:active, input#query2:active {
+input#query1:focus, input#query2:focus, input#query3:focus,
+input#query1:active, input#query2:active, input#query3:active {
     border-color: #527CAD;
     font-style: normal;
     background-color: #fff;
