@@ -10,7 +10,7 @@
 <a id="busqueda-link" href="#busqueda-busqueda">Búsqueda Avanzada</a>
 <script>
 $('#busqueda-link').click(function() {
-  $('#avanzada').toggle('slow');
+  $('#avanzada').slideToggle(250);
 });
 </script>
 
@@ -174,11 +174,11 @@ function pintaofertan() {
 		for (ii = 0; ii < tot1; ii++) {
 			html1 += '<div class="perfil">';
 			html1 += '	<div class="nombre-perfil">'+lab1[ii]+'</div>';
-			html1 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#O"+lis1[ii]+"\').toggle(\'slow\');\">";
+			html1 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#O"+lis1[ii]+"\').slideToggle(250);\">";
 			html1 += " <img src='/images/papelera.png' border='0' onclick='borraofertan("+ii+");'></span>";
 			html1 += '<div class="descripcion-perfil" id="O'+lis1[ii]+'" style="display:none">';
     		html1 += '<p>'+ayuda1[ii]+'</p>';
-    		html1 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis1[ii]+"\').toggle('slow');\">Ocultar la descripción</a>";
+    		html1 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis1[ii]+"\').slideToggle(250);\">Ocultar la descripción</a>";
     		html1 += "</div>";
 			html1 += "</div>";
 		}
@@ -218,11 +218,11 @@ function pintademandan() {
 		for (ii = 0; ii < tot2; ii++) {
 			html2 += '<div class="perfil">';
 			html2 += '	<div class="nombre-perfil">'+lab2[ii]+'</div>';
-			html2 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#D"+lis2[ii]+"\').toggle(\'slow\');\">";
+			html2 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#D"+lis2[ii]+"\').slideToggle(250);\">";
 			html2 += " <img src='/images/papelera.png' border='0' onclick='borraofertan("+ii+");'></span>";
 			html2 += '<div class="descripcion-perfil" id="D'+lis2[ii]+'" style="display:none">';
     		html2 += '<p>'+ayuda2[ii]+'</p>';
-    		html2 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis2[ii]+"\').toggle('slow');\">Ocultar la descripción</a>";
+    		html2 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis2[ii]+"\').slideToggle(250);\">Ocultar la descripción</a>";
     		html2 += "</div>";
 			html2 += "</div>";
 		}
@@ -448,7 +448,7 @@ jQuery(function() {
 <h3>Ayuda Búsqueda Avanzada <a id="ayuda-busqueda-link" href="#ayuda-busqueda">Ver/ocultar</a></h3>
 <script>
 $('#ayuda-busqueda-link').click(function() {
-  $('#ayuda-busqueda').toggle('slow');
+  $('#ayuda-busqueda').slideToggle(250);
 });
 </script>
 
