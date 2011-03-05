@@ -92,7 +92,7 @@ $('#busqueda-link').click(function() {
 
 <div id="filtro-perfiles">
 <table cellspacing="0" class="tabla">
-	<tr><th>Ofrecen:</th><th>Sectores Seleccionados:</th></tr>
+	<tr><th>Ofrecen:</th><th>Empresas que sean de estos sectores</th></tr>
 	<tr>
 		<td valign="top" style="width: 420px;">
 		<form action="#loquesea" id="perfiles-ofertas-form">
@@ -103,13 +103,14 @@ $('#busqueda-link').click(function() {
 		<td valign="top" >
 		<div id="filtroofertan">
 			<p>Seleccione uno o varios sectores en la caja de búsqueda.</p>
+			<p><b>Solo</b> las empresas que estén en <b>alguno</b> de estos sectores.</p>
 		</div>
 		</td>
 	</tr>
 </table>
 
 <table cellspacing="0" class="tabla">
-	<tr><th>Demandan:</th><th>Sectores Seleccionados:</th></tr>
+	<tr><th>Demandan:</th><th>Empresas que sean de estos sectores</th></tr>
 	<tr>
 		<td valign="top" style="width: 420px;">
 		<form action="#loquesea" id="perfiles-demandas-form" >
@@ -120,6 +121,7 @@ $('#busqueda-link').click(function() {
 		<td valign="top">
 			<div id="filtrodemandan">
 				<p>Seleccione uno o varios sectores en la caja de búsqueda.</p>
+				<p><b>Solo<b/> las empresas que estén en <b>alguno</b> de estos sectores.</p>
 			</div>
 		</td>
 	</tr>
@@ -569,13 +571,22 @@ $('#ayuda-busqueda-link').click(function() {
 			
 			// TODO solo deberíamos enviarlos si esta activada la búsqueda avazanda ;-) 
 			
-			emple = $("#empleados2").val();
-			ventas = $("#ventas2").val();
-			compras = $("#compras2").val();
-			resultados = $("#resultados2").val();
-			pofertan = $("#pofertan").val();
-			pdemandan = $("#pdemandan").val();
-			
+			if ( $("#avanzada").is(":visible") ) { 
+				emple = $("#empleados2").val();
+				ventas = $("#ventas2").val();
+				compras = $("#compras2").val();
+				resultados = $("#resultados2").val();
+				pofertan = $("#pofertan").val();
+				pdemandan = $("#pdemandan").val();
+			}
+			else {
+				emple = "";
+				ventas = "";
+				compras = "";
+				resultados = "";
+				pofertan = "";
+				pdemandan = "";				
+			}
 			 
 			$('#avanzada').hide('slow');
 			$("#estado").show();
