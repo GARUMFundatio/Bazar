@@ -133,7 +133,7 @@ body {
     width: 361px;
     height: 75px;
     text-indent: -9999px;
-    background: url(images/logo-bazar.png) no-repeat 0 0;
+    background: url(/images/logo-bazar.png) no-repeat 0 0;
 }
 
 #slogan {
