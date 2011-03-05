@@ -858,10 +858,10 @@ form.edit_bazarcms_empresa div.actions {
 #query1, #query2 {
     display: inline;
     float: left;
-    width: 320px;
+    width: 378px;
     max-height: 18px;
     margin: 6px 0 0;
-    padding: 6px 60px 8px 10px;
+    padding: 6px 10px 8px 10px;
     border: 1px solid #999;
     font-size: 14px;
     line-height: 16px;
