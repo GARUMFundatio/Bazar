@@ -98,6 +98,7 @@ $('#busqueda-link').click(function() {
 		<form action="#loquesea" id="perfiles-ofertas-form">
 		 	<label for="query1">Buscar en sectores</label> <input type="text" name="q" id="query1" />
 		 </form>
+		 <input type="hidden" id="pofertan" style="border:0; color:#f6931f; font-weight:bold;" />
 		</td>					
 		<td valign="top" >
 		<div id="filtroofertan">
@@ -114,6 +115,7 @@ $('#busqueda-link').click(function() {
 		<form action="#loquesea" id="perfiles-demandas-form" >
 		 	<label for="query2">Buscar en sectores</label> <input type="text" name="q" id="query2" />
 		 </form>
+		 <input type="hidden" id="pdemandan" style="border:0; color:#f6931f; font-weight:bold;" />
 		</td>					
 		<td valign="top">
 			<div id="filtrodemandan">
@@ -170,6 +172,7 @@ function pintaofertan() {
 	}
 	else {
 		html1 = "";
+		bus = "";
 		var ii = 0;
 		for (ii = 0; ii < tot1; ii++) {
 			html1 += '<div class="perfil">';
@@ -181,8 +184,12 @@ function pintaofertan() {
     		html1 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis1[ii]+"\').toggle('slow');\">Ocultar la descripción</a>";
     		html1 += "</div>";
 			html1 += "</div>";
+			
+			bus += lis1[ii]+","
 		}
 		$('#filtroofertan').html(html1);
+		
+		$('#pofertan').val(bus);
 	}
 };
 
@@ -214,8 +221,11 @@ function pintademandan() {
 	}
 	else {
 		html2 = "";
+		bus = "";
 		var ii = 0;
 		for (ii = 0; ii < tot2; ii++) {
+			
+			
 			html2 += '<div class="perfil">';
 			html2 += '	<div class="nombre-perfil">'+lab2[ii]+'</div>';
 			html2 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#D"+lis2[ii]+"\').toggle(\'slow\');\">";
@@ -225,8 +235,12 @@ function pintademandan() {
     		html2 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis2[ii]+"\').toggle('slow');\">Ocultar la descripción</a>";
     		html2 += "</div>";
 			html2 += "</div>";
+			
+			bus += lis2[ii]+",";
 		}
 		$('#filtrodemandan').html(html2);
+
+		$('#pdemandan').val(bus);
 	}
 };
 
@@ -556,6 +570,10 @@ $('#ayuda-busqueda-link').click(function() {
 			ventas = $("#ventas2").val();
 			compras = $("#compras2").val();
 			resultados = $("#resultados2").val();
+			pofertan = $("#pofertan").val();
+			pdemandan = $("#pdemandan").val();
+			
+			 
 			$('#avanzada').hide('slow');
 			$("#estado").show();
 			$("#progressbar").show();
@@ -564,7 +582,7 @@ $('#ayuda-busqueda-link').click(function() {
 			$("#estadotexto").html('Buscando ...');
 			$.ajax({
 			  async:true, 
-			  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados,
+			  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan, 
 			  success: function(data) {
 			    $('#lista').html(data);
 				clearInterval(actualiza);
