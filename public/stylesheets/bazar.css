@@ -1494,7 +1494,7 @@ table.tabla tr:first-child td:last-child {
 
 
 #contenido table.tabla tr td {
-    padding:.4em .6em .5em .8em;
+    padding:.4em .8em .5em .8em;
     border: 1px solid #cdcdcd;
     border-top: none;
     border-right: none;
@@ -1512,7 +1512,7 @@ table.tabla tr:first-child td:last-child {
 
 #contenido table.tabla tr th,
 table.tabla tr:first-child th[scope="row"] {
-    padding:.4em .6em .5em .8em;
+    padding:.4em .8em .5em .8em;
     border: 1px solid #cdcdcd;
     border-top: none;
     border-right: none;
