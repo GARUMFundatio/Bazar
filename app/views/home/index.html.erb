@@ -174,7 +174,6 @@ function pintaofertan() {
 		for (ii = 0; ii < tot1; ii++) {
 			html1 += "<p>"+lab1[ii];
 			html1 += " <img src='/images/papelera.png' border='0' onclick='borraofertan("+ii+");'></p>";
-			html1 += " <img src='/images/lupa.png' border='0' onclick='borraofertan("+ii+");'></p>";
 			
 		}
 		$('#filtroofertan').html(html1);
@@ -229,12 +228,22 @@ jQuery(function() {
 	  minLength: 2,
 	  select: function(event, ui) {
 
-		lis1[tot1] = ui.item.id;
-		lab1[tot1] = ui.item.label;
-		tot1 += 1;
+		var esta = 0; 
+		
+		for (ii = 0; ii < tot1; ii++) {
+			if (lis1[ii] === ui.item.id) {
+				esta = 1; 		
+			}
+		}
+		if (!esta) {
+			lis1[tot1] = ui.item.id;
+			lab1[tot1] = ui.item.label;
+			tot1 += 1;
+		}
 		
 		pintaofertan();
 		$("#query1").val("");
+		
 		return false;
 	  },
 	  noCache: false //set to true, to disable caching
@@ -253,9 +262,19 @@ jQuery(function() {
 	  minLength: 2,
 	  select: function(event, ui) {
 		
-		lis2[tot2] = ui.item.id;
-		lab2[tot2] = ui.item.label;
-		tot2 += 1;
+		var esta = 0; 
+
+		for (ii = 0; ii < tot2; ii++) {
+			if (lis2[ii] === ui.item.id) {
+				esta = 1; 		
+			}
+		}
+		if (!esta) {
+			lis2[tot2] = ui.item.id;
+			lab2[tot2] = ui.item.label;
+			tot2 += 1;
+		}
+		
 		$("#query2").val("");
 		pintademandan();
 
