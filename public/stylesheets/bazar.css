@@ -922,6 +922,7 @@ p.busqueda-principal label {
     font-size: 14px;
 }
 
+/* Input de la búsqueda principal */
 input#busca {
     display: inline;
     float: left;
@@ -944,6 +945,7 @@ input#busca:active {
     color: #444;
 }
 
+/* contenedor de la búsqueda principal */
 #cajabusqueda {
     position: relative;
     min-height: 100px;
@@ -955,28 +957,32 @@ input#busca:active {
     margin: .2em 0 0;
 }
 
-#cajabusqueda table tr td { /* Estilos para la celda con el slider */
+
+/* Filtro de búsuqeda por datos económicos */
+#filtro-datos-economicos table tr td { /* Estilos para la celda con el slider */
     width: 223px;
     padding: 8px 11px;
     border-bottom: 1px solid #ccc;
     font-size: 16px;
 }
 
-#cajabusqueda table tr td:first-child { /* Estilos para la celda con el "label" */
+#filtro-datos-economicos table tr td:first-child { /* Estilos para la celda con el "label" */
     width: 180px;
     padding: 8px 5px;
 }
 
-#cajabusqueda table tr td:last-child { /* Estilos para la celda con el texto dinámico */
+#filtro-datos-economicos table tr td:last-child { /* Estilos para la celda con el texto dinámico */
     width: 211px;
     padding: 8px 7px;
 }
 
-#cajabusqueda table tr td:last-child input {
+#filtro-datos-economicos table tr td:last-child input {
     max-width: 211px !important;
     cursor: auto !important;
 }
 
+
+/* botón submit de la búsqueda principal */
 #cajabusqueda .ui-button,
 #cajabusqueda .ui-button .ui-state-default {
     position: absolute;
