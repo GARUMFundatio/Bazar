@@ -153,7 +153,7 @@ function borraofertan(cual) {
 		for (ii = cual; ii < tot1 -1; ii++) {
 			lis1[ii] = lis1[ii+1];
 			lab1[ii] = lab1[ii+1];
-			ayuda1[ii] = ayuda1[ii];
+			ayuda1[ii] = ayuda1[ii+1];
 		}
 		tot1 = tot1 - 1;
 		
@@ -166,15 +166,21 @@ function pintaofertan() {
 	
 	if (tot1 == 0) {
 		html1 = "";
-		$('#filtroofertan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>").fadein('slow');
+		$('#filtroofertan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>");
 	}
 	else {
 		html1 = "";
 		var ii = 0;
 		for (ii = 0; ii < tot1; ii++) {
-			html1 += "<p>"+lab1[ii];
-			html1 += " <img src='/images/papelera.png' border='0' onclick='borraofertan("+ii+");'></p>";
-			
+			html1 += '<div class="perfil">';
+			html1 += '	<div class="nombre-perfil">'+lab1[ii]+'</div>';
+			html1 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#O"+lis1[ii]+"\').toggle(\'slow\');\">";
+			html1 += " <img src='/images/papelera.png' border='0' onclick='borraofertan("+ii+");'></span>";
+			html1 += '<div class="descripcion-perfil" id="O'+lis1[ii]+'" style="display:none">';
+    		html1 += '<p>'+ayuda1[ii]+'</p>';
+    		html1 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis1[ii]+"\').toggle('slow');\">Ocultar la descripción</a>";
+    		html1 += "</div>";
+			html1 += "</div>";
 		}
 		$('#filtroofertan').html(html1);
 	}
@@ -192,6 +198,7 @@ function borrademandan(cual) {
 		for (ii = cual; ii < tot2 -1; ii++) {
 			lis2[ii] = lis2[ii+1];
 			lab2[ii] = lab2[ii+1];
+			ayuda2[ii] = ayuda2[ii+1]
 		}
 		tot2 = tot2 - 1;
 		
@@ -200,18 +207,24 @@ function borrademandan(cual) {
 };
 
 function pintademandan() {
-
 	
 	if (tot2 == 0) {
 		html2 = "";
-		$('#filtrodemandan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>").fadein('slow');
+		$('#filtrodemandan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>");
 	}
 	else {
 		html2 = "";
 		var ii = 0;
 		for (ii = 0; ii < tot2; ii++) {
-			html2 += "<p>"+lab2[ii];
-			html2 += " <img src='/images/papelera.png' border='0' onclick='borrademandan("+ii+");'></p>";
+			html2 += '<div class="perfil">';
+			html2 += '	<div class="nombre-perfil">'+lab2[ii]+'</div>';
+			html2 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#D"+lis2[ii]+"\').toggle(\'slow\');\">";
+			html2 += " <img src='/images/papelera.png' border='0' onclick='borraofertan("+ii+");'></span>";
+			html2 += '<div class="descripcion-perfil" id="D'+lis2[ii]+'" style="display:none">';
+    		html2 += '<p>'+ayuda2[ii]+'</p>';
+    		html2 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis2[ii]+"\').toggle('slow');\">Ocultar la descripción</a>";
+    		html2 += "</div>";
+			html2 += "</div>";
 		}
 		$('#filtrodemandan').html(html2);
 	}
@@ -238,6 +251,7 @@ jQuery(function() {
 		if (!esta) {
 			lis1[tot1] = ui.item.id;
 			lab1[tot1] = ui.item.label;
+			ayuda1[tot1] = ui.item.ayuda;
 			tot1 += 1;
 		}
 		
@@ -272,6 +286,7 @@ jQuery(function() {
 		if (!esta) {
 			lis2[tot2] = ui.item.id;
 			lab2[tot2] = ui.item.label;
+			ayuda2[tot2] = ui.item.ayuda;
 			tot2 += 1;
 		}
 		
