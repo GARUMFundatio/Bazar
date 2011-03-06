@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110304010140) do
+ActiveRecord::Schema.define(:version => 20110306175800) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -186,6 +186,85 @@ ActiveRecord::Schema.define(:version => 20110304010140) do
 
   add_index "noticias", ["fecha"], :name => "index_noticia_fecha"
 
+  create_table "ofertas", :force => true do |t|
+    t.integer  "bazar_id"
+    t.integer  "empresa_id"
+    t.string   "tipo"
+    t.datetime "fecha"
+    t.datetime "fecha_hasta"
+    t.string   "titulo"
+    t.text     "texto"
+    t.text     "texto_correo"
+    t.integer  "vistas"
+    t.integer  "clicks"
+    t.integer  "contactos"
+    t.integer  "fav_empresa"
+    t.integer  "fav_oferta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ofertas", ["empresa_id"], :name => "index_ofertas_on_empresa_id"
+  add_index "ofertas", ["fecha"], :name => "index_ofertas_on_fecha"
+  add_index "ofertas", ["fecha_hasta"], :name => "index_ofertas_on_fecha_hasta"
+
+  create_table "ofertasconsultas", :force => true do |t|
+    t.integer  "empresa_id"
+    t.string   "desc"
+    t.integer  "total_consultas"
+    t.integer  "total_respuestas"
+    t.integer  "total_resultados"
+    t.datetime "fecha_inicio"
+    t.datetime "fecha_fin"
+    t.text     "sql"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ofertasconsultas", ["empresa_id", "fecha_inicio"], :name => "index_ofertasconsultas_on_empresa_id_and_fecha_inicio"
+
+  create_table "ofertasfavoritos", :force => true do |t|
+    t.integer  "bazar_id"
+    t.integer  "user_id"
+    t.integer  "empresa_id"
+    t.datetime "fecha"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "nombre_empresa"
+    t.string   "titulo_oferta"
+  end
+
+  add_index "ofertasfavoritos", ["user_id", "fecha"], :name => "index_ofertasfavoritos_on_user_id_and_fecha"
+
+  create_table "ofertaspaises", :force => true do |t|
+    t.integer "consulta_id"
+    t.string  "codigo"
+    t.string  "desc"
+  end
+
+  add_index "ofertaspaises", ["consulta_id", "codigo"], :name => "index_ofertaspaises_on_consulta_id_and_codigo"
+
+  create_table "ofertasperfiles", :force => true do |t|
+    t.integer "consulta_id"
+    t.string  "codigo"
+    t.string  "tipo"
+  end
+
+  add_index "ofertasperfiles", ["consulta_id", "codigo"], :name => "index_ofertasperfiles_on_consulta_id_and_codigo"
+
+  create_table "ofertasresultados", :force => true do |t|
+    t.integer  "ofertasconsulta_id"
+    t.integer  "cluster_id"
+    t.integer  "empresa_id"
+    t.string   "orden"
+    t.string   "enlace"
+    t.string   "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ofertasresultados", ["ofertasconsulta_id", "orden"], :name => "index_ofertasresultados_on_ofertasconsulta_id_and_orden"
+
   create_table "paises", :force => true do |t|
     t.string   "descripcion", :limit => 100, :null => false
     t.string   "codigo",      :limit => 2,   :null => false
@@ -199,9 +278,20 @@ ActiveRecord::Schema.define(:version => 20110304010140) do
     t.string  "desc"
     t.integer "nivel"
     t.text    "ayuda"
+    t.integer "total_empresas_bazar"
+    t.integer "total_empresas_mercado"
   end
 
   add_index "perfiles", ["codigo"], :name => "index_perfiles_on_codigo"
+
+  create_table "perfiles_copy", :force => true do |t|
+    t.string  "codigo"
+    t.string  "desc"
+    t.integer "nivel"
+    t.text    "ayuda"
+  end
+
+  add_index "perfiles_copy", ["codigo"], :name => "index_perfiles_on_codigo"
 
   create_table "roles", :force => true do |t|
     t.string   "rol"
