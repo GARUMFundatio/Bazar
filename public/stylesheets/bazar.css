@@ -1006,7 +1006,6 @@ input#busca {
     margin: 0 170px 50px 0;
     padding: 8px 60px 10px 10px;
     border: 1px solid #999;
-    border-top: 2px solid #aaa;
     font-size: 18px;
     line-height: 26px;
     cursor: auto !important;
