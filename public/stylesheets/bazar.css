@@ -954,7 +954,7 @@ div.perfil:last-child {
 }
 
 .perfil .descripcion-perfil a.ocultar-link {
-    padding-left: 22px;
+    padding-left: 20px;
     background: url(/images/ocultar-arriba.png) no-repeat left center;
 }
 
