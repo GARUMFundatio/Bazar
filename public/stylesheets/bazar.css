@@ -1109,6 +1109,7 @@ input#busca:active {
 
 #cajabusqueda2 .ui-button,
 #cajabusqueda2 .ui-button .ui-state-default {
+    position: static;
     height: 43px;
     width: 139px;
     overflow: hidden;
