@@ -59,18 +59,30 @@ div.field, div.actions {
 /* bazar */
 
 /* =FUENTES */
+
+/* =FUENTES */
+
+@font-face { font-family: liberation; src: url('fuentes/LiberationSans-Regular.ttf'); }
+@font-face { font-family: liberation; font-weight: bold; src: url('fuentes/LiberationSans-Bold.ttf'); }
+@font-face { font-family: liberation; font-style: italic; src: url('fuentes/LiberationSans-Italic.ttf'); }
+@font-face { font-family: liberation; font-weight: bold; font-style: italic; src: url('fuentes/LiberationSans-BoldItalic.ttf'); }
+@font-face { font-family: liberationserif; src: url('fuentes/LiberationSerif-Regular.ttf'); }
+@font-face { font-family: liberationserif; font-weight: bold; src: url('fuentes/LiberationSerif-Bold.ttf'); }
+@font-face { font-family: liberationserif; font-style: italic; src: url('fuentes/LiberationSerif-Italic.ttf'); }
+
+
 body,
 input,
 textarea,
 #user_session_submit {
-    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+    font-family: "Liberation Sans", "liberation", Arial, Helvetica, sans-serif;
 }
 
 input[type="submit"],
 #bazarcms_empresa_submit,
 #cajabusqueda .ui-button,
 #footer {
-    font-family: "Liberation Serif", georgia, serif;
+    font-family: "Liberation Serif", "liberationserif", georgia, serif;
 }
 
 /*estructura*/
@@ -1021,6 +1033,20 @@ input#busca:active {
     margin: .2em 0 0;
 }
 
+/* Div con los resultados */
+#lista {
+    margin-bottom: 20px;
+    padding: 20px 20px 0;
+    border: 1px solid #DBB783;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #FAE0BF;
+}
+
+#lista table.tabla tbody {
+    background-color: #FAE0BF; /* para que no se vean bordecitos blancos */
+}
 
 /* Filtro de búsuqeda por datos económicos */
 #filtro-datos-economicos table tr td { /* Estilos para la celda con el slider */
@@ -1494,6 +1520,9 @@ table.tabla tr:first-child td:last-child {
     border-top-right-radius:10px;
 }
 
+table.tabla tr td {
+    background-color: #fff;
+}
 
 #contenido table.tabla tr td {
     padding:.4em .8em .5em .8em;
