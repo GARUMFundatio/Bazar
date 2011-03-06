@@ -1,7 +1,5 @@
 /* scaffold */
 
-
-
 body {
     background-color: #fff;
     color: #444;
@@ -1479,7 +1477,6 @@ select {
     max-width: 100%;
     font-size: 16px;
     line-height: 1.1;
-    background: white;
 }
 
 #contenido table.tabla {
