@@ -16,6 +16,9 @@
 
 	
 	<%= csrf_meta_tag %>
+	
+
+	
   </head>
 	
 		<% if !current_user.nil? %>
@@ -26,6 +29,12 @@
 		<% else %>
 			<body class="anonimo"><!-- si es anónimo -->
 		<% end %>
+
+<!-- ClickTale Top part -->
+<script type="text/javascript">
+var WRInitTime=(new Date()).getTime();
+</script>
+<!-- ClickTale end of Top part -->
 	
    <div class="container">
 
@@ -263,6 +272,18 @@
 	
 
   </div> <!-- fin container -->
+
+<!-- ClickTale Bottom part -->
+<div id="ClickTaleDiv" style="display: none;"></div>
+<script type="text/javascript">
+if(document.location.protocol!='https:')
+  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb6.js'%20type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+if(typeof ClickTale=='function') ClickTale(16079,0.045,"www02");
+</script>
+<!-- ClickTale end of Bottom part -->
+
 
   </body>
 </html>
