@@ -59,18 +59,30 @@ div.field, div.actions {
 /* bazar */
 
 /* =FUENTES */
+
+/* =FUENTES */
+
+@font-face { font-family: liberation; src: url('fuentes/LiberationSans-Regular.ttf'); }
+@font-face { font-family: liberation; font-weight: bold; src: url('fuentes/LiberationSans-Bold.ttf'); }
+@font-face { font-family: liberation; font-style: italic; src: url('fuentes/LiberationSans-Italic.ttf'); }
+@font-face { font-family: liberation; font-weight: bold; font-style: italic; src: url('fuentes/LiberationSans-BoldItalic.ttf'); }
+@font-face { font-family: liberationserif; src: url('fuentes/LiberationSerif-Regular.ttf'); }
+@font-face { font-family: liberationserif; font-weight: bold; src: url('fuentes/LiberationSerif-Bold.ttf'); }
+@font-face { font-family: liberationserif; font-style: italic; src: url('fuentes/LiberationSerif-Italic.ttf'); }
+
+
 body,
 input,
 textarea,
 #user_session_submit {
-    font-family: "Liberation Sans", Arial, Helvetica, sans-serif;
+    font-family: "Liberation Sans", "liberation", Arial, Helvetica, sans-serif;
 }
 
 input[type="submit"],
 #bazarcms_empresa_submit,
 #cajabusqueda .ui-button,
 #footer {
-    font-family: "Liberation Serif", georgia, serif;
+    font-family: "Liberation Serif", "liberationserif", georgia, serif;
 }
 
 /*estructura*/
