@@ -1107,6 +1107,15 @@ input#busca:active {
 
 /* submit de búsqueda abajo */
 
+#cajabusqueda2 {
+    width: 100%;
+    height: 43px;
+    overflow: hidden;
+    margin-top: 5px;
+    padding: 15px 5px;
+    border-top: 1px solid #cdcdcd;
+}
+
 #cajabusqueda2 .ui-button,
 #cajabusqueda2 .ui-button .ui-state-default {
     position: static;
