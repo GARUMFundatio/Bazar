@@ -1105,6 +1105,41 @@ input#busca:active {
     padding: 0;
 }
 
+/* submit de búsqueda abajo */
+
+#cajabusqueda2 .ui-button,
+#cajabusqueda2 .ui-button .ui-state-default {
+    height: 43px;
+    width: 139px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border-color: #999;
+    border-left-color: #aaa;
+    border-radius : 0;
+	-moz-border-radius : 0; /* Mozilla */
+	-webkit-border-radius : 0; /* Webkit */
+    font-size: 19px;
+    line-height: .1em !important;
+    background-image: url(images/ui-bg_glass_75_dadada_1x400.png);
+}
+
+#contenido #cajabusqueda2 .ui-button:hover,
+#contenido #cajabusqueda2 .ui-button:focus,
+#contenido #cajabusqueda2 .ui-button:active,
+#contenido #cajabusqueda2 .ui-button .ui-state-hover,
+#contenido #cajabusqueda2 .ui-button .ui-state-focus,
+#contenido #cajabusqueda2 .ui-button .ui-state-active {
+    background-image: url(/images/ui-bg_glass_d4d4d4_1x150.png);
+    border-color: #777;
+    border-left-color: #aaa;
+}
+
+#cajabusqueda .ui-button .ui-button-text {
+    padding: 0;
+}
+
+/* botón Publicar */
 #publicar-link {
     position: absolute;
     top: 31px;
