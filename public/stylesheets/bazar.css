@@ -1033,6 +1033,20 @@ input#busca:active {
     margin: .2em 0 0;
 }
 
+/* Div con los resultados */
+#lista {
+    margin-bottom: 20px;
+    padding: 20px 20px 0;
+    border: 1px solid #DBB783;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #FAE0BF;
+}
+
+#lista table.tabla tbody {
+    background-color: #FAE0BF; /* para que no se vean bordecitos blancos */
+}
 
 /* Filtro de búsuqeda por datos económicos */
 #filtro-datos-economicos table tr td { /* Estilos para la celda con el slider */
@@ -1506,6 +1520,9 @@ table.tabla tr:first-child td:last-child {
     border-top-right-radius:10px;
 }
 
+table.tabla tr td {
+    background-color: #fff;
+}
 
 #contenido table.tabla tr td {
     padding:.4em .8em .5em .8em;
