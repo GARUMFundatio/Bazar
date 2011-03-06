@@ -18,6 +18,7 @@ gem "bazarcms", :path => '../bazarcms'
 
 # gem 'bazarcms', :git => "git://github.com/GARUMfundatio/bazarcms.git"
 
+gem 'ruby-debug'
 group :development, :test do
 	gem 'ruby-debug'
 end
