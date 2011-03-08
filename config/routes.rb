@@ -45,6 +45,8 @@ Bazar::Application.routes.draw do
   match "/favorito/delfav" => "favoritos#delfav"  
   match "/favorito/dashboard" => "favoritos#dashboard"
 
+  match "/busquedapaises" => "paises#busqueda"
+
 # API routes
 
   match '/api/index' => 'api#index'
