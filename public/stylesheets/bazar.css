@@ -1359,15 +1359,55 @@ h3 #ayuda-busqueda-link {
 
 /* Seccion Publicar Oferta/demanda */
 
+#ofer1, #ofer2, #ofer3 {
+    padding-top: 20px;
+    border-top: 1px solid #cdcdcd;
+}
+
+/* Prueba para poner los números y letras del paso */
+#contenido h3.paso-title em,
+.publicar-seccion h4 em {
+    position: relative;
+    display: inline;
+    float: left;
+    width: 24px;
+    margin-right: 10px;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    font-size: 14px;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#contenido h3.paso-title em {
+    top: 2px;
+    background: #30537A;
+    color: #C9D6E8;
+}
+
+.publicar-seccion h4 em {
+    left: -28px;
+    margin-right: -20px;
+    background: #527EB4;
+    color: #fff;
+}
+
 /* Título del paso */
 #contenido h3.paso-title {
     display: inline;
     float: left;
-    padding: 5px 10px;
+    padding: 5px 18px 5px 15px;
     margin-bottom: 20px;
-    border: 1px solid #DBCE8E;
-    text-transform: uppercase;
-    background: #F2F0E3;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    line-height: 28px;
+    background: #527EB4;
+    color: #fff;
 }
 
 /* cada sección del paso */
@@ -1384,9 +1424,11 @@ h3 #ayuda-busqueda-link {
 /* cada título de sección del paso */
 .publicar-seccion h4 {
     font-size: 18px;
+    line-height: 24px;
     margin: 0 0 10px 0;
-    padding: 5px 3px;
+    padding: 5px 3px 7px 27px;
     border-bottom: 1px solid #9DAFBF;
+    color: #666;
 }
 
 /* Retoques específicos */
