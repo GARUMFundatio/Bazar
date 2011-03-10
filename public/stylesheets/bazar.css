@@ -875,7 +875,7 @@ form.edit_bazarcms_empresa div.actions {
     float: left;
     width: 398px;
     max-height: 18px;
-    margin: 6px 0 0;
+    margin: 6px 0 3px;
     padding: 6px 10px 8px 10px;
     border: 1px solid #999;
     font-size: 14px;
@@ -1355,6 +1355,108 @@ h3 #ayuda-busqueda-link {
 
 #ayuda-busqueda .pasos-nav-pyn #next-paso {
     right: 1px;
+}
+
+/* Seccion Publicar Oferta/demanda */
+
+/* Título del paso */
+#contenido h3.paso-title {
+    display: inline;
+    float: left;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #DBCE8E;
+    text-transform: uppercase;
+    background: #F2F0E3;
+}
+
+/* cada sección del paso */
+#content div.publicar-seccion {
+    clear: both;
+    width: 888px;
+    overflow: hidden;
+    margin: 0 0 20px 0;
+    padding: 4px 15px 0;
+    border: 1px solid #AABFD1;
+    background: #E0E8F0;
+}
+
+/* cada título de sección del paso */
+.publicar-seccion h4 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    padding: 5px 3px;
+    border-bottom: 1px solid #9DAFBF;
+}
+
+/* Retoques específicos */
+
+/* paso 1b */
+#ofer1 .busqueda-principal {
+    margin: 0;
+}
+
+#ofer1 #busca {
+    margin: 5px 0 15px;
+}
+
+/* pasos 1c y 1d */
+
+#ofer1 #publicar-paso1c table.tabla:first-child,
+#ofer1 #publicar-paso1d table.tabla:first-child {
+    margin-top: 10px;
+}
+
+#ofer1 #publicar-paso1c table.tabla tr:hover td,
+#ofer1 #publicar-paso1d table.tabla tr:hover td {
+    background: #fff;
+}
+
+/* paso 1e */
+#content div.publicar-seccion #filtro-datos-economicos {
+    margin-bottom: 15px;
+}
+
+#content div.publicar-seccion #filtro-datos-economicos tr td {
+    border-color: #9dafbf;
+}
+
+#content div.publicar-seccion #filtro-datos-economicos table:last-child td {
+    border: none;
+}
+
+#content div.publicar-seccion #filtro-datos-economicos input {
+    background: transparent;
+}
+
+
+/* navegación para seccion Publicar */
+
+#navegar-publicar {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+#navegar-publicar a {
+    display: inline;
+    float: left;
+    padding: 0 20px;
+    font-size: 18px;
+    line-height: 50px;
+}
+
+#navegar-publicar a.publicar-submit {
+    border: 1px solid #97AF4D;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: #3E7417 1px 1px 2px;
+    background: #A5C63E;
+    color: #fff;
 }
 
 /* pie */
