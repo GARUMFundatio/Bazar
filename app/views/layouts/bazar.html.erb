@@ -100,7 +100,7 @@ var WRInitTime=(new Date()).getTime();
                 <%= link_to(image_tag('icono-usuario.png'), edit_user_path(current_user.id), :class => 'account-link', :title => 'Mi Cuenta') %>
                 <%= link_to(image_tag('group.png'), edit_bazarcms_empresa_path(current_user.id), :class => 'empresa-link', :title => 'Mi Empresa') %>
                 <%= link_to(image_tag('icono-historial.png'), bazarcms_empresasconsultas_path, :class => 'historial-link', :title => 'Historial de Consultas Realizadas') %>
-                <%= link_to(image_tag('add.png'), "/home", :class => 'crear-oferta-link', :title => 'Crear Oferta/Demanda') %>
+                <%= link_to(image_tag('add.png'), "/bazarcms/publicaroferta", :class => 'crear-oferta-link', :title => 'Crear Oferta/Demanda') %>
                 <% if current_user_is_admin || current_user_is_dinamizador %>
                     <%= link_to(image_tag('icono-admin.png'), "#", :class => 'administracion-link', :title => 'Administración') %>
                 <% end %>
