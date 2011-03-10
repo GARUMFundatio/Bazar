@@ -1418,6 +1418,9 @@ h3 #ayuda-busqueda-link {
     margin: 0 0 20px 0;
     padding: 4px 15px 0;
     border: 1px solid #AABFD1;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
     background: #E0E8F0;
 }
 
