@@ -1495,6 +1495,7 @@ h3 #ayuda-busqueda-link {
 
 #content #publicar-paso3a #titulo {
     max-height: 22px;
+    margin-bottom: 14px;
     padding: 8px 10px 10px;
     font-size: 18px;
     line-height: 26px;
