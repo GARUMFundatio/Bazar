@@ -1491,6 +1491,15 @@ h3 #ayuda-busqueda-link {
     border-color: #527CAD;
 }
 
+/* input para título de oferta/demanda */
+
+#content #publicar-paso3a #titulo {
+    max-height: 22px;
+    padding: 8px 10px 10px;
+    font-size: 18px;
+    line-height: 26px;
+}
+
 /* navegación para seccion Publicar */
 
 #navegar-publicar {
