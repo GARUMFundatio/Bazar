@@ -1476,17 +1476,18 @@ h3 #ayuda-busqueda-link {
 
 /* textareas e inputs en los pasos */
 #content div.publicar-seccion textarea,
-#publicar-paso3d input[type="text"] {
+#content #publicar-paso3a input[type="text"],
+#content #publicar-paso3d input[type="text"] {
     margin: 5px 0 10px;
     border: 1px solid #999;
 }
 
 #content div.publicar-seccion textarea:focus,
 #content div.publicar-seccion textarea:active,
-#publicar-paso3a input[type="text"]:focus,
-#publicar-paso3a input[type="text"]:active
-#publicar-paso3d input[type="text"]:focus,
-#publicar-paso3d input[type="text"]:active {
+#content #publicar-paso3a input[type="text"]:focus,
+#content #publicar-paso3a input[type="text"]:active,
+#content #publicar-paso3d input[type="text"]:focus,
+#content #publicar-paso3d input[type="text"]:active {
     border-color: #527CAD;
 }
 
