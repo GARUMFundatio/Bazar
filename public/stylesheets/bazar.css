@@ -1505,10 +1505,10 @@ h3 #ayuda-busqueda-link {
 
 /* estilos para paso de fecha de validez */
 #content #publicar-paso3d div.field {
-    margin-bottom: none;
+    margin-bottom: 0;
 }
 
-#content #publicar-paso3d div.field input[type="text"] {
+#content #publicar-paso3d div.field label {
     margin-right: 6px;
     font-size: 16px;
     line-height: 22px;
