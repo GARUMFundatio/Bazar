@@ -1494,7 +1494,7 @@ h3 #ayuda-busqueda-link {
 
 /* input para título de oferta/demanda */
 
-#content #publicar-paso3a #titulo {
+#content #publicar-paso3a #bazarcms_oferta_titulo {
     max-height: 22px;
     margin-bottom: 14px;
     padding: 8px 10px 10px;
