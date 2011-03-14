@@ -1480,7 +1480,7 @@ h3 #ayuda-busqueda-link {
 #content #publicar-paso3d input[type="text"] {
     margin: 5px 0 10px;
     border: 1px solid #999;
-    font.size: 16px;
+    font-size: 16px;
 }
 
 #content div.publicar-seccion textarea:focus,
