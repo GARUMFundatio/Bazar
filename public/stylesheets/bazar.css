@@ -1481,6 +1481,7 @@ h3 #ayuda-busqueda-link {
     margin: 5px 0 10px;
     border: 1px solid #999;
     font-size: 16px;
+    line-height: 22px;
 }
 
 #content div.publicar-seccion textarea:focus,
@@ -1500,6 +1501,17 @@ h3 #ayuda-busqueda-link {
     padding: 8px 10px 10px;
     font-size: 18px;
     line-height: 26px;
+}
+
+/* estilos para paso de fecha de validez */
+#content #publicar-paso3d div.field {
+    margin-bottom: none;
+}
+
+#content #publicar-paso3d div.field input[type="text"] {
+    margin-right: 6px;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 /* navegación para seccion Publicar */
