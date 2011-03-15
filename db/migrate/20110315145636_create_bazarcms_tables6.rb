@@ -16,6 +16,10 @@ class CreateBazarcmsTables6 < ActiveRecord::Migration
       t.integer  :contactos
       t.integer  :fav_empresa
       t.integer  :fav_oferta
+      t.integer  :total_empresas
+      t.string   :filtro
+      t.string   :publica
+      t.integer  :cid
       t.datetime :created_at
       t.datetime :updated_at
    end
