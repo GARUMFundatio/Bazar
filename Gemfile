@@ -13,12 +13,13 @@ gem 'will_paginate', "~> 3.0.pre2"
 gem 'json'
 gem 'fastercsv'
 gem 'dynamic_form'
+gem 'typhoeus'
 
 gem "bazarcms", :path => '../bazarcms'
 
 # gem 'bazarcms', :git => "git://github.com/GARUMfundatio/bazarcms.git"
 
-gem 'ruby-debug'
+# gem 'ruby-debug'
 group :development, :test do
 	gem 'ruby-debug'
 end

@@ -15,6 +15,13 @@ module Bazarcms
       inflect.irregular 'empresasresultado', 'empresasresultados'
       inflect.irregular 'empresasperfil', 'empresasperfiles'
       inflect.irregular 'perfil', 'perfiles'
+      inflect.irregular 'oferta', 'ofertas'
+      inflect.irregular 'ofertasconsulta', 'ofertasconsultas'
+      inflect.irregular 'ofertasresultado', 'ofertasresultados'
+      inflect.irregular 'ofertasperfil', 'ofertasperfiles'
+      inflect.irregular 'ofertaspais', 'ofertaspaises'
+      inflect.irregular 'ofertasfavorito', 'ofertasfovoritos'
+      
     end
      
   end

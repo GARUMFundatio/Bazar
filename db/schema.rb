@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110306175800) do
+ActiveRecord::Schema.define(:version => 20110315145636) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -200,6 +200,10 @@ ActiveRecord::Schema.define(:version => 20110306175800) do
     t.integer  "contactos"
     t.integer  "fav_empresa"
     t.integer  "fav_oferta"
+    t.integer  "total_empresas"
+    t.string   "filtro"
+    t.string   "publica"
+    t.integer  "cid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
