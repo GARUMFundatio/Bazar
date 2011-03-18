@@ -1447,13 +1447,13 @@ h3 #ayuda-busqueda-link {
 
 /* pasos 1c y 1d */
 
-#ofer1 #publicar-paso1c table.tabla:first-child,
-#ofer1 #publicar-paso1d table.tabla:first-child {
+#ofer1 #publicar-od-sectores table.tabla:first-child,
+#ofer1 #publicar-od-paises table.tabla:first-child {
     margin-top: 10px;
 }
 
-#ofer1 #publicar-paso1c table.tabla tr:hover td,
-#ofer1 #publicar-paso1d table.tabla tr:hover td {
+#ofer1 #publicar-od-sectores table.tabla tr:hover td,
+#ofer1 #publicar-od-paises table.tabla tr:hover td {
     background: #fff;
 }
 
@@ -1475,27 +1475,31 @@ h3 #ayuda-busqueda-link {
 }
 
 /* textareas e inputs en los pasos */
+
+#content div.publicar-seccion textarea {
+    width: 98%;
+}
+
 #content div.publicar-seccion textarea,
-#content #publicar-paso3a input[type="text"],
-#content #publicar-paso3d input[type="text"] {
-    margin: 5px 0 10px;
+#content #bazarcms_oferta_titulo,
+#content #publicar-od-validez input[type="text"] {
+    padding: 6px 8px;
+    margin: 5px 0 15px;
     border: 1px solid #999;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 22px;
 }
 
 #content div.publicar-seccion textarea:focus,
 #content div.publicar-seccion textarea:active,
-#content #publicar-paso3a input[type="text"]:focus,
-#content #publicar-paso3a input[type="text"]:active,
-#content #publicar-paso3d input[type="text"]:focus,
-#content #publicar-paso3d input[type="text"]:active {
-    border-color: #527CAD;
+#content div.publicar-seccion input[type="text"]:focus,
+#content div.publicar-seccion input[type="text"]:active {
+    border-color: #527CAD !important;
 }
 
 /* input para título de oferta/demanda */
 
-#content #publicar-paso3a #bazarcms_oferta_titulo {
+#content #publicar-od-titulo #bazarcms_oferta_titulo {
     max-height: 22px;
     margin-bottom: 14px;
     padding: 8px 10px 10px;
@@ -1504,44 +1508,214 @@ h3 #ayuda-busqueda-link {
 }
 
 /* estilos para paso de fecha de validez */
-#content #publicar-paso3d div.field {
-    margin-bottom: 0;
+#content #publicar-od-validez h4 + .field {
+    margin: 15px 0 10px;
 }
 
-#content #publicar-paso3d div.field label {
+#content #publicar-od-validez .field:last-child {
+    margin: 0 0 15px;
+}
+
+#content #publicar-od-validez .field label {
+    display: inline;
+    float: left;
+    width: 110px;
     margin-right: 6px;
+    font-size: 16px;
+    line-height: 33px;
+}
+
+#content #publicar-od-validez .field input[type="text"] {
+    width: 200px;
+    margin: 0;
     font-size: 16px;
     line-height: 22px;
 }
 
-/* navegación para seccion Publicar */
-
-#navegar-publicar {
-    width: 100%;
-    overflow: hidden;
-    padding: 10px 0;
-}
-
-#navegar-publicar a {
+/* Botón estimar empresas */
+#new_bazarcms_oferta a.estimar-empresas {
+    clear: both;
     display: inline;
     float: left;
-    padding: 0 20px;
-    font-size: 18px;
-    line-height: 50px;
+    width: 340px;
+    margin-right: 15px;
+    padding: 0 20px 0 35px;
+    border: 1px solid #E0A062;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-size: 16px;
+    line-height: 42px;
+    font-weight: bold;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: #F5EADB 0 1px 1px;
+    background-color: #db8733;
+    background-image: url(images/calculator.png); /* fallback */
+    background:
+    url(images/calculator.png) no-repeat 12px 12px,
+    -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.42, rgb(235,194,144)),
+        color-stop(0.95, rgb(250,217,175))
+    );
+    background:
+    url(images/calculator.png) no-repeat 12px 12px,
+    -moz-linear-gradient(
+        center bottom,
+        rgb(235,194,144) 42%,
+        rgb(250,217,175) 95%
+    );
+    color: #C66A24;
 }
 
-#navegar-publicar a.publicar-submit {
-    border: 1px solid #97AF4D;
+/* estado de la estimación de empresas */
+#new_bazarcms_oferta #estado {
+    display: inline;
+    float: left;
+    width: 300px !important;
+}
+
+#new_bazarcms_oferta #estado #estadotexto {
+    margin: 3px 0 0 3px;
+    color: #666;
+}
+
+/* resultado de la estimación de empresas */
+#new_bazarcms_oferta #estimadas {
+    width: 508px;
+    margin-bottom: 20px;
+    display: inline;
+    float: left;
+}
+
+#new_bazarcms_oferta #estimadas h3 {
+    margin-bottom: 0;
+}
+#new_bazarcms_oferta #estimadas p {
+    margin: 0;
+}
+
+/* navegación para seccion Publicar */
+
+#content .navegar-publicar {
+    clear: both;
+    width: 910px;
+    height: 50px;
+    overflow: hidden;
+    padding: 15px 5px 10px;
+}
+
+#content .navegar-publicar a:last-child {
+    float: right;
+}
+
+#content #contenido a.anterior,
+#content #contenido a.siguiente {
+    display: inline;
+    float: left;
+    width: 413px;
+    padding: 0 20px 0 10px;
+    border: 1px solid #ccc;
     border-radius: 6px;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: bold;
+    text-shadow: rgba(0,0,0,0.6) 0 1px 1px;
+    text-decoration: none;
+    background: #444;
+    background: #527EB4;
+    color: #ccc;
+    color: #fff;
+}
+
+#content #contenido a.anterior {
+    -moz-border-radius-topleft:25px;
+    -webkit-border-top-left-radius:25px;
+    border-top-left-radius:25px;
+    -moz-border-radius-bottomleft:25px;
+    -webkit-border-bottom-left-radius:25px;
+    border-bottom-left-radius:25px;
+}
+
+#content #contenido a.siguiente {
+    float: right;
+    padding: 0 10px 0 20px;
+    -moz-border-radius-topright:25px;
+    -webkit-border-top-right-radius:25px;
+    border-top-right-radius:25px;
+    -moz-border-radius-bottomright:25px;
+    -webkit-border-bottom-right-radius:25px;
+    border-bottom-right-radius:25px;
+    text-align: right;
+}
+
+#content #contenido a.anterior:only-child,
+#content #contenido a.siguiente:only-child {
+    width: 878px;
+}
+
+#content #contenido a.anterior span,
+#content #contenido a.siguiente span {
+    float: left;
+    width: 28px;
+    height: 30px;
+    margin: 10px 10px 10px 0;
+    padding: 0 2px 0 0;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.5);
+    color: #E0E8F0;
+}
+
+#content #new_bazarcms_oferta a.siguiente span {
+    float: right;
+    margin: 10px 0 10px 10px;
+    padding: 0 0 0 2px;
+}
+
+#content .navegar-publicar a.publicar-submit {
+    width: 445px;
+    position: relative;
+    top: -6px;
+    height: 60px;
+    margin-bottom: -10px;
+    border: 2px solid #97AF4D;
+    border-radius: 16px;
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    font-size: 30px;
+    line-height: 60px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     text-shadow: #3E7417 1px 1px 2px;
     background: #A5C63E;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.31, rgb(148,183,33)),
+        color-stop(0.74, rgb(164,198,62))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(148,183,33) 31%,
+        rgb(164,198,62) 74%
+    );
     color: #fff;
 }
+
 
 /* pie */
 #footer {
