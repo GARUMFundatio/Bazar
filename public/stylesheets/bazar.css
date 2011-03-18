@@ -2757,6 +2757,13 @@ body.anonimo div.ui-dialog #dialog-form {
 .ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
 
+/* ui-datepicker con estilos garum */
+body .ui-datepicker .ui-datepicker-title {
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #E3CE3E;
+}
+
 /* with multiple calendars */
 .ui-datepicker.ui-datepicker-multi { width:auto; }
 .ui-datepicker-multi .ui-datepicker-group { float:left; }
