@@ -1602,10 +1602,10 @@ h3 #ayuda-busqueda-link {
 
 #content .navegar-publicar {
     clear: both;
-    width: 910px;
+    width: 920px;
     height: 50px;
     overflow: hidden;
-    padding: 15px 5px 10px;
+    padding: 15px 0 5px;
 }
 
 #content .navegar-publicar a:last-child {
@@ -1616,7 +1616,7 @@ h3 #ayuda-busqueda-link {
 #content #contenido a.siguiente {
     display: inline;
     float: left;
-    width: 413px;
+    width: 418px;
     padding: 0 20px 0 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -1656,7 +1656,7 @@ h3 #ayuda-busqueda-link {
 
 #content #contenido a.anterior:only-child,
 #content #contenido a.siguiente:only-child {
-    width: 878px;
+    width: 888px;
 }
 
 #content #contenido a.anterior span,
@@ -1685,7 +1685,7 @@ h3 #ayuda-busqueda-link {
 }
 
 #content .navegar-publicar a.publicar-submit {
-    width: 445px;
+    width: 450px;
     position: relative;
     top: -6px;
     height: 60px;
