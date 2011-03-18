@@ -1551,7 +1551,7 @@ h3 #ayuda-busqueda-link {
     text-decoration: none;
     text-shadow: #F5EADB 0 1px 1px;
     background-color: #db8733;
-    background-image: url(images/calculator.png); /* fallback */
+    background-image: url(/images/calculator.png); /* fallback */
     background:
     url(images/calculator.png) no-repeat 12px 12px,
     -webkit-gradient(
@@ -2175,9 +2175,9 @@ ul.tabs li a {
 ----------------------------------*/
 
 /* states and images */
-.ui-icon { width: 16px; height: 16px; background-image: url(images/ui-icons_222222_256x240.png); }
-.ui-widget-content .ui-icon {background-image: url(images/ui-icons_222222_256x240.png); }
-.ui-widget-header .ui-icon {background-image: url(images/ui-icons_222222_256x240.png); }
+.ui-icon { width: 16px; height: 16px; background-image: url(/images/ui-icons_amarillo-garum.png); }
+.ui-widget-content .ui-icon {background-image: url(/images/ui-icons_amarillo-garum.png); }
+.ui-widget-header .ui-icon {background-image: url(/images/ui-icons_amarillo-garum.png); }
 .ui-state-default .ui-icon { background-image: url(images/ui-icons_888888_256x240.png); }
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon {background-image: url(images/ui-icons_454545_256x240.png); }
 .ui-state-active .ui-icon {background-image: url(images/ui-icons_454545_256x240.png); }
@@ -2802,5 +2802,5 @@ body.anonimo div.ui-dialog #dialog-form {
  *
  * http://docs.jquery.com/UI/Progressbar#theming
  */
-.ui-progressbar { height:2em; text-align: left; }
-.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }
+.ui-progressbar { height:22px; text-align: left; }
+.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; background: url(images/pbar-ani.gif) repeat-x left center; }
