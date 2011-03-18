@@ -1553,7 +1553,7 @@ h3 #ayuda-busqueda-link {
     background-color: #db8733;
     background-image: url(/images/calculator.png); /* fallback */
     background:
-    url(images/calculator.png) no-repeat 12px 12px,
+    url(/images/calculator.png) no-repeat 12px 12px,
     -webkit-gradient(
         linear,
         left bottom,
@@ -1562,7 +1562,7 @@ h3 #ayuda-busqueda-link {
         color-stop(0.95, rgb(250,217,175))
     );
     background:
-    url(images/calculator.png) no-repeat 12px 12px,
+    url(/images/calculator.png) no-repeat 12px 12px,
     -moz-linear-gradient(
         center bottom,
         rgb(235,194,144) 42%,
