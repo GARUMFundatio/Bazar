@@ -112,37 +112,26 @@ var WRInitTime=(new Date()).getTime();
         <div id="nav-admin-container">
              <span class="tapa-blanco"></span>
              <ul id="nav-admin">
+			  <% if current_user_is_admin %>	
                  <li><a href="#">Administrador</a>
-                    <ul>
-                        <li><a href="#">Item 1</a></li>
-                        <li><a href="#">Item bastante más largo</a></li>
-                        <li><a href="#">otro Item</a></li>
-                        <li><a href="#">Item 4</a>
-                           <ul>
-                               <li><a href="#">Item 1</a></li>
-                               <li><a href="#">Item bastante más largo</a></li>
-                               <li><a href="#">otro Item</a></li>
-                           </ul>
-                        </li>
-                        <li><a href="#">Item 5</a></li>
-                    </ul>
+		            <ul>
+					  <li><%= link_to "Usuarios", users_path %> </li>
+					  <li><%= link_to "Configuración del Sistema", confs_path %> </li>
+					  <li><%= link_to "Gestión Bazares", clusters_path %> </li>
+					  <li><%= link_to "Notificacion a Usuarios", '/notificacion?tipo=N' %> </li>
+					  <li><%= link_to "Actualización Información", '/updateinfo' %> </li>
+		            </ul>
                  </li>
+			<% end %>
+		  	<% if current_user_is_dinamizador %>
                  <li><a href="#">Dinamizador</a>
-                    <ul>
-                        <li><a href="#">Item 1</a></li>
-                        <li><a href="#">Item bastante más largo</a></li>
-                        <li><a href="#">otro Item</a>
-                               <ul>
-                                   <li><a href="#">Item 1</a></li>
-                                   <li><a href="#">Item bastante más largo</a></li>
-                                   <li><a href="#">otro Item</a></li>
-                               </ul>
-                        </li>
-                        <li><a href="#">Item 4</a></li>
-                        <li><a href="#">Item 5</a></li>
-                    </ul>
+		            <ul class="links">
+					    <li><%= link_to "Mailing a Usuarios", '/notificacion?tipo=M' %> </li>
+					    <li><%= link_to "Noticias", noticias_path %> </li>
+		            </ul>
                  </li>
-             </ul>
+            <% end %>
+ 			</ul>
         </div><!-- /#nav-admin-container -->
         
         <script>
