@@ -58,7 +58,8 @@ namespace :bazar do
       else
         puts "ERROR en la petición ---------->"+response.inspect
       end
-    }
+    
+    end
     
     hydra.queue r        
     hydra.run
