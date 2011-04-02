@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
 
   def BZ_param(clave)
     conf = Conf.find_by_nombre(clave)
-    return conf.valor || nil   
+    if !conf.nil?
+      return conf.valor
+    else
+      return "Valor sin definir" 
+    end 
   end
     
   private
