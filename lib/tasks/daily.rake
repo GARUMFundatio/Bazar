@@ -7,9 +7,66 @@ namespace :bazar do
  desc "Actualización de la información de la red"
 
  task :actualiza => :environment do |t|
+
+   puts "#{DateTime.now}: Actualización de la información."
+   
+   # Actualizamos la lista de clusters
+
+   puts "#{DateTime.now}: Bazares: Actualizamos la información de bazares."
+   uri = "http://directorio.garumfundatio.org/clusters.json"
+   hydra = Typhoeus::Hydra.new
+
+    r = Typhoeus::Request.new(uri, :timeout => 5000)
+    r.on_complete do |response|
+      case response.curl_return_code
+      when 0
+        clusters = JSON.parse(response.body)
+        puts ("#{clusters.inspect} <---------")
+
+        clusters.each{ |key|
+          puts ("#{key.inspect}")
+          puts ("#{key['cluster'].inspect} <------ datos")
+          puts ("#{key['cluster']['id']}")
+
+          cluster = Cluster::find_by_id(key['cluster']['id'])
+          if (cluster == nil)
+            puts ("nuevo cluster #{key['cluster']['id']}")
+            cluster = Cluster::new
+            cluster.id = key['cluster']['id']
+            cluster.nombre = key['cluster']['nombre']
+            cluster.desc = key['cluster']['desc']
+            cluster.empresas = key['cluster']['empresas']
+            cluster.url = key['cluster']['url']
+            cluster.activo = 'S'
+            cluster.miclave = 'secreta'
+            cluster.suclave = 'secreta'
+            cluster.created_at = key['cluster']['created_at']
+            cluster.updated_at = key['cluster']['updated_at']         
+            cluster.save
+          else
+            puts ("actualizo cluster #{key['cluster']['id']}")
+            cluster.nombre = key['cluster']['nombre']
+            cluster.desc = key['cluster']['desc']
+            cluster.empresas = key['cluster']['empresas']
+            cluster.url = key['cluster']['url']
+            cluster.updated_at = key['cluster']['updated_at']         
+            cluster.save          
+          end
+
+        }
+
+      else
+        puts "ERROR en la petición ---------->"+response.inspect
+      end
+    }
+    
+    hydra.queue r        
+    hydra.run
+
+    puts "#{DateTime.now} Bazares: Lista Actualizada"
    
    # inicializamos los contadores 
-   puts "#{DateTime.now}: Actualización de la información."
+  
    # ponemos a cero los contadores de perfiles y los actualizamos 
    # con la información local
    
