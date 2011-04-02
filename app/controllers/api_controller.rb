@@ -108,12 +108,10 @@ class ApiController < ApplicationController
     
     @info = []
     
-    @perfiles = Bazarcms::Perfil.all  
+    @perfiles = Bazarcms::Perfil.all.order('codigo')
     for perfil in @perfiles
 
-      total = Bazarcms::Perfil.count_by_sql("select count(*) from empresasperfiles where codigo = '#{perfil.codigo}'")  
-
-      if total > 0
+      if perfil.total_empresas_bazar > 0
         @info << {:id => perfil.codigo,
                   :desc => perfil.desc,
                   :nivel => perfil.nivel,
