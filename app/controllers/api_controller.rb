@@ -107,8 +107,8 @@ class ApiController < ApplicationController
   def perfiles
     
     @info = []
-    @perfiles = Bazarcms::Perfil.all
     
+    @perfiles = Bazarcms::Perfil.all  
     for perfil in @perfiles
 
       total = Bazarcms::Perfil.count_by_sql("select count(*) from empresasperfiles where codigo = '#{perfil.codigo}'")  
