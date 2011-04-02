@@ -70,23 +70,12 @@ namespace :bazar do
 
            perfiles = JSON.parse(response.body)
 
-
            perfiles.each{ |key|
-
-             for ii in 0..key['id'].length-1
-                if ii == 0
-                  cod = "A"
-                  cod[0] = cod[0] + key['id'][0..0].to_i
-                else 
-                  cod = key['id'][0..ii]
-                end 
-                
-               perfil = Bazarcms::Perfil.find_by_codigo(cod)
-               perfil.total_empresas_mercado += key['total_empresas_bazar'].to_i
-               perfil.save
                
-             end
-
+             perfil = Bazarcms::Perfil.find_by_codigo(key['id'])
+             perfil.total_empresas_mercado += key['total_empresas_bazar'].to_i
+             perfil.save
+           
            }
          else
            puts "ERROR en la petición ---------->"+response.inspect

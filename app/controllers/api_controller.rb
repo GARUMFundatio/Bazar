@@ -108,7 +108,7 @@ class ApiController < ApplicationController
     
     @info = []
     
-    @perfiles = Bazarcms::Perfil.all.order('codigo')
+    @perfiles = Bazarcms::Perfil.all
     for perfil in @perfiles
 
       if perfil.total_empresas_bazar > 0
