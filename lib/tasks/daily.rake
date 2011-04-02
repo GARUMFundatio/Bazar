@@ -20,10 +20,20 @@ namespace :bazar do
 
      total = Bazarcms::Perfil.count_by_sql("select count(*) from empresasperfiles where codigo = '#{perfil.codigo}'")  
 
-     perfil.total_empresas_bazar = total
-     perfil.total_empresas_mercado = total
-
-     perfil.save 
+     for ii in 0..perfil.codigo.length-1
+        if ii == 0
+          cod = "A"
+          cod[0] = cod[0] + perfil.codigo[0..0].to_i
+        else 
+          cod = perfil.codigo[0..ii]
+        end 
+        
+       per = Bazarcms::Perfil.find_by_codigo(cod)
+       per.total_empresas_bazar = total
+       per.total_empresas_mercado = total
+       per.save
+       
+     end
      
    end 
    
@@ -38,7 +48,7 @@ namespace :bazar do
 
    for cluster in Cluster.all
     
-     if ( micluster != cluster.id && cluster.id != 1 )
+     if ( cluster.id != micluster && cluster.id != 1 )
              
        uri = "#{cluster.url}/api/perfiles.json"
        
@@ -49,22 +59,17 @@ namespace :bazar do
 
            perfiles = JSON.parse(response.body)
 
-           puts "#{perfiles.inspect} <-----------"
 
            perfiles.each{ |key|
-
-             puts("#{key.inspect} esto es lo que hay")
 
              for ii in 0..key['id'].length-1
                 if ii == 0
                   cod = "A"
-                  puts "------> tenemos #{key['id'][0..0]} "
                   cod[0] = cod[0] + key['id'][0..0].to_i
                 else 
                   cod = key['id'][0..ii]
                 end 
                 
-               puts "Actualizando #{cod} + #{key['total_empresas_bazar'].to_i}"
                perfil = Bazarcms::Perfil.find_by_codigo(cod)
                perfil.total_empresas_mercado += key['total_empresas_bazar'].to_i
                perfil.save
