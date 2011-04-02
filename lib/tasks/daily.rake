@@ -21,16 +21,16 @@ namespace :bazar do
       case response.curl_return_code
       when 0
         clusters = JSON.parse(response.body)
-        puts ("#{clusters.inspect} <---------")
+        # puts ("#{clusters.inspect} <---------")
 
         clusters.each{ |key|
-          puts ("#{key.inspect}")
-          puts ("#{key['cluster'].inspect} <------ datos")
-          puts ("#{key['cluster']['id']}")
+          # puts ("#{key.inspect}")
+          # puts ("#{key['cluster'].inspect} <------ datos")
+          # puts ("#{key['cluster']['id']}")
 
           cluster = Cluster::find_by_id(key['cluster']['id'])
           if (cluster == nil)
-            puts ("nuevo cluster #{key['cluster']['id']}")
+            # puts ("nuevo cluster #{key['cluster']['id']}")
             cluster = Cluster::new
             cluster.id = key['cluster']['id']
             cluster.nombre = key['cluster']['nombre']
@@ -44,7 +44,7 @@ namespace :bazar do
             cluster.updated_at = key['cluster']['updated_at']         
             cluster.save
           else
-            puts ("actualizo cluster #{key['cluster']['id']}")
+            # puts ("actualizo cluster #{key['cluster']['id']}")
             cluster.nombre = key['cluster']['nombre']
             cluster.desc = key['cluster']['desc']
             cluster.empresas = key['cluster']['empresas']
