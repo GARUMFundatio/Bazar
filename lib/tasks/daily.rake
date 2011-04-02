@@ -16,23 +16,36 @@ namespace :bazar do
    puts "#{DateTime.now} Perfiles: Actualizando contadores locales"
    
    @perfiles = Bazarcms::Perfil.all  
+
+   for perfil in @perfiles
+     perfil.total_empresas_bazar = 0
+     perfil.total_empresas_mercado = 0
+     perfil.save
+   end
+
    for perfil in @perfiles
 
      total = Bazarcms::Perfil.count_by_sql("select count(*) from empresasperfiles where codigo = '#{perfil.codigo}'")  
 
-     for ii in 0..perfil.codigo.length-1
-        if ii == 0
-          cod = "A"
-          cod[0] = cod[0] + perfil.codigo[0..0].to_i
-        else 
-          cod = perfil.codigo[0..ii]
-        end 
-        
-       per = Bazarcms::Perfil.find_by_codigo(cod)
-       per.total_empresas_bazar = total
-       per.total_empresas_mercado = total
-       per.save
+     if (total > 0) 
+
+       for ii in 0..perfil.codigo.length-1
+          if ii == 0
+            cod = "A"
+            cod[0] = cod[0] + perfil.codigo[0..0].to_i
+          else 
+            cod = perfil.codigo[0..ii]
+          end 
+      
+           puts "#{cod} --> #{total}"
+           per = Bazarcms::Perfil.find_by_codigo(cod)
+           puts "actualizo (#{per.codigo})(#{cod})"
+           per.total_empresas_bazar = total
+           per.total_empresas_mercado = total
+           per.save
        
+       end
+
      end
      
    end 
@@ -89,7 +102,7 @@ namespace :bazar do
 
    end 
 
-   hydra.run
+   # hydra.run
 
    puts "#{DateTime.now} Bazares: Fin del proceso"
 
