@@ -25,7 +25,7 @@ namespace :bazar do
 
    for perfil in @perfiles
 
-     total = Bazarcms::Perfil.count_by_sql("select count(*) from empresasperfiles where codigo = '#{perfil.codigo}'")  
+     total = Bazarcms::Perfil.count_by_sql("select count(distinct empresa_id) from empresasperfiles where codigo = '#{perfil.codigo}' order by empresa_id ")  
 
      if (total > 0) 
 
@@ -37,9 +37,7 @@ namespace :bazar do
             cod = perfil.codigo[0..ii]
           end 
       
-           puts "#{cod} --> #{total}"
            per = Bazarcms::Perfil.find_by_codigo(cod)
-           puts "actualizo (#{per.codigo})(#{cod})"
            per.total_empresas_bazar = total
            per.total_empresas_mercado = total
            per.save
@@ -102,7 +100,7 @@ namespace :bazar do
 
    end 
 
-   # hydra.run
+   hydra.run
 
    puts "#{DateTime.now} Bazares: Fin del proceso"
 
