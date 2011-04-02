@@ -63,7 +63,7 @@ namespace :bazar do
      if ( cluster.id != micluster && cluster.id != 1 )
              
        uri = "#{cluster.url}/api/perfiles.json"
-       
+       puts "URI #{uri}"
        r = Typhoeus::Request.new(uri, :timeout => 5000)
        r.on_complete do |response|
          case response.curl_return_code
