@@ -117,8 +117,10 @@ class ApiController < ApplicationController
         @info << {:id => perfil.codigo,
                   :desc => perfil.desc,
                   :nivel => perfil.nivel,
-                  :total_empresas_bazar => total} 
+                  :total_empresas_bazar => perfil.total_empresas_bazar,
+                  :total_empresas_mercado => perfil.total_empresas_mercado} 
       end 
+      
     end 
     respond_to do |format|
         format.html { redirect_to "/api/ejemploperfiles"}
