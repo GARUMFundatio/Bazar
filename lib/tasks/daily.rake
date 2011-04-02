@@ -36,8 +36,9 @@ namespace :bazar do
           else 
             cod = perfil.codigo[0..ii]
           end 
-      
+           
            per = Bazarcms::Perfil.find_by_codigo(cod)
+           puts "#{cod} tenia #{per.total_empresas_mercado} le sumo #{total}"
            per.total_empresas_bazar = total
            per.total_empresas_mercado = total
            per.save
@@ -73,6 +74,7 @@ namespace :bazar do
            perfiles.each{ |key|
                
              perfil = Bazarcms::Perfil.find_by_codigo(key['id'])
+             puts "#{key['id']} tenia #{perfil.total_empresas_mercado} le sumo #{key['total_empresas_bazar'].to_i} <--"
              perfil.total_empresas_mercado += key['total_empresas_bazar'].to_i
              perfil.save
            
