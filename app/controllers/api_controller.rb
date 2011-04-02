@@ -26,6 +26,10 @@ class ApiController < ApplicationController
     render :layout => 'bazar'
   end 
   
+  def ejemploperfiles
+    render :layout => 'bazar'
+  end
+  
   # /api/info devuelve la información básica de un bazar
   
   def info
@@ -100,5 +104,29 @@ class ApiController < ApplicationController
         
   end
   
+  def perfiles
+    
+    @info = []
+    @perfiles = Bazarcms::Perfil.all
+    
+    for perfil in @perfiles
+
+      total = Bazarcms::Perfil.count_by_sql("select count(*) from empresasperfiles where codigo = '#{perfil.codigo}'")  
+
+      if total > 0
+        @info << {:id => perfil.codigo,
+                  :desc => perfil.desc,
+                  :nivel => perfil.nivel,
+                  :total_empresas_bazar => total} 
+      end 
+    end 
+    respond_to do |format|
+        format.html { redirect_to "/api/ejemploperfiles"}
+        format.xml { render }
+        format.json { render :json => @info }
+    end
+        
+  end
+
 
 end
