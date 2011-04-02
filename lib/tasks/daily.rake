@@ -56,7 +56,7 @@ namespace :bazar do
    
    puts "#{DateTime.now} Bazares: Empiezo a recolectar información de los bazares"
    
-   micluster = Conf.find_by_nombre("BazarId")
+   micluster = Conf.find_by_nombre("BazarId").valor
 
    for cluster in Cluster.all
     
