@@ -120,16 +120,13 @@ namespace :bazar do
 
    for pais in @paises
 
-     total = Bazarcms::Perfil.count_by_sql("select count(distinct(ubicaciones.empresa_id)) from ubicaciones, ciudades where ubicaciones.ciudad_id = ciudades.id and ciudad.pais_id = #{pais.id} order by ubicaciones.empresa_id ")  
+     total = Bazarcms::Perfil.count_by_sql("select count(distinct(ubicaciones.empresa_id)) from ubicaciones, ciudades where ubicaciones.ciudad_id = ciudades.id and ciudades.pais_id = #{pais.id} order by ubicaciones.empresa_id ")  
 
      if (total > 0) 
          puts "Actualizo País ---> #{pais.descripcion} con #{total}"
          pais.total_empresas_bazar = total
          pais.total_empresas_mercado = total
          pais.save
-       
-       end
-
      end
      
    end 
