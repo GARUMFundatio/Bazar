@@ -58,6 +58,63 @@ plot5 = $.jqplot('empresas1', [line5], {
 
 <h3>Consultas Realizadas</h3>
 
+<div id="consultas">
+	
+	<div class="jqPlot" id="con1" style="height:360px; width:540px;"></div>
+
+	<script>
+
+	$.jqplot.config.enablePlugins = true;
+
+	linec11 = [];
+	linec12 = [];
+	ii = 0;
+
+	<% for data in Estadisticasconsulta.select("fecha").where("bazar_id <> 1 and bazar_id = ?", BZ_param("BazarId").to_i).group("date(fecha)").order("date(fecha)") %>
+
+		linec11[ii] = [ '<%= data.fecha.strftime("%Y-%m-%d") -%>', <%= Estadisticasconsulta.count_by_sql("select count(*) from estadisticasconsultas where bazar_id <> 1 and bazar_id = #{BZ_param("BazarId").to_i} and date(fecha) <= '#{data.fecha.strftime("%Y-%m-%d")}';" )  -%>];
+
+		ii++;
+
+	<% end %>
+
+	ii = 0;
+	<% for data in Estadisticasconsulta.select("fecha").where("bazar_id <> 1 and bazar_id <> ?", BZ_param("BazarId").to_i).group("date(fecha)").order("date(fecha)") %>
+
+		linec12[ii] = [ '<%= data.fecha.strftime("%Y-%m-%d") -%>', <%= Estadisticasconsulta.count_by_sql("select count(*) from estadisticasconsultas where bazar_id <> 1 and bazar_id <> #{BZ_param("BazarId").to_i} and date(fecha) <= '#{data.fecha.strftime("%Y-%m-%d")}';" )  -%>];
+
+		ii++;
+
+	<% end %>
+
+	plotc1 = $.jqplot('con1', [linec11, linec12], {
+	    legend:{show:true, location:'nw'},
+	    title:'Consultas Realizadas',
+		axesDefaults:{useSeriesColor: true},
+	    axes:{
+	        xaxis:{
+	            renderer:$.jqplot.DateAxisRenderer,
+	            tickOptions:{formatString:'%m-%y'},
+	            tickInterval:'1 month'
+			},
+		    yaxis:{
+				tickOptions:{formatString:'%d'}
+	        },
+		    y2axis:{
+				tickOptions:{formatString:'%d'}
+	        }
+	    },
+	    highlighter: {sizeAdjust: 7.5},
+		cursor: {tooltipLocation:'sw'},
+	    series:[
+			{label:'Enviadas desde este Bazar'},
+			{label:'Recibidas de otros Bazares',yaxis:'y2axis' }
+	    ]
+	});
+
+	</script>
+</div>
+
 
 <br/>
 
