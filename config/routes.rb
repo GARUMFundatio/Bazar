@@ -29,7 +29,8 @@ Bazar::Application.routes.draw do
   match 'logout' => "user_sessions#destroy", :as => :logout
   match 'home' => "home#index"
   match '/home/bazares' => "home#bazares"
-
+  match '/home/datos' => "home#datos"
+  
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
   match '/mensajeremoto' => "mensajes#mensajeremoto"
   match "/mensaje/dashboard" => "mensajes#dashboard"

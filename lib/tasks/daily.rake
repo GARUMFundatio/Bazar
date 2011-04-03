@@ -208,8 +208,7 @@ namespace :bazar do
     
      end
 
-    
-
+  
 
    end 
 
