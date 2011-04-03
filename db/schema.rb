@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403111722) do
+ActiveRecord::Schema.define(:version => 20110403150857) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -138,6 +138,15 @@ ActiveRecord::Schema.define(:version => 20110403111722) do
   end
 
   add_index "empresasresultados", ["empresasconsulta_id", "orden"], :name => "index_empresasresultados_on_empresasconsulta_id_and_orden"
+
+  create_table "estadisticasconsultas", :force => true do |t|
+    t.datetime "fecha"
+    t.integer  "bazar_id"
+    t.integer  "empresa_id"
+    t.integer  "empresas"
+    t.string   "consulta"
+    t.string   "tipo"
+  end
 
   create_table "favoritos", :force => true do |t|
     t.integer  "bazar_id"
@@ -291,6 +300,15 @@ ActiveRecord::Schema.define(:version => 20110403111722) do
   end
 
   add_index "perfiles", ["codigo"], :name => "index_perfiles_on_codigo"
+
+  create_table "perfiles_copy", :force => true do |t|
+    t.string  "codigo"
+    t.string  "desc"
+    t.integer "nivel"
+    t.text    "ayuda"
+  end
+
+  add_index "perfiles_copy", ["codigo"], :name => "index_perfiles_on_codigo"
 
   create_table "roles", :force => true do |t|
     t.string   "rol"

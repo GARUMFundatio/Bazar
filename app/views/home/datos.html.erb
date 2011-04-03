@@ -15,6 +15,38 @@
 
 <h3>Empresas</h3>
 
+<div id="sec5">
+
+<div class="jqPlot" id="empresas1" style="height:360px; width:50%;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line5 = [];
+ii = 0;
+empbazar = 0;
+empresto = 0;
+
+<% for data in Cluster.where("id <> 1 and empresas > 0") %>
+	<% if data.id == BZ_param('BazarId').to_i %>
+		empbazar = <%= data.empresas %> ;
+	<% else %> 
+		empresto += <%= data.empresas %> ;
+	<% end %>
+<% end %>
+
+line5[0] = [ 'Este Bazar', empbazar];
+line5[1] = [ 'Mercado', empresto];
+
+plot5 = $.jqplot('empresas1', [line5], {
+    title: 'Este bazar respecto al mercado',
+    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    legend:{show:true}
+});
+
+</script>
+
+</div>
 
 <br/>
 
