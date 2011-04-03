@@ -136,7 +136,7 @@ class ApiController < ApplicationController
     
     @info = []
     
-    @paises = Bazarcms::Pais.all
+    @paises = Pais.all
     for pais in @paises
 
       if pais.total_empresas_bazar > 0

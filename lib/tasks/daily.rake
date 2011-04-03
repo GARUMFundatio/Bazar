@@ -107,6 +107,34 @@ namespace :bazar do
    end 
    
    puts "#{DateTime.now} Perfiles: Actualizada información local de los perfiles"
+
+   puts "#{DateTime.now} Países: Actualizando contadores locales"
+   
+   @paises = Bazarcms::Pais.all  
+
+   for pais in @paises
+     pais.total_empresas_bazar = 0
+     pais.total_empresas_mercado = 0
+     pais.save
+   end
+
+   for pais in @paises
+
+     total = Bazarcms::Perfil.count_by_sql("select count(distinct(ubicaciones.empresa_id)) from ubicaciones, ciudades where ubicaciones.ciudad_id = ciudades.id and ciudad.pais_id = #{pais.id} order by ubicaciones.empresa_id ")  
+
+     if (total > 0) 
+         puts "Actualizo País ---> #{pais.descripcion} con #{total}"
+         pais.total_empresas_bazar = total
+         pais.total_empresas_mercado = total
+         pais.save
+       
+       end
+
+     end
+     
+   end 
+   
+   puts "#{DateTime.now} Países: Actualizada información local de los países"
    
    
    hydra = Typhoeus::Hydra.new
