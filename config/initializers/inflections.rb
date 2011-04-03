@@ -32,4 +32,5 @@ inflect.irregular 'cluster', 'clusters'
 inflect.irregular 'noticia', 'noticias'
 inflect.irregular 'actividad', 'actividades'
 inflect.irregular 'favorito', 'favoritos'
+inflect.irregular 'estadisticasconsulta', 'estadisticasconsultas'
 end
