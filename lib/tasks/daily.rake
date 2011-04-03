@@ -123,7 +123,7 @@ namespace :bazar do
      total = Bazarcms::Perfil.count_by_sql("select count(distinct(ubicaciones.empresa_id)) from ubicaciones, ciudades where ubicaciones.ciudad_id = ciudades.id and ciudades.pais_id = #{pais.id} order by ubicaciones.empresa_id ")  
 
      if (total > 0) 
-         puts "Actualizo País ---> #{pais.descripcion} con #{total}"
+         # puts "Actualizo País ---> #{pais.descripcion} con #{total}"
          pais.total_empresas_bazar = total
          pais.total_empresas_mercado = total
          pais.save
@@ -143,6 +143,11 @@ namespace :bazar do
    for cluster in Cluster.all
     
      if ( cluster.id != micluster.to_i && cluster.id != 1 )
+
+       # actualizamos la información de los perfiles de otros bazares
+
+       puts "#{DateTime.now} Perfiles: Obteniendo la información de otros bazares."
+
        uri = "#{cluster.url}/api/perfiles.json"
        puts "URI #{uri}"
        r = Typhoeus::Request.new(uri, :timeout => 5000)
@@ -173,6 +178,46 @@ namespace :bazar do
    end 
 
    hydra.run
+
+   puts "#{DateTime.now} Países: Actualizada la información."
+
+       # actualizamos la información de los países de otros bazares
+
+       puts "#{DateTime.now} Países: Obteniendo la información de otros bazares."
+
+       uri = "#{cluster.url}/api/paises.json"
+       puts "URI #{uri}"
+       r = Typhoeus::Request.new(uri, :timeout => 5000)
+       r.on_complete do |response|
+         case response.curl_return_code
+         when 0
+
+           paises = JSON.parse(response.body)
+
+           paises.each{ |key|
+               
+             pais = Pais.find_by_id(key['id'])
+
+             pais.total_empresas_mercado += key['total_empresas_bazar'].to_i
+             pais.save
+           
+           }
+         else
+           puts "ERROR en la petición ---------->"+response.inspect
+         end
+
+       end
+
+       hydra.queue r        
+    
+     end
+
+   end 
+
+   hydra.run
+
+   puts "#{DateTime.now} Países: Actualizada la información."
+
 
    puts "#{DateTime.now} Bazares: Fin del proceso"
 
