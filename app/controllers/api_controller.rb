@@ -29,6 +29,10 @@ class ApiController < ApplicationController
   def ejemploperfiles
     render :layout => 'bazar'
   end
+
+  def ejemplopaises
+    render :layout => 'bazar'
+  end
   
   # /api/info devuelve la información básica de un bazar
   
@@ -122,6 +126,31 @@ class ApiController < ApplicationController
     end 
     respond_to do |format|
         format.html { redirect_to "/api/ejemploperfiles"}
+        format.xml { render }
+        format.json { render :json => @info }
+    end
+        
+  end
+
+  def paises
+    
+    @info = []
+    
+    @paises = Bazarcms::Pais.all
+    for pais in @paises
+
+      if pais.total_empresas_bazar > 0
+        @info << {:id => pais.id,
+                  :codigo => pais.codigo,
+                  :descripcion => pais.descripcion,
+                  :capital => pais.capital,
+                  :total_empresas_bazar => pais.total_empresas_bazar,
+                  :total_empresas_mercado => pais.total_empresas_mercado} 
+      end 
+      
+    end 
+    respond_to do |format|
+        format.html { redirect_to "/api/ejemplopaises"}
         format.xml { render }
         format.json { render :json => @info }
     end

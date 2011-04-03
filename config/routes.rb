@@ -53,6 +53,7 @@ Bazar::Application.routes.draw do
   match '/api/info' => 'api#info'
   match '/api/empresas' => 'api#empresas'
   match '/api/perfiles' => 'api#perfiles'
+  match '/api/paises' => 'api#paises'
   match '/api/infoempresa(.:format)/:id' => "api#infoempresa", :constrants => { :id => /\d+/ }
 
   match '/api/ejemplos' => 'api#ejemplos'
@@ -60,6 +61,7 @@ Bazar::Application.routes.draw do
   match '/api/ejemploempresas' => 'api#ejemploempresas'
   match '/api/ejemploinfoempresa' => 'api#ejemploinfoempresa'
   match '/api/ejemploperfiles' => 'api#ejemploperfiles'
+  match '/api/ejemplopaises' => 'api#ejemplopaises'
   
 
 end
