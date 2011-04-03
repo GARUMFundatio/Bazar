@@ -46,8 +46,33 @@ ii = 0;
 	ii++;
 <% end %>
 
-plot2 = $.jqplot('perfilesbazar', [line1], {
+plot1 = $.jqplot('perfilesbazar', [line1], {
     title: 'Sectores más significativos de este bazar',
+    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    legend:{show:true}
+});
+
+</script>
+
+</div>
+
+<div id="sec2">
+
+<div class="jqPlot" id="perfilesmercado" style="height:360px; width:100%;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line2 = [];
+ii = 0;
+<% for data in Bazarcms::Perfil.where("total_empresas_mercado > 0 and nivel = 2").order("total_empresas_mercado desc").limit(15) %>
+
+	line2[ii] = [ '<%= data.desc -%>', <%= data.total_empresas_mercado -%>];
+	ii++;
+<% end %>
+
+plot2 = $.jqplot('perfilesmercado', [line2], {
+    title: 'Sectores más significativos del mercado',
     seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
     legend:{show:true}
 });
@@ -59,5 +84,54 @@ plot2 = $.jqplot('perfilesbazar', [line1], {
 <br/>
 
 <h3>Países</h3>
+
+<div id="sec4">
+
+<div class="jqPlot" id="paisesbazar" style="height:360px; width:50%;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line4 = [];
+ii = 0;
+<% for data in Pais.where("total_empresas_bazar > 0").order("total_empresas_bazar desc").limit(15) %>
+	line4[ii] = [ '<%= data.descripcion -%>', <%= data.total_empresas_bazar -%>];
+	ii++;
+<% end %>
+
+plot4 = $.jqplot('paisesbazar', [line4], {
+    title: 'Ubicaciones de este bazar',
+    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    legend:{show:true}
+});
+
+</script>
+
+</div>
+
+<div id="sec3">
+
+<div class="jqPlot" id="paisesmercado" style="height:360px; width:50%;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line3 = [];
+ii = 0;
+<% for data in Pais.where("total_empresas_mercado > 0").order("total_empresas_mercado desc").limit(15) %>
+	line3[ii] = [ '<%= data.descripcion -%>', <%= data.total_empresas_mercado -%>];
+	ii++;
+<% end %>
+
+plot3 = $.jqplot('paisesmercado', [line3], {
+    title: 'Ubicaciones del mercado',
+    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    legend:{show:true}
+});
+
+</script>
+
+</div>
+
 
 <br/>
