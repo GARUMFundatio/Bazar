@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110315145636) do
+ActiveRecord::Schema.define(:version => 20110403111722) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -27,14 +27,16 @@ ActiveRecord::Schema.define(:version => 20110315145636) do
   add_index "actividades", ["fecha"], :name => "index_actividad_fecha"
 
   create_table "ciudades", :force => true do |t|
-    t.string   "descripcion",              :default => "", :null => false
-    t.integer  "pais_id",                                  :null => false
+    t.string   "descripcion",                         :default => "", :null => false
+    t.integer  "pais_id",                                             :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitud"
     t.float    "longitud"
     t.string   "geocode"
-    t.string   "pais_codigo", :limit => 2
+    t.string   "pais_codigo",            :limit => 2
+    t.integer  "total_empresas_bazar"
+    t.integer  "total_empresas_mercado"
   end
 
   create_table "clusters", :force => true do |t|
@@ -270,11 +272,13 @@ ActiveRecord::Schema.define(:version => 20110315145636) do
   add_index "ofertasresultados", ["ofertasconsulta_id", "orden"], :name => "index_ofertasresultados_on_ofertasconsulta_id_and_orden"
 
   create_table "paises", :force => true do |t|
-    t.string   "descripcion", :limit => 100, :null => false
-    t.string   "codigo",      :limit => 2,   :null => false
+    t.string   "descripcion",            :limit => 100, :null => false
+    t.string   "codigo",                 :limit => 2,   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "capital"
+    t.integer  "total_empresas_bazar"
+    t.integer  "total_empresas_mercado"
   end
 
   create_table "perfiles", :force => true do |t|

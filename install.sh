@@ -27,4 +27,7 @@ RAILS_ENV=productionrails generate jquery:install
 echo "Creando las tablas de la base de datos" 
 RAILS_ENV=production rake db:migrate
 
+echo "Actualizando la información del resto de los bazares" 
+RAILS_ENV=production rake bazar:actualiza
+
 

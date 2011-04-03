@@ -6,6 +6,8 @@ class HomeController < ApplicationController
   
   def index
     
+  
+    
   end
 
   # homepage de bazar 
@@ -19,7 +21,8 @@ class HomeController < ApplicationController
       
       render :action => "index"
     end
-    
+
+    @total = Cluster.count_by_sql("select sum(empresas) from clusters")      
 
     # TODO: comprobar si esto sobra 
     
