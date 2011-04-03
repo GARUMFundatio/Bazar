@@ -292,15 +292,6 @@ ActiveRecord::Schema.define(:version => 20110403111722) do
 
   add_index "perfiles", ["codigo"], :name => "index_perfiles_on_codigo"
 
-  create_table "perfiles_copy", :force => true do |t|
-    t.string  "codigo"
-    t.string  "desc"
-    t.integer "nivel"
-    t.text    "ayuda"
-  end
-
-  add_index "perfiles_copy", ["codigo"], :name => "index_perfiles_on_codigo"
-
   create_table "roles", :force => true do |t|
     t.string   "rol"
     t.datetime "created_at"
