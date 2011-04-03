@@ -146,7 +146,7 @@ namespace :bazar do
 
        # actualizamos la información de los perfiles de otros bazares
 
-       puts "#{DateTime.now} Perfiles: Obteniendo la información de otros bazares."
+       puts "#{DateTime.now} Perfiles: Obteniendo la información de:  #{cluster.nombre} -> #{cluster.url}."
 
        uri = "#{cluster.url}/api/perfiles.json"
        puts "URI #{uri}"
@@ -165,6 +165,7 @@ namespace :bazar do
              perfil.save
            
            }
+            puts "#{DateTime.now} Perfil: Actualizada la información de:  #{cluster.nombre} -> #{cluster.url}."
          else
            puts "ERROR en la petición ---------->"+response.inspect
          end
@@ -173,17 +174,10 @@ namespace :bazar do
 
        hydra.queue r        
     
-     end
-
-   end 
-
-   hydra.run
-
-   puts "#{DateTime.now} Países: Actualizada la información."
 
        # actualizamos la información de los países de otros bazares
 
-       puts "#{DateTime.now} Países: Obteniendo la información de otros bazares."
+       puts "#{DateTime.now} Países: Obteniendo la información de: #{cluster.nombre} -> #{cluster.url}."
 
        uri = "#{cluster.url}/api/paises.json"
        puts "URI #{uri}"
@@ -202,6 +196,8 @@ namespace :bazar do
              pais.save
            
            }
+           
+            puts "#{DateTime.now} Países: Actualizada la información: #{cluster.nombre} -> #{cluster.url}."
          else
            puts "ERROR en la petición ---------->"+response.inspect
          end
@@ -212,11 +208,12 @@ namespace :bazar do
     
      end
 
+    
+
+
    end 
 
    hydra.run
-
-   puts "#{DateTime.now} Países: Actualizada la información."
 
 
    puts "#{DateTime.now} Bazares: Fin del proceso"
