@@ -52,8 +52,49 @@ plot5 = $.jqplot('empresas1', [line5], {
 
 
 <h3>Ofertas / Demandas</h3>
+<div id="ofe">
 
 
+<div class="jqPlot" id="ofe1" style="height:360px;width:50%;float:left;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+lineo1 = [];
+lineo1[0] = ['Ofertas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'O'") %> ];
+lineo1[1] = ['Demandas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'D'") %> ];
+
+
+ploto1 = $.jqplot('ofe1', [lineo1], {
+    title: 'Ofertas/Demandas de este bazar',
+    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    legend:{show:true}
+});
+
+</script>
+
+
+
+<div class="jqPlot" id="ofe2" style="height:360px;width:50%; float:left;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+lineo2 = [];
+lineo2[0] = ['Ofertas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'O'") %> ];
+lineo2[1] = ['Demandas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'D'") %> ];
+
+
+ploto1 = $.jqplot('ofe2', [lineo1], {
+    title: 'Ofertas/Demandas del mercado',
+    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    legend:{show:true}
+});
+
+</script>
+
+
+</div>
 <br/>
 
 <h3>Consultas Realizadas</h3>
