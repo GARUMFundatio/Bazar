@@ -33,7 +33,7 @@ class PaisesController < ApplicationController
       format.json {
          @info = []
          for pais in @paises
-           @info << {:label => "#{pais.descripcion}", :value => "#{pais.descripcion}", :id => "#{pais.id}", :ayuda => "Capital: #{pais.capital} Codigo ISO: #{pais.codigo}"}
+           @info << {:label => "#{pais.descripcion}", :value => "#{pais.descripcion}", :id => "#{pais.id}", :ayuda => "Capital: #{pais.capital} Codigo ISO: #{pais.codigo}", :total => "#{pais.total_empresas_mercado}"}
          end
          render :json =>  @info  }
     end
