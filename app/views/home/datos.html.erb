@@ -101,8 +101,8 @@ ploto1 = $.jqplot('ofe2', [lineo1], {
 
 <div id="consultas">
 	
-	<div class="jqPlot" id="con1" style="height:360px; width:540px;"></div>
-
+	<div class="jqPlot" id="con1" style="height:360px; width:50%; float:left;"></div>
+	<div class="jqPlot" id="con2" style="height:360px; width:50%; float:left;"></div>
 	<script>
 
 	$.jqplot.config.enablePlugins = true;
@@ -148,8 +148,31 @@ ploto1 = $.jqplot('ofe2', [lineo1], {
 	    highlighter: {sizeAdjust: 7.5},
 		cursor: {tooltipLocation:'sw'},
 	    series:[
-			{label:'Enviadas desde este Bazar'},
-			{label:'Recibidas de otros Bazares',yaxis:'y2axis' }
+			{label:'Enviadas desde este Bazar'}
+	    ]
+	});
+
+	plotc2 = $.jqplot('con2', [linec12], {
+	    legend:{show:true, location:'se'},
+	    title:'Consultas otros Bazares',
+		axesDefaults:{useSeriesColor: true},
+	    axes:{
+	        xaxis:{
+	            renderer:$.jqplot.DateAxisRenderer,
+	            tickOptions:{formatString:'%m-%y'},
+	            tickInterval:'1 month'
+			},
+		    yaxis:{
+				tickOptions:{formatString:'%d'}
+	        },
+		    y2axis:{
+				tickOptions:{formatString:'%d'}
+	        }
+	    },
+	    highlighter: {sizeAdjust: 7.5},
+		cursor: {tooltipLocation:'sw'},
+	    series:[
+			{label:'Recibidas de otros Bazares'},
 	    ]
 	});
 
