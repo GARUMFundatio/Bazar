@@ -152,6 +152,7 @@ function borraofertan(cual) {
 	var ii;
 	if (cual == 0 && tot1 == 0) {
 		tot1 = 0;
+		$('#pofertan').val("");
 	}
 	else {
 
@@ -173,6 +174,7 @@ function pintaofertan() {
 	if (tot1 == 0) {
 		html1 = "";
 		$('#filtroofertan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>");
+		$('#pofertan').val("");
 	}
 	else {
 		html1 = "";
@@ -202,6 +204,7 @@ function borrademandan(cual) {
 	var ii;
 	if (cual == 0 && tot2 == 0) {
 		tot2 = 0;
+		$('#pdemandan').val("");
 	}
 	else {
 
@@ -222,6 +225,7 @@ function pintademandan() {
 	if (tot2 == 0) {
 		html2 = "";
 		$('#filtrodemandan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>");
+		$('#pdemandan').val("");
 	}
 	else {
 		html2 = "";
@@ -375,6 +379,7 @@ jQuery(function() {
 		var ii;
 		if (cual == 0 && tot3 == 0) {
 			tot3 = 0;
+			$('#ppaises').val("");
 		}
 		else {
 
@@ -394,6 +399,7 @@ jQuery(function() {
 		if (tot3 == 0) {
 			html3 = "";
 			$('#mispaises').html("<p>Seleccione uno o varios países en la caja de búsqueda.</p><p>Puedes buscar también por código de País Ej: GB . La búsqueda es por el nombre internacional. Ej: Francia -> France.</p>");
+			$('#ppaises').val("");
 		}
 		else {
 			html3 = "";
