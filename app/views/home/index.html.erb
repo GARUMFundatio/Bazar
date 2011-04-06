@@ -451,7 +451,7 @@ jQuery(function() {
 		  noCache: false //set to true, to disable caching
 		};
 
-
+		
 		a1 = $('#query3').autocomplete(options);
 
 	    $('#query3').keypress(function (e) {
@@ -648,6 +648,8 @@ function lanzabusqueda() {
 			resultados = $("#resultados2").val();
 			pofertan = $("#pofertan").val();
 			pdemandan = $("#pdemandan").val();
+			mispaises = $("#mispaises").val();
+			
 		}
 		else {
 			emple = "0 10";
@@ -655,7 +657,8 @@ function lanzabusqueda() {
 			compras = "0 10";
 			resultados = "0 10";
 			pofertan = "";
-			pdemandan = "";				
+			pdemandan = "";
+			mispaises = "";				
 		}
 
 		$('#avanzada').hide('slow');
@@ -667,7 +670,7 @@ function lanzabusqueda() {
 	
 		$.ajax({
 		  async:true, 
-		  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan, 
+		  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan+'&ppaises='+mispaises, 
 		  success: function(data) {
 		    $('#lista').html(data);
 			clearInterval(actualiza);
