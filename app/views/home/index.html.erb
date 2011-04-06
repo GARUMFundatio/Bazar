@@ -648,7 +648,7 @@ function lanzabusqueda() {
 			resultados = $("#resultados2").val();
 			pofertan = $("#pofertan").val();
 			pdemandan = $("#pdemandan").val();
-			mispaises = $("#mispaises").val();
+			ppaises = $("#ppaises").val();
 			
 		}
 		else {
@@ -658,7 +658,7 @@ function lanzabusqueda() {
 			resultados = "0 10";
 			pofertan = "";
 			pdemandan = "";
-			mispaises = "";				
+			ppaises = "";				
 		}
 
 		$('#avanzada').hide('slow');
@@ -670,7 +670,7 @@ function lanzabusqueda() {
 	
 		$.ajax({
 		  async:true, 
-		  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan+'&ppaises='+mispaises, 
+		  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan+'&ppaises='+ppaises, 
 		  success: function(data) {
 		    $('#lista').html(data);
 			clearInterval(actualiza);
@@ -680,7 +680,7 @@ function lanzabusqueda() {
 
 			$('#estadotexto').hide();
 			$("#estadotexto").html('');
-
+			$("#busca").focus();
 			clearInterval(actualiza);
 		  }
 		});
