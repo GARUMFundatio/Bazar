@@ -143,7 +143,7 @@ class ApplicationController < ActionController::Base
       hydra = Typhoeus::Hydra.new
 
       cluster = Cluster.find(bazar)
-      uri = URI.parse("#{cluster.url}/#{pet}")
+      uri = "#{cluster.url}/#{pet}"
 
       r = Typhoeus::Request.new(uri, :timeout => 5000)
       
