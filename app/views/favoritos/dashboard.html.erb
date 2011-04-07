@@ -6,13 +6,7 @@
 <tr>
 
 	<td>
-
-		<% if ( fav.bazar_id.to_i == BZ_param("BazarId").to_i ) %>
-			<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.user_id, :bazar_id => fav.bazar_id)) %>
-		<% else %> 
-			<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.user_id, :bazar_id => fav.bazar_id)) %>
-		<% end %>
-
+		<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.empresa_id, :bazar_id => fav.bazar_id)) %>
 	</td>
 
 	<td class="dos-iconos">
