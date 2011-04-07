@@ -137,41 +137,32 @@ class ApplicationController < ActionController::Base
     end 
 
     def dohttpget (bazar, pet)
-      
+
       logger.debug "dohttp: bazar #{bazar}: Enviando #{pet}"
-    
+      
+      hydra = Typhoeus::Hydra.new
+
       cluster = Cluster.find(bazar)
       uri = URI.parse("#{cluster.url}/#{pet}")
+
+      r = Typhoeus::Request.new(uri, :timeout => 5000)
       
-      post_body = []
-      post_body << "Content-Type: text/plain\r\n"
-      
-      http = Net::HTTP.new(uri.host, uri.port)
-      http.open_timeout = http.read_timeout = 10
-
-      request = Net::HTTP::Get.new(uri.request_uri)
-      request.body = post_body.join
-      request["Content-Type"] = "text/plain"
-
-      begin 
-
-        res =  Net::HTTP.new(uri.host, uri.port).start {|http| http.request(request) }
-        case res
-        when Net::HTTPSuccess, Net::HTTPRedirection
-          return res.body
-        else
-          logger.debug "dohttp: ERROR en la petición a #{uri}---------->"+res.error!
-          return ""
-        end
-
-      rescue Exception => e
-        logger.debug "dohttp: Exception leyendo #{cluster.url} Got #{e.class}: #{e}"
-        return ""        
+      r.on_complete do |response|
+         logger.debug "-------------> "+response.inspect
+         case response.curl_return_code
+         when 0
+           return response.body
+         else
+           logger.debug "ERROR en la petición ---------->"+response.inspect
+           return ""
+         end
+         
       end
+      
+      hydra.queue r
+      hydra.run
 
     end 
-
-
         
 end
 

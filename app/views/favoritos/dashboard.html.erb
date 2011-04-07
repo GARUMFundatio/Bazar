@@ -8,10 +8,9 @@
 	<td>
 
 		<% if ( fav.bazar_id.to_i == BZ_param("BazarId").to_i ) %>
-			<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.user_id)) %>
+			<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.user_id, :bazar_id => fav.bazar_id)) %>
 		<% else %> 
-			<!-- TODO: visualizar la info de una empresa remota -->
-			<%= fav.nombre_empresa %>
+			<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.user_id, :bazar_id => fav.bazar_id)) %>
 		<% end %>
 
 	</td>
