@@ -19,3 +19,6 @@
 <% end %>
 
 </table>
+<% if @total > 5 %>
+	<%= link_to("Ver más favoritos #{@total-5} más &raquo;".html_safe, favoritos_path, :class => "volver-home-link") %>
+<% end %>

@@ -1,0 +1,13 @@
+	<tr>
+
+		<td>
+			<%= link_to(favorito.nombre_empresa, bazarcms_empresa_path(favorito.empresa_id, :bazar_id => favorito.bazar_id)) %>
+		</td>
+
+		<td class="dos-iconos">
+			<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{favorito.empresa_id}&bazar_destino=#{favorito.bazar_id}&nombre=#{favorito.nombre_empresa}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
+
+			<%= helper_favo(favorito.bazar_id, favorito.empresa_id, favorito.nombre_empresa, "cajafavoritos") %>
+		</td>
+
+	</tr>

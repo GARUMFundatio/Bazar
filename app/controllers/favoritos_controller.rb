@@ -1,13 +1,16 @@
 class FavoritosController < ApplicationController
   # GET /favoritos
   # GET /favoritos.xml
+  
+  layout 'bazar'
   def index
-    @favoritos = Favorito.all
+    
+    @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc").paginate(:per_page => 10, :page => params[:page])
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @favoritos }
-    end
+    if request.xhr?
+      render :partial => @favoritos
+    end 
+    
   end
 
   # GET /favoritos/1
@@ -118,7 +121,10 @@ class FavoritosController < ApplicationController
   # empresas que sigue un usuario 
   
   def dashboard 
-    @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc")
+    
+    @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc").limit(5)
+    @total = Favorito.where("user_id = ?", current_user.id).count
+
     respond_to do |format|
       format.html { render :layout => false }
     end

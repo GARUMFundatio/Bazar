@@ -1,29 +1,16 @@
-<h1>Listing favoritos</h1>
+<%= javascript_include_tag 'jquery.pageless' -%>
 
-<table>
-  <tr>
-    <th>Bazar</th>
-    <th>User</th>
-    <th>Empresa</th>
-    <th>Fecha</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
 
-<% @favoritos.each do |favorito| %>
-  <tr>
-    <td><%= favorito.bazar_id %></td>
-    <td><%= favorito.user_id %></td>
-    <td><%= favorito.empresa_id %></td>
-    <td><%= favorito.fecha %></td>
-    <td><%= link_to 'Show', favorito %></td>
-    <td><%= link_to 'Edit', edit_favorito_path(favorito) %></td>
-    <td><%= link_to 'Destroy', favorito, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<h3 class="page-title">Empresas que sigo</h3>
+
+<table id="results" class="tabla" cellspacing="0">
+
+	<%= render(:partial => "favorito", :collection => @favoritos) %>
+	
 </table>
 
 <br />
 
-<%= link_to 'New Favorito', new_favorito_path %>
+<%= will_paginate(@favoritos) %>
+<%= pageless(@favoritos.total_pages, favoritos_path) %>
