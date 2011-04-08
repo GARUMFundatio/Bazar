@@ -1,0 +1,16 @@
+<tr>
+
+	<td>
+		<%= link_to Bazarcms::Empresa.find(actividad.user_id).nombre, bazarcms_empresa_path(actividad.user_id) %>
+	</td>
+
+	<td>
+		<%= actividad.desc.html_safe %>
+	</td>
+
+	<td class="dos-iconos">
+		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{actividad.user_id}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
+		<%= helper_favo(actividad.bazar_id, actividad.user_id, actividad.nombre_empresa, "actividad") %>
+	</td>
+
+</tr>
