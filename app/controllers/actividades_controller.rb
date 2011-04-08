@@ -1,13 +1,21 @@
 class ActividadesController < ApplicationController
+  
+  layout 'bazar'
+  
   # GET /actividades
   # GET /actividades.xml
+  
   def index
-    @actividades = Actividad.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @actividades }
+    # TODO deberíamos definir si solo sacamos toda la actividad del bazar local 
+    # o las empresas que sigo o hacer dos vistas
+    
+    @actividades = Actividad.where("1 = 1").order("fecha desc").paginate(:per_page => 15, :page => params[:page])
+
+    if request.xhr?
+      render :partial => @actividades
     end
+    
   end
 
   # GET /actividades/1
@@ -82,7 +90,10 @@ class ActividadesController < ApplicationController
   end
   
   def dashboard 
+    
     @ultimas = Actividad.where("1 = 1").order("fecha desc").limit(10)
+    @total = Actividad.count_by_sql("select count(*) from actividades")
+    
     respond_to do |format|
       format.html { render :layout => false }
     end

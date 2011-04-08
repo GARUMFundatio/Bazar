@@ -10,7 +10,7 @@
 	</td>
 
 	<td>
-		<%= act.desc %>
+		<%= act.desc.html_safe %>
 	</td>
 
 	<td class="dos-iconos">
@@ -22,3 +22,7 @@
 <% end %>
 
 </table>
+
+<% if @total > 5 %>
+	<%= link_to("Ver más eventos (#{@total-5}) &raquo;".html_safe, actividades_path, :class => "volver-home-link") %>
+<% end %>

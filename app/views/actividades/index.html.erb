@@ -1,33 +1,16 @@
-<h1>Listing actividades</h1>
+<%= javascript_include_tag 'jquery.pageless' -%>
 
-<table>
-  <tr>
-    <th>Bazar</th>
-    <th>User</th>
-    <th>Local</th>
-    <th>Fecha</th>
-    <th>Desc</th>
-    <th>Tipo</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
 
-<% @actividades.each do |actividad| %>
-  <tr>
-    <td><%= actividad.bazar_id %></td>
-    <td><%= actividad.user_id %></td>
-    <td><%= actividad.local_id %></td>
-    <td><%= actividad.fecha %></td>
-    <td><%= actividad.desc %></td>
-    <td><%= actividad.tipo %></td>
-    <td><%= link_to 'Show', actividad %></td>
-    <td><%= link_to 'Edit', edit_actividad_path(actividad) %></td>
-    <td><%= link_to 'Destroy', actividad, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+<h3 class="page-title">Actividad de las Empresas que sigo</h3>
+
+<table id="results" class="tabla" cellspacing="0">
+
+	<%= render(:partial => "actividad", :collection => @actividades) %>
+	
 </table>
 
 <br />
 
-<%= link_to 'New Actividad', new_actividad_path %>
+<%= will_paginate(@actividades) %>
+<%= pageless(@actividades.total_pages, actividades_path) %>

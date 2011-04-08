@@ -5,7 +5,7 @@ class FavoritosController < ApplicationController
   layout 'bazar'
   def index
     
-    @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc").paginate(:per_page => 10, :page => params[:page])
+    @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc").paginate(:per_page => 15, :page => params[:page])
 
     if request.xhr?
       render :partial => @favoritos
@@ -123,7 +123,7 @@ class FavoritosController < ApplicationController
   def dashboard 
     
     @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc").limit(5)
-    @total = Favorito.where("user_id = ?", current_user.id).count
+    @total = Favorito.count_by_sql("select count(*) from favoritos where user_id = #{current_user.id} ;")
 
     respond_to do |format|
       format.html { render :layout => false }
