@@ -1,56 +1,32 @@
+<%= javascript_include_tag 'jquery.pageless' -%>
 
 <div>
 
 <% if @mensajes.count > 0 %>	
-<table class="tabla" cellspacing="0">
-  <tr>
-    <th>De</th>
-    <th>Asunto</th>
-    <th>Fecha</th>
-    <th></th>
-  </tr>
+<table id="results" class="tabla" cellspacing="0">
+	<% if params[:page].to_i == 1%>
+	  <tr>
+	    <th>De</th>
+	    <th>Asunto</th>
+	    <th>Fecha</th>
+	    <th></th>
+	  </tr>
+	<% end %>
 
-<% @mensajes.each do |mensaje| %>
+<%= render :partial => 'mensaje', :collection => @mensajes %>
 
-
-<% if (!mensaje.leido.nil?) %>
-  <tr id="head<%= mensaje.id -%>" style="text-align:left;" class="color">
-<% else %>
-  <tr id="head<%= mensaje.id -%>" style="font-weight:bold; text-align:left;" class="color">
-<% end %>
-    
-	<td style="text-align:left;">
-		<%= mensaje.de_nombre %>
-	</td>
-  
-	<td style="text-align:left;">
-		<a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"><%= mensaje.asunto %></a>
-	</td>
-
-    <td style="text-align:left;">
-		<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
-	</td>
-
-    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a>
-    <%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %>
-    <%= link_to(image_tag("papelera.png"), mensaje, :confirm => '¿Está seguro?', :method => :delete, :title => 'Eliminar Mensaje') %></td>
-  </tr>
-
-  <tr id="men<%= mensaje.id -%>" style="display: none">
-    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6"><%= mensaje.texto.gsub("\n","<br/>").html_safe %></td>
-  </tr>
-
-<% end %>
 </table>
 
-<%= will_paginate @mensajes %>
+<%= pageless(@mensajes.total_pages, mensajes_path) %>
+
 
 <% else %>
 	<% if params[:tipo] == 'N' %>
 		<p>No hay notificaciones.</p>
 	<% else %>
-  <p>No hay mensajes.</p>
+  		<p>No hay mensajes.</p>
 	<% end %>
 <% end %>
+
 
 </div>

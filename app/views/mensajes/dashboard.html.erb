@@ -58,6 +58,8 @@
 		</table>
 		<% end %>
 
+		<%= link_to("Ver todos los mensajes &raquo;".html_safe, '/mensajes?tipo=M', :class => "volver-home-link") %>
+
 	</div>
 	<div>
 		
@@ -112,6 +114,7 @@
 		</tr>
 		</table>
 		<% end %>
+		<%= link_to("Ver todas las notificaciones &raquo;".html_safe, '/mensajes?tipo=N', :class => "volver-home-link") %>
 
 	</div>
 	
