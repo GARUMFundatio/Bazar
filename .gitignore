@@ -4,5 +4,6 @@ log/
 tmp/
 vendor/
 config/database.yml
+db/schema.rb
 **/.DS_Store
 .DS_Store
