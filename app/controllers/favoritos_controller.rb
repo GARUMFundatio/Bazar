@@ -13,6 +13,7 @@ class FavoritosController < ApplicationController
     
   end
 
+  
   # GET /favoritos/1
   # GET /favoritos/1.xml
   def show
