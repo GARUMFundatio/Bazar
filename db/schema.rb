@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110409161529) do
+ActiveRecord::Schema.define(:version => 20110409164509) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
     t.integer  "user_id"
     t.integer  "local_id"
     t.datetime "fecha"
-    t.string   "desc"
+    t.text     "desc"
     t.string   "tipo"
     t.datetime "created_at"
     t.datetime "updated_at"
