@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403150857) do
+ActiveRecord::Schema.define(:version => 20110409161529) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -171,7 +171,7 @@ ActiveRecord::Schema.define(:version => 20110403150857) do
     t.datetime "leido"
     t.integer  "de"
     t.integer  "para"
-    t.string   "texto"
+    t.text     "texto"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "asunto"
