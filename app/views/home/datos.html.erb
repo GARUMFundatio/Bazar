@@ -35,13 +35,20 @@ empresto = 0;
 	<% end %>
 <% end %>
 
-line5[0] = [ 'Este Bazar', empbazar];
-line5[1] = [ 'Mercado', empresto];
+line5[0] = [ 'Este Bazar', empbazar * 100 / (empbazar + empresto)];
+line5[1] = [ 'Mercado', empresto * 100 / (empbazar + empresto)];
 
 plot5 = $.jqplot('empresas1', [line5], {
     title: 'Este bazar respecto al mercado',
-    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},    
-	cursor: {tooltipLocation:'sw'},
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'percent',
+			dataLabelFormatString:"%d%%",
+			sliceMargin:4
+		}
+	},    
     legend:{show:true}
 });
 
@@ -68,7 +75,15 @@ lineo1[1] = ['Demandas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from
 
 ploto1 = $.jqplot('ofe1', [lineo1], {
     title: 'Ofertas/Demandas de este bazar',
-    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'value',
+			dataLabelFormatString:"%d",
+			sliceMargin:4
+		}
+	},    
     legend:{show:true}
 });
 
@@ -88,7 +103,15 @@ lineo2[1] = ['Demandas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from
 
 ploto1 = $.jqplot('ofe2', [lineo1], {
     title: 'Ofertas/Demandas del mercado',
-    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'value',
+			dataLabelFormatString:"%d",
+			sliceMargin:4
+		}
+	},    
     legend:{show:true}
 });
 
@@ -202,7 +225,15 @@ ii = 0;
 
 plot1 = $.jqplot('perfilesbazar', [line1], {
     title: 'Sectores más significativos de este bazar',
-    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'value',
+			dataLabelFormatString:"%d",
+			sliceMargin:4
+		}
+	},    
     legend:{show:true}
 });
 
@@ -227,7 +258,15 @@ ii = 0;
 
 plot2 = $.jqplot('perfilesmercado', [line2], {
     title: 'Sectores más significativos del mercado',
-    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'value',
+			dataLabelFormatString:"%d",
+			sliceMargin:4
+		}
+	},    
     legend:{show:true}
 });
 
@@ -255,7 +294,15 @@ ii = 0;
 
 plot4 = $.jqplot('paisesbazar', [line4], {
     title: 'Ubicaciones de este bazar',
-    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'value',
+			dataLabelFormatString:"%d",
+			sliceMargin:4
+		}
+	},    
     legend:{show:true}
 });
 
@@ -279,7 +326,15 @@ ii = 0;
 
 plot3 = $.jqplot('paisesmercado', [line3], {
     title: 'Ubicaciones del mercado',
-    seriesDefaults:{renderer:$.jqplot.PieRenderer, rendererOptions:{sliceMargin:4}},
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'value',
+			dataLabelFormatString:"%d",
+			sliceMargin:4
+		}
+	},    
     legend:{show:true}
 });
 
