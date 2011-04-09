@@ -5,7 +5,7 @@ class FavoritosController < ApplicationController
   layout 'bazar'
   def index
     
-    @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc").paginate(:per_page => 15, :page => params[:page])
+    @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc").paginate(:per_page => 30, :page => params[:page])
 
     if request.xhr?
       render :partial => @favoritos
