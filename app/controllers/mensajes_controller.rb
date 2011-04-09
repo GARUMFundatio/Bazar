@@ -8,21 +8,16 @@ class MensajesController < ApplicationController
     if (!params[:tipo].nil?)
       if (params[:tipo] == 'N')
         puts "Buscando notificaciones"
-        @mensajes = Mensaje.notificacionestotal(current_user.id).order('fecha desc').paginate(:page => params[:page], :per_page => 15)
+        @mensajes = Mensaje.notificacionestotal(current_user.id).order('fecha desc').paginate(:page => params[:page], :per_page => 30)
       else 
         puts "Buscando Mensajes"
-        @mensajes = Mensaje.mensajestotal(current_user.id).order('fecha desc').paginate(:page => params[:page], :per_page => 15)      
+        @mensajes = Mensaje.mensajestotal(current_user.id).order('fecha desc').paginate(:page => params[:page], :per_page => 30)      
       end 
     else 
       puts "No esta definido tipo"
-      @mensajes = Mensaje.where('para = ? and tipo = "N"',[current_user.id]).order('fecha desc').paginate(:page => params[:page], :per_page => 15)
+      @mensajes = Mensaje.where('para = ? and tipo = "N"',[current_user.id]).order('fecha desc').paginate(:page => params[:page], :per_page => 30)
     end 
     
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @mensajes }
-    end
-
   end
 
   def editanotificacion
