@@ -6,7 +6,7 @@
 <tr>
 
 	<td>
-		<%= link_to Bazarcms::Empresa.find(act.user_id).nombre, bazarcms_empresa_path(act.user_id) %>
+		<%= link_to Bazarcms::Empresa.find(act.user_id).nombre, bazarcms_empresa_path(act.user_id, :bazar_id => act.bazar_id) %>
 	</td>
 
 	<td>
