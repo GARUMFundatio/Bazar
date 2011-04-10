@@ -86,7 +86,7 @@ module ApplicationHelper
         if (cam[1].nil?)
           text += "Todos los sectores</br>"
         else
-          text += "<br/><br/>"
+          text += "<br/>"
           for val in cam[1].split(',')
             # text += "traza  #{cam[0]} => #{cam[1]}<br/>"
             
