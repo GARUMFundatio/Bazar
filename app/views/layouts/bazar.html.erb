@@ -30,11 +30,7 @@
 			<body class="anonimo"><!-- si es anónimo -->
 		<% end %>
 
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
+<%= clicktale_top %>
 	
    <div class="container">
 
@@ -262,20 +258,7 @@ var WRInitTime=(new Date()).getTime();
 
   </div> <!-- fin container -->
 
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type='text/javascript'>
-document.write(unescape("%3Cscript%20src='"+
- (document.location.protocol=='https:'?
-  'https://clicktale.pantherssl.com/':
-  'http://s.clicktale.net/')+
- "WRb6.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var ClickTaleSSL=1;
-if(typeof ClickTale=='function') ClickTale(16079,1,"www02");
-</script>
-<!-- ClickTale end of Bottom part -->
+<%= clicktale_bottom %>
 
 
   </body>

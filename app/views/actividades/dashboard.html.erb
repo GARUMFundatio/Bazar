@@ -1,6 +1,7 @@
 <h3 class="page-title">Actividad en el Bazar</h3>
 
 <table class="tabla" cellspacing="0">
+<tbody>
 
 <% for act in @ultimas %>
 <tr>
@@ -21,7 +22,8 @@
 </tr>
 <% end %>
 
-</table>
+
+</tbody></table>
 
 <% if @total > 5 %>
 	<%= link_to("Ver más eventos (#{@total-5}+) &raquo;".html_safe, actividades_path, :class => "volver-home-link") %>
