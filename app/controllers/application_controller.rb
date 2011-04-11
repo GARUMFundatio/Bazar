@@ -145,7 +145,7 @@ class ApplicationController < ActionController::Base
       cluster = Cluster.find(bazar)
       uri = "#{cluster.url}/#{pet}"
 
-      r = Typhoeus::Request.new(uri, :timeout => 5000)
+      r = Typhoeus::Request.new(uri, :timeout => 10000)
       
       r.on_complete do |response|
          logger.debug "-------------> "+response.inspect
