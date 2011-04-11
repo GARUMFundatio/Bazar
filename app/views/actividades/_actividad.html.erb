@@ -7,6 +7,10 @@
 	<td>
 		<%= actividad.desc.html_safe %>
 	</td>
+	
+	<td>
+    	<%= actividad.fecha.strftime("%d-%m-%Y") %>
+	</td>
 
 	<td class="dos-iconos">
 		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{actividad.user_id}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
