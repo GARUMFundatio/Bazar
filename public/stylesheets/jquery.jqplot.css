@@ -1,11 +1,17 @@
 /*rules for the plot target div.  These will be cascaded down to all plot elements according to css rules*/
 .jqplot-target {
     position: relative;
-    color: #666666;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #666;
     font-size: 1em;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 /*    height: 300px;
     width: 400px;*/
+}
+
+.jqplot-data-label,
+.jqplot-title,
+table.jqplot-table-legend {
+    font-family: "Liberation Sans", "liberation", Arial, Helvetica, sans-serif;
 }
 
 /*rules applied to all axes*/
@@ -176,7 +182,7 @@ table.jqplot-cursor-tooltip {
     font-size: 0.75em;
     z-index: 2;
 }
-      
+
 td.jqplot-cursor-legend-swatch {
 vertical-align:middle;
 text-align:center;
@@ -209,4 +215,15 @@ div.jqplot-bubble-label {
 
 div.jqplot-bubble-label.jqplot-bubble-label-highlight {
     background: rgba(90%, 90%, 90%, 0.7);
+}
+
+.jqplot-target .jqplot-data-label {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-shadow: 0 0 3px #ccc;
+    color: #333;
+}
+
+table.jqplot-table-legend {
+    padding: 3px 2px;
 }

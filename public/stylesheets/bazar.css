@@ -2039,6 +2039,25 @@ p.total {
 	text-align: right;
 }
 
+
+/* Seccion de datos (Sociología de Bazar) */
+
+#content .titulo-datos {
+    clear: both;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+}
+
+.seccion-datos {
+    clear: both;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+
 ul.tabs {
 	margin: 0;
 	padding: 0;
