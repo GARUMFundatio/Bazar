@@ -27,7 +27,7 @@ namespace :bazar do
        tt = Time.now
 
        for ii in 0...simu
-        uri = "http://bazar.garumfundatio.org/bazarcms/buscaempresas?q=%2A&qe=0+10&qv=0+10&qc=0+10&qr=0+10&pofertan=#{ii}#{simu}&pdemandan=#{ii}#{simu}&ppaises=#{simu}#{ii}&bid=864&cid=3"
+        uri = "http://bazargarum.dyndns.org:3000/bazarcms/buscaempresas?q=%2A&qe=0+10&qv=0+10&qc=0+10&qr=0+10&pofertan=#{ii}#{simu}&pdemandan=#{ii}#{simu}&ppaises=#{simu}#{ii}&bid=864&cid=3"
         r = Typhoeus::Request.new(uri, :timeout => 30000)
         r.on_complete do |response|
           case response.curl_return_code
