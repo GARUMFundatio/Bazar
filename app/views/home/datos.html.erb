@@ -1,3 +1,5 @@
+<% cache "bazar_datos", {:expire_in => 1.minutes.to_i} do %>
+
 <%= stylesheet_link_tag("jquery.jqplot") %>
 <%= javascript_include_tag("jquery.jqplot.min.js") %>
 <%= javascript_include_tag("plugins/jqplot.dateAxisRenderer.min.js") %>
@@ -337,3 +339,5 @@ plot3 = $.jqplot('paisesmercado', [line3], {
 </div>
 Generado: <%= Time.now %>
 </div>
+
+<% end %>
