@@ -14,6 +14,8 @@ gem 'json'
 gem 'fastercsv'
 gem 'dynamic_form'
 gem 'typhoeus'
+gem 'dalli'
+gem 'kgio'
 
 gem "bazarcms", :path => '../bazarcms'
 
