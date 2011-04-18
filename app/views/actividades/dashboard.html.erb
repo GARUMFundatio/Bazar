@@ -1,3 +1,5 @@
+<% cache "bazar_actividades_dashboard", {:expires_in => 10.minutes.to_i} do %>
+
 <h3 class="page-title">Actividad en el Bazar</h3>
 
 <table class="tabla" cellspacing="0">
@@ -14,6 +16,10 @@
 		<%= act.desc.html_safe %>
 	</td>
 
+	<td>
+		<%= act.fecha.strftime("%d-%m-%y") %>
+	</td>
+
 	<td class="dos-iconos">
 		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{act.user_id}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
 		<%= helper_favo(act.bazar_id, act.user_id, act.nombre_empresa, "actividad") %>
@@ -28,3 +34,6 @@
 <% if @total > 5 %>
 	<%= link_to("Ver más eventos (#{@total-5}+) &raquo;".html_safe, actividades_path, :class => "volver-home-link") %>
 <% end %>
+
+<% end %>
+

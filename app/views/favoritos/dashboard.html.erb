@@ -1,3 +1,5 @@
+<% cache "bazar_favoritos_dash_#{current_user.id}", {:expires_in => 5.minutes.to_i} do %>
+
 <h3 class="page-title">Empresas que sigo</h3>
 
 <table class="tabla" cellspacing="0">
@@ -21,4 +23,6 @@
 </table>
 <% if @total > 5 %>
 	<%= link_to("Ver más favoritos (#{@total-5}+) &raquo;".html_safe, favoritos_path, :class => "volver-home-link") %>
+<% end %>
+
 <% end %>
