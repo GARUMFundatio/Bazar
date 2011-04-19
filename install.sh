@@ -1,9 +1,13 @@
 echo "Instalación de Bazar" 
 
+
+
+
 echo "Compilando las dependencias en el directorio vendor" 
 
 bundle install --path vendor 
 bundle exec aaf_install
+
 RAILS_ENV=production rails generate delayed_job
 RAILS_ENV=production rails generate bazarcms 
 
@@ -22,7 +26,6 @@ RAILS_ENV=production rake bazar:create_users
 
 echo "Instalando jquery" 
 RAILS_ENV=productionrails generate jquery:install
-
 
 echo "Creando las tablas de la base de datos" 
 RAILS_ENV=production rake db:migrate
