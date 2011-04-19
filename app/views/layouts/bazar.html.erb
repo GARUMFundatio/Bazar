@@ -124,6 +124,7 @@
 		  	<% if current_user_is_dinamizador %>
                  <li><a href="#">Dinamizador</a>
 		            <ul class="links">
+						<li><%= link_to "Usuarios", users_path %> </li>
 					    <li><%= link_to "Mailing a Usuarios", '/notificacion?tipo=M' %> </li>
 					    <li><%= link_to "Noticias", noticias_path %> </li>
 		            </ul>

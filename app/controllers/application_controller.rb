@@ -7,7 +7,10 @@ class ApplicationController < ActionController::Base
   require "uri"
 
   def BZ_param(clave)
-    conf = Conf.find_by_nombre(clave)
+    conf = Rails.cache.fetch("BZ#{clave}", :expires_in => 15.minutes) do
+      conf = Conf.find_by_nombre(clave)
+    end
+    
     if !conf.nil?
       return conf.valor
     else
