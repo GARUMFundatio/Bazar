@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   layout "bazar"
+    require 'dalli'
   before_filter :require_user, :only => [:index]
   
   # homepage de usuario 
@@ -27,6 +28,15 @@ class HomeController < ApplicationController
     
     @ultimas = Bazarcms::Empresa.ultimascreadas
     @actualizadas = Bazarcms::Empresa.ultimasactualizadas
+
+  end 
+
+  def datos 
+
+    # dc = Dalli::Client.new('localhost')
+    # dc.set('abc', 123)
+    # value = dc.get('abc')
+
 
   end 
   

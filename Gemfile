@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.0.7'
 
 gem 'mysql2'
 gem 'acts-as-taggable-on' 
@@ -14,7 +14,6 @@ gem 'fastercsv'
 gem 'dynamic_form'
 gem 'typhoeus'
 gem 'dalli'
-gem 'kgio'
 
 gem "bazarcms", :path => '../bazarcms'
 

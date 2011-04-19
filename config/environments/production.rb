@@ -30,8 +30,9 @@ Bazar::Application.configure do
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
 
-  config.cache_store = :dalli_store, 'localhost:11211', {:expires_in => 1.day, :compress => true, :compress_threshold => 64*1024}
 
+config.cache_store = :dalli_store, '127.0.0.1',
+    { :namespace => 'bazar', :expires_in => 1.day, :compress => true, :compress_threshold => 64*1024 }
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
