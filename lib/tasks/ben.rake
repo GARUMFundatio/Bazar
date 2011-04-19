@@ -9,6 +9,7 @@ namespace :bazar do
  task :ben => :environment do |t|
 
    esta = []
+   pets = 5
    
    puts "#{DateTime.now}: Actualización de la información."
    
@@ -17,10 +18,11 @@ namespace :bazar do
    puts "#{DateTime.now}: Bazares: Actualizamos la información de bazares."
    uri = "http://directorio.garumfundatio.org/clusters.json"
 
-   for veces in 1..10
+   tot1seg = tot5seg = tot10seg = tot50seg = 0
+
+   for veces in 1...pets
      
    for simu in [1,5,10,50]
-     
        puts "----> #{simu} peticiones simultaneas"
        hydra = Typhoeus::Hydra.new
 
@@ -47,19 +49,19 @@ namespace :bazar do
         puts "#{ii} ---> tiempo "
         case simu
         when 1
-          tot1seg = tiempo
+          tot1seg += tiempo
           puts "#{tot1seg}"
           
         when 5
-          tot5seg = tiempo
+          tot5seg += tiempo
           puts "#{tot5seg}"
 
           when 10
-            tot10seg = tiempo
+            tot10seg += tiempo
             puts "#{tot10seg}"
             
           when 50
-            tot50seg = tiempo
+            tot50seg += tiempo
             puts "#{tot50seg}"
         end 
         puts "Fin ----> #{simu} peticiones simultaneas"
@@ -102,6 +104,11 @@ for est in esta
   end 
   
 end 
+ 
+  tot1seg /= pets
+  tot5seg /= pets
+  tot10seg /= pets
+  tot50seg /= pets
 
   tot1avg = tot1sum/tot1tot
   tot5avg = tot5sum/tot5tot

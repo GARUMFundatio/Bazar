@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <% cache "header", {:expires_in => 1.hours.to_i} do %>
   <head>
 	<meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
 	<meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
@@ -17,6 +18,7 @@
 	
 	<%= csrf_meta_tag %>
 	
+	<% end %>
 
 	
   </head>
@@ -161,6 +163,7 @@
 								<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
 								<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
 								</li>
+								<% cache "mensajesconta#{current_user.id}", {:expires_in => 5.minutes.to_i} do %>
 								<li class="user-messages">
 								<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones') %>
 								(<%= Mensaje.notificacionessinleer(current_user.id).count -%>/<%=  Mensaje.notificacionestotal(current_user.id).count -%>) 
@@ -169,77 +172,11 @@
 								(<%= Mensaje.mensajessinleer(current_user.id).count -%>/<%=  Mensaje.mensajestotal(current_user.id).count -%>) 
 
 								</li>
+								<% end %>
                             </ul>
 							<% end %>
 		          </li>	
 	          <li>
-				<% if !current_user.nil? %>
-
-				<% if !current_user_is_invitado %>
-
-	            <h3>Modulos de Bazar</h3>
-	            <ul class="links">
-					<li><%= link_to "Página Principal", "/home" %></li>
-				    <li><%= link_to "Mi cuenta",  edit_user_path(current_user.id) %> </li>
-				    <li><%= link_to "Mi empresa", edit_bazarcms_empresa_path(current_user.id) %> </li>
-					<li><%= link_to "Buscador Empresas", '/bazarcms/buscadorempresas' %> </li>
-					<li><%= link_to "Consultas Realizadas", bazarcms_empresasconsultas_path %> </li>
-	            </ul>
-				<% end %>
-
-				<% end %>
-	          </li>
-
-	          <li>
-				<% if current_user_is_admin %>
-
-	            <h3>Administración</h3>
-	
-	            <ul class="links">
-				  <li><%= link_to "Usuarios", users_path %> </li>
-				  <li><%= link_to "Configuración del Sistema", confs_path %> </li>
-				  <li><%= link_to "Gestión Bazares", clusters_path %> </li>
-				  <li><%= link_to "Notificacion a Usuarios", '/notificacion?tipo=N' %> </li>
-				  <li><%= link_to "Actualización Información", '/updateinfo' %> </li>
-	            </ul>
-
-				<% end %>
-	          </li>
-
-
-	         <li>
-				<% if current_user_is_dinamizador %>
-
-	            <h3>Dinamización</h3>
-	            <ul class="links">
-				    <li><%= link_to "Mailing a Usuarios", '/notificacion?tipo=M' %> </li>
-				    <li><%= link_to "Noticias", noticias_path %> </li>
-	            </ul>
-
-				<% end %>
-	          </li>
-
-	          <li>
-				<% if current_user_is_invitado %>
-
-	            <h3>Bienvenido a Bazar</h3>
-	            <ul class="links">
-	                <li><a href="http://api.rubyonrails.org/">Que es Bazar</a></li>
-				    <li><%= link_to "Registrate",  new_user_path %> </li>
-	            </ul>
-
-				<% end %>
-	         </li>
-
-
-			<li>
-				<h3>API</h3>
-				<ul class="links">
-					<li><%= link_to("Como obtener información", "/api/index") -%></li>
-					<li><%= link_to("Ejemplos API Bazar", "/api/ejemplos") -%></li>
-				</ul>
-			</li>
-
 
 	        </ul>
 	     </div>	

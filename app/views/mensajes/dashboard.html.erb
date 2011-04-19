@@ -1,3 +1,4 @@
+<% cache "correodash#{current_user.id}", {:expires_in => 5.minutes.to_i} do %>
 
 <h3 class="page-title">Mensajes y Notificaciones</h3>
 
@@ -119,3 +120,4 @@
 	</div>
 	
 	</div><!-- /.contenidos-secundarios  -->
+<% end %>
