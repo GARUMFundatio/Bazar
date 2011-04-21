@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados Bazar Garum, Dinamizando Mercados!!!" /> 
+	<meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, Bazar Garum, Dinamizando Mercados!!!" /> 
+	
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	
+	<title>Bazar Garum</title>
+	<script src="/javascripts/jquery.js?1299161582" type="text/javascript"></script>
+<script src="/javascripts/jquery-ujs/src/rails.js?1299161582" type="text/javascript"></script>
+	<script src="/javascripts/jquery-ui.js?1299161582" type="text/javascript"></script>
+	<script src="/javascripts/jquery.cycle.all.min.js?1299161582" type="text/javascript"></script>
+
+	<link href="/stylesheets/bazar.css?1302644980" media="screen" rel="stylesheet" type="text/css" />
+
+	
+	<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="UUYzAiUqo2mrccLxMdW/xojx1uqqwYrCAl4355K2Vmo="/>
+	
+
+	
+  </head>
+	
+			<body class="logueado"><!-- si usuario logueado -->
+
+<script type="text/javascript">
+  var WRInitTime=(new Date()).getTime();
+</script>
+
+	
+   <div class="container">
+
+	  <div id="header">
+		      <h1 id="title"><a
+                 href="/home"
+              >Bazar Garum</a>
+              </h1>
+	          <h2 id="slogan">Dinamizando Mercados!!!</h2>
+	  </div>
+	  
+
+			<ul id="nav-usuario">
+				<li class="user-links">
+				<a href="/users/2/edit" class="user-link">juantomas</a>
+				<a href="/logout" class="logout-link" title="Cerrar Sesión"><img alt="Icono-logout" src="/images/icono-logout.png?1299161582" /></a>
+				</li>
+				<li class="user-messages">
+				<a href="/mensajes?tipo=N" class="notif-link" title="Notificaciones sin leer"><img alt="Notificacion" src="/images/notificacion.png?1299161582" /></a>
+				<strong>3</strong>
+
+				<a href="/mensajes?tipo=M" class="msgs-link" title="Mensajes sin leer"><img alt="Email" src="/images/email.png?1299161582" /></a>
+				<strong>3</strong>
+
+				</li>
+				<li class="nav-site">
+                <a href="/home" class="home-link" title="Página Principal"><img alt="Icono-home" src="/images/icono-home.png?1299161582" /></a>
+                <a href="/users/2/edit" class="account-link" title="Mi Cuenta"><img alt="Icono-usuario" src="/images/icono-usuario.png?1299161582" /></a>
+                <a href="/bazarcms/empresas/2/edit" class="empresa-link" title="Mi Empresa"><img alt="Group" src="/images/group.png?1299161582" /></a>
+                <a href="/bazarcms/empresasconsultas" class="historial-link" title="Historial de Consultas Realizadas"><img alt="Icono-historial" src="/images/icono-historial.png?1299161582" /></a>
+                <a href="/bazarcms/publicaroferta" class="crear-oferta-link" title="Crear Oferta/Demanda"><img alt="Add" src="/images/add.png?1299161582" /></a>
+                    <a href="#" class="administracion-link" title="Administración"><img alt="Icono-admin" src="/images/icono-admin.png?1299161582" /></a>
+                </li>
+            </ul>
+	  
+        <div id="nav-admin-container">
+             <span class="tapa-blanco"></span>
+             <ul id="nav-admin">
+                 <li><a href="#">Administrador</a>
+		            <ul>
+					  <li><a href="/users">Usuarios</a> </li>
+					  <li><a href="/confs">Configuración del Sistema</a> </li>
+					  <li><a href="/clusters">Gestión Bazares</a> </li>
+					  <li><a href="/notificacion?tipo=N">Notificacion a Usuarios</a> </li>
+					  <li><a href="/updateinfo">Actualización Información</a> </li>
+		            </ul>
+                 </li>
+                 <li><a href="#">Dinamizador</a>
+		            <ul class="links">
+					    <li><a href="/notificacion?tipo=M">Mailing a Usuarios</a> </li>
+					    <li><a href="/noticias">Noticias</a> </li>
+		            </ul>
+                 </li>
+ 			</ul>
+        </div><!-- /#nav-admin-container -->
+        
+        <script>
+            $('.administracion-link').click(function() {
+                $('#nav-admin-container').toggle();
+            });
+        </script>
+ 
+	  <div id="content" class="span-24 last">	
+			<div class="body">
+
+			<div id="contenido" >
+				<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
+
+		<h3 class="page-title">Mensajes <a href="/mensajes?tipo=N" class="opcion-mensajes">Ver Notificaciones</a></h3>
+
+
+<script src="/javascripts/jquery.pageless.js?1302299441" type="text/javascript"></script>
+<div>
+
+<table id="results" class="tabla" cellspacing="0">
+
+  <tr id="head429" style="font-weight:bold; text-align:left;" class="color">
+    
+	<td style="text-align:left;">
+		Geofun Factory
+	</td>
+  
+	<td style="text-align:left;">
+		<a href="#" title="Ver Mensaje" onclick="$('#men429').toggle();$('#head429').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/429'});">RE: mensaje general II</a>
+	</td>
+
+    <td style="text-align:left;">
+		18-04-2011 20:31
+	</td>
+
+    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men429').toggle();$('#head429').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/429'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
+    <a href="/mensajes/429/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
+    <a href="/mensajes/429" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
+  </tr>
+
+  <tr id="men429" style="display: none">
+    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">mensajes<br/>> sdfsadfsdf</td>
+  </tr>  <tr id="head428" style="font-weight:bold; text-align:left;" class="color">
+    
+	<td style="text-align:left;">
+		Geofun Factory
+	</td>
+  
+	<td style="text-align:left;">
+		<a href="#" title="Ver Mensaje" onclick="$('#men428').toggle();$('#head428').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/428'});">RE: mensaje general II</a>
+	</td>
+
+    <td style="text-align:left;">
+		18-04-2011 20:31
+	</td>
+
+    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men428').toggle();$('#head428').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/428'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
+    <a href="/mensajes/428/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
+    <a href="/mensajes/428" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
+  </tr>
+
+  <tr id="men428" style="display: none">
+    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">mensajes<br/>> sdfsadfsdf</td>
+  </tr>  <tr id="head420" style="text-align:left;" class="color">
+    
+	<td style="text-align:left;">
+		Geofun Factory
+	</td>
+  
+	<td style="text-align:left;">
+		<a href="#" title="Ver Mensaje" onclick="$('#men420').toggle();$('#head420').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/420'});">comprobar que va entero</a>
+	</td>
+
+    <td style="text-align:left;">
+		09-04-2011 16:32
+	</td>
+
+    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men420').toggle();$('#head420').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/420'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
+    <a href="/mensajes/420/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
+    <a href="/mensajes/420" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
+  </tr>
+
+  <tr id="men420" style="display: none">
+    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">Estamos terminando de implementar autoscroll en todos las vistas de información. <br/><br/>¿Qué es autoscroll? <br/><br/>Cuando tenemos más registros de los que caben en la pantalla, simplemente con hacer scroll hacía abajo en el navegador los voy añadiendo automáticamente. <br/><br/>Hoy estará implementando en todas las opciones que aparecen en la página de busqueda. De momento se puede probar en: <br/><br/>* favoritos <br/>* actividad del bazar <br/>* consultas realizadas <br/><br/>Estoy terminando los resultados de las búsquedas y los correos/notificaciones. Debería estar acabado hoy. <br/><br/>¿como lo pruebo? <br/><br/>Cada vez que saco un listado en la página principal aparece un enlace al final indicando si hay más información. Si seguimos ese enlace ya puedes usar el autoscroll si hay suficientes registros. En actividad del bazar hay suficientes para que lo experimentéis. <br/><br/>Enjoy!!! </td>
+  </tr>  <tr id="head419" style="font-weight:bold; text-align:left;" class="color">
+    
+	<td style="text-align:left;">
+		geofun factory (bazar)
+	</td>
+  
+	<td style="text-align:left;">
+		<a href="#" title="Ver Mensaje" onclick="$('#men419').toggle();$('#head419').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/419'});">RE: RE: sigue funcionando el correo'????</a>
+	</td>
+
+    <td style="text-align:left;">
+		09-04-2011 11:01
+	</td>
+
+    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men419').toggle();$('#head419').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/419'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
+    <a href="/mensajes/419/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
+    <a href="/mensajes/419" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
+  </tr>
+
+  <tr id="men419" style="display: none">
+    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">pues nada a disfrutarlo ¿no? <br/><br/>> parece que si no? <br/>> <br/>> > `ruebasd</td>
+  </tr>  <tr id="head418" style="text-align:left;" class="color">
+    
+	<td style="text-align:left;">
+		geofun factory (bazar)
+	</td>
+  
+	<td style="text-align:left;">
+		<a href="#" title="Ver Mensaje" onclick="$('#men418').toggle();$('#head418').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/418'});">sigue funcionando el correo'????</a>
+	</td>
+
+    <td style="text-align:left;">
+		09-04-2011 11:00
+	</td>
+
+    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men418').toggle();$('#head418').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/418'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
+    <a href="/mensajes/418/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
+    <a href="/mensajes/418" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
+  </tr>
+
+  <tr id="men418" style="display: none">
+    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">`ruebasd</td>
+  </tr>  <tr id="head417" style="text-align:left;" class="color">
+    
+	<td style="text-align:left;">
+		Geofun Factory
+	</td>
+  
+	<td style="text-align:left;">
+		<a href="#" title="Ver Mensaje" onclick="$('#men417').toggle();$('#head417').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/417'});">RE: mensaje general II</a>
+	</td>
+
+    <td style="text-align:left;">
+		03-03-2011 00:38
+	</td>
+
+    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men417').toggle();$('#head417').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/417'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
+    <a href="/mensajes/417/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
+    <a href="/mensajes/417" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
+  </tr>
+
+  <tr id="men417" style="display: none">
+    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">comprobar que va bien el mensaje<br/>> sdfsadfsdf</td>
+  </tr>  <tr id="head411" style="text-align:left;" class="color">
+    
+	<td style="text-align:left;">
+		Sistema
+	</td>
+  
+	<td style="text-align:left;">
+		<a href="#" title="Ver Mensaje" onclick="$('#men411').toggle();$('#head411').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/411'});">mensaje general II</a>
+	</td>
+
+    <td style="text-align:left;">
+		03-03-2011 00:36
+	</td>
+
+    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men411').toggle();$('#head411').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/411'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
+    <a href="/mensajes/411/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
+    <a href="/mensajes/411" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
+  </tr>
+
+  <tr id="men411" style="display: none">
+    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">sdfsadfsdf</td>
+  </tr>
+
+</table>
+
+<script type="text/javascript">
+//<![CDATA[
+$('#results').pageless({"totalPages":1,"loaderMsg":"Cargando m\u00e1s info","url":"/mensajes"});
+//]]>
+</script>
+
+
+
+
+</div>
+
+
+			</div>
+			<div id="sidebar" style="display:none" >
+	        <ul id="sidebar-items">
+			
+
+			  <li>
+							<ul id="user-menu" class="links">
+								<li class="user-links">
+								<a href="/users/2/edit" class="user-link">juantomas</a>
+								<a href="/logout" class="logout-link" title="Cerrar Sesión"><img alt="Icono-logout" src="/images/icono-logout.png?1299161582" /></a>
+								</li>
+								<li class="user-messages">
+								<a href="/mensajes?tipo=N" class="notif-link" title="Notificaciones"><img alt="Notificacion" src="/images/notificacion.png?1299161582" /></a>
+								(0/1) 
+								
+								<a href="/mensajes?tipo=M" class="msgs-link" title="Mensajes"><img alt="Email" src="/images/email.png?1299161582" /></a>
+								(1/5) 
+
+								</li>
+                            </ul>
+		          </li>	
+	          <li>
+
+
+	            <h3>Modulos de Bazar</h3>
+	            <ul class="links">
+					<li><a href="/home">Página Principal</a></li>
+				    <li><a href="/users/2/edit">Mi cuenta</a> </li>
+				    <li><a href="/bazarcms/empresas/2/edit">Mi empresa</a> </li>
+					<li><a href="/bazarcms/buscadorempresas">Buscador Empresas</a> </li>
+					<li><a href="/bazarcms/empresasconsultas">Consultas Realizadas</a> </li>
+	            </ul>
+
+	          </li>
+
+	          <li>
+
+	            <h3>Administración</h3>
+	
+	            <ul class="links">
+				  <li><a href="/users">Usuarios</a> </li>
+				  <li><a href="/confs">Configuración del Sistema</a> </li>
+				  <li><a href="/clusters">Gestión Bazares</a> </li>
+				  <li><a href="/notificacion?tipo=N">Notificacion a Usuarios</a> </li>
+				  <li><a href="/updateinfo">Actualización Información</a> </li>
+	            </ul>
+
+	          </li>
+
+
+	         <li>
+
+	            <h3>Dinamización</h3>
+	            <ul class="links">
+				    <li><a href="/notificacion?tipo=M">Mailing a Usuarios</a> </li>
+				    <li><a href="/noticias">Noticias</a> </li>
+	            </ul>
+
+	          </li>
+
+	          <li>
+	         </li>
+
+
+			<li>
+				<h3>API</h3>
+				<ul class="links">
+					<li><a href="/api/index">Como obtener información</a></li>
+					<li><a href="/api/ejemplos">Ejemplos API Bazar</a></li>
+				</ul>
+			</li>
+
+
+	        </ul>
+	     </div>	
+			</div>
+			
+			
+			
+			
+	  </div>
+
+		<div id="footer">
+	    		<a href="http://garumfundatio.org" style="text-decoration: none">Garum Fundatio</a>
+		</div> <!-- fin footer-->
+
+	
+
+  </div> <!-- fin container -->
+
+<div id="ClickTaleDiv" style="display: none;" />
+
+<script src="http://s.clicktale.net/WRb.js" type="text/javascript"></script>
+<script type="text/javascript">
+  if(typeof ClickTale == 'function') { 
+    var ClickTaleFetchFrom = 'http://localhost:3000/clicktale/ca6a308ac1dbd2640db8cc0d11dc2e8aa2905279.html';
+    ClickTale(16079, 1, "www02");
+  }
+</script>
+
+
+
+  </body>
+</html>
+
+
+

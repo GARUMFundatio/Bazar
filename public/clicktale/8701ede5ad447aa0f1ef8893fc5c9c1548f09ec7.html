@@ -1,0 +1,20 @@
+	<p>No tiene ningún sector asociado a su empresa.</p>
+	<p>Para encontrar el sector que más se ajusta a su empresa, escriba una o varias palabras que defina el sector al que pertenece.</p>
+	<p>Puede escoger tantos como crea convenientes y actualizarlos en cualquier momento.</p>
+	<p>Cuantos más dígitos tengo el código más especifica su actividad.</p>
+
+
+<script>
+
+function borra (cod, tipo) {
+	
+	if (tipo == "O") {
+		$('#missectores').load('/bazarcms/delperfil?tipo=O&codigo='+cod);
+	}
+	else {
+		$('#misdemandas').load('/bazarcms/delperfil?tipo=D&codigo='+cod);
+	}
+	
+}
+
+</script>

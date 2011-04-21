@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados Bazar Garum, Dinamizando Mercados!!!" /> 
+	<meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, Bazar Garum, Dinamizando Mercados!!!" /> 
+	
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	
+	<title>Bazar Garum</title>
+	<script src="/javascripts/jquery.js?1299161582" type="text/javascript"></script>
+<script src="/javascripts/jquery-ujs/src/rails.js?1299161582" type="text/javascript"></script>
+	<script src="/javascripts/jquery-ui.js?1299161582" type="text/javascript"></script>
+	<script src="/javascripts/jquery.cycle.all.min.js?1299161582" type="text/javascript"></script>
+
+	<link href="/stylesheets/bazar.css?1302644980" media="screen" rel="stylesheet" type="text/css" />
+
+	
+	<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="UUYzAiUqo2mrccLxMdW/xojx1uqqwYrCAl4355K2Vmo="/>
+	
+
+	
+  </head>
+	
+			<body class="logueado"><!-- si usuario logueado -->
+
+<script type="text/javascript">
+  var WRInitTime=(new Date()).getTime();
+</script>
+
+	
+   <div class="container">
+
+	  <div id="header">
+		      <h1 id="title"><a
+                 href="/home"
+              >Bazar Garum</a>
+              </h1>
+	          <h2 id="slogan">Dinamizando Mercados!!!</h2>
+	  </div>
+	  
+
+			<ul id="nav-usuario">
+				<li class="user-links">
+				<a href="/users/2/edit" class="user-link">juantomas</a>
+				<a href="/logout" class="logout-link" title="Cerrar Sesión"><img alt="Icono-logout" src="/images/icono-logout.png?1299161582" /></a>
+				</li>
+				<li class="user-messages">
+				<a href="/mensajes?tipo=N" class="notif-link" title="Notificaciones sin leer"><img alt="Notificacion" src="/images/notificacion.png?1299161582" /></a>
+				<strong>0</strong>
+
+				<a href="/mensajes?tipo=M" class="msgs-link" title="Mensajes sin leer"><img alt="Email" src="/images/email.png?1299161582" /></a>
+				<strong>1</strong>
+
+				</li>
+				<li class="nav-site">
+                <a href="/home" class="home-link" title="Página Principal"><img alt="Icono-home" src="/images/icono-home.png?1299161582" /></a>
+                <a href="/users/2/edit" class="account-link" title="Mi Cuenta"><img alt="Icono-usuario" src="/images/icono-usuario.png?1299161582" /></a>
+                <a href="/bazarcms/empresas/2/edit" class="empresa-link" title="Mi Empresa"><img alt="Group" src="/images/group.png?1299161582" /></a>
+                <a href="/bazarcms/empresasconsultas" class="historial-link" title="Historial de Consultas Realizadas"><img alt="Icono-historial" src="/images/icono-historial.png?1299161582" /></a>
+                <a href="/bazarcms/publicaroferta" class="crear-oferta-link" title="Crear Oferta/Demanda"><img alt="Add" src="/images/add.png?1299161582" /></a>
+                    <a href="#" class="administracion-link" title="Administración"><img alt="Icono-admin" src="/images/icono-admin.png?1299161582" /></a>
+                </li>
+            </ul>
+	  
+        <div id="nav-admin-container">
+             <span class="tapa-blanco"></span>
+             <ul id="nav-admin">
+                 <li><a href="#">Administrador</a>
+		            <ul>
+					  <li><a href="/users">Usuarios</a> </li>
+					  <li><a href="/confs">Configuración del Sistema</a> </li>
+					  <li><a href="/clusters">Gestión Bazares</a> </li>
+					  <li><a href="/notificacion?tipo=N">Notificacion a Usuarios</a> </li>
+					  <li><a href="/updateinfo">Actualización Información</a> </li>
+		            </ul>
+                 </li>
+                 <li><a href="#">Dinamizador</a>
+		            <ul class="links">
+					    <li><a href="/notificacion?tipo=M">Mailing a Usuarios</a> </li>
+					    <li><a href="/noticias">Noticias</a> </li>
+		            </ul>
+                 </li>
+ 			</ul>
+        </div><!-- /#nav-admin-container -->
+        
+        <script>
+            $('.administracion-link').click(function() {
+                $('#nav-admin-container').toggle();
+            });
+        </script>
+ 
+	  <div id="content" class="span-24 last">	
+			<div class="body">
+
+			<div id="contenido" >
+				
+<div id="cajabusqueda">
+<div class="demo">
+
+<p class="busqueda-principal">
+<input id="busca" name="busqueda" size="30" type="text">
+
+</p>
+
+<a id="busqueda-link" href="#busqueda-busqueda">Búsqueda Avanzada</a>
+<script>
+$('#busqueda-link').click(function() {
+  $('#avanzada').slideToggle(250);
+});
+
+
+</script>
+
+
+	<style>
+	#demo-frame > div.demo { padding: 1px !important; };
+	</style>
+	
+	<script>
+	
+      var listaRE = [];
+      var listaRE2 = [];
+      var maxRE = 0;
+      listaRE[5] = '50';
+        listaRE2[5] = '99';
+        listaRE[0] = '1';
+        listaRE2[0] = '2';
+        listaRE[9] = '1000';
+        listaRE2[9] = '4999';
+        listaRE[2] = '6';
+        listaRE2[2] = '9';
+        listaRE[8] = '500';
+        listaRE2[8] = '999';
+        listaRE[7] = '200';
+        listaRE2[7] = '499';
+        listaRE[3] = '10';
+        listaRE2[3] = '19';
+        listaRE[1] = '3';
+        listaRE2[1] = '5';
+        listaRE[10] = '+ 5000';
+        listaRE2[10] = '+ 5000';
+        listaRE[4] = '20';
+        listaRE2[4] = '49';
+        listaRE[6] = '100';
+        listaRE2[6] = '199';
+        
+      maxRE = 10;
+      
+	
+      var listaRD = [];
+      var listaRD2 = [];
+      var maxRD = 0;
+      listaRD[3] = '3';
+        listaRD2[3] = '5 M';
+        listaRD[7] = '50';
+        listaRD2[7] = '99 M';
+        listaRD[5] = '10';
+        listaRD2[5] = '19 M';
+        listaRD[10] = '+ 500 M';
+        listaRD2[10] = '+ 500 M';
+        listaRD[2] = '1';
+        listaRD2[2] = '2 M';
+        listaRD[9] = '200';
+        listaRD2[9] = '499 M';
+        listaRD[4] = '6';
+        listaRD2[4] = '9 M';
+        listaRD[8] = '100';
+        listaRD2[8] = '199 M';
+        listaRD[1] = '0.6';
+        listaRD2[1] = '0.9 M';
+        listaRD[0] = '0';
+        listaRD2[0] = '0.5 M';
+        listaRD[6] = '20';
+        listaRD2[6] = '49 M';
+        
+      maxRD = 10;
+      
+	
+	$(function() {
+		$( "#slider-range" ).slider({
+			range: true,
+			min: 0,
+			max: maxRE,
+			values: [ 0, maxRE ],
+			slide: function( event, ui ) {
+				$( "#empleados" ).val( "Entre: " + listaRE[ui.values[ 0 ]] + " y " + listaRE2[ui.values[ 1 ]]  );
+				$( "#empleados2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+			}
+		});
+		$( "#empleados" ).val( "Todos");
+		$( "#empleados2" ).val( "0+"+maxRE);
+		
+
+		$( "#slider-range2" ).slider({
+			range: true,
+			min: 0,
+			max: maxRD,
+			values: [ 0, maxRD ],
+			slide: function( event, ui ) {
+				$( "#ventas" ).val( "Entre: " + listaRD[ui.values[ 0 ]] + " y " + listaRD2[ui.values[ 1 ]] );
+				$( "#ventas2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+			}
+		});
+		
+		$( "#compras" ).val( "Todos");
+		$( "#compras2" ).val( "0+"+maxRD);
+
+		$( "#ventas" ).val( "Todos");
+		$( "#ventas2" ).val( "0+"+maxRD);
+
+		$( "#slider-range3" ).slider({
+			range: true,
+			min: 0,
+			max: maxRD,
+			values: [ 0, maxRD ],
+			slide: function( event, ui ) {
+				$( "#compras" ).val( "Entre: " + listaRD[ui.values[ 0 ]] + " y " + listaRD2[ui.values[ 1 ]] );
+				$( "#compras2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+			}
+		});
+
+
+		$( "#slider-range4" ).slider({
+			range: true,
+			min: 0,
+			max: maxRD,
+			values: [ 0, maxRD ],
+			slide: function( event, ui ) {
+				$( "#resultados" ).val( "Entre: " + listaRD[ui.values[ 0 ]] + " y " + listaRD2[ui.values[ 1 ]] );
+				$( "#resultados2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+			}
+		});
+		$( "#resultados" ).val( "Todos");
+		$( "#resultados2" ).val( "0+"+maxRD);
+
+		
+	});
+	
+
+	</script>
+
+<div id="avanzada" style="display:none">
+
+<h3>Filtrar por Perfiles</h3>
+
+<div id="filtro-perfiles">
+<table cellspacing="0" class="tabla">
+	<tr><th>Ofrecen:</th><th>Empresas que sean de estos sectores</th></tr>
+	<tr>
+		<td valign="top" style="width: 420px;">
+		<form action="#loquesea" id="perfiles-ofertas-form">
+		 	<label for="query1">Buscar en sectores</label> <input type="text" name="q" id="query1" />
+		 </form>
+		 <input type="hidden" id="pofertan" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>					
+		<td valign="top" >
+		<div id="filtroofertan">
+			<p>Seleccione uno o varios sectores en la caja de búsqueda.</p>
+			<p><b>Solo</b> las empresas que estén en <b>alguno</b> de estos sectores.</p>
+		</div>
+		</td>
+	</tr>
+</table>
+
+<table cellspacing="0" class="tabla">
+	<tr><th>Demandan:</th><th>Empresas que sean de estos sectores</th></tr>
+	<tr>
+		<td valign="top" style="width: 420px;">
+		<form action="#loquesea" id="perfiles-demandas-form" >
+		 	<label for="query2">Buscar en sectores</label> <input type="text" name="q" id="query2" />
+		 </form>
+		 <input type="hidden" id="pdemandan" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>					
+		<td valign="top">
+			<div id="filtrodemandan">
+				<p>Seleccione uno o varios sectores en la caja de búsqueda.</p>
+				<p><b>Solo<b/> las empresas que estén en <b>alguno</b> de estos sectores.</p>
+			</div>
+		</td>
+	</tr>
+</table>
+
+</div><!-- /#filtro-perfiles -->
+
+
+<script type="text/javascript">
+ //<![CDATA[
+
+var a1;
+var a2;
+var tot1 = 0; 
+var tot2 = 0;
+var lis1 = [];
+var lab1 = [];
+var ayuda1 = [];
+var html1 = "";
+var lis2 = [];
+var lab2 = [];
+var ayuda2 = [];
+var html2 = "";
+
+function borraofertan(cual) {
+	var ii;
+	if (cual == 0 && tot1 == 0) {
+		tot1 = 0;
+		$('#pofertan').val("");
+	}
+	else {
+
+		var ii;
+		for (ii = cual; ii < tot1 -1; ii++) {
+			lis1[ii] = lis1[ii+1];
+			lab1[ii] = lab1[ii+1];
+			ayuda1[ii] = ayuda1[ii+1];
+		}
+		tot1 = tot1 - 1;
+		
+	}
+	pintaofertan();
+};
+
+function pintaofertan() {
+
+	
+	if (tot1 == 0) {
+		html1 = "";
+		$('#filtroofertan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>");
+		$('#pofertan').val("");
+	}
+	else {
+		html1 = "";
+		bus = "";
+		var ii = 0;
+		for (ii = 0; ii < tot1; ii++) {
+			html1 += '<div class="perfil">';
+			html1 += '	<div class="nombre-perfil">'+lab1[ii]+'</div>';
+			html1 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#O"+lis1[ii]+"\').slideToggle(250);\">";
+			html1 += " <img src='/images/papelera.png' border='0' onclick='borraofertan("+ii+");'></span>";
+			html1 += '<div class="descripcion-perfil" id="O'+lis1[ii]+'" style="display:none">';
+    		html1 += '<p>'+ayuda1[ii]+'</p>';
+    		html1 += "<a class='ocultar-link' href='#' onclick=\"$('#O"+lis1[ii]+"\').slideToggle(250);\">Ocultar la descripción</a>";
+    		html1 += "</div>";
+			html1 += "</div>";
+			
+			bus += lis1[ii]+","
+		}
+		$('#filtroofertan').html(html1);
+		
+		$('#pofertan').val(bus);
+	}
+};
+
+
+function borrademandan(cual) {
+	var ii;
+	if (cual == 0 && tot2 == 0) {
+		tot2 = 0;
+		$('#pdemandan').val("");
+	}
+	else {
+
+		var ii;
+		for (ii = cual; ii < tot2 -1; ii++) {
+			lis2[ii] = lis2[ii+1];
+			lab2[ii] = lab2[ii+1];
+			ayuda2[ii] = ayuda2[ii+1]
+		}
+		tot2 = tot2 - 1;
+		
+	}
+	pintademandan();
+};
+
+function pintademandan() {
+	
+	if (tot2 == 0) {
+		html2 = "";
+		$('#filtrodemandan').html("<p>Seleccione uno o varios sectores en la caja de búsqueda</p>");
+		$('#pdemandan').val("");
+	}
+	else {
+		html2 = "";
+		bus = "";
+		var ii = 0;
+		for (ii = 0; ii < tot2; ii++) {
+			
+			
+			html2 += '<div class="perfil">';
+			html2 += '	<div class="nombre-perfil">'+lab2[ii]+'</div>';
+			html2 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#D"+lis2[ii]+"\').slideToggle(250);\">";
+			html2 += " <img src='/images/papelera.png' border='0' onclick='borrademandan("+ii+");'></span>";
+			html2 += '<div class="descripcion-perfil" id="D'+lis2[ii]+'" style="display:none">';
+    		html2 += '<p>'+ayuda2[ii]+'</p>';
+    		html2 += "<a class='ocultar-link' href='#' onclick=\"$('#D"+lis2[ii]+"\').slideToggle(250);\">Ocultar la descripción</a>";
+    		html2 += "</div>";
+			html2 += "</div>";
+			
+			bus += lis2[ii]+",";
+		}
+		$('#filtrodemandan').html(html2);
+
+		$('#pdemandan').val(bus);
+	}
+};
+
+jQuery(function() {
+ 
+	var options = {
+	  width: 300,
+	  delimiter: /(,|;)\s*/,
+	  deferRequestBy: 150, //miliseconds
+	  params: { tipo: 'O' },
+	  source: "/bazarcms/busquedaperfiles.json",
+	  minLength: 2,
+	  select: function(event, ui) {
+
+		var esta = 0; 
+		
+		for (ii = 0; ii < tot1; ii++) {
+			if (lis1[ii] === ui.item.id) {
+				esta = 1; 		
+			}
+		}
+		if (!esta) {
+			lis1[tot1] = ui.item.id;
+			lab1[tot1] = ui.item.label;
+			ayuda1[tot1] = ui.item.ayuda;
+			tot1 += 1;
+		}
+		
+		pintaofertan();
+		$("#query1").val("");
+		
+		return false;
+	  },
+	  noCache: false //set to true, to disable caching
+	};
+
+
+	
+	a1 = $('#query1').autocomplete(options);
+  
+	var options2 = {
+	  width: 300,
+	  delimiter: /(,|;)\s*/,
+	  deferRequestBy: 150, //miliseconds
+	  params: { tipo: 'O' },
+	  source: "/bazarcms/busquedaperfiles.json",
+	  minLength: 2,
+	  select: function(event, ui) {
+		
+		var esta = 0; 
+
+		for (ii = 0; ii < tot2; ii++) {
+			if (lis2[ii] === ui.item.id) {
+				esta = 1; 		
+			}
+		}
+		if (!esta) {
+			lis2[tot2] = ui.item.id;
+			lab2[tot2] = ui.item.label;
+			ayuda2[tot2] = ui.item.ayuda;
+			tot2 += 1;
+		}
+		
+		$("#query2").val("");
+		pintademandan();
+
+		return false;
+	  },
+	  noCache: false //set to true, to disable caching
+	};
+ 
+	a2 = $('#query2').autocomplete(options2);
+
+    $('#query1').keypress(function (e) {
+        var code = null;
+        code = (e.keyCode ? e.keyCode : e.which);
+        return (code == 13) ? false : true;
+    });
+
+    $('#query2').keypress(function (e) {
+        var code = null;
+        code = (e.keyCode ? e.keyCode : e.which);
+        return (code == 13) ? false : true;
+    });
+
+});
+ 
+//]]>
+</script>
+
+
+<h3>Filtrar por País</h3>
+
+<div id="filtro-pais">
+
+	<table cellspacing="0" class="tabla">
+		<tr><th>Países:</th><th>Países Seleccionados:</th></tr>
+		<tr>
+			<td valign="top" style="width: 420px;">
+			<form action="#loquesea" id="paises-form" >
+                <label for="query3">Buscar Países</label>
+                <input type="text" name="q" id="query3" />
+			 </form>
+			 <input type="hidden" id="ppaises" style="border:0; color:#f6931f; font-weight:bold;" />
+			</td>					
+			<td>
+				<div id="mispaises">
+					<p>Seleccione uno o varios países en la caja de búsqueda</p>
+					<p>Para buscar use el nombre Internacional. Por ejemplo: Francia -> France .</p>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+
+</div><!-- /#filtro-pais -->
+
+<script type="text/javascript">
+ //<![CDATA[
+
+	var tot3 = 0; 
+	var lis3 = [];
+	var lab3 = [];
+	var ayuda3 = [];
+	var html3 = "";
+
+	function borrapaises(cual) {
+		var ii;
+		if (cual == 0 && tot3 == 0) {
+			tot3 = 0;
+			$('#ppaises').val("");
+		}
+		else {
+
+			var ii;
+			for (ii = cual; ii < tot3 -1; ii++) {
+				lis3[ii] = lis3[ii+1];
+				lab3[ii] = lab3[ii+1];
+				ayuda3[ii] = ayuda3[ii+1]
+			}
+			tot3 = tot3 - 1;
+		}
+		pintapaises();
+	};
+
+	function pintapaises() {
+
+		if (tot3 == 0) {
+			html3 = "";
+			$('#mispaises').html("<p>Seleccione uno o varios países en la caja de búsqueda.</p><p>Puedes buscar también por código de País Ej: GB . La búsqueda es por el nombre internacional. Ej: Francia -> France.</p>");
+			$('#ppaises').val("");
+		}
+		else {
+			html3 = "";
+			bus = "";
+			var ii = 0;
+			for (ii = 0; ii < tot3; ii++) {
+
+
+				html3 += '<div class="perfil">';
+				html3 += '	<div class="nombre-perfil">'+lab3[ii]+'</div>';
+				html3 += "<span class='opciones-perfil'><img title='Ver Descripción' src='/images/help.png' border='0' onclick=\"$('#P"+lis3[ii]+"\').slideToggle(250);\">";
+				html3 += " <img src='/images/papelera.png' border='0' onclick='borrapaises("+ii+");'></span>";
+				html3 += '<div class="descripcion-perfil" id="P'+lis3[ii]+'" style="display:none">';
+	    		html3 += '<p>'+ayuda3[ii]+'</p>';
+	    		html3 += "<a class='ocultar-link' href='#' onclick=\"$('#P"+lis3[ii]+"\').slideToggle(250);\">Ocultar la descripción</a>";
+	    		html3 += "</div>";
+				html3 += "</div>";
+
+				bus += lis3[ii]+",";
+			}
+			$('#mispaises').html(html3);
+
+			$('#ppaises').val(bus);
+		}
+	};
+
+	jQuery(function() {
+
+		var options = {
+		  width: 300,
+		  delimiter: /(,|;)\s*/,
+		  deferRequestBy: 150, //miliseconds
+		  params: { tipo: 'O' },
+		  source: "/busquedapaises.json",
+		  minLength: 2,
+		  select: function(event, ui) {
+
+			var esta = 0; 
+
+			for (ii = 0; ii < tot3; ii++) {
+				if (lis3[ii] === ui.item.id) {
+					esta = 1; 		
+				}
+			}
+			if (!esta) {
+				lis3[tot3] = ui.item.id;
+				lab3[tot3] = ui.item.label;
+				ayuda3[tot3] = ui.item.ayuda;
+				tot3 += 1;
+			}
+
+			pintapaises();
+			$("#query3").val("");
+
+			return false;
+		  },
+		  noCache: false //set to true, to disable caching
+		};
+
+		
+		a1 = $('#query3').autocomplete(options);
+
+	    $('#query3').keypress(function (e) {
+	        var code = null;
+	        code = (e.keyCode ? e.keyCode : e.which);
+	        return (code == 13) ? false : true;
+	    });
+
+	});
+
+//]]>
+</script>
+
+
+<h3>Filtrar por Datos Económicos</h3>
+
+<div id="filtro-datos-economicos">
+<table border="0" cellspacing="0">
+	<tr>
+		<td width="350px">
+			<label for="empleados">Nº Empleados:</label>
+
+		</td>
+		<td width="200px">
+			<div id="slider-range"></div>
+		</td>
+		<td>
+            <input type="text" size="35" id="empleados" readonly="readonly" style="border:0; color:#f6931f; font-weight:bold;" />
+            <input type="hidden" id="empleados2" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="0">
+	<tr>
+		<td width="350px">
+			<label for="compras">Compras:</label>
+		</td>
+		<td width="200px">
+			<div id="slider-range3"></div>
+		</td>
+		<td>
+            <input type="text" size="35" id="compras" readonly="readonly" style="border:0; color:#f6931f; font-weight:bold;" />
+            <input type="hidden" id="compras2" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>
+	</tr>
+</table>
+
+<table border="0" cellspacing="0">
+	<tr>
+		<td width="350px">
+			<label for="ventas">Ventas:</label>
+		</td>
+		<td width="200px">
+			<div id="slider-range2"></div>
+		</td>
+        <td>
+            <input type="text" size="35" id="ventas" readonly="readonly" style="border:0; color:#f6931f; font-weight:bold;" />
+            <input type="hidden" id="ventas2" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>
+	</tr>
+</table>
+
+
+<table border="0" cellspacing="0">
+	<tr>
+		<td width="350px">
+			<label for="resultados">Resultados:</label>
+		</td>
+		<td width="200px">
+			<div id="slider-range4"></div>
+		</td>
+		<td>
+            <input type="text" size="35" id="resultados" readonly="readonly" style="border:0; color:#f6931f; font-weight:bold;" />
+            <input type="hidden" id="resultados2" style="border:0; color:#f6931f; font-weight:bold;" />
+		</td>
+	</tr>
+</table>
+</div><!-- /#filtro-datos-economicos -->
+
+<h3>Ayuda Búsqueda Avanzada <a id="ayuda-busqueda-link" href="#ayuda-busqueda">Ver/ocultar</a></h3>
+<script>
+$('#ayuda-busqueda-link').click(function() {
+  $('#ayuda-busqueda').slideToggle(250);
+});
+</script>
+
+     <div id="ayuda-busqueda">
+          <ul id="pasos-container">
+          <li class="paso" id="paso1">
+               <div>Introduzca los términos de la búsqueda</div>
+               <img src="/images/ayuda-busqueda-paso1.gif" alt="" />
+          </li>
+          <li class="paso" id="paso2">
+               <div>Puede usar asteriscos o espacios para buscar por varias palabras.</div>
+               <img src="/images/ayuda-busqueda-paso2.gif" alt="" />
+          </li>
+          <li class="paso" id="paso3">
+               <div>Use los desplazadores para limitar la búsqueda.</div>
+               <img src="/images/ayuda-busqueda-paso3.gif" alt="" />
+          </li>
+          <li class="paso" id="paso4">
+               <div>Pulse Buscar para empezar la búsqueda</div>
+               <img src="/images/ayuda-busqueda-paso4.gif" alt="" />
+          </li>
+          <li class="paso" id="paso5">
+               <div>Progreso de la búsqueda</div>
+               <img src="/images/ayuda-busqueda-paso5.gif" alt="" />
+          </li>
+          <li class="paso" id="paso6">
+               <div>Navegue por los resultados.</div>
+               <img src="/images/ayuda-busqueda-paso6.gif" alt="" />
+          </li>
+          </ul>
+
+          <div class="pasos-nav-pyn">
+          <a href="#" id="prev-paso">Anterior</a>
+          <a href="#" id="next-paso">Siguiente</a>
+          </div>
+
+     </div><!-- /#ayuda-busqueda-->
+
+     <script>
+             $('#pasos-container')
+                .before('<div id="pasos-nav">')
+                .cycle({
+                   fx:     'scrollHorz',
+                   speed:  '500',
+                   timeout: 0,
+                   next:   '#next-paso',
+                   prev:   '#prev-paso',
+                   pager:  '#pasos-nav'
+                });
+     </script>
+     <div id="cajabusqueda2">
+         <button>Buscar</button>
+     </div><!-- /#cajabusqueda2 -->
+</div><!-- /#avanzada-->
+
+<p id="opciones-busqueda">
+  <span><label id="check-ofertas"><input type="radio" name="size"> Ofertas </label></span>
+  <span><label id="check-demandas"><input type="radio" name="size"> Demandas </label></span>
+  <span><label id="check-empresas"><input type="radio" name="size" checked="checked"> Empresas</label></span>
+</p>
+
+
+ <button>Buscar</button>
+ <a href="/bazarcms/publicaroferta" id="publicar-link" ><strong>Publicar </strong>Oferta / Demanda</a>
+
+</div><!-- /.demo -->
+
+</div><!-- /#cajabusqueda -->
+
+<br />
+
+<div id="estado" style="display: none; width:550px; margin-bottom: 15px;" >
+	<style>
+		.ui-progressbar-value { background-image: url(/images/pbar-ani.gif); }
+	</style>
+	<script>
+		$(function() {
+			$( "#progressbar" ).progressbar({ value: 0});
+		});
+	</script>
+	<div id="progressbar" style="display: none"></div>
+	<div id="estadotexto" style="display: none"></div>
+</div>
+
+<div id="resultados">
+
+</div><!-- /#resultados-->
+
+<div id="lista">
+
+</div>
+
+<script>
+
+function lanzabusqueda() {
+		$('#lista').html('Enviando peticiones a los bazares');
+		// $('#lista').load('/bazarcms/enviabusqueda?q='+escape($("#busca").val()));
+		s = $("#busca").val();
+		if (s.length == 0) {
+			s = '*';
+		}
+		s = s.replace(/ /g, "+");
+
+		// TODO solo deberíamos enviarlos si esta activada la búsqueda avazanda ;-) 
+
+		if ( $("#avanzada").is(":visible") ) { 
+			emple = $("#empleados2").val();
+			ventas = $("#ventas2").val();
+			compras = $("#compras2").val();
+			resultados = $("#resultados2").val();
+			pofertan = $("#pofertan").val();
+			pdemandan = $("#pdemandan").val();
+			ppaises = $("#ppaises").val();
+			
+		}
+		else {
+			emple = "0 10";
+			ventas = "0 10";
+			compras = "0 10";
+			resultados = "0 10";
+			pofertan = "";
+			pdemandan = "";
+			ppaises = "";				
+		}
+
+		$('#avanzada').hide('slow');
+		$("#estado").show();
+		$("#progressbar").show();
+		$("#busca").focus();
+		$("#estadotexto").show();
+
+		$("#estadotexto").html('Buscando ...');
+	
+		$.ajax({
+		  async:true, 
+		  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan+'&ppaises='+ppaises, 
+		  success: function(data) {
+		    $('#lista').html(data);
+			clearInterval(actualiza);
+
+			$('#progressbar').hide();
+			$("#progressbar").progressbar({ value: 0});
+
+			$('#estadotexto').hide();
+			$("#estadotexto").html('');
+			$("#busca").focus();
+			clearInterval(actualiza);
+		  }
+		});
+		
+		var actualiza = setInterval(function(){
+			$.get('/bazarcms/estadobusqueda', function(data) {
+				$("#progressbar").progressbar({ value: (data[0].empresasconsulta.total_respuestas * 100) / data[0].empresasconsulta.total_consultas});
+				$("#estadotexto").html(data[0].empresasconsulta.total_resultados +' Empresas de '+ data[0].empresasconsulta.total_respuestas +' Bazares');
+			});
+	     },1000);
+		
+		return false;
+};
+
+	$(function() {
+		$("button", ".demo").button();
+		$("button", ".demo").click(function(){lanzabusqueda();});
+		
+		$('#busca').keypress(function (e) {
+	        var code = null;
+	        code = (e.keyCode ? e.keyCode : e.which);
+	        if ( code == 13) {
+				lanzabusqueda();
+			}
+			return (code == 13) ? false : true;
+	    });
+
+	});
+
+	
+</script>
+
+<div id="ofertas">
+
+	<script>
+	$('#ofertas').load("/ofertas/dashboard");
+	</script>
+	
+</div>
+
+<div id="favoritos">
+
+	<script>
+	$('#favoritos').load("/favorito/dashboard");
+	</script>
+	
+</div>
+
+<div id="mensajes">
+
+	<script>
+	$('#mensajes').load("/mensaje/dashboard");
+	</script>
+	
+</div>
+
+
+<div id="actividades">
+
+	<script>
+	$('#actividades').load("/actividad/dashboard");
+	</script>
+
+</div>
+
+			</div>
+			<div id="sidebar" style="display:none" >
+	        <ul id="sidebar-items">
+			
+
+			  <li>
+							<ul id="user-menu" class="links">
+								<li class="user-links">
+								<a href="/users/2/edit" class="user-link">juantomas</a>
+								<a href="/logout" class="logout-link" title="Cerrar Sesión"><img alt="Icono-logout" src="/images/icono-logout.png?1299161582" /></a>
+								</li>
+								<li class="user-messages">
+								<a href="/mensajes?tipo=N" class="notif-link" title="Notificaciones"><img alt="Notificacion" src="/images/notificacion.png?1299161582" /></a>
+								(0/1) 
+								
+								<a href="/mensajes?tipo=M" class="msgs-link" title="Mensajes"><img alt="Email" src="/images/email.png?1299161582" /></a>
+								(1/5) 
+
+								</li>
+                            </ul>
+		          </li>	
+	          <li>
+
+
+	            <h3>Modulos de Bazar</h3>
+	            <ul class="links">
+					<li><a href="/home">Página Principal</a></li>
+				    <li><a href="/users/2/edit">Mi cuenta</a> </li>
+				    <li><a href="/bazarcms/empresas/2/edit">Mi empresa</a> </li>
+					<li><a href="/bazarcms/buscadorempresas">Buscador Empresas</a> </li>
+					<li><a href="/bazarcms/empresasconsultas">Consultas Realizadas</a> </li>
+	            </ul>
+
+	          </li>
+
+	          <li>
+
+	            <h3>Administración</h3>
+	
+	            <ul class="links">
+				  <li><a href="/users">Usuarios</a> </li>
+				  <li><a href="/confs">Configuración del Sistema</a> </li>
+				  <li><a href="/clusters">Gestión Bazares</a> </li>
+				  <li><a href="/notificacion?tipo=N">Notificacion a Usuarios</a> </li>
+				  <li><a href="/updateinfo">Actualización Información</a> </li>
+	            </ul>
+
+	          </li>
+
+
+	         <li>
+
+	            <h3>Dinamización</h3>
+	            <ul class="links">
+				    <li><a href="/notificacion?tipo=M">Mailing a Usuarios</a> </li>
+				    <li><a href="/noticias">Noticias</a> </li>
+	            </ul>
+
+	          </li>
+
+	          <li>
+	         </li>
+
+
+			<li>
+				<h3>API</h3>
+				<ul class="links">
+					<li><a href="/api/index">Como obtener información</a></li>
+					<li><a href="/api/ejemplos">Ejemplos API Bazar</a></li>
+				</ul>
+			</li>
+
+
+	        </ul>
+	     </div>	
+			</div>
+			
+			
+			
+			
+	  </div>
+
+		<div id="footer">
+	    		<a href="http://garumfundatio.org" style="text-decoration: none">Garum Fundatio</a>
+		</div> <!-- fin footer-->
+
+	
+
+  </div> <!-- fin container -->
+
+<div id="ClickTaleDiv" style="display: none;" />
+
+<script src="http://s.clicktale.net/WRb.js" type="text/javascript"></script>
+<script type="text/javascript">
+  if(typeof ClickTale == 'function') { 
+    var ClickTaleFetchFrom = 'http://localhost:3000/clicktale/c06abfabc56b0f5ea0506435b61d5cb1fa5598f4.html';
+    ClickTale(16079, 1, "www02");
+  }
+</script>
+
+
+
+  </body>
+</html>
+
+
+

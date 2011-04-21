@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Bazar Garum: Noticias</title>
+    <description>Dinamizando Mercados!!!</description>
+    <link>http://bazargarum.dyndns.org:3000</link>
+    <item>
+      <title>Ya estamos online</title>
+      <description>Este es el primer bazar online</description>
+      <pubDate>Mon, 31 Jan 2011 00:00:00 +0000</pubDate>
+      <link>http://bazargarum.dyndns.org:3000</link>
+      <guid>http://bazargarum.dyndns.org:3000</guid>
+    </item>
+    <item>
+      <title>si quieres registrarte </title>
+      <description>env&#237;a un mensaje a info@garumfundatio.org</description>
+      <pubDate>Mon, 24 Jan 2011 00:00:00 +0000</pubDate>
+      <link>http://bazargarum.dyndns.org:3000</link>
+      <guid>http://bazargarum.dyndns.org:3000</guid>
+    </item>
+    <item>
+      <title>Ya tenemos 3 bazares online</title>
+      <description>y seguimos creciendo</description>
+      <pubDate>Mon, 24 Jan 2011 00:00:00 +0000</pubDate>
+      <link>http://bazargarum.dyndns.org:3000</link>
+      <guid>http://bazargarum.dyndns.org:3000</guid>
+    </item>
+  </channel>
+</rss>

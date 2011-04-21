@@ -13,6 +13,7 @@ $('#busqueda-link').click(function() {
   $('#avanzada').slideToggle(250);
 });
 
+tipo = 'E';
 
 </script>
 
@@ -600,9 +601,9 @@ $('#ayuda-busqueda-link').click(function() {
 </div><!-- /#avanzada-->
 
 <p id="opciones-busqueda">
-  <span><label id="check-ofertas"><input type="radio" name="size"> Ofertas </label></span>
-  <span><label id="check-demandas"><input type="radio" name="size"> Demandas </label></span>
-  <span><label id="check-empresas"><input type="radio" name="size" checked="checked"> Empresas</label></span>
+  <span><label id="check-ofertas" onclick="tipo='O';"><input type="radio" name="size"> Ofertas </label></span>
+  <span><label id="check-demandas" onclick="tipo='D';"><input type="radio" name="size"> Demandas </label></span>
+  <span><label id="check-empresas" onclick="tipo='E';"><input type="radio" name="size" checked="checked"> Empresas</label></span>
 </p>
 
 
@@ -639,8 +640,9 @@ $('#ayuda-busqueda-link').click(function() {
 <script>
 
 function lanzabusqueda() {
+
 		$('#lista').html('Enviando peticiones a los bazares');
-		// $('#lista').load('/bazarcms/enviabusqueda?q='+escape($("#busca").val()));
+
 		s = $("#busca").val();
 		if (s.length == 0) {
 			s = '*';
@@ -675,30 +677,65 @@ function lanzabusqueda() {
 		$("#busca").focus();
 		$("#estadotexto").show();
 
-		$("#estadotexto").html('Buscando ...');
-	
-		$.ajax({
-		  async:true, 
-		  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan+'&ppaises='+ppaises, 
-		  success: function(data) {
-		    $('#lista').html(data);
-			clearInterval(actualiza);
+		if (tipo == 'E') {
+			$("#estadotexto").html('Buscando Empresas...');			
+		}
+		else {
+			$("#estadotexto").html('Buscando Ofertas...');
+		}
 
-			$('#progressbar').hide();
-			$("#progressbar").progressbar({ value: 0});
+		if (tipo == 'E') {
+			$.ajax({
+			  async:true, 
+			  url: '/bazarcms/enviabusqueda?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan+'&ppaises='+ppaises, 
+			  success: function(data) {
+			    $('#lista').html(data);
+				clearInterval(actualiza);
 
-			$('#estadotexto').hide();
-			$("#estadotexto").html('');
-			$("#busca").focus();
-			clearInterval(actualiza);
-		  }
-		});
+				$('#progressbar').hide();
+				$("#progressbar").progressbar({ value: 0});
+
+				$('#estadotexto').hide();
+				$("#estadotexto").html('');
+				$("#busca").focus();
+				clearInterval(actualiza);
+			  }
+			});			
+		}
+		else {
+			$.ajax({
+			  async:true, 
+			  url: '/bazarcms/enviabusquedaofertas?q='+s+'&qe='+emple+'&qv='+ventas+'&qc='+compras+'&qr='+resultados+'&pofertan='+pofertan+'&pdemandan='+pdemandan+'&ppaises='+ppaises+'&qtipo='+tipo, 
+			  success: function(data) {
+			    $('#lista').html(data);
+				clearInterval(actualiza);
+
+				$('#progressbar').hide();
+				$("#progressbar").progressbar({ value: 0});
+
+				$('#estadotexto').hide();
+				$("#estadotexto").html('');
+				$("#busca").focus();
+				clearInterval(actualiza);
+			  }
+			});
+			
+		}
 		
 		var actualiza = setInterval(function(){
-			$.get('/bazarcms/estadobusqueda', function(data) {
-				$("#progressbar").progressbar({ value: (data[0].empresasconsulta.total_respuestas * 100) / data[0].empresasconsulta.total_consultas});
-				$("#estadotexto").html(data[0].empresasconsulta.total_resultados +' Empresas de '+ data[0].empresasconsulta.total_respuestas +' Bazares');
-			});
+			if (tipo == "E") {
+				$.get('/bazarcms/estadobusqueda', function(data) {
+					$("#progressbar").progressbar({ value: (data[0].empresasconsulta.total_respuestas * 100) / data[0].empresasconsulta.total_consultas});
+					$("#estadotexto").html(data[0].empresasconsulta.total_resultados +' Empresas de '+ data[0].empresasconsulta.total_respuestas +' Bazares');
+				});				
+			}
+			else {
+				$.get('/bazarcms/estadobusquedaofertas', function(data) {
+					$("#progressbar").progressbar({ value: (data[0].ofertasconsulta.total_respuestas * 100) / data[0].ofertasconsulta.total_consultas});
+					$("#estadotexto").html(data[0].ofertasconsulta.total_resultados +' Ofertas de '+ data[0].ofertasconsulta.total_respuestas +' Bazares');				
+				});	
+			}	
+			
 	     },1000);
 		
 		return false;

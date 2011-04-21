@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados Bazar Garum, Dinamizando Mercados!!!" /> 
+	<meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, Bazar Garum, Dinamizando Mercados!!!" /> 
+	
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+	
+	<title>Bazar Garum</title>
+	<script src="/javascripts/jquery.js?1299161582" type="text/javascript"></script>
+<script src="/javascripts/jquery-ujs/src/rails.js?1299161582" type="text/javascript"></script>
+	<script src="/javascripts/jquery-ui.js?1299161582" type="text/javascript"></script>
+	<script src="/javascripts/jquery.cycle.all.min.js?1299161582" type="text/javascript"></script>
+
+	<link href="/stylesheets/bazar.css?1302644980" media="screen" rel="stylesheet" type="text/css" />
+
+	
+	<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="UUYzAiUqo2mrccLxMdW/xojx1uqqwYrCAl4355K2Vmo="/>
+	
+
+	
+  </head>
+	
+			<body class="logueado"><!-- si usuario logueado -->
+
+<!-- # clicktale_top -->
+	
+   <div class="container">
+
+	  <div id="header">
+		      <h1 id="title"><a
+                 href="/home"
+              >Bazar Garum</a>
+              </h1>
+	          <h2 id="slogan">Dinamizando Mercados!!!</h2>
+	  </div>
+	  
+
+			<ul id="nav-usuario">
+				<li class="user-links">
+				<a href="/users/2/edit" class="user-link">juantomas</a>
+				<a href="/logout" class="logout-link" title="Cerrar Sesión"><img alt="Icono-logout" src="/images/icono-logout.png?1299161582" /></a>
+				</li>
+				<li class="user-messages">
+				<a href="/mensajes?tipo=N" class="notif-link" title="Notificaciones sin leer"><img alt="Notificacion" src="/images/notificacion.png?1299161582" /></a>
+				<strong>4</strong>
+
+				<a href="/mensajes?tipo=M" class="msgs-link" title="Mensajes sin leer"><img alt="Email" src="/images/email.png?1299161582" /></a>
+				<strong>3</strong>
+
+				</li>
+				<li class="nav-site">
+                <a href="/home" class="home-link" title="Página Principal"><img alt="Icono-home" src="/images/icono-home.png?1299161582" /></a>
+                <a href="/users/2/edit" class="account-link" title="Mi Cuenta"><img alt="Icono-usuario" src="/images/icono-usuario.png?1299161582" /></a>
+                <a href="/bazarcms/empresas/2/edit" class="empresa-link" title="Mi Empresa"><img alt="Group" src="/images/group.png?1299161582" /></a>
+                <a href="/bazarcms/empresasconsultas" class="historial-link" title="Historial de Consultas Realizadas"><img alt="Icono-historial" src="/images/icono-historial.png?1299161582" /></a>
+                <a href="/bazarcms/publicaroferta" class="crear-oferta-link" title="Crear Oferta/Demanda"><img alt="Add" src="/images/add.png?1299161582" /></a>
+                    <a href="#" class="administracion-link" title="Administración"><img alt="Icono-admin" src="/images/icono-admin.png?1299161582" /></a>
+                </li>
+            </ul>
+	  
+        <div id="nav-admin-container">
+             <span class="tapa-blanco"></span>
+             <ul id="nav-admin">
+                 <li><a href="#">Administrador</a>
+		            <ul>
+					  <li><a href="/users">Usuarios</a> </li>
+					  <li><a href="/confs">Configuración del Sistema</a> </li>
+					  <li><a href="/clusters">Gestión Bazares</a> </li>
+					  <li><a href="/notificacion?tipo=N">Notificacion a Usuarios</a> </li>
+					  <li><a href="/updateinfo">Actualización Información</a> </li>
+		            </ul>
+                 </li>
+                 <li><a href="#">Dinamizador</a>
+		            <ul class="links">
+					    <li><a href="/notificacion?tipo=M">Mailing a Usuarios</a> </li>
+					    <li><a href="/noticias">Noticias</a> </li>
+		            </ul>
+                 </li>
+ 			</ul>
+        </div><!-- /#nav-admin-container -->
+        
+        <script>
+            $('.administracion-link').click(function() {
+                $('#nav-admin-container').toggle();
+            });
+        </script>
+ 
+	  <div id="content" class="span-24 last">	
+			<div class="body">
+
+			<div id="contenido" >
+				<h3 class="page-title">Listado de Usuarios</h3>
+
+<table class="tabla" cellspacing="0">
+  <tr>
+    <th>Id</th>
+    <th>Usuario</th>
+    <th>Correo</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <tr>
+	<td>1</td>
+    <td>sistema</td>
+    <td>juanto@garumfundatio.org</td>
+    <td style="text-align: center"><a href="/users/1/edit"><img alt="Pencil" border="0" src="/images/pencil.png?1299161582" title="Editar" /></a></td>
+    <td style="text-align: center"><a href="/users/1" data-confirm="Esta usted seguro?" data-method="delete" rel="nofollow"><img alt="Delete" src="/images/delete.png?1299161582" title="Eliminar" /></a></td>
+  </tr>
+  <tr>
+	<td>2</td>
+    <td>juantomas</td>
+    <td>juantomas@monolabs.com</td>
+    <td style="text-align: center"><a href="/users/2/edit"><img alt="Pencil" border="0" src="/images/pencil.png?1299161582" title="Editar" /></a></td>
+    <td style="text-align: center"><a href="/users/2" data-confirm="Esta usted seguro?" data-method="delete" rel="nofollow"><img alt="Delete" src="/images/delete.png?1299161582" title="Eliminar" /></a></td>
+  </tr>
+  <tr>
+	<td>3</td>
+    <td>admin</td>
+    <td>admin@monolabs.com</td>
+    <td style="text-align: center"><a href="/users/3/edit"><img alt="Pencil" border="0" src="/images/pencil.png?1299161582" title="Editar" /></a></td>
+    <td style="text-align: center"><a href="/users/3" data-confirm="Esta usted seguro?" data-method="delete" rel="nofollow"><img alt="Delete" src="/images/delete.png?1299161582" title="Eliminar" /></a></td>
+  </tr>
+  <tr>
+	<td>4</td>
+    <td>david</td>
+    <td>david@lasindias.net</td>
+    <td style="text-align: center"><a href="/users/4/edit"><img alt="Pencil" border="0" src="/images/pencil.png?1299161582" title="Editar" /></a></td>
+    <td style="text-align: center"><a href="/users/4" data-confirm="Esta usted seguro?" data-method="delete" rel="nofollow"><img alt="Delete" src="/images/delete.png?1299161582" title="Eliminar" /></a></td>
+  </tr>
+  <tr>
+	<td>5</td>
+    <td>maria</td>
+    <td>juantomas.garcia@gmail.com</td>
+    <td style="text-align: center"><a href="/users/5/edit"><img alt="Pencil" border="0" src="/images/pencil.png?1299161582" title="Editar" /></a></td>
+    <td style="text-align: center"><a href="/users/5" data-confirm="Esta usted seguro?" data-method="delete" rel="nofollow"><img alt="Delete" src="/images/delete.png?1299161582" title="Eliminar" /></a></td>
+  </tr>
+  <tr>
+	<td>6</td>
+    <td>demo</td>
+    <td>demo@lared.es</td>
+    <td style="text-align: center"><a href="/users/6/edit"><img alt="Pencil" border="0" src="/images/pencil.png?1299161582" title="Editar" /></a></td>
+    <td style="text-align: center"><a href="/users/6" data-confirm="Esta usted seguro?" data-method="delete" rel="nofollow"><img alt="Delete" src="/images/delete.png?1299161582" title="Eliminar" /></a></td>
+  </tr>
+  <tr>
+	<td>7</td>
+    <td>realidadfutura</td>
+    <td>ggarcia@realidadfutura.net</td>
+    <td style="text-align: center"><a href="/users/7/edit"><img alt="Pencil" border="0" src="/images/pencil.png?1299161582" title="Editar" /></a></td>
+    <td style="text-align: center"><a href="/users/7" data-confirm="Esta usted seguro?" data-method="delete" rel="nofollow"><img alt="Delete" src="/images/delete.png?1299161582" title="Eliminar" /></a></td>
+  </tr>
+</table>
+
+
+
+<a href="/users/new">Nuevo Usuario</a>
+
+			</div>
+			<div id="sidebar" style="display:none" >
+	        <ul id="sidebar-items">
+			
+
+			  <li>
+							<ul id="user-menu" class="links">
+								<li class="user-links">
+								<a href="/users/2/edit" class="user-link">juantomas</a>
+								<a href="/logout" class="logout-link" title="Cerrar Sesión"><img alt="Icono-logout" src="/images/icono-logout.png?1299161582" /></a>
+								</li>
+								<li class="user-messages">
+								<a href="/mensajes?tipo=N" class="notif-link" title="Notificaciones"><img alt="Notificacion" src="/images/notificacion.png?1299161582" /></a>
+								(3/4) 
+								
+								<a href="/mensajes?tipo=M" class="msgs-link" title="Mensajes"><img alt="Email" src="/images/email.png?1299161582" /></a>
+								(3/7) 
+
+								</li>
+                            </ul>
+		          </li>	
+	          <li>
+
+	        </ul>
+	     </div>	
+			</div>
+			
+			
+			
+			
+	  </div>
+
+		<div id="footer">
+	    		<a href="http://garumfundatio.org" style="text-decoration: none">Garum Fundatio</a>
+		</div> <!-- fin footer-->
+
+	
+
+  </div> <!-- fin container -->
+
+<!-- # clicktale_bottom -->
+
+
+  </body>
+</html>
+
+
+
