@@ -1,273 +1,0 @@
-<!DOCTYPE html>
-<html>
-  <head>
-	<meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados Bazar Garum, Dinamizando Mercados!!!" /> 
-	<meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, Bazar Garum, Dinamizando Mercados!!!" /> 
-	
-	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-	
-	<title>Bazar Garum</title>
-	<script src="/javascripts/jquery.js?1299161582" type="text/javascript"></script>
-<script src="/javascripts/jquery-ujs/src/rails.js?1299161582" type="text/javascript"></script>
-	<script src="/javascripts/jquery-ui.js?1299161582" type="text/javascript"></script>
-	<script src="/javascripts/jquery.cycle.all.min.js?1299161582" type="text/javascript"></script>
-
-	<link href="/stylesheets/bazar.css?1302644980" media="screen" rel="stylesheet" type="text/css" />
-
-	
-	<meta name="csrf-param" content="authenticity_token"/>
-<meta name="csrf-token" content="UUYzAiUqo2mrccLxMdW/xojx1uqqwYrCAl4355K2Vmo="/>
-	
-
-	
-  </head>
-	
-			<body class="logueado"><!-- si usuario logueado -->
-
-<!-- # clicktale_top -->
-	
-   <div class="container">
-
-	  <div id="header">
-		      <h1 id="title"><a
-                 href="/home"
-              >Bazar Garum</a>
-              </h1>
-	          <h2 id="slogan">Dinamizando Mercados!!!</h2>
-	  </div>
-	  
-
-			<ul id="nav-usuario">
-				<li class="user-links">
-				<a href="/users/2/edit" class="user-link">juantomas</a>
-				<a href="/logout" class="logout-link" title="Cerrar Sesión"><img alt="Icono-logout" src="/images/icono-logout.png?1299161582" /></a>
-				</li>
-				<li class="user-messages">
-				<a href="/mensajes?tipo=N" class="notif-link" title="Notificaciones sin leer"><img alt="Notificacion" src="/images/notificacion.png?1299161582" /></a>
-				<strong>4</strong>
-
-				<a href="/mensajes?tipo=M" class="msgs-link" title="Mensajes sin leer"><img alt="Email" src="/images/email.png?1299161582" /></a>
-				<strong>3</strong>
-
-				</li>
-				<li class="nav-site">
-                <a href="/home" class="home-link" title="Página Principal"><img alt="Icono-home" src="/images/icono-home.png?1299161582" /></a>
-                <a href="/users/2/edit" class="account-link" title="Mi Cuenta"><img alt="Icono-usuario" src="/images/icono-usuario.png?1299161582" /></a>
-                <a href="/bazarcms/empresas/2/edit" class="empresa-link" title="Mi Empresa"><img alt="Group" src="/images/group.png?1299161582" /></a>
-                <a href="/bazarcms/empresasconsultas" class="historial-link" title="Historial de Consultas Realizadas"><img alt="Icono-historial" src="/images/icono-historial.png?1299161582" /></a>
-                <a href="/bazarcms/publicaroferta" class="crear-oferta-link" title="Crear Oferta/Demanda"><img alt="Add" src="/images/add.png?1299161582" /></a>
-                    <a href="#" class="administracion-link" title="Administración"><img alt="Icono-admin" src="/images/icono-admin.png?1299161582" /></a>
-                </li>
-            </ul>
-	  
-        <div id="nav-admin-container">
-             <span class="tapa-blanco"></span>
-             <ul id="nav-admin">
-                 <li><a href="#">Administrador</a>
-		            <ul>
-					  <li><a href="/users">Usuarios</a> </li>
-					  <li><a href="/confs">Configuración del Sistema</a> </li>
-					  <li><a href="/clusters">Gestión Bazares</a> </li>
-					  <li><a href="/notificacion?tipo=N">Notificacion a Usuarios</a> </li>
-					  <li><a href="/updateinfo">Actualización Información</a> </li>
-		            </ul>
-                 </li>
-                 <li><a href="#">Dinamizador</a>
-		            <ul class="links">
-					    <li><a href="/notificacion?tipo=M">Mailing a Usuarios</a> </li>
-					    <li><a href="/noticias">Noticias</a> </li>
-		            </ul>
-                 </li>
- 			</ul>
-        </div><!-- /#nav-admin-container -->
-        
-        <script>
-            $('.administracion-link').click(function() {
-                $('#nav-admin-container').toggle();
-            });
-        </script>
- 
-	  <div id="content" class="span-24 last">	
-			<div class="body">
-
-			<div id="contenido" >
-				<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
-
-    	<h3 class="page-title">Notificaciones <a href="/mensajes?tipo=M" class="opcion-mensajes">Ver Mensajes</a></h3>
-
-
-<script src="/javascripts/jquery.pageless.js?1302299441" type="text/javascript"></script>
-<div>
-
-<table id="results" class="tabla" cellspacing="0">
-
-  <tr id="head434" style="font-weight:bold; text-align:left;" class="color">
-    
-	<td style="text-align:left;">
-		Sistema
-	</td>
-  
-	<td style="text-align:left;">
-		<a href="#" title="Ver Mensaje" onclick="$('#men434').toggle();$('#head434').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/434'});">noti 1</a>
-	</td>
-
-    <td style="text-align:left;">
-		19-04-2011 15:09
-	</td>
-
-    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men434').toggle();$('#head434').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/434'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
-    <a href="/mensajes/434/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
-    <a href="/mensajes/434" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
-  </tr>
-
-  <tr id="men434" style="display: none">
-    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">sadfsdf</td>
-  </tr>  <tr id="head432" style="font-weight:bold; text-align:left;" class="color">
-    
-	<td style="text-align:left;">
-		Geofun Factory
-	</td>
-  
-	<td style="text-align:left;">
-		<a href="#" title="Ver Mensaje" onclick="$('#men432').toggle();$('#head432').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/432'});">RE: RE: RE: El anterior mensaje iba cortado</a>
-	</td>
-
-    <td style="text-align:left;">
-		18-04-2011 20:32
-	</td>
-
-    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men432').toggle();$('#head432').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/432'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
-    <a href="/mensajes/432/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
-    <a href="/mensajes/432" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
-  </tr>
-
-  <tr id="men432" style="display: none">
-    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">sadfsadfdsffd<br/>> asfasdfsdasfdsfsdfsffsdf<br/>> > safdsafsdf<br/>> > > Os llego bien por correo pero se quedo cortado en el sistema. <br/>> > > <br/>> > > Ya está resuelto!!!!<br/>> > > <br/>> > > Este era el texto que tenéis que ver si cortarse dentro de la aplicación. <br/>> > > <br/>> > > Estamos terminando de implementar autoscroll en todos las vistas de información. <br/>> > > <br/>> > > ¿Qué es autoscroll? <br/>> > > <br/>> > > Cuando tenemos más registros de los que caben en la pantalla, simplemente con hacer scroll hacía abajo en el navegador los voy añadiendo automáticamente. <br/>> > > <br/>> > > Hoy estará implementando en todas las opciones que aparecen en la página de busqueda. De momento se puede probar en: <br/>> > > <br/>> > > * favoritos <br/>> > > * actividad del bazar <br/>> > > * consultas realizadas <br/>> > > <br/>> > > Estoy terminando los resultados de las búsquedas y los correos/notificaciones. Debería estar acabado hoy. <br/>> > > <br/>> > > ¿como lo pruebo? <br/>> > > <br/>> > > Cada vez que saco un listado en la página principal aparece un enlace al final indicando si hay más información. Si seguimos ese enlace ya puedes usar el autoscroll si hay suficientes registros. En actividad del bazar hay suficientes para que lo experimentéis. <br/>> > > <br/>> > > Enjoy!!! </td>
-  </tr>  <tr id="head431" style="font-weight:bold; text-align:left;" class="color">
-    
-	<td style="text-align:left;">
-		Sistema
-	</td>
-  
-	<td style="text-align:left;">
-		<a href="#" title="Ver Mensaje" onclick="$('#men431').toggle();$('#head431').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/431'});">RE: RE: El anterior mensaje iba cortado</a>
-	</td>
-
-    <td style="text-align:left;">
-		18-04-2011 20:31
-	</td>
-
-    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men431').toggle();$('#head431').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/431'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
-    <a href="/mensajes/431/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
-    <a href="/mensajes/431" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
-  </tr>
-
-  <tr id="men431" style="display: none">
-    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">asfasdfsdfsdf<br/>> safdsafsdf<br/>> > Os llego bien por correo pero se quedo cortado en el sistema. <br/>> > <br/>> > Ya está resuelto!!!!<br/>> > <br/>> > Este era el texto que tenéis que ver si cortarse dentro de la aplicación. <br/>> > <br/>> > Estamos terminando de implementar autoscroll en todos las vistas de información. <br/>> > <br/>> > ¿Qué es autoscroll? <br/>> > <br/>> > Cuando tenemos más registros de los que caben en la pantalla, simplemente con hacer scroll hacía abajo en el navegador los voy añadiendo automáticamente. <br/>> > <br/>> > Hoy estará implementando en todas las opciones que aparecen en la página de busqueda. De momento se puede probar en: <br/>> > <br/>> > * favoritos <br/>> > * actividad del bazar <br/>> > * consultas realizadas <br/>> > <br/>> > Estoy terminando los resultados de las búsquedas y los correos/notificaciones. Debería estar acabado hoy. <br/>> > <br/>> > ¿como lo pruebo? <br/>> > <br/>> > Cada vez que saco un listado en la página principal aparece un enlace al final indicando si hay más información. Si seguimos ese enlace ya puedes usar el autoscroll si hay suficientes registros. En actividad del bazar hay suficientes para que lo experimentéis. <br/>> > <br/>> > Enjoy!!! </td>
-  </tr>  <tr id="head430" style="font-weight:bold; text-align:left;" class="color">
-    
-	<td style="text-align:left;">
-		Geofun Factory
-	</td>
-  
-	<td style="text-align:left;">
-		<a href="#" title="Ver Mensaje" onclick="$('#men430').toggle();$('#head430').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/430'});">RE: El anterior mensaje iba cortado</a>
-	</td>
-
-    <td style="text-align:left;">
-		18-04-2011 20:31
-	</td>
-
-    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men430').toggle();$('#head430').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/430'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
-    <a href="/mensajes/430/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
-    <a href="/mensajes/430" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
-  </tr>
-
-  <tr id="men430" style="display: none">
-    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">safdsafsdf<br/>> Os llego bien por correo pero se quedo cortado en el sistema. <br/>> <br/>> Ya está resuelto!!!!<br/>> <br/>> Este era el texto que tenéis que ver si cortarse dentro de la aplicación. <br/>> <br/>> Estamos terminando de implementar autoscroll en todos las vistas de información. <br/>> <br/>> ¿Qué es autoscroll? <br/>> <br/>> Cuando tenemos más registros de los que caben en la pantalla, simplemente con hacer scroll hacía abajo en el navegador los voy añadiendo automáticamente. <br/>> <br/>> Hoy estará implementando en todas las opciones que aparecen en la página de busqueda. De momento se puede probar en: <br/>> <br/>> * favoritos <br/>> * actividad del bazar <br/>> * consultas realizadas <br/>> <br/>> Estoy terminando los resultados de las búsquedas y los correos/notificaciones. Debería estar acabado hoy. <br/>> <br/>> ¿como lo pruebo? <br/>> <br/>> Cada vez que saco un listado en la página principal aparece un enlace al final indicando si hay más información. Si seguimos ese enlace ya puedes usar el autoscroll si hay suficientes registros. En actividad del bazar hay suficientes para que lo experimentéis. <br/>> <br/>> Enjoy!!! </td>
-  </tr>  <tr id="head422" style="text-align:left;" class="color">
-    
-	<td style="text-align:left;">
-		Sistema
-	</td>
-  
-	<td style="text-align:left;">
-		<a href="#" title="Ver Mensaje" onclick="$('#men422').toggle();$('#head422').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/422'});">El anterior mensaje iba cortado</a>
-	</td>
-
-    <td style="text-align:left;">
-		09-04-2011 16:32
-	</td>
-
-    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men422').toggle();$('#head422').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/422'});"> <img alt="Lupa" src="/images/lupa.png?1299161582" /></a>
-    <a href="/mensajes/422/edit" title="Responder mensaje"><img alt="Responder-correo" src="/images/responder-correo.png?1299161582" /></a>
-    <a href="/mensajes/422" data-confirm="¿Está seguro?" data-method="delete" rel="nofollow" title="Eliminar Mensaje"><img alt="Papelera" src="/images/papelera.png?1299161582" /></a></td>
-  </tr>
-
-  <tr id="men422" style="display: none">
-    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">Os llego bien por correo pero se quedo cortado en el sistema. <br/><br/>Ya está resuelto!!!!<br/><br/>Este era el texto que tenéis que ver si cortarse dentro de la aplicación. <br/><br/>Estamos terminando de implementar autoscroll en todos las vistas de información. <br/><br/>¿Qué es autoscroll? <br/><br/>Cuando tenemos más registros de los que caben en la pantalla, simplemente con hacer scroll hacía abajo en el navegador los voy añadiendo automáticamente. <br/><br/>Hoy estará implementando en todas las opciones que aparecen en la página de busqueda. De momento se puede probar en: <br/><br/>* favoritos <br/>* actividad del bazar <br/>* consultas realizadas <br/><br/>Estoy terminando los resultados de las búsquedas y los correos/notificaciones. Debería estar acabado hoy. <br/><br/>¿como lo pruebo? <br/><br/>Cada vez que saco un listado en la página principal aparece un enlace al final indicando si hay más información. Si seguimos ese enlace ya puedes usar el autoscroll si hay suficientes registros. En actividad del bazar hay suficientes para que lo experimentéis. <br/><br/>Enjoy!!! </td>
-  </tr>
-
-</table>
-
-<script type="text/javascript">
-//<![CDATA[
-$('#results').pageless({"totalPages":1,"loaderMsg":"Cargando m\u00e1s info","url":"/mensajes"});
-//]]>
-</script>
-
-
-
-
-</div>
-
-
-			</div>
-			<div id="sidebar" style="display:none" >
-	        <ul id="sidebar-items">
-			
-
-			  <li>
-							<ul id="user-menu" class="links">
-								<li class="user-links">
-								<a href="/users/2/edit" class="user-link">juantomas</a>
-								<a href="/logout" class="logout-link" title="Cerrar Sesión"><img alt="Icono-logout" src="/images/icono-logout.png?1299161582" /></a>
-								</li>
-								<li class="user-messages">
-								<a href="/mensajes?tipo=N" class="notif-link" title="Notificaciones"><img alt="Notificacion" src="/images/notificacion.png?1299161582" /></a>
-								(3/4) 
-								
-								<a href="/mensajes?tipo=M" class="msgs-link" title="Mensajes"><img alt="Email" src="/images/email.png?1299161582" /></a>
-								(3/7) 
-
-								</li>
-                            </ul>
-		          </li>	
-	          <li>
-
-	        </ul>
-	     </div>	
-			</div>
-			
-			
-			
-			
-	  </div>
-
-		<div id="footer">
-	    		<a href="http://garumfundatio.org" style="text-decoration: none">Garum Fundatio</a>
-		</div> <!-- fin footer-->
-
-	
-
-  </div> <!-- fin container -->
-
-<!-- # clicktale_bottom -->
-
-
-  </body>
-</html>
-
-
-
