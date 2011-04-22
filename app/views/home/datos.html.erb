@@ -13,10 +13,8 @@
 <!--[if IE]><script language="javascript" type="text/javascript" src="jqplot/excanvas.js"></script><![endif]-->
 
 <% cache "bazar_datos", {:expires_in => 6.hours.to_i} do %>
-
 	
 <h2 class="page-title">Datos de Bazar</h2>
-
 
 <h3 class="titulo-datos">Empresas</h3>
 
@@ -341,30 +339,42 @@ plot3 = $.jqplot('paisesmercado', [line3], {
 </script>
 
 </div>
-Generado: <%= Time.now %>
+
+<h3 class="titulo-datos">Distribución de la Empresas</h3>
+
+<div id="mapa-paises-container"></div>
+
+<script type='text/javascript'>
+$(document).ready(function()
+{
+    $('#mapa-paises-container').insertOpenHeatMap({
+        width: 800, 
+        height: 500,
+		prefer: 'flash'
+    });
+});
+
+function onMapCreated()
+{
+    var map = $.getOpenHeatMap();
+
+	csv = '<%= Pais.paisestocsv -%>';
+	
+    map.loadWaysFromFile('http://static.openheatmap.com/world_countries.osm');
+    map.loadValuesFromCSVString(csv);
+	map.setSetting('gradient_value_min', 0);
+	map.setSetting('gradient_value_max', 10);
+	map.setColorGradient(['#ffbdf7a0', '#ffff0000']);
+    
+}
+</script>
+
 </div>
+<br/>
+
+Información actualizada el <%= Time.now %>
+
 
 <% end %>
 
-<div id="mapa-paises"></div>
 
-<script type="text/javascript" charset="utf-8">
-
-$(document).ready(function() {
-  $('#mapa-paises').insertOpenHeatMap({
-    width: 900, 
-    height: 450
-  });
-});
-
-
-csv ="country,value\r\nUS,25\r\n";
-
-function onMapCreated() {
-  var map = $.getOpenHeatMap();
-  map.loadWaysFromFile('http://static.openheatmap.com/world_countries.osm');
-  // map.loadValuesCVSString(csv);
-  map.loadValuesFromFile('https://spreadsheets.google.com/spreadsheet/pub?key=0Aha7c7y1UwzcdFZuQWJvQkgtZ2MtYmg5YlBKbXppM2c&output=html');
-}
-	
-</script>

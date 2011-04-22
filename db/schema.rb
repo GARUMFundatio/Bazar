@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110409164509) do
+ActiveRecord::Schema.define(:version => 20110422105955) do
 
   create_table "actividades", :force => true do |t|
     t.integer  "bazar_id"
@@ -288,7 +288,12 @@ ActiveRecord::Schema.define(:version => 20110409164509) do
     t.string   "capital"
     t.integer  "total_empresas_bazar"
     t.integer  "total_empresas_mercado"
+    t.string   "cod3"
   end
+
+  add_index "paises", ["cod3"], :name => "index_paises_cod3"
+  add_index "paises", ["codigo"], :name => "index_paises_codigo"
+  add_index "paises", ["id"], :name => "index_paises_id"
 
   create_table "perfiles", :force => true do |t|
     t.string  "codigo"
@@ -300,6 +305,15 @@ ActiveRecord::Schema.define(:version => 20110409164509) do
   end
 
   add_index "perfiles", ["codigo"], :name => "index_perfiles_on_codigo"
+
+  create_table "perfiles_copy", :force => true do |t|
+    t.string  "codigo"
+    t.string  "desc"
+    t.integer "nivel"
+    t.text    "ayuda"
+  end
+
+  add_index "perfiles_copy", ["codigo"], :name => "index_perfiles_on_codigo"
 
   create_table "roles", :force => true do |t|
     t.string   "rol"
