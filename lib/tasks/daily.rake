@@ -12,33 +12,39 @@ namespace :bazar do
 
   require 'big_sitemap'
 
-  puts Cluster.find(Conf.find_by_nombre("BazarId").valor).url
+  host = Cluster.find(Conf.find_by_nombre("BazarId").valor).url
+ 
+  host = host.gsub('http://', '').gsub('/','')	
+  host = 'bazar.garumfundatio.org'
+  puts host
   sitemap = BigSitemap.new(
-    :url_options   => {:host => Cluster.find(Conf.find_by_nombre("BazarId").valor).url },
+    :url_options   => {:host => host},
     :document_root => "#{::Rails.root.to_s}/public"
   )
 
-  sitemap.add(Bazarcms::Cluster,
+  puts sitemap.inspect 
+ 
+  sitemap.add(Cluster,
     # :conditions       => {:published => true},
     :path             => '/clusters',
-    :location => lambda { |cluster| cluster_url(cluster) },
+    :location => lambda { |cluster| "/clusters/#{cluster.slug.name}" },
     :change_frequency => 'daily',
     :priority         => 0.5
   )
 
-  sitemap.add(Bazarcms::Empresa,
-    # :conditions       => {:published => true},
-    :path             => '/bazarcms/empresas',
-    :location => lambda { |empresa| bazarcms_empresa_url(empresa) },
-    :change_frequency => 'daily',
-    :priority         => 0.5
-  )
+#  sitemap.add(Bazarcms::Empresa,
+#    # :conditions       => {:published => true},
+#    :path             => '/bazarcms/empresas',
+#    :location => lambda { |empresa| bazarcms_empresa_url(empresa) },
+#    :change_frequency => 'daily',
+#    :priority         => 0.5
+#  )
 
   # Add a static resource
-  sitemap.add_static("#{Cluster.find(Conf.find_by_nombre("BazarId").valor).url}/datos", Time.now, 'weekly', 0.5)
+  sitemap.add_static("#{host}/datos", Time.now, 'weekly', 0.5)
 
   # Generate the files
-  sitemap.generate.ping_search_engines
+  sitemap.generate
 
    puts "#{DateTime.now}: Actualización de la información."
    
