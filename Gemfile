@@ -14,6 +14,8 @@ gem 'fastercsv'
 gem 'dynamic_form'
 gem 'typhoeus'
 gem 'dalli'
+gem 'big_sitemap'
+gem "friendly_id", "~> 3.1"
 
 gem "bazarcms", :path => '../bazarcms'
 

@@ -25,7 +25,10 @@ echo "Creando usuarios en la BD"
 RAILS_ENV=production rake bazar:create_users 
 
 echo "Instalando jquery" 
-RAILS_ENV=productionrails generate jquery:install
+RAILS_ENV=production rails generate jquery:install
+
+echo "Instalando friendly_id" 
+RAILS_ENV=production rails generate friendly_id
 
 echo "Creando las tablas de la base de datos" 
 RAILS_ENV=production rake db:migrate
