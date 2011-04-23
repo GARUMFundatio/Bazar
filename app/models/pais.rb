@@ -3,6 +3,8 @@ class Pais < ActiveRecord::Base
 
   default_scope :order => 'descripcion'
 
+  has_friendly_id :descripcion , :use_slug => true
+
   def to_s;self.descripcion;end
 
   def self.paisestocsv
