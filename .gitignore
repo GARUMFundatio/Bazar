@@ -9,3 +9,4 @@ db/schema.rb
 .DS_Store
 lib/taks/ben.rake
 public/clicktale
+public/sitemaps
