@@ -8,45 +8,6 @@ namespace :bazar do
 
  task :actualiza => :environment do |t|
 
- # Generamos el sitemap 
-
-  require 'big_sitemap'
-
-  host = Cluster.find(Conf.find_by_nombre("BazarId").valor).url
- 
-  # host = host.gsub('http://', '').gsub('/','')	
-  host = 'http://bazar.garumfundatio.org'
-  puts host
-
-  sitemap = BigSitemap.new(
-    :url_options   => {:host => host},
-    :document_root => "#{::Rails.root.to_s}/public"
-  )
-
-  puts sitemap.inspect 
- 
-  sitemap.add(Cluster,
-    # :conditions       => {:published => true},
-    :path             => '/clusters',
-    :location => lambda { |cluster| "/clusters/#{cluster.slug.name}" },
-    :change_frequency => 'daily',
-    :priority         => 0.5
-  )
-
-#  sitemap.add(Bazarcms::Empresa,
-#    # :conditions       => {:published => true},
-#    :path             => '/bazarcms/empresas',
-#    :location => lambda { |empresa| bazarcms_empresa_url(empresa) },
-#    :change_frequency => 'daily',
-#    :priority         => 0.5
-#  )
-
-  # Add a static resource
-  sitemap.add_static("#{host}/home/datos", Time.now, 'weekly', 0.5)
-
-  # Generate the files
-  sitemap.generate
-
    puts "#{DateTime.now}: Actualización de la información."
    
    # Actualizamos la lista de clusters
