@@ -14,9 +14,10 @@ namespace :bazar do
 
   host = Cluster.find(Conf.find_by_nombre("BazarId").valor).url
  
-  host = host.gsub('http://', '').gsub('/','')	
-  host = 'bazar.garumfundatio.org'
+  # host = host.gsub('http://', '').gsub('/','')	
+  host = 'http://bazar.garumfundatio.org'
   puts host
+
   sitemap = BigSitemap.new(
     :url_options   => {:host => host},
     :document_root => "#{::Rails.root.to_s}/public"
@@ -41,7 +42,7 @@ namespace :bazar do
 #  )
 
   # Add a static resource
-  sitemap.add_static("#{host}/datos", Time.now, 'weekly', 0.5)
+  sitemap.add_static("#{host}/home/datos", Time.now, 'weekly', 0.5)
 
   # Generate the files
   sitemap.generate
