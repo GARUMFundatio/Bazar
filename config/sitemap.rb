@@ -3,6 +3,9 @@ SitemapGenerator::Sitemap.default_host = Cluster.find(Conf.find_by_nombre("Bazar
 SitemapGenerator::Sitemap.yahoo_app_id = nil 
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 
+sitemap.add '/home/datos', :priority => 0.7, :changefreq => 'daily'
+sitemap.add '/home/bazares', :priority => 0.7, :changefreq => 'daily'
+
 SitemapGenerator::Sitemap.add_links do |sitemap|
 
   Cluster.where ('id <> 1') do |cluster|
