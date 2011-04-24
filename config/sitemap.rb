@@ -16,7 +16,7 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
 
   Bazarcms::Empresa.find_each do |empresa|
     # puts empresa.inspect
-    if !empresa.slug.name.nil?
+    if !empresa.slug.nil?
       sitemap.add "/bazarcms/empresas/show2/#{empresa.slug.name}", :priority => 0.7, :changefreq => 'daily',:lastmod => empresa.updated_at
     else 
       sitemap.add "/bazarcms/empresas/show2/#{empresa.id}", :priority => 0.7, :changefreq => 'daily',:lastmod => empresa.updated_at      
