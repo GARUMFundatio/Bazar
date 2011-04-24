@@ -1,0 +1,55 @@
+<% if !current_user.nil? %>
+	<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
+<% end %>
+
+<h3 class="page-title">Datos de esta Ubicación</h3>
+
+<table id="results" class="tabla" cellspacing="0">
+
+	<tr>
+
+		<td>
+			<%= link_to(@ciudad.descripcion, ciudades_path+'/'+@ciudad.slug.name) %> 
+		</td>
+		
+		<td>
+			<%= link_to(@ciudad.pais.descripcion, paises_path+'/'+@ciudad.pais.slug.name) %>
+		</td>
+
+	</tr>
+	
+</table>
+
+<br />
+
+<h3 class="page-title">Empresas en esta Ubicación</h3>
+
+<table id="results" class="tabla" cellspacing="0">
+	
+<% for ubicacion in Bazarcms::Ubicacion.where('ciudad_id = ?', @ciudad.id) %>
+
+	<tr>
+
+		<td>
+			<% empre = Bazarcms::Empresa.find(ubicacion.empresa_id) %>
+			<%= link_to(empre.nombre, '/bazarcms/empresas/show2/'+empre.slug.name) %>
+		</td>
+		
+	</tr>
+	
+<% end %>
+
+</table>
+
+<br/>
+<br/>
+
+<b>Para ver más información de esta empresa regístrese en un Bazar</b>
+
+<br/>
+<br/>
+
+<a class="volver-home-link" href="/home/datos"> Los datos de este bazar &raquo;</a>
+<a class="volver-home-link" href="/home/registrarse"> Darse de alta en este bazar &raquo;</a>
+<a class="volver-home-link" href="/home/bazares"> ¿Qué es un Bazar? &raquo;</a>
+
