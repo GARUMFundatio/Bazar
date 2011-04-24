@@ -9,11 +9,11 @@
 	<tr>
 
 		<td>
-			<%= link_to(@ciudad.descripcion, ciudades_path+'/'+@ciudad.slug.name) %> 
+			<%= link_to(@ciudad.descripcion, ciudades_path+'/'+@ciudad.friendly_id) %> 
 		</td>
 		
 		<td>
-			<%= link_to(@ciudad.pais.descripcion, paises_path+'/'+@ciudad.pais.slug.name) %>
+			<%= link_to(@ciudad.pais.descripcion, paises_path+'/'+@ciudad.pais.friendly_id) %>
 		</td>
 
 	</tr>
@@ -32,7 +32,7 @@
 
 		<td>
 			<% empre = Bazarcms::Empresa.find(ubicacion.empresa_id) %>
-			<%= link_to(empre.nombre, '/bazarcms/empresas/show2/'+empre.slug.name) %>
+			<%= link_to(empre.nombre, '/bazarcms/empresas/show2/'+empre.friendly_id) %>
 		</td>
 		
 	</tr>

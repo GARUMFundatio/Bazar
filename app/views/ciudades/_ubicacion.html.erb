@@ -3,8 +3,8 @@
 	<td>
 		<% ciudad = Ciudad.find(ubicacion.ciudad) %>
 		
-		<%= link_to(ciudad.descripcion, ciudades_path+'/'+ciudad.slug.name) %>, 
-		<%= link_to(ciudad.pais.descripcion, paises_path+'/'+ciudad.pais.slug.name) %>
+		<%= link_to(ciudad.descripcion, ciudades_path+'/'+ciudad.friendly_id) %>, 
+		<%= link_to(ciudad.pais.descripcion, paises_path+'/'+ciudad.pais.friendly_id) %>
 	</td>
 
 	<td>
