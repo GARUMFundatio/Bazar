@@ -14,9 +14,10 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
     sitemap.add "/clusters/#{cluster.friendly_id}", :priority => 0.4, :changefreq => 'daily',:lastmod => cluster.updated_at
   end
 
+  bazar = Conf.find_by_nombre('BazarId').valor.to_i
+  
   Bazarcms::Oferta.find_each do |oferta|
-    # puts oferta.inspect
-    sitemap.add "/bazarcms/ofertas/#{oferta.id}?bazar_id=#{oferta.bazar_id}", :priority => 0.9, :changefreq => 'daily',:lastmod => oferta.fecha
+    sitemap.add "/bazarcms/ofertas/#{oferta.friendly_id}?bazar_id=#{oferta.bazar_id}", :priority => 0.9, :changefreq => 'daily',:lastmod => oferta.fecha
   end
 
   Bazarcms::Empresa.find_each do |empresa|
