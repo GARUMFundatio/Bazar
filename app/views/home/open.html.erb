@@ -1,0 +1,36 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://static.openheatmap.com/scripts/jquery.openheatmap.js"></script>
+<script type='text/javascript'>
+$(document).ready(function()
+{
+    $('#openheatmap_container').insertOpenHeatMap({
+        width: 800, 
+        height: 500,
+		prefer: 'flash'
+    });
+});
+
+function onMapCreated()
+{
+    var map = $.getOpenHeatMap();
+
+	csv = '<%= Pais.paisestocsv -%>';
+	
+    map.loadWaysFromFile('http://static.openheatmap.com/world_countries.osm');
+    map.loadValuesFromCSVString(csv);
+	// map.setSetting('ocean_color', 0xffffff);
+	// map.setSetting('title_text', 'Distribución de las Empresas de Bazar');
+	map.setSetting('gradient_value_min', 0);
+	map.setSetting('gradient_value_max', 10);
+	map.setColorGradient(['#ffbdf7a0', '#ffff0000']);
+	// map.setSetting('information_alpha', 0);
+    
+}
+</script>
+</head>
+<body>
+<div id="openheatmap_container"></div>
+</body>
+</html>
