@@ -32,53 +32,69 @@ class ClustersController < ApplicationController
   end
 
   def edit
-    @cluster = Cluster.find(params[:id])
+    
+    # los clusters no se editan
+    
+    # @cluster = Cluster.find(params[:id])
+    
+    respond_to do |format|
+      format.html { redirect_to(clusters_url) }
+      format.xml  { head :ok }
+    end
+    
   end
 
   def create
-    @cluster = Cluster.new(params[:cluster])
 
+    # los clusters se dan de alta en el directorio 
+    
     respond_to do |format|
-      if @cluster.save
-        format.html { redirect_to(clusters_url, :notice => 'Cluster was successfully created.') }
-        format.xml  { render :xml => @cluster, :status => :created, :location => @cluster }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @cluster.errors, :status => :unprocessable_entity }
-      end
+      format.html { redirect_to(clusters_url, :notice => 'Cluster was successfully created.') }
     end
   end
 
   def update
-    @cluster = Cluster.find(params[:id])
+    
+    # Solo se puede activar y desactivar y no con este método
 
     respond_to do |format|
-      if @cluster.update_attributes(params[:cluster])
-        format.html { redirect_to(clusters_url) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @cluster.errors, :status => :unprocessable_entity }
-      end
+      format.html { redirect_to(clusters_url) }
+      format.xml  { head :ok }
     end
   end
 
   def activar 
+
+    # solo los usuarios con rol de admin pueden activar o desactivar bazares. 
+    
+    if current_user_is_admin 
+
       @cluster = Cluster.find(params[:id])
       @cluster.activo = "S"
       @cluster.save
+      
       puts "Activado el cluster #{params[:id]}"
-      respond_to do |format|
-        format.html { redirect_to(clusters_url) }
-        format.xml  { head :ok }
-      end
+    end 
+    
+    respond_to do |format|
+      format.html { redirect_to(clusters_url) }
+      format.xml  { head :ok }
+    end
+
   end
   
   def destroy
-    @cluster = Cluster.find(params[:id])
-    @cluster.activo = "N"
-    @cluster.save
+    
+    # solo los usuarios con rol de admin pueden activar o desactivar bazares. 
+    
+    if current_user_is_admin 
+      
+      @cluster = Cluster.find(params[:id])
+      @cluster.activo = "N"
+      @cluster.save
 
+    end 
+    
     respond_to do |format|
       format.html { redirect_to(clusters_url) }
       format.xml  { head :ok }
