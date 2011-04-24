@@ -7,6 +7,7 @@ sitemap.add '/home/datos', :priority => 0.7, :changefreq => 'daily'
 sitemap.add '/home/bazares', :priority => 0.5, :changefreq => 'weekly'
 sitemap.add '/ciudades', :priority => 0.5, :changefreq => 'weekly'
 sitemap.add '/paises', :priority => 0.5, :changefreq => 'weekly'
+sitemap.add '/api/index', :priority => 0.5, :changefreq => 'weekly'
 
 SitemapGenerator::Sitemap.add_links do |sitemap|
 
