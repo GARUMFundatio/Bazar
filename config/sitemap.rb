@@ -4,7 +4,9 @@ SitemapGenerator::Sitemap.yahoo_app_id = nil
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 
 sitemap.add '/home/datos', :priority => 0.7, :changefreq => 'daily'
-sitemap.add '/home/bazares', :priority => 0.7, :changefreq => 'daily'
+sitemap.add '/home/bazares', :priority => 0.5, :changefreq => 'weekly'
+sitemap.add '/ciudades', :priority => 0.5, :changefreq => 'weekly'
+sitemap.add '/paises', :priority => 0.5, :changefreq => 'weekly'
 
 SitemapGenerator::Sitemap.add_links do |sitemap|
 
@@ -32,7 +34,7 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
     sitemap.add "/ciudades/#{ciudad.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
   end  
   
-  Pais.where('total_empresas_bazar') do |pais|
+  Pais.where('total_empresas_bazar > 0') do |pais|
     sitemap.add "/paises/#{pais.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
   end  
   
