@@ -6,7 +6,7 @@ SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.add_links do |sitemap|
 
   Cluster.find_each do |cluster|
-    sitemap.add "/cluster/#{cluster.slug.name}", :priority => 0.7, :changefreq => 'daily',:lastmod => cluster.updated_at
+    sitemap.add "/clusters/#{cluster.slug.name}", :priority => 0.7, :changefreq => 'daily',:lastmod => cluster.updated_at
   end
 
   Bazarcms::Oferta.find_each do |oferta|
