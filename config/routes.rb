@@ -16,6 +16,7 @@ Bazar::Application.routes.draw do
   resources :roles
   resources :user_sessions
   resources :ciudades
+  resources :paises
   resources :password_resets
   
   # get 'login(.:format)' => 'user_sessions#new', :as => :login

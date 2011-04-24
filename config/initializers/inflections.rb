@@ -34,5 +34,6 @@ inflect.irregular 'actividad', 'actividades'
 inflect.irregular 'favorito', 'favoritos'
 inflect.irregular 'estadisticasconsulta', 'estadisticasconsultas'
 inflect.irregular 'slug', 'slugs'
+inflect.irregular 'pais', 'paises'
 
 end
