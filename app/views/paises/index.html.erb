@@ -1,0 +1,13 @@
+<% if !current_user.nil? %>
+	<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
+<% end %>
+
+<h3 class="page-title">Países con Empresas de este Bazar</h3>
+
+<table id="results" class="tabla" cellspacing="0">
+
+	<%= render(:partial => "pais", :collection => @paises) %>
+	
+</table>
+
+<br />

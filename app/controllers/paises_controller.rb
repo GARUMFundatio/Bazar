@@ -1,5 +1,7 @@
 class PaisesController < ApplicationController
 
+  layout "bazar"
+
   def busqueda
   
     # @perfiles = Perfil.limit(20).where('lower(`desc`) like ? OR lower(ayuda) like ?', '%'+params[:term].downcase+'%', '%'+params[:term].downcase+'%').order('codigo')
@@ -41,6 +43,9 @@ class PaisesController < ApplicationController
   end
 
   def index 
+    
+    @paises = Pais.where('total_empresas_bazar > 0').order('descripcion')
+    render :layout => true 
     
   end 
   
