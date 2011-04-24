@@ -71,6 +71,8 @@
 
 </table>
 
+<% if current_user.nil? %>
+
 <br/>
 <br/>
 
@@ -82,3 +84,5 @@
 <a class="volver-home-link" href="/home/datos"> Los datos de este bazar &raquo;</a>
 <a class="volver-home-link" href="/home/registrarse"> Darse de alta en este bazar &raquo;</a>
 <a class="volver-home-link" href="/home/bazares"> ¿Qué es un Bazar? &raquo;</a>
+
+<% end %>
