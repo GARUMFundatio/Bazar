@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <b>Nombre:</b>
@@ -6,35 +5,18 @@
 </p>
 
 <p>
-  <b>Desc:</b>
+  <b>Descripción:</b>
   <%= @cluster.desc %>
 </p>
 
 <p>
-  <b>Activo:</b>
-  <%= @cluster.activo %>
-</p>
-
-<p>
-  <b>Url:</b>
+  <b>Enlace al Bazar:</b>
   <%= @cluster.url %>
 </p>
 
 <p>
-  <b>Miclave:</b>
-  <%= @cluster.miclave %>
-</p>
-
-<p>
-  <b>Suclave:</b>
-  <%= @cluster.suclave %>
-</p>
-
-<p>
-  <b>Empresas:</b>
+  <b>Total Empresas en este Bazar:</b>
   <%= @cluster.empresas %>
 </p>
 
 
-<%= link_to 'Edit', edit_cluster_path(@cluster) %> |
-<%= link_to 'Back', clusters_path %>
