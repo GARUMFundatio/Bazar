@@ -21,7 +21,8 @@ class CiudadesController < ApplicationController
   end 
   
   def show
-    
+    @ciudad = Ciudad.find(params[:id])  
+    render :layout => true
   end 
   
 end
