@@ -16,7 +16,7 @@ class CiudadesController < ApplicationController
   end
 
   def index
-    @ubicaciones = Bazarcms::Ubicacion.all  
+    @ubicaciones = Bazarcms::Ubicacion.where('1 = 1').order('ciudad_id')  
     render :layout => true 
   end 
   
