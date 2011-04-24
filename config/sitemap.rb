@@ -10,13 +10,18 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   end
 
   Bazarcms::Oferta.find_each do |oferta|
-    puts oferta.inspect
+    # puts oferta.inspect
     sitemap.add "/bazarcms/ofertas/#{oferta.id}?bazar_id=#{oferta.bazar_id}", :priority => 0.9, :changefreq => 'daily',:lastmod => oferta.fecha
   end
 
   Bazarcms::Empresa.find_each do |empresa|
-    puts empresa.inspect
-    sitemap.add "/bazarcms/empresas/#{empresa.id}?bazar_id=#{Conf.find_by_nombre("BazarId").valor}", :priority => 0.7, :changefreq => 'daily',:lastmod => empresa.updated_at
+    # puts empresa.inspect
+    if !empresa.slug.name.nil?
+      sitemap.add "/bazarcms/empresas/show2/#{empresa.slug.name}", :priority => 0.7, :changefreq => 'daily',:lastmod => empresa.updated_at
+    else 
+      sitemap.add "/bazarcms/empresas/show2/#{empresa.id}", :priority => 0.7, :changefreq => 'daily',:lastmod => empresa.updated_at      
+    end 
+    
   end
   
 end
