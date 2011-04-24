@@ -50,7 +50,7 @@ class PaisesController < ApplicationController
   end 
   
   def show 
-    
+    @pais = Pais.find(params[:id])
   end 
   
 end

@@ -26,7 +26,7 @@
 
 <table id="results" class="tabla" cellspacing="0">
 	
-<% for ubicacion in Bazarcms::Ubicacion.where('ciudad_id = ?', @ciudad.id) %>
+<% for ubicacion in Bazarcms::Ubicacion.where('ciudad_id = ?', @ciudad.id).order('empresa_id') %>
 
 	<tr>
 
@@ -44,7 +44,7 @@
 <br/>
 <br/>
 
-<b>Para ver más información de esta empresa regístrese en un Bazar</b>
+<b>Es necesario registrarse para poder usar Bazar</b>
 
 <br/>
 <br/>
