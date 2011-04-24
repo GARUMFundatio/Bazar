@@ -34,7 +34,7 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
     sitemap.add "/ciudades/#{ciudad.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
   end  
   
-  Pais.where('total_empresas_bazar > 0') do |pais|
+  Pais.where('total_empresas_bazar > 0').each do |pais|
     sitemap.add "/paises/#{pais.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
   end  
   
