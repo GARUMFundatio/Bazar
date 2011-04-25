@@ -9,7 +9,7 @@
 	<tr>
 		<td>
 			<b>Actividad:</b>
-		</tr>
+		</td>
 		<td>
 			<%= @actividad.desc.html_safe %>
 		</td>
@@ -19,7 +19,7 @@
 	<tr>
 		<td>
 			<b>Fecha:</b>
-		</tr>
+		</td>
 		<td>
 			<%= @actividad.fecha.strftime("%d-%m-%Y") %>
 		</td>
@@ -29,7 +29,7 @@
 	<tr>
 		<td>
 			<b>Empresa:</b>
-		</tr>
+		</td>
 		<td>
 			<% empre = Bazarcms::Empresa.find(@actividad.user_id) %>
 			<%= link_to(empre.nombre, '/bazarcms/empresas/show2/'+empre.friendly_id) %>
