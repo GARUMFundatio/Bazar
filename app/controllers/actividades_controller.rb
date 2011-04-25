@@ -51,29 +51,21 @@ class ActividadesController < ApplicationController
     @actividad = Actividad.new(params[:actividad])
 
     respond_to do |format|
-      if @actividad.save
+      # no se pueden crear más que desde la aplicacion if @actividad.save
         format.html { redirect_to(@actividad, :notice => 'Actividad was successfully created.') }
         format.xml  { render :xml => @actividad, :status => :created, :location => @actividad }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @actividad.errors, :status => :unprocessable_entity }
-      end
     end
   end
 
   # PUT /actividades/1
   # PUT /actividades/1.xml
+
   def update
     @actividad = Actividad.find(params[:id])
 
     respond_to do |format|
-      if @actividad.update_attributes(params[:actividad])
         format.html { redirect_to(@actividad, :notice => 'Actividad was successfully updated.') }
         format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @actividad.errors, :status => :unprocessable_entity }
-      end
     end
   end
 
@@ -81,7 +73,7 @@ class ActividadesController < ApplicationController
   # DELETE /actividades/1.xml
   def destroy
     @actividad = Actividad.find(params[:id])
-    @actividad.destroy
+    # jt securizado @actividad.destroy
 
     respond_to do |format|
       format.html { redirect_to(actividades_url) }
@@ -99,6 +91,9 @@ class ActividadesController < ApplicationController
     end
   end
   
-
+  def rss
+    @actividades = Actividad.where("bazar_id = ?", BZ_param('BazarId')).order("fecha desc").limit(20)
+    render :layout => false
+  end
   
 end
