@@ -1,35 +1,59 @@
-<p id="notice"><%= notice %></p>
+<% if !current_user.nil? %>
+	<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
+<% end %>
 
-<p>
-  <b>Bazar:</b>
-  <%= @actividad.bazar_id %>
-</p>
+<h3 class="page-title">Actvidad del Bazar</h3>
 
-<p>
-  <b>User:</b>
-  <%= @actividad.user_id %>
-</p>
+<table id="results" class="tabla" cellspacing="0">
 
-<p>
-  <b>Local:</b>
-  <%= @actividad.local_id %>
-</p>
+	<tr>
+		<td>
+			<b>Actividad:</b>
+		</tr>
+		<td>
+			<%= @actividad.desc.html_safe %>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td>
+			<b>Fecha:</b>
+		</tr>
+		<td>
+			<%= @actividad.fecha.strftime("%d-%m-%Y") %>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td>
+			<b>Empresa:</b>
+		</tr>
+		<td>
+			<% empre = Bazarcms::Empresa.find(@actividad.user_id) %>
+			<%= link_to(empre.nombre, '/bazarcms/empresas/show2/'+empre.friendly_id) %>
+		</td>
+		
+	</tr>
+	
+</table>
 
-<p>
-  <b>Fecha:</b>
-  <%= @actividad.fecha %>
-</p>
+<% if current_user.nil? %>
 
-<p>
-  <b>Desc:</b>
-  <%= @actividad.desc %>
-</p>
+<br/>
+<br/>
 
-<p>
-  <b>Tipo:</b>
-  <%= @actividad.tipo %>
-</p>
+<b>Es necesario registrarse para poder usar Bazar al 100%</b>
+
+<br/>
+<br/>
+
+<a class="volver-home-link" href="/home/datos"> Los datos de este bazar &raquo;</a>
+<a class="volver-home-link" href="/home/registrarse"> Darse de alta en este bazar &raquo;</a>
+<a class="volver-home-link" href="/home/bazares"> ¿Qué es un Bazar? &raquo;</a>
+
+<% end %>
 
 
-<%= link_to 'Edit', edit_actividad_path(@actividad) %> |
-<%= link_to 'Back', actividades_path %>
+
