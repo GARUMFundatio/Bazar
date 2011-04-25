@@ -14,7 +14,7 @@ sitemap.add '/api/ejemploinfoempresa', :priority => 0.5, :changefreq => 'weekly'
 sitemap.add '/api/ejemploperfiles', :priority => 0.5, :changefreq => 'weekly'
 sitemap.add '/api/ejemplopaises', :priority => 0.5, :changefreq => 'weekly'
 sitemap.add '/actividades.rss', :priority => 0.7, :changefreq => 'daily'
-sitemap.add '/bazarcms/ofertas.rss', :priority => 0.7, :changefreq => 'daily'
+sitemap.add '/ofertas.rss', :priority => 0.7, :changefreq => 'daily'
 
 SitemapGenerator::Sitemap.add_links do |sitemap|
 
