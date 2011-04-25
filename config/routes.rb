@@ -4,6 +4,7 @@ Bazar::Application.routes.draw do
   root :to => 'home#home'
   match '/noticias.rss' => 'noticias#rss'
   match '/actividades.rss' => 'actividades#rss'
+  match '/actividades.rss' => 'actividades#rss'
   
   resources :favoritos
   resources :actividades
