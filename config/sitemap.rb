@@ -8,6 +8,11 @@ sitemap.add '/home/bazares', :priority => 0.5, :changefreq => 'weekly'
 sitemap.add '/ciudades', :priority => 0.5, :changefreq => 'weekly'
 sitemap.add '/paises', :priority => 0.5, :changefreq => 'weekly'
 sitemap.add '/api/index', :priority => 0.5, :changefreq => 'weekly'
+sitemap.add '/api/ejemploinfo', :priority => 0.5, :changefreq => 'weekly'
+sitemap.add '/api/ejemploempresas', :priority => 0.5, :changefreq => 'weekly'
+sitemap.add '/api/ejemploinfoempresa', :priority => 0.5, :changefreq => 'weekly'
+sitemap.add '/api/ejemploperfiles', :priority => 0.5, :changefreq => 'weekly'
+sitemap.add '/api/ejemplopaises', :priority => 0.5, :changefreq => 'weekly'
 
 SitemapGenerator::Sitemap.add_links do |sitemap|
 
