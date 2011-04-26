@@ -46,5 +46,10 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   Pais.where('total_empresas_bazar > 0').each do |pais|
     sitemap.add "/paises/#{pais.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
   end  
+
+  Perfil.where('total_empresas_bazar > 0').each do |perfil|
+    sitemap.add "/bazarcms/perfiles/#{perfil.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
+  end  
+
   
 end
