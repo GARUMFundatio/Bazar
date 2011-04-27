@@ -16,7 +16,7 @@ namespace :bazar do
    uri = "http://directorio.garumfundatio.org/clusters.json"
    hydra = Typhoeus::Hydra.new
 
-    r = Typhoeus::Request.new(uri, :timeout => 5000)
+    r = Typhoeus::Request.new(uri, :timeout => 10000)
     r.on_complete do |response|
       case response.curl_return_code
       when 0
@@ -150,7 +150,7 @@ namespace :bazar do
 
        uri = "#{cluster.url}/api/perfiles.json"
        puts "URI #{uri}"
-       r = Typhoeus::Request.new(uri, :timeout => 5000)
+       r = Typhoeus::Request.new(uri, :timeout => 20000)
        r.on_complete do |response|
          case response.curl_return_code
          when 0
@@ -181,7 +181,7 @@ namespace :bazar do
 
        uri = "#{cluster.url}/api/paises.json"
        puts "URI #{uri}"
-       r = Typhoeus::Request.new(uri, :timeout => 5000)
+       r = Typhoeus::Request.new(uri, :timeout => 20000)
        r.on_complete do |response|
          case response.curl_return_code
          when 0
