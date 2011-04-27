@@ -142,7 +142,7 @@ class ClustersController < ApplicationController
           cluster.updated_at = key['cluster']['updated_at']         
           cluster.save
         else
-          puts ("actualizo cluster #{key['cluster']['id']}")
+          puts("actualizo cluster #{key['cluster']['id']}")
           cluster.nombre = key['cluster']['nombre']
           cluster.desc = key['cluster']['desc']
           cluster.empresas = key['cluster']['empresas']

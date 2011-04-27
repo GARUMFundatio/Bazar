@@ -10,7 +10,7 @@ class Pais < ActiveRecord::Base
   def self.paisestocsv
     csv = "country_code,value\\n"
     max = Pais.count_by_sql("select max(total_empresas_mercado) from paises")
-    for pais in Pais.where ('total_empresas_mercado > 0')
+    for pais in Pais.where('total_empresas_mercado > 0')
       csv += "#{pais.cod3},#{(pais.total_empresas_mercado*10)/max}\\n"
     end
     

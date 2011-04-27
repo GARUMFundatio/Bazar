@@ -16,7 +16,7 @@ class BazarMailer < ActionMailer::Base
     @asunto = asunto
     @texto = texto
     
-    logger.debug ("Enviando correo De: #{de} a #{para} -> asunto: #{asunto}")
+    logger.debug("Enviando correo De: #{de} a #{para} -> asunto: #{asunto}")
     
     mail(:from => de, :to => para, :subject => asunto)  
   end

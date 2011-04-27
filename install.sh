@@ -34,14 +34,14 @@ echo "Creando las tablas de la base de datos"
 RAILS_ENV=production rake db:migrate
 
 RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Cluster
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms:Empresa
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms:Oferta
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Pais
+RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Paises
 RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Ciudad
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms::Perfil
+RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms::Empresa
+RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms::Oferta
 RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms::Perfil
 
 echo "Actualizando la información del resto de los bazares" 
 RAILS_ENV=production rake bazar:actualiza
+RAILS_ENV=production rake sitemap:refresh
 
 

@@ -204,7 +204,7 @@ class MensajesController < ApplicationController
         
         logger.debug "Enviando el mensaje a #{@mensaje.bazar_destino}"
         
-        dohttppost (@mensaje.bazar_destino, "/mensajeremoto", @mensaje.to_json)
+        dohttppost(@mensaje.bazar_destino, "/mensajeremoto", @mensaje.to_json)
 
         @mensaje.destroy
         
@@ -263,7 +263,7 @@ class MensajesController < ApplicationController
         
         logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
         
-        dohttppost (@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
+        dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
 
         @mensaje2.destroy
         
