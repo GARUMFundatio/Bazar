@@ -54,10 +54,5 @@ config.cache_store = :dalli_store, '127.0.0.1',
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  config.middleware.use "::ExceptionNotifier",
-    :email_prefix => "[Bazar Garum] ",
-    :sender_address => %{"Bazar Garum" <juantomas@geofun.es>},
-    :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
-  
   
 end
