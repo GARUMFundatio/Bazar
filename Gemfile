@@ -16,6 +16,7 @@ gem 'typhoeus'
 gem 'dalli'
 gem 'sitemap_generator'
 gem "friendly_id", "~> 3.1"
+gem 'exception_notification', :require => 'exception_notifier'
 
 gem "bazarcms", :path => '../bazarcms'
 
