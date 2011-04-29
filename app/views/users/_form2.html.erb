@@ -1,0 +1,49 @@
+<div>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> No se ha podido salvar los datos del usuario:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :usuario %>: <%= @user.login %><br />
+	<%= f.text_field :usuario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :correo %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confirmación %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <% if current_user_is_admin %>
+  <div class="field">
+
+ 	<% for role in Rol.all %>
+		<%= check_box_tag "user[rol_ids][]", role.id, @user.roles.include?(role) %>
+	    <%= role.rol %>	<br/>
+	<% end %>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Guardar' %>
+  </div>
+<% end %>
+</div>
