@@ -24,5 +24,12 @@ Bazar::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  
+  config.middleware.use "::ExceptionNotifier",
+    :email_prefix => "[Bazar Garum] ",
+    :sender_address => %{"Bazar Garum" <juantomas@geofun.es>},
+    :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
+  
+  
 end
 
