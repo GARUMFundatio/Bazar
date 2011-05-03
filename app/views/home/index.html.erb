@@ -13,7 +13,8 @@ $('#busqueda-link').click(function() {
   $('#avanzada').slideToggle(250);
 });
 
-tipo = 'E';
+tipo = 'E';	
+$('#check-empresas2').attr('checked', true);
 
 </script>
 
@@ -601,9 +602,12 @@ $('#ayuda-busqueda-link').click(function() {
 </div><!-- /#avanzada-->
 
 <p id="opciones-busqueda">
-  <span><label id="check-ofertas" onclick="tipo='O';"><input type="radio" name="size"> Ofertas </label></span>
-  <span><label id="check-demandas" onclick="tipo='D';"><input type="radio" name="size"> Demandas </label></span>
-  <span><label id="check-empresas" onclick="tipo='E';"><input type="radio" name="size" checked="checked"> Empresas</label></span>
+  <span><label id="check-ofertas" onclick="tipo='O'; $('#check-ofertas2').attr('checked', true);">
+	<input id="check-ofertas2" onclick="tipo='O';" type="radio" name="size"> Ofertas </label></span>
+  <span><label id="check-demandas" onclick="tipo='D'; $('#check-demandas2').attr('checked', true);">
+	<input id="check-demandas2" onclick="tipo='D';" type="radio" name="size"> Demandas </label></span>
+  <span><label id="check-empresas" onclick="tipo='E'; $('#check-empresas2').attr('checked', true);">
+	<input id="check-empresas2" onclick="tipo='E';" type="radio" name="size" checked="checked"> Empresas</label></span>
 </p>
 
 

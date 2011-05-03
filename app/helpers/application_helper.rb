@@ -113,7 +113,7 @@ module ApplicationHelper
           for val in cam[1].split(',')
             # text += "traza  #{cam[0]} => #{cam[1]}<br/>"
             
-            pais = Bazarcms::Pais.find_by_id(val) 
+            pais = Pais.find_by_id(val) 
             if !pais.nil?
               text += "#{pais.codigo}: #{pais.desc} <br/>"
             end 
