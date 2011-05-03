@@ -115,7 +115,7 @@ module ApplicationHelper
             
             pais = Pais.find_by_id(val) 
             if !pais.nil?
-              text += "#{pais.codigo}: #{pais.desc} <br/>"
+              text += "#{pais.codigo}: #{pais.descripcion} <br/>"
             end 
           end 
 
