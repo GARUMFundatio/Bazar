@@ -224,8 +224,6 @@ namespace :bazar do
 
 
 
-
-
  end
 
 
