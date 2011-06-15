@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
 
-gem 'mysql2'
+gem 'mysql2', '< 0.3'
 gem 'acts-as-taggable-on' 
 gem 'jquery-rails'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
@@ -22,6 +22,7 @@ gem "bazarcms", :path => '../bazarcms'
 
 # gem 'bazarcms', :git => "git://github.com/GARUMfundatio/bazarcms.git"
 
+# revisar para cuando este lista esta gema gem 'activerecord-mysql2-adapter'
 
 
 # gem 'ruby-debug'
