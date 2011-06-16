@@ -53,10 +53,10 @@ module Bazar
         html_tag
     end
 
-#    config.middleware.use "::ExceptionNotifier",
-#      :email_prefix => "[Bazar Garum] ",
-#      :sender_address => %{"Bazar Garum" <juantomas@geofun.es>},
-#      :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
+    config.middleware.use "::ExceptionNotifier",
+      :email_prefix => "[Bazar Garum] ",
+      :sender_address => %{"Bazar Garum" <juantomas@geofun.es>},
+      :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
     
   end
 end
