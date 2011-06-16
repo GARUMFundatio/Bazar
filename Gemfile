@@ -15,7 +15,7 @@ gem 'dynamic_form'
 gem 'typhoeus'
 gem 'dalli'
 gem 'sitemap_generator'
-gem 'linecache'
+gem 'linecache', '= 0.43'
 gem "friendly_id", "~> 3.1"
 gem 'exception_notification', :require => 'exception_notifier'
 
