@@ -39,8 +39,10 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   end
   
   Bazarcms::Ubicacion.find_each do |ubi|
-    ciudad = Ciudad.find(ubi.ciudad_id)
-    sitemap.add "/ciudades/#{ciudad.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
+    if (!ubi.ciudad.nil?) 
+      ciudad = Ciudad.find(ubi.ciudad_id)
+      sitemap.add "/ciudades/#{ciudad.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
+    end
   end  
   
   Pais.where('total_empresas_bazar > 0').each do |pais|
