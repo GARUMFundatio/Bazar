@@ -56,23 +56,48 @@ instala_bazar()
 # MAIN
 #
 
+echo "Instalación del Bazar de Garum" 
+echo ""
+echo "(1) Instalación del Servidor de Base de Datos: mysql"
+echo ""
+
 if siono "Instalo Mysql?" ; then
   instala_mysql
 fi
 
-if siono "Instalo Ruby?" ; then
+echo ""
+echo "(2) Instalación Ruby Enterprise"
+echo ""
+
+if siono "Instalo Ruby Enterprise?" ; then
   instala_ruby
 fi
+
+echo ""
+echo "(3) Instalación Apache Passenger"
+echo ""
 
 if siono "Instalo Passenger?" ; then
   instala_passenger
 fi
 
+echo ""
+echo "(4) Instalación Herramienta GIT"
+echo ""
+
+
 if siono "Instalo Git?" ; then
   instala_git
 fi
 
+echo ""
+echo "(5) Instalación Aplicación Bazar de Garum"
+echo ""
+
+
 if siono "Instalo Bazar?" ; then
   instala_bazar
 fi
+
+
 
