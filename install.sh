@@ -32,6 +32,8 @@ RAILS_ENV=production rails generate friendly_id
 echo "Creando las tablas de la base de datos" 
 RAILS_ENV=production rake db:migrate
 
+RAILS_ENV=production rake bazar:db_init
+
 RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Cluster
 RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Paises
 RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Ciudad
