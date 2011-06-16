@@ -56,8 +56,8 @@ instala_memcache()
 instala_bazar()
 {
 
-  mkdir -p /opt/garum/Bazar
-  mkdir -p /opt/garum/bazarcms
+  mkdir -fp /opt/garum/Bazar
+  mkdir -fp /opt/garum/bazarcms
   chmod 0777 -R /opt/garum 
 
   cd /opt/garum/Bazar 
