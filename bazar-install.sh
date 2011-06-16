@@ -71,8 +71,8 @@ instala_bazar()
 
   if [ $existe -eq 0  ]
   then 
-    git clone https://github.com/GARUMFundatio/Bazar.git
-    git clone https://github.com/GARUMFundatio/bazarcms.git
+    git clone git://github.com/GARUMFundatio/Bazar.git
+    git clone git://github.com/GARUMFundatio/bazarcms.git
   else 
     cd Bazar
     git pull
