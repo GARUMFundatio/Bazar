@@ -47,6 +47,7 @@
 	
 <% for ubicacion in Bazarcms::Ubicacion.all %>
 
+<% if !ubicacion.ciudad.nil? %>
 	<% if ubicacion.ciudad.pais.id == @pais.id %>
 	<tr>
 
@@ -66,6 +67,7 @@
 	</tr>
 	
 	<% end %>
+<% end %>	
 	
 <% end %>
 
