@@ -1,14 +1,11 @@
 echo "Instalación de Bazar" 
 
 
-
-
 echo "Compilando las dependencias en el directorio vendor" 
 
 bundle install --path vendor 
 bundle exec aaf_install
 
-RAILS_ENV=production rails generate delayed_job
 RAILS_ENV=production rails generate bazarcms 
 
 mkdir -p log 
