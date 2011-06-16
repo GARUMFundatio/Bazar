@@ -31,7 +31,7 @@ instala_mysql()
 
 instala_ruby()
 {
-  apt-get -y install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev git-core mysql-client libmysqlclient15-dev
+  apt-get -y install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev git-core mysql-client libmysqlclient15-dev 
   wget http://rubyenterpriseedition.googlecode.com/files/ruby-enterprise-1.8.7-2011.03.tar.gz
   tar zxvf ruby-enterprise-1.8.7-2011.03.tar.gz
    ./ruby-enterprise-1.8.7-2011.03/installer
@@ -47,9 +47,26 @@ instala_git()
   apt-get -y install git
 }
 
+instala_memcache()
+{
+  apt-get -y install memcached
+}
+
+
 instala_bazar()
 {
+
+  mkdir -p /opt/garum/Bazar
+  mkdir -p /opt/garum/bazarcms
+  chmod 0777 -R /opt/garum 
+
+  cd /opt/garum/Bazar 
   git clone https://github.com/GARUMFundatio/Bazar.git
+
+  cd /opt/garum/bazarcms 
+  git clone https://github.com/GARUMFundatio/bazarcms.git
+
+
 }
 
 #
@@ -91,7 +108,16 @@ if siono "Instalo Git?" ; then
 fi
 
 echo ""
-echo "(5) Instalación Aplicación Bazar de Garum"
+echo "(5) Instalación Memcache"
+echo ""
+
+
+if siono "Instalo Memcache?" ; then
+  instala_memcache
+fi
+
+echo ""
+echo "(6) Instalación Aplicación Bazar de Garum"
 echo ""
 
 
