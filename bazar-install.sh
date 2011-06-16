@@ -56,9 +56,22 @@ instala_memcache()
 instala_bazar()
 {
 
-  mkdir -fp /opt/garum/Bazar
-  mkdir -fp /opt/garum/bazarcms
-  chmod 0777 -R /opt/garum 
+  if [ -d "/opt/garum/Bazar" ]
+  then
+    echo "Ya existe /opt/garum/Bazar . No lo creo" 
+  else 
+    mkdir -p /opt/garum/Bazar
+    chmod 0777 -R /opt/garum/Bazar 
+  fi
+
+  if [ -d "/opt/garum/bazarcms" ]
+  then
+    echo "Ya existe /opt/garum/bazarcms . No lo creo" 
+  else 
+    mkdir -p /opt/garum/bazarcms
+    chmod 0777 -R /opt/garum/bazarcms 
+  fi
+
 
   cd /opt/garum/Bazar 
   git clone https://github.com/GARUMFundatio/Bazar.git
