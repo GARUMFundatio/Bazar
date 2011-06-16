@@ -56,29 +56,29 @@ instala_memcache()
 instala_bazar()
 {
 
-  if [ -d "/opt/garum/Bazar" ]
+  if [ -d "/opt/garum/" ]
   then
-    echo "Ya existe /opt/garum/Bazar . No lo creo" 
+    echo "Ya existe /opt/garum . No lo creo" 
+    existe=1 
   else 
-    mkdir -p /opt/garum/Bazar
-    chmod 0777 -R /opt/garum/Bazar 
-  fi
-
-  if [ -d "/opt/garum/bazarcms" ]
-  then
-    echo "Ya existe /opt/garum/bazarcms . No lo creo" 
-  else 
-    mkdir -p /opt/garum/bazarcms
-    chmod 0777 -R /opt/garum/bazarcms 
+    mkdir -p /opt/garum
+    chmod 0777 -R /opt/garum 
+    existe=0
   fi
 
 
-  cd /opt/garum/Bazar 
-  git clone https://github.com/GARUMFundatio/Bazar.git
+  cd /opt/garum
 
-  cd /opt/garum/bazarcms 
-  git clone https://github.com/GARUMFundatio/bazarcms.git
-
+  if [ $existe -eq 0  ]
+  then 
+    git clone https://github.com/GARUMFundatio/Bazar.git
+    git clone https://github.com/GARUMFundatio/bazarcms.git
+  else 
+    cd Bazar
+    git pull
+    cd ../bazarcms
+    git pull
+  end 
 
 }
 
