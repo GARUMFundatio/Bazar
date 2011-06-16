@@ -21,5 +21,8 @@ namespace :bazar do
    FileUtils.chown 'www-data', 'www-data', File.join('config','environment.rb')
  end
 
+ task :create_users do
+
+ end
 end
 
