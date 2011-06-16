@@ -44,7 +44,7 @@ instala_passenger()
 
 instala_git()
 {
-  apt-get -y install git
+  apt-get -y install git git-core
 }
 
 instala_memcache()
