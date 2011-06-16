@@ -78,7 +78,7 @@ instala_bazar()
     git pull
     cd ../bazarcms
     git pull
-  end 
+  fi 
 
 }
 
