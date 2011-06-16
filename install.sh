@@ -12,6 +12,8 @@ RAILS_ENV=production rails generate delayed_job
 RAILS_ENV=production rails generate bazarcms 
 
 mkdir -p log 
+touch log/acts_as_ferret.log
+chmod -R 0777 log 
 
 echo "Haciendo el setup de bazar" 
 
