@@ -88,7 +88,13 @@ instala_bazar()
 
 echo "Instalación del Bazar de Garum" 
 echo ""
-echo "(1) Instalación del Servidor de Base de Datos: mysql"
+echo "(1) Instalación del Servidor de Base de Datos: mysql
+----------------------------------------------------
+
+Este paso instala el servidor de base de datos mysql
+si no lo tiene instalado en su servidor.
+
+"
 echo ""
 
 if siono "Instalo Mysql?" ; then
@@ -96,7 +102,14 @@ if siono "Instalo Mysql?" ; then
 fi
 
 echo ""
-echo "(2) Instalación Ruby Enterprise"
+echo "(2) Instalación Ruby Enterprise
+-------------------------------
+
+Recomendamos usar ruby enterprise 1.8.7.
+Este proceso descargará e instalará la
+versión que recomendamos.
+
+"
 echo ""
 
 if siono "Instalo Ruby Enterprise?" ; then
@@ -104,7 +117,13 @@ if siono "Instalo Ruby Enterprise?" ; then
 fi
 
 echo ""
-echo "(3) Instalación Apache Passenger"
+echo "(3) Instalación Apache Passenger
+---------------------------------
+
+Nuestra recomendación es usar el
+módulo Passenger de Apache. 
+
+"
 echo ""
 
 if siono "Instalo Passenger?" ; then
@@ -112,7 +131,14 @@ if siono "Instalo Passenger?" ; then
 fi
 
 echo ""
-echo "(4) Instalación Herramienta GIT"
+echo "(4) Instalación Herramienta GIT
+--------------------------------
+
+Bazar Garum necesita la herramienta
+GIT. Si ya la tiene instalada en su 
+sistema puede saltarse esta opción.
+
+"
 echo ""
 
 
@@ -121,7 +147,17 @@ if siono "Instalo Git?" ; then
 fi
 
 echo ""
-echo "(5) Instalación Memcache"
+echo "(5) Instalación Memcache
+-------------------------
+
+Si no tiene instalado Memcache 
+puede instalarlo ahora. 
+
+Importante: Bazar require que 
+la versión de Memcache sea 
+> 1.4
+
+"
 echo ""
 
 
@@ -130,7 +166,14 @@ if siono "Instalo Memcache?" ; then
 fi
 
 echo ""
-echo "(6) Instalación Aplicación Bazar de Garum"
+echo "(6) Instalación Aplicación Bazar de Garum
+-----------------------------------------
+
+El proceso de instalación va a intentar bajar
+e instalar la última versión del Bazar Garum. 
+
+
+"
 echo ""
 
 
