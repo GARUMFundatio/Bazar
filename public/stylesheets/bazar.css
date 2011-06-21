@@ -7,6 +7,10 @@ body {
     line-height: 1.4;
 }
 
+body.logueado {
+	background: url("/images/bazarcentro.png") no-repeat fixed 0 0 transparent;
+	}
+
 pre {
    background-color: #eee;
    padding: 10px;
@@ -99,7 +103,7 @@ body {
     width: 960px;
 	overflow: hidden;
     background-color: #FFF;
-    margin: 20px auto !important;
+    margin: 0 auto !important;
 /*    border: 1px solid #999;
     border-bottom-right-radius: 1em;
     border-bottom-left-radius: 1em;
@@ -137,9 +141,10 @@ body {
 	}
 
 #nombresitio {
-    bottom: -15px;
+    height: 75px;
     left: 85px;
-    position: absolute;
+    max-width: 350px;
+    position: relative;
 }
 
 
@@ -174,7 +179,7 @@ body {
 
 #slogan {
 	position: relative;
-	bottom: 0px;
+	bottom: 4px;
    font-size: 1.2em;
    }
 /*
@@ -241,7 +246,7 @@ body {
     right: 18px;
     width: 190px;
     text-align: center;
-    color: #B8CDE1;
+    color: #30537A;
  /*   box-shadow: 0px 0px 15px #888;
     -moz-box-shadow: 0px 0px 15px #888;
     -webkit-box-shadow: 0px 0px 15px #888; */
@@ -266,7 +271,7 @@ body {
 
 .anonimo #nav-usuario a.registro-link,
 .logueado #nav-usuario a {
-    color: #B8CDE1;
+    color: #30537A;
 }
 
 div#nav-usuario {
@@ -283,7 +288,7 @@ div#nav-usuario {
     -webkit-border-radius: 12px; */
     list-style-type: none;
     text-align: left;
-    background: #244367 url(/images/fondo-nav-usuario.png) repeat-x left bottom;
+    background: #efe3a4 url(/images/fondo-nav-usuario.png) repeat-x left bottom;
 }
 
 div#nav-usuario a {
@@ -631,7 +636,7 @@ div.contenidos-secundarios h4 {
 
 #contenido a.volver-home-link {
     position: relative;
-    top: -5px;
+    top: 5px;
     display: block;
     width: 200px;
     margin-bottom: 20px;
@@ -641,6 +646,7 @@ div.contenidos-secundarios h4 {
 
 #contenido .page-title {
     margin-bottom: 15px;
+    margin-top: 15px;
     font-size: 30px;
     line-height: 1.2;
     font-weight: normal;
@@ -876,9 +882,9 @@ font-size: 14px;
     padding: .3em 1em;
     margin: 0 10px 20px 0;
     border: 1px solid #ccc;
-    border-radius: 10px;
+  /*  border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px; */
     font-size: 20px;
     line-height: 1;
     text-align: center;
@@ -903,7 +909,7 @@ p.form-help,
 .edit_bazarcms_empresa input[type=text],
 .edit_bazarcms_empresa textarea {
     padding: 4px 4px 5px;
-    border: 1px solid #cdcdcd;
+    border: 1px solid #efe3a4;
     font-size: 18px;
     line-height: 26px;
     font-style: italic;
@@ -936,9 +942,9 @@ form.edit_bazarcms_empresa div.actions {
     padding: .3em 1em;
     margin: 0 10px 0 0;
     border: 1px solid #ccc;
-    border-radius: 10px;
+  /*  border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px; */
     font-size: 20px;
     line-height: 1;
     text-align: center;
@@ -1049,22 +1055,22 @@ div.perfil:last-child {
     position: absolute;
     margin: 4px 0 0 15px;
     padding: 0 14px;
-    border: 1px solid #C1D1DE;
-    border-radius: 10px;
+    border: 1px solid #EFE3A4;
+ /*   border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px; */
     font-size: 13px;
     line-height: 30px;
     text-decoration: none;
-    background: #E0E8F0;
-    color: #79A7C4;
+    background: #FFF5BF;
+    color: #30537A;
 }
 
 #contenido h3 a.opcion-mensajes:hover,
 #contenido h3 a.opcion-mensajes:focus,
 #contenido h3 a.opcion-mensajes:active {
-    border-color: #8BA7BF;
-    color: #24568E;
+    border-color: #30537A;
+   /* color: #24568E; */
 }
 
 /* Búsqueda de Empresas */
@@ -1086,7 +1092,7 @@ input#busca {
     display: inline;
     float: left;
     width: 403px;
-    max-height: 22px;
+    height: 23px;
     margin: 0 170px 50px 0;
     padding: 8px 60px 10px 10px;
     border: 1px solid #999;
@@ -1106,7 +1112,7 @@ input#busca:active {
 #cajabusqueda {
     position: relative;
     min-height: 100px;
-    padding-top: 31px;
+    padding-top: 61px;
 }
 
 #cajabusqueda table {
@@ -1117,19 +1123,44 @@ input#busca:active {
 /* Div con los resultados */
 #lista {
     margin-bottom: 20px;
-    padding: 20px 20px 0;
-    border: 1px solid #DBB783;
+  /*  padding: 20px 20px 0;
+    border: 1px solid #DBB783; */
  /*   border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px; */
-    background: #FAE0BF;
+    background: #FFF5BF;
 }
+
+/* padding de los resultados de búsqueda */
+
+#lista h3 {
+	padding: 20px 20px 0;
+	}
+	
+
+#lista p {
+	padding: 20px 20px 0;
+	}
+	
+
+#lista table.tabla {
+	padding: 20px 20px 0;
+	}
+
+
 
 #lista table.tabla tbody {
     background-color: #FAE0BF; /* para que no se vean bordecitos blancos */
 }
 
-/* Filtro de búsuqeda por datos económicos */
+
+#ofertas {
+	padding-top: 20px;
+	}
+
+
+
+/* Filtro de búsqueda por datos económicos */
 #filtro-datos-economicos table tr td { /* Estilos para la celda con el slider */
     width: 223px;
     padding: 8px 11px;
@@ -1157,7 +1188,7 @@ input#busca:active {
 #cajabusqueda .ui-button,
 #cajabusqueda .ui-button .ui-state-default {
     position: absolute;
-    top: 31px;
+    top: 61px;
     left: 550px;
     height: 43px;
     width: 139px;
@@ -1236,15 +1267,15 @@ input#busca:active {
 /* botón Publicar */
 #publicar-link {
     position: absolute;
-    top: 31px;
+    top: 61px;
     left: 700px;
     display: block;
     width: 150px;
     padding: 3px 0 6px;
     border: 1px solid #97AF4D;
-    border-radius: 6px;
+  /*  border-radius: 6px;
     -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
+    -webkit-border-radius: 6px; */
     font-size: 14px;
     line-height: 13px;
     text-align: center;
@@ -1272,19 +1303,23 @@ input#busca:active {
     top: -55px;
     margin: 15px 68px 0 0;
     padding: 3px 25px 3px 7px;
-    border: thin solid #AABFD1;
-    border-radius : 5px;
-	-moz-border-radius : 5px; /* Mozilla */
-	-webkit-border-radius : 5px; /* Webkit */
-	text-decoration: none;
-    background: #E0E8F0 url(/images/icono-busqueda-avanzada.png) no-repeat 130px center;
+ /*   border-radius : 5px; */
+/* -moz-border-radius : 5px;  Mozilla */
+/*	-webkit-border-radius : 5px; /* Webkit */ 
+	text-decoration: underline;
+ /*   border: thin solid #EFE3A4;
+    background: #FFF5BF url(/images/icono-busqueda-avanzada.png) no-repeat 130px center; */
 }
+
+#busqueda-link a {
+	color: #30537A;
+	}
 
 #opciones-busqueda {
     position: absolute;
-    top: 59px;
-    right: 370px;
-    width: 452px;
+    top: 90px;
+    right: 369px;
+    width: 453px;
     padding: 10px;
     border: 1px solid #999;
     border-top-color: #DBCE8E;
@@ -1446,6 +1481,7 @@ h3 #ayuda-busqueda-link {
 #ofer1, #ofer2, #ofer3 {
     padding-top: 20px;
     border-top: 1px solid #cdcdcd;
+    padding-bottom: 20px;
 }
 
 /* Prueba para poner los números y letras del paso */
@@ -1458,9 +1494,9 @@ h3 #ayuda-busqueda-link {
     margin-right: 10px;
     height: 24px;
     line-height: 24px;
-    border-radius: 12px;
+ /*   border-radius: 12px;
     -moz-border-radius: 12px;
-    -webkit-border-radius: 12px;
+    -webkit-border-radius: 12px; */
     font-size: 14px;
     font-style: normal;
     text-transform: uppercase;
@@ -1476,6 +1512,7 @@ h3 #ayuda-busqueda-link {
 .publicar-seccion h4 em {
     left: -28px;
     margin-right: -20px;
+    padding-top: 20px;
     background: #527EB4;
     color: #fff;
 }
@@ -1486,9 +1523,9 @@ h3 #ayuda-busqueda-link {
     float: left;
     padding: 5px 18px 5px 15px;
     margin-bottom: 20px;
-    border-radius: 6px;
+ /*   border-radius: 6px;
     -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
+    -webkit-border-radius: 6px; */
     line-height: 28px;
     background: #527EB4;
     color: #fff;
@@ -1499,12 +1536,12 @@ h3 #ayuda-busqueda-link {
     clear: both;
     width: 888px;
     overflow: hidden;
-    margin: 0 0 20px 0;
+    margin: 20px 0;
     padding: 4px 15px 0;
     border: 1px solid #AABFD1;
-    border-radius: 10px;
+ /*   border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px; */
     background: #E0E8F0;
 }
 
@@ -1512,7 +1549,7 @@ h3 #ayuda-busqueda-link {
 .publicar-seccion h4 {
     font-size: 18px;
     line-height: 24px;
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
     padding: 5px 3px 8px 27px;
     border-bottom: 1px solid #9DAFBF;
     color: #666;
@@ -1625,9 +1662,9 @@ h3 #ayuda-busqueda-link {
     margin: 0 15px 20px 0;
     padding: 0 20px 0 35px;
     border: 1px solid #E0A062;
-    border-radius: 8px;
+  /*  border-radius: 8px;
     -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
+    -webkit-border-radius: 8px; */
     font-size: 16px;
     line-height: 42px;
     font-weight: bold;
@@ -1689,7 +1726,7 @@ h3 #ayuda-busqueda-link {
     width: 920px;
     height: 50px;
     overflow: hidden;
-    padding: 15px 0 5px;
+    padding: 15px 0 15px;
 }
 
 #content .navegar-publicar a:last-child {
@@ -1775,9 +1812,9 @@ h3 #ayuda-busqueda-link {
     height: 60px;
     margin-bottom: -10px;
     border: 2px solid #97AF4D;
-    border-radius: 16px;
+ /*   border-radius: 16px;
     -moz-border-radius: 16px;
-    -webkit-border-radius: 16px;
+    -webkit-border-radius: 16px; */
     font-size: 30px;
     line-height: 60px;
     font-weight: bold;
@@ -1953,7 +1990,7 @@ select {
 
 #content .titulo-destacado {
     clear: left;
-    margin: 0 5px 20px;
+    margin: 20px 5px;
     font-size: 45px;
     line-height: 1.2;
     font-weight: normal;
@@ -1971,6 +2008,7 @@ select {
 
 #contenido table.tabla {
     margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 
@@ -1992,20 +2030,22 @@ table.tabla tr:first-child th {
     color: #FDD900;
 }
 
-/* bordes redondeados de la tabla arriba */
+/* bordes redondeados de la tabla arriba 
 table.tabla tr:first-child th:first-child,
 table.tabla tr:first-child td:first-child {
     -moz-border-radius-topleft:10px;
     -webkit-border-top-left-radius:10px;
     border-top-left-radius:10px;
-}
+} 
+
+
 
 table.tabla tr:first-child th:last-child,
 table.tabla tr:first-child td:last-child {
     -moz-border-radius-topright:10px;
     -webkit-border-top-right-radius:10px;
     border-top-right-radius:10px;
-}
+} */
 
 table.tabla tr td {
     background-color: #fff;
@@ -2054,7 +2094,7 @@ table.tabla tr:first-child th[scope="row"] {
     border-bottom: 2px solid #ccc;
 }
 
-/* bordes redondeados de la tabla abajo */
+/* bordes redondeados de la tabla abajo 
 table.tabla tr:last-child th:first-child,
 table.tabla tr:last-child td:first-child {
     -moz-border-radius-bottomleft:10px;
@@ -2067,7 +2107,7 @@ table.tabla tr:last-child td:last-child {
     -moz-border-radius-bottomright:10px;
     -webkit-border-bottom-right-radius:10px;
     border-bottom-right-radius:10px;
-}
+} */
 
 table.tabla td a {
 text-decoration: none;}
@@ -2250,9 +2290,9 @@ ul.tabs li a {
 .ui-widget { font-family: "Liberation Sans",Verdana,Arial,sans-serif; font-size: 1.1em; }
 .ui-widget .ui-widget { font-size: 1em; }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
-.ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_glass_75_ffffff_1x400.png) 50% 50% repeat-x; color: #222222; }
+.ui-widget-content { border: 1px solid #EFE3A4; background: #FFF5BF; color: #30537A; }
 .ui-widget-content a { color: #222222; }
-.ui-widget-header { border: 1px solid #ccc; background: #cccccc url(/images/gradient-garum-azul-oscuro.png) 50% 50% repeat-x; color: #222222; font-weight: bold; }
+.ui-widget-header { border-bottom: 0px solid #EFE3A4; color: #30537A; background-color: #FFFFFF; font-weight: bold; }
 .ui-widget-header a { color: #222222; }
 
 /* Interaction states
@@ -2471,7 +2511,7 @@ ul.tabs li a {
 ----------------------------------*/
 
 /* Corner radius */
-.ui-corner-tl { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; }
+/* .ui-corner-tl { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; }
 .ui-corner-tr { -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; }
 .ui-corner-bl { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
 .ui-corner-br { -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
@@ -2479,10 +2519,10 @@ ul.tabs li a {
 .ui-corner-bottom { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
 .ui-corner-right {  -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
 .ui-corner-left { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
-.home .ui-tabs div.ui-corner-all:first-child, /* panel dentro de panel con bordes redondeados normales */
-.ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
+.home .ui-tabs div.ui-corner-all:first-child, // panel dentro de panel con bordes redondeados normales
+.ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; } */
 
-/* bordes de abajo del panel más redondeados*/
+/* bordes de abajo del panel más redondeados
 .home div.ui-corner-all:first-child {
     -moz-border-radius-bottomleft: 15px;
     -webkit-border-bottom-left-radius: 15px;
@@ -2491,6 +2531,7 @@ ul.tabs li a {
     -webkit-border-bottom-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+*/
 
 /* Overlays */
 .ui-widget-overlay { background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
@@ -2818,14 +2859,14 @@ body.anonimo div.ui-dialog #dialog-form {
  *
  * http://docs.jquery.com/UI/Tabs#theming
  */
-.ui-tabs { position: relative; padding: .2em; zoom: 1; border: 1px solid #ccc; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
-.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }
+.ui-tabs { position: relative; zoom: 1; border: 0px solid #ccc; margin-bottom: 10px; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em 1em 0; }
 .ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
 .ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
-.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
-.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
-.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1.4em 1.4em 1em; background: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { background: #FFF5BF; border-color: #EFE3A4; border-width: 1px 1px 0; margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; color: #30537A; font-weight: bold; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; color: #bbb; background: #FFF5BF; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { display: block; border: 1px solid #EFE3A4; padding: 1.4em 1.4em 1em; background: none; }
 .ui-tabs .ui-tabs-hide { display: none !important; }
 /* cambio colores enlaces al de Garum */
 .ui-tabs-panel a {color: #24568E; }
