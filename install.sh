@@ -3,14 +3,18 @@ echo "Instalación de Bazar"
 
 echo "Compilando las dependencias en el directorio vendor" 
 
+mkdir -p log 
+touch log/acts_as_ferret.log
+chmod -R 0777 log 
+
+mkdir -p tmp 
+chmod -R 0777 tmp 
+
 bundle install --path vendor 
 bundle exec aaf_install
 
 RAILS_ENV=production rails generate bazarcms 
 
-mkdir -p log 
-touch log/acts_as_ferret.log
-chmod -R 0777 log 
 
 echo "Haciendo el setup de bazar" 
 
