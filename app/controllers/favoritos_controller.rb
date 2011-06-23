@@ -87,6 +87,11 @@ class FavoritosController < ApplicationController
     else 
       logger.debug "Ya estaba en favoritos!!! #{params.inspect}"
     end 
+
+    expire_fragment "bazar_favoritos_dash_#{current_user.id}"
+    expire_fragment "ofertasdash"
+    expire_fragment "bazar_actividades_dashboard"
+    
     @pre = params[:pre]
     render :layout => false  
   end
@@ -99,6 +104,11 @@ class FavoritosController < ApplicationController
     else 
       logger.debug "No estaba en favoritos!!! #{params.inspect}"
     end 
+    
+    expire_fragment "bazar_favoritos_dash_#{current_user.id}"
+    expire_fragment "ofertasdash"
+    expire_fragment "bazar_actividades_dashboard"
+    
     
     @pre = params[:pre]
     render :layout => false  
