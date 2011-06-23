@@ -52,7 +52,14 @@ class MensajesController < ApplicationController
     @mensaje.de = current_user.id
     @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(current_user.id).nombre
     @mensaje.de_email = current_user.email
-    @mensaje.bazar_origen = BZ_param("BazarId")
+    
+    if (!params[:bazar_id].nil?)
+       @mensaje.bazar_origen = params[:bazar_id]
+    else
+      @mensaje.bazar_origen = BZ_param("BazarId")
+    end
+    
+   
     
     if (!params[:aquien].nil?)
       @mensaje.para = params[:aquien]
@@ -94,6 +101,7 @@ class MensajesController < ApplicationController
       format.xml  { render :xml => @mensaje }
     end
   end
+
 
   def notificacion 
     @mensaje = Mensaje.new
