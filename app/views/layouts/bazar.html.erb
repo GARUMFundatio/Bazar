@@ -44,7 +44,7 @@
 				<body class="admin"><!-- si usuario administrador -->
 			<% end %>
 		<% else %>
-			<body class="anonimo"><!-- si es anónimo -->
+			<body class="anonimo"><!-- si es anÃ³nimo -->
 		<% end %>
 
 <!-- # clicktale_top -->
@@ -52,6 +52,9 @@
    <div class="container">
 
 	  <div id="header">
+	  
+	  <div id="logo"></div>
+	  <div id="nombresitio">
 		      <h1 id="title"><a
               <% if !current_user.nil? %>
                  href="/home"
@@ -61,14 +64,24 @@
               ><%= h BZ_param("Titular") %></a>
               </h1>
 	          <h2 id="slogan"><%= h BZ_param("Subtitular") %></h2>
-	  </div>
+		</div>
 	  
       <% if current_user.nil? %>
-         <div id="nav-usuario">
+			<div id="socioenlaces">
+				<ul>
+					<li><a href="http://bazar.garumfundatio.org/home/bazares">mercado</a></li>
+					<li><a href="http://bazar.garumfundatio.org/home/datos">sociología</a></li>
+					<li><a href="http://garumfundatio.org/faq-bazar">f.a.q.</a></li>
+					<li><a class="login-link" href="#" onclick="$(&#39;#dialog-form&#39;).dialog(&#39;open&#39;);$(&#39;#login-content&#39;).load(&#39;/login?display=inside&#39;);">entrar</a></li>
+				</ul>
+			</div>      
+      
+      
+ <!--        <div id="nav-usuario">
            <a class="registro-link" href="#">Registrarse</a> o
            <a class="login-link" href="#" onclick="$('#dialog-form').dialog('open');$('#login-content').load('/login?display=inside');
 		">Entrar</a>
-         </div>
+         </div> -->
 		<script>
 		$(function() {
 			$( "#dialog:ui-dialog" ).dialog( "destroy" );
@@ -93,22 +106,24 @@
 			</div>
 		</div>
       <% end %>
+      
+      	  </div>
 
       <% if !current_user.nil? %>
-			<ul id="nav-usuario">
-				<li class="user-links">
+			<div id="nav-usuario">
+				<div class="user-links">
 				<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
 				<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
-				</li>
-				<li class="user-messages">
+				</div>
+				<div class="user-messages">
 				<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones sin leer') %>
 				<strong><%= Mensaje.notificacionessinleer(current_user.id).count -%></strong>
 
 				<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M", :class => 'msgs-link', :title => 'Mensajes sin leer') %>
 				<strong><%= Mensaje.mensajessinleer(current_user.id).count -%></strong>
 
-				</li>
-				<li class="nav-site">
+				</div>
+				<div class="nav-site">
                 <%= link_to(image_tag('icono-home.png'), "/home", :class => 'home-link', :title => 'Página Principal') %>
                 <%= link_to(image_tag('icono-usuario.png'), edit_user_path(current_user.id), :class => 'account-link', :title => 'Mi Cuenta') %>
                 <%= link_to(image_tag('group.png'), edit_bazarcms_empresa_path(current_user.id), :class => 'empresa-link', :title => 'Mi Empresa') %>
@@ -117,13 +132,13 @@
                 <% if current_user_is_admin || current_user_is_dinamizador %>
                     <%= link_to(image_tag('icono-admin.png'), "#", :class => 'administracion-link', :title => 'Administración') %>
                 <% end %>
-                </li>
-            </ul>
+                </div>
+            </div>
       <% end %>
 	  
 	  <% if current_user_is_admin || current_user_is_dinamizador %>
         <div id="nav-admin-container">
-             <span class="tapa-blanco"></span>
+<!--             <span class="tapa-blanco"></span> -->
              <ul id="nav-admin">
 			  <% if current_user_is_admin %>	
                  <li><a href="#">Administrador</a>
@@ -177,7 +192,7 @@
 							<ul id="user-menu" class="links">
 								<li class="user-links">
 								<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
-								<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
+								<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar SesiÃ³n') %>
 								</li>
 								<% cache "mensajesconta#{current_user.id}", {:expires_in => 5.minutes.to_i} do %>
 								<li class="user-messages">
@@ -216,6 +231,7 @@
 
   </body>
 </html>
+
 
 
 
