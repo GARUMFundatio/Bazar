@@ -746,9 +746,9 @@ font-size: 14px;
     padding: .3em 2em;
     margin: 0 10px 0 50px;
     border: none;
-    border-radius: 10px;
+ /*   border-radius: 10px;
     -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px; */
     font-size: 20px;
     font-weight: bold;
     line-height: 1;
