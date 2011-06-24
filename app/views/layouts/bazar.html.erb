@@ -192,7 +192,7 @@
 							<ul id="user-menu" class="links">
 								<li class="user-links">
 								<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
-								<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar SesiÃ³n') %>
+								<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
 								</li>
 								<% cache "mensajesconta#{current_user.id}", {:expires_in => 5.minutes.to_i} do %>
 								<li class="user-messages">
