@@ -56,7 +56,11 @@ module Bazar
     config.middleware.use "::ExceptionNotifier",
       :email_prefix => "[Bazar Garum] ",
       :sender_address => %{"Bazar Garum" <juantomas@geofun.es>},
-      :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
+      :exception_recipients => %w{juantomas.garcia@gmail.com}  
+      
+
+    Paperclip::Railtie.insert
+
     
   end
 end

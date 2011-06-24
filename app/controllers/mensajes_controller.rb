@@ -47,53 +47,65 @@ class MensajesController < ApplicationController
 
   def new
     
-    @mensaje = Mensaje.new
+    logger.debug "current_user --> "+current_user.inspect
     
-    @mensaje.de = current_user.id
-    @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(current_user.id).nombre
-    @mensaje.de_email = current_user.email
-    @mensaje.bazar_origen = BZ_param("BazarId")
-    
-    if (!params[:aquien].nil?)
-      @mensaje.para = params[:aquien]
+    if (!current_user)
+       redirect_to("/home")
     else
-      @mensaje.para = 0
-    end
+
+      @mensaje = Mensaje.new
     
-    if (!params[:bazar_destino].nil?)
-      @mensaje.bazar_destino = params[:bazar_destino]
-    else
-      @mensaje.bazar_destino = BZ_param("BazarId")
-    end
+      @mensaje.de = current_user.id
+      @mensaje.de_nombre = Bazarcms::Empresa.find_by_id(current_user.id).nombre
+      @mensaje.de_email = current_user.email
     
-    if (@mensaje.bazar_destino.to_i == BZ_param("BazarId").to_i)
-      @mensaje.para_nombre = Bazarcms::Empresa.find_by_id(@mensaje.para).nombre
-      @mensaje.para_email = User.find_by_id(@mensaje.para).email
-    else
-      # en este caso el nombre y el email lo fijan en el bazar de destino
-      if !params[:nombre].nil?
-        @mensaje.para_nombre = params[:nombre]
-      else 
-        @mensaje.para_nombre = ""      
+      if (!params[:bazar_id].nil?)
+         @mensaje.bazar_origen = params[:bazar_id]
+      else
+        @mensaje.bazar_origen = BZ_param("BazarId")
       end
-      @mensaje.para_email = ""
+        
+      if (!params[:aquien].nil?)
+        @mensaje.para = params[:aquien]
+      else
+        @mensaje.para = 0
+      end
+    
+      if (!params[:bazar_destino].nil?)
+        @mensaje.bazar_destino = params[:bazar_destino]
+      else
+        @mensaje.bazar_destino = BZ_param("BazarId")
+      end
+    
+      if (@mensaje.bazar_destino.to_i == BZ_param("BazarId").to_i)
+        @mensaje.para_nombre = Bazarcms::Empresa.find_by_id(@mensaje.para).nombre
+        @mensaje.para_email = User.find_by_id(@mensaje.para).email
+      else
+        # en este caso el nombre y el email lo fijan en el bazar de destino
+        if !params[:nombre].nil?
+          @mensaje.para_nombre = params[:nombre]
+        else 
+          @mensaje.para_nombre = ""      
+        end
+        @mensaje.para_email = ""
+      end 
+    
+      if (!params[:tipo].nil?)
+        @mensaje.tipo = params[:tipo]
+      else
+        @mensaje.tipo = 'M'
+      end
+    
+      @mensaje.fecha = DateTime.now
+      @mensaje.leido = nil 
+      @mensaje.borrado = nil
+    
+      respond_to do |format|
+        format.html # new.html.erb
+      end
     end 
-    
-    if (!params[:tipo].nil?)
-      @mensaje.tipo = params[:tipo]
-    else
-      @mensaje.tipo = 'M'
-    end
-    
-    @mensaje.fecha = DateTime.now
-    @mensaje.leido = nil 
-    @mensaje.borrado = nil
-    
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @mensaje }
-    end
   end
+
 
   def notificacion 
     @mensaje = Mensaje.new
