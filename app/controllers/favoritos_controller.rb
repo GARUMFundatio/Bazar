@@ -115,7 +115,7 @@ class FavoritosController < ApplicationController
     if !@fav.nil?    
       render :layout => false  
     else
-      redirect_to("/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&nombre_empresa=#{params[:nombre_empresa]}&pre=#{params[:pre]}"')
+      redirect_to("/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&nombre_empresa=#{params[:nombre_empresa]}&pre=#{params[:pre]}")
     end 
       
   end
