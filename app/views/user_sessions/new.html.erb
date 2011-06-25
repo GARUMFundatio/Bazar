@@ -1,10 +1,12 @@
 <div id="tabs-6content">
  
+<div class="error">
   <% if @user_session.errors.any? %>
       <% @user_session.errors.full_messages.each do |msg| %>
         <%= msg %><br/>
       <% end %>
   <% end %>
+</div>
 
 <% form_for @user_session, :url => user_sessions_path do |f| %>
 
