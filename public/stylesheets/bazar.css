@@ -268,11 +268,30 @@ body {
     color: #0E3971;
 }
 
+/* si hay algún error al realizar el login */
+.error-login {
+	background: url("/images/exclamation.png") no-repeat scroll 10px 20px #e7b4b4;
+	width: 50%;
+	border: 1px solid #9c0000;
+	margin-top: 20px;
+	margin-left: 20px;
+	text-indent: 20px;
+	padding: 20px;
+}
+
+
+
 
 .anonimo #nav-usuario a.registro-link,
 .logueado #nav-usuario a {
     color: #30537A;
 }
+
+
+
+
+
+
 
 div#nav-usuario {
     top: 20px;
@@ -463,7 +482,7 @@ div#nav-usuario a img {
 /* Contenido destacado en el home */
 #contenido .contenido-destacado {
     width: 100%;
-    min-height: 567px;
+    min-height: 545px;
     overflow: hidden;
 /*    margin-bottom: 1.4em;
     padding-bottom: .6em; */
