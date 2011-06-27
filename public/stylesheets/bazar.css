@@ -437,6 +437,8 @@ div#nav-usuario a img {
 
 .anonimo #contenido {
 	width: 958px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 /* Contenido destacado en el home */
