@@ -44,7 +44,7 @@
 				<body class="admin"><!-- si usuario administrador -->
 			<% end %>
 		<% else %>
-			<body class="anonimo"><!-- si es anÃ³nimo -->
+			<body class="anonimo"><!-- si es anónimo -->
 		<% end %>
 
 <!-- # clicktale_top -->
@@ -69,8 +69,8 @@
       <% if current_user.nil? %>
 			<div id="socioenlaces">
 				<ul>
-					<li><a href="http://bazar.garumfundatio.org/home/bazares">mercado</a></li>
-					<li><a href="http://bazar.garumfundatio.org/home/datos">sociología</a></li>
+					<li><a href="/home/bazares">mercado</a></li>
+					<li><a href="/home/datos">sociología</a></li>
 					<li><a href="http://garumfundatio.org/faq-bazar">f.a.q.</a></li>
 					<li><a class="login-link" href="#" onclick="$(&#39;#dialog-form&#39;).dialog(&#39;open&#39;);$(&#39;#login-content&#39;).load(&#39;/login?display=inside&#39;);">entrar</a></li>
 				</ul>
@@ -127,6 +127,7 @@
                 <%= link_to(image_tag('icono-home.png'), "/home", :class => 'home-link', :title => 'Página Principal') %>
                 <%= link_to(image_tag('icono-usuario.png'), edit_user_path(current_user.id), :class => 'account-link', :title => 'Mi Cuenta') %>
                 <%= link_to(image_tag('group.png'), edit_bazarcms_empresa_path(current_user.id), :class => 'empresa-link', :title => 'Mi Empresa') %>
+		<%= link_to(image_tag('favorito.png'), "/favoritos", :class => 'favoritos-link', :title => 'Ver Empresas, ofertas y demandas que sigue') %>
                 <%= link_to(image_tag('icono-historial.png'), bazarcms_empresasconsultas_path, :class => 'historial-link', :title => 'Historial de Consultas Realizadas') %>
                 <%= link_to(image_tag('add.png'), "/bazarcms/publicaroferta", :class => 'crear-oferta-link', :title => 'Crear Oferta/Demanda') %>
                 <% if current_user_is_admin || current_user_is_dinamizador %>
