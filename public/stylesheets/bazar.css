@@ -441,6 +441,10 @@ div#nav-usuario a img {
 	margin-top: 0px;
 }
 
+.anonimo .sociologia {
+	margin: 20px;
+	}
+
 /* Contenido destacado en el home */
 #contenido .contenido-destacado {
     width: 100%;
