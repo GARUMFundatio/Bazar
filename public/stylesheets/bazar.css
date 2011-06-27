@@ -428,8 +428,9 @@ div#nav-usuario a img {
 #contenido {
     display: block;
     float: none;
-/*	padding: 20px; */
-	margin: auto;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
     width: 920px;
     text-align: left;
 }
