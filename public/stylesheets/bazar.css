@@ -104,16 +104,6 @@ body {
 	overflow: hidden;
     background-color: #FFF;
     margin: 0 auto !important;
-/*    border: 1px solid #999;
-    border-bottom-right-radius: 1em;
-    border-bottom-left-radius: 1em;
-    -moz-border-radius-bottomright: 1em;
-    -moz-border-radius-bottomleft: 1em;
-    -webkit-border-bottom-right-radius: 1em;
-    -webkit-border-bottom-left-radius: 1em; 
-    box-shadow: 0px 0px 15px #888;
-    -moz-box-shadow: 0px 0px 15px #888;
-    -webkit-box-shadow: 0px 0px 15px #888; */
     text-align: left;
 }
 
@@ -123,12 +113,6 @@ body {
     height: 75px;
     color: #30537A;
     background-color: #FFF;
- /*   border-bottom-right-radius: 14px;
-    border-bottom-left-radius: 14px;
-    -moz-border-radius-bottomright: 14px;
-    -moz-border-radius-bottomleft: 14px;
-    -webkit-border-bottom-right-radius: 14px;
-    -webkit-border-bottom-left-radius: 14px; */
 }
 
 #logo {
@@ -247,9 +231,6 @@ body {
     width: 190px;
     text-align: center;
     color: #30537A;
- /*   box-shadow: 0px 0px 15px #888;
-    -moz-box-shadow: 0px 0px 15px #888;
-    -webkit-box-shadow: 0px 0px 15px #888; */
 }
 
 .anonimo #nav-usuario a.login-link {
@@ -257,9 +238,6 @@ body {
     height: 20px;
     margin: 6px 0;
     padding: 12px 15px;
- /*   border-radius : 10px;
-	-moz-border-radius : 10px;
-	-webkit-border-radius : 10px; */
     font-size: 20px;
     line-height: 20px;
     font-weight: bold;
@@ -302,9 +280,6 @@ div#nav-usuario {
     margin: 0;
     padding: 7px 10px;
     border: 1px solid #1A3655;
-/*    border-radius: 12px;
-    -moz-border-radius: 12px;
-    -webkit-border-radius: 12px; */
     list-style-type: none;
     text-align: left;
     background: #efe3a4 url(/images/fondo-nav-usuario.png) repeat-x left bottom;
@@ -355,22 +330,6 @@ div#nav-usuario a img {
      margin-bottom: 8px;
      border: 1px solid #EFE3A4;
      background: #FFF5BF;
-}
-
-#nav-admin-container span.tapa-blanco {
-     display: block;
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 960px;
-     height: 15px;
-     border-bottom-right-radius: 14px;
-     border-bottom-left-radius: 14px;
-    -moz-border-radius-bottomright: 14px;
-    -moz-border-radius-bottomleft: 14px;
-    -webkit-border-bottom-right-radius: 14px;
-    -webkit-border-bottom-left-radius: 14px;
-     background: #30537A;
 }
 
 #nav-admin, #nav-admin ul {
@@ -765,9 +724,6 @@ font-size: 14px;
     padding: .3em 2em;
     margin: 0 10px 0 50px;
     border: none;
- /*   border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px; */
     font-size: 20px;
     font-weight: bold;
     line-height: 1;
@@ -800,9 +756,6 @@ font-size: 14px;
     margin-bottom: 15px;
     padding: 20px;
     border: 1px solid #EFE3A4;
-/*    border-radius: 18px;
-    -moz-border-radius: 18px;
-    -webkit-border-radius: 18px; */
     background: #FFF5BF;
 }
 
@@ -841,9 +794,6 @@ font-size: 14px;
     padding: .3em 1em;
     margin: 0 10px 0 0;
     border: 1px solid #ccc;
-/*    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px; */
     font-size: 20px;
     line-height: 1;
     text-align: center;
@@ -859,9 +809,6 @@ font-size: 14px;
     margin-bottom: 15px;
     padding: 20px;
     border: 1px solid #C1D1DE;
-    border-radius: 18px;
-    -moz-border-radius: 18px;
-    -webkit-border-radius: 18px;
     background: #E0E8F0;
 }
 
@@ -901,9 +848,6 @@ font-size: 14px;
     padding: .3em 1em;
     margin: 0 10px 20px 0;
     border: 1px solid #ccc;
-  /*  border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px; */
     font-size: 20px;
     line-height: 1;
     text-align: center;
@@ -961,9 +905,6 @@ form.edit_bazarcms_empresa div.actions {
     padding: .3em 1em;
     margin: 0 10px 0 0;
     border: 1px solid #ccc;
-  /*  border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px; */
     font-size: 20px;
     line-height: 1;
     text-align: center;
@@ -1019,9 +960,6 @@ div.perfil:last-child {
 .perfil .nombre-perfil {
     padding: 7px 62px 7px 60px;
     border: 1px solid #CEC693;
-    border-radius: 6px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
     background: #F0EDDB;
 }
 
@@ -1075,9 +1013,6 @@ div.perfil:last-child {
     margin: 4px 0 0 15px;
     padding: 0 14px;
     border: 1px solid #EFE3A4;
- /*   border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px; */
     font-size: 13px;
     line-height: 30px;
     text-decoration: none;
@@ -1142,11 +1077,6 @@ input#busca:active {
 /* Div con los resultados */
 #lista {
     margin-bottom: 20px;
-  /*  padding: 20px 20px 0;
-    border: 1px solid #DBB783; */
- /*   border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px; */
     background: #FFF5BF;
 }
 
@@ -1292,9 +1222,6 @@ input#busca:active {
     width: 150px;
     padding: 3px 0 6px;
     border: 1px solid #97AF4D;
-  /*  border-radius: 6px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px; */
     font-size: 14px;
     line-height: 13px;
     text-align: center;
@@ -1322,12 +1249,7 @@ input#busca:active {
     top: -55px;
     margin: 15px 68px 0 0;
     padding: 3px 25px 3px 7px;
- /*   border-radius : 5px; */
-/* -moz-border-radius : 5px;  Mozilla */
-/*	-webkit-border-radius : 5px; /* Webkit */ 
-	text-decoration: underline;
- /*   border: thin solid #EFE3A4;
-    background: #FFF5BF url(/images/icono-busqueda-avanzada.png) no-repeat 130px center; */
+    text-decoration: underline;
 }
 
 #busqueda-link a {
@@ -1513,9 +1435,6 @@ h3 #ayuda-busqueda-link {
     margin-right: 10px;
     height: 24px;
     line-height: 24px;
- /*   border-radius: 12px;
-    -moz-border-radius: 12px;
-    -webkit-border-radius: 12px; */
     font-size: 14px;
     font-style: normal;
     text-transform: uppercase;
@@ -1542,9 +1461,6 @@ h3 #ayuda-busqueda-link {
     float: left;
     padding: 5px 18px 5px 15px;
     margin-bottom: 20px;
- /*   border-radius: 6px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px; */
     line-height: 28px;
     background: #527EB4;
     color: #fff;
@@ -1558,9 +1474,6 @@ h3 #ayuda-busqueda-link {
     margin: 20px 0;
     padding: 4px 15px 0;
     border: 1px solid #AABFD1;
- /*   border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px; */
     background: #E0E8F0;
 }
 
@@ -1681,9 +1594,6 @@ h3 #ayuda-busqueda-link {
     margin: 0 15px 20px 0;
     padding: 0 20px 0 35px;
     border: 1px solid #E0A062;
-  /*  border-radius: 8px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px; */
     font-size: 16px;
     line-height: 42px;
     font-weight: bold;
@@ -1831,9 +1741,6 @@ h3 #ayuda-busqueda-link {
     height: 60px;
     margin-bottom: -10px;
     border: 2px solid #97AF4D;
- /*   border-radius: 16px;
-    -moz-border-radius: 16px;
-    -webkit-border-radius: 16px; */
     font-size: 30px;
     line-height: 60px;
     font-weight: bold;
@@ -1865,14 +1772,6 @@ h3 #ayuda-busqueda-link {
      color: #30537A;
     background-color: #FFF;
     padding-top: 10px;
- /* padding: 1em 25px 1.2em;
- 	border-top: 1px solid #000;
-    border-bottom-right-radius: .9em;
-    border-bottom-left-radius: .9em;
-    -moz-border-radius-bottomright: .9em;
-    -moz-border-radius-bottomleft: .9em;
-    -webkit-border-bottom-right-radius: .9em;
-    -webkit-border-bottom-left-radius: .9em; */
     font-size: 14px;
 }
 
@@ -2049,22 +1948,6 @@ table.tabla tr:first-child th {
     color: #FDD900;
 }
 
-/* bordes redondeados de la tabla arriba 
-table.tabla tr:first-child th:first-child,
-table.tabla tr:first-child td:first-child {
-    -moz-border-radius-topleft:10px;
-    -webkit-border-top-left-radius:10px;
-    border-top-left-radius:10px;
-} 
-
-
-
-table.tabla tr:first-child th:last-child,
-table.tabla tr:first-child td:last-child {
-    -moz-border-radius-topright:10px;
-    -webkit-border-top-right-radius:10px;
-    border-top-right-radius:10px;
-} */
 
 table.tabla tr td {
     background-color: #fff;
@@ -2113,20 +1996,6 @@ table.tabla tr:first-child th[scope="row"] {
     border-bottom: 2px solid #ccc;
 }
 
-/* bordes redondeados de la tabla abajo 
-table.tabla tr:last-child th:first-child,
-table.tabla tr:last-child td:first-child {
-    -moz-border-radius-bottomleft:10px;
-    -webkit-border-bottom-left-radius:10px;
-    border-bottom-left-radius:10px;
-}
-
-table.tabla tr:last-child th:last-child,
-table.tabla tr:last-child td:last-child {
-    -moz-border-radius-bottomright:10px;
-    -webkit-border-bottom-right-radius:10px;
-    border-bottom-right-radius:10px;
-} */
 
 table.tabla td a {
 text-decoration: none;}
@@ -2529,29 +2398,6 @@ ul.tabs li a {
 /* Misc visuals
 ----------------------------------*/
 
-/* Corner radius */
-/* .ui-corner-tl { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; }
-.ui-corner-tr { -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; }
-.ui-corner-bl { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
-.ui-corner-br { -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
-.ui-corner-top { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; }
-.ui-corner-bottom { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
-.ui-corner-right {  -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
-.ui-corner-left { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
-.home .ui-tabs div.ui-corner-all:first-child, // panel dentro de panel con bordes redondeados normales
-.ui-corner-all { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; } */
-
-/* bordes de abajo del panel más redondeados
-.home div.ui-corner-all:first-child {
-    -moz-border-radius-bottomleft: 15px;
-    -webkit-border-bottom-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    -moz-border-radius-bottomright: 15px;
-    -webkit-border-bottom-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-*/
-
 /* Overlays */
 .ui-widget-overlay { background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); }
 .ui-widget-shadow { margin: -8px 0 0 -8px; padding: 8px; background: #aaaaaa url(images/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x; opacity: .30;filter:Alpha(Opacity=30); -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }/*
@@ -2777,21 +2623,11 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 
 /* sobreescribir otros estilos del dialog */
 .anonimo .ui-dialog { position: absolute; padding: 0; width: 300px; height: 259px; overflow: hidden; background: #FFF5BF; }
-.anonimo .ui-dialog {
-  /*  -moz-border-radius-bottomleft: 18px;
-	-webkit-border-bottom-left-radius: 18px;
-	-moz-border-radius-bottomright: 18px;
-	-webkit-border-bottom-right-radius: 18px; */
-}
 .anonimo .ui-dialog .ui-dialog-titlebar { padding: .5em 1em .3em; position: relative; color: #EACE4A; background: #30537A;  }
 
 body.anonimo div.ui-dialog #dialog-form {
     width: 323px !important;
     padding: 0;
-/*    -moz-border-radius-bottomleft: 18px;
-	-webkit-border-bottom-left-radius: 18px;
-	-moz-border-radius-bottomright: 18px;
-	-webkit-border-bottom-right-radius: 18px; */
     background: #FFF5BF;
 }
 
