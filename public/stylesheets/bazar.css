@@ -625,6 +625,7 @@ div.contenidos-secundarios h4 {
     display: block;
     width: 200px;
     margin-bottom: 20px;
+    margin-left: 20px;
 }
 
 /* Titulares de página */
@@ -1083,7 +1084,7 @@ input#busca:active {
 
 /* Div con los resultados */
 #lista {
-    margin-bottom: 20px;
+    padding-bottom: 6px;
     background: #FFF5BF;
 }
 
@@ -1100,7 +1101,7 @@ input#busca:active {
 	
 
 #lista table.tabla {
-	padding: 20px 20px 0;
+	padding: 20px 20px;
 	}
 
 
