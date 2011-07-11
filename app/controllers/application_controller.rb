@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado, :BZ_param, :dohttp
-
+  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2
+  helper :all
+  
   require "net/http"
   require "uri"
 
@@ -17,6 +18,41 @@ class ApplicationController < ActionController::Base
       return "Valor sin definir" 
     end 
   end
+    
+  def helper_rating_show2(bazar, empresa)
+     
+     if (bazar.to_i == BZ_param("BazarId").to_i)
+       
+       empre = Bazarcms::Empresa.find_by_id(empresa)
+       
+       valor = empre.rating
+       nombre = empre.nombre.gsub(' ','_')
+       
+       url = "/bazarcms/ratings/new?bazar_id=#{bazar}&empresa_id=#{empresa.id}&empresa_nombre=#{nombre}"
+       
+     else 
+       
+       valor = 0
+       url = ""
+     end
+     
+     val = "#{valor}".split('.')[0]
+     str = "<div><a href='#{url}'>" 
+     
+     for ii in ['1', '2', '3', '4', '5'] 
+     
+       if (ii > val) 
+         str += "<img src='/images/addfav.png'>"
+       else 
+         str += "<img src='/images/rating.png'>"
+       end 
+       
+     end 
+     
+     str += "</a></div>"
+     str 
+   end
+  
     
   private
     def current_user_session
