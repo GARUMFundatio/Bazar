@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
        valor = empre.rating
        nombre = empre.nombre.gsub(' ','_')
        
-       url = "/bazarcms/ratings/new?bazar_id=#{bazar}&empresa_id=#{empresa.id}&empresa_nombre=#{nombre}"
+       url = "/bazarcms/ficharating/#{empresa}?bazar_id=#{bazar}"
        
      else 
        
