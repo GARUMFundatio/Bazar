@@ -2,6 +2,7 @@
 
 		<td>
 			<%= link_to(favorito.nombre_empresa, bazarcms_empresa_path(favorito.empresa_id, :bazar_id => favorito.bazar_id)) %>
+			<%= helper_rating_show2(favorito.bazar_id, favorito.empresa_id).html_safe %>
 		</td>
 
 		<td class="dos-iconos">
