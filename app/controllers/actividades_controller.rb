@@ -18,6 +18,22 @@ class ActividadesController < ApplicationController
     
   end
 
+
+  def list
+    
+    # TODO Hay que pensar si hacemos esta llamada mucho más abierta y le metemos que se pueda 
+    # ver la actividad de cualquier empresa. 
+    
+    @actividades = Actividad.where("bazar_id = ? and user_id = ?", BZ_param('BazarId'), current_user.id).order("fecha desc").paginate(:per_page => 30, :page => params[:page])
+
+    if request.xhr?
+      render :partial => @actividades
+    end
+    
+  end
+
+
+
   # GET /actividades/1
   # GET /actividades/1.xml
   def show
