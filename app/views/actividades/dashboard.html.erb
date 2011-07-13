@@ -23,6 +23,7 @@
 	<td class="dos-iconos">
 		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{act.user_id}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
 		<%= helper_favo(act.bazar_id, act.user_id, act.nombre_empresa, "actividad") %>
+		<%= helper_rating_show2(act.bazar_id, act.empresa_id).html_safe %>
 	</td>
 
 </tr>
