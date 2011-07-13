@@ -1,0 +1,15 @@
+<%= javascript_include_tag 'jquery.pageless' -%>
+
+
+
+<h3 class="page-title">Actividad de las Empresas que sigo</h3>
+
+<table class="tabla" cellspacing="0"><tbody id="results">
+
+	<%= render(:partial => "actividad", :collection => @actividades) %>
+	
+</tbody></table>
+
+<br />
+
+<%= pageless(@actividades.total_pages, actividades_path) %>
