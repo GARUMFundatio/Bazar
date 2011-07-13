@@ -10,6 +10,7 @@
 
 	<td style="width: 150px">
 		<%= link_to Bazarcms::Empresa.find(act.user_id).nombre, bazarcms_empresa_path(act.user_id, :bazar_id => act.bazar_id) %>
+		<%= helper_rating_show2(act.bazar_id, act.user_id).html_safe %>
 	</td>
 
 	<td>
@@ -23,7 +24,7 @@
 	<td class="dos-iconos">
 		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{act.user_id}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
 		<%= helper_favo(act.bazar_id, act.user_id, act.nombre_empresa, "actividad") %>
-		<%= helper_rating_show2(act.bazar_id, act.empresa_id).html_safe %>
+
 	</td>
 
 </tr>
