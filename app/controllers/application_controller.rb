@@ -34,6 +34,7 @@ class ApplicationController < ActionController::Base
        
        valor = 0
        url = ""
+
      end
      
      val = "#{valor}".split('.')[0]

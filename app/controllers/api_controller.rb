@@ -85,6 +85,7 @@ class ApiController < ApplicationController
     
       @info = {:id => @empresa.id,
                   :estado => "OK",
+                  :rating => @empresa.rating,
                   :nombre => @empresa.nombre,
                   :url => @empresa.url,
                   :fundada => @empresa.fundada,
