@@ -31,6 +31,7 @@ Bazar::Application.configure do
     :sender_address => %{"Bazar Garum" <juantomas@geofun.es>},
     :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
   
+  config.i18n.default_locale = :es
   
 end
 
