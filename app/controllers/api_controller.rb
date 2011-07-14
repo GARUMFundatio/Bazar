@@ -85,8 +85,12 @@ class ApiController < ApplicationController
     
       @info = {:id => @empresa.id,
                   :estado => "OK",
-                  :rating => @empresa.rating,
                   :nombre => @empresa.nombre,
+                  :rating => @empresa.rating,
+                  :rating_cliente => @empresa.rating_cliente,
+                  :rating_total_cliente => @empresa.rating_total_cliente,
+                  :rating_proveedor => @empresa.rating_proveedor,
+                  :rating_total_proveedor => @empresa.rating_total_proveedor,
                   :url => @empresa.url,
                   :fundada => @empresa.fundada,
                   :consultas => Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas where empresa_id = #{@empresa.id}")}
