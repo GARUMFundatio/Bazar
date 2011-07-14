@@ -1,7 +1,7 @@
 <%= form_for(@conf) do |f| %>
   <% if @conf.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@conf.errors.count, "error") %> No se ha podido guardar:</h2>
+      <h2><%= pluralize(@conf.errors.count, "error") %><%=t(:text_no_se_ha_podido_guardar)%></h2>
 
       <ul>
       <% @conf.errors.full_messages.each do |msg| %>

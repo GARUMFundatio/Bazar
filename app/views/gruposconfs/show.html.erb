@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Desc:</b>
+  <b><%=t(:text_desc)%></b>
   <%= @gruposconf.desc %>
 </p>
 
 
-<%= link_to 'Edit', edit_gruposconf_path(@gruposconf) %> |
-<%= link_to 'Back', gruposconfs_path %>
+<%= link_to t(:label_edit), edit_gruposconf_path(@gruposconf) %> |
+<%= link_to t(:label_back), gruposconfs_path %>

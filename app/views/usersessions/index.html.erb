@@ -1,10 +1,10 @@
-<h1>Listing usersessions</h1>
+<h1><%=t(:text_listing_usersessions)%></h1>
 
 <table>
   <tr>
-    <th>Login</th>
-    <th>Password</th>
-    <th>Remember me</th>
+    <th><%=t(:text_login)%></th>
+    <th><%=t(:text_password)%></th>
+    <th><%=t(:text_remember_me)%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,13 +15,13 @@
     <td><%= usersession.login %></td>
     <td><%= usersession.password %></td>
     <td><%= usersession.remember_me %></td>
-    <td><%= link_to 'Show', usersession %></td>
-    <td><%= link_to 'Edit', edit_usersession_path(usersession) %></td>
-    <td><%= link_to 'Destroy', usersession, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t(:label_show), usersession %></td>
+    <td><%= link_to t(:label_edit), edit_usersession_path(usersession) %></td>
+    <td><%= link_to t(:label_destroy), usersession, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Usersession', new_usersession_path %>
+<%= link_to t(:label_new_usersession), new_usersession_path %>

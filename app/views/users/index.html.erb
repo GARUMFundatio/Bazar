@@ -1,10 +1,10 @@
-<h3 class="page-title">Listado de Usuarios</h3>
+<h3 class="page-title"><%=t(:text_listado_de_usuarios)%></h3>
 
 <table class="tabla" cellspacing="0">
   <tr>
-    <th>Id</th>
-    <th>Usuario</th>
-    <th>Correo</th>
+    <th><%=t(:text_id)%></th>
+    <th><%=t(:text_usuario)%></th>
+    <th><%=t(:text_correo)%></th>
     <th colspan="2"></th>
   </tr>
 
@@ -21,4 +21,4 @@
 
 <%= will_paginate @mensajes %>
 
-<%= link_to 'Nuevo Usuario', new_user_path %>
+<%= link_to t(:label_nuevo_usuario), new_user_path %>

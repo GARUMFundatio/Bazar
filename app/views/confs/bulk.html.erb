@@ -1,12 +1,12 @@
-<h1>Parámetros de Bazar</h1>
+<h1><%=t(:text_par_metros_de_bazar)%></h1>
 
 <table>
   <tr>
-    <th>Parametro</th>
-    <th>Grupo</th>
-    <th>Tipo</th>
-    <th>Valor</th>
-    <th>Desc</th>
+    <th><%=t(:text_parametro)%></th>
+    <th><%=t(:text_grupo)%></th>
+    <th><%=t(:text_tipo)%></th>
+    <th><%=t(:text_valor)%></th>
+    <th><%=t(:text_desc)%></th>
     <th></th>
   </tr>
 
@@ -18,7 +18,7 @@
     <td><%= conf.tipo %></td>
     <td><%= conf.valor %></td>
     <td><%= conf.desc %></td>
-    <td><%= link_to 'Edit', edit_conf_path(conf) %></td>
+    <td><%= link_to t(:label_edit), edit_conf_path(conf) %></td>
   </tr>
 <% end %>
 </table>
@@ -26,6 +26,6 @@
 <br />
 
 
-<%= link_to 'New Conf', new_conf_path %>
+<%= link_to t(:label_new_conf), new_conf_path %>
 
-* Estoy hay que quitarlo cuando esten todos los parametros igual que borrar. 
+<%=t(:text_estoy_hay_que_quitarlo_cuando_esten_todos_los_parametros_igual_que_borrar)%> 

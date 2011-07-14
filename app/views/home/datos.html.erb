@@ -16,9 +16,9 @@
 	
 <div class="sociologia">
 
-<h2 class="page-title">Datos de Bazar</h2>
+<h2 class="page-title"><%=t(:text_datos_de_bazar)%></h2>
 
-<h3 class="titulo-datos">Empresas</h3>
+<h3 class="titulo-datos"><%=t(:text_empresas)%></h3>
 
 <div id="sec5" class="seccion-datos">
 
@@ -62,7 +62,7 @@ plot5 = $.jqplot('empresas1', [line5], {
 </div>
 
 
-<h3 class="titulo-datos">Ofertas / Demandas</h3>
+<h3 class="titulo-datos"><%=t(:text_ofertas_demandas)%></h3>
 <div id="ofe" class="seccion-datos">
 
 
@@ -123,7 +123,7 @@ ploto1 = $.jqplot('ofe2', [lineo1], {
 
 </div>
 
-<h3 class="titulo-datos">Consultas Realizadas</h3>
+<h3 class="titulo-datos"><%=t(:text_consultas_realizadas)%></h3>
 
 <div id="consultas" class="seccion-datos">
 	
@@ -207,7 +207,7 @@ ploto1 = $.jqplot('ofe2', [lineo1], {
 <br/>
 
 
-<h3 class="titulo-datos">Sectores</h3>
+<h3 class="titulo-datos"><%=t(:text_sectores)%></h3>
 <div id="sec1" class="seccion-datos">
 
 <div class="jqPlot" id="perfilesbazar" style="height:360px; width:100%;"></div>
@@ -275,7 +275,7 @@ plot2 = $.jqplot('perfilesmercado', [line2], {
 </div>
 
 
-<h3 class="titulo-datos">Países</h3>
+<h3 class="titulo-datos"><%=t(:text_pa_ses)%></h3>
 
 <div class="seccion-datos">
 <div id="sec4">
@@ -342,7 +342,7 @@ plot3 = $.jqplot('paisesmercado', [line3], {
 
 </div>
 
-<h3 class="titulo-datos">Distribución de la Empresas</h3>
+<h3 class="titulo-datos"><%=t(:text_distribuci_n_de_la_empresas)%></h3>
 
 <div id="mapa-paises-container"></div>
 
@@ -373,9 +373,9 @@ function onMapCreated()
 
 </div>
 <br/>
-<a class="volver-home-link" href="/paises">Todos los países de este Bazar &raquo;</a>
-<a class="volver-home-link" href="/ciudades">Ubicaciones de este Bazar &raquo;</a>	
-Información actualizada el <%= Time.now %>
+<a class="volver-home-link" href="/paises"><%=t(:text_todos_los_pa_ses_de_este_bazar_raquo)%></a>
+<a class="volver-home-link" href="/ciudades"><%=t(:text_ubicaciones_de_este_bazar_raquo)%></a>	
+<%=t(:text_informaci_n_actualizada_el)%><%= Time.now %>
 
 </div>
 

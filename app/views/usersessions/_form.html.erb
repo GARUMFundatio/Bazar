@@ -1,7 +1,7 @@
 <%= form_for(@usersession) do |f| %>
   <% if @usersession.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@usersession.errors.count, "error") %> prohibited this user session from being saved:</h2>
+      <h2><%= pluralize(@usersession.errors.count, "error") %><%=t(:text_prohibited_this_user_session_from_being_saved)%></h2>
 
       <ul>
       <% @usersession.errors.full_messages.each do |msg| %>

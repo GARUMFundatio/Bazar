@@ -1,7 +1,7 @@
 <%= form_for(@favorito) do |f| %>
   <% if @favorito.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@favorito.errors.count, "error") %> prohibited this favorito from being saved:</h2>
+      <h2><%= pluralize(@favorito.errors.count, "error") %><%=t(:text_prohibited_this_favorito_from_being_saved)%></h2>
 
       <ul>
       <% @favorito.errors.full_messages.each do |msg| %>

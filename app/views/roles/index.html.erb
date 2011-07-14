@@ -1,9 +1,9 @@
-<h1>Listing roles</h1>
+<h1><%=t(:text_listing_roles)%></h1>
 
 <table>
   <tr>
-    <th>Id</th>
-    <th>Rol</th>
+    <th><%=t(:text_id)%></th>
+    <th><%=t(:text_rol)%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= rol.id %></td>
     <td><%= rol.rol %></td>
-    <td><%= link_to 'Show', rol %></td>
-    <td><%= link_to 'Edit', edit_rol_path(rol) %></td>
-    <td><%= link_to 'Destroy', rol, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t(:label_show), rol %></td>
+    <td><%= link_to t(:label_edit), edit_rol_path(rol) %></td>
+    <td><%= link_to t(:label_destroy), rol, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Rol', new_rol_path %>
+<%= link_to t(:label_new_rol), new_rol_path %>

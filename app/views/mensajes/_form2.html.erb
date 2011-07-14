@@ -18,18 +18,18 @@
 
 <% if (@mensaje.para >= 0 ) %>
  <div class="field">
-	De:  <%= @mensaje.de_nombre -%> a <%= @mensaje.para_nombre -%>
+	<%=t(:text_de)%><%= @mensaje.de_nombre -%> a <%= @mensaje.para_nombre -%>
  </div> 
 <% end %>
 
 <% if (@mensaje.para < 0 ) %>
  <div class="field">
-	De: <%= @mensaje.de_nombre -%> a todos los usuarios
+	<%=t(:text_de)%><%= @mensaje.de_nombre -%><%=t(:text_a_todos_los_usuarios)%>
  </div> 
 <% end %>
 
 <% if (@mensaje.para == 0 ) %>
-	definir busqueda de usuarios (login) + empresa (nombre) con autocomplete
+	<%=t(:text_definir_busqueda_de_usuarios_login_empresa_nombre_con_autocomplete)%>
 <% end %>
 
   <div class="field">
