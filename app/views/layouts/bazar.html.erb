@@ -56,9 +56,9 @@
 	  <div id="nombresitio">
 		      <h1 id="title"><a
               <% if !current_user.nil? %>
-                 <%=t(:text_href_home)%>
+                 href="/home"
               <% else %>
-                 <%=t(:text_href)%>
+                 href="/"
               <% end %>
               ><%= h BZ_param("Titular") %></a>
               </h1>
