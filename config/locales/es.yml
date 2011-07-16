@@ -193,6 +193,7 @@ es:
   text_laquo_volver_a_la_p_gina_de_b_squedas: "&laquo; Volver a la página de búsquedas"
   text_las_empresas_que_est_n_en: "las empresas que estén en"
   text_las_empresas_reproducen_en_la_red_global_las_redes_de_confianza: "Las empresas reproducen en la red global las redes de confianza"
+  text_last_login: "Última vez conectado"
   text_leido: "Leido:"
   text_listado_de_bazares: "Listado de Bazares"
   text_listado_de_usuarios: "Listado de Usuarios"
@@ -201,6 +202,7 @@ es:
   text_listing_roles_users: "Listing roles_users"
   text_listing_usersessions: "Listing usersessions"
   text_login: Login
+  text_login_count: "Conexiones"
   text_los_administradores_de_cada_bazar_conocen_a_sus_miembros: "Los administradores de cada bazar conocen a sus miembros"
   text_los_bazares_son_mercados_locales_locales_no_necesariamente_en_un_sentido_territorial_sino_de_red_una_red_de_artesanos_o_un_grupo_empresarial_obtienen_una_ventaja_especial_de_formar_un_bazar_propio_en_vez_de_integrarse_en_otro_existente_tener_datos_y_compartir_estad_sticas_de_su_propio_metabolismo_com_n_las_empresas_de_cada_bazar_tienen_acceso_como_grupo_a_los_agregados_estadisticos_que_describen_su_uso_adem_s_de_a_los_res_menes_de_actividad_de_sus_componentes_individuales_dicho_de_otro_modo: "Los bazares son mercados locales. Locales no necesariamente en un sentido territorial, sino de red: una red de artesanos o un grupo empresarial obtienen una ventaja especial de formar un bazar propio en vez de integrarse en otro existente: tener datos y compartir estadísticas de su propio metabolismo común. Las empresas de cada bazar tienen acceso, como grupo, a los agregados estadisticos que describen su uso además de a los resúmenes de actividad de sus componentes individuales. Dicho de otro modo,"
   text_los_datos_de_este_bazar_raquo: "Los datos de este bazar &raquo;"
@@ -232,6 +234,7 @@ es:
   text_nombre: "Nombre:"
   text_noticias: Noticias
   text_notificaciones: Notificaciones
+  text_nunca: Nunca
   text_nuestra_intenci_n_es_que_sea_muy_sencillo_extraer_informaci_n_de_la_red_de_bazares_por_ejemplo_para_obtener_la_informaci_n_general_de_un_bazar_solo_tendr_as_que_abrir_el_siguiente_enlace: "Nuestra intención es que sea muy sencillo extraer información de la red de bazares. Por ejemplo para obtener la información general de un bazar solo tendrías que abrir el siguiente enlace:"
   text_nueva_noticia: "Nueva Noticia"
   text_nuevas_empresas: "Nuevas Empresas"
