@@ -5,6 +5,8 @@
     <th><%=t(:text_id)%></th>
     <th><%=t(:text_usuario)%></th>
     <th><%=t(:text_correo)%></th>
+    <th><%=t(:text_login_count)%></th>
+    <th><%=t(:text_last_login)%></th>
     <th colspan="2"></th>
   </tr>
 
@@ -13,6 +15,12 @@
 	<td><%= user.id %></td>
     <td><%= user.login %></td>
     <td><%= user.email %></td>
+    <td><%= user.login_count %></td>
+	<% if !user.last_login_at.nil? %>
+    	<td><%= user.last_login_at.strftime("%d-%m-%Y") %></td>
+	<% else %>
+		<td><%=t(:text_nunca)%></td>
+	<% end %>
     <td style="text-align: center"><%= link_to (image_tag("pencil.png", :border => "0", :title => 'Editar'), edit_user_path(user))  %></td>
     <td style="text-align: center"><%= link_to (image_tag("delete.png", :title => 'Eliminar')), user, :confirm => 'Esta usted seguro?', :method => :delete %></td>
   </tr>

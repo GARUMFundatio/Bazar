@@ -32,9 +32,8 @@ class HomeController < ApplicationController
   end 
 
   def datos 
-    # dc = Dalli::Client.new('localhost')
-    # dc.set('abc', 123)
-    # value = dc.get('abc')
+
+
   end 
 
   def open 
