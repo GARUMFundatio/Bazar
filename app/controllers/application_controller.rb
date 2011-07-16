@@ -32,6 +32,7 @@ class ApplicationController < ActionController::Base
        
      else 
        
+       # si no es de este bazar 
        valor = 0
        url = ""
 
