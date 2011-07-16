@@ -4,9 +4,9 @@
   <tr>
     <th><%=t(:text_id)%></th>
     <th><%=t(:text_usuario)%></th>
-    <th><%=t(:text_correo)%></th>
-    <th><%=t(:text_login_count)%></th>
-    <th><%=t(:text_last_login)%></th>
+    <th><%=t(:text_correo)%> <a href="/users?orden=correo-asc"> <img src="/images/arrow_down.png"></a> <a href="/users?orden=correo-desc"> <img src="/images/arrow_up.png"> </a></th>
+    <th><%=t(:text_login_count)%> <a href="/users?orden=conexiones-asc"> <img src="/images/arrow_down.png"></a> <a href="/users?orden=conexiones-desc"> <img src="/images/arrow_up.png"> </a> </th>
+    <th><%=t(:text_last_login)%> <a href="/users?orden=last-asc"> <img src="/images/arrow_down.png"></a> <a href="/users?orden=last-desc"> <img src="/images/arrow_up.png"> </a> </th>
     <th colspan="2"></th>
   </tr>
 
