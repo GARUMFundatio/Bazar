@@ -25,8 +25,13 @@ class ApplicationController < ActionController::Base
        
        empre = Bazarcms::Empresa.find_by_id(empresa)
        
-       valor = empre.rating
-       nombre = empre.nombre.gsub(' ','_')
+       if !empre.nil? 
+         valor = empre.rating
+         nombre = empre.nombre.gsub(' ','_')
+       else 
+         valor = 0
+         nombre = "Sin rating"
+       end 
        
        url = "/bazarcms/ficharating/#{empresa}?bazar_id=#{bazar}"
        
