@@ -31,8 +31,11 @@ Bazar::Application.configure do
   # config.cache_store = :mem_cache_store
 
   puts "Configurandos el prefix de Dalli"
+  
+  conf = YAML::load(File.open("#{RAILS_ROOT}/config/database.yml"))
+  
   config.cache_store = :dalli_store, '127.0.0.1',
-    { :namespace => 'xxbazar', :expires_in => 1.day, :compress => true, :compress_threshold => 64*1024 }
+    { :namespace => conf['production']['database'], :expires_in => 1.day, :compress => true, :compress_threshold => 64*1024 }
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
