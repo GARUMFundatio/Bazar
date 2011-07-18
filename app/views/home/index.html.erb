@@ -7,7 +7,7 @@
 
 </p>
 
-<a id="busqueda-link" href="#busqueda-busqueda"><%=t(:text_b_squeda_avanzada)%></a>
+<a id="busqueda-link" href="#busqueda-busqueda"><%=t(:text_busqueda_avanzada)%></a>
 <script>
 $('#busqueda-link').click(function() {
   $('#avanzada').slideToggle(250);
@@ -106,8 +106,8 @@ $('#check-empresas2').attr('checked', true);
 		</td>					
 		<td valign="top" >
 		<div id="filtroofertan">
-			<p><%=t(:text_seleccione_uno_o_varios_sectores_en_la_caja_de_b_squeda)%></p>
-			<p><b><%=t(:text_solo)%></b><%=t(:text_las_empresas_que_est_n_en)%><b><%=t(:text_alguno)%></b><%=t(:text_de_estos_sectores)%></p>
+			<p><%=t(:text_seleccione_uno_o_varios_sectores_en_la_caja_de_busqueda)%></p>
+			<p><b> <%=t(:text_solo)%> </b><%=t(:text_las_empresas_que_esten_en)%> <b> <%=t(:text_alguno)%></b> <%=t(:text_de_estos_sectores)%></p>
 		</div>
 		</td>
 	</tr>
@@ -124,8 +124,8 @@ $('#check-empresas2').attr('checked', true);
 		</td>					
 		<td valign="top">
 			<div id="filtrodemandan">
-				<p><%=t(:text_seleccione_uno_o_varios_sectores_en_la_caja_de_b_squeda)%></p>
-				<p><b><%=t(:text_solo)%><b/><%=t(:text_las_empresas_que_est_n_en)%><b><%=t(:text_alguno)%></b><%=t(:text_de_estos_sectores)%></p>
+				<p><%=t(:text_seleccione_uno_o_varios_sectores_en_la_caja_de_busqueda)%></p>
+				<p><b> <%=t(:text_solo)%> <b/><%=t(:text_las_empresas_que_esten_en)%> <b> <%=t(:text_alguno)%></b> <%=t(:text_de_estos_sectores)%></p>
 			</div>
 		</td>
 	</tr>
@@ -342,23 +342,23 @@ jQuery(function() {
 </script>
 
 
-<h3><%=t(:text_filtrar_por_pa_s)%></h3>
+<h3><%=t(:text_filtrar_por_pais)%></h3>
 
 <div id="filtro-pais">
 
 	<table cellspacing="0" class="tabla">
-		<tr><th><%=t(:text_pa_ses)%></th><th><%=t(:text_pa_ses_seleccionados)%></th></tr>
+		<tr><th><%=t(:text_paises)%></th><th><%=t(:text_paises_seleccionados)%></th></tr>
 		<tr>
 			<td valign="top" style="width: 420px;">
 			<form action="#loquesea" id="paises-form" >
-                <label for="query3"><%=t(:text_buscar_pa_ses)%></label>
+                <label for="query3"><%=t(:text_buscar_paises)%></label>
                 <input type="text" name="q" id="query3" />
 			 </form>
 			 <input type="hidden" id="ppaises" style="border:0; color:#f6931f; font-weight:bold;" />
 			</td>					
 			<td>
 				<div id="mispaises">
-					<p><%=t(:text_seleccione_uno_o_varios_pa_ses_en_la_caja_de_b_squeda)%></p>
+					<p><%=t(:text_seleccione_uno_o_varios_paises_en_la_caja_de_busqueda)%></p>
 					<p>Para buscar use el nombre Internacional. Por ejemplo: Francia -><%=t(:text_france)%></p>
 				</div>
 			</td>
@@ -476,13 +476,13 @@ jQuery(function() {
 </script>
 
 
-<h3><%=t(:text_filtrar_por_datos_econ_micos)%></h3>
+<h3><%=t(:text_filtrar_por_datos_economicos)%></h3>
 
 <div id="filtro-datos-economicos">
 <table border="0" cellspacing="0">
 	<tr>
 		<td width="350px">
-			<label for="empleados"><%=t(:text_n_empleados)%></label>
+			<label for="empleados"><%=t(:text_numero_empleados)%></label>
 
 		</td>
 		<td width="200px">
@@ -542,7 +542,7 @@ jQuery(function() {
 </table>
 </div><!-- /#filtro-datos-economicos -->
 
-<h3><%=t(:text_ayuda_b_squeda_avanzada)%><a id="ayuda-busqueda-link" href="#ayuda-busqueda"><%=t(:text_ver_ocultar)%></a></h3>
+<h3><%=t(:text_ayuda_busqueda_avanzada)%><a id="ayuda-busqueda-link" href="#ayuda-busqueda"><%=t(:text_ver_ocultar)%></a></h3>
 <script>
 $('#ayuda-busqueda-link').click(function() {
   $('#ayuda-busqueda').slideToggle(250);
@@ -552,7 +552,7 @@ $('#ayuda-busqueda-link').click(function() {
      <div id="ayuda-busqueda">
           <ul id="pasos-container">
           <li class="paso" id="paso1">
-               <div><%=t(:text_introduzca_los_t_rminos_de_la_b_squeda)%></div>
+               <div><%=t(:text_introduzca_los_terminos_de_la_busqueda)%></div>
                <img src="/images/ayuda-busqueda-paso1.gif" alt="" />
           </li>
           <li class="paso" id="paso2">
@@ -560,15 +560,15 @@ $('#ayuda-busqueda-link').click(function() {
                <img src="/images/ayuda-busqueda-paso2.gif" alt="" />
           </li>
           <li class="paso" id="paso3">
-               <div><%=t(:text_use_los_desplazadores_para_limitar_la_b_squeda)%></div>
+               <div><%=t(:text_use_los_desplazadores_para_limitar_la_busqueda)%></div>
                <img src="/images/ayuda-busqueda-paso3.gif" alt="" />
           </li>
           <li class="paso" id="paso4">
-               <div><%=t(:text_pulse_buscar_para_empezar_la_b_squeda)%></div>
+               <div><%=t(:text_pulse_buscar_para_empezar_la_busqueda)%></div>
                <img src="/images/ayuda-busqueda-paso4.gif" alt="" />
           </li>
           <li class="paso" id="paso5">
-               <div><%=t(:text_progreso_de_la_b_squeda)%></div>
+               <div><%=t(:text_progreso_de_la_busqueda)%></div>
                <img src="/images/ayuda-busqueda-paso5.gif" alt="" />
           </li>
           <li class="paso" id="paso6">

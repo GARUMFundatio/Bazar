@@ -18,13 +18,13 @@
 
 <% if (@mensaje.para >= 0 ) %>
  <div class="field">
-	<%=t(:text_de)%><%= @mensaje.de_nombre -%> a <%= @mensaje.para_nombre -%>
+	<%=t(:text_de)%> <%= @mensaje.de_nombre -%> a <%= @mensaje.para_nombre -%>
  </div> 
 <% end %>
 
 <% if (@mensaje.para < 0 ) %>
  <div class="field">
-	<%=t(:text_de)%><%= @mensaje.de_nombre -%><%=t(:text_a_todos_los_usuarios)%>
+	<%=t(:text_de)%> <%= @mensaje.de_nombre -%> <%=t(:text_a_todos_los_usuarios)%>
  </div> 
 <% end %>
 

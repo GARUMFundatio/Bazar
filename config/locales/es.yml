@@ -1,4 +1,4 @@
---- 
+---
 es: 
   label_back: Atrás
   label_destroy: Eliminar
@@ -33,7 +33,7 @@ es:
   text_actividad_en_el_bazar: "Actividad en el Bazar"
   text_actualizada_la_informacion_con_el_directorio_de_bazares: "Actualizada la información con el directorio de bazares."
   text_actvidad_del_bazar: "Actvidad del Bazar"
-  text_ademas_al_formarse_una_gran_red_distribuida_de_bazares_como_cada_bazar_est_mantenido_por_un_grupo_de_empresas_o_una_instituci_n_diferente_el_coste_y_la_situaci_n_de_la_infraestructura_los_servidores_se_reparte_entre_muchos_lugares_y_agentes_distintos_haciendo_a_la: "Además, al formarse una gran red distribuida de bazares, como cada bazar está mantenido por un grupo de empresas o una institución diferente, el coste y la situación de la infraestructura (los servidores) se reparte entre muchos lugares y agentes distintos, haciendo a la"
+  text_ademas_al_formarse_una_gran_red_distribuida_de_bazares_como_cada_bazar_esta_mantenido_por_un_grupo_de_empresas_o_una_institucion_diferente_el_coste_y_la_situacion_de_la_infraestructura_los_servidores_se_reparte_entre_muchos_lugares_y_agentes_distintos_haciendo_a_la: "Además, al formarse una gran red distribuida de bazares, como cada bazar está mantenido por un grupo de empresas o una institución diferente, el coste y la situación de la infraestructura (los servidores) se reparte entre muchos lugares y agentes distintos, haciendo a la"
   text_ademas_las_redes_centralizadas_no_solo_son_poco_robustas_ya_que_toda_la_red_depende_de_unico_agente_sino_que_a_poco_que_crezca_el_mercado_ese_agente_el: "Además, las redes centralizadas no sólo son poco robustas -ya que toda la red depende de un único agente- sino que, a poco que crezca el mercado, ese agente, el «"
   text_administrador: Administrador
   text_al_hacerlo_te_devolvera_un_fichero_en_formato_xml_que_habitualmente_saben_manejar_otros_programas_o_tu_aplicacion: "Al hacerlo te devolverá un fichero en formato XML que habitualmente saben manejar otros programas o tu aplicación"
@@ -51,7 +51,7 @@ es:
   text_ayuda_busqueda_avanzada: "Ayuda Búsqueda Avanzada"
   text_busqueda_avanzada: "» Búsqueda Avanzada"
   text_bazar: Bazar
-  text_bazar_el_software_sirve_para_construir_bazares_que_se_unen_desde_el_primer_dia_en_unico_gran_mercado_global: "Bazar, el software, sirve para construir «bazares» que se unen, desde el primer día, en un único gran mercado global."
+  text_bazar_el_software_sirve_para_construir_bazares_que_se_unen_desde_el_primer_dia_en_un_unico_gran_mercado_global: "Bazar, el software, sirve para construir «bazares» que se unen, desde el primer día, en un único gran mercado global."
   text_bazar_facilita_que_las_pequenas_empresas_y_los_emprendedores_encuentren_nuevos_mercados_a_escala_global_en_un_entorno_confiable_sin_los_costes_de_la_internacionalizacion_fisica: "Bazar facilita que las pequeñas empresas y los emprendedores encuentren nuevos mercados a escala global en un entorno confiable sin los costes de la internacionalización física"
   text_bazares_conectados: "Bazares Conectados:"
   text_borrado: "Borrado:"
@@ -84,7 +84,7 @@ es:
   text_de_aquellos_a_los_que_me_dirijo: "de aquellos a los que me dirijo."
   text_de_estos_sectores: "de estos sectores."
   text_de_instalaciones_con_infraestructura_propia_que_permiten_a_cada_empresa_poder_llegar_a_cualquier_otra_al_tiempo_que_aseguran_que_nadie_puede_apropiarse_del_mercado_y_que_la_estructura_global_es_realmente_robusta: ", de instalaciones con infraestructura propia, que permiten a cada empresa poder llegar a cualquier otra, al tiempo que aseguran que nadie puede apropiarse del mercado y que la estructura global es realmente robusta."
-  text_de_la_antiguedad_a_las_redes_tecnologicas_de_hoy_no_han_aparecido_impulsados_por_individuos_aislados_que_se_conectaban_en_unico_espacio_sino_por_la_interconexion_de_mercados_locales_mas_pequenos_en_los_que_los_individuos_se_conocian_previamente_muy_bien_entre_si: "de la Antiguedad a las redes tecnológicas de hoy, no han aparecido impulsados por individuos aislados que se conectaban en un único espacio, sino por la interconexión de mercados locales más pequeños en los que los individuos se conocían previamente muy bien entre si."
+  text_de_la_antiguedad_a_las_redes_tecnologicas_de_hoy_no_han_aparecido_impulsados_por_individuos_aislados_que_se_conectaban_en_un_unico_espacio_sino_por_la_interconexion_de_mercados_locales_mas_pequenos_en_los_que_los_individuos_se_conocian_previamente_muy_bien_entre_si: "de la Antiguedad a las redes tecnológicas de hoy, no han aparecido impulsados por individuos aislados que se conectaban en un único espacio, sino por la interconexión de mercados locales más pequeños en los que los individuos se conocían previamente muy bien entre si."
   text_debe_tener_la_forma_de_una: "Debe tener la forma de una"
   text_definir_busqueda_de_usuarios_login_empresa_nombre_con_autocomplete: "definir busqueda de usuarios (login) + empresa (nombre) con autocomplete"
   text_demandan: "Demandan:"
@@ -93,8 +93,8 @@ es:
   text_descripcion: Descripción
   text_dinamizador: Dinamizador
   text_directorio_de_bazares: "Directorio de Bazares"
-  text_distribuci_n_de_la_empresas: "Distribución de la Empresas"
-  text_due_o_de_la_red: "dueño de la red"
+  text_distribucion_de_la_empresas: "Distribución de la Empresas"
+  text_dueno_de_la_red: "dueño de la red"
   text_editar_bazar: "Editar Bazar"
   text_editar_noticia: "Editar Noticia"
   text_editar_un_parametro: "Editar un Parámetro"
@@ -183,7 +183,7 @@ es:
   text_informacion_de_una_empresa: "Información de una Empresa"
   text_informacion_del_bazar: "Información del Bazar"
   text_informacion_del_usuario: "Información del Usuario"
-  text_instalar_bazar_y_unirse_a_la_red_de_bazares_ser_la_opci_n_recomendada_a_grupos_empresariales_asociaciones_sectoriales_de_empresas_y_entidades_dedicadas_a_la_promocion_economica_local: "instalar Bazar y unirse a la red de bazares, será la opción recomendada a grupos empresariales, asociaciones sectoriales de empresas y entidades dedicadas a la promoción económica local"
+  text_instalar_bazar_y_unirse_a_la_red_de_bazares_ser_la_opcion_recomendada_a_grupos_empresariales_asociaciones_sectoriales_de_empresas_y_entidades_dedicadas_a_la_promocion_economica_local: "instalar Bazar y unirse a la red de bazares, será la opción recomendada a grupos empresariales, asociaciones sectoriales de empresas y entidades dedicadas a la promoción económica local"
   text_introduzca_los_terminos_de_la_busqueda: "Introduzca los términos de la búsqueda"
   text_introduzca_su_correo_y_pulse_cambiar_contrasena: "Introduzca su correo y pulse \"Cambiar Contraseña\"."
   text_json: JSON
@@ -323,7 +323,7 @@ es:
   text_tienen_informacion_especifica_de_la_que_aprender_para_mejorar_sus_estrategias: "tienen información específica de la que aprender para mejorar sus estrategias"
   text_tipo: Tipo
   text_titulo: "Titulo:"
-  text_todos_los_paises_de_este_bazar_raquo: "Todos los países de este Bazar &raquo;"
+  text_todos_los_paises_de_este_bazar: "Todos los países de este Bazar »"
   text_total_consultas_realizadas: "Total Consultas Realizadas:"
   text_total_empresas: "Total Empresas:"
   text_total_empresas_en_este_bazar: "Total Empresas en este Bazar:"
