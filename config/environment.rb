@@ -6,6 +6,7 @@ require 'acts_as_ferret'
 # Initialize the rails application
 Bazar::Application.initialize!
 
+
 # reseteamos el cache si hay un fork de Passenger
 
 if defined?(PhusionPassenger)
