@@ -37,9 +37,31 @@ class ApplicationController < ActionController::Base
        
      else 
        
-       # si no es de este bazar 
-       valor = 0
-       url = ""
+       # si no es de este bazar le pedimos al otro bazar que nos 
+       # de su rating. 
+       # TODO JT esto habría que cachearlo para optimizar las comunicaciones
+       
+       res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+       
+       puts "json empresa ------->"+res.inspect
+       if (res.length > 1)
+         
+          empre = JSON.parse(res)
+
+          puts "json empresa2 ------->"+empre.inspect
+
+          if (!empre['rating'].nil?)
+            puts "json empresa3 ------->#{empre['rating']}"
+            valor = empre['rating']
+          else 
+            valor = 0
+          end 
+
+       else 
+         valor = 0
+       end 
+       
+       url = "/bazarcms/ficharating/#{empresa}?bazar_id=#{bazar}"
 
      end
      
@@ -194,7 +216,7 @@ class ApplicationController < ActionController::Base
       r = Typhoeus::Request.new(uri, :timeout => 10000)
       
       r.on_complete do |response|
-         logger.debug "-------------> "+response.inspect
+         logger.debug "dohttpget -------------> "+response.inspect
          case response.curl_return_code
          when 0
            return response.body
