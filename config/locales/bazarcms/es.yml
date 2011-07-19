@@ -1,0 +1,205 @@
+--- 
+es: 
+  label_back: Atrás
+  label_borrar_consultas_a_ofertas_realizadas: "Borrar consultas a ofertas realizadas"
+  label_borrar_consultas_realizadas: "Borrar consultas realizadas"
+  label_borrar_todas_las_consultas_realizadas: "Borrar todas las consultas realizadas"
+  label_destroy: Eliminar
+  label_edit: Editar
+  label_new_ubicacion: "Nueva Ubicación"
+  label_show: Mostrar
+  text_anadir_una_nueva_ubicacion: "Añadir una nueva Ubicación"
+  text_ano: Año
+  text_accion: Acción
+  text_acciones: Acciones
+  text_acordado_inicialmente: "acordado inicialmente?"
+  text_actividad: Actividad
+  text_actividades_que_engloba_este_sector: "Actividades que engloba este sector:"
+  text_al: al
+  text_alguno: alguno
+  text_anterior: Anterior
+  text_bazar: "Bazar:"
+  text_bazares: bazares.
+  text_busca_empresas: "Busca Empresas"
+  text_buscar: Buscar
+  text_buscar_en_sectores: "Buscar en sectores"
+  text_buscar_paises: "Buscar Países"
+  text_como_de_fluida_armoniosa_o_duramente_tensa_fue_la: "¿Cómo de fluida, armoniosa o duramente tensa fue la"
+  text_como_optimizar_la_busqueda: "Cómo optimizar la búsqueda"
+  text_ciudad_incorrecta: "Ciudad Incorrecta"
+  text_clicks_en_la_informacion: "Clicks en la información:"
+  text_cliente: Cliente
+  text_comentario: "Comentario:"
+  text_coming_soon: "Proximamente"
+  text_compras: "Compras:"
+  text_comunicacion: Comunicación
+  text_comunicacion_con_la_otra_parte: "comunicación con la otra parte?"
+  text_con_estos_criterios_de_busqueda_hay: "Con estos criterios de búsqueda hay"
+  text_confirmemos_el_envio: "confirmemos el envío."
+  text_consulta: Consulta
+  text_consultados: Consultados
+  text_consultas_a_ofertas_demandas_realizadas: "Consultas a Ofertas/Demandas Realizadas"
+  text_consultas_realizadas: "Consultas Realizadas"
+  text_consultas_realizadas_a_ofertas: "Consultas Realizadas a Ofertas"
+  text_cual_fue_su_rol: "Cual fue su rol:"
+  text_cualquier_empresa: "Cualquier empresa"
+  text_cualquier_oferta_demanda: "Cualquier Oferta/Demanda"
+  text_cuantos_mas_digitos_tengo_el_codigo_mas_especifica_su_actividad: "Cuantos más dígitos tengo el código más especifica su actividad."
+  text_cumplimiento_de_plazos: "Cumplimiento de plazos:"
+  text_darse_de_alta_en_este_bazar: "Darse de alta en este bazar »"
+  text_datos: Datos
+  text_datos_del_sector: "Datos del Sector"
+  text_datos_economicos: "Datos Económicos"
+  text_de_estos_sectores: "de estos sectores."
+  text_porcentaje_de_las_veces_que_se_ha_mostrado: "% de las veces que se ha mostrado."
+  text_defina_las_palabras_clave_que_desea_de_las_empresas_que_se_van_a_seleccionar_puede_dejarlo_vacio: "Defina las palabras clave que desea de las empresas que se van a seleccionar. Puede dejarlo vacío."
+  text_defina_tipo_y_a_quien_va_dirigida: "Defina tipo y a quien va dirigida"
+  text_del: Del
+  text_demanda: Demanda
+  text_demandan: "Demandan:"
+  text_demandas_que_ha_realizado: "Demandas que ha realizado"
+  text_desc: Desc
+  text_descripcion: "Descripción:"
+  text_descrito_en_la_oferta: "descrito en la oferta?"
+  text_desde_fecha: "Desde Fecha"
+  text_detalle_de_la: "Detalle de la"
+  text_detalle_de_las_valoraciones_de_esta_empresa: "Detalle de las valoraciones de esta empresa"
+  text_editar_ubicacion: "Editar Ubicación:"
+  text_editing_favorito: "Editing favorito"
+  text_email: "Email:"
+  text_empleados: Empleados
+  text_empresa: Empresa
+  text_empresas: Empresas
+  text_empresas_de: "empresas de"
+  text_empresas_de_este_sector: "Empresas de este sector"
+  text_empresas_del_bazar_en_este_sector: "Empresas del bazar en este sector:"
+  text_empresas_destinatarias_de_esta: "Empresas destinatarias de esta"
+  text_empresas_que_cumplan: "Empresas que cumplan:"
+  text_empresas_que_cumplen_con: "Empresas que cumplen con:"
+  text_empresas_que_cuyos_datos_cumplan_estas_condiciones: "Empresas que cuyos datos cumplan estas condiciones."
+  text_empresas_que_demandan_este_sector: "Empresas que demandan este sector"
+  text_empresas_que_sean_de_estos_sectores: "Empresas que sean de estos sectores"
+  text_es_necesario_registrarse_para_poder_usar_bazar: "Es necesario registrarse para poder usar Bazar"
+  text_es_una: "¿Es una"
+  text_esta_pagina_o_navegue_hasta_que_le: "esta página o navegue hasta que le"
+  text_estamos_enviando_su_oferta_demanda: "Estamos enviando su Oferta/Demanda."
+  text_estimar_empresas_con_estas_condiciones: "Estimar empresas con estas condiciones."
+  text_evalue_su_relacion_la_empresa: "Evalue su relación la empresa:"
+  text_expectativas: Expectativas
+  text_fecha: Fecha
+  text_ficheros: Ficheros
+  text_fundada: "Fundada:"
+  text_global: Global
+  text_hasta_fecha: "Hasta Fecha"
+  text_implementar_un_listado_sencillo_de_empresas: "implementar un listado sencillo de empresas"
+  text_informacion: Información
+  text_informacion_de_la_empresa_que_publica_esta: "Información de la Empresa que publica esta"
+  text_informacion_de_la_oferta_demanda: "Información de la Oferta/Demanda"
+  text_informacion_economica: "Información Económica"
+  text_introduzca_los_terminos_de_la_busqueda: "Introduzca los términos de la busqueda"
+  text_ir_a_la_pagina_de_busquedas: "Ir a la página de búsquedas"
+  text_lanzada: Lanzada
+  text_volver_a_la_pagina_de_busquedas: "« Volver a la página de búsquedas"
+  text_las_empresas_que_esten_en: "las empresas que estén en"
+  text_listado_de_rating: "Listando el rating"
+  text_listing_ubicaciones: "Listando ubicaciones"
+  text_los_datos_de_este_bazar: "Los datos de este bazar »"
+  text_ultimas_ofertas_demandas: "Ultimas Ofertas/Demandas"
+  text_mis_sectores: "Mis Sectores"
+  text_moneda: "Moneda:"
+  text_mostrada: "Mostrada:"
+  text_n_empleados: "Nº Empleados:"
+  text_navegue_por_los_resultados: "Navegue por los resultados."
+  text_new_favorito: "Nuevo favorito"
+  text_no_cierre: "No cierre"
+  text_no_ha_rellenado_los_datos: "No ha rellenado los datos"
+  text_no_hay_empresas_con_los_criterios_seleccionados_reviselos_y_vuelva_a_realizar_la_consulta: "¡No hay empresas con los criterios seleccionados revíselos y vuelva a realizar la consulta!"
+  text_no_se_ha_mostrado_nunca: "No se ha mostrado nunca."
+  text_no_se_ha_podido_salvar_los_datos_de_este_periodo: "No se ha podido salvar los datos de este periodo:"
+  text_no_se_ha_podido_salvar_los_datos_de_la_empresa: "No se ha podido salvar los datos de la empresa:"
+  text_no_tiene_ningun_sector_asociado_a_su_empresa: "No tiene ningún sector asociado a su empresa."
+  text_nos_interesa: "Nos interesa"
+  text_nuestra_actividad: "Nuestra Actividad"
+  text_nueva_ubicacion: "Nueva Ubicación"
+  text_o_una: "o una"
+  text_ocultar_la_descripcion: "Ocultar la descripción"
+  text_oferta: Oferta
+  text_oferta_demanda: Oferta/Demanda
+  text_ofertas_demandas_de: "Ofertas/Demandas de"
+  text_ofertas_demandas_que_sigo: "Ofertas/Demandas que sigo"
+  text_ofertas_que_cumplen_con: "Ofertas que cumplen con:"
+  text_ofertas_que_ha_realizado: "Ofertas que ha realizado"
+  text_ofrecemos: "Ofrecemos:"
+  text_ofrecen: "Ofrecen:"
+  text_ok: OK
+  text_origen: Origen
+  text_pagina_web: "Página Web:"
+  text_pagina_web_con_mas_informacion: "Página Web con más información:"
+  text_paises: "Países:"
+  text_paises_seleccionados: "Países Seleccionados:"
+  text_pago_dentro_de_plazos: "Pago dentro de plazos:"
+  text_para_encontrar_el_sector_que_mas_se_ajusta_a_su_empresa_escriba_una_o_varias_palabras_que_defina_el_sector_al_que_pertenece: "Para encontrar el sector que más se ajusta a su empresa, escriba una o varias palabras que defina el sector al que pertenece."
+  text_para_ver_mas_informacion_de_esta_empresa_registrese_en_un_bazar: "Para ver más información de esta empresa regístrese en un Bazar"
+  text_peticiones: "Peticiones:"
+  text_plazos: Plazos
+  text_progreso_de_la_busqueda: "Progreso de la búsqueda"
+  text_prohibited_this_favorito_from_being_saved: "prohibited this favorito from being saved:"
+  text_prohibited_this_ubicacion_from_being_saved: "prohibited this ubicacion from being saved:"
+  text_proveedor: Proveedor
+  text_publicando_la_oferta_demanda: "Publicando la Oferta/Demanda."
+  text_publicar: Publicar
+  text_publicar_una_oferta_demanda: "Publicar una Oferta / Demanda"
+  text_puede_escoger_tantos_como_crea_convenientes_y_actualizarlos_en_cualquier_momento: "Puede escoger tantos como crea convenientes y actualizarlos en cualquier momento."
+  text_puede_introducir_varios_terminos_de_busqueda_separados_por_espacios_por_ejemplo_madrid_web: "Puede introducir varios términos de busqueda separados por espacios. Por ejemplo: madrid web"
+  text_puede_usar_asteriscos_o_espacios_para_buscar_por_varias_palabras: "Puede usar asteriscos o espacios para buscar por varias palabras."
+  text_puede_usar_asteriscos_para_terminos_parciales_por_ejemplo_herramientas: "Puede usar * para términos parciales. Por ejemplo: herramientas*"
+  text_pulse_buscar_para_empezar_la_busqueda: "Pulse Buscar para empezar la búsqueda"
+  text_que_es_un_bazar: "¿Qué es un Bazar? »"
+  text_rating: Rating
+  text_rating_bazar: "Rating Bazar:"
+  text_recibida_peticion: "Recibida petición:"
+  text_resultados: "Resultados:"
+  text_resultados_de_la_busqueda: "Resultados de la búsqueda:"
+  text_satisfaccion_de_expectativas: "Satisfacción de expectativas:"
+  text_se_abono_el_pago_por_el_producto_servicio_dentro_de_lo_convenido_durante_el_acuerdo: "¿se abonó el pago por el producto/servicio dentro de lo convenido durante el acuerdo?"
+  text_se_ajusta_el_producto_servicio_a_lo: "¿Se ajusta el producto/servicio a lo"
+  text_se_entrego_el_producto_servicio_conforme_a_lo: "¿Se entregó el producto/servicio conforme a lo"
+  text_se_ha_enviado_a: "Se ha enviado a:"
+  text_se_ha_visitado_un: "Se ha visitado un:"
+  text_sectores: Sectores
+  text_sectores_disponibles: "Sectores Disponibles"
+  text_sectores_que_demandan: "Sectores que Demandan"
+  text_sectores_que_ofertan: "Sectores que Ofertan"
+  text_sectores_seleccionados: "Sectores Seleccionados"
+  text_seleccione_algun_sector_en_la_caja_de_busqueda: "Seleccione algún sector en la caja de búsqueda"
+  text_seleccione_los_sectores: "Seleccione los sectores."
+  text_seleccione_una_ciudad_para_esta_ubicacion: "Seleccione una ciudad para esta ubicación"
+  text_seleccione_uno_o_varios_paises_en_la_caja_de_busqueda: "Seleccione uno o varios países en la caja de búsqueda"
+  text_seleccione_uno_o_varios_sectores_en_la_caja_de_busqueda: "Seleccione uno o varios sectores en la caja de búsqueda."
+  text_si_la_cantidad_le_parece_adecuada_puede_proceder_a_rellenar_los_de_la_oferta_demanda: "Si la cantidad le parece adecuada, puede proceder a rellenar los de la oferta/demanda."
+  text_siguiente: Siguiente
+  text_siguiente_paso_datos_de_la_oferta: "Siguiente Paso: Datos de la oferta"
+  text_sin_evaluar: "Sin evaluar."
+  text_solo: Solo
+  text_solo_empresas_que_tengan_presencia_en_estos_paises: "Solo empresas que tengan presencia en estos Países"
+  text_sql: SQL
+  text_su_oferta_ha_sida_enviada_a: "Su oferta ha sida enviada a"
+  text_titulo: Título
+  text_tags_separados_por_comas: "(tags separados por comas)"
+  text_texto_del_correo: "Texto del correo"
+  text_total: "Total:"
+  text_total_empresas_en_la_red: "Total Empresas en la Red"
+  text_total_resultados: "Total Resultados:"
+  text_ubicaciones: "Ubicaciones:"
+  text_ultimas_actualizadas: "Ultimas Actualizadas"
+  text_ultimas_empresas: "Ultimas Empresas"
+  text_use_los_desplazadores_para_limitar_la_busqueda: "Use los desplazadores para limitar la búsqueda."
+  text_user: "Usuario:"
+  text_validez: Validez
+  text_valoracion_como_cliente: "Valoración como Cliente"
+  text_valoracion_como_proveedor: "Valoración como Proveedor"
+  text_valoraciones: Valoraciones
+  text_valorar_esta_empresa: "Valorar esta empresa."
+  text_ventas: "Ventas:"
+  text_ver_ocultar: Ver/ocultar
+  text_ya_est_lanzado: "ya está lanzado!!!"

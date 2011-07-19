@@ -1,25 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Bazar:</b>
+  <b><%=t(:text_bazar)%></b>
   <%= @favorito.bazar_id %>
 </p>
 
 <p>
-  <b>User:</b>
+  <b><%=t(:text_user)%></b>
   <%= @favorito.user_id %>
 </p>
 
 <p>
-  <b>Empresa:</b>
+  <b><%=t(:text_empresa)%></b>
   <%= @favorito.empresa_id %>
 </p>
 
 <p>
-  <b>Fecha:</b>
+  <b><%=t(:text_fecha)%></b>
   <%= @favorito.fecha %>
 </p>
 
 
-<%= link_to 'Edit', edit_favorito_path(@favorito) %> |
-<%= link_to 'Back', favoritos_path %>
+<%= link_to t(:label_edit), edit_favorito_path(@favorito) %> |
+<%= link_to t(:label_back), favoritos_path %>

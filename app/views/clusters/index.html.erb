@@ -1,14 +1,14 @@
-<h3 class="page-title">Listado de Bazares</h3>
+<h3 class="page-title"><%=t(:text_listado_de_bazares)%></h3>
 
 <table class="tabla" cellspacing="0">
   <tr>
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Descripción</th>
-    <th>Act</th>
-    <th>Url</th>
+    <th><%=t(:text_id)%></th>
+    <th><%=t(:text_nombre)%></th>
+    <th><%=t(:text_descripcion)%></th>
+    <th><%=t(:text_act)%></th>
+    <th><%=t(:text_url)%></th>
     <th>#</th>
-    <th colspan="2">Acciones</th>
+    <th colspan="2"><%=t(:text_acciones)%></th>
   </tr>
 
 <% @clusters.each do |cluster| %>

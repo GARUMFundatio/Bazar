@@ -1,6 +1,6 @@
-<h1>Editing favorito</h1>
+<h1><%=t(:text_editing_favorito)%></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @favorito %> |
-<%= link_to 'Back', favoritos_path %>
+<%= link_to t(:label_show), @favorito %> |
+<%= link_to t(:label_back), favoritos_path %>

@@ -1,8 +1,8 @@
 <% if !current_user.nil? %>
-	<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
+	<a class="volver-home-link" href="/home"><%=t(:text_volver_a_la_pagina_de_busquedas)%></a>
 <% end %>
 
-<h3 class="page-title">Datos de esta Ubicación</h3>
+<h3 class="page-title"><%=t(:text_datos_de_esta_ubicacion)%></h3>
 
 <table id="results" class="tabla" cellspacing="0">
 
@@ -22,7 +22,7 @@
 
 <br />
 
-<h3 class="page-title">Empresas en esta Ubicación</h3>
+<h3 class="page-title"><%=t(:text_empresas_en_esta_ubicacion)%></h3>
 
 <table id="results" class="tabla" cellspacing="0">
 	
@@ -46,13 +46,13 @@
 <br/>
 <br/>
 
-<b>Es necesario registrarse para poder usar Bazar</b>
+<b><%=t(:text_es_necesario_registrarse_para_poder_usar_bazar)%></b>
 
 <br/>
 <br/>
 
-<a class="volver-home-link" href="/home/datos"> Los datos de este bazar &raquo;</a>
-<a class="volver-home-link" href="/home/registrarse"> Darse de alta en este bazar &raquo;</a>
-<a class="volver-home-link" href="/home/bazares"> ¿Qué es un Bazar? &raquo;</a>
+<a class="volver-home-link" href="/home/datos"><%=t(:text_los_datos_de_este_bazar)%></a>
+<a class="volver-home-link" href="/home/registrarse"><%=t(:text_darse_de_alta_en_este_bazar)%></a>
+<a class="volver-home-link" href="/home/bazares"><%=t(:text_que_es_un_bazar)%></a>
 
 <% end %>

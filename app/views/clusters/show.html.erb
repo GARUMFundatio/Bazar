@@ -1,31 +1,31 @@
 
 <p>
-  <b>Nombre:</b>
+  <b><%=t(:text_nombre)%></b>
   <%= @cluster.nombre %>
 </p>
 
 <p>
-  <b>Descripción:</b>
+  <b><%=t(:text_descripcion)%></b>
   <%= @cluster.desc %>
 </p>
 
 <p>
-  <b>Enlace al Bazar:</b>
+  <b><%=t(:text_enlace_al_bazar)%></b>
   <%= @cluster.url %>
 </p>
 
 <p>
-  <b>Total Empresas en este Bazar:</b>
+  <b><%=t(:text_total_empresas_en_este_bazar)%></b>
   <%= @cluster.empresas %>
 </p>
 
 <br/>
 
 <% if !current_user.nil? %>
-<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
+<a class="volver-home-link" href="/home"><%=t(:text_volver_a_la_pagina_de_busquedas)%></a>
 <% end %>
 
-<a class="volver-home-link" href="/home/datos"> Los datos de este bazar &raquo;</a>
-<a class="volver-home-link" href="/home/registrarse"> Darse de alta en este bazar &raquo;</a>
-<a class="volver-home-link" href="/home/bazares"> ¿Qué es un Bazar? &raquo;</a>
+<a class="volver-home-link" href="/home/datos"><%=t(:text_los_datos_de_este_bazar)%></a>
+<a class="volver-home-link" href="/home/registrarse"><%=t(:text_darse_de_alta_en_este_bazar)%></a>
+<a class="volver-home-link" href="/home/bazares"><%=t(:text_que_es_un_bazar)%></a>
 

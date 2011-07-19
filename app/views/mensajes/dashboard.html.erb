@@ -1,6 +1,6 @@
 <% cache "correodash#{current_user.id}", {:expires_in => 5.minutes.to_i} do %>
 
-<h3 class="page-title">Mensajes y Notificaciones</h3>
+<h3 class="page-title"><%=t(:text_mensajes_y_notificaciones)%></h3>
 
 <div class="contenidos-secundarios dos">
 
@@ -8,15 +8,15 @@
         <table class="tabla" cellspacing="0">
 
           <tr>
-            <th class="titular-tabla" colspan="4">Mensajes</th>
+            <th class="titular-tabla" colspan="4"><%=t(:text_mensajes)%></th>
           </tr>
           
           <% if @mensajes.count > 0 %>
           
           <tr class="color">
-		    <th>De</th>
-		    <th>Asunto</th>
-		    <th>Fecha</th>
+		    <th><%=t(:text_de)%></th>
+		    <th><%=t(:text_asunto)%></th>
+		    <th><%=t(:text_fecha)%></th>
 		    <td></td>
 		  </tr>
 
@@ -54,7 +54,7 @@
 
 		<% else %>
         <tr>
-		  <td colspan="4">No hay mensajes sin leer.</td>
+		  <td colspan="4"><%=t(:text_no_hay_mensajes_sin_leer)%></td>
 		</tr>
 		</table>
 		<% end %>
@@ -66,14 +66,14 @@
 		
 		<table class="tabla" cellspacing="0">
           <tr>
-            <th class="titular-tabla" colspan="4">Notificaciones</th>
+            <th class="titular-tabla" colspan="4"><%=t(:text_notificaciones)%></th>
           </tr>
           
           <% if @notificaciones.count > 0 %>
           <tr class="color">
-		    <th>De</th>
-		    <th>Asunto</th>
-		    <th>Fecha</th>
+		    <th><%=t(:text_de)%></th>
+		    <th><%=t(:text_asunto)%></th>
+		    <th><%=t(:text_fecha)%></th>
 		    <td></td>
 		  </tr>
 
@@ -111,7 +111,7 @@
 
 		<% else %>
         <tr>
-		  <td colspan="4">No hay notificaciones sin leer.</td>
+		  <td colspan="4"><%=t(:text_no_hay_notificaciones_sin_leer)%></td>
 		</tr>
 		</table>
 		<% end %>

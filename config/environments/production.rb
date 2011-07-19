@@ -30,9 +30,12 @@ Bazar::Application.configure do
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
 
-
-config.cache_store = :dalli_store, '127.0.0.1',
-    { :namespace => 'bazar', :expires_in => 1.day, :compress => true, :compress_threshold => 64*1024 }
+  puts "Configurandos el prefix de Dalli"
+  
+  conf = YAML::load(File.open("#{RAILS_ROOT}/config/database.yml"))
+  
+  config.cache_store = :dalli_store, '127.0.0.1',
+    { :namespace => conf['production']['database'], :expires_in => 1.day, :compress => true, :compress_threshold => 64*1024 }
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
@@ -50,6 +53,7 @@ config.cache_store = :dalli_store, '127.0.0.1',
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
+  config.i18n.default_locale = :es
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify

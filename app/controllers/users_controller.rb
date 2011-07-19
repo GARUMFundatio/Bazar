@@ -5,7 +5,32 @@ class UsersController < ApplicationController
   layout "bazar"
 
   def index
-    @users = User.all.paginate(:page => params[:page], :per_page => 15)
+ 
+    orden = "id"
+    
+    if ( params[:orden].nil? )
+      puts "no hay orden"
+      orden = "id"
+    else 
+      case params[:orden]
+      when "correo-asc"
+        orden = "email asc"
+      when "correo-desc"
+        orden = "email desc"
+      when "conexiones-asc"
+        orden = "login_count asc"
+      when "conexiones-desc"
+        orden = "login_count desc"
+      when "last-asc"
+        orden = "last_login_at asc"
+      when "last-desc"
+        orden = "last_login_at desc"
+      end        
+    end 
+    
+    @users = User.where ("1 = 1").order(orden).paginate(:page => params[:page], :per_page => 50)
+
+    
     puts @users.size
     respond_to do |format|
       format.html # index.html.erb

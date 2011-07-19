@@ -6,6 +6,7 @@ Bazar::Application.configure do
   # since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
 
+  puts "Configurandos el prefix de Dalli"
   config.cache_store = :dalli_store, 'localhost:11211', {:expires_in => 1.day, :compress => true, :compress_threshold => 64*1024}
 
   # Log error messages when you accidentally call methods on nil.
@@ -30,6 +31,7 @@ Bazar::Application.configure do
     :sender_address => %{"Bazar Garum" <juantomas@geofun.es>},
     :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
   
+  config.i18n.default_locale = :es
   
 end
 

@@ -1,7 +1,7 @@
 <%= form_for(@actividad) do |f| %>
   <% if @actividad.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@actividad.errors.count, "error") %> prohibited this actividad from being saved:</h2>
+      <h2><%= pluralize(@actividad.errors.count, "error") %><%=t(:text_prohibited_this_actividad_from_being_saved)%></h2>
 
       <ul>
       <% @actividad.errors.full_messages.each do |msg| %>

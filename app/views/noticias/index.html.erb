@@ -1,11 +1,11 @@
-<h3 class="page-title">Noticias</h3>
+<h3 class="page-title"><%=t(:text_noticias)%></h3>
 
 <table class="tabla" cellspacing="0">
   <tr>
-    <th>Título</th>
-    <th>Texto</th>
-    <th>Fecha</th>
-    <th>Visible</th>
+    <th><%=t(:text_titulo)%></th>
+    <th><%=t(:text_texto)%></th>
+    <th><%=t(:text_fecha)%></th>
+    <th><%=t(:text_visible)%></th>
     <th></th>
     <th></th>
     <th></th>
@@ -26,4 +26,4 @@
 
 <%= will_paginate @noticias %>
 
-<%= link_to 'Publicar una noticia', new_noticia_path %>
+<%= link_to t(:label_publicar_una_noticia), new_noticia_path %>

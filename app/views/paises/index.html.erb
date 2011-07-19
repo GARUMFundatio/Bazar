@@ -1,19 +1,19 @@
 <% if !current_user.nil? %>
-	<a class="volver-home-link" href="/home">&laquo; Volver a la página de búsquedas</a>
+	<a class="volver-home-link" href="/home"><%=t(:text_volver_a_la_pagina_de_busquedas)%></a>
 <% end %>
 
-<h3 class="page-title">Países con Empresas de este Bazar</h3>
+<h3 class="page-title"><%=t(:text_paises_con_empresas_de_este_bazar)%></h3>
 
 <table id="results" class="tabla" cellspacing="0">
 	<tr>
 		<td>
-			<b>Páis</b>
+			<b><%=t(:text_p_is)%></b>
 		</td>
 		<td>
-			<b>Empresas en este Bazar</b>
+			<b><%=t(:text_empresas_en_este_bazar)%></b>
 		</td>
 		<td>
-			<b>Empresas en el Mercado</b>
+			<b><%=t(:text_empresas_en_el_mercado)%></b>
 		</td>
 		
 	</tr>

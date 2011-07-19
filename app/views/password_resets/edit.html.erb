@@ -1,4 +1,4 @@
-<h3>Cambiar Contraseña</h3>
+<h3><%=t(:text_cambiar_contrasena)%></h3>
 
 <% form_for @user, :url => password_reset_path, :method => :put do |f| %>
   <%= f.label :password %><br />

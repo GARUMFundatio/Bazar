@@ -12,7 +12,7 @@
 </div>
 
  <div class="field">
-	De:  <%= User.find(@mensaje.de).login -%> a todos los usuarios
+	<%=t(:text_de)%> <%= User.find(@mensaje.de).login -%> <%=t(:text_a_todos_los_usuarios)%>
  </div> 
 
   <div class="field">

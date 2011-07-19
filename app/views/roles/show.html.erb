@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Id:</b>
+  <b><%=t(:text_id)%></b>
   <%= @rol.id %>
 </p>
 
 <p>
-  <b>Rol:</b>
+  <b><%=t(:text_rol)%></b>
   <%= @rol.rol %>
 </p>
 
 
-<%= link_to 'Edit', edit_rol_path(@rol) %> |
-<%= link_to 'Back', roles_path %>
+<%= link_to t(:label_edit), edit_rol_path(@rol) %> |
+<%= link_to t(:label_back), roles_path %>

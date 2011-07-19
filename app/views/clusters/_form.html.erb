@@ -1,7 +1,7 @@
 <%= form_for(@cluster) do |f| %>
   <% if @cluster.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@cluster.errors.count, "error") %> prohibited this cluster from being saved:</h2>
+      <h2><%= pluralize(@cluster.errors.count, "error") %><%=t(:text_prohibited_this_cluster_from_being_saved)%></h2>
 
       <ul>
       <% @cluster.errors.full_messages.each do |msg| %>

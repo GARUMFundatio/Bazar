@@ -1,10 +1,13 @@
-<h3 class="page-title">Listado de Usuarios</h3>
+<h3 class="page-title"><%=t(:text_listado_de_usuarios)%></h3>
 
 <table class="tabla" cellspacing="0">
   <tr>
-    <th>Id</th>
-    <th>Usuario</th>
-    <th>Correo</th>
+    <th><%=t(:text_id)%></th>
+    <th><%=t(:text_usuario)%></th>
+    <th><%=t(:text_empresa)%></th>
+    <th><%=t(:text_correo)%> <a href="/users?orden=correo-asc"> <img src="/images/arrow_down.png"></a> <a href="/users?orden=correo-desc"> <img src="/images/arrow_up.png"> </a></th>
+    <th><%=t(:text_login_count)%> <a href="/users?orden=conexiones-asc"> <img src="/images/arrow_down.png"></a> <a href="/users?orden=conexiones-desc"> <img src="/images/arrow_up.png"> </a> </th>
+    <th><%=t(:text_last_login)%> <a href="/users?orden=last-asc"> <img src="/images/arrow_down.png"></a> <a href="/users?orden=last-desc"> <img src="/images/arrow_up.png"> </a> </th>
     <th colspan="2"></th>
   </tr>
 
@@ -12,7 +15,21 @@
   <tr>
 	<td><%= user.id %></td>
     <td><%= user.login %></td>
+
+	<% empresa = Bazarcms::Empresa.find_by_id(user.id) %>
+	<% if !empresa.nil? %>
+		<td> <%= link_to(empresa.nombre, bazarcms_empresa_path(user.id, :bazar_id => BZ_param("BazarId"))) %> </td>
+	<% else %>
+		<td> <%= t(:text_no_ha_rellenado_los_datos) %></td>
+	<% end %>
+	
     <td><%= user.email %></td>
+    <td><%= user.login_count %></td>
+	<% if !user.last_login_at.nil? %>
+    	<td><%= user.last_login_at.strftime("%d-%m-%Y") %></td>
+	<% else %>
+		<td><%=t(:text_nunca)%></td>
+	<% end %>
     <td style="text-align: center"><%= link_to (image_tag("pencil.png", :border => "0", :title => 'Editar'), edit_user_path(user))  %></td>
     <td style="text-align: center"><%= link_to (image_tag("delete.png", :title => 'Eliminar')), user, :confirm => 'Esta usted seguro?', :method => :delete %></td>
   </tr>
@@ -21,4 +38,4 @@
 
 <%= will_paginate @mensajes %>
 
-<%= link_to 'Nuevo Usuario', new_user_path %>
+<%= link_to t(:label_nuevo_usuario), new_user_path %>
