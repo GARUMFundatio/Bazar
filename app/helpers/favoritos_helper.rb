@@ -21,16 +21,16 @@ module FavoritosHelper
 
     fav = Bazarcms::Ofertasfavorito.find_by_bazar_id_and_oferta_id_and_user_id(bazar, oferta, current_user.id)
     if (!fav.nil?)
-      "<div class='favoritos favoo#{bazar}-#{oferta}'><a href='#' title='Quitar de Favoritos' onclick='$(\".favoo#{bazar}-#{oferta}\").load(\"/ofertasfavorito/delfav?bazar=#{bazar}&oferta=#{oferta}\")'><img src='/images/favorito.png'></a></div>".html_safe
+      "<div class='favoritos favoo#{bazar}-#{oferta}'><a href='#' title='Quitar de Ofertas Favoritas' onclick='$(\".favoo#{bazar}-#{oferta}\").load(\"/ofertasfavorito/delfav?bazar=#{bazar}&oferta=#{oferta}\")'><img src='/images/favorito.png'></a></div>".html_safe
     else 
-      "<div class='favoritos favoo#{bazar}-#{oferta}'><a href='#' title='Agregar a Favoritos' onclick='$(\".favoo#{bazar}-#{oferta}\").load(\"/ofertasfavorito/addfav?bazar=#{bazar}&empresa=#{empresa}&nombre_empresa=#{nombre.gsub(' ','_')}&oferta=#{oferta}&nombre_oferta=#{nombreo.gsub(' ','_')}\")'><img src='/images/addfav.png'></a></div>".html_safe
+      "<div class='favoritos favoo#{bazar}-#{oferta}'><a href='#' title='Agregar a Ofertas Favoritas' onclick='$(\".favoo#{bazar}-#{oferta}\").load(\"/ofertasfavorito/addfav?bazar=#{bazar}&empresa=#{empresa}&nombre_empresa=#{nombre.gsub(' ','_')}&oferta=#{oferta}&nombre_oferta=#{nombreo.gsub(' ','_')}\")'><img src='/images/addfav.png'></a></div>".html_safe
     end
 
   end 
   
   def helper_favoofe2(bazar, empresa, nombre, oferta, nombreo, user)
 
-    "<div class='favoritos favoo#{bazar}-#{oferta}' ><a href='#' title='Agregar a Favoritos' onclick='$(\".favoo#{bazar}-#{oferta}\").load(\"/ofertasfavorito/addfav?bazar=#{bazar}&empresa=#{empresa}&nombre_empresa=#{nombre.gsub(' ','_')}&oferta=#{oferta}&nombre_oferta=#{nombreo.gsub(' ','_')}\")'><img src='/images/addfav.png'></a></div>".html_safe
+    "<div class='favoritos favoo#{bazar}-#{oferta}' ><a href='#' title='Agregar a Ofertas Favoritas' onclick='$(\".favoo#{bazar}-#{oferta}\").load(\"/ofertasfavorito/addfav?bazar=#{bazar}&empresa=#{empresa}&nombre_empresa=#{nombre.gsub(' ','_')}&oferta=#{oferta}&nombre_oferta=#{nombreo.gsub(' ','_')}\")'><img src='/images/addfav.png'></a></div>".html_safe
 
   end 
   
