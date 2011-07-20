@@ -1,0 +1,277 @@
+--- 
+eo: 
+  activerecord: 
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "devas esti akceptita"
+        blank: "devas esti kompletigita"
+        confirmation: "ne kongruas kun la konfirmo"
+        empty: "devas esti kompletigita"
+        equal_to: "devas egali %{count}"
+        even: "devas esti para"
+        exclusion: "ne estas disponebla"
+        greater_than: "devas superi %{count}"
+        greater_than_or_equal_to: "devas superi aŭ egali %{count}"
+        inclusion: "ne estas inkluzivita de la listo"
+        invalid: "estas nevalida"
+        less_than: "devas malsuperi %{count}"
+        less_than_or_equal_to: "devas malsuperi aŭ egali %{count}"
+        not_a_number: "ne estas nombro"
+        not_an_integer: "devas esti entjero"
+        odd: "devas esti nepara"
+        record_invalid: "Validado malsukcesis: %{errors}"
+        taken: "ne estas disponebla"
+        too_long: "estas tro longa (maksimume %{count} karekteroj)"
+        too_short: "estas tro mallonga (minimume %{count} karakteroj)"
+        wrong_length: "ne estas je ĝusta longo (devas enhavi %{count} karakterojn)"
+      template: 
+        body: "Kontrolu la jenajn kampojn: "
+        header: 
+          one: "Ne eblas registri tiun %{model}: 1 eraro"
+          other: "Ne eblas registri tiun %{model}: %{count} eraroj"
+  attributes: 
+    created_at: "Kreita la"
+    updated_at: "Modifita la"
+  authlogic: 
+    attributes: 
+      user_session: 
+        email: ""
+        login: ""
+        password: ""
+        remember_me: ""
+    error_messages: 
+      consecutive_failed_logins_limit_exceeded: ""
+      email_invalid: ""
+      login_blank: ""
+      login_invalid: ""
+      login_not_found: ""
+      no_authentication_details: ""
+      not_active: ""
+      not_approved: ""
+      not_confirmed: ""
+      password_blank: ""
+      password_invalid: ""
+    models: 
+      user_session: ""
+  date: 
+    abbr_day_names: 
+      - dim
+      - lun
+      - mar
+      - mer
+      - ĵaŭ
+      - ven
+      - sam
+    abbr_month_names: 
+      - ~
+      - jan.
+      - feb.
+      - mar.
+      - apr.
+      - majo
+      - jun.
+      - jul.
+      - aŭg.
+      - sep.
+      - okt.
+      - nov.
+      - dec.
+    day_names: 
+      - dimanĉo
+      - lundo
+      - mardo
+      - merkredo
+      - ĵaŭdo
+      - vendredo
+      - sabato
+    formats: 
+      default: "%Y/%m/%d"
+      long: "%e %B %Y"
+      short: "%e %b"
+    month_names: 
+      - ~
+      - januaro
+      - februaro
+      - marto
+      - aprilo
+      - majo
+      - junio
+      - julio
+      - aŭgusto
+      - septembro
+      - oktobro
+      - novembro
+      - decembro
+    order: 
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "ĉirkaŭ unu horo"
+        other: "ĉirkaŭ %{count} horoj"
+      about_x_months: 
+        one: "ĉirkaŭ unu monato"
+        other: "ĉirkaŭ %{count} monatoj"
+      about_x_years: 
+        one: "ĉirkaŭ uno jaro"
+        other: "ĉirkaŭ %{count} jaroj"
+      almost_x_years: 
+        one: "preskaŭ unu jaro"
+        other: "preskaŭ %{count} jaroj"
+      half_a_minute: "duona minuto"
+      less_than_x_minutes: 
+        one: "malpli ol unu minuto"
+        other: "malpli ol %{count} minutoj"
+        zero: "malpli ol unu minuto"
+      less_than_x_seconds: 
+        one: "malpli ol unu sekundo"
+        other: "malpli ol %{count} sekundoj"
+        zero: "malpli ol unu sekundo"
+      over_x_years: 
+        one: "pli ol unu jaro"
+        other: "pli ol %{count} jaroj"
+      x_days: 
+        one: "1 tago"
+        other: "%{count} tagoj"
+      x_minutes: 
+        one: "1 minuto"
+        other: "%{count} minutoj"
+      x_months: 
+        one: "1 monato"
+        other: "%{count} monatoj"
+      x_seconds: 
+        one: "1 sekundo"
+        other: "%{count} sekundoj"
+    prompts: 
+      day: Tago
+      hour: Horo
+      minute: Minuto
+      month: Monato
+      second: Sekundo
+      year: Jaro
+  errors: 
+    format: "%{attribute} %{message}"
+    messages: 
+      accepted: "devas esti akceptita"
+      blank: "devas esti kompletigita"
+      confirmation: "ne kongruas kun la konfirmo"
+      empty: "devas esti kompletigita"
+      equal_to: "devas egali %{count}"
+      even: "devas esti para"
+      exclusion: "ne estas disponebla"
+      greater_than: "devas superi %{count}"
+      greater_than_or_equal_to: "devas superi aŭ egali %{count}"
+      inclusion: "ne estas inkluzivita de la listo"
+      invalid: "estas nevalida"
+      less_than: "devas malsuperi %{count}"
+      less_than_or_equal_to: "devas malsuperi aŭ egali %{count}"
+      not_a_number: "ne estas nombro"
+      not_an_integer: "devas esti entjero"
+      odd: "devas esti nepara"
+      too_long: "estas tro longa (maksimume %{count} karekteroj)"
+      too_short: "estas tro mallonga (minimume %{count} karakteroj)"
+      wrong_length: "ne estas je ĝusta longo (devas enhavi %{count} karakterojn)"
+  helpers: 
+    select: 
+      prompt: "Bonvolu elekti"
+    submit: 
+      create: "Krei %{model}"
+      submit: "Registri tiun %{model}"
+      update: "Modifi tiun %{model}"
+  label_back: ""
+  label_borrar_consultas_a_ofertas_realizadas: ""
+  label_borrar_consultas_realizadas: ""
+  label_borrar_todas_las_consultas_realizadas: ""
+  label_destroy: ""
+  label_edit: ""
+  label_grafico_de_topologia_de_redes: ""
+  label_listado_de_bazares: ""
+  label_mailing_a_usuarios: ""
+  label_new_conf: ""
+  label_new_gruposconf: ""
+  label_new_rol: ""
+  label_new_roles_user: ""
+  label_new_ubicacion: ""
+  label_new_usersession: ""
+  label_noticias: ""
+  label_notificacion_a_usuarios: ""
+  label_nuevo_usuario: ""
+  label_publicar_una_noticia: ""
+  label_show: ""
+  label_usuarios: ""
+  label_volver: ""
+  label_volver_a_editar: ""
+  label_volver_a_la_lista_de_bazares: ""
+  label_volver_a_la_lista_de_mensajes: ""
+  label_volver_a_la_lista_de_notificaciones: ""
+  label_volver_al_listado: ""
+  label_volver_al_listado_de_noticias: ""
+  number: 
+    currency: 
+      format: 
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format: 
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: miliardo
+          million: miliono
+          quadrillion: "miliono da miliardoj"
+          thousand: mil
+          trillion: "mil miliardoj"
+          unit: ""
+      format: 
+        delimiter: ""
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: bitoko
+            other: bitokoj
+          gb: Gb
+          kb: kb
+          mb: Mb
+          tb: Tb
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  support: 
+    array: 
+      last_word_connector: " kaj "
+      two_words_connector: " kaj "
+      words_connector: ", "
+    select: 
+      prompt: "Bonvolu elekti"
+  text_a_los_miembros_de_su_mismo_bazar: ""
+  text_a_todos_los_usuarios: ""
+  text_accion: ""
+  text_acciones: ""
+  time: 
+    am: am
+    formats: 
+      default: "%d %B %Y %H:%M:%S"
+      long: "%A %d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
