@@ -68,6 +68,12 @@ Bazar::Application.routes.draw do
   match '/api/ejemploinfoempresa' => 'api#ejemploinfoempresa'
   match '/api/ejemploperfiles' => 'api#ejemploperfiles'
   match '/api/ejemplopaises' => 'api#ejemplopaises'
-  
 
+
+  scope '/translate' do
+    match '/translate_list', :to => 'translate#index'
+    match '/translate', :to => 'translate#translate'
+    match '/translate_reload', :to => 'translate#reload', :as => 'translate_reload'
+  end
+  
 end
