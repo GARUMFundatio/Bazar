@@ -94,6 +94,13 @@ body {
     margin-top: 0;
 }
 
+.izqda {
+	float: left;
+	}
+	
+.drcha {
+	float: right;
+	}
 
 /* jt */
 
@@ -1072,7 +1079,7 @@ input#busca {
     width: 403px;
     height: 23px;
     margin: 0 170px 50px 0;
-    padding: 8px 60px 10px 10px;
+    padding: 8px 61px 10px 10px;
     border: 1px solid #999;
     font-size: 18px;
     line-height: 26px;
@@ -1284,7 +1291,7 @@ input#busca:active {
     position: absolute;
     top: 90px;
     right: 369px;
-    width: 453px;
+    width: 454px;
     padding: 10px;
     border: 1px solid #999;
     border-top-color: #DBCE8E;
