@@ -450,8 +450,7 @@ div#nav-usuario a img {
     width: 100%;
     min-height: 545px;
     overflow: hidden;
-/*    margin-bottom: 1.4em;
-    padding-bottom: .6em; */
+	text-transform: lowercase;
     background: url(/images/bazarcentro.png) no-repeat;
 
 }
