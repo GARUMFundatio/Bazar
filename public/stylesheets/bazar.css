@@ -630,13 +630,17 @@ div.contenidos-secundarios h4 {
 /* Titulares de página */
 
 #contenido .page-title {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    font-size: 30px;
-    line-height: 1.2;
-    font-weight: normal;
-    color: #666;
-    border-bottom: 1px solid #999999;
+	padding: 9px 23px;
+   margin-bottom: 15px;
+   margin-top: 15px;
+   font-size: 30px;
+  	font-variant: small-caps;
+   line-height: 1.2;
+   font-weight: bold;
+   color: #666;
+	background-color: #EFF2FF;
+	border-color: #D1D4DF;
+	border-bottom: 1px solid #999999;
 }
 
 #contenido #tabs h3 {
@@ -668,7 +672,8 @@ div.contenidos-secundarios h4 {
 
 #ofertas h3, #favoritos h3, #ofertasfavoritos h3, #mensajes h3, #actividades h3 {
 	padding: 6px 20px;
-	font-size: 23px;
+	font-weight: bold;
+	font-size: 18px !important;
 	background-color: #EFF2FF;
 	border-color: #D1D4DF;
 	}
@@ -1789,8 +1794,9 @@ h3 #ayuda-busqueda-link {
     width: 960px;
     overflow: hidden;
      color: #30537A;
+    margin-left: 20px;
     background-color: #FFF;
-    padding-top: 10px;
+    padding: 10px 0;
     font-size: 14px;
 }
 
