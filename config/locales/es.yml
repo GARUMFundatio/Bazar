@@ -115,8 +115,7 @@ es:
   text_ejemplos_del_api_del_proyecto_bazar: "Ejemplos del API del Proyecto Bazar"
   text_el_basamento_invisible_de_los_mercados_es_la_confianza: "El basamento invisible de los mercados es la confianza"
   text_el_corazon_de_bazar_es_un_sistema_de_ofertas_y_pedidos_optimizado_para_ayudar_a_cada_empresa_a_encontrar_nuevos_clientes_distribuidores_y_proveedores: "el corazón de Bazar es un sistema de ofertas y pedidos optimizado para ayudar a cada empresa a encontrar nuevos clientes, distribuidores y proveedores"
-  text_empresa: "Empresa:"
-  text_empresas: "Empresas:"
+  text_empresa: "Empresa"
   text_empresas_actualizadas: "Empresas Actualizadas"
   text_empresas_de_este_bazar_ubicadas_en: "Empresas de este bazar ubicadas en"
   text_empresas_del_bazar: "Empresas del Bazar"
@@ -128,7 +127,7 @@ es:
   text_en_pocas_palabras: "En pocas palabras:"
   text_enlace: "Enlace:"
   text_enlace_al_bazar: "Enlace al Bazar:"
-  text_entrar: entrar
+  text_entrar: "entrar"
   text_enviar_mensaje: "Enviar Mensaje"
   text_enviar_mensaje_a_incluir_nombre_y_empresa: "Enviar Mensaje a: Incluir nombre y empresa"
   text_enviar_mensaje_a_todos_los_usuarios: "Enviar Mensaje a todos los Usuarios"
@@ -245,7 +244,7 @@ es:
   text_ofertas_demandas: "Ofertas / Demandas"
   text_ofertas_diferenciadas_y_demandas_restringidas: "ofertas diferenciadas y demandas restringidas"
   text_ofrecen: "Ofrecen:"
-  text_pais: Páis
+  text_pais: "Pais"
   text_paises: "Países:"
   text_paises_activos_de_un_bazar: "Países Activos de un Bazar"
   text_paises_con_empresas_de_este_bazar: "Países con Empresas de este Bazar"
@@ -257,6 +256,7 @@ es:
   text_para_tu: "para tu"
   text_parametro: Parámetro
   text_password: Password
+  text_password_is_not_valid: "La contraseña no es válida"
   text_perfiles_activos_de_un_bazar: "Perfiles Activos de un Bazar"
   text_pero_a_diferencia_de_una_red_social_bazar_esta_limitado_a_empresas_y_a_grupos_y_asociaciones_de_empresas_por_eso: "Pero a diferencia de una red social Bazar está limitado a empresas y a grupos y asociaciones de empresas. Por eso"
   text_pero_el_mercado_tradicional_no_era_solo_un_lugar_para_la_compraventa_era_tambien_un_espacio_de_interaccion_politica_y_social_y_se_olvida_demasiado_a_menudo_el_lugar_donde_maestros_filosofos_y_jueces_arbitraban_conflictos_y_se_encontraban_con_sus_discipulos_el_mercado_no_es_exclusivamente_una_relacion_monetaria_sino_sobre_todo_una_relacion_social: "Pero el mercado tradicional no era sólo un lugar para la compraventa. Era también un espacio de interacción política y social y -se olvida demasiado a menudo- el lugar donde maestros, filósofos y jueces arbitraban conflictos y se encontraban con sus discípulos.  El mercado no es exclusivamente una relación monetaria sino sobre todo una relación social."
