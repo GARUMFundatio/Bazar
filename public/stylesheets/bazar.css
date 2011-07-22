@@ -698,7 +698,7 @@ font-size: 14px;
 /* formulario de entrada */
 #new_user_session {
     width: 323px;
-    height: 164px;
+    height: 194px;
     padding: 23px 0;
     overflow: hidden;
 }
@@ -772,6 +772,16 @@ font-size: 14px;
     text-align: left;
     color: #24568E;
 }
+
+.registrarse {
+	margin-left: -55px;
+	margin-top: 8px;
+	}
+    
+a.registrarse, a.registrarse:visited, a.registrarse:hover {
+	color: #24568e !important;
+	font-size: 12px;
+	}
 
 /* campo con error que envuelve el input */
 #new_user_session div.field_with_errors {
