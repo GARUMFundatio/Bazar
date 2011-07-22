@@ -235,7 +235,7 @@ body {
     position: absolute;
     top: 12px;
     right: 18px;
-    width: 190px;
+    width: 240px;
     text-align: center;
     color: #30537A;
 }
@@ -281,14 +281,14 @@ body {
 div#nav-usuario {
     top: 20px;
     right: 8px;
-    width: 190px;
+    width: 240px;
     height: 54px;
     overflow: hidden;
     margin: 0;
     padding: 7px 10px;
     border: 1px solid #1A3655;
     list-style-type: none;
-    text-align: left;
+    text-align: center;
     background: #efe3a4 url(/images/fondo-nav-usuario.png) repeat-x left bottom;
 }
 
@@ -303,12 +303,12 @@ div#nav-usuario a img {
 #nav-usuario .user-links,
 #nav-usuario .user-messages {
     display: inline;
-    float: left;
     margin-bottom: 7px;
 }
 
 #nav-usuario .nav-site {
     clear: both;
+    margin-top: 8px;
     padding: 8px 0 0;
 }
 
