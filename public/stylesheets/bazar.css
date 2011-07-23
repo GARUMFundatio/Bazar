@@ -138,26 +138,6 @@ body {
     position: relative;
 }
 
-
-/*
-#title {
-    display: inline;
-    float: left;
-    width: 361px;
-    height: 75px;
-    margin: 10px 10px 0 10px; */
- /*   text-indent: -9999px; */
-/*    background: url(/images/logo-bazar.png) no-repeat 0 0;
-}
-
-#title a {
-    display: block;
-    width: 361px;
-    height: 75px; */
-  /*  text-indent: -9999px; */
-/*    background: url(/images/logo-bazar.png) no-repeat 0 0;
-} */
-
 #title {
 	position: relative;
 	font-size: 2.2em;
@@ -173,13 +153,6 @@ body {
 	bottom: 4px;
    font-size: 1.2em;
    }
-/*
-#slogan {
-    padding: 2.3em 0 0 0;
-    margin: 0;
-    font-size: 1.5em;
-    text-align: left;
-} */
 
 #socioenlaces {
 	position: absolute;
@@ -683,6 +656,20 @@ div.contenidos-secundarios h4 {
 	font-size: 18px !important;
 	background-color: #EFF2FF;
 	border-color: #D1D4DF;
+	}
+	
+/* editar cuenta de usuario */
+
+.edit_user {
+	border: 2px solid #efe3a4;
+	background: none repeat scroll 0 0 #FFF5BF;
+	padding: 10px 20px;
+	width: 330px;
+	margin-bottom: 10px;
+	}
+	
+.edit_user #user_submit {
+	margin-top: 20px;
 	}
 
 
