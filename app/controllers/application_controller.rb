@@ -41,7 +41,9 @@ class ApplicationController < ActionController::Base
        # de su rating. 
        # TODO JT esto habría que cachearlo para optimizar las comunicaciones
        
-       res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+       res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
+         res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+       end
        
        puts "json empresa ------->"+res.inspect
        if (res.length > 1)
@@ -66,7 +68,7 @@ class ApplicationController < ActionController::Base
      end
      
      val = "#{valor}".split('.')[0]
-     str = "<div><a href='#{url}'>" 
+     str = "<div><a href='#{url}' title='Ver el Rating de esta empresa'>" 
      
      for ii in ['1', '2', '3', '4', '5'] 
      
