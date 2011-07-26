@@ -42,19 +42,19 @@ class ApplicationController < ActionController::Base
        # TODO JT esto habría que cachearlo para optimizar las comunicaciones
        
        res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
-         puts "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
+         logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
          res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
        end
        
-       puts "json empresa ------->"+res.inspect
+       logger.debug "json empresa ------->"+res.inspect
        if (res.length > 1)
          
           empre = JSON.parse(res)
 
-          puts "json empresa2 ------->"+empre.inspect
+          logger.debug "json empresa2 ------->"+empre.inspect
 
           if (!empre['rating'].nil?)
-            puts "json empresa3 ------->#{empre['rating']}"
+            logger.debug "json empresa3 ------->#{empre['rating']}"
             valor = empre['rating']
           else 
             valor = 0
