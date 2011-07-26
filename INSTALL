@@ -1,40 +1,5 @@
-Como instalar ruby enterprise + passenger + nginx en Debian 
+Las instrucciones para descargar e instalar el Bazar Garum están
+en el siguiente enlace de la garumpedia: 
 
-Nuestra recomendación es usar: 
-
-* ruby enterprise 1.8.7 o superior
-* passenger 
-* nginx 
-
-
-(1) Instalamos 
-
-apt-get install build-essential zlib1g-dev libssl-dev libreadline5-dev libcurl4-openssl-dev git-core mysql-client libmysqlclient15-dev
-
-(2) Descargamos ruby enterprise y lo instalamos
-
-wget http://rubyforge.org/frs/download.php/71096/ruby-enterprise-1.8.7-2010.02.tar.gz
-tar zxvf ruby-enterprise-1.8.7-2010.02.tar.gz
-
-
-./ruby-enterprise-1.8.7-2010.02/installer
-
-
-/opt/ruby-enterprise-1.8.7-2010.02/bin/passenger-install-nginx-module
-
-ln -sf /opt/ruby-enterprise-1.8.7-2010.02/bin/rake /usr/bin/rake
-ln -sf /opt/ruby-enterprise-1.8.7-2010.02/bin/rails /usr/bin/rails
-ln -sf /opt/ruby-enterprise-1.8.7-2010.02/bin/ruby /usr/bin/ruby
-ln -sf /opt/ruby-enterprise-1.8.7-2010.02/bin/bundle /usr/bin/bundle
-
-
-Como instalar Bazar
-
-(2) Obtener la aplicación: 
-
-git clone https://github.com/GARUMFundatio/Bazar.git
-
-(3) Ejecutar 
-
-sh -x install.sh 
+http://garumfundatio.org/garumpedia/Descargar_e_instalar_Bazar
 
