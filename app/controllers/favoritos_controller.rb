@@ -88,6 +88,55 @@ class FavoritosController < ApplicationController
       logger.debug "Ya estaba en favoritos!!! #{params.inspect}"
     end 
 
+    # enviamos un correo a la empresa que ha sido añadida como favorita
+    
+    
+    # de momento solo enviamos una notificación por correo normal
+    # TODO: JT  revisar si deberíamos dejar también una notificación 
+    # en el correo interno. 
+      
+      
+    if (params[:bazar].to_i == BZ_param("BazarId").to_i)
+
+      logger.debug "Es un mensaje con una empresa local!!!"
+
+      emp = Bazarcms::Empresa.find_by_id(params[:empresa])
+      user = User.find_by_id(params[:empresa])
+      
+      para = user.email
+      nombre = emp.nombre
+            
+    else
+
+      para = ""
+      nombre = ""
+            
+    end
+      
+    texto = "
+
+    La empresa: #{nombre} le ha añadido a sus favoritos.
+    </br>
+    Le sugerimos: 
+    </br>
+    * <a href=''>Ver la ficha de empresa de #{nombre}</a>
+    </br>
+    * <a href=''>Ver el rating de #{nombre}</a>
+    </br>
+    * <a href=''>Añadir a favoritos a #{nombre}</a>
+    
+    "
+
+    BazarMailer.enviamensaje("#{BZ_param('Titular')} <noreplay@garumfundatio.org>", 
+                                para, 
+                                "#{BZ_param('Titular')}: La empresa #{nombre} le ha añadido a sus favoritos.", 
+                                texto).deliver      
+
+
+
+    # forzamos que se actulicen los caches relacionados con favoritos. 
+    
+    
     expire_fragment "bazar_favoritos_dash_#{current_user.id}"
     expire_fragment "ofertasdash"
     expire_fragment "bazar_actividades_dashboard"
