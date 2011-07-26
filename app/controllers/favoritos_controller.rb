@@ -147,34 +147,34 @@ class FavoritosController < ApplicationController
       @mensaje2.borrado = nil
 
 
-        if (@mensaje2.bazar_destino.to_i == BZ_param("BazarId").to_i)
+      if (@mensaje2.bazar_destino.to_i == BZ_param("BazarId").to_i)
 
-          if @mensaje2.save
-            BazarMailer.enviamensaje(@mensaje2.de_email, 
-                                      @mensaje2.para_email, 
-                                      @mensaje2.asunto, 
-                                      @mensaje2.texto).deliver
-            if @mensaje2.tipo == 'M'
-              format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
-            else
-              format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
-            end
-            format.xml  { head :ok }
+        if @mensaje2.save
+          BazarMailer.enviamensaje(@mensaje2.de_email, 
+                                    @mensaje2.para_email, 
+                                    @mensaje2.asunto, 
+                                    @mensaje2.texto).deliver
+          if @mensaje2.tipo == 'M'
+            format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
           else
-            format.html { render :action => "edit" }
-            format.xml  { render :xml => @mensaje.errors, :status => :unprocessable_entity }
+            format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
           end
-
-        else 
-          # enviamos el mensaje al bazar de destino
-
-          logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
-
-          dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
-
-          @mensaje2.destroy
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @mensaje.errors, :status => :unprocessable_entity }
         end
+
+      else 
+        # enviamos el mensaje al bazar de destino
+
+        logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
+
+        dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
+
+        @mensaje2.destroy
       end
+     
     end
       
 
