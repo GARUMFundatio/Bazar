@@ -75,7 +75,7 @@ class FavoritosController < ApplicationController
 
   def addfav
     @fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar], params[:empresa])
-
+    
     if @fav.nil? 
       @fav = Favorito.new
       @fav.fecha = DateTime.now 
@@ -116,7 +116,7 @@ class FavoritosController < ApplicationController
       </br>
       * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/ficharating/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver el rating de #{nombre}</a>
       </br>
-      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/favorito/delfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=consu'>Añadir a favoritos a #{nombre}</a>
+      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=auto'>Añadir a favoritos a #{nombre}</a>
 
       "
 
@@ -176,9 +176,6 @@ class FavoritosController < ApplicationController
       end
      
     end
-      
-
-
 
 
     # forzamos que se actulicen los caches relacionados con favoritos. 
@@ -189,7 +186,13 @@ class FavoritosController < ApplicationController
     expire_fragment "bazar_actividades_dashboard"
     
     @pre = params[:pre]
-    render :layout => false  
+    
+    if params[:pre] == "auto"
+      render :action => "added"
+    else 
+      render :layout => false        
+    end 
+    
   end
 
   def delfav
