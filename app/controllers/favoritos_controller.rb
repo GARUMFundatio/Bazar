@@ -116,7 +116,7 @@ class FavoritosController < ApplicationController
       </br>
       * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/ficharating/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver el rating de #{nombre}</a>
       </br>
-      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}//favorito/delfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=consu'>Añadir a favoritos a #{nombre}</a>
+      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/favorito/delfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=consu'>Añadir a favoritos a #{nombre}</a>
 
       "
 
@@ -146,9 +146,6 @@ class FavoritosController < ApplicationController
       @mensaje2.leido = nil 
       @mensaje2.borrado = nil
 
-      respond_to do |format|
-
-        # si es un envio local 
 
         if (@mensaje2.bazar_destino.to_i == BZ_param("BazarId").to_i)
 
@@ -176,6 +173,7 @@ class FavoritosController < ApplicationController
           dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
 
           @mensaje2.destroy      
+      end
     end
       
 
