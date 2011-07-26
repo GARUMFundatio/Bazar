@@ -172,7 +172,8 @@ class FavoritosController < ApplicationController
 
           dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
 
-          @mensaje2.destroy      
+          @mensaje2.destroy
+        end
       end
     end
       
