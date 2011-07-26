@@ -105,7 +105,8 @@ class FavoritosController < ApplicationController
       
       para = user.email
       nombre = emp.nombre
-            
+      
+
     else
 
       para = ""
@@ -113,18 +114,19 @@ class FavoritosController < ApplicationController
             
     end
       
+
     texto = "
 
     La empresa: #{nombre} le ha añadido a sus favoritos.
     </br>
     Le sugerimos: 
     </br>
-    * <a href=''>Ver la ficha de empresa de #{nombre}</a>
+    * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/'>Ver la ficha de empresa de #{nombre}</a>
     </br>
-    * <a href=''>Ver el rating de #{nombre}</a>
+    * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/'>Ver el rating de #{nombre}</a>
     </br>
-    * <a href=''>Añadir a favoritos a #{nombre}</a>
-    
+    * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/'>Añadir a favoritos a #{nombre}</a>
+
     "
 
     BazarMailer.enviamensaje("#{BZ_param('Titular')} <noreplay@garumfundatio.org>", 
