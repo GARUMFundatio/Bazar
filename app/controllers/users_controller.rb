@@ -65,6 +65,9 @@ class UsersController < ApplicationController
     # @user.rol_ids = params[:rol_ids] || Array.new
     respond_to do |format|
       if @user.save
+
+        BazarMailer.confirmacion_registro(@user).deliver      
+        
         format.html { redirect_to(@user, :notice => 'Se ha creado correctamente el usuario.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
@@ -83,6 +86,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        BazarMailer.confirmacion_registro(@user).deliver      
         format.html { redirect_to(users_url) }
         format.xml  { head :ok }
       else
@@ -94,7 +98,11 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    
+    # TODO: no se pueden borrar los usuarios por las buenas. 
+    # hay que definir la política de borrado de toda la información relacionada. 
+    
+    # @user.destroy
 
     respond_to do |format|
       format.html { redirect_to(users_url) }

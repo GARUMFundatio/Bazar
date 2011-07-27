@@ -1,6 +1,6 @@
 <b>Bienvenido a Bazar.</b> 
 <br/>
-Su usuario es: <%= user.username %>
+Su usuario es: <%= @user.username %>
 <br/>
 Para entrar en Bazar use el siguiente enlace: 
 <br/>
@@ -10,7 +10,7 @@ Para entrar en Bazar use el siguiente enlace:
 Cuando entre en Bazar le recomendamos alguna de estas acciones: 
 
 <br/>
-* <a href="<%= Cluster.find_by_id(BZ_param('BazarId')).url %>/bazarcms/empresas/<%= user.id -%>/edit">Rellenar los datos de su empresa.</a> 
+* <a href="<%= Cluster.find_by_id(BZ_param('BazarId')).url %>/bazarcms/empresas/<%= @user.id -%>/edit">Rellenar los datos de su empresa.</a> 
 <br/>
 * <a href="<%= Cluster.find_by_id(BZ_param('BazarId')).url %>/home"> Realice alguna búsqueda de empresas / Ofertas / Demandas.</a> 
 <br/>
