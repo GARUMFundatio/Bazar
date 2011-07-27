@@ -116,7 +116,7 @@ class FavoritosController < ApplicationController
       </br>
       * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/ficharating/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver el rating de #{nombre}</a>
       </br>
-      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=auto'>Añadir a favoritos a #{nombre}</a>
+      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=auto'>Añadir #{nombre} a sus favoritos</a>
 
       "
 
