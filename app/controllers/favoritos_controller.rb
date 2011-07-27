@@ -235,6 +235,10 @@ class FavoritosController < ApplicationController
   
   # empresas que sigue un usuario 
   
+  def added 
+    
+  end 
+  
   def dashboard 
     
     @favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc").limit(5)
