@@ -1,19 +1,31 @@
-<b>Bienvenido a Bazar.</b> 
+<b>Bienvenido a <%= @bazar %>.</b> 
 <br/>
+<br/>
+
 Su usuario es: <%= @username %>
 <br/>
+<br/>
+
+
 Para entrar en Bazar use el siguiente enlace: 
+<br/>
 <br/>
 
 <a href="<%= @url %>"> <%= @url %> </a>
 
 <br/>
+<br/>
 
 Cuando entre en Bazar le recomendamos alguna de estas acciones: 
 
 <br/>
-* <a href="<%= @url %>/bazarcms/empresas/<%= @userid -%>/edit">Rellenar los datos de su empresa.</a> 
+<br/>
+* <a href="<%= @url %>/bazarcms/empresas/<%= @userid -%>/edit">Rellenar los datos de su empresa, los sectores
+	de actividad y las ubicaciones de su empresa.</a> 
+<br/>
 <br/>
 * <a href="<%= @url %>/home"> Realice alguna búsqueda de empresas / Ofertas / Demandas.</a> 
 <br/>
+<br/>
+
 * Añada a sus favoritos las empresas que le puedan interesar.
