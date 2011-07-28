@@ -100,11 +100,12 @@ class FavoritosController < ApplicationController
 
       logger.debug "Es un mensaje con una empresa local!!!"
 
-      emp = Bazarcms::Empresa.find_by_id(params[:empresa])
+      emp = Bazarcms::Empresa.find_by_id(current_user.id)
+      nombre = emp.nombre
+
       user = User.find_by_id(params[:empresa])
       
       para = user.email
-      nombre = emp.nombre
       
       texto = "
 
@@ -112,11 +113,11 @@ class FavoritosController < ApplicationController
       </br>
       Le sugerimos: 
       </br>
-      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/empresas/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver la ficha de empresa de #{nombre}</a>
+      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/empresas/#{current_user.id}?bazar_id=#{params[:bazar]}'>Ver la ficha de empresa de #{nombre}</a>
       </br>
-      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/ficharating/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver el rating de #{nombre}</a>
+      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/ficharating/#{current_user.id}?bazar_id=#{params[:bazar]}'>Ver el rating de #{nombre}</a>
       </br>
-      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=auto'>Añadir #{nombre} a sus favoritos</a>
+      * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{current_user.id}&pre=auto'>Añadir #{nombre} a sus favoritos</a>
 
       "
 
@@ -125,55 +126,53 @@ class FavoritosController < ApplicationController
                                   "#{BZ_param('Titular')}: La empresa #{nombre} le ha añadido a sus favoritos.", 
                                   texto).deliver      
 
-    else
-
-      para = ""
-      nombre = ""
+    else  
+      
+      emp = Bazarcms::Empresa.find_by_id(current_user.id)
+      user = User.find_by_id(current_user.id)
+      nombre = emp.nombre
+      para = user.email
       
       @mensaje2 = Mensaje.new()
       @mensaje2.fecha = DateTime.now
-      @mensaje2.de = @mensaje.para
-      @mensaje2.de_nombre = @mensaje.para_nombre
-      @mensaje2.de_email = @mensaje.para_email
+      
+      
+      @mensaje2.de = user.id
+      @mensaje2.de_nombre = emp.nombre
+      @mensaje2.de_email = user.email
 
-      @mensaje2.bazar_origen = @mensaje.bazar_destino
-      @mensaje2.para = @mensaje.de 
-      @mensaje2.para_nombre = @mensaje.de_nombre 
-      @mensaje2.para_email = @mensaje.de_email 
+      @mensaje2.bazar_origen = BZ_param('BazarId')
+      
+      @mensaje2.para = params[:empresa]
+      @mensaje2.para_nombre = params[:empresa] 
+      @mensaje2.para_email = "poner el email de la empresa remota" 
 
-      @mensaje2.bazar_destino = @mensaje.bazar_origen
-      @mensaje2.tipo = @mensaje.tipo
+      @mensaje2.bazar_destino = params[:bazar]
+      
+      @mensaje2.tipo = "M"
       @mensaje2.leido = nil 
       @mensaje2.borrado = nil
 
+      @mensaje2.texto = "
 
-      if (@mensaje2.bazar_destino.to_i == BZ_param("BazarId").to_i)
+      La empresa: #{nombre} le ha añadido a sus favoritos.
+      </br>
+      Le sugerimos: 
+      </br>
+      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/empresas/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver la ficha de empresa de #{nombre}</a>
+      </br>
+      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/ficharating/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver el rating de #{nombre}</a>
+      </br>
+      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=auto'>Añadir #{nombre} a sus favoritos</a>
 
-        if @mensaje2.save
-          BazarMailer.enviamensaje(@mensaje2.de_email, 
-                                    @mensaje2.para_email, 
-                                    @mensaje2.asunto, 
-                                    @mensaje2.texto).deliver
-          if @mensaje2.tipo == 'M'
-            format.html { redirect_to("/mensajes?tipo=M", :notice => 'Mensaje ha sido enviado.') }
-          else
-            format.html { redirect_to("/mensajes?tipo=N", :notice => 'Mensaje ha sido enviado.') }        
-          end
-          format.xml  { head :ok }
-        else
-          format.html { render :action => "edit" }
-          format.xml  { render :xml => @mensaje.errors, :status => :unprocessable_entity }
-        end
+      "
 
-      else 
-        # enviamos el mensaje al bazar de destino
 
-        logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
+      logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
 
-        dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
+      dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
 
-        @mensaje2.destroy
-      end
+      @mensaje2.destroy
      
     end
 
