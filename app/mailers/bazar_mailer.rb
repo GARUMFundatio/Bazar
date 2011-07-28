@@ -7,7 +7,7 @@ class BazarMailer < ActionMailer::Base
     @username = user.login
     @userid = user.id
     @url = Cluster.find_by_id(Conf.find_by_nombre('BazarId').valor).url
-    @bazar = Cluster.find_by_id(Conf.find_by_nombre('Titular').valor).url
+    @bazar = Conf.find_by_nombre('Titular').valor
 
     mail(:to => user.email, :subject => "[#{@bazar}] Se ha registrado en el Bazar")  
     
