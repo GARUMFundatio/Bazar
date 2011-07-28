@@ -3,7 +3,13 @@ class BazarMailer < ActionMailer::Base
   default :from => "admin@bazar.com" 
   
   def confirmacion_registro(user)  
+    
+    @username = user.login
+    @userid = user.id
+    @url = Cluster.find_by_id(Conf.find_by_nombre('BazarId').valor).url
+    
     mail(:to => user.email, :subject => "Se ha registrado en Bazar")  
+    
   end
   
   def pruebas
