@@ -320,7 +320,7 @@ class MensajesController < ApplicationController
     @mensaje.bazar_destino = mensa['mensaje']['bazar_destino']
     @mensaje.para = mensa['mensaje']['para']
     @mensaje.para_nombre = Bazarcms::Empresa.find_by_id(mensa['mensaje']['para']).nombre
-    @mensaje.para_email = User.find(@mensaje.para).email
+    @mensaje.para_email = "#{@mensaje.para_nombre} <#{User.find(@mensaje.para).email}>"
     
     @mensaje.texto = mensa['mensaje']['texto']
     @mensaje.asunto = mensa['mensaje']['asunto']
