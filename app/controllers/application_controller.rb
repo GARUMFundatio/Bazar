@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2
+  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea
   helper :all
   
   require "net/http"
