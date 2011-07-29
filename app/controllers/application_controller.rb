@@ -85,7 +85,7 @@ class ApplicationController < ActionController::Base
      str 
    end
   
-   def formatea(texto)
+   def helper_formatea(texto)
 
      texto.gsub(/\n/,'<br/>').html_safe
      
