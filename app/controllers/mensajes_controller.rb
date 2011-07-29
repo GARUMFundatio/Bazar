@@ -311,24 +311,25 @@ class MensajesController < ApplicationController
     
     @mensaje = Mensaje.new
     
+    @mensaje.bazar_origen = mensa['mensaje']['bazar_origen']
     @mensaje.tipo = mensa['mensaje']['tipo']
     @mensaje.de = mensa['mensaje']['de']
     @mensaje.de_nombre = mensa['mensaje']['de_nombre']
-    @mensaje.de_email = mensa['mensaje']['de_email']
+    @mensaje.de_email = "#{mensa['mensaje']['de_nombre']} <#{mensa['mensaje']['de_email']}>"
     
+    @mensaje.bazar_destino = mensa['mensaje']['bazar_destino']
     @mensaje.para = mensa['mensaje']['para']
-    @mensaje.para_nombre = mensa['mensaje']['para_nombre']
+    @mensaje.para_nombre = Bazarcms::Empresa.find_by_id(mensa['mensaje']['para']).nombre
     @mensaje.para_email = User.find(@mensaje.para).email
     
     @mensaje.texto = mensa['mensaje']['texto']
     @mensaje.asunto = mensa['mensaje']['asunto']
     @mensaje.fecha = mensa['mensaje']['fecha']
-    @mensaje.bazar_origen = mensa['mensaje']['bazar_origen']
-    @mensaje.bazar_destino = mensa['mensaje']['bazar_destino']
-     
+    
+    
     @mensaje.save
     
-    BazarMailer.enviamensaje(User.find(@mensaje.de).email, 
+    BazarMailer.enviamensaje(@mensaje.de_email, 
                               @mensaje.para_email, 
                               @mensaje.asunto, 
                               @mensaje.texto).deliver

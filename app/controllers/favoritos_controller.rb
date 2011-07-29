@@ -137,37 +137,39 @@ class FavoritosController < ApplicationController
       @mensaje2 = Mensaje.new()
       @mensaje2.fecha = DateTime.now
       
-      
+      @mensaje2.bazar_origen = BZ_param('BazarId')
       @mensaje2.de = user.id
       @mensaje2.de_nombre = emp.nombre
       @mensaje2.de_email = user.email
 
-      @mensaje2.bazar_origen = BZ_param('BazarId')
       
+      @mensaje2.bazar_destino = params[:bazar]
       @mensaje2.para = params[:empresa]
       
-      # tenemos que coger estos datos del bazar remoto
+      # Estos datos los coge en remoto
       
-      @mensaje2.para_nombre = params[:empresa] 
-      @mensaje2.para_email = "poner el email de la empresa remota" 
+      @mensaje2.para_nombre = "" 
+      @mensaje2.para_email = "" 
 
-      @mensaje2.bazar_destino = params[:bazar]
       
       @mensaje2.tipo = "M"
       @mensaje2.leido = nil 
       @mensaje2.borrado = nil
 
+      @mensaje2.asunto = "#{BZ_param('Titular')}: La empresa #{nombre} le ha añadido a sus favoritos."
       @mensaje2.texto = "
 
+      #{@mensaje2.to_json}
+      <br/>
       La empresa: #{nombre} le ha añadido a sus favoritos.
       </br>
       Le sugerimos: 
       </br>
-      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/empresas/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver la ficha de empresa de #{nombre}</a>
+      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/empresas/#{current_user.id}?bazar_id=#{BZ_param('BazarId')}'>Ver la ficha de empresa de #{nombre}</a>
       </br>
-      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/ficharating/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>Ver el rating de #{nombre}</a>
+      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/ficharating/#{current_user.id}?bazar_id=#{BZ_param('BazarId')}'>Ver el rating de #{nombre}</a>
       </br>
-      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/favorito/addfav?bazar=#{params[:bazar]}&empresa=#{params[:empresa]}&pre=auto'>Añadir #{nombre} a sus favoritos</a>
+      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/favorito/addfav?bazar=#{BZ_param('BazarId')}&empresa=#{current_user.id}&pre=auto'>Añadir #{nombre} a sus favoritos</a>
 
       "
 
