@@ -159,7 +159,6 @@ class FavoritosController < ApplicationController
       @mensaje2.asunto = "#{BZ_param('Titular')}: La empresa #{nombre} le ha añadido a sus favoritos."
       @mensaje2.texto = "
 
-      #{@mensaje2.to_json}
       <br/>
       La empresa: #{nombre} le ha añadido a sus favoritos.
       </br>
