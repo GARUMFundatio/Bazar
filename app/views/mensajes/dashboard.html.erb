@@ -46,7 +46,13 @@
 		  </tr>
 
 		  <tr id="men<%= mensaje.id -%>" style="display: none">
-		    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6"><%= mensaje.texto.gsub("\n","<br/>").html_safe %></td>
+		    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">
+				<% if !mensaje.texto.nil? %>
+					<%= mensaje.texto.gsub("\n","<br/>").html_safe %>
+				<% else %>
+					Mensaje sin texto
+				<% end %>
+			</td>
 		  </tr>
 
 		<% end %>
