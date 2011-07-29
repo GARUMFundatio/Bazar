@@ -85,7 +85,12 @@ class ApplicationController < ActionController::Base
      str 
    end
   
-    
+   def formatea(texto)
+
+     texto.gsub(/\n/,'<br/>').html_safe
+     
+   end 
+   
   private
     def current_user_session
       logger.debug "ApplicationController::current_user_session"
