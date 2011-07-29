@@ -129,8 +129,9 @@ class FavoritosController < ApplicationController
     else  
       
       emp = Bazarcms::Empresa.find_by_id(current_user.id)
-      user = User.find_by_id(current_user.id)
       nombre = emp.nombre
+      
+      user = User.find_by_id(current_user.id)
       para = user.email
       
       @mensaje2 = Mensaje.new()
@@ -144,6 +145,9 @@ class FavoritosController < ApplicationController
       @mensaje2.bazar_origen = BZ_param('BazarId')
       
       @mensaje2.para = params[:empresa]
+      
+      # tenemos que coger estos datos del bazar remoto
+      
       @mensaje2.para_nombre = params[:empresa] 
       @mensaje2.para_email = "poner el email de la empresa remota" 
 
