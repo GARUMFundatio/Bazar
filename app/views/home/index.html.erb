@@ -645,6 +645,8 @@ $('#ayuda-busqueda-link').click(function() {
 
 function lanzabusqueda() {
 
+		var contador = 0; 
+		
 		$('#lista').html('Enviando peticiones a los bazares');
 
 		s = $("#busca").val();
@@ -727,6 +729,22 @@ function lanzabusqueda() {
 		}
 		
 		var actualiza = setInterval(function(){
+		
+			contador += 1; 
+			
+			if (contador > 12 ) {
+				
+				$('#lista').html("<b>El sistema de búsquedas no ha respondido adecuadamente.</b><br /> Pruebe con otra búsqueda.");
+				$('#progressbar').hide();
+				$("#progressbar").progressbar({ value: 0});
+
+				$('#estadotexto').hide();
+				$("#estadotexto").html('');
+				$("#busca").focus();
+				clearInterval(actualiza);
+			    
+			}
+		
 			if (tipo == "E") {
 				$.get('/bazarcms/estadobusqueda', function(data) {
 					$("#progressbar").progressbar({ value: (data[0].empresasconsulta.total_respuestas * 100) / data[0].empresasconsulta.total_consultas});
@@ -740,7 +758,7 @@ function lanzabusqueda() {
 				});	
 			}	
 			
-	     },1000);
+	     },1500);
 		
 		return false;
 };
