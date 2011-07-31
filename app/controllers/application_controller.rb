@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea
+  helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
+            :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota
+  
   helper :all
   
   require "net/http"
@@ -48,18 +50,23 @@ class ApplicationController < ActionController::Base
        
        logger.debug "json empresa ------->"+res.inspect
        if (res.length > 1)
-         
-          empre = JSON.parse(res)
+         begin
+           empre = JSON.parse(res)
+         rescue 
+           
+           logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
+           valor = 0
+           expire_fragment "emp-json-#{bazar}-#{empresa}"
+          else
+            logger.debug "json empresa2 ------->"+empre.inspect
 
-          logger.debug "json empresa2 ------->"+empre.inspect
-
-          if (!empre['rating'].nil?)
-            logger.debug "json empresa3 ------->#{empre['rating']}"
-            valor = empre['rating']
-          else 
-            valor = 0
-          end 
-
+            if (!empre['rating'].nil?)
+              logger.debug "json empresa3 ------->#{empre['rating']}"
+              valor = empre['rating']
+            else 
+              valor = 0
+            end 
+          end
        else 
          valor = 0
        end 
@@ -89,6 +96,32 @@ class ApplicationController < ActionController::Base
 
      texto.gsub(/\n/,'<br/>').html_safe
      
+   end
+   
+   def datos_empresa_remota (bazar, empresa)
+                 
+     res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
+       logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
+       res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+     end
+       
+     if (res.length > 1)
+       begin
+         empre = JSON.parse(res)
+       rescue 
+         
+         logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
+         empre = nil
+         expire_fragment "emp-json-#{bazar}-#{empresa}"
+       else
+          logger.debug "json empresa2 ------->"+empre.inspect
+        end
+     else 
+       empre = nil
+     end 
+     
+     empre
+      
    end 
    
   private
