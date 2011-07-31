@@ -32,7 +32,7 @@ Bazar::Application.configure do
 
   puts "Configurandos el prefix de Dalli"
   
-  conf = YAML::load(File.open("#{RAILS_ROOT}/config/database.yml"))
+  conf = YAML::load(File.open("#{Rails.root}/config/database.yml"))
   
   config.cache_store = :dalli_store, '127.0.0.1',
     { :namespace => conf['production']['database'], :expires_in => 1.day, :compress => true, :compress_threshold => 64*1024 }

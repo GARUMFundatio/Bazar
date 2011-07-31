@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       end        
     end 
     
-    @users = User.where ("1 = 1").order(orden).paginate(:page => params[:page], :per_page => 50)
+    @users = User.where("1 = 1").order(orden).paginate(:page => params[:page], :per_page => 50)
 
     
     puts @users.size

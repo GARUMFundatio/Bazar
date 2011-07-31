@@ -3,10 +3,11 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.7'
 
 gem 'mysql2', '< 0.3'
+gem 'rake', '0.8.7'
 gem 'acts-as-taggable-on' 
 gem 'jquery-rails'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-gem 'paperclip'
+gem 'paperclip', '2.3.16'
 gem 'acts_as_ferret', '= 0.5.2', :git => "git://github.com/primerano/acts_as_ferret.git"
 gem 'will_paginate', "~> 3.0.pre2"
 gem 'json'
