@@ -6,7 +6,7 @@ gem 'mysql2', '< 0.3'
 gem 'acts-as-taggable-on' 
 gem 'jquery-rails'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'paperclip'
 gem 'acts_as_ferret', '= 0.5.2', :git => "git://github.com/primerano/acts_as_ferret.git"
 gem 'will_paginate', "~> 3.0.pre2"
 gem 'json'
@@ -20,7 +20,6 @@ gem "friendly_id", "~> 3.1"
 gem 'exception_notification', :require => 'exception_notifier'
 gem 'rails-i18n'
 gem 'ya2yaml'
-gem 'paperclip'
 
 gem 'bazarcms', :path => '../bazarcms'
 

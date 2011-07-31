@@ -29,7 +29,7 @@ namespace :bazar do
 
  task :db_init do 
 
-   @config = YAML::load(File.open("#{RAILS_ROOT}/config/database.yml"))
+   @config = YAML::load(File.open("#{Rails.root}/config/database.yml"))
 #   puts @config.inspect
 
    puts @config['production']['host']
@@ -43,9 +43,9 @@ namespace :bazar do
    password =  @config['production']['password']
 
    if (!host.nil?) 
-	system ("mysql -h #{host} -u#{username} -p#{password} #{database} < #{RAILS_ROOT}/ini.sql ")
+	system ("mysql -h #{host} -u#{username} -p#{password} #{database} < #{Rails.root}/ini.sql ")
    else 
-	system ("mysql -u #{username} -p#{password} #{database} < #{RAILS_ROOT}/ini.sql")
+	system ("mysql -u #{username} -p#{password} #{database} < #{Rails.root}/ini.sql")
    end 
 
  end 
