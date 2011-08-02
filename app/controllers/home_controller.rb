@@ -50,7 +50,16 @@ class HomeController < ApplicationController
     @tareas = 0 
     
     # Comprobamos si tiene ratings pendientes de actualizar
+    
+    ratings = Bazarcms::Rating.where('des_bazar_id = ? and des_empresa_id = ? and des_fecha is null', BZ_param('BazarId'), current_user.id)
 
+    logger.debug "Ratings Pendientes: #{ratings.inspect}"
+    
+    for rating in ratings 
+      @avisos << ["Tiene pendiente evaluar a la empresa #{rating.ori_empresa_nombre}", '']
+      @tareas += 1
+    end 
+    
     # Miramos como están los datos de la ficha de empresa primero
     
     emp = Bazarcms::Empresa.find_by_id(current_user.id)
