@@ -1,0 +1,16 @@
+<h3 class="page-title"><%=t(:text_avisos_pendientes)%></h3>
+
+<table class="tabla" cellspacing="0">
+
+<% for aviso in @avisos %>
+<tr>
+
+	<td>
+		<a href="<%= aviso[1] %>"><%= aviso[0] %></a>
+	</td>
+
+</tr>
+
+<% end %>
+
+</table>
