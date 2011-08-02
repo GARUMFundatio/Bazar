@@ -650,7 +650,8 @@ div.contenidos-secundarios h4 {
 
 /* página de landing "/home" una vez nos logueamos */
 
-#ofertas h3, #favoritos h3, #ofertasfavoritos h3, #mensajes h3, #actividades h3 {
+
+#avisos h3, #ofertas h3, #favoritos h3, #ofertasfavoritos h3, #mensajes h3, #actividades h3 {
 	padding: 6px 20px;
 	font-weight: bold;
 	font-size: 18px !important;

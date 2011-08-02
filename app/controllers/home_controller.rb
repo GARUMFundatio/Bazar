@@ -42,5 +42,36 @@ class HomeController < ApplicationController
     
   end 
   
+  def avisos 
+  
+    @avisos = Array.new
+ 
+    @reco = 0 
+    @tareas = 0 
+    
+    # Comprobamos si tiene ratings pendientes de actualizar
+
+    # Miramos como están los datos de la ficha de empresa primero
+    
+    emp = Bazarcms::Empresa.find_by_id(current_user.id)
+
+
+    
+    if (emp.nil?)
+      @avisos << ['Debería rellenar los datos de su empresa', "/bazarcms/empresas/#{current_user.id}/edit"]
+      @tareas += 1 
+    else 
+      # deberíamos controlar si tiene ubicaciones, sectores, si ha metido bien la url, correo, logo
+    end
+
+    # comprobamos si ha realizado alguna oferta demanda. 
+
+    if @avisos.count > 0
+      render :layout => false 
+    else 
+      render :text => "", :layout => false
+    end
+
+  end 
   
 end

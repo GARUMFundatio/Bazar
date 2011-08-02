@@ -52,6 +52,8 @@ Bazar::Application.routes.draw do
 
   match "/busquedapaises" => "paises#busqueda"
   
+  match "/avisos/dashboard" => 'home#avisos'
+  
   scope '/translate' do
     match '/translate_list', :to => 'translate#index'
     match '/translate', :to => 'translate#translate'
