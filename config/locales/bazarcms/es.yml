@@ -84,7 +84,7 @@ es:
   text_esta_pagina_o_navegue_hasta_que_le: "esta página o navegue hasta que le"
   text_estamos_enviando_su_oferta_demanda: "Estamos enviando su Oferta/Demanda."
   text_estimar_empresas_con_estas_condiciones: "Estimar empresas con estas condiciones."
-  text_evalue_su_relacion_la_empresa: "Evalue su relación la empresa:"
+  text_evalue_su_relacion_la_empresa: "Evalue su relación con la empresa:"
   text_expectativas: Expectativas
   text_fecha: Fecha
   text_ficheros: Ficheros
@@ -181,7 +181,7 @@ es:
   text_siguiente_paso_datos_de_la_oferta: "Siguiente Paso: Datos de la oferta"
   text_sin_evaluar: "Sin evaluar."
   text_solo: Solo
-  text_solo_empresas_que_tengan_presencia_en_estos_paises: "Solo empresas que tengan presencia en estos Países"
+  text_solo_empresas_que_tengan_presencia_en_estos_paises: "Solo empresas que tengan presencia en estos países"
   text_sql: SQL
   text_su_oferta_ha_sido_enviada_a: "Su oferta ha sido enviada a"
   text_titulo: Título

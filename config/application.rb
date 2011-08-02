@@ -31,7 +31,7 @@ module Bazar
     # TODO con uno global debería funcionar 
     # hay que revisarlo
     
-    config.i18n.default_locale = :es
+    config.i18n.default_locale = :en
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)

@@ -283,6 +283,7 @@ en:
   text_como_optimizar_la_busqueda: ""
   text_con_estos_criterios_de_busqueda_hay: ""
   text_definir_busqueda_de_usuarios_login_empresa_nombre_con_autocomplete: ""
+  text_entrar: login
   text_introduzca_los_terminos_de_la_busqueda: ""
   text_ir_a_la_pagina_de_busquedas: ""
   text_la_informacion_del_proyecto_bazar_va_a_estar_accesible_para_todo_el_mundo_algunas_llamadas_a_la_api_como_la_busqueda_de_empresas_estara_solo_disponible_para_usuarios_registrado_en_cualquiera_de_los_nodos_que_componen_la_red_de_bazares_para_encontrar_un_bazar_puedes_consultar_el: ""
