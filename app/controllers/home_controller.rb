@@ -56,7 +56,7 @@ class HomeController < ApplicationController
     logger.debug "Ratings Pendientes: #{ratings.inspect}"
     
     for rating in ratings 
-      @avisos << ["Tiene pendiente evaluar a la empresa #{rating.ori_empresa_nombre}", '']
+      @avisos << ["Tiene pendiente evaluar a la empresa <a href='/bazarcms/empresas/#{rating.ori_empresa_id}?bazar_id=#{rating.ori_bazar_id}'>#{rating.ori_empresa_nombre}</a>", "Evaluar Ahora", ""]
       @tareas += 1
     end 
     
@@ -64,10 +64,9 @@ class HomeController < ApplicationController
     
     emp = Bazarcms::Empresa.find_by_id(current_user.id)
 
-
     
     if (emp.nil?)
-      @avisos << ['Debería rellenar los datos de su empresa', "/bazarcms/empresas/#{current_user.id}/edit"]
+      @avisos << ['Debería completar los datos de su empresa', "Editar Datos de mi Empresa", "/bazarcms/empresas/#{current_user.id}/edit"]
       @tareas += 1 
     else 
       # deberíamos controlar si tiene ubicaciones, sectores, si ha metido bien la url, correo, logo
