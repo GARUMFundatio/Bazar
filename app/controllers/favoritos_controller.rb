@@ -2,6 +2,8 @@ class FavoritosController < ApplicationController
   # GET /favoritos
   # GET /favoritos.xml
   
+  before_filter :require_user, :only => [:addfav, :delfav]
+  
   layout 'bazar'
   def index
     
