@@ -181,7 +181,7 @@ class FavoritosController < ApplicationController
      
     end
 
-    Actividad.graba("Ha añadido a favoritos la empresa: <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/empresas/#{params[:bazar]}?bazar_id=#{params[:bazar]}'>#{params[:nombre_empresa].gsub('_',' ')}</a>.", "USER",  BZ_param("BazarId"), current_user.id, nombre)
+    Actividad.graba("Ha añadido a favoritos la empresa: <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/bazarcms/empresas/#{params[:empresa]}?bazar_id=#{params[:bazar]}'>#{params[:nombre_empresa].gsub('_',' ')}</a>.", "USER",  BZ_param("BazarId"), current_user.id, nombre)
 
     # forzamos que se actulicen los caches relacionados con favoritos. 
     
