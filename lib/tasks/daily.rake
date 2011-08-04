@@ -155,17 +155,21 @@ namespace :bazar do
          case response.curl_return_code
          when 0
 
-           perfiles = JSON.parse(response.body)
-
-           perfiles.each{ |key|
+           begin 
+             perfiles = JSON.parse(response.body)
+           rescue 
+             puts "ERROR: No se ha podido procesar los datos de #{uri}"
+           else
+             perfiles.each{ |key|
                
-             perfil = Bazarcms::Perfil.find_by_codigo(key['id'])
+               perfil = Bazarcms::Perfil.find_by_codigo(key['id'])
 
-             perfil.total_empresas_mercado += key['total_empresas_bazar'].to_i
-             perfil.save
+               perfil.total_empresas_mercado += key['total_empresas_bazar'].to_i
+               perfil.save
            
-           }
-            puts "#{DateTime.now} Perfil: Actualizada la información de:  #{cluster.nombre} -> #{cluster.url}."
+             }
+             puts "#{DateTime.now} Perfil: Actualizada la información de:  #{cluster.nombre} -> #{cluster.url}."
+          end
          else
            puts "ERROR en la petición ---------->"+response.inspect
          end
@@ -186,18 +190,22 @@ namespace :bazar do
          case response.curl_return_code
          when 0
 
-           paises = JSON.parse(response.body)
-
-           paises.each{ |key|
+           begin
+             paises = JSON.parse(response.body)
+           rescue 
+             puts "ERROR: no se han podido procesar los datos de #{uri}"
+           else 
+             paises.each{ |key|
                
-             pais = Pais.find_by_id(key['id'])
+               pais = Pais.find_by_id(key['id'])
 
-             pais.total_empresas_mercado += key['total_empresas_bazar'].to_i
-             pais.save
+               pais.total_empresas_mercado += key['total_empresas_bazar'].to_i
+               pais.save
            
-           }
+             }
            
-            puts "#{DateTime.now} Países: Actualizada la información: #{cluster.nombre} -> #{cluster.url}."
+              puts "#{DateTime.now} Países: Actualizada la información: #{cluster.nombre} -> #{cluster.url}."
+            end
          else
            puts "ERROR en la petición ---------->"+response.inspect
          end
