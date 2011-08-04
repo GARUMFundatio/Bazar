@@ -55,6 +55,7 @@ div.field, div.actions {
 
 #error_explanation ul li {
   font-size: 12px;
+  margin: 10px 0;
   list-style: square;
 }
 
@@ -676,6 +677,7 @@ div.contenidos-secundarios h4 {
 /* Alta usuario */
 .anonimo .edit_user {
 	margin-left: 40px;
+	width: 470px;
 	}
 
 
