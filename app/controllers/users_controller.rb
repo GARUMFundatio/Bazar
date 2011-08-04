@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-
-  before_filter :require_user
   
   layout "bazar"
+  before_filter :require_user, :only => [:index, :edit, :create, :update ]
 
   def index
  
@@ -76,6 +75,36 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def registrarse
+    
+    @user = User.new
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @user }
+    end
+    
+  end 
+  
+  def altaregistrarse
+    params[:user][:rol_ids] ||= [2]
+    @user = User.new(params[:user])
+    
+    respond_to do |format|
+      if @user.save
+
+        BazarMailer.confirmacion_registro(@user).deliver      
+        
+        format.html { redirect_to(@user, :notice => 'Se ha creado correctamente el usuario.') }
+        format.xml  { render :xml => @user, :status => :created, :location => @user }
+      else
+        format.html { render :action => "registrarse" }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      end
+    end
+    
+  end
+
 
   def update
     puts params.inspect

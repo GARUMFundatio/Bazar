@@ -30,6 +30,9 @@ Bazar::Application.routes.draw do
   match 'micuenta' => "user#edit",          :as => :micuenta
   match 'login' => "user_sessions#new",      :as => :login
   match 'logout' => "user_sessions#destroy", :as => :logout
+  match '/registrarse' => "users#registrarse"
+  match '/altaregistrarse' => "users#altaregistrarse"
+  
   match 'home' => "home#index"
   match '/home/bazares' => "home#bazares"
   match '/home/datos' => "home#datos"
