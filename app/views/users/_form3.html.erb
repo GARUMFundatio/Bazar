@@ -7,7 +7,7 @@
   <br />
 
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %><%=t(:text_no_se_ha_podido_salvar_los_datos_del_usuario)%></h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> &bull; <%=t(:text_no_se_ha_podido_salvar_los_datos_del_usuario)%></h2>
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
