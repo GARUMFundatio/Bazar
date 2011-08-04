@@ -672,6 +672,11 @@ div.contenidos-secundarios h4 {
 .edit_user #user_submit {
 	margin-top: 20px;
 	}
+	
+/* Alta usuario */
+.anonimo .edit_user {
+	margin-left: 40px;
+	}
 
 
 /* pestaña de Empresas*/

@@ -1,5 +1,6 @@
 <div id="tabs-6content">
 
+<div class="edit_user"> <!-- FIN alta usuario -->
 <%= form_for(@user, :url => "/altaregistrarse") do |f| %>
   <% if @user.errors.any? %>
 
@@ -40,5 +41,6 @@
     <%= f.submit 'Alta Usuario' %>
   </div>
 <% end %>
+</div> <!-- FIN alta usuario -->
 
 </div>
