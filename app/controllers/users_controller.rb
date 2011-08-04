@@ -93,9 +93,24 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
 
+        # avisamos al usuario de que se ha registrado
+        
         BazarMailer.confirmacion_registro(@user).deliver      
         
-        format.html { redirect_to(@user, :notice => 'Se ha creado correctamente el usuario.') }
+        # avisamos al admin de que hay una nueva alta
+        
+        Mail.deliver do
+              to "Admin Bazar <#{User.find_by_id(1).email}>"
+            from 'No replay <noreplay@bazar.com>'
+         subject "Nuevo Usuario en #{Conf.find_by_nombre('Titular').valor}"
+            body "
+                        
+            En estos momentos hay #{User.all.count} usuarios registrados.
+            
+            "
+        end
+        
+        format.html { redirect_to('/home', :notice => 'Se ha creado correctamente el usuario.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "registrarse" }

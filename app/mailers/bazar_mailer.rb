@@ -1,6 +1,6 @@
 class BazarMailer < ActionMailer::Base 
   
-  default :from => "admin@bazar.com" 
+  default :from => "Admin Bazar <#{User.find_by_id(1).email}>" 
   
   def confirmacion_registro(user)  
     
