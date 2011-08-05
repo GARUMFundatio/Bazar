@@ -5,11 +5,6 @@ class UsersController < ApplicationController
 
   def index
  
-    if current_user_is_admin || current_user_is_dinamizador
-      
-    else 
-      redirect_to "/home"
-    end
  
     orden = "id"
     
@@ -38,8 +33,12 @@ class UsersController < ApplicationController
     
     puts @users.size
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
+      if current_user_is_admin || current_user_is_dinamizador
+        format.html 
+      else 
+        redirect_to "/home"
+      end
+            
     end
   end
 
