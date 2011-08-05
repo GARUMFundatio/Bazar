@@ -140,7 +140,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        BazarMailer.confirmacion_registro(@user).deliver      
+        # BazarMailer.confirmacion_registro(@user).deliver      
         
         if (current_user_is_admin || current_user_is_dinamizador)
           format.html { redirect_to(users_url) }
