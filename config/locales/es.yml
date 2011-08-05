@@ -64,6 +64,8 @@ es:
   text_cerrar_informacion: "Cerrar Información"
   text_como_la: "como  la"
   text_como_se_usa_el_api: "¿Como se usa el API?"
+  text_como_cliente: "Como Cliente"
+  text_como_proveedor: "Como Proveedor"
   text_compras: "Compras:"
   text_con_esta_llamada_del_api_obtienes_la_informacion_de_una_empresa_es_necesario_poner_el_codigo_de_la_empresa_al_final_del_enlace: "Con esta llamada del API obtienes la información de una empresa. Es necesario poner el código de la empresa al final del enlace."
   text_con_esta_llamada_del_api_te_devuelve_la_informacion_general_de_un_bazar: "Con esta llamada del API te devuelve la información general de un bazar."
