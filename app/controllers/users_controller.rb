@@ -1,9 +1,15 @@
 class UsersController < ApplicationController
   
   layout "bazar"
-  before_filter :require_user, :only => [:index, :edit, :create, :update ]
+  before_filter :require_user, :only => [:index, :edit, :create, :update, :new ]
 
   def index
+ 
+    if current_user_is_admin || current_user_is_dinamizador
+      
+    else 
+      redirect_to "/home"
+    end
  
     orden = "id"
     
@@ -55,7 +61,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    if (current_user_is_admin || current_user_is_dinamizador)
+      @user = User.find(params[:id])
+    else 
+      @user = User.find(current_user.id)      
+    end
+  
   end
 
   def create
@@ -131,7 +142,13 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         BazarMailer.confirmacion_registro(@user).deliver      
-        format.html { redirect_to(users_url) }
+        
+        if (current_user_is_admin || current_user_is_dinamizador)
+          format.html { redirect_to(users_url) }
+        else
+          format.html { redirect_to('/home') }        
+        end 
+        
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -141,7 +158,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     
     # TODO: no se pueden borrar los usuarios por las buenas. 
     # hay que definir la política de borrado de toda la información relacionada. 
