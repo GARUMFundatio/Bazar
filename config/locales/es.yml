@@ -343,6 +343,8 @@ es:
   text_user: "Usuario:"
   text_usuario: Usuario
   text_valor: Valor
+  text_valoracion_como_cliente: "Valoración como Cliente de:"
+  text_valoracion_como_proveedor: "Valoración como Proveedor de:"
   text_ventas: "Ventas:"
   text_ver_ocultar: Ver/ocultar
   text_visible: Visible
