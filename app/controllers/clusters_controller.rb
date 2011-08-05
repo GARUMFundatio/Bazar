@@ -8,8 +8,12 @@ class ClustersController < ApplicationController
     @clusters = Cluster.all.paginate(:page => params[:page], :per_page => 15)
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @clusters }
+      if current_user_is_admin
+        format.html
+      else 
+        redirect_to '/home'
+      end 
+      # format.xml  { render :xml => @clusters }
     end
   end
 
@@ -26,8 +30,12 @@ class ClustersController < ApplicationController
     @cluster = Cluster.new
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @cluster }
+      if current_user_is_admin
+        format.html
+      else 
+        redirect_to '/home'
+      end 
+    
     end
   end
 
@@ -38,7 +46,11 @@ class ClustersController < ApplicationController
     # @cluster = Cluster.find(params[:id])
     
     respond_to do |format|
-      format.html { redirect_to(clusters_url) }
+      if current_user_is_admin
+        format.html { redirect_to(clusters_url) }
+      else 
+        redirect_to '/home'
+      end 
       format.xml  { head :ok }
     end
     
