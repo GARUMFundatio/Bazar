@@ -1,8 +1,9 @@
 class ClustersController < ApplicationController
 
-  before_filter :require_user, :only => [:index,:edit,:activar,:create,:update, :destroy, :updateinfo]
+  before_filter :require_user, :only => [:index,:edit,:activar,:create,:update, :destroy]
 
   layout "bazar"
+  require "typhoeus"
   
   def index
     @clusters = Cluster.all.paginate(:page => params[:page], :per_page => 15)
@@ -115,60 +116,54 @@ class ClustersController < ApplicationController
   
   def updateinfo
     
-    uri = URI.parse("http://directorio.garumfundatio.org/clusters.json")
+    hydra = Typhoeus::Hydra.new
+    
+    uri = "http://directorio.garumfundatio.org/clusters.json"
 
-    post_body = []
-    post_body << "Content-Type: text/plain\r\n"
-
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Get.new(uri.request_uri)
-    request.body = post_body.join
-    request["Content-Type"] = "text/plain"
-  
-    res = Net::HTTP.new(uri.host, uri.port).start {|http| http.request(request) }
-    case res
-    when Net::HTTPSuccess, Net::HTTPRedirection
-      #puts "fue bien (#{res.body})"
+    r = Typhoeus::Request.new(uri, :timeout => 5000)
       
-      clusters = JSON.parse(res.body)
-      puts ("#{clusters.inspect} <---------")
- 
-      clusters.each{ |key|
-        puts ("#{key.inspect}")
-        puts ("#{key['cluster'].inspect} <------ datos")
-        puts ("#{key['cluster']['id']}")
+    r.on_complete do |response|
+      logger.debug "-------------> "+response.inspect
+      case response.curl_return_code
+      when 0
         
-        cluster = Cluster::find_by_id(key['cluster']['id'])
-        if (cluster == nil)
-          puts ("nuevo cluster #{key['cluster']['id']}")
-          cluster = Cluster::new
-          cluster.id = key['cluster']['id']
-          cluster.nombre = key['cluster']['nombre']
-          cluster.desc = key['cluster']['desc']
-          cluster.empresas = key['cluster']['empresas']
-          cluster.url = key['cluster']['url']
-          cluster.activo = 'S'
-          cluster.miclave = 'secreta'
-          cluster.suclave = 'secreta'
-          cluster.created_at = key['cluster']['created_at']
-          cluster.updated_at = key['cluster']['updated_at']         
-          cluster.save
-        else
-          puts("actualizo cluster #{key['cluster']['id']}")
-          cluster.nombre = key['cluster']['nombre']
-          cluster.desc = key['cluster']['desc']
-          cluster.empresas = key['cluster']['empresas']
-          cluster.url = key['cluster']['url']
-          cluster.updated_at = key['cluster']['updated_at']         
-          cluster.save          
-        end
-
-      }
+        clusters = JSON.parse(response.body)
+        puts ("#{clusters.inspect} <---------")
  
-    else
-      puts res.error!
-    end
-
+        clusters.each{ |key|
+          puts ("#{key.inspect}")
+          puts ("#{key['cluster'].inspect} <------ datos")
+          puts ("#{key['cluster']['id']}")
+        
+          cluster = Cluster::find_by_id(key['cluster']['id'])
+          if (cluster == nil)
+            puts ("nuevo cluster #{key['cluster']['id']}")
+            cluster = Cluster::new
+            cluster.id = key['cluster']['id']
+            cluster.nombre = key['cluster']['nombre']
+            cluster.desc = key['cluster']['desc']
+            cluster.empresas = key['cluster']['empresas']
+            cluster.url = key['cluster']['url']
+            cluster.activo = 'S'
+            cluster.miclave = 'secreta'
+            cluster.suclave = 'secreta'
+            cluster.created_at = key['cluster']['created_at']
+            cluster.updated_at = key['cluster']['updated_at']         
+            cluster.save
+          else
+            puts("actualizo cluster #{key['cluster']['id']}")
+            cluster.nombre = key['cluster']['nombre']
+            cluster.desc = key['cluster']['desc']
+            cluster.empresas = key['cluster']['empresas']
+            cluster.url = key['cluster']['url']
+            cluster.updated_at = key['cluster']['updated_at']         
+            cluster.save          
+          end
+        }
+      else
+        logger.debug "Se ha producido un error"
+      end
+    end 
     render 
 
   end 

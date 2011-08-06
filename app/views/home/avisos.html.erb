@@ -6,15 +6,22 @@
 <tr>
 
 	<td>
-		<%= aviso[0].html_safe %>
+		<b><%= aviso[0].html_safe %></b>
 	</td>
 	
 	<td>
 		<a href="<%= aviso[2] %>"><%= aviso[1] %></a>
 	</td>
 
-
 </tr>
+
+<% if aviso[3] == 'R'%>
+<tr>
+	<td colspan="2">
+		<%= aviso[4] %>
+	</td>	
+</tr>
+<% end %>
 
 <% end %>
 

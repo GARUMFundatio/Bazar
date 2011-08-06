@@ -56,7 +56,7 @@ class HomeController < ApplicationController
     logger.debug "Ratings Pendientes: #{ratings.inspect}"
     
     for rating in ratings 
-      @avisos << ["Tiene pendiente evaluar a la empresa <a href='/bazarcms/empresas/#{rating.ori_empresa_id}?bazar_id=#{rating.ori_bazar_id}'>#{rating.ori_empresa_nombre}</a>", "Evaluar Ahora", "/bazarcms/evaluar/#{rating.id}"]
+      @avisos << ["Tiene pendiente evaluar a la empresa <a href='/bazarcms/empresas/#{rating.ori_empresa_id}?bazar_id=#{rating.ori_bazar_id}'>#{rating.ori_empresa_nombre}</a>", "Evaluar Ahora", "/bazarcms/evaluar/#{rating.id}",'T']
       @tareas += 1
     end 
     
@@ -66,10 +66,39 @@ class HomeController < ApplicationController
 
     
     if (emp.nil?)
-      @avisos << ['Debería completar los datos de su empresa', "Editar Datos de mi Empresa", "/bazarcms/empresas/#{current_user.id}/edit"]
+      @avisos << ['Debería completar los datos de su empresa', "Editar Datos de mi Empresa", "/bazarcms/empresas/#{current_user.id}/edit", 'T']
       @tareas += 1 
     else 
       # deberíamos controlar si tiene ubicaciones, sectores, si ha metido bien la url, correo, logo
+      
+      # comprobando si ha puesto el nombre de su empresa
+
+      if emp.nombre =~ /^Escriba /
+        @avisos << ['No parece que haya rellenado el nombre de su empresa', "Editar Datos de mi Empresa", 
+          "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena no aparecerá en las búsquedas']
+        @reco += 1 
+      end
+      
+      # comprobamos si ha puesto al menos una ubicación. 
+      
+      # logger.debug "******* comprobando #{Bazarcms::Ubicacion.where("empresa_id = ? ", emp.id).count}"
+      if Bazarcms::Empresasperfil.where("empresa_id = ? ", emp.id).count <= 0
+        @avisos << ['No parece que su empresa pertenezca a ningun sector de actividad', "Añadir sectores de  de mi Empresa", 
+          "/bazarcms/empresas/#{current_user.id}/edit#tabs-3", 'R', 'Muchas de las búsquedas se hacen buscando empresas en una localización determinada']
+        @reco += 1 
+      end
+      
+      # comprobamos si ha rellenado sectores 
+      
+      # logger.debug "******* comprobando #{Bazarcms::Ubicacion.where("empresa_id = ? ", emp.id).count}"
+      if Bazarcms::Ubicacion.where("empresa_id = ? ", emp.id).count <= 0
+        @avisos << ['No ha metido ninguna ubicación de su empresa', "Añadir ubicaciones de mi Empresa", 
+          "/bazarcms/empresas/#{current_user.id}/edit#tabs-3", 'R', 'Muchas de las búsquedas se hacen buscando empresas en una localización determinada']
+        @reco += 1 
+      end
+      
+      
+      
     end
 
     # comprobamos si ha realizado alguna oferta demanda. 

@@ -2,8 +2,11 @@ class RolesController < ApplicationController
   # GET /roles
   # GET /roles.xml
   def index
-    @roles = Rol.all
-
+    
+    if current_user_is_admin
+      @roles = Rol.all
+    end 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @roles }
@@ -13,8 +16,11 @@ class RolesController < ApplicationController
   # GET /roles/1
   # GET /roles/1.xml
   def show
-    @rol = Rol.find(params[:id])
-
+    
+    if current_user_is_admin
+      @rol = Rol.find(params[:id])
+    end 
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @rol }
@@ -24,8 +30,9 @@ class RolesController < ApplicationController
   # GET /roles/new
   # GET /roles/new.xml
   def new
-    @rol = Rol.new
-
+    if current_user_is_admin
+      @rol = Rol.new
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @rol }
@@ -34,14 +41,17 @@ class RolesController < ApplicationController
 
   # GET /roles/1/edit
   def edit
-    @rol = Rol.find(params[:id])
+    if current_user_is_admin
+      @rol = Rol.find(params[:id])
+    end
   end
 
   # POST /roles
   # POST /roles.xml
   def create
-    @rol = Rol.new(params[:rol])
-
+    if current_user_is_admin
+      @rol = Rol.new(params[:rol])
+    end 
     respond_to do |format|
       if @rol.save
         format.html { redirect_to(@rol, :notice => 'Rol was successfully created.') }
@@ -56,8 +66,11 @@ class RolesController < ApplicationController
   # PUT /roles/1
   # PUT /roles/1.xml
   def update
-    @rol = Rol.find(params[:id])
 
+    if current_user_is_admin
+      @rol = Rol.find(params[:id])
+    end 
+    
     respond_to do |format|
       if @rol.update_attributes(params[:rol])
         format.html { redirect_to(@rol, :notice => 'Rol was successfully updated.') }
@@ -72,8 +85,11 @@ class RolesController < ApplicationController
   # DELETE /roles/1
   # DELETE /roles/1.xml
   def destroy
-    @rol = Rol.find(params[:id])
-    @rol.destroy
+    
+    if current_user_is_admin
+      @rol = Rol.find(params[:id])
+      @rol.destroy
+    end
 
     respond_to do |format|
       format.html { redirect_to(roles_url) }
