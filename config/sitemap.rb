@@ -46,7 +46,7 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   end  
 
   Bazarcms::Empresa.where('rating > 0').each do |empresa|
-    sitemap.add "/bazarcms/ficharating/#{empresa.id}?bazar_id=#{bazar}", :priority => 0.5, :changefreq => 'daily'
+    sitemap.add "/bazarcms/ficharating/#{empresa.id}?bazar_id=#{bazar}", :priority => 0.8, :changefreq => 'daily'
   end  
   
   
