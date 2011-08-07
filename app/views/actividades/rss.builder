@@ -7,7 +7,7 @@ xml.rss :version => "2.0" do
 
     for actividad in @actividades
       xml.item do
-        xml.title "#{Bazarcms::Empresa.find(actividad.user_id).nombre}:"
+        xml.title "#{Bazarcms::Empresa.find(actividad.user_id).nombre} (#{actividad.fecha.strftime('%d-%m-%Y %H:%M')}):"
         xml.description actividad.desc+"<br/><br/>"+"Más Información de esta empresa:\n\n<a href='/bazarcms/empresas/show2/"+Bazarcms::Empresa.find(actividad.user_id).friendly_id+"'>"+Bazarcms::Empresa.find(actividad.user_id).nombre+'</a>'
         xml.pubDate actividad.fecha.to_s(:rfc822)
         xml.link Cluster.find(BZ_param("BazarId")).url+"/actividades/#{actividad.id}"
