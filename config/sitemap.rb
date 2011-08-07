@@ -44,6 +44,11 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
       sitemap.add "/ciudades/#{ciudad.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
     end
   end  
+
+  Bazarcms::Empresa.where('rating > 0').each do |empresa|
+    sitemap.add "/bazarcms/ficharating/#{empresa.id}?bazar_id=#{bazar}", :priority => 0.5, :changefreq => 'daily'
+  end  
+  
   
   Pais.where('total_empresas_bazar > 0').each do |pais|
     sitemap.add "/paises/#{pais.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
