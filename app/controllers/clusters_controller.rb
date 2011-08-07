@@ -164,6 +164,14 @@ class ClustersController < ApplicationController
         logger.debug "Se ha producido un error"
       end
     end 
+    
+    logger.debug "encolado "+DateTime.now.to_s
+    
+    hydra.queue r
+    hydra.run
+
+    logger.debug "servido "+DateTime.now.to_s    
+    
     render 
 
   end 

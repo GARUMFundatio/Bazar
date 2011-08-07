@@ -75,29 +75,34 @@ class HomeController < ApplicationController
 
       if emp.nombre =~ /^Escriba /
         @avisos << ['No parece que haya rellenado el nombre de su empresa', "Editar Datos de mi Empresa", 
-          "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena no aparecerá en las búsquedas']
+          "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena no aparecerá en las búsquedas y perderá una buena oportunidad para promocionar su empresa y mejorar su SEO']
         @reco += 1 
       end
       
       # comprobamos si ha puesto al menos una ubicación. 
       
-      # logger.debug "******* comprobando #{Bazarcms::Ubicacion.where("empresa_id = ? ", emp.id).count}"
-      if Bazarcms::Empresasperfil.where("empresa_id = ? ", emp.id).count <= 0
-        @avisos << ['No parece que su empresa pertenezca a ningun sector de actividad', "Añadir sectores de  de mi Empresa", 
+      if Bazarcms::Ubicacion.where("empresa_id = ? ", emp.id).count <= 0
+        @avisos << ['No parece que su empresa este ubicada en algún lugar', "Añadir ubicaciones de mi Empresa", 
           "/bazarcms/empresas/#{current_user.id}/edit#tabs-3", 'R', 'Muchas de las búsquedas se hacen buscando empresas en una localización determinada']
         @reco += 1 
       end
       
       # comprobamos si ha rellenado sectores 
       
-      # logger.debug "******* comprobando #{Bazarcms::Ubicacion.where("empresa_id = ? ", emp.id).count}"
-      if Bazarcms::Ubicacion.where("empresa_id = ? ", emp.id).count <= 0
-        @avisos << ['No ha metido ninguna ubicación de su empresa', "Añadir ubicaciones de mi Empresa", 
-          "/bazarcms/empresas/#{current_user.id}/edit#tabs-3", 'R', 'Muchas de las búsquedas se hacen buscando empresas en una localización determinada']
+      if Bazarcms::Empresasperfil.where("empresa_id = ? ", emp.id).count <= 0
+        @avisos << ['No ha especificado el sector de actividad de su empresa', "Añadir Sectores de mi Empresa", 
+          "/bazarcms/empresas/#{current_user.id}/edit#tabs-4", 'R', 'Muchas de las búsquedas se hacen buscando empresas de un sector de actividad determinada']
         @reco += 1 
       end
       
+      # comprobamos si ha realizado alguna oferta/demanda 
       
+      if Bazarcms::Oferta.where("empresa_id = ? and bazar_id = ?", emp.id, BZ_param('BazarId')).count <= 0
+        @avisos << ['No ha publicado ninguna Oferta/Demanda', "Publicar una Oferta/Demanda ahora", 
+          "/bazarcms/publicaroferta", 'R', 'Seguro tiene algo que ofertar/demandar. Esto le dará visibilidad en la red de Bazares y además mejorará su SEO']
+        @reco += 1 
+      end
+       
       
     end
 
