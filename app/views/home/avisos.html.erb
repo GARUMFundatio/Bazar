@@ -10,7 +10,7 @@
 	<tr>
 
 		<td>
-			<b><%= aviso[0].html_safe %></b>
+			<img src="/images/exclamation.png" border="0" /> <b><%= aviso[0].html_safe %></b>
 		</td>
 	
 		<td>
@@ -37,7 +37,7 @@
 
 <% if @reco > 0 %>
 
-<a href="#" onclick="$('#recomendaciones').show();"><img src="/images/exclamation.png" border="0" /> Tiene <%= @reco %> recomendaciones pendientes</a> 
+<a href="#" onclick="$('#recomendaciones').toggle();"><img src="/images/bombilla.png" border="0" /> Tiene <%= @reco %> recomendaciones pendientes</a> 
 
 <div id="recomendaciones" style="display:none">
 
@@ -51,7 +51,7 @@
 	<tr>
 
 		<td>
-			<b><%= aviso[0].html_safe %></b>
+			<img src="/images/bombilla.png" border="0" /> <b><%= aviso[0].html_safe %></b>
 		</td>
 	
 		<td>
