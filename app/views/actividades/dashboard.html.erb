@@ -8,6 +8,13 @@
 <% for act in @ultimas %>
 <tr>
 
+	<td width="102px">
+		<% img = logo_helper(act.bazar_id, act.user_id) %>
+		<% if !img.nil? %>
+			<%= link_to(image_tag(img), bazarcms_empresa_path(act.user_id, :bazar_id => act.bazar_id)) %> 
+		<% end %>
+	</td>
+
 	<td style="width: 150px">
 		<%= link_to Bazarcms::Empresa.find(act.user_id).nombre, bazarcms_empresa_path(act.user_id, :bazar_id => act.bazar_id) %>
 		<%= helper_rating_show2(act.bazar_id, act.user_id).html_safe %>
@@ -17,7 +24,7 @@
 		<%= act.desc.html_safe %>
 	</td>
 
-	<td>
+	<td width="70px">
 		<%= act.fecha.strftime("%d-%m-%y") %>
 	</td>
 

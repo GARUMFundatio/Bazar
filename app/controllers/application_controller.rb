@@ -129,8 +129,9 @@ class ApplicationController < ActionController::Base
              logger.debug "json empresa2 ------->"+empre.inspect
 
              if (!empre['logo'].nil?)
-               logger.debug "json empresa3 ------->#{empre['rating']}"
-               url = empre['logo']
+               logger.debug "json empresa3 ------->#{empre['logo']}"
+               cluster = Cluster.find(bazar)
+               url = "#{cluster.url}/"+empre['logo']
              else 
                url = nil
              end 

@@ -1,5 +1,11 @@
 <tr>
-
+	<td width="102px">
+		<% img = logo_helper(actividad.bazar_id, actividad.user_id) %>
+		<% if !img.nil? %>
+			<%= link_to(image_tag(img), bazarcms_empresa_path(actividad.user_id, :bazar_id => actividad.bazar_id)) %> 
+		<% end %>
+	</td>
+	
 	<td style="width: 150px">
 		<%= link_to Bazarcms::Empresa.find(actividad.user_id).nombre, bazarcms_empresa_path(actividad.user_id, :bazar_id => actividad.bazar_id) %>
 		<%= helper_rating_show2(actividad.bazar_id, actividad.user_id).html_safe %>
@@ -9,7 +15,7 @@
 		<%= actividad.desc.html_safe %>
 	</td>
 	
-	<td>
+	<td width="80px">
     	<%= actividad.fecha.strftime("%d-%m-%Y") %>
 	</td>
 
