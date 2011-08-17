@@ -2,7 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
-            :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota
+            :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota,
+            :logo_helper
   
   helper :all
   
@@ -91,6 +92,60 @@ class ApplicationController < ActionController::Base
      str += "</a></div>"
      str 
    end
+
+   def logo_helper(bazar, empresa)
+
+      if (bazar.to_i == BZ_param("BazarId").to_i)
+
+        empre = Bazarcms::Empresa.find_by_id(empresa)
+
+        if !empre.nil? 
+          url = empre.logo.url(:thumb)
+        else 
+          url = nil
+        end 
+
+      else 
+
+        # si no es de este bazar le pedimos al otro bazar que nos 
+        # de su rating. 
+        # TODO JT esto habría que cachearlo para optimizar las comunicaciones
+
+        res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
+          logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
+          res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+        end
+
+        logger.debug "json empresa ------->"+res.inspect
+        if (res.length > 1)
+          begin
+            empre = JSON.parse(res)
+          rescue 
+
+            logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
+            url = nil
+            expire_fragment "emp-json-#{bazar}-#{empresa}"
+           else
+             logger.debug "json empresa2 ------->"+empre.inspect
+
+             if (!empre['logo'].nil?)
+               logger.debug "json empresa3 ------->#{empre['rating']}"
+               url = empre['logo']
+             else 
+               url = nil
+             end 
+           end
+        else 
+          url = nil
+        end 
+
+      end
+
+
+      url
+    end
+
+
   
    def helper_formatea(texto)
 

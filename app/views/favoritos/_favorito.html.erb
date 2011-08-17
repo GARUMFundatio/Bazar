@@ -1,4 +1,10 @@
 	<tr>
+		<td width="102px">
+			<% img = logo_helper(favorito.bazar_id, favorito.empresa_id) %>
+			<% if !img.nil? %>
+				<%= link_to(image_tag(img), bazarcms_empresa_path(favorito.empresa_id, :bazar_id => favorito.bazar_id)) %> 
+			<% end %>
+		</td>
 
 		<td>
 			<%= link_to(favorito.nombre_empresa, bazarcms_empresa_path(favorito.empresa_id, :bazar_id => favorito.bazar_id)) %>

@@ -7,8 +7,14 @@
 <% for fav in @favoritos %>
 <tr>
 
-	<td>
-		
+	<td width="102px">
+		<% img = logo_helper(fav.bazar_id, fav.empresa_id) %>
+		<% if !img.nil? %>
+			<%= link_to(image_tag(img), bazarcms_empresa_path(fav.empresa_id, :bazar_id => fav.bazar_id)) %> 
+		<% end %>
+	</td>
+	
+	<td>	
 		<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.empresa_id, :bazar_id => fav.bazar_id)) %> 
 		<%= helper_rating_show2(fav.bazar_id, fav.empresa_id).html_safe %>
 	</td>
