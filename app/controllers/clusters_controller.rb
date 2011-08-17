@@ -6,7 +6,7 @@ class ClustersController < ApplicationController
   require "typhoeus"
   
   def index
-    @clusters = Cluster.all.paginate(:page => params[:page], :per_page => 15)
+    @clusters = Cluster.where("1 = 1").paginate(:page => params[:page], :per_page => 50)
 
     respond_to do |format|
       if current_user_is_admin
