@@ -86,6 +86,14 @@ class HomeController < ApplicationController
           "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena no aparecerá en las búsquedas y perderá una buena oportunidad para promocionar su empresa y mejorar su SEO']
         @reco += 1 
       end
+
+      # comprobando si ha puesto la url de su empresa
+
+      if emp.url.length <= 0 
+        @avisos << ['No parece que haya rellenado la url de su empresa', "Editar Datos de mi Empresa", 
+          "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena no perderá una buena oportunidad para promocionar su empresa y las visitas a su sitio']
+        @reco += 1 
+      end
  
  
       # comprobamos si ha puesto al menos una ubicación. 
