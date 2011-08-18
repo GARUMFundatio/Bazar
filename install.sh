@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 RAILS_ENV=production
 export RAILS_ENV
 
