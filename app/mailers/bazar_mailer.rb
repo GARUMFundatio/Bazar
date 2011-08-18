@@ -1,7 +1,12 @@
 class BazarMailer < ActionMailer::Base 
   
   if defined?(User)
-    default :from => "Admin Bazar <#{User.find_by_id(1).email}>"
+    user = User.find_by_id(1)
+    if (!user.nil?)
+      default :from => "Admin Bazar <#{user.email}>"
+    else 
+      default :from => "Admin Bazar <juantomas.garcia@gmail.com>"    
+    end 
   else 
     default :from => "Admin Bazar <juantomas.garcia@gmail.com>"    
   end 
