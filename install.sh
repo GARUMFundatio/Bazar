@@ -23,7 +23,7 @@ chmod -R 0777 tmp
 bundle install --path vendor 
 bundle exec aaf_install
 
-rails generate -f bazarcms 
+rails generate bazarcms -f  
 
 
 echo "Haciendo el setup de bazar" 
