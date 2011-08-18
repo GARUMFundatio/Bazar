@@ -1,7 +1,9 @@
 class BazarMailer < ActionMailer::Base 
   
-  if User.defined 
-    default :from => "Admin Bazar <#{User.find_by_id(1).email}>" 
+  if User.defined?
+    default :from => "Admin Bazar <#{User.find_by_id(1).email}>"
+  else 
+    default :from => "Admin Bazar <juantomas.garcia@gmail.com>"    
   end 
   
   def confirmacion_registro(user)  
