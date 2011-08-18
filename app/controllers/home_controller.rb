@@ -79,6 +79,15 @@ class HomeController < ApplicationController
         @reco += 1 
       end
       
+      # comprobando si ha puesto la descripción de su empresa
+
+      if emp.desc =~ /^Describa /
+        @avisos << ['No parece que haya rellenado la descripción de su empresa', "Editar Datos de mi Empresa", 
+          "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena no aparecerá en las búsquedas y perderá una buena oportunidad para promocionar su empresa y mejorar su SEO']
+        @reco += 1 
+      end
+ 
+ 
       # comprobamos si ha puesto al menos una ubicación. 
       
       if Bazarcms::Ubicacion.where("empresa_id = ? ", emp.id).count <= 0
@@ -99,7 +108,7 @@ class HomeController < ApplicationController
       
       if Bazarcms::Oferta.where("empresa_id = ? and bazar_id = ?", emp.id, BZ_param('BazarId')).count <= 0
         @avisos << ['No ha publicado ninguna Oferta/Demanda', "Publicar una Oferta/Demanda ahora", 
-          "/bazarcms/publicaroferta", 'R', 'Seguro tiene algo que ofertar/demandar. Esto le dará visibilidad en la red de Bazares y además mejorará su SEO']
+          "/bazarcms/publicaroferta", 'R', 'Seguro que tiene algo que ofertar/demandar. Esto le dará visibilidad en la red de Bazares y además mejorará su SEO']
         @reco += 1 
       end
        
