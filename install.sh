@@ -1,5 +1,13 @@
-echo "Instalación de Bazar" 
+#!/bin/sh
 
+RAILS_ENV=production
+export RAILS_ENV
+
+echo "Instalación de Bazar. La instalacion tardara varios minitos." 
+
+exec 9> install.log
+exec 1>&9
+exec 2>&9
 
 echo "Compilando las dependencias en el directorio vendor" 
 
@@ -13,40 +21,41 @@ chmod -R 0777 tmp
 bundle install --path vendor 
 bundle exec aaf_install
 
-RAILS_ENV=production rails generate bazarcms 
+rails generate bazarcms 
 
 
 echo "Haciendo el setup de bazar" 
 
 echo "Creando Directorio" 
-RAILS_ENV=production rake bazar:mkdir_dirs 
+rake bazar:mkdir_dirs 
 
 echo "Permisos Directorio" 
-RAILS_ENV=production rake bazar:setup_dirs 
+rake bazar:setup_dirs 
 
 echo "Creando usuarios en la BD" 
-RAILS_ENV=production rake bazar:create_users 
+rake bazar:create_users 
 
 echo "Instalando jquery" 
-RAILS_ENV=production rails generate jquery:install
+rails generate jquery:install
 
 echo "Instalando friendly_id" 
-RAILS_ENV=production rails generate friendly_id
+rails generate friendly_id
 
 echo "Creando las tablas de la base de datos" 
-RAILS_ENV=production rake db:migrate
+rake db:migrate
 
-RAILS_ENV=production rake bazar:db_init
+rake bazar:db_init
 
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Cluster
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Paises
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Ciudad
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms::Empresa
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms::Oferta
-RAILS_ENV=production rake friendly_id:redo_slugs MODEL=Bazarcms::Perfil
+rake friendly_id:redo_slugs MODEL=Cluster
+rake friendly_id:redo_slugs MODEL=Paises
+rake friendly_id:redo_slugs MODEL=Ciudad
+rake friendly_id:redo_slugs MODEL=Bazarcms::Empresa
+rake friendly_id:redo_slugs MODEL=Bazarcms::Oferta
+rake friendly_id:redo_slugs MODEL=Bazarcms::Perfil
 
 echo "Actualizando la información del resto de los bazares" 
-RAILS_ENV=production rake bazar:actualiza
-RAILS_ENV=production rake sitemap:refresh
+rake bazar:actualiza
+rake sitemap:refresh
 
-
+cat install.log | mail -s "Bazarum: Install.log" install@bazarum.com 
+cat install.log 
