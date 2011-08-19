@@ -8,7 +8,7 @@ exec 2>&9
 if test -f $1 
 then 
 	cd $1 
-fi
+
 # actualizamos a la última versión
 
 cd ../bazarcms
@@ -22,7 +22,7 @@ bundle update --path vendor
 
 # lanzamos el generate de bazarcms 
 
-rake generate bazarcms -f 
+rails generate bazarcms -f 
 
 # comprobamos si hay migraciones nuevas
 
@@ -36,6 +36,11 @@ touch tmp/restart.txt
 
 rake bazar:actualiza
 rake sitemap:refresh
+
+else 
+	echo "Error: Directorio invalido de instalación!!!!"
+fi
+
 
 cat deploy.log | mail -s "Bazar: deploy.log" deploy@bazarum.com 
 cat deploy.log
