@@ -43,5 +43,5 @@ else
 fi
 
 
-cat deploy.log | mail -s "Bazar: deploy.log" deploy@bazarum.com 
+cat deploy.log | mail -s "Bazar: deploy.log ($1)" deploy@bazarum.com 
 cat deploy.log
