@@ -7,6 +7,7 @@ exec 2>&9
 
 if test -d $1 
 then 
+	echo "Nos movemos al directorio: $1"
 	cd $1 
 
 # actualizamos a la última versión
@@ -18,7 +19,7 @@ git pull
 
 # hacemos un bundle update 
 
-bundle update --path vendor 
+bundle update
 
 # lanzamos el generate de bazarcms 
 
