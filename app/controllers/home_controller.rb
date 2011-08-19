@@ -89,10 +89,30 @@ class HomeController < ApplicationController
 
       # comprobando si ha puesto la url de su empresa
 
-      if emp.url.length <= 0 
+      if !emp.url.nil?
+        if emp.url.length <= 0 
+          @avisos << ['No parece que haya rellenado la url de su empresa', "Editar Datos de mi Empresa", 
+            "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena perderá una buena oportunidad para promocionar su empresa y las visitas a su sitio']
+          @reco += 1 
+        end
+      else
         @avisos << ['No parece que haya rellenado la url de su empresa', "Editar Datos de mi Empresa", 
-          "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena no perderá una buena oportunidad para promocionar su empresa y las visitas a su sitio']
-        @reco += 1 
+          "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si no la rellena perderá una buena oportunidad para promocionar su empresa y las visitas a su sitio']
+        @reco += 1         
+      end
+ 
+      # comprobando si ha subido el logo de su empresa
+
+      if !emp.logo_file_name.nil?
+        if emp.logo_file_name.length <= 0 
+          @avisos << ['No parece que haya subido el logo de su empresa', "Editar Datos de mi Empresa", 
+            "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si sube el logo de su empresa ganará visibilidad en los resultados']
+          @reco += 1 
+        end
+      else
+        @avisos << ['No parece que haya subido el logo de su empresa', "Editar Datos de mi Empresa", 
+          "/bazarcms/empresas/#{current_user.id}/edit", 'R', 'Si sube el logo de su empresa ganará visibilidad en los resultados']
+        @reco += 1         
       end
  
  
