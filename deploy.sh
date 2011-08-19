@@ -5,7 +5,7 @@ exec 9> deploy.log
 exec 1>&9
 exec 2>&9
 
-if test -f $1 
+if test -d $1 
 then 
 	cd $1 
 
