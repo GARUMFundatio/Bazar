@@ -1656,12 +1656,10 @@ h3 #ayuda-busqueda-link {
     );
 
     background:
-    url(/images/calculator.png) no-repeat 12px 12px,
-    -o-linear-gradient(
-	center bottom,
-        #0A284B,
-        #135887
-    );
+    url(/images/calculator.png) no-repeat 12px 12px, /* originalmente para IE6 & IE7, pero también funciona en IE8 */
+    -o-linear-gradient(#0A284B, #135887);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EBC290', endColorstr='#FAD9AF');
+            zoom:1;
     color: #C66A24;
 }
 
