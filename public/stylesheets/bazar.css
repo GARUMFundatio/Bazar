@@ -209,7 +209,8 @@ body {
     position: absolute;
     top: 12px;
     right: 18px;
-    width: 240px;
+    min-width: 240px;
+    max-width: 280px;
     text-align: center;
     color: #30537A;
 }
