@@ -1653,6 +1653,14 @@ h3 #ayuda-busqueda-link {
         rgb(235,194,144) 42%,
         rgb(250,217,175) 95%
     );
+
+    background:
+    url(/images/calculator.png) no-repeat 12px 12px,
+    -o-linear-gradient(
+	center bottom,
+        #0A284B,
+        #135887
+    );
     color: #C66A24;
 }
 
