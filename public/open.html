@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://static.openheatmap.com/scripts/jquery.openheatmap.js"></script>
+<script type='text/javascript'>
+$(document).ready(function()
+{
+    $('#openheatmap_container').insertOpenHeatMap({
+        width: 800, 
+        height: 500,
+		prefer: 'flash'
+    });
+});
+
+function onMapCreated()
+{
+    var map = $.getOpenHeatMap();
+
+	csv = 'country_code,value\nAFG,0\nALA,0\nALB,0\nDZA,0\nASM,0\nAND,0\nAGO,0\nAIA,0\nATA,0\nATG,0\nARG,1\nARM,0\nABW,0\nAUS,0\nAUT,0\nAZE,0\nBHS,0\nBHR,0\nBGD,0\nBRB,0\nBLR,0\nBEL,0\nBLZ,0\nBEN,0\nBMU,0\nBTN,0\nBOL,0\nBIH,0\nBWA,0\nBVT,0\nBRA,0\nIOT,0\nVGB,0\nBRN,0\nBGR,0\nBFA,0\nBDI,0\nKHM,0\nCMR,0\nCAN,0\nCPV,0\nCYM,0\nCAF,0\nTCD,0\nCHL,0\nCHN,0\nCXR,0\nCCK,0\nCOL,0\nCOM,0\nCOK,0\nCRI,0\nHRV,0\nCUB,0\nCYP,0\nCZE,0\nCOD,0\nDNK,0\nDJI,0\nDMA,0\nDOM,0\nTLS,0\nECU,0\nEGY,0\nSLV,0\nGNQ,0\nERI,0\nEST,0\nETH,0\nFLK,0\nFRO,0\nFJI,0\nFIN,0\nFRA,0\nGUF,0\nPYF,0\nATF,0\nGAB,0\nGMB,0\nGEO,0\nDEU,0\nGHA,0\nGIB,0\nGRC,0\nGRL,0\nGRD,0\nGLP,0\nGUM,0\nGTM,0\nGGY,0\nGIN,0\nGNB,0\nGUY,0\nHTI,0\nHMD,0\nHND,0\nHKG,0\nHUN,0\nISL,0\nIND,0\nIDN,0\nIRN,0\nIRQ,0\nIRL,0\nIMN,0\nISR,0\nITA,0\nCIV,0\nJAM,0\nJPN,1\nJEY,0\nJOR,0\nKAZ,0\nKEN,0\nKIR,0\nKWT,0\nKGZ,0\nLAO,0\nLVA,0\nLBN,0\nLSO,0\nLBR,0\nLBY,0\nLIE,0\nLTU,0\nLUX,0\nMAC,0\nMKD,0\nMDG,0\nMWI,0\nMYS,0\nMDV,0\nMLI,0\nMLT,0\nMHL,0\nMTQ,0\nMRT,0\nMUS,0\nMYT,0\nMEX,1\nFSM,0\nMDA,0\nMCO,0\nMNG,0\nMNE,0\nMSR,0\nMAR,0\nMOZ,0\nMMR,0\nNAM,0\nNRU,0\nNPL,0\nNLD,0\nANT,0\nNCL,0\nNZL,0\nNIC,0\nNER,0\nNGA,0\nNIU,0\nNFK,0\nPRK,0\nMNP,0\nNOR,0\nOMN,0\nPAK,0\nPLW,0\nPSE,0\nPAN,0\nPNG,0\nPRY,0\nPER,0\nPHL,0\nPCN,0\nPOL,0\nPRT,0\nPRI,0\nQAT,0\nCOG,0\nREU,0\nROU,0\nRUS,0\nRWA,0\nBLM,0\nSHN,0\nKNA,0\nLCA,0\nMAF,0\nSPM,0\nVCT,0\nWSM,0\nSMR,0\nSTP,0\nSAU,0\nSEN,0\nSRB,0\nSCG,0\nSYC,0\nSLE,0\nSGP,0\nSVK,0\nSVN,0\nSLB,0\nSOM,0\nZAF,0\nSGS,0\nKOR,0\nESP,10\nLKA,0\nSDN,0\nSUR,0\nSJM,0\nSWZ,0\nSWE,0\nCHE,0\nSYR,0\nTWN,0\nTJK,0\nTZA,0\nTHA,0\nTGO,0\nTKL,0\nTON,0\nTTO,0\nTUN,0\nTUR,0\nTKM,0\nTCA,0\nTUV,0\nVIR,0\nUGA,0\nUKR,0\nARE,0\nGBR,0\nUSA,2\nUMI,0\nURY,5\nUZB,0\nVUT,0\nVAT,0\nVEN,0\nVNM,0\nWLF,0\nESH,0\nYEM,0\nZMB,0\nZWE,0\n';
+	
+	
+    map.loadWaysFromFile('http://static.openheatmap.com/world_countries.osm');
+    map.loadValuesFromCSVString(csv);
+	map.setSetting('ocean_color', 0xffffff);
+	map.setSetting('title_text', 'Distribución de las Empresas de Bazar');
+	map.setSetting('gradient_value_min', 0);
+	map.setSetting('gradient_value_max', 10);
+	map.setColorGradient(['#FFFFE8','#00ff00','#FF0000']);
+	map.setSetting('information_alpha', 0);
+    
+}
+</script>s
+</head>
+<body>
+<div id="openheatmap_container"></div>
+</body>
+</html>
