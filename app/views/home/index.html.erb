@@ -657,7 +657,8 @@ function lanzabusqueda() {
 
 		// TODO solo deberíamos enviarlos si esta activada la búsqueda avazanda ;-) 
 
-		if ( $("#avanzada").is(":visible") ) { 
+		// if ( $("#avanzada").is(":visible") ) { 
+		if ( $("#avanzada").css("display") != "none" ) { 
 			emple = $("#empleados2").val();
 			ventas = $("#ventas2").val();
 			compras = $("#compras2").val();
