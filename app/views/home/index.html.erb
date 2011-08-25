@@ -664,26 +664,26 @@ function lanzabusqueda() {
 
 		// TODO solo deberíamos enviarlos si esta activada la búsqueda avazanda ;-) 
 
-		// if ( $("#avanzada").is(":visible") ) { 
+		 if ( $("#avanzada").is(":visible") ) { 
 	//	if ( $("#avanzada").css("display") != "none" ) { 
-//			emple = $("#empleados2").val();
-//			ventas = $("#ventas2").val();
-//			compras = $("#compras2").val();
-//			resultados = $("#resultados2").val();
-//			pofertan = $("#pofertan").val();
-//			pdemandan = $("#pdemandan").val();
-//			ppaises = $("#ppaises").val();
-//			
-	//	}
-	//	else {
-		emple = "0 10";
- 		ventas = "0 10";
- 		compras = "0 10";
- 		resultados = "0 10";
- 		pofertan = "";
- 		pdemandan = "";
- 		ppaises = "";				
-// //	}
+			emple = $("#empleados2").val();
+			ventas = $("#ventas2").val();
+			compras = $("#compras2").val();
+			resultados = $("#resultados2").val();
+			pofertan = $("#pofertan").val();
+			pdemandan = $("#pdemandan").val();
+			ppaises = $("#ppaises").val();
+			
+		}
+		else {
+			emple = "0 10";
+	 		ventas = "0 10";
+	 		compras = "0 10";
+	 		resultados = "0 10";
+	 		pofertan = "";
+	 		pdemandan = "";
+	 		ppaises = "";				
+		}
 
 		$('#avanzada').hide('slow');
 		$("#estado").show();
