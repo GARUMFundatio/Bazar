@@ -1283,8 +1283,9 @@ input#busca:active {
     float: right;
     position: relative;
     top: -55px;
-    margin: 5px 45px 0 0;
+    margin: 5px 205px 0 0;
     padding: 3px 25px 3px 7px;
+    font-size: 9px;
     text-decoration: underline;
 }
 
