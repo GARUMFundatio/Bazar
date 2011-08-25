@@ -21,7 +21,7 @@ gem "friendly_id", "~> 3.1"
 gem 'exception_notification', :require => 'exception_notifier'
 gem 'rails-i18n'
 gem 'ya2yaml'
-gem "tiny_mce", "~> 0.1.4"
+# gem "tiny_mce", "~> 0.1.4"
 
 gem 'bazarcms', :path => '../bazarcms'
 

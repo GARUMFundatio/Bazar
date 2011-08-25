@@ -33,7 +33,6 @@ Bazar::Application.configure do
   
   config.i18n.default_locale = :es
   
-  config.gem 'tiny_mce'
   
 end
 
