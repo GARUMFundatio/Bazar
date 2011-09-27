@@ -30,6 +30,7 @@ gem 'bazarcms', :path => '../bazarcms'
 # revisar para cuando este lista esta gema gem 'activerecord-mysql2-adapter'
 
 
+
 # gem 'ruby-debug'
 group :development, :test do
 	gem 'ruby-debug'

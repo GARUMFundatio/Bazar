@@ -164,8 +164,12 @@ namespace :bazar do
                
                perfil = Bazarcms::Perfil.find_by_codigo(key['id'])
 
-               perfil.total_empresas_mercado += key['total_empresas_bazar'].to_i
-               perfil.save
+               if ( !perfil.nil? )
+                 perfil.total_empresas_mercado += key['total_empresas_bazar'].to_i
+                 perfil.save
+              else 
+                puts "Error -----> No existe el perfil #{key['id']} \n #{key.inspect}"
+              end
            
              }
              puts "#{DateTime.now} Perfil: Actualizada la información de:  #{cluster.nombre} -> #{cluster.url}."
