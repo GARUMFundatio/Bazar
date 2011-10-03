@@ -110,7 +110,7 @@ class UsersController < ApplicationController
         # avisamos al admin de que hay una nueva alta
         
         Mail.deliver do
-              to "Admin Bazar <#{User.find_by_id(1).email}>"
+              to "Admin Bazar <#{Conf.find_by_nombre('CorreoAdmin').valor}>"
             from 'No replay <noreplay@bazar.com>'
          subject "Nuevo Usuario en #{Conf.find_by_nombre('Titular').valor}"
             body "
