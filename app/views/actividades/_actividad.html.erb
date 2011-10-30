@@ -1,4 +1,4 @@
-<% empre = Bazarcms::Empresa.find(actividad.user_id) %>
+<% empre = Bazarcms::Empresa.find_by_id(actividad.user_id) %>
 
 <tr>
 	<td width="102px">
@@ -9,7 +9,11 @@
 	</td>
 	
 	<td style="width: 150px">
-		<%= link_to Bazarcms::Empresa.find(actividad.user_id).nombre, bazarcms_empresa_path(actividad.user_id, :bazar_id => actividad.bazar_id) %>
+		<% if !empre.nil?%>
+			<%= link_to empre.nombre, bazarcms_empresa_path(actividad.user_id, :bazar_id => actividad.bazar_id) %>
+		<% else %>
+		    <% actvidad.user_id %>
+		<% end %>
 		<%= helper_rating_show2(actividad.bazar_id, actividad.user_id).html_safe %>
 	</td>
 
