@@ -12,7 +12,7 @@
 		<% if !empre.nil?%>
 			<%= link_to empre.nombre, bazarcms_empresa_path(actividad.user_id, :bazar_id => actividad.bazar_id) %>
 		<% else %>
-		    <% actvidad.user_id %>
+		    <%= actvidad.user_id %>
 		<% end %>
 		<%= helper_rating_show2(actividad.bazar_id, actividad.user_id).html_safe %>
 	</td>
