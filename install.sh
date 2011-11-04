@@ -38,7 +38,7 @@ echo "Creando usuarios en la BD"
 rake bazar:create_users 
 
 echo "Instalando jquery" 
-rails generate jquery:install
+rails generate jquery:install -f
 
 echo "Instalando friendly_id" 
 rails generate friendly_id
