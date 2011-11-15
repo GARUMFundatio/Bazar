@@ -109,16 +109,21 @@ class UsersController < ApplicationController
         
         # avisamos al admin de que hay una nueva alta
         
-        Mail.deliver do
-              to "Admin Bazar <#{Conf.find_by_nombre('CorreoAdmin').valor}>"
-            from 'No replay <noreplay@bazar.com>'
-         subject "Nuevo Usuario en #{Conf.find_by_nombre('Titular').valor}"
-            body "
+        begin 
+          Mail.deliver do
+                to "Admin Bazar <#{Conf.find_by_nombre('CorreoAdmin').valor}>"
+              from 'No replay <noreplay@bazar.com>'
+           subject "Nuevo Usuario en #{Conf.find_by_nombre('Titular').valor}"
+              body "
                         
-            En estos momentos hay #{User.all.count} usuarios registrados.
+              En estos momentos hay #{User.all.count} usuarios registrados.
             
-            "
+              "
+          end
+        rescue
+          logger.debug "Se ha producido un error al intentar avisar al administrador de una nueva alta!!!"
         end
+        
         
         format.html { redirect_to('/home', :notice => 'Se ha creado correctamente el usuario.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
