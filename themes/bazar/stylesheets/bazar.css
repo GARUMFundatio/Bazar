@@ -1,0 +1,38 @@
+body {
+    background-color: #333;
+}
+
+.container {
+    position: relative;
+    width: 1100px;
+	overflow: hidden;
+    background-color: #FFF;
+    margin: 0 auto !important;
+    text-align: left;
+}
+
+.header {
+    position: relative;
+    width: 1100px;
+    height: 125px;
+    overflow: hidden;
+    background-color: #3C97E8;
+    margin: 0 auto !important;
+    text-align: left;	
+}
+
+.caja-logo {
+  float: left;
+  width: 306px;
+  height: 60px;
+  background-color: #000;
+  filter: alpha(opacity=35); 
+  opacity:0.35;
+}
+
+#logo {
+  float: left;
+  margin: auto 10px auto 168px;
+  background: url(../images/logo-bazar.png) no-repeat 0 0;
+  display: block;
+}

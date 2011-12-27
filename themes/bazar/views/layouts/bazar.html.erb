@@ -14,7 +14,7 @@
 	<%= javascript_include_tag "jquery-ui.js" %>
 	<%= javascript_include_tag "jquery.cycle.all.min.js" %>
 
-	<%= stylesheet_link_tag("bazar") %>
+	<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 
 	
 	<%= csrf_meta_tag %>
@@ -37,8 +37,6 @@
 	</script>
 	<% end %>
 	
-	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-	
   </head>
 	
 		<% if !current_user.nil? %>
@@ -50,24 +48,26 @@
 			<body class="anonimo"><!-- si es anónimo -->
 		<% end %>
 
-	
-   <div class="container">
 
-	  <div id="header">
-	  
-	  <div id="logo"></div>
-	  <div id="nombresitio">
-		      <h1 id="title"><a
-              <% if !current_user.nil? %>
-                 href="/home"
-              <% else %>
-                 href="/"
-              <% end %>
-              ><%= h BZ_param("Titular") %></a>
-              </h1>
-	          <h2 id="slogan"><%= h BZ_param("Subtitular") %></h2>
-		</div>
-	  
+<div class="container">
+  <div class="header">
+    
+    <div class="caja-logo">
+    	<div id="logo"></div>
+      <div id="nombresitio">
+        <h1 id="title"><a
+          <% if !current_user.nil? %>
+            href="/home"
+          <% else %>
+            href="/"
+          <% end %>
+          ><%= h BZ_param("Titular") %></a>
+        </h1>
+        <h2 id="slogan"><%= h BZ_param("Subtitular") %></h2>
+      </div>
+    </div>
+
+
       <% if current_user.nil? %>
 			<div id="socioenlaces">
 				<ul>
