@@ -1,0 +1,42 @@
+<%= javascript_include_tag "jquery.ui.datepicker-es.js" %>
+
+<%= form_for(@noticia) do |f| %>
+
+  <div class="field">
+    <%=t(:text_titulo)%><br />
+    <%= f.text_field :titulo, :size => "60" %>
+  </div>
+  <div class="field">
+    <%= f.label :texto %><br />
+    <%= f.text_area :texto, :size => "50x12" %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %> 
+
+		<script>
+		
+			/* TODO estoy hay que localizarlo dependiendo de la lengua elegida */
+			
+		$(function() {
+			$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+			$( "#noticia_fecha" ).datepicker( $.datepicker.regional[ "es" ] );
+		});
+	
+		</script>
+	
+	<% if !@noticia.fecha.nil? %>	
+		<input type="text" name="noticia[fecha]" id="noticia_fecha" value="<%= @noticia.fecha.strftime("%d-%m-%Y") -%>"/>
+	<% else %>
+		<input type="text" name="noticia[fecha]" id="noticia_fecha" value="<%= DateTime.now.strftime("%d-%m-%Y") -%>"/>
+	<% end %>
+</div>
+  <div class="field">
+    <%= f.check_box :visible %> <%= f.label :visible %><br />
+    
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

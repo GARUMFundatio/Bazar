@@ -1,0 +1,25 @@
+<h1><%=t(:text_listing_roles)%></h1>
+
+<table>
+  <tr>
+    <th><%=t(:text_id)%></th>
+    <th><%=t(:text_rol)%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @roles.each do |rol| %>
+  <tr>
+    <td><%= rol.id %></td>
+    <td><%= rol.rol %></td>
+    <td><%= link_to t(:label_show), rol %></td>
+    <td><%= link_to t(:label_edit), edit_rol_path(rol) %></td>
+    <td><%= link_to t(:label_destroy), rol, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t(:label_new_rol), new_rol_path %>

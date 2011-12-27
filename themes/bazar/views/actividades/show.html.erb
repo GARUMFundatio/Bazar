@@ -1,0 +1,59 @@
+<% if !current_user.nil? %>
+	<a class="volver-home-link" href="/home"><%=t(:text_volver_a_la_pagina_de_busquedas)%></a>
+<% end %>
+
+<h3 class="page-title"><%=t(:text_actvidad_del_bazar)%></h3>
+
+<table id="results" class="tabla" cellspacing="0">
+
+	<tr>
+		<td>
+			<b><%=t(:text_actividad)%></b>
+		</td>
+		<td>
+			<%= @actividad.desc.html_safe %>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td>
+			<b><%=t(:text_fecha)%></b>
+		</td>
+		<td>
+			<%= @actividad.fecha.strftime("%d-%m-%Y") %>
+		</td>
+		
+	</tr>
+	
+	<tr>
+		<td>
+			<b><%=t(:text_empresa)%></b>
+		</td>
+		<td>
+			<% empre = Bazarcms::Empresa.find(@actividad.user_id) %>
+			<%= link_to(empre.nombre, '/bazarcms/empresas/show2/'+empre.friendly_id) %>
+		</td>
+		
+	</tr>
+	
+</table>
+
+<% if current_user.nil? %>
+
+<br/>
+<br/>
+
+<b><%=t(:text_es_necesario_registrarse_para_poder_usar_bazar_al_100)%></b>
+
+<br/>
+<br/>
+
+<a class="volver-home-link" href="/home/datos"><%=t(:text_los_datos_de_este_bazar)%></a>
+<a class="volver-home-link" href="/home/registrarse"><%=t(:text_darse_de_alta_en_este_bazar)%></a>
+<a class="volver-home-link" href="/home/bazares"><%=t(:text_que_es_un_bazar)%></a>
+
+<% end %>
+
+
+

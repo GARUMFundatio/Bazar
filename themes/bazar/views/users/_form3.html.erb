@@ -1,0 +1,46 @@
+<div id="tabs-6content">
+
+<div class="edit_user"> <!-- FIN alta usuario -->
+<%= form_for(@user, :url => "/altaregistrarse") do |f| %>
+  <% if @user.errors.any? %>
+
+  <br />
+
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> &bull; <%=t(:text_no_se_ha_podido_salvar_los_datos_del_usuario)%></h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li><br />
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <b><%= f.label :usuario %>:</b> <%= @user.login %><br />
+	<%= f.text_field :login %>
+  </div>
+
+  <div class="field">
+    <b><%= f.label :correo %>:</b><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <b><%= f.label :password %>:</b><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <b><%= f.label :confirmación_password %>:</b><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Alta Usuario' %>
+  </div>
+<% end %>
+</div> <!-- FIN alta usuario -->
+
+</div>

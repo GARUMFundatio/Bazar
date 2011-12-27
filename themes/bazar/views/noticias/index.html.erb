@@ -1,0 +1,29 @@
+<h3 class="page-title"><%=t(:text_noticias)%></h3>
+
+<table class="tabla" cellspacing="0">
+  <tr>
+    <th><%=t(:text_titulo)%></th>
+    <th><%=t(:text_texto)%></th>
+    <th><%=t(:text_fecha)%></th>
+    <th><%=t(:text_visible)%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @noticias.each do |noticia| %>
+  <tr>
+    <td><%= noticia.titulo %></td>
+    <td><%= noticia.texto %></td>
+    <td><%= noticia.fecha %></td>
+    <td><%= noticia.visible %></td>
+    <td><%= link_to image_tag('lupa.png'), noticia %></td>
+    <td><%= link_to image_tag('pencil.png'), edit_noticia_path(noticia) %></td>
+    <td><%= link_to image_tag('delete.png'), noticia, :confirm => 'Seguro que quiere borrar esta noticia?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @noticias %>
+
+<%= link_to t(:label_publicar_una_noticia), new_noticia_path %>

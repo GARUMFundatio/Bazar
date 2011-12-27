@@ -1,0 +1,24 @@
+<h1><%=t(:text_parametros_de_bazar)%></h1>
+
+<table class="tabla">
+  <tr>
+    <th><%=t(:text_parametro)%></th>
+    <th><%=t(:text_grupo)%></th>
+	<th><%=t(:text_desc)%></th>    
+	<th><%=t(:text_valor)%></th>
+    <th></th>
+  </tr>
+
+<% @confs.each do |conf| %>
+  <tr>
+    <td><%= conf.nombre %></td>
+	<% grupo = Gruposconf.find(conf.grupo_id)%>
+    <td><%= grupo.desc %></td>
+	<td><%= conf.desc %></td>
+	<td><%= conf.valor %></td>
+	<td><%= link_to (image_tag("pencil.png", :border => "0"), edit_conf_path(conf))  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

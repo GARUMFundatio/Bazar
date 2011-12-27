@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%=t(:text_fecha)%></b>
+  <%= @mensaje.fecha %>
+</p>
+
+<p>
+  <b><%=t(:text_tipo)%></b>
+  <%= @mensaje.tipo %>
+</p>
+
+<p>
+  <b><%=t(:text_borrado)%></b>
+  <%= @mensaje.borrado %>
+</p>
+
+<p>
+  <b><%=t(:text_leido)%></b>
+  <%= @mensaje.leido %>
+</p>
+
+<p>
+  <b><%=t(:text_de)%></b>
+  <%= @mensaje.de %>
+</p>
+
+<p>
+  <b><%=t(:text_para)%></b>
+  <%= @mensaje.para %>
+</p>
+
+<p>
+  <b><%=t(:text_texto)%></b>
+  <%= @mensaje.texto %>
+</p>
+
+
+<%= link_to t(:label_edit), edit_mensaje_path(@mensaje) %> |
+<%= link_to t(:label_back), mensajes_path %>

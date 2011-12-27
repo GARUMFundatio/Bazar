@@ -1,0 +1,129 @@
+<% cache "correodash#{current_user.id}", {:expires_in => 5.minutes.to_i} do %>
+
+<h3 class="page-title"><%=t(:text_mensajes_y_notificaciones)%></h3>
+
+<div class="contenidos-secundarios dos">
+
+     <div>
+        <table class="tabla" cellspacing="0">
+
+          <tr>
+            <th class="titular-tabla" colspan="4"><%=t(:text_mensajes)%></th>
+          </tr>
+          
+          <% if @mensajes.count > 0 %>
+          
+          <tr class="color">
+		    <th><%=t(:text_de)%></th>
+		    <th><%=t(:text_asunto)%></th>
+		    <th><%=t(:text_fecha)%></th>
+		    <td></td>
+		  </tr>
+
+		<% @mensajes.each do |mensaje| %>
+
+
+		<% if (!mensaje.leido.nil?) %>
+		  <tr id="head<%= mensaje.id -%>" style="text-align:left;" class="color">
+		<% else %>
+		  <tr id="head<%= mensaje.id -%>" style="font-weight:bold; text-align:left;" class="color">
+		<% end %>
+
+			<td style="text-align:left;">
+				<%= mensaje.de_nombre %>
+			</td>
+
+			<td style="text-align:left;">
+				<a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"><%= mensaje.asunto %></a>
+			</td>
+
+		    <td style="text-align:left;">
+				<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
+			</td>
+
+		    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a> <%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %>
+		     <%= link_to(image_tag("papelera.png"), mensaje, :confirm => '¿Está seguro?', :method => :delete, :title => 'Eliminar Mensaje') %></td>
+		  </tr>
+
+		  <tr id="men<%= mensaje.id -%>" style="display: none">
+		    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6">
+				<% if !mensaje.texto.nil? %>
+					<%= mensaje.texto.gsub("\n","<br/>").html_safe %>
+				<% else %>
+					Mensaje sin texto
+				<% end %>
+			</td>
+		  </tr>
+
+		<% end %>
+		</table>
+
+		<% else %>
+        <tr>
+		  <td colspan="4"><%=t(:text_no_hay_mensajes_sin_leer)%></td>
+		</tr>
+		</table>
+		<% end %>
+
+		<%= link_to("Ver todos los mensajes &raquo;".html_safe, '/mensajes?tipo=M', :class => "volver-home-link") %>
+
+	</div>
+	<div>
+		
+		<table class="tabla" cellspacing="0">
+          <tr>
+            <th class="titular-tabla" colspan="4"><%=t(:text_notificaciones)%></th>
+          </tr>
+          
+          <% if @notificaciones.count > 0 %>
+          <tr class="color">
+		    <th><%=t(:text_de)%></th>
+		    <th><%=t(:text_asunto)%></th>
+		    <th><%=t(:text_fecha)%></th>
+		    <td></td>
+		  </tr>
+
+		<% @notificaciones.each do |mensaje| %>
+
+
+		<% if (!mensaje.leido.nil?) %>
+		  <tr id="head<%= mensaje.id -%>" style="text-align:left;" class="color">
+		<% else %>
+		  <tr id="head<%= mensaje.id -%>" style="font-weight:bold; text-align:left;" class="color">
+		<% end %>
+
+			<td style="text-align:left;">
+				<%= mensaje.de_nombre %>
+			</td>
+
+			<td style="text-align:left;">
+				<a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"><%= mensaje.asunto %></a>
+			</td>
+
+		    <td style="text-align:left;">
+				<%= mensaje.fecha.strftime("%d-%m-%Y %H:%M") %>
+			</td>
+
+		    <td class="tres-iconos"><a href="#" title="Ver Mensaje" onclick="$('#men<%= mensaje.id -%>').toggle();$('#head<%= mensaje.id -%>').css('font-weight','normal'); $.ajax({url:'/mensajes/leido/<%= mensaje.id -%>'});"> <%= image_tag("lupa.png") -%></a> <%= link_to(image_tag("responder-correo.png"), edit_mensaje_path(mensaje), :title => 'Responder mensaje') %>
+		     <%= link_to(image_tag("papelera.png"), mensaje, :confirm => '¿Está seguro?', :method => :delete, :title => 'Eliminar Mensaje') %></td>
+		  </tr>
+
+		  <tr id="men<%= mensaje.id -%>" style="display: none">
+		    <td width="300" class="celda-mensaje" style="text-align:left; background-color: #fff;" colspan="6"><%= mensaje.texto.gsub("\n","<br/>").html_safe %></td>
+		  </tr>
+
+		<% end %>
+		</table>
+
+		<% else %>
+        <tr>
+		  <td colspan="4"><%=t(:text_no_hay_notificaciones_sin_leer)%></td>
+		</tr>
+		</table>
+		<% end %>
+		<%= link_to("Ver todas las notificaciones &raquo;".html_safe, '/mensajes?tipo=N', :class => "volver-home-link") %>
+
+	</div>
+	
+	</div><!-- /.contenidos-secundarios  -->
+<% end %>

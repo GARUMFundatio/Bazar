@@ -1,0 +1,23 @@
+<h1><%=t(:text_listing_gruposconfs)%></h1>
+
+<table>
+  <tr>
+    <th><%=t(:text_desc)%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gruposconfs.each do |gruposconf| %>
+  <tr>
+    <td><%= gruposconf.desc %></td>
+    <td><%= link_to t(:label_show), gruposconf %></td>
+    <td><%= link_to t(:label_edit), edit_gruposconf_path(gruposconf) %></td>
+    <td><%= link_to t(:label_destroy), gruposconf, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t(:label_new_gruposconf), new_gruposconf_path %>

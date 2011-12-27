@@ -1,0 +1,38 @@
+<%= form_for(@mensaje) do |f| %>
+
+<div class="field">
+    <%= f.hidden_field :de %>
+    <%= f.hidden_field :de_nombre %>
+    <%= f.hidden_field :de_email %>
+
+    <%= f.hidden_field :para %>
+    <%= f.hidden_field :para_nombre %>
+    <%= f.hidden_field :para_email %>
+
+    <%= f.hidden_field :tipo %>
+    <%= f.hidden_field :fecha %>
+    <%= f.hidden_field :leido %>
+    <%= f.hidden_field :borrado %>
+    <%= f.hidden_field :bazar_origen %>
+    <%= f.hidden_field :bazar_destino %>
+
+</div>
+ <% @mensaje.asunto = "RE: "+@mensaje.asunto %>
+ <div class="field">
+	<%=t(:text_de)%> <%= @mensaje.para_nombre -%> a <%= @mensaje.de_nombre -%>
+ </div> 
+
+  <div class="field">
+    <%= f.label :Asunto %>:  <%= f.text_field :asunto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Texto %><br />
+    <%= f.text_area :texto, :size => "60x10" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Enviar Mensaje" %>
+  </div>
+
+<% end %>

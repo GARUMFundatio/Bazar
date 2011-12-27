@@ -1,0 +1,384 @@
+
+<%= stylesheet_link_tag("jquery.jqplot") %>
+<%= javascript_include_tag("jquery.jqplot.min.js") %>
+<%= javascript_include_tag("plugins/jqplot.dateAxisRenderer.min.js") %>
+<%= javascript_include_tag("plugins/jqplot.canvasTextRenderer.min.js") %>
+<%= javascript_include_tag("plugins/jqplot.canvasAxisTickRenderer.min.js") %>
+<%= javascript_include_tag("plugins/jqplot.highlighter.min.js") %>
+<%= javascript_include_tag("plugins/jqplot.cursor.min.js") %>
+<%= javascript_include_tag("plugins/jqplot.pieRenderer.min.js") %>
+
+<%= javascript_include_tag("jquery.openheatmap.js") %>
+
+<!--[if IE]><script language="javascript" type="text/javascript" src="jqplot/excanvas.js"></script><![endif]-->
+
+<% cache "bazar_datos", {:expires_in => 6.hours.to_i} do %>
+	
+<div class="sociologia">
+
+<h2 class="page-title"><%=t(:text_datos_de_bazar)%></h2>
+
+<h3 class="titulo-datos"><%=t(:text_empresas)%></h3>
+
+<div id="sec5" class="seccion-datos">
+
+<div class="jqPlot" id="empresas1" style="height:360px; width:50%;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line5 = [];
+ii = 0;
+empbazar = 0;
+empresto = 0;
+
+<% for data in Cluster.where("id <> 1 and empresas > 0") %>
+	<% if data.id == BZ_param('BazarId').to_i %>
+		empbazar = <%= data.empresas %> ;
+	<% else %> 
+		empresto += <%= data.empresas %> ;
+	<% end %>
+<% end %>
+
+line5[0] = [ 'Este Bazar ('+empbazar+')', empbazar * 100 / (empbazar + empresto)];
+line5[1] = [ 'Mercado ('+empresto+')', empresto * 100 / (empbazar + empresto)];
+
+plot5 = $.jqplot('empresas1', [line5], {
+    title: 'Este bazar respecto al mercado',
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'percent',
+			dataLabelFormatString:"%d%%",
+			sliceMargin:4
+		}
+	},    
+    legend:{show:true}
+});
+
+</script>
+
+</div>
+
+
+<h3 class="titulo-datos"><%=t(:text_ofertas_demandas)%></h3>
+<div id="ofe" class="seccion-datos">
+
+
+<div class="jqPlot" id="ofe1" style="height:360px;width:50%;float:left;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+lineo1 = [];
+lineo1[0] = ['Ofertas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'O'") %> ];
+lineo1[1] = ['Demandas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'D'") %> ];
+
+
+ploto1 = $.jqplot('ofe1', [lineo1], {
+    title: 'Ofertas/Demandas de este bazar',
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'percent',
+			dataLabelFormatString:"%d%%",
+			sliceMargin:4
+		}
+	},    
+    legend:{show:true}
+});
+
+</script>
+
+
+
+<div class="jqPlot" id="ofe2" style="height:360px;width:50%; float:left;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+lineo2 = [];
+lineo2[0] = ['Ofertas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'O'") %> ];
+lineo2[1] = ['Demandas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'D'") %> ];
+
+
+ploto1 = $.jqplot('ofe2', [lineo1], {
+    title: 'Ofertas/Demandas del mercado',
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'percent',
+			dataLabelFormatString:"%d%%",
+			sliceMargin:4
+		}
+	},    
+    legend:{show:true}
+});
+
+</script>
+
+
+</div>
+
+<h3 class="titulo-datos"><%=t(:text_consultas_realizadas)%></h3>
+
+<div id="consultas" class="seccion-datos">
+	
+	<div class="jqPlot" id="con1" style="height:360px; width:50%; float:left;"></div>
+	<div class="jqPlot" id="con2" style="height:360px; width:50%; float:left;"></div>
+	<script>
+
+	$.jqplot.config.enablePlugins = true;
+
+	linec11 = [];
+	linec12 = [];
+	ii = 0;
+
+	<% for data in Estadisticasconsulta.select("fecha").where("bazar_id <> 1 and bazar_id = ?", BZ_param("BazarId").to_i).group("date(fecha)").order("date(fecha)") %>
+
+		linec11[ii] = [ '<%= data.fecha.strftime("%Y-%m-%d") -%>', <%= Estadisticasconsulta.count_by_sql("select count(*) from estadisticasconsultas where bazar_id <> 1 and bazar_id = #{BZ_param("BazarId").to_i} and date(fecha) <= '#{data.fecha.strftime("%Y-%m-%d")}';" )  -%>];
+
+		ii++;
+
+	<% end %>
+
+	ii = 0;
+	<% for data in Estadisticasconsulta.select("fecha").where("bazar_id <> 1 and bazar_id <> ?", BZ_param("BazarId").to_i).group("date(fecha)").order("date(fecha)") %>
+
+		linec12[ii] = [ '<%= data.fecha.strftime("%Y-%m-%d") -%>', <%= Estadisticasconsulta.count_by_sql("select count(*) from estadisticasconsultas where bazar_id <> 1 and bazar_id <> #{BZ_param("BazarId").to_i} and date(fecha) <= '#{data.fecha.strftime("%Y-%m-%d")}';" )  -%>];
+
+		ii++;
+
+	<% end %>
+
+	plotc1 = $.jqplot('con1', [linec11], {
+	    legend:{show:true, location:'se'},
+	    title:'Consultas Realizadas',
+		axesDefaults:{useSeriesColor: true},
+	    axes:{
+	        xaxis:{
+	            renderer:$.jqplot.DateAxisRenderer,
+	            tickOptions:{formatString:'%d-%m-%y'},
+	            tickInterval:'1 month'
+			},
+		    yaxis:{
+				tickOptions:{formatString:'%d'}
+	        },
+		    y2axis:{
+				tickOptions:{formatString:'%d'}
+	        }
+	    },
+	    highlighter: {sizeAdjust: 7.5},
+		cursor: {tooltipLocation:'sw'},
+	    series:[
+			{label:'Enviadas desde este Bazar'}
+	    ]
+	});
+
+	plotc2 = $.jqplot('con2', [linec12], {
+	    legend:{show:true, location:'se'},
+	    title:'Consultas otros Bazares',
+		axesDefaults:{useSeriesColor: true},
+	    axes:{
+	        xaxis:{
+	            renderer:$.jqplot.DateAxisRenderer,
+	            tickOptions:{formatString:'%d-%m-%y'},
+	            tickInterval:'1 month'
+			},
+		    yaxis:{
+				tickOptions:{formatString:'%d'}
+	        },
+		    y2axis:{
+				tickOptions:{formatString:'%d'}
+	        }
+	    },
+	    highlighter: {sizeAdjust: 7.5},
+		cursor: {tooltipLocation:'sw'},
+	    series:[
+			{label:'Recibidas de otros Bazares'},
+	    ]
+	});
+
+	</script>
+</div>
+<br/>
+
+
+<h3 class="titulo-datos"><%=t(:text_sectores)%></h3>
+<div id="sec1" class="seccion-datos">
+
+<div class="jqPlot" id="perfilesbazar" style="height:360px; width:100%;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line1 = [];
+ii = 0;
+<% for data in Bazarcms::Perfil.where("total_empresas_bazar > 0 and nivel = 2").order("total_empresas_bazar desc").limit(15) %>
+
+	line1[ii] = [ '<%= data.desc -%> (<%= data.total_empresas_bazar -%>)', <%= data.total_empresas_bazar -%>];
+	ii++;
+<% end %>
+
+plot1 = $.jqplot('perfilesbazar', [line1], {
+    title: 'Sectores más significativos de este bazar',
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'percent',
+			dataLabelFormatString:"%d%%",
+			sliceMargin:4
+		}
+	},    
+    legend:{show:true}
+});
+
+</script>
+
+</div>
+
+<div id="sec2" class="seccion-datos">
+
+<div class="jqPlot" id="perfilesmercado" style="height:360px; width:100%;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line2 = [];
+ii = 0;
+<% for data in Bazarcms::Perfil.where("total_empresas_mercado > 0 and nivel = 2").order("total_empresas_mercado desc").limit(15) %>
+
+	line2[ii] = [ '<%= data.desc -%> (<%= data.total_empresas_mercado -%>)', <%= data.total_empresas_mercado -%>];
+	ii++;
+<% end %>
+
+plot2 = $.jqplot('perfilesmercado', [line2], {
+    title: 'Sectores más significativos del mercado',
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'percent',
+			dataLabelFormatString:"%d%%",
+			sliceMargin:4
+		}
+	},    
+    legend:{show:true}
+});
+
+</script>
+
+</div>
+
+
+<h3 class="titulo-datos"><%=t(:text_paises)%></h3>
+
+<div class="seccion-datos">
+<div id="sec4">
+
+<div class="jqPlot" id="paisesbazar" style="height:360px; width:50%;float:left;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line4 = [];
+ii = 0;
+<% for data in Pais.where("total_empresas_bazar > 0").order("total_empresas_bazar desc").limit(15) %>
+	line4[ii] = [ '<%= data.descripcion -%> (<%= data.total_empresas_bazar -%>)', <%= data.total_empresas_bazar -%>];
+	ii++;
+<% end %>
+
+plot4 = $.jqplot('paisesbazar', [line4], {
+    title: 'Ubicaciones de este bazar',
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'percent',
+			dataLabelFormatString:"%d%%",
+			sliceMargin:4
+		}
+	},    
+    legend:{show:true}
+});
+
+</script>
+
+</div>
+
+<div id="sec3">
+
+<div class="jqPlot" id="paisesmercado" style="height:360px; width:50%;float:left;"></div>
+
+<script>
+
+$.jqplot.config.enablePlugins = true;
+line3 = [];
+ii = 0;
+<% for data in Pais.where("total_empresas_mercado > 0").order("total_empresas_mercado desc").limit(15) %>
+	line3[ii] = [ '<%= data.descripcion -%> (<%= data.total_empresas_mercado -%>)', <%= data.total_empresas_mercado -%>];
+	ii++;
+<% end %>
+
+plot3 = $.jqplot('paisesmercado', [line3], {
+    title: 'Ubicaciones del mercado',
+    seriesDefaults:{
+		renderer:$.jqplot.PieRenderer, 
+		rendererOptions:{
+			showDataLabels:true,
+			dataLabels: 'percent',
+			dataLabelFormatString:"%d%%",
+			sliceMargin:4
+		}
+	},    
+    legend:{show:true}
+});
+
+</script>
+
+</div>
+
+<h3 class="titulo-datos"><%=t(:text_distribucion_de_la_empresas)%></h3>
+
+<div id="mapa-paises-container"></div>
+
+<script type='text/javascript'>
+$(document).ready(function()
+{
+    $('#mapa-paises-container').insertOpenHeatMap({
+        width: 800, 
+        height: 500,
+		prefer: 'flash'
+    });
+});
+
+function onMapCreated()
+{
+    var map = $.getOpenHeatMap();
+
+	csv = '<%= Pais.paisestocsv -%>';
+	
+    map.loadWaysFromFile('http://static.openheatmap.com/world_countries.osm');
+    map.loadValuesFromCSVString(csv);
+	map.setSetting('gradient_value_min', 0);
+	map.setSetting('gradient_value_max', 10);
+	map.setColorGradient(['#ffbdf7a0', '#ffff0000']);
+    
+}
+</script>
+
+</div>
+<br/>
+<a class="volver-home-link" href="/paises"><%=t(:text_todos_los_paises_de_este_bazar)%></a>
+<a class="volver-home-link" href="/ciudades"><%=t(:text_ubicaciones_de_este_bazar)%></a>	
+<%=t(:text_informacion_actualizada_el)%> <%= Time.now %>
+
+</div>
+
+<% end %>
+
+

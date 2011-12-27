@@ -1,0 +1,13 @@
+<h3><%=t(:text_cambiar_contrasena)%></h3>
+
+<%= flash[:error] %><br/>
+
+<%=t(:text_introduzca_su_correo_y_pulse_cambiar_contrasena)%>
+<br/><br/>
+
+<% form_tag password_resets_path do %>
+
+  <%= text_field_tag :email %>
+  <br/><br/>
+  <%= submit_tag "Cambiar Contraseña" %> <%= link_to("Inicio", "/") %>
+<% end %>

@@ -1,0 +1,14 @@
+<% if @mensaje.tipo == 'M' %>
+	<h3 class="page-title"><%=t(:text_enviar_mensaje_a_todos_los_usuarios)%></h3>
+<% else %>
+	<h3 class="page-title"><%=t(:text_enviar_notificacion_a_todos_los_usuarios)%></h3>
+<% end %>
+
+<br />
+<%= render 'form3' %>
+
+<% if @mensaje.tipo == 'M' %>
+	<%= link_to t(:label_volver_a_la_lista_de_mensajes),"/mensajes?tipo=M" %>
+<% else %>
+	<%= link_to t(:label_volver_a_la_lista_de_notificaciones),"/mensajes?tipo=N" %>
+<% end %>

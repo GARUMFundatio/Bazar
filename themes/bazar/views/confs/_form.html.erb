@@ -1,0 +1,24 @@
+<%= form_for(@conf) do |f| %>
+  <% if @conf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conf.errors.count, "error") %><%=t(:text_no_se_ha_podido_guardar)%></h2>
+
+      <ul>
+      <% @conf.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+   <%= @conf.desc %> (<%= @conf.nombre %>)<br />
+  </div>
+  <div class="field">
+    <%= f.label :valor %>
+    <%= f.text_field :valor %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

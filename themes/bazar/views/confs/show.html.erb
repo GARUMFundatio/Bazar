@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<b><%=t(:text_parametro)%></b> <%= @conf.desc %>
+<br />
+
+<b><%= @conf.nombre %></b> = <%= @conf.valor %>
+
+<br />
+<br />
+
+<%= link_to t(:label_volver_a_editar), edit_conf_path(@conf) %> |
+<%= link_to 'Listado de Parámetros', confs_path %>
