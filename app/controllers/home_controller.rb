@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
   layout "bazar"
-    require 'dalli'
+  require 'dalli'
   before_filter :require_user, :only => [:index]
+  
+  theme "bazar"
   
   # homepage de usuario 
   
