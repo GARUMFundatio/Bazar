@@ -14,7 +14,7 @@ body {
 .header {
     position: relative;
     width: 1100px;
-    height: 61px;
+    height: 60px;
     overflow: hidden;
     background-color: #3C97E8;
     margin: 0 auto !important;
@@ -24,7 +24,7 @@ body {
 .footer {
     position: relative;
     width: 1100px;
-    height: 61px;
+    height: 60px;
     overflow: hidden;
     background-color: #3C97E8;
     margin: 0 auto !important;
