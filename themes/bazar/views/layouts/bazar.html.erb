@@ -13,7 +13,7 @@
 	<%= javascript_include_tag :defaults %>
 	<%= javascript_include_tag "jquery-ui.js" %>
 	<%= javascript_include_tag "jquery.cycle.all.min.js" %>
-
+	<%= javascript_include_tag(current_theme_javascript_path('transify-min')) %>
 	<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 
 	
@@ -51,11 +51,9 @@
 
 <div class="container">
   <div class="header">
-    
-    <div class="caja-logo">
-    	<div id="logo"></div>
-      <div id="nombresitio">
-        <h1 id="title"><a
+    <div class="caja-logo ilumina">
+      <div id="caja-nombre">
+        <h1><a
           <% if !current_user.nil? %>
             href="/home"
           <% else %>
@@ -63,10 +61,12 @@
           <% end %>
           ><%= h BZ_param("Titular") %></a>
         </h1>
-        <h2 id="slogan"><%= h BZ_param("Subtitular") %></h2>
+        <h2><%= h BZ_param("Subtitular") %></h2>
       </div>
+      <div id="logo"><img src="/themes/bazar/images/logo-bazar.png"></div>
     </div>
 
+  
 
       <% if current_user.nil? %>
 			<div id="socioenlaces">
@@ -200,9 +200,21 @@
   </div> <!-- fin container -->
 
 
+<script type="text/javascript">
+$(document).ready(function() {
+
+  $('.transpa').transify({opacityOrig:.35});
+  $('.ilumina').transify({opacityOrig:.35,opacityNew:.90,fadeSpeed:100});
+
+});
+
+</script>
+
 
   </body>
 </html>
+
+
 
 
 
