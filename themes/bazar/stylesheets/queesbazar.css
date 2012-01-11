@@ -28,17 +28,23 @@ body {
     position: relative;
     width: 1100px;
     height: 60px;
+    background-color: #000;
     overflow: hidden;
-    background-color: #3C97E8;
     margin: 0 auto !important;
     text-align: left;	
 }
 
 .caja-logo {
   float: left;
-  width: 306px;
+  width: 190px;
   height: 60px;
-  background-color: #000;
+}
+
+.caja-entrar {
+  float: right;
+  width: 90px;
+  height: 60px;
+  margin: 17px 20px !important;
 }
 
 #logo {
@@ -88,9 +94,8 @@ a {
 /* enlaces publicos */ 
 
 #socioenlaces {
-  float: left;
+  float: right;
   bottom: 0px;
-  background-color: #000;
   width: 121px;
   height: 60px;
   margin: 0 0 0 1px;
