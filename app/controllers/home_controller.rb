@@ -36,6 +36,8 @@ class HomeController < ApplicationController
   
   def queesbazar
     
+    render :layout => false
+  
   end 
 
   def datos 
