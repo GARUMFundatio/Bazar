@@ -3,7 +3,10 @@ Bazar::Application.routes.draw do
 
   themes_for_rails
 
-  root :to => 'home#home'
+#  root :to => 'home#home'
+  root :to => 'home#queesbazar'
+
+
   match '/noticias.rss' => 'noticias#rss'
   match '/actividades.rss' => 'actividades#rss'
   match '/actividades.rss' => 'actividades#rss'

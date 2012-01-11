@@ -32,6 +32,11 @@ class HomeController < ApplicationController
     @actualizadas = Bazarcms::Empresa.ultimasactualizadas
 
   end 
+  
+  
+  def queesbazar
+    
+  end 
 
   def datos 
 
