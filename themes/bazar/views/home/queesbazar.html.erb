@@ -37,6 +37,31 @@
 	</script>
 	<% end %>
 	
+	<script type="text/javascript">
+	
+	function slideSwitch() {
+      var $active = $('#slideshow IMG.active');
+
+      if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+      // use this to pull the images in the order they appear in the markup
+      var $next =  $active.next().length ? $active.next(): $('#slideshow IMG:first');
+
+      // uncomment the 3 lines below to pull the images in random order
+
+      // var $sibs  = $active.siblings();
+      // var rndNum = Math.floor(Math.random() * $sibs.length );
+      // var $next  = $( $sibs[ rndNum ] );
+
+
+      $active.addClass('last-active');
+      $active.css({opacity: 1.0}).animate({opacity: 0.0}, 500);
+      $next.css({opacity: 0.0}).addClass('active').animate({opacity: 1.0}, 1000, function() { $active.removeClass('active last-active'); });
+      
+  }
+	
+</script>
+	
   </head>
 	
 		<% if !current_user.nil? %>
@@ -63,40 +88,126 @@
   </div> <!-- fin del header -->
 
  
-  <div id="content" class="span-24 last">	
-    <div class="body">
+  <div class="cuerpo trans20">
 
-      <div id="contenido" >
+    <div class="caja-titulo">
+      Bazar.<br/>
+      Oferta y demanda en red.
+    </div>
+    
+ 
+    <div class="caja-slide">
 
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
-indicadores y mensajes <br/>
+      <div id="slideshow">
 
-
+        <img src="/themes/bazar/images/queesbazar/img1.png" alt="" class="active" />
+        <img src="/themes/bazar/images/queesbazar/img2.png" alt="" />
+        <img src="/themes/bazar/images/queesbazar/img3.png" alt="" />
+        <img src="/themes/bazar/images/queesbazar/img4.png" alt="" />
+        <img src="/themes/bazar/images/queesbazar/img5.png" alt="" />
       </div>
+    </div>
+  
+    <div class="caja-des">
+      Bazar permite a tu empresa 
+      acceder a un mercado en red 
+      donde se ofrecen y demandan productos 
+      y servicios.
+      
+    </div>
 
+    <div class="caja-entrar2 trans40" >
+      <div class="caja-entrar2-corazon">
+        <img src="/themes/bazar/images/queesbazar/corazon.png">
+      </div>
+      <div class="caja-entrar2-texto">
+        Solicita tu entrada en 
+        un bazar
+      </div>
+    </div>
+    
+  </div>
+  <div class="cuerpo2 trans20">  
+
+    <div class="caja-oferta trans20">
+      <div class="oferta-total">3.463</div>
+      <div class="oferta-texto">ofertas</div>
+    </div>
+    
+    <div class="caja-oferta trans20">
+      <div class="oferta-total">5.674</div>
+      <div class="oferta-texto">demandas</div>
+    </div>
+
+    <div class="caja-empresas trans20">
+      <div class="empresas-total">1.463</div>
+      <div class="empresas-texto">empresas en Bazar</div>
+    </div>
+
+    <div class="caja-empresas trans20">
+      <div class="empresas-total">534</div>
+      <div class="empresas-texto">bazares conectados</div>
+    </div>
+
+    <div class="caja-textos">
+      <div class="textos-titulo">¿Qué ofrece?</div>
+      <div class="textos-parrafo">
+        <p>Busca y publica ofertas y
+          demandas. Negocia, compra y
+          vende. Sigue la actividad de
+          las empresas que te interesan
+          y encuentra clientes y mejores
+          proveedores en cualquier 
+          parte del mundo. </p>
+        <p>Un escaparate mundial para
+          tu empresa</p>
+      </div>
+    </div>
+
+
+    <div class="caja-textos">
+      <div class="textos-titulo">Preguntas</div>
+      <div class="textos-parrafo">
+        <p>Busca y publica ofertas y
+          demandas. Negocia, compra y
+          vende. Seguir la actividad y 
+          comunicarse con las 
+          empresas que nos interesan.
+          Encontrar clientes y mejores
+          proveedores en cualquier parte
+          del mundo. Conocer el nivel
+          de confianza de cada empresa</p>
+      </div>
+    </div>
+
+
+    <div class="caja-textos">
+      <div class="textos-titulo">Crear un bazar</div>
+      <div class="textos-parrafo">
+        <p>Si tienes conocimientos de
+          software libre y Ruby on Rails
+          puedes crear un Bazar para 
+          las empresas de tu entorno.</p>
+        <p>En esta página tienes toda la 
+          documentación y el código 
+          fuente: </p>
+        <p><a href="http://www.garumfundatio.org/bazar">Documentación y código para instalar un Bazar.</a></p>
+      </div>
     </div>
 
   </div>
 
+
     <div class="footer ilumina2">
 
       <div class="caja-logo">
-        <div id="logo"><img src="/themes/bazar/images/queesbazar/logo-garum.png" ></div>
+        <div id="logo"><img src="/themes/bazar/images/queesbazar/logo-garum.png"></div>
       </div> <!-- fin caja logo -->
 
 
 
-      <div id="socioenlaces" style="width:360px;">
-        <a href="http://garumfundatio.org/bazar">bazar@garumfundatio.org</a> 
+      <div id="socioenlaces" class="ilumina2">
+        <a href="mailto:bazar@garumfundatio.org"><img src="/themes/bazar/images/queesbazar/correo.png"> bazar@garumfundatio.org</a> 
       </div>
     
     </div> <!-- fin footer-->
@@ -109,10 +220,20 @@ indicadores y mensajes <br/>
 $(document).ready(function() {
 
   $('.transpa').transify({opacityOrig:.35});
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans40').transify({opacityOrig:.40});
   $('.ilumina').transify({opacityOrig:.35,opacityNew:.15,fadeSpeed:500});
-  $('.ilumina2').transify({opacityOrig:.70,opacityNew:.65,fadeSpeed:500});
-  $('.iluminafondo').transify({opacityOrig:.99});
+  $('.ilumina2').transify({opacityOrig:.70,opacityNew:.55,fadeSpeed:500});
+  // $('.iluminafondo').transify({opacityOrig:.99});
+  
+
+
+  $(function() {
+    setInterval( "slideSwitch()", 4000 );
+  });
+ 
  });
+ 
  
 </script>
 
