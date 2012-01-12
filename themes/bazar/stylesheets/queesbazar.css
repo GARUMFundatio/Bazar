@@ -171,7 +171,6 @@ a {
     overflow: hidden;
     margin: 20px  auto auto auto;
     padding-bottom: 1px;
-    background-color: #000;
     text-align: left;	
 }
 .caja-totales {
@@ -181,8 +180,8 @@ a {
   height: 243px;
   margin: 0px 0 0 0px;
   text-align: left;
-  padding-top: 1px;
-  margin-left: 1px;
+  padding-top: 0px;
+  margin-left: 0px;
   
   color: #ffffff;
   
@@ -192,17 +191,18 @@ a {
 }
 
 .caja-oferta {
-  float: top;
+  float: left;
   bottom: 0px;
-  width: 121px;
+  width: 120px;
   height: 80px;
-  margin: 0px 0 0 0px;
+  margin: 0px 1px 1px 0px;
   text-align: left;
+/*
   padding-top: 1px;
   margin-left: 1px;
-  
+*/  
   color: #ffffff;
-  
+  background-color: #000;
   font-family: Arial,sans-serif;
   font-weight: bold;
   font-size: 15px;
@@ -211,11 +211,14 @@ a {
 .oferta-total {
   float: left;
   bottom: 0px;
-  width: 121px;
+  width: 120px;
   height: 40px;
-  margin: 0px 0 0 0px;
+  margin: 0px 0 0px 0px;
   text-align: center;
+ 
+/*  
   padding-top: 18px;
+  */
   
   color: #ffffff;
   opacity:.50;
@@ -230,8 +233,8 @@ a {
 .oferta-texto {
   float: left;
   bottom: 0px;
-  width: 121px;
-  height: 40px;
+  width: 120px;
+  height: 39px;
   padding-top: 1px;
   margin: 0px 0 0 0px;
   text-align: center;
@@ -258,6 +261,7 @@ a {
   margin-left: 1px;
   
   color: #ffffff;
+  background-color: #000;
   
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -272,6 +276,7 @@ a {
   margin: 0px 0 0 0px;
   text-align: left;
   padding-top: 18px;
+  padding-left: 15px;
   
   color: #ffffff;
   opacity:.50;
@@ -289,6 +294,8 @@ a {
   width: 243px;
   height: 40px;
   padding-top: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin: 0px 0 0 0px;
   text-align: left;
   
@@ -299,7 +306,7 @@ a {
   
   font-family: Arial,sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 
@@ -314,6 +321,7 @@ a {
   margin-left: 1px;
   
   color: #ffffff;
+  background-color: #000;
   
   font-family: Arial,sans-serif;
   font-weight: bold;
