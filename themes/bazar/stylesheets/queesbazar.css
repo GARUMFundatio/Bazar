@@ -177,7 +177,7 @@ a {
 .caja-totales {
   float: left;
   bottom: 0px;
-  width: 241px;
+  width: 243px;
   height: 243px;
   margin: 0px 0 0 0px;
   text-align: left;
@@ -192,9 +192,9 @@ a {
 }
 
 .caja-oferta {
-  float: left;
+  float: top;
   bottom: 0px;
-  width: 141px;
+  width: 121px;
   height: 80px;
   margin: 0px 0 0 0px;
   text-align: left;
@@ -211,7 +211,7 @@ a {
 .oferta-total {
   float: left;
   bottom: 0px;
-  width: 141px;
+  width: 121px;
   height: 40px;
   margin: 0px 0 0 0px;
   text-align: center;
@@ -230,7 +230,7 @@ a {
 .oferta-texto {
   float: left;
   bottom: 0px;
-  width: 141px;
+  width: 121px;
   height: 40px;
   padding-top: 1px;
   margin: 0px 0 0 0px;
@@ -323,11 +323,12 @@ a {
 .empresas-total {
   float: left;
   bottom: 0px;
-  width: 141px;
+  width: 243px;
   height: 40px;
   margin: 0px 0 0 0px;
-  text-align: center;
-  padding-top: 18px;
+  text-align: left;
+  padding-top: 38px;
+  padding-left: 40px;
   
   color: #ffffff;
   opacity:.50;
@@ -342,11 +343,12 @@ a {
 .empresas-texto {
   float: left;
   bottom: 0px;
-  width: 141px;
+  width: 243px;
   height: 40px;
   padding-top: 1px;
+  padding-left: 40px;
   margin: 0px 0 0 0px;
-  text-align: center;
+  text-align: left;
   
   color: #ffffff;
   opacity:.50;
