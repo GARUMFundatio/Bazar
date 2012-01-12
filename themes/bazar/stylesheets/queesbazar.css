@@ -290,11 +290,10 @@ a {
 .textos-parrafo {
   float: left;
   bottom: 0px;
-  width: 243px;
+  width: 220px;
   height: 40px;
   padding-top: 1px;
   padding-left: 15px;
-  padding-right: 15px;
   margin: 0px 0px 0px 0px;
   text-align: left;
   
@@ -349,12 +348,13 @@ a {
 .empresas-texto {
   float: left;
   bottom: 0px;
-  width: 243px;
+  width: 190px;
   height: 39px;
   /*
   padding-top: 1px;
   */
   padding-left: 40px;
+  padding-right: -40px;
   margin: 0px 0 0 0px;
   text-align: left;
   
