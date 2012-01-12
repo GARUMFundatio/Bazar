@@ -236,7 +236,7 @@ a {
   float: left;
   bottom: 0px;
   width: 243px;
-  height: 243px;
+  height: 235px;
   margin: 0px 0 0 0px;
   text-align: left;
   padding-top: 1px;
@@ -249,7 +249,43 @@ a {
   font-size: 15px;
 }
 
+.textos-titulo {
+  float: left;
+  bottom: 0px;
+  width: 243px;
+  height: 40px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  padding-top: 18px;
+  
+  color: #ffffff;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 27px;
+}
 
+.textos-parrafo {
+  float: left;
+  bottom: 0px;
+  width: 243px;
+  height: 40px;
+  padding-top: 1px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  
+  color: #ffffff;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
 /* enlaces publicos */ 
 
 #socioenlaces {
