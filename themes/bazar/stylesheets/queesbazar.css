@@ -220,9 +220,9 @@ a {
   padding-top: 8px;
   
   color: #ffffff;
-  opacity:.50;
-  filter:alpha(opacity=50);
-  filter: “alpha(opacity=50)”;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
   
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -239,9 +239,9 @@ a {
   text-align: center;
   
   color: #ffffff;
-  opacity:.50;
-  filter:alpha(opacity=50);
-  filter: “alpha(opacity=50)”;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
   
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -278,9 +278,9 @@ a {
   padding-left: 15px;
   
   color: #ffffff;
-  opacity:.50;
-  filter:alpha(opacity=50);
-  filter: “alpha(opacity=50)”;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
   
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -298,9 +298,9 @@ a {
   text-align: left;
   
   color: #ffffff;
-  opacity:.50;
-  filter:alpha(opacity=50);
-  filter: “alpha(opacity=50)”;
+  opacity:.40;
+  filter:alpha(opacity=40);
+  filter: “alpha(opacity=40)”;
   
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -336,9 +336,9 @@ a {
   padding-left: 40px;
 
   color: #ffffff;
-  opacity:.50;
-  filter:alpha(opacity=50);
-  filter: “alpha(opacity=50)”;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
   
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -359,9 +359,9 @@ a {
   text-align: left;
   
   color: #ffffff;
-  opacity:.50;
-  filter:alpha(opacity=50);
-  filter: “alpha(opacity=50)”;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
   
   font-family: Arial,sans-serif;
   font-weight: bold;
