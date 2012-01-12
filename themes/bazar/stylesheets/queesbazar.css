@@ -375,7 +375,8 @@ a {
     overflow: hidden;
     /* margin: 50px  auto auto auto; 
     margin-left: 1px;  */
-    padding-bottom: 1px;
+    padding-top: 55px;
+    padding-bottom: 55px;
     text-align: left;	
 }
 
@@ -396,6 +397,25 @@ a {
   font-size: 25px;
     
 }
+
+.texto-cerca {
+  
+  float: left;
+  bottom: 0px;
+  width: 200px;
+  height: 60px;
+  margin: 15px 0 0 10px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+    
+}
+
 
 .caja-bazar {
   float: left;
