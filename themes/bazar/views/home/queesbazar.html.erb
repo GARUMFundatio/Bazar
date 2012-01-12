@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <% cache "header", {:expires_in => 1.hours.to_i} do %>
+
   <head>
 	<meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
 	<meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
@@ -19,8 +19,6 @@
 	
 	<%= csrf_meta_tag %>
 	
-	<% end %>
-
 	<% if BZ_param("BazarId").to_i == 2 %>
 	<script type="text/javascript">
 
@@ -64,16 +62,17 @@
 	
   </head>
 	
-		<% if !current_user.nil? %>
-			<body class="logueado"><!-- si usuario logueado -->
-			<% if !current_user_is_admin %>
-				<body class="admin"><!-- si usuario administrador -->
-			<% end %>
-		<% else %>
-			<body class="anonimo"><!-- si es anónimo -->
+	<% if !current_user.nil? %>
+		<body class="logueado"><!-- si usuario logueado -->
+		<% if !current_user_is_admin %>
+			<body class="admin"><!-- si usuario administrador -->
 		<% end %>
+	<% else %>
+		<body class="anonimo"><!-- si es anónimo -->
+	<% end %>
 
-
+<body>
+  
 <div class="container">
   <div class="header iluminafondo">
     
@@ -199,9 +198,26 @@
       </div>
     </div>
 
+<br/><br/>
+    <div class="cuerpo3">  
 
+      <div class="caja-cerca">
+      Bazares<br/> Cerca de ti
+      </div>
 
-  </div>
+      <% for cluster in @clusters %>
+        <div class="caja-bazar trans20">
+          <div class="bazar-titulo">
+            <%= cluster[0] %>
+          </div>
+          <div class="bazar-totales">
+            <%= cluster[1] %> empresas<br/>
+            <%= cluster[2] %> ofertas,
+            <%= cluster[3] %> demandas<br/>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
 
     <div class="footer ilumina2">

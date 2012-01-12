@@ -215,7 +215,6 @@ a {
   height: 40px;
   margin: 0px 0 0px 0px;
   text-align: center;
- 
 
   padding-top: 8px;
   
@@ -362,6 +361,94 @@ a {
   opacity:.60;
   filter:alpha(opacity=60);
   filter: “alpha(opacity=60)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* cuerpo 3 bazares cerca de ti */ 
+
+.cuerpo3 {
+    position: relative;
+    width: 975px;
+    overflow: hidden;
+    /* margin: 50px  auto auto auto; 
+    margin-left: 1px;  */
+    padding-bottom: 1px;
+    text-align: left;	
+}
+
+.caja-cerca {
+  
+  float: left;
+  bottom: 0px;
+  width: 244px;
+  height: 80px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+    
+}
+
+.caja-bazar {
+  float: left;
+  bottom: 0px;
+  width: 242px;
+  height: 80px;
+  margin: 0px 1px 1px 0px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  background-color: #000;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.bazar-titulo {
+  float: left;
+  bottom: 0px;
+  width: 240px;
+  height: 20px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 15px;
+  
+  color: #ffffff;
+  opacity:.80;
+  filter:alpha(opacity=80);
+  filter: “alpha(opacity=80)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.bazar-totales {
+  float: left;
+  bottom: 0px;
+  width: 210px;
+  height: 39px;
+
+  padding-left: 15px;
+  padding-right: -40px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  
+  color: #ffffff;
+  opacity:.40;
+  filter:alpha(opacity=40);
+  filter: “alpha(opacity=40)”;
   
   font-family: Arial,sans-serif;
   font-weight: bold;

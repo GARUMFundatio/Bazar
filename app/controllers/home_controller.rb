@@ -43,6 +43,21 @@ class HomeController < ApplicationController
     @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
     where tipo = 'D' order by cluster_id, oferta_id ") 
     
+    clusters = Cluster.where ("activo = 'S'").order("empresas desc")
+    
+    @clusters = []
+    
+    for cluster in clusters
+      lin = []
+      lin << cluster.nombre
+      lin << cluster.empresas
+      lin << Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+      where tipo = 'O' and cluster_id = #{cluster.id} order by cluster_id, oferta_id ")
+      lin << Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+      where tipo = 'D' and cluster_id = #{cluster.id} order by cluster_id, oferta_id ")
+      @clusters << lin
+    end
+    
     render :layout => false
   
   end 
