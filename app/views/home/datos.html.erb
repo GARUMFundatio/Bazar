@@ -100,8 +100,9 @@ ploto1 = $.jqplot('ofe1', [lineo1], {
 
 $.jqplot.config.enablePlugins = true;
 lineo2 = [];
-lineo2[0] = ['Ofertas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'O'") %> ];
-lineo2[1] = ['Demandas', <%= Bazarcms::Oferta.count_by_sql("select count(*) from ofertas where tipo = 'D'") %> ];
+lineo2[0] = ['Ofertas', <%= Bazarcms::Oferta.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+where tipo = 'O' order by cluster_id, oferta_id") %> ];
+lineo2[1] = ['Demandas', <%= Bazarcms::Oferta.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados where tipo = 'D' order by cluster_id, oferta_id") %> ];
 
 
 ploto1 = $.jqplot('ofe2', [lineo1], {

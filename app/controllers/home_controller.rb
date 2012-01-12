@@ -38,6 +38,11 @@ class HomeController < ApplicationController
     
     @totalempresas = Cluster.count_by_sql("select sum(empresas) from clusters where activo = 'S' ")      
     @totalbazares = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ") 
+    @totalofertas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+    where tipo = 'O' order by cluster_id, oferta_id ") 
+    @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+    where tipo = 'D' order by cluster_id, oferta_id ") 
+    
     render :layout => false
   
   end 
