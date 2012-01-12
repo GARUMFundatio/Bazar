@@ -36,6 +36,8 @@ class HomeController < ApplicationController
   
   def queesbazar
     
+    @totalempresas = Cluster.count_by_sql("select sum(empresas) from clusters where activo = 'S' ")      
+    @totalbazares = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ") 
     render :layout => false
   
   end 
