@@ -1,7 +1,7 @@
 <div id="caja-login">
  
   <% if @user_session.errors.any? %>
-	<div class="error-login">
+	<div class="login-error">
       <% @user_session.errors.full_messages.each do |msg| %>
         <%= msg %><br/>
       <% end %>
@@ -13,7 +13,7 @@
 
   <p><%= f.text_field :login, :placeholder => "Tu email", :class => "login-input" %></p>
   <p><%= f.password_field :password, :placeholder => "Tu contraseña", :class => "login-input" %></p>
-  <%= f.hidden_field :remember_me, :value => true %>
+  <%= f.hidden_field :remember_me, :value => :true %>
 
   <%= link_to("Has olvidado tu contraseña?", new_password_reset_path, :class => "login-enlace") -%>
   

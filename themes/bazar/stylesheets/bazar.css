@@ -89,13 +89,24 @@ a {
   
 }
 
+.login-error {
+  color: #CC3300;
+  margin: 20px 0px 0px 50px;
+  width:380px;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 14px;
+}
 .login-input {
   margin: 20px 0px 10px 50px;
-  padding:4px; 
-  width:400px;
+  padding:14px; 
+  width:380px;
   height: 50px; 
+  color: #14668C ;
   font-family: arial, sans-serif; 
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 24px;
+  
 }
 
 .login-boton {
