@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <% cache "header", {:expires_in => 1.hours.to_i} do %>
   <head>
 	<meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
 	<meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
@@ -14,12 +13,11 @@
 	<%= javascript_include_tag "jquery-ui.js" %>
 	<%= javascript_include_tag "jquery.cycle.all.min.js" %>
 	<%= javascript_include_tag(current_theme_javascript_path('transify-min')) %>
+	<%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
 	<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 
 	
 	<%= csrf_meta_tag %>
-	
-	<% end %>
 
 	<% if BZ_param("BazarId").to_i == 2 %>
 	<script type="text/javascript">
