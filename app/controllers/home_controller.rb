@@ -55,6 +55,7 @@ class HomeController < ApplicationController
       where tipo = 'O' and cluster_id = #{cluster.id} order by cluster_id, oferta_id ")
       lin << Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
       where tipo = 'D' and cluster_id = #{cluster.id} order by cluster_id, oferta_id ")
+      lin << cluster.url
       @clusters << lin
     end
     

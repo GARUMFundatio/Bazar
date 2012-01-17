@@ -80,8 +80,8 @@
      <div id="logo"><img src="/themes/bazar/images/queesbazar/logo-garum.png" ></div>
     </div> <!-- fin caja logo -->
 
-    <div class="caja-entrar">
-     <div id="entrar"><a href="/login"><img src="/themes/bazar/images/queesbazar/entrar.png" ></a></div>
+    <div class="caja-entrar ilumina2">
+     <div id="entrar"><a href="/login" class="ilumina2"><img src="/themes/bazar/images/queesbazar/candado.png" > Entrar</a></div>
     </div> <!-- fin caja entrar -->
 
   </div> <!-- fin del header -->
@@ -115,13 +115,13 @@
       
     </div>
 
-    <div class="caja-entrar2 trans40" >
+    <div class="caja-entrar2 ilumina40" >
       <div class="caja-entrar2-corazon">
         <img src="/themes/bazar/images/queesbazar/corazon.png">
       </div>
       <div class="caja-entrar2-texto">
-        Solicita tu entrada en 
-        un bazar
+        <a href="/registrarse">Solicita tu entrada en 
+        el bazar</a>
       </div>
     </div>
     
@@ -208,7 +208,7 @@
       </div>
 
       <% for cluster in @clusters %>
-        <div class="caja-bazar trans20">
+        <div class="caja-bazar ilumina20" onClick="window.open('<%= cluster[4] -%>','_blank');">
           <div class="bazar-titulo">
             <%= cluster[0] %>
           </div>
@@ -248,6 +248,9 @@ $(document).ready(function() {
   $('.trans40').transify({opacityOrig:.40});
   $('.ilumina').transify({opacityOrig:.35,opacityNew:.15,fadeSpeed:500});
   $('.ilumina2').transify({opacityOrig:.70,opacityNew:.55,fadeSpeed:500});
+  $('.ilumina40').transify({opacityOrig:.40,opacityNew:.20,fadeSpeed:500});
+  $('.ilumina20').transify({opacityOrig:.20,opacityNew:.40,fadeSpeed:500});
+  
   // $('.iluminafondo').transify({opacityOrig:.99});
   
 

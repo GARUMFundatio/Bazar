@@ -42,9 +42,23 @@ body {
 
 .caja-entrar {
   float: right;
-  width: 90px;
+  width: 120px;
   height: 60px;
   margin: 17px 20px !important;
+}
+
+.caja-entrar a {
+  width: 90px;
+  height: 60px;
+  margin: 17px 0px !important;
+  color: #fff;
+  font-family: Helvetica,sans-serif;
+  font-weight: bold;
+  font-size:15px;
+  opacity:.70;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+  text-decoration:none;
 }
 
 #logo {
@@ -163,6 +177,14 @@ a {
   margin-top: 4px;
   margin-right: 10px;
   overflow: hidden;
+}
+
+.caja-entrar2-texto a {
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 .cuerpo2 {
