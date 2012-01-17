@@ -4,6 +4,10 @@ acts_as_authentic
 
 has_and_belongs_to_many :roles, :join_table => 'roles_users'
 
+def self.find_by_login_or_email(login)
+   find_by_login(login) || find_by_email(login)
+end
+
 def deliver_password_reset_instructions!
   reset_perishable_token!
   Notifier.deliver_password_reset_instructions(self)
