@@ -523,6 +523,94 @@ a {
   font-size: 14px;
 }
 
+.cuerpo4 {
+    position: relative;
+    width: 975px;
+    height: 80px;
+    background-color: #000;
+    overflow: hidden;
+/*    padding-top: 55px;
+*/
+    margin-bottom: 55px;
+    text-align: center;	
+}
+
+
+.texto-solicitar {
+  
+  float: left;
+  bottom: 0px;
+  width: 960px;
+  height: 60px;
+  margin: 25px 0  auto 0;
+  text-align: center;
+  overflow: hidden;
+  
+  color: #ffffff;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+    
+}
+
+
+.cuerpo5 {
+    position: relative;
+    width: 975px;
+    height: 243px;
+    background-color: #000;
+    overflow: hidden;
+/*    padding-top: 55px;
+*/
+    margin-bottom: 55px;
+    text-align: center;	
+}
+
+.titulo-porque {
+  
+  float: left;
+  bottom: 0px;
+  width: 960px;
+  height: 50px;
+  margin: 25px 10px  auto 30px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+    
+}
+
+
+.texto-porque {
+  
+  float: left;
+  bottom: 0px;
+  width: 960px;
+  height: 180px;
+  margin: 2px 1px  auto 30px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  opacity:.40;
+  filter:alpha(opacity=40);
+  filter: “alpha(opacity=40)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+    
+}
+
+
 /* enlaces publicos */ 
 
 #caja-correo {
