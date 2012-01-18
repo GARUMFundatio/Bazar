@@ -78,7 +78,24 @@
       </div>
       <div id="socioenlaces" class="ilumina">
         <a class="login-link" href="/login"><%=t(:text_entrar)%></a>
-      </div>      
+      </div>
+    <% else %>
+      <div id="socioenlaces" class="ilumina">
+        <a href="/home/bazares"><%=t(:text_ofertas)%></a>
+      </div>
+      <div id="socioenlaces"  class="ilumina">
+        <a href="/home/datos"><%=t(:text_demandas)%></a>
+      </div>
+      <div id="socioenlaces" class="ilumina">
+        <a href="http://garumfundatio.org/faq-bazar"><%=t(:text_empresas)%></a>
+      </div>
+      <div id="socioenlaces" class="ilumina">
+        <a class="login-link" href="/login"><%=t(:text_tu_pagina)%></a>
+      </div>
+      <div id="socioenlaces" class="ilumina" style="width:300px;">
+        <a class="login-link" href="/login"><%=t(:text_buscar_empresas_ofertas_o_demandas)%></a>
+      </div>
+          
     <% end %>
       
   </div> <!-- fin del header -->
