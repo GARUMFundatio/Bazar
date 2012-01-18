@@ -97,6 +97,7 @@ a {
   font-weight: bold;
   font-size: 14px;
 }
+
 .login-input {
   margin: 20px 0px 10px 50px;
   padding:14px; 
@@ -136,6 +137,11 @@ a {
     cursor: pointer;
 }
 
+.login-boton.cambiar {
+  
+  margin-left: 250px ;
+}
+
 .login-enlace {
   
   width: 231px;
@@ -155,7 +161,10 @@ a {
   color: #aaa;
 }
 
-
+.titulo {
+  
+  
+}
 
 /* enlaces publicos */ 
 
