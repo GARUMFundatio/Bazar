@@ -1,4 +1,4 @@
-<div id="tabs-6content">
+<div id="tabs-6content" style="width: 460px; margin-bottom: 50px;">
 
 <div class="edit_user"> <!-- FIN alta usuario -->
 <%= form_for(@user, :url => "/altaregistrarse") do |f| %>
@@ -6,7 +6,7 @@
 
   <br />
 
-    <div id="error_explanation">
+    <div id="error_explanation" class="login-error">
       <h2><%= pluralize(@user.errors.count, "error") %> &bull; <%=t(:text_no_se_ha_podido_salvar_los_datos_del_usuario)%></h2>
 
       <ul>
@@ -17,30 +17,34 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <b><%= f.label :usuario %>:</b> <%= @user.login %><br />
-	<%= f.text_field :login %>
+    <%= f.text_field :login, :placeholder => "usuario", :class => "login-input" %>
   </div>
 
   <div class="field">
-    <b><%= f.label :correo %>:</b><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :placeholder => "tu correo", :class => "login-input" %>
   </div>
 
   <div class="field">
-    <b><%= f.label :password %>:</b><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :placeholder => "tu contraseña", :class => "login-input" %>
   </div>
 
   <div class="field">
-    <b><%= f.label :confirmación_password %>:</b><br />
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, :placeholder => "Confirma tu contraseña", :class => "login-input" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit 'Alta Usuario' %>
+  <div class="actions" style="float: right;">
+    <%= f.submit 'Registrarse en Bazar', :class => "login-boton" %>
   </div>
 <% end %>
 </div> <!-- FIN alta usuario -->
 
 </div>
+
+<br/>
+<br/>
+
+<script>
+    $('input[placeholder]').placeholder();
+</script>

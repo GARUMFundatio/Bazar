@@ -1,7 +1,7 @@
 <div>
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="login-error">
       <h2><%= pluralize(@user.errors.count, "error") %> <%=t(:text_no_se_ha_podido_salvar_los_datos_del_usuario)%></h2>
 
       <ul>
@@ -47,3 +47,9 @@
   </div>
 <% end %>
 </div>
+
+<script>
+    $('input[placeholder]').placeholder();
+</script>
+
+
