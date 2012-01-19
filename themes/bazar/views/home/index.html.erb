@@ -1,14 +1,9 @@
 
-
 <div id="cajabusqueda">
 <div class="demo">
 
-<p class="busqueda-principal">
-<input id="busca" name="busqueda" size="30" type="text">
-
-</p>
-
 <a id="busqueda-link" href="#busqueda-busqueda"><%=t(:text_busqueda_avanzada)%></a>
+
 <script>
 $('#busqueda-link').click(function() {
   $('#avanzada').slideToggle(250);
@@ -19,11 +14,6 @@ $('#check-empresas2').attr('checked', true);
 
 </script>
 
-
-	<style>
-	#demo-frame > div.demo { padding: 1px !important; };
-	</style>
-	
 	<script>
 	<%= Bazarcms::Empresasdato.listaRE %>
 	<%= Bazarcms::Empresasdato.listaRD %>

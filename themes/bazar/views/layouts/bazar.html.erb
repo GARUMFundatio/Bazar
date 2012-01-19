@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
-	<meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	
-	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-	
-	<title><%= h BZ_param("Titular") %></title>
-	<%= javascript_include_tag :defaults %>
-	<%= javascript_include_tag "jquery-ui.js" %>
-	<%= javascript_include_tag "jquery.cycle.all.min.js" %>
-	<%= javascript_include_tag(current_theme_javascript_path('transify-min')) %>
-	<%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
-	<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+  <meta name="description" content="proyecto bazar, garum fundatio, agilizando mercados <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
+  <meta name="keywords" content="proyecto bazar, garum, garum fundatio, marketplace, agilizando mercados, <%= h BZ_param("Titular") %>, <%= h BZ_param("Subtitular") %>" /> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+  
+  <title><%= h BZ_param("Titular") %></title>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "jquery-ui.js" %>
+  <%= javascript_include_tag "jquery.cycle.all.min.js" %>
+  <%= javascript_include_tag(current_theme_javascript_path('transify-min')) %>
+  <%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
+  <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 
-	
-	<%= csrf_meta_tag %>
+  
+  <%= csrf_meta_tag %>
 
-	<% if BZ_param("BazarId").to_i == 2 %>
-	<script type="text/javascript">
+  <% if BZ_param("BazarId").to_i == 2 %>
+  <script type="text/javascript">
 
-	  var _gaq = _gaq || [];
-  	  _gaq.push(['_setAccount', 'UA-215887-21']);
-	  _gaq.push(['_trackPageview']);
+    var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-215887-21']);
+    _gaq.push(['_trackPageview']);
 
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-	</script>
-	<% end %>
-	
+  </script>
+  <% end %>
+  
   </head>
-	
-		<% if !current_user.nil? %>
-			<body class="logueado"><!-- si usuario logueado -->
-			<% if !current_user_is_admin %>
-				<body class="admin"><!-- si usuario administrador -->
-			<% end %>
-		<% else %>
-			<body class="anonimo"><!-- si es anónimo -->
-		<% end %>
+  
+    <% if !current_user.nil? %>
+      <body class="logueado"><!-- si usuario logueado -->
+      <% if !current_user_is_admin %>
+        <body class="admin"><!-- si usuario administrador -->
+      <% end %>
+    <% else %>
+      <body class="anonimo"><!-- si es anónimo -->
+    <% end %>
 
 
 <div class="container">
@@ -101,24 +101,24 @@
   </div> <!-- fin del header -->
 
       <% if !current_user.nil? %>
-			<div id="nav-usuario">
-				<div class="user-links">
-				<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
-				<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
-				</div>
-				<div class="user-messages">
-				<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones sin leer') %>
-				<strong><%= Mensaje.notificacionessinleer(current_user.id).count -%></strong>
+      <div id="nav-usuario">
+        <div class="user-links">
+        <%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
+        <%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
+        </div>
+        <div class="user-messages">
+        <%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones sin leer') %>
+        <strong><%= Mensaje.notificacionessinleer(current_user.id).count -%></strong>
 
-				<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M", :class => 'msgs-link', :title => 'Mensajes sin leer') %>
-				<strong><%= Mensaje.mensajessinleer(current_user.id).count -%></strong>
+        <%= link_to(image_tag('email.png'),  "/mensajes?tipo=M", :class => 'msgs-link', :title => 'Mensajes sin leer') %>
+        <strong><%= Mensaje.mensajessinleer(current_user.id).count -%></strong>
 
-				</div>
-				<div class="nav-site">
+        </div>
+        <div class="nav-site">
                 <%= link_to(image_tag('icono-home.png'), "/home", :class => 'home-link', :title => 'Página Principal') %>
                 <%= link_to(image_tag('icono-usuario.png'), edit_user_path(current_user.id), :class => 'account-link', :title => 'Mi Cuenta') %>
                 <%= link_to(image_tag('group.png'), edit_bazarcms_empresa_path(current_user.id), :class => 'empresa-link', :title => 'Mi Empresa') %>
-		<%= link_to(image_tag('favorito.png'), "/favoritos", :class => 'favoritos-link', :title => 'Ver Empresas, ofertas y demandas que sigue') %>
+    <%= link_to(image_tag('favorito.png'), "/favoritos", :class => 'favoritos-link', :title => 'Ver Empresas, ofertas y demandas que sigue') %>
                 <%= link_to(image_tag('icono-historial.png'), bazarcms_empresasconsultas_path, :class => 'historial-link', :title => 'Historial de Consultas Realizadas') %>
                 <%= link_to(image_tag('add.png'), "/bazarcms/publicaroferta", :class => 'crear-oferta-link', :title => 'Crear Oferta/Demanda') %>
                 <% if current_user_is_admin || current_user_is_dinamizador %>
@@ -127,31 +127,31 @@
                 </div>
             </div>
       <% end %>
-	  
-	  <% if current_user_is_admin || current_user_is_dinamizador %>
+    
+    <% if current_user_is_admin || current_user_is_dinamizador %>
         <div id="nav-admin-container">
              <ul id="nav-admin">
-			  <% if current_user_is_admin %>	
+        <% if current_user_is_admin %>  
                  <li><a href="#"><%=t(:text_administrador)%></a>
-		            <ul>
-					  <li><%= link_to t(:label_usuarios), users_path %> </li>
-					  <li><%= link_to "Configuración del Sistema", confs_path %> </li>
-					  <li><%= link_to "Gestión Bazares", clusters_path %> </li>
-					  <li><%= link_to t(:label_notificacion_a_usuarios), '/notificacion?tipo=N' %> </li>
-					  <li><%= link_to "Actualización Información", '/updateinfo' %> </li>
-		            </ul>
+                <ul>
+            <li><%= link_to t(:label_usuarios), users_path %> </li>
+            <li><%= link_to "Configuración del Sistema", confs_path %> </li>
+            <li><%= link_to "Gestión Bazares", clusters_path %> </li>
+            <li><%= link_to t(:label_notificacion_a_usuarios), '/notificacion?tipo=N' %> </li>
+            <li><%= link_to "Actualización Información", '/updateinfo' %> </li>
+                </ul>
                  </li>
-			<% end %>
-		  	<% if current_user_is_dinamizador %>
+      <% end %>
+        <% if current_user_is_dinamizador %>
                  <li><a href="#"><%=t(:text_dinamizador)%></a>
-		            <ul class="links">
-						<li><%= link_to t(:label_usuarios), users_path %> </li>
-					    <li><%= link_to t(:label_mailing_a_usuarios), '/notificacion?tipo=M' %> </li>
-					    <li><%= link_to t(:label_noticias), noticias_path %> </li>
-		            </ul>
+                <ul class="links">
+            <li><%= link_to t(:label_usuarios), users_path %> </li>
+              <li><%= link_to t(:label_mailing_a_usuarios), '/notificacion?tipo=M' %> </li>
+              <li><%= link_to t(:label_noticias), noticias_path %> </li>
+                </ul>
                  </li>
             <% end %>
- 			</ul>
+       </ul>
         </div><!-- /#nav-admin-container -->
         
         <script>
@@ -161,53 +161,35 @@
         </script>
       <% end %>
  
-	  <div id="content" class="span-24 last">	
-			<div class="body">
+    <div id="content" class="span-24 last">  
+      <div class="body">
 
-			<div id="contenido" >
-				<%= content_for?(:bazarcontent) ? yield(:bazarcontent) : yield %>
-			</div>
-			<div id="sidebar" style="display:none" >
-	        <ul id="sidebar-items">
-			
-				<% if current_user.nil? %>
-				<h3><%=t(:text_rss)%></h3>
-				<ul class="links">
-					<li><%= image_tag('feed.png')-%> <%= link_to("Noticias", "/noticias.rss") -%></li>
-				</ul>
-			
-				<% end %>
+      <div id="contenido" >
+        <%= content_for?(:bazarcontent) ? yield(:bazarcontent) : yield %>
+      </div>
+      <div id="sidebar" style="display:none" >
+          <ul id="sidebar-items">
+      
+        <% if current_user.nil? %>
+        <h3><%=t(:text_rss)%></h3>
+        <ul class="links">
+          <li><%= image_tag('feed.png')-%> <%= link_to("Noticias", "/noticias.rss") -%></li>
+        </ul>
+      
+        <% end %>
 
-			  <li>
-							<% if !current_user.nil? %>
-							<ul id="user-menu" class="links">
-								<li class="user-links">
-								<%= link_to current_user.login,  edit_user_path(current_user.id), :class => 'user-link' %>
-								<%= link_to(image_tag('icono-logout.png'),  "/logout", :class => 'logout-link', :title => 'Cerrar Sesión') %>
-								</li>
-								<% cache "mensajesconta#{current_user.id}", {:expires_in => 5.minutes.to_i} do %>
-								<li class="user-messages">
-								<%= link_to(image_tag('notificacion.png'),  "/mensajes?tipo=N", :class => 'notif-link', :title => 'Notificaciones') %>
-								(<%= Mensaje.notificacionessinleer(current_user.id).count -%>/<%=  Mensaje.notificacionestotal(current_user.id).count -%>) 
-								
-								<%= link_to(image_tag('email.png'),  "/mensajes?tipo=M", :class => 'msgs-link', :title => 'Mensajes') %>
-								(<%= Mensaje.mensajessinleer(current_user.id).count -%>/<%=  Mensaje.mensajestotal(current_user.id).count -%>) 
+        <li>
+              <% if !current_user.nil? %>
 
-								</li>
-								<% end %>
-                            </ul>
-							<% end %>
-		          </li>	
-	          <li>
+              <% end %>
+              </li>  
+            <li>
 
-	        </ul>
-	     </div>	
-			</div>
-			
-			
-			
-			
-	  </div>
+          </ul>
+       </div>  
+      </div>
+
+    </div>
 
     <div class="footer">
 
