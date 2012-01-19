@@ -180,7 +180,17 @@ a {
 .caja-indice {
   position: relative;
   float: left;
-  width: 306px;
+  width: 246px;
+  
+  color: #000000;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  padding-left: 60px;
+  margin-bottom: 30px;
   
 }
 
