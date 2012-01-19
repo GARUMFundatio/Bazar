@@ -16,24 +16,28 @@
 
     <div class="seccion-menu">
       
-      <div class="seccion-menu-item ilumina5">
-        Ofertas recomendadas
+      <div class="seccion-menu-item ilumina5" >
+        <a href="#ofertas-recomendadas">Ofertas recomendadas</a>
       </div>
       
       <div class="seccion-menu-item ilumina5">
-        Demandas recomendadas
+        <a href="#demandas-recomendadas">Demandas recomendadas</a>
       </div>
       
       <div class="seccion-menu-item ilumina5">
-        Empresas interesantes
+        <a href="#empresas-interesantes">Empresas interesantes</a>
       </div>
       
       <div class="seccion-menu-item ilumina5">
-        Empresas nuevas en Bazar
+        <a href="#empresas-nuevas">Empresas nuevas en Bazar</a>
       </div>
       
       <div class="seccion-menu-item ilumina5">
-        Datos de este Bazar
+        <a href="#tu-empresa">Tu empresa en Bazar</a>
+      </div>
+
+      <div class="seccion-menu-item ilumina5">
+        <a href="#datos-bazar">Datos de este Bazar</a>
       </div>
       
     </div>
@@ -44,7 +48,7 @@
 
 <!-- sección ofertas recomendadas -->
 
-<div class="caja-seccion">
+<div class="caja-seccion" id="ofertas-recomendas">
   <div class="caja-indice">
   Ofertas <br/>recomendadas
   </div>
@@ -58,7 +62,7 @@
 
 <!-- sección demandas recomendadas -->
 
-<div class="caja-seccion">
+<div class="caja-seccion" id="demandas-recomendas">
   <div class="caja-indice">
   Demandas <br/>recomendadas
   </div>
@@ -73,7 +77,7 @@
 
 <!-- sección Empresas recomendadas -->
 
-<div class="caja-seccion">
+<div class="caja-seccion" id="empresas-recomendas">
   <div class="caja-indice">
   Empresas que <br/>pueden interesarte
   </div>
@@ -87,7 +91,7 @@
 
 <!-- sección Empresas nuevas -->
 
-<div class="caja-seccion">
+<div class="caja-seccion" id="empresas-nuevas">
   <div class="caja-indice">
   Empresas nuevas <br/>en tu bazar
   </div>
@@ -101,7 +105,7 @@
 
 <!-- sección tu empresa -->
 
-<div class="caja-seccion">
+<div class="caja-seccion" id="tu-empresa">
   <div class="caja-indice">
   Tu empresa en el <br/> bazar
   </div>
@@ -115,7 +119,7 @@
 
 <!-- datos del bazar  -->
 
-<div class="caja-seccion">
+<div class="caja-seccion" id="datos-bazar">
   <div class="caja-indice">
   Los datos de <br/> <%= h BZ_param("Titular") %>
   </div>

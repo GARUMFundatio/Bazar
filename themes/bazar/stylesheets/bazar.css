@@ -236,7 +236,7 @@ a {
   float: left;
   color: #ffffff;
   width: 120px;
-  height: 40px;
+  height: 45px;
   background-color: #000;
   margin-right: 1px;
   font-family: Arial,sans-serif;
@@ -244,10 +244,19 @@ a {
   font-size: 13px;
   text-align: center;
   text-decoration: none;
-  padding-top: 20px;
+  padding-top: 15px;
   
 }
 
+.seccion-menu-item a {
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  
+}
 /* enlaces publicos */ 
 
 #socioenlaces {
