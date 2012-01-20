@@ -294,6 +294,7 @@ a {
   text-decoration: none;
   padding-top: 15px;
   padding-left: 30px;  
+  overflow: hidden;
 }
 
 .cajon-cuerpo {
