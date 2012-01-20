@@ -333,6 +333,41 @@ a {
   padding-left: 30px;  
 }
 
+.seccion-cifra {
+
+  float: left;
+  color: #ffffff;
+  width: 183px;
+  height: 85px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 90px;
+  text-align: center;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  text-decoration: none;
+  padding-top: 42px;
+  padding-left: 30px;  
+}
+
+.seccion-cifra-titulo {
+
+  float: left;
+  color: #ffffff;
+  width: 183px;
+  height: 37px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-left: 30px;  
+}
 
 /* enlaces publicos */ 
 

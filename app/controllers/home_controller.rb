@@ -9,6 +9,11 @@ class HomeController < ApplicationController
   
   def index
     
+    @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")      
+    @totalbazares = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ") 
+    @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
+    @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
+    
     
   end
 
@@ -183,6 +188,19 @@ class HomeController < ApplicationController
       render :text => "", :layout => false
     end
 
+  end
+   
+  def dashboardbazar 
+    
+    @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")      
+    @totalbazares = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ") 
+    @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
+    @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
+
+    respond_to do |format|
+      format.html { render :layout => false }
+    end
+
   end 
-  
+
 end
