@@ -65,7 +65,7 @@
         <%= oferta.texto.html_safe -%>
       </div>
       <div class="cajon-pie">
-        Valida de xxx a xxx
+        Valida de <%= oferta.fecha.strftime("%d-%m-%y") %> a <%= oferta.fecha_hasta.strftime("%d-%m-%y") %>
       </div>
     </div>
     
@@ -94,7 +94,7 @@
         <%= demanda.texto.html_safe -%>
       </div>
       <div class="cajon-pie">
-        Valida de xxx a xxx
+        Valida de <%= demanda.fecha.strftime("%d-%m-%y") %> a <%= demanda.fecha_hasta.strftime("%d-%m-%y") %>
       </div>
     </div>
     

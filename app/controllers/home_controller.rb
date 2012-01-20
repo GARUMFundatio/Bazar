@@ -14,8 +14,8 @@ class HomeController < ApplicationController
     @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
     @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
     
-    @ofertas = Bazarcms::Oferta.where("tipo = 'O'")
-    @demandas = Bazarcms::Oferta.where("tipo = 'D'")
+    @ofertas = Bazarcms::Oferta.where("tipo = 'O'").order("fecha desc")
+    @demandas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
 
   end
 
