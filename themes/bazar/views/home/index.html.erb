@@ -55,54 +55,21 @@
   
   <div class="seccion-contenido">
     
+    <% for oferta in @ofertas %>
+    
     <div class="seccion-cajon ilumina5">
       <div class="cajon-titulo">
-        Oferta 1: para lentes de contacto y liquidos asociados
+        <%= oferta.titulo -%>
       </div>
       <div class="cajon-cuerpo">
-        esta ofertas es de muchos items
-      </div>
-      <div class="cajon-pie">
-        Valida de xxx a xxx
-      </div>
-    </div>
-
-    <div class="seccion-cajon ilumina5">
-      <div class="cajon-titulo">
-        Oferta 1: para lentes de contacto y liquidos asociados
-      </div>
-      <div class="cajon-cuerpo">
-        esta ofertas es de muchos items
-      </div>
-      <div class="cajon-pie">
-        Valida de xxx a xxx
-      </div>
-    </div>
-
-    <div class="seccion-cajon ilumina5">
-      <div class="cajon-titulo">
-        Oferta 1: para lentes de contacto y liquidos asociados
-      </div>
-      <div class="cajon-cuerpo">
-        esta ofertas es de muchos items
-      </div>
-      <div class="cajon-pie">
-        Valida de xxx a xxx
-      </div>
-    </div>
-
-    <div class="seccion-cajon ilumina5">
-      <div class="cajon-titulo">
-        Oferta 1: para lentes de contacto y liquidos asociados
-      </div>
-      <div class="cajon-cuerpo">
-        esta ofertas es de muchos items
+        <%= oferta.texto.html_safe -%>
       </div>
       <div class="cajon-pie">
         Valida de xxx a xxx
       </div>
     </div>
     
+    <% end %>
 
   </div>
 
@@ -117,54 +84,21 @@
   
   <div class="seccion-contenido">
     
+    <% for demanda in @demandas %>
+    
     <div class="seccion-cajon ilumina5">
       <div class="cajon-titulo">
-        Oferta 1: para lentes de contacto y liquidos asociados
+        <%= demanda.titulo -%>
       </div>
       <div class="cajon-cuerpo">
-        esta ofertas es de muchos items
-      </div>
-      <div class="cajon-pie">
-        Valida de xxx a xxx
-      </div>
-    </div>
-
-    <div class="seccion-cajon ilumina5">
-      <div class="cajon-titulo">
-        Oferta 1: para lentes de contacto y liquidos asociados
-      </div>
-      <div class="cajon-cuerpo">
-        esta ofertas es de muchos items
-      </div>
-      <div class="cajon-pie">
-        Valida de xxx a xxx
-      </div>
-    </div>
-
-    <div class="seccion-cajon ilumina5">
-      <div class="cajon-titulo">
-        Oferta 1: para lentes de contacto y liquidos asociados
-      </div>
-      <div class="cajon-cuerpo">
-        esta ofertas es de muchos items
-      </div>
-      <div class="cajon-pie">
-        Valida de xxx a xxx
-      </div>
-    </div>
-
-    <div class="seccion-cajon ilumina5">
-      <div class="cajon-titulo">
-        Oferta 1: para lentes de contacto y liquidos asociados
-      </div>
-      <div class="cajon-cuerpo">
-        esta ofertas es de muchos items
+        <%= demanda.texto.html_safe -%>
       </div>
       <div class="cajon-pie">
         Valida de xxx a xxx
       </div>
     </div>
     
+    <% end %>
 
   </div>
 
