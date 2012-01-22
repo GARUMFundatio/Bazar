@@ -62,7 +62,7 @@
         <%= oferta.titulo -%>
       </div>
       <div class="cajon-cuerpo">
-        <%= oferta.texto.html_safe -%>
+        <%= truncate_html(oferta.texto, :length => 120).html_safe -%>
       </div>
       <div class="cajon-pie">
         Valida de <%= oferta.fecha.strftime("%d-%m-%y") %> a <%= oferta.fecha_hasta.strftime("%d-%m-%y") %>
@@ -91,7 +91,7 @@
         <%= demanda.titulo -%>
       </div>
       <div class="cajon-cuerpo">
-        <%= demanda.texto.html_safe -%>
+        <%= truncate_html(demanda.texto, :length => 120).html_safe -%>
       </div>
       <div class="cajon-pie">
         Valida de <%= demanda.fecha.strftime("%d-%m-%y") %> a <%= demanda.fecha_hasta.strftime("%d-%m-%y") %>

@@ -180,6 +180,7 @@ class ApplicationController < ActionController::Base
       
    end 
    
+
   private
     def current_user_session
       logger.debug "ApplicationController::current_user_session"

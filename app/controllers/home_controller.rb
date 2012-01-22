@@ -16,6 +16,9 @@ class HomeController < ApplicationController
     
     @ofertas = Bazarcms::Oferta.where("tipo = 'O'").order("fecha desc")
     @demandas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
+    
+    @empresasrecomendas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
+    
 
   end
 

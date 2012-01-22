@@ -23,6 +23,7 @@ gem 'rails-i18n'
 gem 'ya2yaml'
 # gem "tiny_mce", "~> 0.1.4"
 gem 'themes_for_rails'
+gem 'truncate_html'
 
 gem 'bazarcms', :path => '../bazarcms'
 
