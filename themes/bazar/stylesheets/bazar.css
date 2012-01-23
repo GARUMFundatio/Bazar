@@ -265,7 +265,7 @@ a {
   float: left;
   color: #ffffff;
   width: 243px;
-  height: 243px;
+  height: 228px;
   background-color: #000;
   margin-right: 1px;
   margin-bottom: 1px;
@@ -333,6 +333,59 @@ a {
   text-decoration: none;
   padding-top: 15px;
   padding-left: 30px;  
+}
+
+.seccion-empresa {
+  float: left;
+  color: #ffffff;
+  width: 243px;
+  height: 228px;
+  background-color: #000;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 15px;  
+}
+
+.empresa-fondo {
+  position: relative;
+  float: top;
+  color: #ffffff;
+  width: 223px;
+  height: 223px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 10px 10px 10px;
+  overflow: hidden;
+  
+}
+
+
+.empresa-descripcion {
+  position:absolute;
+  bottom:0;
+  color: #ffffff;
+  background-color: #000000;
+  width: 223px;
+  height: 60px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  opacity:.70;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+  
+  
 }
 
 .seccion-cifra {
