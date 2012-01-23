@@ -18,7 +18,8 @@ class HomeController < ApplicationController
     @demandas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
     
     @empresasrecomendas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
-    
+    # @empresasrecientes = Bazarcms::Empresa.where("created_at BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() and nombre not like 'Escriba%' ")
+    @empresasrecientes = Bazarcms::Empresa.where("1 = 1").limit(9) #created_at BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() and nombre not like 'Escriba%' ")
 
   end
 

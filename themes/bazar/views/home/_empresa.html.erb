@@ -1,0 +1,11 @@
+<div class="seccion-cajon ilumina5">
+  <div class="cajon-titulo">
+    <%= empresa.nombre -%>
+  </div>
+  <div class="cajon-cuerpo">
+    <%= truncate_html(empresa.nombre, :length => 120).html_safe -%>
+  </div>
+  <div class="cajon-pie">
+    Valida de 
+  </div>
+</div>
