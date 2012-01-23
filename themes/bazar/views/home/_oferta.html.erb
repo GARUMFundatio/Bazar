@@ -6,6 +6,6 @@
     <%= truncate_html(oferta.texto, :length => 120).html_safe -%>
   </div>
   <div class="cajon-pie">
-    Valida de <%= oferta.fecha.strftime("%d-%m-%y") %> a <%= oferta.fecha_hasta.strftime("%d-%m-%y") %>
+    Valida hasta el <%= oferta.fecha_hasta.strftime("%d-%m-%y") %>
   </div>
 </div>
