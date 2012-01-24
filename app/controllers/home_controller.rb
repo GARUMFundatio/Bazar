@@ -17,8 +17,16 @@ class HomeController < ApplicationController
     @ofertas = Bazarcms::Oferta.where("tipo = 'O'").order("fecha desc")
     @demandas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
     
-    @empresasrecomendas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
-    # @empresasrecientes = Bazarcms::Empresa.where("created_at BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() and nombre not like 'Escriba%' ")
+    miempresa = Bazarcms::Empresa.find(current_user.id)
+
+    if (!miempresa.nil?) 
+      if !miempresa.interesantes.nil?
+        @empresasrecomendadas = Bazarcms::Empresa.where("id in (?) ", miempresa.interesantes).limit(18)
+      end
+    else 
+      @empresasrecomendadas = nil      
+    end
+
     @empresasrecientes = Bazarcms::Empresa.where("  nombre not like 'Escriba%' ").order("created_at desc").limit(9) #created_at BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() and nombre not like 'Escriba%' ")
 
   end
