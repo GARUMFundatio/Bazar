@@ -205,7 +205,7 @@ class HomeController < ApplicationController
   end
    
   def dashboardbazar 
-    
+
     @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")      
     @totalbazares = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ") 
     @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
@@ -216,5 +216,11 @@ class HomeController < ApplicationController
     end
 
   end 
+  
+  def ofertas
+    
+    
+    
+  end
 
 end

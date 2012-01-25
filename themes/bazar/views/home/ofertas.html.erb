@@ -1,0 +1,126 @@
+
+<!-- sección ofertas recomendadas -->
+
+<div class="caja-seccion" id="ofertas-recomendadas">
+  <div class="caja-indice">
+  Destacadas para ti
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <%= render(:partial => "oferta", :collection => @ofertas) %>
+
+  </div>
+
+</div>
+
+<!-- Por localización -->
+
+<div class="caja-seccion" id="localizacion">
+  <div class="caja-indice">
+  Por localización
+  </div>
+  
+  <div class="seccion-contenido">
+    
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        veces guardada como favorita 
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        ofertas son favoritas 
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        demandas son favoritas 
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        visitas 
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        valoración de tu empresa 
+      </div>    
+    </div>
+
+  </div>
+
+</div>
+
+<!-- datos del bazar  -->
+
+<div class="caja-seccion" id="datos-bazar">
+  <div class="caja-indice">
+  Los datos de <br/> <%= h BZ_param("Titular") %>
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+    <div class="seccion-cajon ilumina5">
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        empresas 
+      </div>
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+      <div class="seccion-cifra">
+        <%= @totalofertas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        ofertas
+      </div> 
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+      <div class="seccion-cifra">
+        <%= @totaldemandas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        demandas
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  
+ });
+
+
+</script>
