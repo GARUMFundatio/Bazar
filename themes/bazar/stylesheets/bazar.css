@@ -424,6 +424,18 @@ a {
   padding-left: 30px;  
 }
 
+.add-favoritos {
+  position:absolute;
+  top: 0px;
+  right:0;
+  width: 26px;
+  height: 26px;
+  overflow: hidden;
+  opacity:.70;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;   
+}
+
 /* enlaces publicos */ 
 
 #socioenlaces {

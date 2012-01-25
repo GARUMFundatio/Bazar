@@ -219,7 +219,12 @@ class HomeController < ApplicationController
   
   def ofertas
     
+    # TODO:
+    # hacer un filtro de interesantes 
+    # sacar tambien las de otros bazares
+    # quitar la que ya tenemos como favoritas
     
+    @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'O' ").order("fecha_hasta desc").limit(18)
     
   end
 
