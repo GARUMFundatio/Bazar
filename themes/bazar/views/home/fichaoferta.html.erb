@@ -26,11 +26,26 @@
 <div class="ficha-opciones">
 
   <div class="ficha-opciones-item">
-    Icono Favoritos
+      
+      <div class="ficha-opciones-item-icono">
+        <img src="<%= current_theme_image_path('favorito.png') %>"  onClick="window.alert('click in fav');" >        
+      </div>
+      
+      <div class="ficha-opciones-item-texto">
+        guardar en favoritos
+      </div>      
   </div>
 
   <div class="ficha-opciones-item">
-    contactar empresa
+
+    <div class="ficha-opciones-item-icono">
+      <img src="<%= current_theme_image_path('sobre.png') %>" onClick="window.alert('click in correo');" >
+    </div>
+    
+    <div class="ficha-opciones-item-texto">
+      contactar empresa
+    </div>      
+    
   </div>
 
 </div>
