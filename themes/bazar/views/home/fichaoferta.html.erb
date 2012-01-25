@@ -1,42 +1,63 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 
-logo sector :: Nombre empresa
+<div class="ficha-container">
+    
+<div class="ficha-caja-header">
+  <div class="ficha-caja-header-empresa">
+    logo sector :: <%= @empresa.nombre %>
+  </div>
+</div>
+<div class="ficha-tipo">
+  <% if @oferta.tipo == 'O'%>
+    OFERTA
+  <% else %>
+    DEMANDA
+  <% end %>
+</div>
 
-<br/>
+<div class="ficha-titulo">
+  <%= @oferta.titulo %> 
+</div>
 
-Oferta
-<br/>
+<div class="ficha-valida">
+  Oferta válida hasta el <%= @oferta.fecha_hasta.strftime("%d-%m-%y") %>
+</div>
 
+<div class="ficha-opciones">
 
-Titulo de la oferta 
-<br/>
+  <div class="ficha-opciones-item">
+    Icono Favoritos
+  </div>
 
+  <div class="ficha-opciones-item">
+    contactar empresa
+  </div>
 
-valida 
-<br/>
+</div>
 
+<div class="ficha-descripcion">
+  <%= @oferta.texto -%>
+</div>
 
-Icono Favoritos :: contactar empresa
-<br/>
-
-Descripción. 
-
-<br/>
-
+<div class="ficha fotos">
 fotos fancybox 
+</div>
 
-<br/>
-
+<div>
 enlace :: empresas a destinatarias :: fecha publicacion y ambito 
+</div>
 
-<br/>
-
+<div>
 Más detalles 
+</div>
 
-<br/>
-
+</div>
 Visitas de esta oferta
+</div>
 
-<br/>
-
+<div>
 Guardada en favoritos 
+</div>
 
+
+</div>

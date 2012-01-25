@@ -233,7 +233,7 @@ class HomeController < ApplicationController
     # TODO:
     
     @oferta = Bazarcms::Oferta.find_by_id(params[:id])
-    
+    @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
     render :layout => false 
     
   end
