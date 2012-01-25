@@ -227,5 +227,16 @@ class HomeController < ApplicationController
     @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'O' ").order("fecha_hasta desc").limit(18)
     
   end
+  
+  def fichaoferta
+    
+    # TODO:
+    
+    @oferta = Bazarcms::Oferta.find_by_id(params[:id])
+    
+    render :layout => false 
+    
+  end
+  
 
 end

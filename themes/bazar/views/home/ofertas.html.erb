@@ -111,6 +111,7 @@
 
 </div>
 
+<a id="fichaoferta" class="fancybox.ajax" href="">pincha aqui</a>
 
 <script>
 
@@ -119,6 +120,16 @@ $(document).ready(function() {
   $('.trans20').transify({opacityOrig:.20});
   $('.trans70').transify({opacityOrig:.70});
   $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+
+  $("#fichaoferta").fancybox({
+		 'width' : 831,
+		 'auto' : 'auto',
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
+	
   
  });
 

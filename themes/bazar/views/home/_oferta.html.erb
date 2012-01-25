@@ -1,6 +1,6 @@
-<div class="seccion-cajon ilumina5">
+<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/10').trigger('click');">
   <div class="add-favoritos">
-    <img src="<%= current_theme_image_path('addfav.png') %>" onClick="">
+    <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
   </div>
   <div class="cajon-titulo">
     <%= oferta.titulo -%>
