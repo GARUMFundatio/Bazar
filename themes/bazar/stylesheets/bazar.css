@@ -555,11 +555,55 @@ a {
   filter:alpha(opacity=50);
   filter: “alpha(opacity=50)”;   
   margin-left: 30px;
-  margin-top: 15px;
+  margin-top: 40px;
   margin-right: 30px;
 }
 
+.ficha-caja-detalle {
+  width: 761px;
+  height: 283px;
+  margin-left: 30px;
+  margin-top: 40px;
+  background-color: #ffffff;
 
+
+}
+
+.ficha-caja-enlace {
+  float: left;
+  width: 243px;
+  height: 243px;
+  background-color: #005B79;
+  margin-right: 1px;
+}
+
+.ficha-caja-enlace-imagen {
+  float: top;
+  margin-left: 101px;
+  margin-right: 101px;
+  padding-top: 65px;
+}
+
+.ficha-caja-enlace-texto {
+  float: top;
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: -0.05em; 
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-right: 30px;
+}
+
+.ficha-caja-gris {
+  float: left;
+  width: 243px;
+  height: 243px;
+  background-color: #eeeeee;
+  margin-right: 1px;
+}
 
 
 /* enlaces publicos */ 
