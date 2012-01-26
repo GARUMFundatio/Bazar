@@ -4,9 +4,15 @@
     
 <div class="ficha-caja-header">
   <div class="ficha-caja-header-empresa">
-    logo sector :: <%= @empresa.nombre %>
+    logo sector :: 
+    <% if !@empresa.nil? %>
+      <%= @empresa.nombre %>
+    <% else %>
+      Ficha de empresa imcompleta
+    <% end %>
   </div>
 </div>
+
 <div class="ficha-tipo">
   <% if @oferta.tipo == 'O'%>
     OFERTA
