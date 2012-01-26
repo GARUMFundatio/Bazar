@@ -57,7 +57,7 @@
 </div>
 
 <div class="ficha-descripcion">
-  <%= @oferta.texto -%>
+  <%= @oferta.texto.html_safe -%>
 </div>
 
 <div class="ficha fotos">
