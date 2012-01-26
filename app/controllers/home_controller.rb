@@ -223,8 +223,11 @@ class HomeController < ApplicationController
     # hacer un filtro de interesantes 
     # sacar tambien las de otros bazares
     # quitar la que ya tenemos como favoritas
-    
-    @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'O' ").order("fecha_hasta desc").limit(18)
+    if params[:tipo] == "O"
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'O' ").order("fecha_hasta desc").limit(18)
+    else 
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'D' ").order("fecha_hasta desc").limit(18)      
+    end 
     
   end
   
