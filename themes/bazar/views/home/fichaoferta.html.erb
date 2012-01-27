@@ -73,7 +73,12 @@ fotos fancybox
     </div>
     
     <div class="ficha-caja-enlace-texto">
-      web con más información sobre la oferta
+      <% if @oferta.tipo == 'O'%>
+        web con más información sobre la oferta
+      <% else %>
+        web con más información sobre la demanda
+      <% end %>
+      
     </div>
       
   </div>
@@ -113,11 +118,15 @@ Más detalles ...
 </div>
 
 <div class="ficha-masdetalles-texto">
- visitas de esta oferta
+  <% if @oferta.tipo == 'O'%>
+    <%= @oferta.clicks -%> visitas de esta oferta
+  <% else %>
+    <%= @oferta.clicks -%> visitas de esta demanda
+  <% end %>
 </div>
 
 <div class="ficha-masdetalles-texto2">
- veces guardada en favoritos 
+ XX veces guardada en favoritos 
 </div>
 
 </div>

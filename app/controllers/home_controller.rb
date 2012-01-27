@@ -234,8 +234,16 @@ class HomeController < ApplicationController
   def fichaoferta
     
     # TODO:
+    # que gestione las remotas 
     
     @oferta = Bazarcms::Oferta.find_by_id(params[:id])
+    if !@oferta.clicks.nil?
+      @oferta.clicks += 1 
+    else 
+      @oferta.clicks = 1 
+    end 
+    @oferta.save 
+    
     @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
     render :layout => false 
     
