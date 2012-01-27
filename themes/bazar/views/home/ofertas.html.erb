@@ -96,7 +96,7 @@
 
 </div>
 
-<!-- datos del bazar  -->
+<!-- Pro sectores  -->
 
 <div class="caja-seccion" id="datos-bazar">
   <div class="ficha-indice">
@@ -105,34 +105,105 @@
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
     <div class="seccion-cajon ilumina5">
-      <div class="seccion-cifra">
+
+      <div class="ficha-sector-cifra">
         <%= @totalempresas %> 
       </div>
-      <div class="seccion-cifra-titulo">
-        empresas 
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en INDUSTRIA 
+        <% else %>
+          demandas en INDUSTRIA
+        <% end %>
       </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
     </div>
 
     <div class="seccion-cajon ilumina5">
-      <div class="seccion-cifra">
-        <%= @totalofertas %> 
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
       </div>
-      <div class="seccion-cifra-titulo">
-        ofertas
-      </div> 
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en DISTRIBUCIÓN 
+        <% else %>
+          demandas en DISTRIBUCIÓN
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector02black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
     </div>
 
     <div class="seccion-cajon ilumina5">
-      <div class="seccion-cifra">
-        <%= @totaldemandas %> 
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
       </div>
-      <div class="seccion-cifra-titulo">
-        demandas
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en FINANZAS 
+        <% else %>
+          demandas en FINANZAS
+        <% end %>
       </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector03black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en CONOCIMIENTO 
+        <% else %>
+          demandas en CONOCIMIENTO
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector04black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
     </div>
     
-  </div>
+    <div class="seccion-cajon ilumina5">
 
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en COOPERATIVA
+        <% else %>
+          demandas en COOPERATIVA
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector05black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+    
 </div>
 
 <a id="fichaoferta" class="fancybox.ajax" href=""></a>

@@ -717,6 +717,51 @@ a {
   
 }
 
+/* ficha oferta sectores */ 
+
+.ficha-sector-cifra {
+  float: left;
+  color: #ffffff;
+  width: 121px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 90px;
+  text-align: right;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  text-decoration: none;
+  margin-top: 0px;
+  margin-left: 0px;  
+  padding-top: 0px;
+  padding-left: 0px;  
+}
+
+.ficha-sector-texto {
+  float: left;
+  width: 115px;
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  letter-spacing: -0.05em;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  padding-top: 50px;
+  padding-left: 5px; 
+}
+
+.ficha-sector-imagen {
+  position:absolute;
+  bottom:0;
+  right: 0;
+  opacity:.15;
+  filter:alpha(opacity=15);
+  filter: “alpha(opacity=15)”;
+}
+
 /* enlaces publicos */ 
 
 #socioenlaces {
