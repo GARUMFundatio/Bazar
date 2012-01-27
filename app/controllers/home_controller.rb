@@ -223,11 +223,16 @@ class HomeController < ApplicationController
     # hacer un filtro de interesantes 
     # sacar tambien las de otros bazares
     # quitar la que ya tenemos como favoritas
+    
     if params[:tipo] == "O"
       @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'O' ").order("fecha_hasta desc").limit(18)
     else 
-      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'D' ").order("fecha_hasta desc").limit(18)      
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'D' ").order("fecha_hasta desc").limit(18)
     end 
+    
+    @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
+    @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
+    @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
     
   end
   

@@ -446,6 +446,22 @@ a {
   
 }
 
+.ficha-indice {
+  position: relative;
+  float: left;
+  width: 256px;
+  
+  color: #000000;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 45px;
+  padding-left: 50px;
+  margin-bottom: 30px;
+}
+
 .ficha-caja-header {
   width: 831px;
   height: 60px;
@@ -475,18 +491,21 @@ a {
   margin-top: 30px;
 }
 
-.ficha-titulo {
+.ficha-titulo-total {
+  position:absolute;
+  top: 15px;
+  left: 30px;
   color: #000000;
   font-family: Arial,sans-serif;
   font-weight: bold;
-  font-size: 45px;
+  font-size: 25px;
   letter-spacing: -0.05em;
+  line-height: 120%;
   text-align: left;  
-  opacity:.80;
-  filter:alpha(opacity=80);
-  filter: “alpha(opacity=80)”;   
-  margin-left: 30px;
-  margin-top: 15px;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;   
+  
 }
 
 .ficha-valida {

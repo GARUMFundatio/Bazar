@@ -2,7 +2,7 @@
 <!-- sección ofertas recomendadas -->
 
 <div class="caja-seccion" id="ofertas-recomendadas">
-  <div class="caja-indice">
+  <div class="ficha-indice">
   Destacadas para ti
   </div>
   
@@ -17,54 +17,78 @@
 <!-- Por localización -->
 
 <div class="caja-seccion" id="localizacion">
-  <div class="caja-indice">
+  <div class="ficha-indice">
   Por localización
   </div>
   
   <div class="seccion-contenido">
     
     <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        Tu Bazar
+      </div>
+      
       <div class="seccion-cifra">
         <%= @totalempresas %> 
       </div>
       <div class="seccion-cifra-titulo">
-        veces guardada como favorita 
+        <% if params[:tipo] == 'O' %>
+          ofertas
+        <% else %>
+          demandas
+        <% end %>
       </div>    
     </div>
 
     <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        España
+      </div>
+
       <div class="seccion-cifra">
         <%= @totalempresas %> 
       </div>
       <div class="seccion-cifra-titulo">
-        ofertas son favoritas 
+        <% if params[:tipo] == 'O' %>
+          ofertas
+        <% else %>
+          demandas
+        <% end %>
       </div>    
     </div>
 
     <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        Europa
+      </div>
+
       <div class="seccion-cifra">
         <%= @totalempresas %> 
       </div>
       <div class="seccion-cifra-titulo">
-        demandas son favoritas 
+        <% if params[:tipo] == 'O' %>
+          ofertas
+        <% else %>
+          demandas
+        <% end %>
       </div>    
     </div>
 
     <div class="seccion-cajon ilumina5">  
-      <div class="seccion-cifra">
-        <%= @totalempresas %> 
+      <div class="ficha-titulo-total">
+        El mundo
       </div>
-      <div class="seccion-cifra-titulo">
-        visitas 
-      </div>    
-    </div>
 
-    <div class="seccion-cajon ilumina5">  
       <div class="seccion-cifra">
         <%= @totalempresas %> 
       </div>
       <div class="seccion-cifra-titulo">
-        valoración de tu empresa 
+        <% if params[:tipo] == 'O' %>
+          ofertas
+        <% else %>
+          demandas
+        <% end %>
+        
       </div>    
     </div>
 
@@ -75,8 +99,8 @@
 <!-- datos del bazar  -->
 
 <div class="caja-seccion" id="datos-bazar">
-  <div class="caja-indice">
-  Los datos de <br/> <%= h BZ_param("Titular") %>
+  <div class="ficha-indice">
+  Por Sectores
   </div>
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
