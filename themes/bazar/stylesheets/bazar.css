@@ -762,6 +762,29 @@ a {
   filter: “alpha(opacity=15)”;
 }
 
+/* ficha ofertas busquedas */ 
+
+.caja-busqueda-filtros {
+  width: 228px;
+  height: 44px;
+  background-color: #ffffff;
+  padding-left: 15px;
+  padding-top: 15px;
+  margin-bottom: 1px;
+}
+
+.caja-busqueda-texto {
+  height: 30px;
+  width: 203px;
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: left;
+  letter-spacing: -0.05em;
+
+}
+
 /* enlaces publicos */ 
 
 #socioenlaces {
