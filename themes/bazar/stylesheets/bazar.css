@@ -785,6 +785,49 @@ a {
 
 }
 
+.caja-busqueda-input {
+  height: 121px;
+  width: 733px;
+  background-color: #000000; 
+  margin: 0px; 
+}
+
+.busqueda-input {
+  width: 651px;
+  height:60px; 
+  color: #14668C ;
+
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 24px;
+
+  border-radius: 10px;
+  background: white ;
+  -webkit-appearance: none;
+  border: 0;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4); 
+  padding-left: 20px;
+  margin-left: 30px;
+  margin-top: 30px;
+  float: left;
+  outline: none;
+}
+
+.busqueda-boton {
+  border:0;
+  padding:0;
+  margin:45px 0 0 -48px;
+  width:32px;
+  height:32px;
+  background:transparent url('lupa-blue.png') center center  no-repeat;
+  float:left;
+}
+
+input[type="text"]:focus{
+	outline: none;
+}
 /* enlaces publicos */ 
 
 #socioenlaces {
