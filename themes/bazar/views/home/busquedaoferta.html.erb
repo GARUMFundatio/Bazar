@@ -2,8 +2,22 @@
 <%= render(:partial => "busquedaofertas") %>
 
 <div class="caja-seccion" id="ofertas-recomendadas">
-  <div class="ficha-indice">
-  <%= @ofertas.count -%> Ofertas
+  <div class="resultado-indice">
+    
+    <%= @ofertas.count -%> Ofertas
+    
+    <div class="resultado-filtro">
+      ver las más recientes primero
+    </div>
+
+    <div class="resultado-filtro">
+      ver las más cercanas geográficamente primero
+    </div>
+
+    <div class="resultado-filtro">
+      ver solo empresas de mi bazar
+    </div>
+    
   </div>
   
   <div class="seccion-contenido">

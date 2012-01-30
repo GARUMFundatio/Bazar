@@ -843,6 +843,43 @@ a {
 input[type="text"]:focus{
 	outline: none;
 }
+
+
+/* resultados busquedas */
+
+.resultado-indice {
+  position: relative;
+  float: left;
+  width: 256px;
+  
+  color: #000000;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  padding-left: 50px;
+  margin-bottom: 30px;
+}
+
+.resultado-filtro {
+  position: relative;
+  float: left;
+  width: 243px;
+  height: 60px;
+  
+  color: #ffffff;
+  opacity:.80;
+  filter:alpha(opacity=80);
+  filter: “alpha(opacity=80)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+
+}
+
+
 /* enlaces publicos */ 
 
 #socioenlaces {
