@@ -254,5 +254,10 @@ class HomeController < ApplicationController
     
   end
   
+  def busquedaoferta
+     
+    @ofertas = Bazarcms::Oferta.where("tipo = 'O'")
 
+  end
+  
 end

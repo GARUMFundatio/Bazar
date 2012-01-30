@@ -491,6 +491,21 @@ a {
   margin-top: 30px;
 }
 
+
+.ficha-titulo {
+  color: #000000;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 45px;
+  letter-spacing: -0.05em;
+  text-align: left;  
+  opacity:.80;
+  filter:alpha(opacity=80);
+  filter: “alpha(opacity=80)”;   
+  margin-left: 30px;
+  margin-top: 15px;
+}
+
 .ficha-titulo-total {
   position:absolute;
   top: 15px;

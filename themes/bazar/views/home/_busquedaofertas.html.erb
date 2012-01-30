@@ -1,0 +1,33 @@
+<!-- búsquea de ofertas -->
+
+<div class="caja-seccion" id="busqueda">
+  <div class="ficha-indice">
+    <div class="caja-busqueda-filtros ilumina10">
+      <div class="caja-busqueda-texto">
+        Filtrar por el nº de empleados de la empresa
+      </div>
+    </div>
+    <div class="caja-busqueda-filtros ilumina10">
+      <div class="caja-busqueda-texto">
+        Filtrar por la facturación anual de la empresa
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <div class="caja-busqueda-input ilumina5">
+      <form accept-charset="UTF-8" action="/busqueda-oferta" method="post">
+        <% if params[:tipo] == 'O' %>
+          <input class="busqueda-input" id="busqueda" name="q" placeholder="¿Qué oferta buscas?" size="50" >
+        <% else %>
+          <input class="busqueda-input" id="busqueda" name="q" placeholder="¿Qué demanda buscas?" size="50" >
+        <% end %>
+       <input type="submit" class="busqueda-boton" value="" />
+     </form>
+    </div>
+
+  </div>
+
+</div>
