@@ -258,8 +258,11 @@ class HomeController < ApplicationController
     
     # TODO: controlar el tipo (O/D) que vamos a enviar como parametro
     params[:q] = '*' if (params[:q] == '') 
-
-    @ofertas = Bazarcms::Oferta.busca(:tipo => 'O', :q => params[:q])
+    params[:tipo] = 'O' if params[:tipo].nil?
+    @ofertas = Bazarcms::Oferta.busca(:tipo => 'O', 
+                                      :q => params[:q], 
+                                      :user => current_user.id,
+                                      :bazar => BZ_param("BazarId").to_i)
     
   end
   
