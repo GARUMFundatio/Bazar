@@ -62,7 +62,7 @@ class HomeController < ApplicationController
     @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
     where tipo = 'D' order by cluster_id, oferta_id ") 
     
-    clusters = Cluster.where ("activo = 'S' and id > 1").order("empresas desc")
+    clusters = Cluster.where("activo = 'S' and id > 1").order("empresas desc")
     
     @clusters = []
     
@@ -255,9 +255,12 @@ class HomeController < ApplicationController
   end
   
   def busquedaoferta
-     
-    @ofertas = Bazarcms::Oferta.where("tipo = 'O'")
+    
+    # TODO: controlar el tipo (O/D) que vamos a enviar como parametro
+    params[:q] = '*' if (params[:q] == '') 
 
+    @ofertas = Bazarcms::Oferta.busca(:tipo => 'O', :q => params[:q])
+    
   end
   
 end

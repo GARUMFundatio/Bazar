@@ -851,34 +851,62 @@ input[type="text"]:focus{
   position: relative;
   float: left;
   width: 256px;
-  
-  color: #000000;
-  opacity:.50;
-  filter:alpha(opacity=50);
-  filter: “alpha(opacity=50)”;
-  font-family: Arial,sans-serif;
-  font-weight: bold;
-  font-size: 40px;
+  height: 60px;
   padding-left: 50px;
   margin-bottom: 30px;
 }
+
+.resultado-indice-texto {
+  position: relative;
+  float: left;
+  width: 243px;
+  height: 60px;
+  color: #000000;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  opacity:.40;
+  filter:alpha(opacity=40);
+  filter: “alpha(opacity=40)”;
+  margin-bottom: 1px;
+}
+
 
 .resultado-filtro {
   position: relative;
   float: left;
   width: 243px;
   height: 60px;
-  
   color: #ffffff;
-  opacity:.80;
-  filter:alpha(opacity=80);
-  filter: “alpha(opacity=80)”;
-  font-family: Arial,sans-serif;
-  font-weight: bold;
-  font-size: 13px;
+  background-color: #ffffff;
+  margin-bottom: 1px;
 
 }
 
+.resultado-filtro-icono {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin: 0px;
+  margin-top: 10px;
+  margin-left: 15px;
+
+}
+
+
+.resultado-filtro-texto {
+  float: left;
+  width: 180px;
+  height: 30px;
+
+  color: white;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  padding-top: 18px;
+  padding-left: 10px;
+
+}
 
 /* enlaces publicos */ 
 

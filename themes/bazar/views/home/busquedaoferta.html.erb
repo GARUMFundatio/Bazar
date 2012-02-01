@@ -3,19 +3,35 @@
 
 <div class="caja-seccion" id="ofertas-recomendadas">
   <div class="resultado-indice">
+    <div class="resultado-indice-texto">
+      <%= @ofertas.count -%> Ofertas      
+    </div>
     
-    <%= @ofertas.count -%> Ofertas
-    
-    <div class="resultado-filtro">
-      ver las más recientes primero
+    <div class="resultado-filtro ilumina10">
+      <div class="resultado-filtro-icono">
+        <img src="<%= current_theme_image_path('calendar.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        ver las más recientes primero
+      </div>
     </div>
 
-    <div class="resultado-filtro">
-      ver las más cercanas geográficamente primero
+    <div class="resultado-filtro ilumina10">
+      <div class="resultado-filtro-icono">
+        <img src="<%= current_theme_image_path('world.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        ver las más cercanas geográficamente primero
+      </div>
     </div>
 
-    <div class="resultado-filtro">
-      ver solo empresas de mi bazar
+    <div class="resultado-filtro ilumina10">
+      <div class="resultado-filtro-icono">
+        <img src="<%= current_theme_image_path('mibazar.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        ver solo empresas de mi bazar
+      </div>
     </div>
     
   </div>
