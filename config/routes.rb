@@ -45,7 +45,7 @@ Bazar::Application.routes.draw do
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
   match '/home/ofertas/:tipo' => "home#ofertas"
-  match '/home/fichaoferta/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ }
+  match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/busqueda-oferta' => "home#busquedaoferta"
    
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }

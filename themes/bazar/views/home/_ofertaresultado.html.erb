@@ -1,14 +1,14 @@
-<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.id -%>').trigger('click');">
+<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');">
   <div class="add-favoritos">
     <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
   </div>
   <div class="cajon-titulo">
-    <%= ofertaresultado.titulo -%>
+    <%= ofertaresultado.info -%>
   </div>
   <div class="cajon-cuerpo">
-    <%= truncate_html(ofertaresultado.texto, :length => 120).html_safe -%>
+    <%= truncate_html(ofertaresultado.nombre_empresa, :length => 120).html_safe -%>
   </div>
   <div class="cajon-pie">
-    Válida hasta el <%= ofertaresultado.fecha_hasta.strftime("%d-%m-%y") %>
+    Válida hasta el <%= ofertaresultado.enlace %>
   </div>
 </div>
