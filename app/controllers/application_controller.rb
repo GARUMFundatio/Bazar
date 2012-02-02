@@ -365,7 +365,11 @@ class ApplicationController < ActionController::Base
          logger.debug "dohttpget -------------> "+response.inspect
          case response.curl_return_code
          when 0
-           return response.body
+           if response.code == 404 
+             return "404"
+           else 
+             return response.body
+           end 
          else
            logger.debug "ERROR en la petición ---------->"+response.inspect
            return ""

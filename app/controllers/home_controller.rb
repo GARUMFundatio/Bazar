@@ -238,19 +238,33 @@ class HomeController < ApplicationController
   
   def fichaoferta
     
-    # TODO:
-    # que gestione las remotas 
+    # if local we get the info from database 
+    # if not, we make a remote get 
     
-    @oferta = Bazarcms::Oferta.find_by_id(params[:id])
-    if !@oferta.clicks.nil?
-      @oferta.clicks += 1 
+    if params[:bazar] == BZ_param("BazarId")
+      @oferta = Bazarcms::Oferta.find_by_id(params[:id])
+      if !@oferta.clicks.nil?
+        @oferta.clicks += 1 
+      else 
+        @oferta.clicks = 1 
+      end 
+      @oferta.save 
+
+      @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
+      render :layout => false 
+      
     else 
-      @oferta.clicks = 1 
+      # TODO: cachearlo para que vaya más rápido
+      
+      res = dohttpget(params[:bazar], "/home/fichaoferta/#{params[:bazar]}/#{params[:id]}")
+      
+      if (res == "404")
+        res = dohttpget(params[:bazar], "/bazarcms/ofertas/#{params[:id]}?bazar_id=#{params[:bazar]}&display=inside")        
+      end 
+      
+      render :text => res, :layout => false 
+      
     end 
-    @oferta.save 
-    
-    @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
-    render :layout => false 
     
   end
   
