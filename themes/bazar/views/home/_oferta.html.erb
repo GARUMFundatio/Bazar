@@ -1,4 +1,4 @@
-<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= oferta.id -%>').trigger('click');">
+<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= oferta.id -%>').trigger('click');">
   <div class="add-favoritos">
     <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
   </div>
