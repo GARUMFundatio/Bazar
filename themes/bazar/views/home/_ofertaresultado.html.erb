@@ -1,3 +1,8 @@
+<% if @item == 0 %>
+  <div id="pag1">
+<% end %>
+
+
 <div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');">
   <div class="add-favoritos">
     <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
@@ -12,3 +17,55 @@
     Válida hasta el <%= ofertaresultado.enlace %>
   </div>
 </div>
+
+<% @item += 1 %>
+
+<% if @item % 15 == 0 || @item == @total%>
+ 
+
+
+  <div class="cajon-paginado">
+
+    <% if @pagina != (@total/15) + 1  %>
+
+    <div class="cajon-paginado-boton ilumina5" onclick="$('#pag<%= @pagina -%>').hide(); $('#pag<%= @pagina+1 -%>').show();$.scrollTo('#busqueda', 'slow')">
+      <div class="cajon-paginado-boton-texto">
+        <% if params[:tipo] == 'O'%>
+          Ofertas siguientes
+        <% else %>
+          Demandas siguientes
+        <% end %>
+      </div>
+    </div>
+    
+    <% end %>
+
+    <% if @pagina != 1 %>
+    
+    <div class="cajon-paginado-boton ilumina5"  onclick="$('#pag<%= @pagina -%>').hide(350); $('#pag<%= @pagina-1 -%>').show(350); $.scrollTo('#busqueda', 'slow');">
+      <div class="cajon-paginado-boton-texto">
+        <% if params[:tipo] == 'O'%>
+          Ofertas anteriores
+        <% else %>
+          Demandas anteriores
+        <% end %>
+      </div>
+    </div> 
+
+    <% end %>
+    
+    <div class="cajon-paginado-pagina">
+      <div class="cajon-paginado-pagina-texto">
+        Página <%= @pagina -%> de <%= (@total / 15) + 1 -%>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  
+  <% @pagina += 1 %>
+
+  <% if @item != @total %>
+    <div id="pag<%= @pagina -%>" style="display:none">
+  <% end %>
+<% end %>
