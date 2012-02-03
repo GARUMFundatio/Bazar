@@ -1,0 +1,236 @@
+
+<%= render(:partial => "busquedaempresas") %>
+
+<!-- sección empresas recomendadas -->
+
+<div class="caja-seccion" id="empresas-recomendadas">
+  <div class="ficha-indice">
+  Destacadas para ti
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <%= render(:partial => "oferta", :collection => @ofertasrecomendadas) %>
+
+  </div>
+
+</div>
+
+<!-- Por localización -->
+
+<div class="caja-seccion" id="localizacion">
+  <div class="ficha-indice">
+  Por localización
+  </div>
+  
+  <div class="seccion-contenido">
+    
+    <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        Tu Bazar
+      </div>
+      
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        <% if params[:tipo] == 'O' %>
+          ofertas
+        <% else %>
+          demandas
+        <% end %>
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        España
+      </div>
+
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        <% if params[:tipo] == 'O' %>
+          ofertas
+        <% else %>
+          demandas
+        <% end %>
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        Europa
+      </div>
+
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        <% if params[:tipo] == 'O' %>
+          ofertas
+        <% else %>
+          demandas
+        <% end %>
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        El mundo
+      </div>
+
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        <% if params[:tipo] == 'O' %>
+          ofertas
+        <% else %>
+          demandas
+        <% end %>
+        
+      </div>    
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Pro sectores  -->
+
+<div class="caja-seccion" id="datos-bazar">
+  <div class="ficha-indice">
+  Por Sectores
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en INDUSTRIA 
+        <% else %>
+          demandas en INDUSTRIA
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en DISTRIBUCIÓN 
+        <% else %>
+          demandas en DISTRIBUCIÓN
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector02black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en FINANZAS 
+        <% else %>
+          demandas en FINANZAS
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector03black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en CONOCIMIENTO 
+        <% else %>
+          demandas en CONOCIMIENTO
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector04black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+    
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          ofertas en COOPERATIVA
+        <% else %>
+          demandas en COOPERATIVA
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector05black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+    
+</div>
+
+<a id="fichaoferta" class="fancybox.ajax" href=""></a>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  $('.ilumina10').transify({opacityOrig:.10,opacityNew:.40,fadeSpeed:500});
+  
+  $("#fichaoferta").fancybox({
+		 'width' : 831,
+		 // 'height' : 'auto',
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
+	
+  $('input[placeholder]').placeholder();
+
+ });
+
+</script>

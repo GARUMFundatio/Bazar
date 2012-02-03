@@ -278,4 +278,9 @@ class HomeController < ApplicationController
     
   end
   
+  def empresas
+
+    
+  end
+
 end

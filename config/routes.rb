@@ -44,9 +44,14 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/busqueda-oferta' => "home#busquedaoferta"
+
+  match '/home/empresas/' => "home#empresas"
+  match '/home/fichaempresa/:bazar/:id' => "home#fichaempresa", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
+  match '/busqueda-empresa' => "home#busquedaempresa"
    
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
   match '/mensajeremoto' => "mensajes#mensajeremoto"
