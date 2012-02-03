@@ -280,7 +280,48 @@ class HomeController < ApplicationController
   
   def empresas
 
+    # TODO:
+    # hacer un filtro de interesantes 
+    # sacar tambien las de otros bazares
+    # quitar la que ya tenemos como favoritas
+    
+    @empresasrecomendadas = Bazarcms::Empresa.where("1 = 1").order("updated_at desc").limit(18)
+      
+    @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
+
+    # @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
+    # @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
     
   end
 
+  def fichaempresa
+    
+    # if local we get the info from database 
+    # if not, we make a remote get 
+    
+    if params[:bazar] == BZ_param("BazarId")
+      @empresa = Bazarcms::Empresa.find_by_id(params[:id])
+      if !@empresa.clicks.nil?
+        @empresa.clicks += 1 
+      else 
+        @empresa.clicks = 1 
+      end 
+      @empresa.save 
+
+      render :layout => false 
+      
+    else 
+      # TODO: cachearlo para que vaya más rápido
+      
+      res = dohttpget(params[:bazar], "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}")
+      
+      if (res == "404")
+        res = dohttpget(params[:bazar], "/bazarcms/empresas/#{params[:id]}?bazar_id=#{params[:bazar]}&display=inside")        
+      end 
+      
+      render :text => res, :layout => false 
+      
+    end 
+    
+  end
 end
