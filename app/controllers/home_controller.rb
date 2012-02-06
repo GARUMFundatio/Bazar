@@ -301,14 +301,14 @@ class HomeController < ApplicationController
     
     if params[:bazar] == BZ_param("BazarId")
       @empresa = Bazarcms::Empresa.find_by_id(params[:id])
-      if !@empresa.clicks.nil?
-        @empresa.clicks += 1 
+      if !@empresa.total_mostradas.nil?
+        @empresa.total_mostradas += 1 
       else 
-        @empresa.clicks = 1 
+        @empresa.total_mostradas = 1 
       end 
       @empresa.save 
 
-      render :layout => false 
+      render
       
     else 
       # TODO: cachearlo para que vaya más rápido
