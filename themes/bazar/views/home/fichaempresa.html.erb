@@ -4,26 +4,65 @@
 
 <div class="caja-seccion" id="empresas-recomendadas">
   <div class="ficha-indice">
-    <div >
-      ADD FAV
+    <div class="fichaempresa-iconos ilumina5">
+      <img class="fichaempresa-icono" src="<%= current_theme_image_path('sobre.png') %>">
     </div>
-    <div>
-      CORREO
+    <div class="fichaempresa-iconos ilumina5">
+      <img class="fichaempresa-icono" src="<%= current_theme_image_path('favorito.png') %>">
     </div>
   </div>
   
   <div class="seccion-contenido">
 
-    <div id="name">
-      Cabecera
+    <div class="fichaempresa-titular">
+      
+      <div class="fichaempresa-titulo">
+        <%= @empresa.nombre -%>
+      </div>
+      
+      <div class="fichaempresa-cajaicono ilumina5">
+        IND
+      </div>
+    
+      <div class="fichaempresa-cajaicono ilumina5">
+        5M€
+      </div>
+
+
+      <div class="fichaempresa-cajaicono ilumina5">
+        *****
+      </div>
+
+      <div class="fichaempresa-enlace">
+        <%= @empresa.url -%>
+      </div>
+
     </div>
 
-    <div >
-      descripción empresa
+    
+    
+    <div class="fichaempresa-desc">
+      <%= @empresa.desc -%>
     </div>
       
-    <div>
-      menús locales
+    <div class="seccion-menu">
+      
+      <div class="seccion-menu-item ilumina5" >
+        <a href="/home#ofertas">Ofertas</a>
+      </div>
+      
+      <div class="seccion-menu-item ilumina5">
+        <a href="/home#demandas">Demandas</a>
+      </div>
+      
+      <div class="seccion-menu-item ilumina5">
+        <a href="/home#sobre">Sobre la empresa</a>
+      </div>
+      
+      <div class="seccion-menu-item ilumina5">
+        <a href="/home#sedes">Sedes</a>
+      </div>
+      
     </div>
 
   </div>
@@ -31,16 +70,29 @@
 </div>
 
 
-<!-- sección empresas recomendadas -->
+<!-- sección ofertas y demandas realizadas -->
 
-<div class="caja-seccion" id="empresas-recomendadas">
+<div class="caja-seccion" id="ofertas">
   <div class="ficha-indice">
-  Destacadas para ti
+  Ofertas
   </div>
   
   <div class="seccion-contenido">
 
-    <%= render(:partial => "empresa", :collection => @empresasrecomendadas) %>
+    <%= render(:partial => "oferta", :collection => @ofertas) %>
+
+  </div>
+
+</div>
+
+<div class="caja-seccion" id="demandas">
+  <div class="ficha-indice">
+  Demandas
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <%= render(:partial => "oferta", :collection => @demandas) %>
 
   </div>
 
