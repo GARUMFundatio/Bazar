@@ -99,76 +99,31 @@
 
 </div>
 
-<!-- Por localización -->
+<!-- Imágenes -->
 
 <div class="caja-seccion" id="localizacion">
   <div class="ficha-indice">
-  Por localización
+    Imágenes
   </div>
   
   <div class="seccion-contenido">
     
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
-        Tu Bazar
+        Imagen 1
       </div>
       
-      <div class="seccion-cifra">
-        <%= @totalempresas %> 
-      </div>
-      <div class="seccion-cifra-titulo">
-        empresas
-      </div>    
-    </div>
-
-    <div class="seccion-cajon ilumina5">  
-      <div class="ficha-titulo-total">
-        España
-      </div>
-
-      <div class="seccion-cifra">
-        <%= @totalempresas %> 
-      </div>
-      <div class="seccion-cifra-titulo">
-        empresas
-      </div>    
-    </div>
-
-    <div class="seccion-cajon ilumina5">  
-      <div class="ficha-titulo-total">
-        Europa
-      </div>
-
-      <div class="seccion-cifra">
-        <%= @totalempresas %> 
-      </div>
-      <div class="seccion-cifra-titulo">
-        empresas
-      </div>    
-    </div>
-
-    <div class="seccion-cajon ilumina5">  
-      <div class="ficha-titulo-total">
-        El mundo
-      </div>
-
-      <div class="seccion-cifra">
-        <%= @totalempresas %> 
-      </div>
-      <div class="seccion-cifra-titulo">
-        empresas
-      </div>    
     </div>
 
   </div>
 
 </div>
 
-<!-- Por sectores  -->
+<!-- Sobre la empresa  -->
 
-<div class="caja-seccion" id="datos-bazar">
+<div class="caja-seccion" id="sobre">
   <div class="ficha-indice">
-  Por Sectores
+  Sobre la Empresa
   </div>
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
@@ -253,6 +208,30 @@
     </div>
     
 </div>
+
+<div class="caja-seccion" id="sobre">
+  <div class="ficha-indice">
+    Sedes
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        empresas en INDUSTRIA 
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+  </div>
+<div/>
 
 <a id="fichaempresa" class="fancybox.ajax" href=""></a>
 
