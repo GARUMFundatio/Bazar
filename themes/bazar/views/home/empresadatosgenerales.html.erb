@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+
+<div class="caja-empresa-editar">
+
+  <div class="caja-empresa-titulo">
+    <p><%= t(:text_informacion_general_sobre_tu_empresa) %> </p>
+  </div>
+
+  <% form_for @empresa, :url => "/home/actempresadatosgenerales/#{@empresa.id}/#{BZ_param("BazarId")}" do |f| %>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_nombre_de_la_empresa) %>
+    </div>
+
+    <p><%= f.text_field :nombre, :placeholder => t(:text_nombre_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
+
+
+    <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
+
+  <% end %>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<script>
+    $('input[placeholder]').placeholder();
+</script>
