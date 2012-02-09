@@ -1064,6 +1064,96 @@ input[type="text"]:focus{
   filter: “alpha(opacity=50)”;  
 }
 
+/* editar ficha empresa */ 
+
+.caja-empresa-editar {
+  background-color: #ffffff;
+
+}
+
+.caja-empresa-titulo {
+  height: 60px;
+  color: #005B79;
+  background-color: #f5f5f5;
+    
+}
+
+.caja-empresa-titulo p {
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.caja-empresa-editar-login-error {
+  color: #CC3300;
+  margin: 20px 0px 0px 50px;
+  width:380px;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.caja-empresa-editar-titulo {
+  
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 0px;
+  padding:0px; 
+  width:500px;
+  height: 25px; 
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 19px;
+  opacity:.7;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+  
+}
+
+.caja-empresa-editar-input {
+  
+  margin: 0px 0px 10px 50px;
+  padding: 14px; 
+  width: 500px;
+  height: 50px; 
+  color: #14668C ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 18px;
+  
+}
+
+.caja-empresa-editar-boton {
+    background: #14668C ;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    width:183px;
+    height: 60px; 
+    font-family: arial, sans-serif; 
+    font-size: 14px;
+    font-weight: bold;
+    
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+    box-shadow: 0;
+    -moz-box-shadow: 0; 
+    -webkit-box-shadow: 0;
+    
+    text-shadow: 0;
+    border: 0;
+    
+    position: relative;
+    cursor: pointer;
+}
+
 /* menu de navegacion */ 
 
 ul, li{margin:0; border:0; padding:0; list-style:none;}

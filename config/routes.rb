@@ -52,7 +52,7 @@ Bazar::Application.routes.draw do
   match '/home/empresas/' => "home#empresas"
   match '/home/fichaempresa/:bazar/:id' => "home#fichaempresa", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/busqueda-empresa' => "home#busquedaempresa"
-  match '/home/empresadatosgenerales' => "home#empresadatosgenerales"
+  match '/home/empresadatosgenerales/:bazar/:id' => "home#empresadatosgenerales", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
    
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
   match '/mensajeremoto' => "mensajes#mensajeremoto"

@@ -169,6 +169,7 @@ es:
   text_gran_mercado_electronico_no_debe_tener_propietario: "gran mercado electrónico no debe tener propietario"
   text_gran_red_distribuida_de_bazares: "gran red distribuida de «bazares»"
   text_grupo: Grupo
+  text_guardar_estos_datos: "guardar estos datos"
   text_hasta_ahora_las_llamadas_grandes_redes_sociales_se_han_construido_como_una: "Hasta ahora las llamadas «grandes redes sociales» se han construido como una"
   text_hay_limitaciones: "¿Hay limitaciones?"
   text_hemos_creado_una_pagina_de_ejemplos_de_como_usar_el_api_de_bazar_cada_una_de_las_funciones_disponibles_cuenta_con_su_descripcion_ejemplos_de_uso_y_un_ejemplo_de_que_se_obtiene_cuando_se_invoca_puedes_ver_toda_esta_informacion_en_la_pagina_de: "Hemos creado una página de ejemplos de como usar el API de Bazar. Cada una de las funciones disponibles cuenta con su descripción, ejemplos de uso y un ejemplo de que se obtiene cuando se invoca. Puedes ver toda esta información en la página de"
@@ -190,6 +191,7 @@ es:
   text_informacion_de_una_empresa: "Información de una Empresa"
   text_informacion_del_bazar: "Información del Bazar"
   text_informacion_del_usuario: "Información del Usuario"
+  text_informacion_general_sobre_tu_empresa: "Información general sobre tu empresa"
   text_instalar_bazar_y_unirse_a_la_red_de_bazares_ser_la_opcion_recomendada_a_grupos_empresariales_asociaciones_sectoriales_de_empresas_y_entidades_dedicadas_a_la_promocion_economica_local: "instalar Bazar y unirse a la red de bazares, será la opción recomendada a grupos empresariales, asociaciones sectoriales de empresas y entidades dedicadas a la promoción económica local"
   text_introduzca_los_terminos_de_la_busqueda: "Introduzca los términos de la búsqueda"
   text_introduzca_su_correo_y_pulse_cambiar_contrasena: "Introduzca su correo y pulse \"Cambiar Contraseña\"."
@@ -237,6 +239,7 @@ es:
   text_no_se_ha_podido_salvar_los_datos_del_usuario: "No se han podido guardar los datos del usuario:"
   text_no_van_a_dar_paso_a_empresas_fraudulentas_o_permitir_comportamientos_abusivos_porque_irian_contra_su_propia_imagen_y_contra_los_intereses_y_proyeccion_de_cada_una_de_las_empresas_de_su_red_a_las_que_quieren_potenciar: ", no van a dar paso a empresas fraudulentas o permitir comportamientos abusivos porque irían contra su propia imagen y contra los intereses y proyección de cada una de las empresas de su red a las que quieren potenciar."
   text_nombre: "Nombre:"
+  text_nombre_de_la_empresa: "nombre de la empresa"
   text_noticias: Noticias
   text_notificaciones: Notificaciones
   text_nuestra_intencion_es_que_sea_muy_sencillo_extraer_informacion_de_la_red_de_bazares_por_ejemplo_para_obtener_la_informacion_general_de_un_bazar_solo_tendrias_que_abrir_el_siguiente_enlace: "Nuestra intención es que sea muy sencillo extraer información de la red de bazares. Por ejemplo para obtener la información general de un bazar solo tendrías que abrir el siguiente enlace:"

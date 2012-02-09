@@ -333,11 +333,12 @@ class HomeController < ApplicationController
     # TODO hay que controlar que solo el usuario puede cambiarlo o tiene permisos 
     # admin/dinamizador 
     if ( params[:id].to_i == current_user.id )
-      @empresa = Bazarcms::Empresa.find_by_id_and_bazar_id(params[:id], params[:bazar])
+      @empresa = Bazarcms::Empresa.find_by_id(params[:id])
     else
-      @empresa = Bazarcms::Empresa.find_by_id_and_bazar_id(current_user.id, BZ_param("BazarId"))      
+      @empresa = Bazarcms::Empresa.find_by_id(current_user.id)      
     end 
     
+    render :layout => false
   end
 
 end
