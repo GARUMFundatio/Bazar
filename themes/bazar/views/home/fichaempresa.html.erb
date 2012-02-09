@@ -1,16 +1,30 @@
 <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
 
+<% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+  <% editar = true %>
+<% else %>
+  <% editar = false %>
+<% end %>
+
 <!-- sección cabecera empresa -->
 
 <div class="caja-seccion" id="empresas-recomendadas">
   <div class="ficha-indice">
-    <div class="fichaempresa-iconos ilumina5">
-      <img class="fichaempresa-icono" src="<%= current_theme_image_path('sobre.png') %>">
-    </div>
-    <div class="fichaempresa-iconos ilumina5">
-      <img class="fichaempresa-icono" src="<%= current_theme_image_path('favorito.png') %>">
-    </div>
+
+    <% if editar %>
+      Tus Datos
+    <% else %>
+
+      <div class="fichaempresa-iconos ilumina5">
+        <img class="fichaempresa-icono" src="<%= current_theme_image_path('sobre.png') %>">
+      </div>
+      <div class="fichaempresa-iconos ilumina5">
+        <img class="fichaempresa-icono" src="<%= current_theme_image_path('favorito.png') %>">
+      </div>
+
+    <% end %>
+
   </div>
   
   <div class="seccion-contenido">
@@ -28,7 +42,7 @@
       <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
       
         <div class="fichaempresa-iconos ilumina5">
-          <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>" onClick="window.alert('click in editar');" >
+          <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>" onClick="$('#fichaempresa').attr('href', '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');" >
         </div>
         
       <% else %>
@@ -49,7 +63,7 @@
 
     </div>
 
-    
+    <a id="fichaempresa" class="fancybox.ajax" href=""></a>
     
     <div class="fichaempresa-desc">
       <%= @empresa.desc -%>
