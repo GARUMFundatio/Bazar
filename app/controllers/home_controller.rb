@@ -335,7 +335,7 @@ class HomeController < ApplicationController
     if ( params[:id].to_i == current_user.id )
       @empresa = Bazarcms::Empresa.find_by_id_and_bazar_id(params[:id], params[:bazar])
     else
-      @empresa = Bazarcms::Empresa.find_by_id_and_bazar_id(current_user.id), BZ_param("BazarId"))      
+      @empresa = Bazarcms::Empresa.find_by_id_and_bazar_id(current_user.id, BZ_param("BazarId"))      
     end 
     
   end
