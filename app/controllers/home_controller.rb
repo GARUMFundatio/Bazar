@@ -327,4 +327,17 @@ class HomeController < ApplicationController
     end 
     
   end
+
+  def empresadatosgenerales
+    
+    # TODO hay que controlar que solo el usuario puede cambiarlo o tiene permisos 
+    # admin/dinamizador 
+    if ( params[:id].to_i == current_user.id )
+      @empresa = Bazarcms::Empresa.find_by_id_and_bazar_id(params[:id], params[:bazar])
+    else
+      @empresa = Bazarcms::Empresa.find_by_id_and_bazar_id(current_user.id), BZ_param("BazarId"))      
+    end 
+    
+  end
+
 end
