@@ -105,7 +105,7 @@
                 <a href="/login"><%=t(:text_tus_favoritos)%></a>
               </li>
               <li>
-                <a href="/login"><%=t(:text_ficha_de_empresa)%></a>
+                <a href="/home/fichaempresa/<%= h BZ_param("BazarId") %>/<%= current_user.id -%>"><%=t(:text_ficha_de_empresa)%></a>
               </li>
               <li>
                 <a href="/login"><%=t(:text_datos_de_tu_cuenta)%></a>

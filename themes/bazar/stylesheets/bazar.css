@@ -983,6 +983,17 @@ input[type="text"]:focus{
   
 }
 
+.fichaempresa-icono-editar {
+  margin-left: 20px;
+  margin-top: 20px;
+
+  opacity:1;
+  filter:alpha(opacity=100);
+  filter: “alpha(opacity=100)”;
+  
+}
+
+
 .fichaempresa-titular {
   width: 731px;
 }

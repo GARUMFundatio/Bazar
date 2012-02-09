@@ -24,16 +24,25 @@
       <div class="fichaempresa-cajaicono ilumina5">
         IND
       </div>
-    
-      <div class="fichaempresa-cajaicono ilumina5">
-        5M€
-      </div>
+      
+      <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+      
+        <div class="fichaempresa-iconos ilumina5">
+          <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>" onClick="window.alert('click in editar');" >
+        </div>
+        
+      <% else %>
+      
+        <div class="fichaempresa-cajaicono ilumina5">
+          5M€
+        </div>
 
-
-      <div class="fichaempresa-cajaicono ilumina5">
-        *****
-      </div>
-
+        <div class="fichaempresa-cajaicono ilumina5">
+          *****
+        </div>
+      
+      <% end %>
+      
       <div class="fichaempresa-enlace">
         <%= @empresa.url -%>
       </div>
@@ -209,7 +218,7 @@
     
 </div>
 
-<div class="caja-seccion" id="sobre">
+<div class="caja-seccion" id="sedes">
   <div class="ficha-indice">
     Sedes
   </div>
