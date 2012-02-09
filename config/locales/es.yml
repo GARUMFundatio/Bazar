@@ -63,6 +63,7 @@ es:
   text_cambiar_contrasena: "Cambiar Contraseña"
   text_cercania: cercanía
   text_cerrar_informacion: "Cerrar Información"
+  text_cerrar_sesion: "cerrar sesión"
   text_como_la: "como  la"
   text_como_se_usa_el_api: "¿Como se usa el API?"
   text_como_cliente: "Como Cliente"
@@ -84,6 +85,7 @@ es:
   text_datos_de: "Datos de"
   text_datos_de_bazar: "Datos de Bazar"
   text_datos_de_esta_ubicacion: "Datos de esta Ubicación"
+  text_datos_de_tu_cuenta: "datos de tu cuenta"
   text_de: "De:"
   text_de_aquellos_a_los_que_me_dirijo: "de aquellos a los que me dirijo."
   text_de_estos_sectores: "de estos sectores."
@@ -150,6 +152,7 @@ es:
   text_estructura_sea_distribuida: "estructura sea distribuida"
   text_f_a_q: f.a.q.
   text_fecha: "Fecha:"
+  text_ficha_de_empresa: "ficha de empresa"
   text_filtrar_por_datos_economicos: "Filtrar por Datos Económicos"
   text_filtrar_por_pais: "Filtrar por País"
   text_filtrar_por_perfiles: "Filtrar por Perfiles"
@@ -338,6 +341,7 @@ es:
   text_total_empresas_en_este_bazar: "Total Empresas en este Bazar:"
   text_total_empresas_en_la_red: "Total Empresas en la Red"
   text_tu_pagina: "Tu Página"
+  text_tus_favoritos: "tus favoritos"
   text_ubicaciones_de_este_bazar: "Ubicaciones de este Bazar »"
   text_ubicaciones_de_las_empresas_de_este_bazar: "Ubicaciones de las Empresas de este Bazar"
   text_una_gran_empresa_ofrecia_a_traves_de_la_web_el_servicio_a_todos_los_usuarios_el_lado_bueno_es_que_podia_controlar_con_relativa_facilidad_que_nadie_incumpliera_las_condiciones_de_servicio_y_no_sin_polemica_ni_problemas_mantener_fuera_a_quienes_trataran_de_utilizar_la_red_con_fines_ilicitos_o_indeseados_el_lado_malo_es_que_la_centralizacion_tambien_tiene_un_coste_para_los_usuarios_la_extension_de_los_servicios_centralizados_ha_convertido_en_comunes_las_noticias_de_saturaciones_que_llevan_a_la_caida_del_servicio_de_ataques_de_grupos_mas_o_menos_organizados_que_buscan_relevancia_publica_y_de_cortes_en_el_acceso_en_paises_enteros_en_momentos_de_inestabilidad_politica: ": una gran empresa ofrecía, a través de la web, el servicio a todos los usuarios. El lado bueno es que podía controlar con relativa facilidad que nadie incumpliera las condiciones de servicio y, no sin polémica ni problemas, mantener fuera a quienes trataran de utilizar la red con fines ilícitos o indeseados. El lado malo es que la centralización también tiene un coste para los usuarios: la extensión de los servicios centralizados ha convertido en comunes las noticias de saturaciones que llevan a la caída del servicio, de ataques de grupos más o menos organizados que buscan relevancia pública y de cortes en el acceso en países enteros en momentos de inestabilidad política."
@@ -349,6 +353,7 @@ es:
   text_valor: Valor
   text_valoracion_como_cliente: "Valoración como Cliente de:"
   text_valoracion_como_proveedor: "Valoración como Proveedor de:"
+  text_vision_general: "visión general"
   text_ventas: "Ventas:"
   text_ver_ocultar: Ver/ocultar
   text_visible: Visible

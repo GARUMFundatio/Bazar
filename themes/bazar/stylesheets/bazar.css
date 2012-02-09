@@ -16,7 +16,7 @@ body {
     position: relative;
     width: 1100px;
     height: 60px;
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: #3C97E8;
     margin: 0 auto !important;
     text-align: left;	
@@ -1053,6 +1053,72 @@ input[type="text"]:focus{
   filter: “alpha(opacity=50)”;  
 }
 
+/* menu de navegacion */ 
+
+ul, li{margin:0; border:0; padding:0; list-style:none;}
+
+#socioenlaces .menu li {
+float:left;
+}
+
+#socioenlaces .menu li a{
+color: #ffffff;
+text-decoration:none;
+height:46px;
+display:block;
+float:left;
+padding:0 26px 0 10px;
+
+}
+
+#socioenlaces .menu li a:hover{
+
+}
+
+#socioenlaces ul .submenu {
+
+position:relative;
+top:0px;
+left: -121px;
+width:243px;
+padding:0px 0;
+clear:both;
+z-index:-2;
+display:none;
+}
+
+#socioenlaces ul .submenu li{
+background-color:#4aa3e5;
+height:60px;
+width:243px;
+display:block;
+float:none;
+margin:0px 0px 0px 0px;
+border:0;
+margin-bottom: 1px;
+z-index:-2;
+}
+
+#socioenlaces .submenu li a{
+background:none;
+display:block;
+float:none;
+padding:20px 20px;
+margin:0;
+border:0;
+height:20px;
+color:#000000;
+z-index: -2;
+}
+
+#socioenlaces .submenu li:hover {
+background:#77b6ef;
+}
+
+#socioenlaces .submenu li:hover a:hover {
+  color: #ffffff;
+}
+
 /* enlaces publicos */ 
 
 #socioenlaces {
@@ -1060,7 +1126,7 @@ input[type="text"]:focus{
   bottom: 0px;
   background-color: #000;
   width: 121px;
-  height: 60px;
+  height: 45px;
   margin: 0 0 0 1px;
   text-align: center;
   padding-top: 15px;

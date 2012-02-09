@@ -18,8 +18,7 @@
 
   <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
   <%= stylesheet_link_tag(current_theme_stylesheet_path('fancybox/jquery.fancybox')) %>
-
-  
+ 
   <%= csrf_meta_tag %>
 
   <% if BZ_param("BazarId").to_i == 2 %>
@@ -92,9 +91,33 @@
       <div id="socioenlaces" class="ilumina">
         <a href="/home/empresas"><%=t(:text_empresas)%></a>
       </div>
-      <div id="socioenlaces" class="ilumina">
-        <a class="login-link" href="/login"><%=t(:text_tu_pagina)%></a>
+      
+      <div id="socioenlaces" class="ilumina">  
+        <ul class="menu">
+          <li>
+            <a href="#" onclick="javascript:showlayer('sm_1')"><%=t(:text_tu_pagina)%></a>
+            </li>
+            <ul class="submenu ilumina" id="sm_1">
+              <li>
+                <a href="/home"><%=t(:text_vision_general)%></a>
+              </li>
+              <li>
+                <a href="/login"><%=t(:text_tus_favoritos)%></a>
+              </li>
+              <li>
+                <a href="/login"><%=t(:text_ficha_de_empresa)%></a>
+              </li>
+              <li>
+                <a href="/login"><%=t(:text_datos_de_tu_cuenta)%></a>
+              </li>
+              <li>
+                <a href="/logout"><%=t(:text_cerrar_sesion)%></a>
+              </li>
+            </ul>
+          </ul>
+              
       </div>
+      
       <div id="socioenlaces" class="ilumina" style="width:300px;">
         <a class="login-link" href="/login"><%=t(:text_buscar_empresas_ofertas_o_demandas)%></a>
       </div>
@@ -102,7 +125,8 @@
     <% end %>
       
   </div> <!-- fin del header -->
-  
+
+
   <% if !current_user.nil? %>
   <% end %>
     
@@ -185,7 +209,27 @@ $(document).ready(function() {
   $('.transpa').transify({opacityOrig:.35});
   $('.ilumina').transify({opacityOrig:.35,opacityNew:.15,fadeSpeed:500});
 
+  $("ul.sf-menu").supersubs({ 
+      minWidth:    12,  
+      maxWidth:    27,  
+      extraWidth:  1                    
+  }).superfish(    { 
+          animation: {height:'show'}, 
+          delay: 300 
+      });  
+
+ 
 });
+
+function showlayer(layer){
+var myLayer = document.getElementById(layer);
+if(myLayer.style.display=="none" || myLayer.style.display==""){
+myLayer.style.display="block";
+} else { 
+myLayer.style.display="none";
+}
+}
+
 
 </script>
 
