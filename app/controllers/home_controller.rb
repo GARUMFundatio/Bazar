@@ -341,4 +341,25 @@ class HomeController < ApplicationController
     render :layout => false
   end
 
+  def actempresadatosgenerales
+    
+    # TODO hay que controlar que solo el usuario puede cambiarlo o tiene permisos 
+    # admin/dinamizador 
+
+    if ( params[:id].to_i == current_user.id )
+      @empresa = Bazarcms::Empresa.find_by_id(params[:id])
+    else
+      @empresa = Bazarcms::Empresa.find_by_id(current_user.id)      
+    end 
+    
+    if @empresa.update_attributes(params[:bazarcms_empresa])
+       redirect_to("/home/fichaempresa/#{params[:id]}/#{params[:bazar]}/") 
+     else
+       render :action => "empresadatosgenerales", :layout => false 
+     end
+    
+    
+  end
+
+
 end
