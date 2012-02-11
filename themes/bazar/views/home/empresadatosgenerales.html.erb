@@ -26,5 +26,9 @@
 <br/>
 
 <script>
-    $('input[placeholder]').placeholder();
+    $('.edit_bazarcms_empresa').submit(function(){
+      window.alert("cerrando la fancy")
+      $.fancybox.close();
+      return false;
+    });
 </script>
