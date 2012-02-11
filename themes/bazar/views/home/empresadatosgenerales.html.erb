@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= javascript_include_tag :defaults %>
 
 <div class="caja-empresa-editar">
 
@@ -26,9 +27,18 @@
 <br/>
 
 <script>
+  
     $('.edit_bazarcms_empresa').submit(function(){
-      window.alert("cerrando la fancy")
       $.fancybox.close();
+      window.alert("cerrada la fancy");
       return false;
     });
+
+
+/*    $('#bazarcms_empresa_submit').click(function(){
+    	$.fancybox.close();
+    	return false;
+    });
+*/
+    
 </script>
