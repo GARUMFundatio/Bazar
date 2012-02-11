@@ -37,11 +37,11 @@
         '/home/actempresadatosgenerales/<%= @empresa.id -%>/<%= BZ_param("BazarId") -%>',
           params,
           function(data){
-            window.alert(data);
-            $.fancybox.close();
+            parent.location.reload();
+            // window.alert(data);
             console.log(data);
           },
-          'json'
+          'html'
         );
       return false;
   });
