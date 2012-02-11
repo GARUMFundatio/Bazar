@@ -353,7 +353,8 @@ class HomeController < ApplicationController
     end 
     
     if @empresa.update_attributes(params[:bazarcms_empresa])
-       redirect_to("/home/fichaempresa/#{params[:id]}/#{params[:bazar]}/") 
+       #redirect_to("/home/fichaempresa/#{params[:id]}/#{params[:bazar]}/") 
+       render :text => "OK", :layout => false
      else
        render :action => "empresadatosgenerales", :layout => false 
      end

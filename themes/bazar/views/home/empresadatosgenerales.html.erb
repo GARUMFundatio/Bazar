@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 <%= javascript_include_tag :defaults %>
-
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>  
+  
 <div class="caja-empresa-editar">
 
   <div class="caja-empresa-titulo">
@@ -28,17 +29,21 @@
 
 <script>
   
-    $('.edit_bazarcms_empresa').submit(function(){
-      $.fancybox.close();
-      window.alert("cerrada la fancy");
+   $('.edit_bazarcms_empresa').submit(function(){
+      var params = $(this).serialize();
+      var self = this;
+
+      $.post(
+        '/home/actempresadatosgenerales/<%= @empresa.id -%>/<%= BZ_param("BazarId") -%>',
+          params,
+          function(data){
+            window.alert(data);
+            $.fancybox.close();
+            console.log(data);
+          },
+          'json'
+        );
       return false;
-    });
-
-
-/*    $('#bazarcms_empresa_submit').click(function(){
-    	$.fancybox.close();
-    	return false;
-    });
-*/
+  });
     
 </script>
