@@ -26,7 +26,7 @@
       <%= t(:text_descripcion_de_la_empresa) %>
     </div>
 
-    <p><%= f.text_field :desc, :placeholder => t(:text_descripcion_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_area :desc, :placeholder => t(:text_descripcion_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
 
     <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
 
