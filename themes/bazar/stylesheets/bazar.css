@@ -1193,6 +1193,15 @@ input[type="text"]:focus{
   filter: “alpha(opacity=30)”; 
 }
 
+.item-edit-icono {
+  
+  
+}
+
+.item-delete-icono {
+  
+}
+
 /* menu de navegacion */ 
 
 ul, li{margin:0; border:0; padding:0; list-style:none;}
