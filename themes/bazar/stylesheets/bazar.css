@@ -1201,11 +1201,11 @@ input[type="text"]:focus{
   width: 60px;
   height: 40px;
   padding-top: 20px; 
-  background-color: #000000;
+  background-color: #ffffff;
 
-  opacity:.30;
-  filter:alpha(opacity=30);
-  filter: “alpha(opacity=30)”; 
+  opacity:.10;
+  filter:alpha(opacity=10);
+  filter: “alpha(opacity=10)”; 
 
 }
 
@@ -1213,9 +1213,9 @@ input[type="text"]:focus{
   position:absolute;
   right: 0px;
   bottom:-4px;
-  opacity:.6;
-  filter:alpha(opacity=60);
-  filter: “alpha(opacity=60)”;
+  opacity:.1;
+  filter:alpha(opacity=10);
+  filter: “alpha(opacity=10)”;
   
 }
 
