@@ -1218,12 +1218,13 @@ input[type="text"]:focus{
   height: 40px;
   padding-top: 20px; 
 
-
   background-color: #ffffff;
+/*
   opacity:.1;
   filter:alpha(opacity=10);
   filter: “alpha(opacity=10)”;
- 
+*/
+
 }
 
 .item-delete-icono img {
