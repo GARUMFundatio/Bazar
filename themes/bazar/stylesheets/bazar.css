@@ -1194,11 +1194,28 @@ input[type="text"]:focus{
 }
 
 .item-edit-icono {
+  position:absolute;
+  right: 0px;
+  top:0px;
   
-  
+  width: 60px;
+  height: 40px;
+  padding-top: 20px; 
+  background-color: #000000;
+
+  opacity:.30;
+  filter:alpha(opacity=30);
+  filter: “alpha(opacity=30)”; 
+
 }
 
 .item-delete-icono {
+  position:absolute;
+  right: 0px;
+  bottom:-4px;
+  opacity:.6;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
   
 }
 
