@@ -17,16 +17,16 @@
     <p><%= f.text_field :nombre, :placeholder => t(:text_nombre_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
 
     <div class="caja-empresa-editar-titulo">
-      <%= t(:text_url_de_la_empresa) %>
+      <%= t(:text_pagina_web_de_la_empresa) %>
     </div>
 
-    <p><%= f.text_field :url, :placeholder => t(:text_url_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_field :url, :placeholder => t(:text_pagina_web_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
 
     <div class="caja-empresa-editar-titulo">
       <%= t(:text_descripcion_de_la_empresa) %>
     </div>
 
-    <p><%= f.text_area :desc, :placeholder => t(:text_descripcion_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_area :desc, :placeholder => t(:text_descripcion_de_la_empresa), :class => "caja-empresa-editar-texto" %></p>
 
     <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
 

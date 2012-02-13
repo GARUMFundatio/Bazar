@@ -1127,7 +1127,20 @@ input[type="text"]:focus{
   
 }
 
+.caja-empresa-editar-texto {
+  
+  margin: 0px 0px 10px 50px;
+  padding: 14px; 
+  width: 500px;
+  height: 160px; 
+  color: #14668C ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 18px;
+  
+}
 .caja-empresa-editar-boton {
+    position: relative;    
     background: #14668C ;
     display: inline-block;
     padding: 5px 10px 6px;
@@ -1138,6 +1151,8 @@ input[type="text"]:focus{
     font-family: arial, sans-serif; 
     font-size: 14px;
     font-weight: bold;
+    margin-left: 370px;
+    margin-bottom: 50px;
     
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -1149,8 +1164,7 @@ input[type="text"]:focus{
     
     text-shadow: 0;
     border: 0;
-    
-    position: relative;
+
     cursor: pointer;
 }
 
