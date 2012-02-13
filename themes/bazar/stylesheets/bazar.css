@@ -1180,12 +1180,19 @@ input[type="text"]:focus{
 
 
 .add-item-texto {
-  margin-top: 10px;
+  margin-top: 30px;
   padding:0px; 
-  opacity:.9;
-  filter:alpha(opacity=90);
-  filter: “alpha(opacity=90)”; 
+  
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 13px;
+   
+  opacity:.30;
+  filter:alpha(opacity=30);
+  filter: “alpha(opacity=30)”; 
 }
+
 /* menu de navegacion */ 
 
 ul, li{margin:0; border:0; padding:0; list-style:none;}

@@ -112,7 +112,7 @@
         </div>
 
         <div class="add-item-texto">
-          <%= t(:text_nueva_oferta) -%>
+          <%= t(:text_publicar_una_oferta) -%>
         </div>
       </div>
 
@@ -131,6 +131,21 @@
   
   <div class="seccion-contenido">
 
+    <% if params[:id].to_i == current_user.id %>
+    
+      <div class="seccion-cajon ilumina5" onClick="">
+        
+        <div class="add-item-icono">
+          <img src="<%= current_theme_image_path('add.png') %>" onClick="window.alert('click in fav');" >
+        </div>
+
+        <div class="add-item-texto">
+          <%= t(:text_publicar_una_demanda) -%>
+        </div>
+      </div>
+
+    <% end %>
+
     <%= render(:partial => "oferta", :collection => @demandas) %>
 
   </div>
@@ -145,6 +160,21 @@
   </div>
   
   <div class="seccion-contenido">
+    
+    <% if params[:id].to_i == current_user.id %>
+    
+      <div class="seccion-cajon ilumina5" onClick="">
+        
+        <div class="add-item-icono">
+          <img src="<%= current_theme_image_path('add.png') %>" onClick="window.alert('click in fav');" >
+        </div>
+
+        <div class="add-item-texto">
+          <%= t(:text_anadir_una_foto) -%>
+        </div>
+      </div>
+
+    <% end %>
     
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
@@ -253,6 +283,22 @@
   </div>
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
+
+    <% if params[:id].to_i == current_user.id %>
+    
+      <div class="seccion-cajon ilumina5" onClick="">
+        
+        <div class="add-item-icono">
+          <img src="<%= current_theme_image_path('add.png') %>" onClick="window.alert('click in fav');" >
+        </div>
+
+        <div class="add-item-texto">
+          <%= t(:text_anadir_una_sede) -%>
+        </div>
+      </div>
+
+    <% end %>
+
     <div class="seccion-cajon ilumina5">
 
       <div class="ficha-sector-cifra">

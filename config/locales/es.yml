@@ -39,6 +39,8 @@ es:
   text_al_hacerlo_te_devolvera_un_fichero_en_formato_xml_que_habitualmente_saben_manejar_otros_programas_o_tu_aplicacion: "Al hacerlo te devolverá un fichero en formato XML que habitualmente saben manejar otros programas o tu aplicación"
   text_al_tiempo_que_les_facilita_establecer_alianzas_conocer_mejor_su_sector_y: ", al tiempo que les facilita establecer alianzas, conocer mejor su sector y"
   text_alguno: alguno
+  text_anadir_una_foto: "AÑADIR UNA FOTO"
+  text_anadir_una_sede: "AÑADIR UNA SEDE"
   text_anterior: Anterior
   text_api_application_programming_interface_es_la_forma_que_tiene_el_proyecto_bazar_de_compartir_la_informacion_de_la_red_de_bazares_con_tus_aplicaciones_y_o_herramientas: "API (Application Programming Interface) es la forma que tiene el Proyecto Bazar de compartir la información de la red de bazares con tus aplicaciones y/o herramientas."
   text_api_bazares: "API Bazares"
@@ -294,6 +296,8 @@ es:
   text_prohibited_this_user_session_from_being_saved: "prohibited this user session from being saved:"
   text_proyecto_bazar: "Proyecto Bazar"
   text_publicar: Publicar
+  text_publicar_una_demanda: "PUBLICAR UNA DEMANDA"
+  text_publicar_una_oferta: "PUBLICAR UNA OFERTA"
   text_puede_usar_asteriscos_o_espacios_para_buscar_por_varias_palabras: "Puede usar asteriscos o espacios para buscar por varias palabras."
   text_pulse_buscar_para_empezar_la_busqueda: "Pulse Buscar para empezar la búsqueda"
   text_que_es_bazar: "¿Qué es Bazar?"
