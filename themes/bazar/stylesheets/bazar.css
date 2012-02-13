@@ -1212,12 +1212,31 @@ input[type="text"]:focus{
 .item-delete-icono {
   position:absolute;
   right: 0px;
-  bottom:-4px;
+  bottom: 0px;
+
+  width: 60px;
+  height: 40px;
+  padding-top: 20px; 
+
+
+  background-color: #ffffff;
   opacity:.1;
   filter:alpha(opacity=10);
   filter: “alpha(opacity=10)”;
-  
+ 
 }
+
+.item-delete-icono img {
+
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  border: 3px;
+  border-color: red;
+ 
+}
+
+
 
 /* menu de navegacion */ 
 
