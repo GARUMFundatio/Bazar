@@ -55,6 +55,8 @@ Bazar::Application.routes.draw do
   match '/home/empresadatosgenerales/:bazar/:id' => "home#empresadatosgenerales", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/home/actempresadatosgenerales/:bazar/:id' => "home#actempresadatosgenerales", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
    
+  match '/home/test/' => "home#test"
+   
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
   match '/mensajeremoto' => "mensajes#mensajeremoto"
   match "/mensaje/dashboard" => "mensajes#dashboard"

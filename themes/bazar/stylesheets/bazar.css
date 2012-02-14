@@ -1201,13 +1201,17 @@ input[type="text"]:focus{
   width: 60px;
   height: 40px;
   padding-top: 20px; 
-  background-color: #ffffff;
 
-  opacity:.10;
-  filter:alpha(opacity=10);
-  filter: “alpha(opacity=10)”; 
+  background-image: url(bgwhite10.png);
+  background-repeat: repeat;  
 
 }
+
+.item-edit-icono:hover {
+  background-image: url(bgwhite50.png);
+  background-repeat: repeat;  
+}
+
 
 .item-delete-icono {
   position:absolute;
@@ -1226,6 +1230,18 @@ input[type="text"]:focus{
   background-image: url(bgwhite50.png);
   background-repeat: repeat;  
 }
+
+
+
+.item-delete-icono2 {
+  float: left;
+  width: 60px;
+  height: 60px;
+
+
+}
+
+
 
 
 .item-delete-icono img {
