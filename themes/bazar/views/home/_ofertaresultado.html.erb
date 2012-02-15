@@ -4,6 +4,19 @@
 
 
 <div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');">
+  
+  <% if oferta.cluster_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
+  
+    <div class="item-edit-icono">
+      <img src="<%= current_theme_image_path('editar.png') %>" onClick="window.alert('click in fav');" >
+    </div>
+
+    <div class="item-delete-icono">
+      <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="window.alert('click in fav');" >
+    </div>
+
+  <% end %>  
+  
   <div class="add-favoritos">
     <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
   </div>

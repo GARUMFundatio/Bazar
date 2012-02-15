@@ -1,7 +1,7 @@
 <div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= oferta.id -%>').trigger('click');">
 
-  <% if params[:id].to_i == current_user.id %>
-  
+ 
+  <% if oferta.bazar_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
     <div class="item-edit-icono">
       <img src="<%= current_theme_image_path('editar.png') %>" onClick="window.alert('click in fav');" >
     </div>
@@ -10,15 +10,14 @@
       <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="window.alert('click in fav');" >
     </div>
 
-  
   <% else %>
 
-    <!-- solo tiene que aparecer si está recomendada por el sistema -->
+  <!-- solo tiene que aparecer si está recomendada por el sistema -->
 
     <div class="add-favoritos">
       <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
     </div>
-  
+
   <% end %>
 
   <div class="cajon-titulo">
