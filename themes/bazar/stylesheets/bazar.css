@@ -803,9 +803,16 @@ a {
 .caja-busqueda-input {
   height: 121px;
   width: 733px;
-  background-color: #000000; 
   margin: 0px; 
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;
 }
+
+.caja-busqueda-input:hover {
+  background-image: url(bgblack40.png);
+  background-repeat: repeat;
+}
+
 
 .busqueda-input {
   width: 651px;
