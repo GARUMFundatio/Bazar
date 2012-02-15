@@ -5,7 +5,7 @@
 
 <div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');">
   
-  <% if oferta.cluster_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
+  <% if ofertaresultado.cluster_id == BZ_param("BazarId").to_i && ofertaresultado.empresa_id == current_user.id %>
   
     <div class="item-edit-icono">
       <img src="<%= current_theme_image_path('editar.png') %>" onClick="window.alert('click in fav');" >
