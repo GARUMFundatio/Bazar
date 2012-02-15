@@ -15,11 +15,14 @@
       <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="window.alert('click in fav');" >
     </div>
 
-  <% end %>  
+  <% else %>  
   
-  <div class="add-favoritos">
-    <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
-  </div>
+    <div class="add-favoritos">
+      <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
+    </div>
+  
+  <% end %>
+  
   <div class="cajon-titulo">
     <%= ofertaresultado.info -%>
   </div>
