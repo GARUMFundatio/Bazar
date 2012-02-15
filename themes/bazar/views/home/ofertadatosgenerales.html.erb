@@ -8,25 +8,25 @@
     <p><%= t(:text_informacion_general_de_tu_oferta) %> </p>
   </div>
 
-  <% form_for @oferta, :url => "/home/actofertadatosgenerales/#{@oferta.empresa_id}/#{@oferta.id}" do |f| %>
+  <% form_for @oferta, :url => "/home/actofertadatosgenerales/#{@oferta.bazar_id}/#{@oferta.id}" do |f| %>
 
     <div class="caja-empresa-editar-titulo">
       <%= t(:text_titulo_de_la_oferta) %>
     </div>
 
-    <p><%= f.text_field :titulo, :placeholder => t(:text_nombre_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_field :titulo, :placeholder => t(:text_titulo_de_la_oferta), :class => "caja-empresa-editar-input" %></p>
 
     <div class="caja-empresa-editar-titulo">
-      <%= t(:text_pagina_web_de_la_empresa) %>
+      <%= t(:text_texto_de_la_oferta) %>
     </div>
 
-    <p><%= f.text_field :url, :placeholder => t(:text_pagina_web_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_area :texto, :placeholder => t(:text_texto_de_la_oferta), :class => "caja-empresa-editar-texto" %></p>
 
     <div class="caja-empresa-editar-titulo">
-      <%= t(:text_descripcion_de_la_empresa) %>
+      <%= t(:text_oferta_valida_hasta) %>
     </div>
 
-    <p><%= f.text_area :desc, :placeholder => t(:text_descripcion_de_la_empresa), :class => "caja-empresa-editar-texto" %></p>
+    <p><%= f.text_field :fecha_hasta, :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
 
     <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
 
@@ -39,13 +39,13 @@
 <br/>
 
 <script>
-  
+ /* 
    $('.edit_bazarcms_empresa').submit(function(){
       var params = $(this).serialize();
       var self = this;
 
       $.post(
-        '/home/actempresadatosgenerales/<%= @empresa.id -%>/<%= BZ_param("BazarId") -%>',
+        '/home/actofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>',
           params,
           function(data){
             parent.location.reload();
@@ -56,6 +56,7 @@
         );
       return false;
   });
+*/
   
   $('input[placeholder]').placeholder();
     

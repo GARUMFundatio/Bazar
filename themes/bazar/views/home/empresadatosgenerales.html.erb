@@ -8,7 +8,7 @@
     <p><%= t(:text_informacion_general_sobre_tu_empresa) %> </p>
   </div>
 
-  <% form_for @empresa, :url => "/home/actempresadatosgenerales/#{@empresa.id}/#{BZ_param("BazarId")}" do |f| %>
+  <% form_for @empresa, :url => "/home/actempresadatosgenerales/#{BZ_param("BazarId")}/#{@empresa.id}" do |f| %>
 
     <div class="caja-empresa-editar-titulo">
       <%= t(:text_nombre_de_la_empresa) %>
@@ -45,7 +45,7 @@
       var self = this;
 
       $.post(
-        '/home/actempresadatosgenerales/<%= @empresa.id -%>/<%= BZ_param("BazarId") -%>',
+        '/home/actempresadatosgenerales/<%= BZ_param("BazarId") -%>/<%= @empresa.id -%>',
           params,
           function(data){
             parent.location.reload();

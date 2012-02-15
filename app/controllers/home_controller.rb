@@ -280,15 +280,36 @@ class HomeController < ApplicationController
   
   def ofertadatosgenerales
     
-    if ( params[:empresa].to_i == current_user.id )
-      @oferta = Bazarcms::Oferta.find_by_empresa_id_and_id(params[:empresa], params[:id])
-      render :layout => false
+    if ( params[:bazar].to_i == BZ_param("BazarId").to_i )
+      @oferta = Bazarcms::Oferta.find_by_bazar_id_and_id(params[:bazar], params[:id])
+      if (@oferta.empresa_id != current_user.id)
+        render :layout => false, :text => "No puede editar esta oferta. No es el dueño."       
+      else
+        render :layout => false
+      end
     else
-      render :layout => false, :text => "No puede editar esta oferta"      
+      render :layout => false, :text => "No puede editar una oferta de otro bazar #{params[:bazar].to_i} #{BZ_param("BazarId")}"      
     end 
     
-    
   end 
+  
+  def actofertadatosgenerales
+    
+    # TODO hay que controlar que solo el usuario puede cambiarlo o tiene permisos 
+    # admin/dinamizador 
+  
+    @oferta = Bazarcms::Oferta.find_by_id(params[:id])
+    
+    
+    if @oferta.update_attributes(params[:bazarcms_oferta])
+       redirect_to("/home/fichaoferta/#{params[:bazar]}/#{params[:id]}/") 
+       # render :text => "OK", :layout => false
+     else
+       render :action => "ofertadatosgenerales", :layout => false 
+     end
+    
+  end
+  
   
   def empresas
 

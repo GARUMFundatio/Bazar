@@ -191,6 +191,7 @@ es:
   text_info_garumfundatio_org: info@garumfundatio.org
   text_informacion_actualizada_el: "Información actualizada el"
   text_informacion_de_una_empresa: "Información de una Empresa"
+  text_informacion_general_de_tu_oferta: "Información General de tu oferta"
   text_informacion_del_bazar: "Información del Bazar"
   text_informacion_del_usuario: "Información del Usuario"
   text_informacion_general_sobre_tu_empresa: "Información general sobre tu empresa"
@@ -256,6 +257,7 @@ es:
   text_ofertas: Ofertas
   text_ofertas_demandas: "Ofertas / Demandas"
   text_ofertas_diferenciadas_y_demandas_restringidas: "ofertas diferenciadas y demandas restringidas"
+  text_oferta_valida_hasta: "Oferta válida hasta"
   text_ofrecen: "Ofrecen:"
   text_pais: "Pais"
   text_paises: "Países:"
@@ -337,11 +339,13 @@ es:
   text_solo: Solo
   text_titulo: Título
   text_texto: Texto
+  text_texto_de_la_oferta: "Texto de la oferta"
   text_tiene_una: ", tiene una"
   text_tiene_unos_gastos_gigantescos_de_infraestructura_lo_que_orienta_toda_su_actividad_a_monetarizar_y_capturar_para_si_el_valor_de_la_red: "», tiene unos gastos gigantescos de infraestructura; lo que orienta toda su actividad a monetarizar y capturar para si, el valor de la red."
   text_tienen_informacion_especifica_de_la_que_aprender_para_mejorar_sus_estrategias: "tienen información específica de la que aprender para mejorar sus estrategias"
   text_tipo: Tipo
   text_titulo: "Titulo:"
+  text_titulo_de_la_oferta: "Título de la oferta"
   text_todos_los_paises_de_este_bazar: "Todos los países de este Bazar »"
   text_total_consultas_realizadas: "Total Consultas Realizadas:"
   text_total_empresas: "Total Empresas:"
