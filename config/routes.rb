@@ -48,7 +48,7 @@ Bazar::Application.routes.draw do
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/busqueda-oferta' => "home#busquedaoferta"
-  match '/home/ofertadatosgenerales/:empresa/:id' => "home#actempresadatosgenerales", :constrants => { :id => /\d+/ , :empresa => /\d+/ }
+  match '/home/ofertadatosgenerales/:empresa/:id' => "home#ofertadatosgenerales", :constrants => { :id => /\d+/ , :empresa => /\d+/ }
 
   match '/home/empresas/' => "home#empresas"
   match '/home/fichaempresa/:bazar/:id' => "home#fichaempresa", :constrants => { :id => /\d+/ , :bazar => /\d+/ }

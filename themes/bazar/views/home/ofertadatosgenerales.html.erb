@@ -1,0 +1,62 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= javascript_include_tag :defaults %>
+ 
+  
+<div class="caja-empresa-editar">
+
+  <div class="caja-empresa-titulo">
+    <p><%= t(:text_informacion_general_de_tu_oferta) %> </p>
+  </div>
+
+  <% form_for @oferta, :url => "/home/actofertadatosgenerales/#{@oferta.empresa_id}/#{@oferta.id}" do |f| %>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_titulo_de_la_oferta) %>
+    </div>
+
+    <p><%= f.text_field :titulo, :placeholder => t(:text_nombre_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_pagina_web_de_la_empresa) %>
+    </div>
+
+    <p><%= f.text_field :url, :placeholder => t(:text_pagina_web_de_la_empresa), :class => "caja-empresa-editar-input" %></p>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_descripcion_de_la_empresa) %>
+    </div>
+
+    <p><%= f.text_area :desc, :placeholder => t(:text_descripcion_de_la_empresa), :class => "caja-empresa-editar-texto" %></p>
+
+    <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
+
+  <% end %>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<script>
+  
+   $('.edit_bazarcms_empresa').submit(function(){
+      var params = $(this).serialize();
+      var self = this;
+
+      $.post(
+        '/home/actempresadatosgenerales/<%= @empresa.id -%>/<%= BZ_param("BazarId") -%>',
+          params,
+          function(data){
+            parent.location.reload();
+            // window.alert(data);
+            console.log(data);
+          },
+          'html'
+        );
+      return false;
+  });
+  
+  $('input[placeholder]').placeholder();
+    
+</script>
