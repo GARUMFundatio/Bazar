@@ -8,11 +8,11 @@
   <% if ofertaresultado.cluster_id == BZ_param("BazarId").to_i && ofertaresultado.empresa_id == current_user.id %>
   
     <div class="item-edit-icono">
-      <img src="<%= current_theme_image_path('editar.png') %>" onClick="window.alert('click in fav');" >
+      <img src="<%= current_theme_image_path('editar.png') %>" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');" >
     </div>
 
     <div class="item-delete-icono">
-      <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="window.alert('click in fav');" >
+      <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="window.alert('click in borrar sin terminar');" >
     </div>
 
   <% else %>  
@@ -23,13 +23,13 @@
   
   <% end %>
   
-  <div class="cajon-titulo">
+  <div class="cajon-titulo" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
     <%= ofertaresultado.info -%>
   </div>
-  <div class="cajon-cuerpo">
+  <div class="cajon-cuerpo" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
     <%= truncate_html(ofertaresultado.nombre_empresa, :length => 120).html_safe -%>
   </div>
-  <div class="cajon-pie">
+  <div class="cajon-pie" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
     Válida hasta el <%= ofertaresultado.enlace %>
   </div>
 </div>
