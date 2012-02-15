@@ -739,6 +739,18 @@ a {
   
 }
 
+.ficha-editar-icono {
+  float: right;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding-left: 20px;
+  padding-top: 20px;
+  background-image: url(bgblack15.png);
+  background-repeat: repeat;  
+  
+}
+
 /* ficha oferta sectores */ 
 
 .ficha-sector-cifra {

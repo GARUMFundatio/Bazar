@@ -8,10 +8,20 @@
     <% if !@empresa.nil? %>
       <%= @empresa.nombre %>
     <% else %>
-      Ficha de empresa imcompleta
+      Ficha de empresa incompleta
     <% end %>
   </div>
 </div>
+
+<% 
+
+if params[:bazar].to_i == @oferta.bazar_id && @oferta.empresa_id == current_user.id 
+  owner = true
+else 
+  owner = false 
+end
+
+%>
 
 <div class="ficha-tipo">
   <% if @oferta.tipo == 'O'%>
@@ -21,13 +31,30 @@
   <% end %>
 </div>
 
-<div class="ficha-titulo">
-  <%= @oferta.titulo %> 
-</div>
+
+<% if ! owner %>
+
+  <div class="ficha-titulo">
+    <%= @oferta.titulo %>
+  </div>
+
+<% else %>
+
+  <div class="ficha-titulo">
+    <%= @oferta.titulo %> 
+    <div class="ficha-editar-icono"> 
+      <img src="<%= current_theme_image_path('editargris.png') %>"  onClick="window.alert('click in fav');" > 
+    </div>
+  </div>
+
+<% end %>
+
 
 <div class="ficha-valida">
   Oferta válida hasta el <%= @oferta.fecha_hasta.strftime("%d-%m-%y") %>
 </div>
+
+<% if !owner %>
 
 <div class="ficha-opciones">
 
@@ -55,6 +82,8 @@
   </div>
 
 </div>
+
+<% end %>
 
 <div class="ficha-descripcion">
   <%= @oferta.texto.html_safe -%>
