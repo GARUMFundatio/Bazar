@@ -90,15 +90,25 @@ end
 </div>
 
 <div class="ficha fotos">
+<br/>
+<br/>
+<br/>
+<br/>
 fotos fancybox 
+<br/>
+<br/>
+<br/>
+<br/>
 </div>
 
 <div class="ficha-caja-detalle">
 
   <div class="ficha-caja-enlace">
 
+    <% if !owner %>
+    
     <div class="ficha-caja-enlace-imagen">
-      <img src="<%= current_theme_image_path('flecha.png') %>" onClick="window.alert('click in correo');" >
+      <img src="<%= current_theme_image_path('flecha.png') %>" onClick="window.alert('click en el enlace externo');" >
     </div>
     
     <div class="ficha-caja-enlace-texto">
@@ -109,6 +119,26 @@ fotos fancybox
       <% end %>
       
     </div>
+    <% else %>
+    
+    <div class="ficha-caja-enlace-texto">
+        
+        <br/>
+        <br/>
+        <br/>
+        
+        Web externa: <br/></br>
+        
+        <% if !@oferta.url.nil? %>
+          <%= @oferta.url %>
+        <% else %>
+          Edite si quiere incluir un enlace a la página con información extra de la oferta.
+        <% end %>
+      
+    </div>
+
+    
+    <% end %>
       
   </div>
 
