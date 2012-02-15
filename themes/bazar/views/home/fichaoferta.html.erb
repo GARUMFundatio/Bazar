@@ -43,7 +43,7 @@ end
   <div class="ficha-titulo">
     <%= @oferta.titulo %> 
     <div class="ficha-editar-icono"> 
-      <img src="<%= current_theme_image_path('editargris.png') %>"  onClick="window.alert('click in fav');" > 
+      <img src="<%= current_theme_image_path('editargris.png') %>"  onClick="window.open('/home/ofertadatosgenerales/<%= @oferta.empresa_id -%>/<%= @oferta.id -%>')" > 
     </div>
   </div>
 

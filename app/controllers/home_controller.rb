@@ -278,6 +278,18 @@ class HomeController < ApplicationController
     
   end
   
+  def ofertadatosgenerales
+    
+    if ( params[:empresa].to_i == current_user.id )
+      @oferta = Bazarcms::Oferta.find_by_empresa_id_and_id(params[:empresa], params[:id])
+      render :layout => false
+    else
+      render :layout => false, :text => "No puede editar esta oferta"      
+    end 
+    
+    
+  end 
+  
   def empresas
 
     # TODO:
