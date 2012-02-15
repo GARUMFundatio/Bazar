@@ -613,6 +613,7 @@ a {
 
 .ficha-caja-enlace {
   float: left;
+  position: relative;
   width: 243px;
   height: 243px;
   background-color: #005B79;
@@ -637,6 +638,21 @@ a {
   margin-left: 30px;
   margin-top: 10px;
   margin-right: 30px;
+}
+
+.ficha-caja-enlace-edit {
+  float: right;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding-left: 20px;
+  padding-top: 20px;
+  margin-top: 19px;
+  margin-right: -29px;
+  text-align: left;
+  background-image: url(bgwhite10.png);
+  background-repeat: repeat;  
+  
 }
 
 .ficha-caja-gris {

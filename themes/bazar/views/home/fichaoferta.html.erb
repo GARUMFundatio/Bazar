@@ -123,18 +123,23 @@ fotos fancybox
     
     <div class="ficha-caja-enlace-texto">
         
-        <br/>
-        <br/>
-        <br/>
+        <div>
+          <br/><br/><br/>
         
-        Web externa: <br/></br>
+          Web externa: <br/></br>
         
-        <% if !@oferta.url.nil? %>
-          <%= @oferta.url %>
-        <% else %>
-          Edite si quiere incluir un enlace a la página con información extra de la oferta.
-        <% end %>
-      
+          <% if !@oferta.url.nil? %>
+            <%= @oferta.url %>
+          <% else %>
+            Edite si quiere incluir un enlace a la página con información extra de la oferta.
+          <% end %>
+        </div>
+        
+
+        <div class="ficha-caja-enlace-edit">
+          <img src="<%= current_theme_image_path('editar.png') %>" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= @oferta.id -%>').trigger('click');" >
+        </div>
+        
     </div>
 
     
