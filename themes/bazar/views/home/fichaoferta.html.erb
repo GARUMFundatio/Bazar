@@ -168,7 +168,7 @@ fotos fancybox
       Fecha de publicación:       
     </div>
 
-    <div class="ficha-caja-gris-texto">
+    <div class="ficha-caja-gris-fecha">
       <%= @oferta.fecha.strftime("%d-%m-%y") %>
     </div>
 
@@ -176,9 +176,17 @@ fotos fancybox
       Ámbito:       
     </div>
     
-    <div class="ficha-caja-gris-texto">
+    <div class="ficha-caja-gris-fecha">
       Internacional
     </div>
+    
+    <% if owner %>
+
+      <div class="ficha-caja-gris-edit">
+        <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+      </div>
+      
+    <% end %>
     
   </div>
 

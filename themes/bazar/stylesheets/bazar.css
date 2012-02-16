@@ -660,6 +660,10 @@ a {
   
 }
 
+.ficha-caja-enlace-edit:hover {
+  background-image: url(bgwhite30.png);
+}
+
 .ficha-caja-gris {
   float: left;
   width: 243px;
@@ -703,6 +707,24 @@ a {
 
 }
 
+.ficha-caja-gris-fecha {
+  width: 205px;
+  height: 31px;
+  float: top;
+  color: #000000;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 125%;
+  text-align: left;
+  opacity:.75;
+  filter:alpha(opacity=75);
+  filter: “alpha(opacity=75)”;
+  margin-left: 30px;
+  margin-top: 10px;
+
+}
+
 .ficha-caja-gris-edit {
 
   position: relative;
@@ -721,6 +743,11 @@ a {
   background-repeat: repeat;  
   
 }
+
+.ficha-caja-gris-edit:hover {
+  background-image: url(bgblack30.png);
+}
+
 .ficha-masdetalles-titulo {
   width: 790px;
   height: 60px;
