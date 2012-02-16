@@ -670,6 +670,7 @@ a {
 
 .ficha-caja-gris-titulo {
   width: 205px;
+  height: 20px;
   float: top;
   color: #000000;
   font-family: Arial,sans-serif;
@@ -686,6 +687,7 @@ a {
 
 .ficha-caja-gris-texto {
   width: 205px;
+  height: 104px;
   float: top;
   color: #000000;
   font-family: Arial,sans-serif;
@@ -703,9 +705,11 @@ a {
 
 .ficha-caja-gris-edit {
 
-  position: absolute;
+  position: relative;
   bottom: 0px;
   right: 0px;
+
+  float: right;
   width: 40px;
   height: 40px;
   margin-top: 0px;
@@ -713,7 +717,7 @@ a {
   padding-left: 20px;
   padding-top: 20px;
   text-align: left;
-  background-image: url(bgwhite10.png);
+  background-image: url(bgblack05.png);
   background-repeat: repeat;  
   
 }

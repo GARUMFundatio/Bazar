@@ -154,8 +154,9 @@ fotos fancybox
     </div>
 
     <% if owner %>
+
       <div class="ficha-caja-gris-edit">
-        editar <img src="<%= current_theme_image_path('editar.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+        <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
       </div>
       
     <% end %>
