@@ -629,6 +629,9 @@ a {
 
 .ficha-caja-enlace-texto {
   float: top;
+  position: absolute;
+  width: 183px;
+  height: 153px;
   color: #ffffff;
   font-family: Arial,sans-serif;
   font-weight: normal;
@@ -641,14 +644,16 @@ a {
 }
 
 .ficha-caja-enlace-edit {
-  float: right;
-  position: relative;
+
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
   width: 40px;
   height: 40px;
+  margin-top: 0px;
+  margin-right: 0px;
   padding-left: 20px;
   padding-top: 20px;
-  margin-top: 19px;
-  margin-right: -29px;
   text-align: left;
   background-image: url(bgwhite10.png);
   background-repeat: repeat;  
@@ -696,6 +701,22 @@ a {
 
 }
 
+.ficha-caja-gris-edit {
+
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  margin-top: 0px;
+  margin-right: 0px;
+  padding-left: 20px;
+  padding-top: 20px;
+  text-align: left;
+  background-image: url(bgwhite10.png);
+  background-repeat: repeat;  
+  
+}
 .ficha-masdetalles-titulo {
   width: 790px;
   height: 60px;

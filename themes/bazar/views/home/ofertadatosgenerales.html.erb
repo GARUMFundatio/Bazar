@@ -3,34 +3,17 @@
  
   
 <div class="caja-empresa-editar">
+<% if params[:edit] == "gen" %>
 
-  <div class="caja-empresa-titulo">
-    <p><%= t(:text_informacion_general_de_tu_oferta) %> </p>
-  </div>
+  <%= render 'ofertadatosgen' %>
 
-  <% form_for @oferta, :url => "/home/actofertadatosgenerales/#{@oferta.bazar_id}/#{@oferta.id}" do |f| %>
+<% end %>
 
-    <div class="caja-empresa-editar-titulo">
-      <%= t(:text_titulo_de_la_oferta) %>
-    </div>
+<% if params[:edit] == "url" %>
 
-    <p><%= f.text_field :titulo, :placeholder => t(:text_titulo_de_la_oferta), :class => "caja-empresa-editar-input" %></p>
+  <%= render("ofertadatosurl") %>
 
-    <div class="caja-empresa-editar-titulo">
-      <%= t(:text_texto_de_la_oferta) %>
-    </div>
-
-    <p><%= f.text_area :texto, :placeholder => t(:text_texto_de_la_oferta), :class => "caja-empresa-editar-texto" %></p>
-
-    <div class="caja-empresa-editar-titulo">
-      <%= t(:text_oferta_valida_hasta) %>
-    </div>
-
-    <p><%= f.text_field :fecha_hasta, :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
-
-    <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
-
-  <% end %>
+<% end %>
 
 </div>
 

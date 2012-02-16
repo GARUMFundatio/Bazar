@@ -43,7 +43,7 @@ end
   <div class="ficha-titulo">
     <%= @oferta.titulo %> 
     <div class="ficha-editar-icono"> 
-      <img src="<%= current_theme_image_path('editargris.png') %>"  onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>';" > 
+      <img src="<%= current_theme_image_path('editargris.png') %>"  onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=gen';" > 
     </div>
   </div>
 
@@ -119,28 +119,26 @@ fotos fancybox
       <% end %>
       
     </div>
+
     <% else %>
     
-    <div class="ficha-caja-enlace-texto">
+      <div class="ficha-caja-enlace-texto">
         
-        <div>
-          <br/><br/><br/>
+        <br/><br/><br/>
+    
+        Web externa: <br/></br>
+    
+        <% if !@oferta.url.nil? %>
+          <%= @oferta.url %>
+        <% else %>
+          Edite si quiere incluir un enlace a la página con información extra de la oferta.
+        <% end %>
         
-          Web externa: <br/></br>
-        
-          <% if !@oferta.url.nil? %>
-            <%= @oferta.url %>
-          <% else %>
-            Edite si quiere incluir un enlace a la página con información extra de la oferta.
-          <% end %>
-        </div>
-        
+      </div>
 
-        <div class="ficha-caja-enlace-edit">
-          <img src="<%= current_theme_image_path('editar.png') %>" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= @oferta.id -%>').trigger('click');" >
-        </div>
-        
-    </div>
+      <div class="ficha-caja-enlace-edit">
+        <img src="<%= current_theme_image_path('editar.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+      </div>
 
     
     <% end %>
@@ -154,6 +152,14 @@ fotos fancybox
     <div class="ficha-caja-gris-texto">
       Sillas, hoteles, poli, pvc, ...
     </div>
+
+    <% if owner %>
+      <div class="ficha-caja-gris-edit">
+        editar <img src="<%= current_theme_image_path('editar.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+      </div>
+      
+    <% end %>
+    
   </div>
 
   <div class="ficha-caja-gris trans25">
