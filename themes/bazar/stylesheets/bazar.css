@@ -238,7 +238,8 @@ a {
   color: #ffffff;
   width: 120px;
   height: 45px;
-  background-color: #000;
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;
   margin-right: 1px;
   font-family: Arial,sans-serif;
   font-weight: bold;
@@ -247,6 +248,10 @@ a {
   text-decoration: none;
   padding-top: 15px;
   
+}
+
+.seccion-menu-item:hover {
+  background-image: url(bgblack40.png);
 }
 
 .seccion-menu-item a {
@@ -1436,3 +1441,14 @@ background:#77b6ef;
   font-size: 14px;
 }
 
+.home-lupa {
+  float: left;
+  height: 60px;
+  width: 60px;
+}
+
+.home-texto-busqueda {
+  float: left;
+  height: 60px; 
+  width: 220px;
+}

@@ -118,8 +118,13 @@
               
       </div>
       
-      <div id="socioenlaces" class="ilumina" style="width:300px;">
-        <a class="login-link" href="/login"><%=t(:text_buscar_empresas_ofertas_o_demandas)%></a>
+      <div id="socioenlaces" class="ilumina" style="width:304px;">
+        <div class="home-lupa">
+          <img src="<%= current_theme_image_path('lupa-white.png') %>" onClick="window.alert('click in fav');" >
+        </div>
+        <div class="home-texto-busqueda">
+          <a class="login-link" href="/login"><%=t(:text_buscar_empresas_ofertas_o_demandas)%></a>          
+        </div>
       </div>
           
     <% end %>

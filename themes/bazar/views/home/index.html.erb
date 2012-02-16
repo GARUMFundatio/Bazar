@@ -1,3 +1,5 @@
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+
 <!-- Sección menús -->
 <div class="caja-seccion">
   <div class="caja-indice">
@@ -16,28 +18,28 @@
 
     <div class="seccion-menu">
       
-      <div class="seccion-menu-item ilumina5" >
-        <a href="/home#ofertas-recomendadas">Ofertas recomendadas</a>
+      <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas-recomendadas', 'slow')">
+        <a href="#">Ofertas recomendadas</a>
       </div>
       
-      <div class="seccion-menu-item ilumina5">
-        <a href="/home#demandas-recomendadas">Demandas recomendadas</a>
+      <div class="seccion-menu-item" onclick="$.scrollTo('#demandas-recomendadas', 'slow')">
+        <a href="#">Demandas recomendadas</a>
       </div>
       
-      <div class="seccion-menu-item ilumina5">
-        <a href="/home#empresas-interesantes">Empresas interesantes</a>
+      <div class="seccion-menu-item" onclick="$.scrollTo('#empresas-interesantes', 'slow')">
+        <a href="#">Empresas interesantes</a>
       </div>
       
-      <div class="seccion-menu-item ilumina5">
-        <a href="/home#empresas-nuevas">Empresas nuevas en Bazar</a>
+      <div class="seccion-menu-item" onclick="$.scrollTo('#empresas-nuevas', 'slow')">
+        <a href="#">Empresas nuevas en Bazar</a>
       </div>
       
-      <div class="seccion-menu-item ilumina5">
-        <a href="/home#tu-empresa">Tu empresa en Bazar</a>
+      <div class="seccion-menu-item" onclick="$.scrollTo('#tu-empresa', 'slow')">
+        <a href="#">Tu empresa en Bazar</a>
       </div>
 
-      <div class="seccion-menu-item ilumina5">
-        <a href="/home#datos-bazar">Datos de este Bazar</a>
+      <div class="seccion-menu-item" onclick="$.scrollTo('#datos-bazar', 'slow')">
+        <a href="#">Datos de este Bazar</a>
       </div>
       
     </div>
