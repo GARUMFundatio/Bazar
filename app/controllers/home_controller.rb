@@ -361,6 +361,16 @@ class HomeController < ApplicationController
     
   end
 
+  def busquedaempresa
+    
+    # TODO: controlar el tipo (O/D) que vamos a enviar como parametro
+    params[:q] = '*' if (params[:q] == '') 
+    params[:tipo] = 'O' if params[:tipo].nil?
+    @empresas, @empresasresultados = Bazarcms::Empresa.busca(:tipo => params[:tipo], :q => params[:q], 
+                                                          :user => current_user.id, :bazar => BZ_param("BazarId").to_i)
+    
+  end
+
   def empresadatosgenerales
     
     # TODO hay que controlar que solo el usuario puede cambiarlo o tiene permisos 
