@@ -1,0 +1,86 @@
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+
+<%= render(:partial => "busquedaempresas") %>
+
+<div class="caja-seccion" id="ofertas-recomendadas">
+  <div class="resultado-indice">
+    <div class="resultado-indice-texto">
+      <% cuantas = @empresasresultados.count %>
+      <% if cuantas == 0 %>
+        No hay Empresas<br/>con este criterio
+      <% else %>
+        <% if cuantas == 1 %>
+          1 Empresa
+        <% else %>
+          <%= cuantas %> Empresas
+        <% end %>
+      <% end %>
+    </div>
+    
+    <div class="resultado-filtro ilumina10">
+      <div class="resultado-filtro-icono">
+        <img src="<%= current_theme_image_path('calendar.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        ver las más recientes primero
+      </div>
+    </div>
+
+    <div class="resultado-filtro ilumina10">
+      <div class="resultado-filtro-icono">
+        <img src="<%= current_theme_image_path('world.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        ver las más cercanas geográficamente primero
+      </div>
+    </div>
+
+    <div class="resultado-filtro ilumina10">
+      <div class="resultado-filtro-icono">
+        <img src="<%= current_theme_image_path('mibazar.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        ver solo empresas de mi bazar
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="seccion-contenido">
+    
+    <% @item = 0 %>
+    <% @total = @empresasresultados.count %>
+    <% @pagina = 1 %>
+    
+    <%= render(:partial => "empresaresultado", :collection => @empresasresultados) %>
+
+  </div>
+
+</div>
+
+<a id="fichaempresa" class="fancybox.ajax" href=""></a>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  $('.ilumina10').transify({opacityOrig:.10,opacityNew:.40,fadeSpeed:500});
+  
+  $("#fichaempresa").fancybox({
+		 'width' : 831,
+		 // 'height' : 'auto',
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
+	
+  $('input[placeholder]').placeholder();
+
+ });
+
+</script>

@@ -1,0 +1,84 @@
+<% if @item == 0 %>
+  <div id="pag1">
+<% end %>
+
+
+<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= empresaresultado.cluster_id -%>/<%= empresaresultado.empresa_id -%>').trigger('click');">
+  
+  <% if empresaresultado.cluster_id == BZ_param("BazarId").to_i && empresaresultado.empresa_id == current_user.id %>
+  
+    <div class="item-edit-icono">
+      <img src="<%= current_theme_image_path('editar.png') %>" onClick="$('#fichaoferta').attr('href', '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresaresultado.id -%>').trigger('click');" >
+    </div>
+
+    <div class="item-delete-icono">
+      <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="window.alert('click in borrar sin terminar');" >
+    </div>
+
+  <% else %>  
+  
+    <div class="add-favoritos">
+      <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
+    </div>
+  
+  <% end %>
+  
+  <div class="empresa-fondo">
+    <% img = logo_grande_helper(BZ_param('BazarId'), empresaresultado.empresa_id) %>
+    <% if !img.nil? %>
+      <%= link_to(image_tag(img), bazarcms_empresa_path(empresaresultado.empresa_id, :bazar_id => BZ_param('BazarId'))) %> 
+    <% else %>
+      <%= empresaresultado.info -%>  
+    <% end %>
+    
+    <div class="empresa-descripcion">
+      <%= truncate_html(empresaresultado.info, :length => 60).html_safe -%>
+    </div>
+
+  </div>
+  
+</div>
+
+<% @item += 1 %>
+
+<% if @item % 15 == 0 || @item == @total%>
+ 
+
+
+  <div class="cajon-paginado">
+
+    <% if @pagina != (@total/15) + 1  %>
+
+    <div class="cajon-paginado-boton ilumina5" onclick="$('#pag<%= @pagina -%>').hide(); $('#pag<%= @pagina+1 -%>').show();$.scrollTo('#busqueda', 'slow')">
+      <div class="cajon-paginado-boton-texto">
+        Empresas siguientes
+      </div>
+    </div>
+    
+    <% end %>
+
+    <% if @pagina != 1 %>
+    
+    <div class="cajon-paginado-boton ilumina5"  onclick="$('#pag<%= @pagina -%>').hide(350); $('#pag<%= @pagina-1 -%>').show(350); $.scrollTo('#busqueda', 'slow');">
+      <div class="cajon-paginado-boton-texto">
+        Empresas anteriores
+      </div>
+    </div> 
+
+    <% end %>
+    
+    <div class="cajon-paginado-pagina">
+      <div class="cajon-paginado-pagina-texto">
+        Página <%= @pagina -%> de <%= (@total / 15) + 1 -%>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  
+  <% @pagina += 1 %>
+
+  <% if @item != @total %>
+    <div id="pag<%= @pagina -%>" style="display:none">
+  <% end %>
+<% end %>
