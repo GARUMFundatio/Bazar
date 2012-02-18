@@ -390,6 +390,25 @@ a {
 
 }
 
+.empresa-favorito {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 60px;
+  width: 60px;
+  background-image: url(bgblack10.png);
+  background-repeat: repeat;  
+  display: table-cell;
+	vertical-align: middle;  
+  
+}
+
+.empresa-favorito-icon {
+  display: block;
+  position: absolute;
+  margin-left: 18px;
+  margin-top: 20px;
+}
 
 .empresa-descripcion {
   position:absolute;

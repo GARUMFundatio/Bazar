@@ -3,10 +3,14 @@
     <% img = logo_grande_helper(BZ_param('BazarId'), empresafav['id']) %>
     
     <% if !img.nil? %>
-      <%= link_to(image_tag(img, :alt => "#{empresafav['nombre']}"), "/home/fichaempresa/#{BZ_param('BazarId')}/#{empresafav['id']}") %> 
+      <div class="empresa-fondo-logo">
+        <%= link_to(image_tag(img, :alt => "#{empresafav['nombre']}"), "/home/fichaempresa/#{BZ_param('BazarId')}/#{empresafav['id']}") %> 
+      </div>
     <% else %>
       <%= empresafav['nombre'] -%>
     <% end %>
-    
+    <div class="empresa-favorito">
+      <img class="empresa-favorito-icon" src="<%= current_theme_image_path('corazon-white.png') %>" onClick="window.alert('click in fav');" >
+    </div>
   </div>
 </div>
