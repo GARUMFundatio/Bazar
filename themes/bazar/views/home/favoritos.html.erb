@@ -1,0 +1,105 @@
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+
+<!-- Sección menús -->
+<div class="caja-seccion">
+  <div class="caja-indice">
+  &nbsp;
+  </div>
+  
+  <div class="seccion-contenido">
+    
+    <div class="seccion-header">
+      Tus favoritos
+    </div>
+
+    <div class="seccion-subheader">
+      Todas las ofertas, demandas y empresas que has marcado como favoritas reunidas en el mismo lugar.
+    </div>
+
+    <div class="seccion-menu">
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas', 'slow')">
+        <a href="#">Ofertas</a>
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#demandas', 'slow')">
+        <a href="#">Demandas</a>
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#empresas', 'slow')">
+        <a href="#">Empresas</a>
+      </div>
+      
+    </div>
+
+  </div>
+
+</div>
+
+<!-- sección ofertas recomendadas -->
+
+<div class="caja-seccion" id="ofertas">
+  <div class="caja-indice">
+  Ofertas
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <%= render(:partial => "oferta", :collection => @ofertas) %>
+
+  </div>
+
+</div>
+
+<!-- sección demandas recomendadas -->
+
+<div class="caja-seccion" id="demandas">
+  <div class="caja-indice">
+  Demandas
+  </div>
+  
+  <div class="seccion-contenido">
+    <%= render(:partial => "oferta", :collection => @demandas) %>
+  </div>
+
+</div>
+
+
+<!-- sección Empresas recomendadas -->
+
+<div class="caja-seccion" id="empresas">
+  <div class="caja-indice">
+  Empresas
+  </div>
+  
+  <div class="seccion-contenido">
+    <%= render(:partial => "empresa", :collection => @empresasrecomendadas) %>
+  </div>
+
+</div>
+
+
+<a id="fichaoferta" class="fancybox.ajax" href=""></a>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans25').transify({opacityOrig:.25});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  
+ });
+
+ $("#fichaoferta").fancybox({
+		 'width' : 831,
+		 // 'height' : 'auto',
+    'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
+
+</script>
