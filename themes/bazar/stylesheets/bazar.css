@@ -377,7 +377,17 @@ a {
   text-decoration: none;
   margin: 0px 10px 10px 10px;
   overflow: hidden;
-  
+  display: table-cell;
+	vertical-align: middle;  
+}
+
+.empresa-fondo:img {
+
+  margin-left: auto;
+  margin-right: auto;
+  display: table-cell;
+	vertical-align: middle;
+
 }
 
 
