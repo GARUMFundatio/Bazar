@@ -1,8 +1,8 @@
-<div class="seccion-empresa ilumina5" onClick="window.location = '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresa.id -%>'; ">
+<div class="seccion-empresa ilumina5" onClick="// window.location = '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresa.id -%>'; ">
   <div class="empresa-fondo">
     <% img = logo_grande_helper(BZ_param('BazarId'), empresa.id) %>
     <% if !img.nil? %>
-      <%= link_to(image_tag(img), bazarcms_empresa_path(empresa.id, :bazar_id => BZ_param('BazarId'))) %> 
+      <%= link_to(image_tag(img), "/home/fichaempresa/#{BZ_param('BazarId')}/#{empresa.id}") %> 
     <% else %>
       <%= empresa.nombre -%>  
     <% end %>

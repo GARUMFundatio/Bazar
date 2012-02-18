@@ -332,7 +332,7 @@ class HomeController < ApplicationController
     # if local we get the info from database 
     # if not, we make a remote get 
     
-    if params[:bazar] == BZ_param("BazarId").to_i
+    if params[:bazar].to_i == BZ_param("BazarId").to_i
       @empresa = Bazarcms::Empresa.find_by_id(params[:id])
       if !@empresa.total_mostradas.nil?
         @empresa.total_mostradas += 1 
@@ -408,7 +408,7 @@ class HomeController < ApplicationController
   def favoritos
     
     @empresasfav = []
-    favoritos = Favorito.where("user_id = ?", current_user.id)
+    favoritos = Favorito.where("user_id = ?", current_user.id).order("fecha desc")
 
     for fav in favoritos
       
@@ -416,12 +416,15 @@ class HomeController < ApplicationController
         
         empre = Bazarcms::Empresa.find_by_id(fav.empresa_id)
         if (!empre.nil?)
-          @empresasfav << empre.attributes
+          f = empre.attributes
+          f['bazar_id'] = fav.bazar_id
+          @empresasfav << f
         end 
         # logger.debug "empresa local", fav.to_json.inspect 
       else 
-        fav = datos_empresa_remota(fav.bazar_id, fav.empresa_id)
-        @empresasfav << fav
+        f = datos_empresa_remota(fav.bazar_id, fav.empresa_id)
+        f['bazar_id'] = fav.bazar_id 
+        @empresasfav << f
       end 
     end 
     
@@ -433,11 +436,12 @@ class HomeController < ApplicationController
   
   def delfav
 
-    fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar], params[:id])
+    fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar].to_i, params[:id].to_i)
     if (!fav.nil?)
       logger.debug "borro", fav.inspect
       render :layout => false
     else 
+      logger.debug "No puedo borrar: "+current_user.id.to_s+" "+params[:bazar]+" "+params[:id]
       render :text => "Error"
     end 
     
