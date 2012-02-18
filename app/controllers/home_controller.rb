@@ -441,12 +441,42 @@ class HomeController < ApplicationController
     fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar].to_i, params[:id].to_i)
     if (!fav.nil?)
       logger.debug "borro", fav.inspect
+      fav.delete
       render :layout => false
     else 
       logger.debug "No puedo borrar: "+current_user.id.to_s+" "+params[:bazar]+" "+params[:id]
       render :text => "Error"
     end 
     
+  end
+  
+  def addfav
+
+    fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar].to_i, params[:id].to_i)
+    
+    if ( !fav.nil?)
+      logger.debug "Ya estaba como favorito"
+    else 
+      fav = Favorito.new
+      
+      fav.fecha = DateTime.now 
+      fav.user_id = current_user.id
+      fav.bazar_id = params[:bazar]
+      fav.empresa_id = params[:id]
+      
+      fav.save
+    end 
+    
+#    fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar].to_i, params[:id].to_i)
+#    if (!fav.nil?)
+#      logger.debug "borro", fav.inspect
+#      render :layout => false
+#    else 
+#      logger.debug "No puedo borrar: "+current_user.id.to_s+" "+params[:bazar]+" "+params[:id]
+#      render :text => "Error"
+#    end 
+#    
+    render :layout => false
   end
   
   def test
