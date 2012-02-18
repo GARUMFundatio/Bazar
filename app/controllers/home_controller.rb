@@ -407,6 +407,28 @@ class HomeController < ApplicationController
 
   def favoritos
     
+    @empresasfav = []
+    favoritos = Favorito.where("user_id = ?", current_user.id)
+
+    for fav in favoritos
+      
+      if fav.bazar_id == BZ_param("BazarId").to_i  
+        
+        empre = Bazarcms::Empresa.find_by_id(fav.empresa_id)
+        if (!empre.nil?)
+          @empresasfav << empre.attributes
+        end 
+        # logger.debug "empresa local", fav.to_json.inspect 
+      else 
+        fav = datos_empresa_remota(fav.bazar_id, fav.empresa_id)
+        @empresasfav << fav
+      end 
+    end 
+    
+    # traza = ""
+    # @empresasfav.each {|f| traza += f['nombre']+"<br/>"+f.inspect+"<br/>" }
+    # render :text => traza
+
   end
   
   def test
