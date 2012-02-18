@@ -16,11 +16,31 @@
       Tus Datos
     <% else %>
 
-      <div class="fichaempresa-iconos ilumina5">
+      <div class="fichaempresa-iconos">
         <img class="fichaempresa-icono" src="<%= current_theme_image_path('sobre.png') %>">
       </div>
-      <div class="fichaempresa-iconos ilumina5">
-        <img class="fichaempresa-icono" src="<%= current_theme_image_path('favorito.png') %>">
+      
+      <div id="fav-<%= params[:bazar]-%>-<%= params[:id] -%>" class="fichaempresa-iconos">
+  
+        <% if !@fav.nil? %>
+          <img class="fichaempresa-icono" src="<%= current_theme_image_path('corazon-white.png') %>">
+
+          <script type="text/javascript" charset="utf-8">
+            $("#fav-<%= params[:bazar]-%>-<%= params[:id] -%>").click(function() {
+              $("#fav-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/delfav/<%= params[:bazar]-%>\/<%= params[:id]-%>");
+            });        
+          </script>
+          
+        <% else %>
+          <img class="fichaempresa-icono" src="<%= current_theme_image_path('corazon-black.png') %>">
+          <script type="text/javascript" charset="utf-8">
+            $("#fav-<%= params[:bazar]-%>-<%= params[:id] -%>").click(function() {
+              $("#fav-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/addfav/<%= params[:bazar]-%>\/<%= params[:id]-%>");
+            });        
+          </script>
+
+        <% end %>
+
       </div>
 
     <% end %>

@@ -1102,13 +1102,19 @@ input[type="text"]:focus{
   float: right;
   width: 60px;
   height: 60px; 
-  background-color: #000000;
   margin-left: 1px;
-
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;
   display: table-cell;
   vertical-align: middle;
   
 }
+
+.fichaempresa-iconos:hover {
+  background-image: url(bgblack20.png);
+
+}
+
 
 .fichaempresa-icono {
   margin-left: 15px;
