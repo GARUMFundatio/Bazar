@@ -332,7 +332,7 @@ class HomeController < ApplicationController
     # if local we get the info from database 
     # if not, we make a remote get 
     
-    if params[:bazar] == BZ_param("BazarId")
+    if params[:bazar] == BZ_param("BazarId").to_i
       @empresa = Bazarcms::Empresa.find_by_id(params[:id])
       if !@empresa.total_mostradas.nil?
         @empresa.total_mostradas += 1 
@@ -429,6 +429,18 @@ class HomeController < ApplicationController
     # @empresasfav.each {|f| traza += f['nombre']+"<br/>"+f.inspect+"<br/>" }
     # render :text => traza
 
+  end
+  
+  def delfav
+
+    fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar], params[:id])
+    if (!fav.nil?)
+      logger.debug "borro", fav.inspect
+      render :layout => false
+    else 
+      render :text => "Error"
+    end 
+    
   end
   
   def test

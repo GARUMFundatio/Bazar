@@ -375,7 +375,8 @@ a {
   font-size: 15px;
   text-align: center;
   text-decoration: none;
-  margin: 0px 10px 10px 10px;
+  margin-left: 5px;
+  margin-top: 50px; 
   overflow: hidden;
   display: table-cell;
 	vertical-align: middle;  
@@ -401,6 +402,11 @@ a {
   display: table-cell;
 	vertical-align: middle;  
   
+}
+
+.empresa-favorito:hover {
+  background-image: url(bgblack40.png);
+  background-repeat: repeat;  
 }
 
 .empresa-favorito-icon {

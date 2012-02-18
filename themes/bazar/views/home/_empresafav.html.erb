@@ -1,4 +1,4 @@
-<div class="seccion-empresa ilumina5" onClick="window.location = '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresafav.id -%>'; ">
+<div class="seccion-empresa ilumina5" onClick="// window.location = '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresafav['id'] -%>'; ">
   <div class="empresa-fondo">
     <% img = logo_grande_helper(BZ_param('BazarId'), empresafav['id']) %>
     
@@ -9,8 +9,9 @@
     <% else %>
       <%= empresafav['nombre'] -%>
     <% end %>
-    <div class="empresa-favorito">
-      <img class="empresa-favorito-icon" src="<%= current_theme_image_path('corazon-white.png') %>" onClick="window.alert('click in fav');" >
+    <div id="fav-<%= BZ_param("BazarId")-%>-<%= empresafav['id'] -%>" class="empresa-favorito"
+      onClick="$('#fav-<%= BZ_param("BazarId")-%>-<%= empresafav['id']-%>').load("\/home/\delfav\/<%= BZ_param("BazarId")-%>\/<%= empresafav['id']-%>");" >
+      <img class="empresa-favorito-icon" src="<%= current_theme_image_path('corazon-white.png') %>">
     </div>
   </div>
 </div>
