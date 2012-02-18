@@ -1,0 +1,12 @@
+<div class="seccion-empresa ilumina5" onClick="window.location = '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresafav.id -%>'; ">
+  <div class="empresa-fondo">
+    <% img = logo_grande_helper(BZ_param('BazarId'), empresafav['id']) %>
+    
+    <% if !img.nil? %>
+      <%= link_to(image_tag(img, :alt => "#{empresafav['nombre']}"), "/home/fichaempresa/#{BZ_param('BazarId')}/#{empresafav['id']}") %> 
+    <% else %>
+      <%= empresafav['nombre'] -%>
+    <% end %>
+    
+  </div>
+</div>
