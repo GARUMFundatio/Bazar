@@ -1,1 +1,7 @@
 <img class="empresa-favorito-icon" src="<%= current_theme_image_path('corazon-black.png') %>">
+
+<script type="text/javascript" charset="utf-8">
+  $("#fav-<%= params[:bazar]-%>-<%= params[:id]-%>").click(function() {
+    $("#fav-<%= params[:bazar]-%>-<%= params[:id]-%>").load("/home/addfav/<%= params[:bazar]-%>\/<%= params[:id]-%>");
+  });        
+</script>
