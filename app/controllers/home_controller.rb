@@ -405,6 +405,10 @@ class HomeController < ApplicationController
     
   end
 
+  def favoritos
+    
+  end
+  
   def test
     
   end
