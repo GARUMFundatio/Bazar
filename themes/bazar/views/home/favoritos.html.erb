@@ -36,7 +36,7 @@
 
 </div>
 
-<!-- sección ofertas recomendadas -->
+<!-- sección ofertas favoritas -->
 
 <div class="caja-seccion" id="ofertas">
   <div class="caja-indice">
@@ -45,13 +45,13 @@
   
   <div class="seccion-contenido">
 
-    <%= render(:partial => "oferta", :collection => @ofertas) %>
+    <%= render(:partial => "oferta", :collection => @ofertasfav) %>
 
   </div>
 
 </div>
 
-<!-- sección demandas recomendadas -->
+<!-- sección demandas favoritas -->
 
 <div class="caja-seccion" id="demandas">
   <div class="caja-indice">
@@ -59,13 +59,13 @@
   </div>
   
   <div class="seccion-contenido">
-    <%= render(:partial => "oferta", :collection => @demandas) %>
+    <%= render(:partial => "oferta", :collection => @demandasfav) %>
   </div>
 
 </div>
 
 
-<!-- sección Empresas recomendadas -->
+<!-- sección Empresas favoritas -->
 
 <div class="caja-seccion" id="empresas">
   <div class="caja-indice">
@@ -73,7 +73,7 @@
   </div>
   
   <div class="seccion-contenido">
-    <%= render(:partial => "empresa", :collection => @empresasrecomendadas) %>
+    <%= render(:partial => "empresa", :collection => @empresasfav) %>
   </div>
 
 </div>
