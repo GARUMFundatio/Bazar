@@ -424,7 +424,9 @@ class HomeController < ApplicationController
       else 
         f = datos_empresa_remota(fav.bazar_id, fav.empresa_id)
         f['bazar_id'] = fav.bazar_id 
-        @empresasfav << f
+        if f['estado'] == "OK"
+          @empresasfav << f
+        end
       end 
     end 
     
