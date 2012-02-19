@@ -60,6 +60,8 @@ Bazar::Application.routes.draw do
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/home/addfav/:bazar/:id' => "home#addfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
+  match '/home/delofefav/:bazar/:id' => "home#delofefav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
+  match '/home/addofefav/:bazar/:id' => "home#addofefav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
 
   match '/home/test/' => "home#test"
    
