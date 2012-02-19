@@ -2,10 +2,10 @@
   <div class="cajon-titulo" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertafav['bazar_id'] -%>/<%= ofertafav['id']-%>').trigger('click');">
     <%= ofertafav['titulo'] -%>
   </div>
-  <div class="cajon-cuerpo-corto" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta//<%= ofertafav['id'] -%>').trigger('click');">
+  <div class="cajon-cuerpo-corto" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertafav['bazar_id'] -%>/<%= ofertafav['id'] -%>').trigger('click');">
     <%= truncate_html(ofertafav['texto'], :length => 80).html_safe -%>
   </div>
-  <div class="cajon-pie-favoritos" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta//<%= ofertafav['id'] -%>').trigger('click');">
+  <div class="cajon-pie-favoritos">
     <div class="icono-small-empresa">
       
       <% img = logo_grande_helper(ofertafav['bazar_id'], ofertafav['empresa_id']) %>
