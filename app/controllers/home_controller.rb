@@ -432,6 +432,33 @@ class HomeController < ApplicationController
         end
       end 
     end 
+
+
+    @ofertasfav = []
+    @demandasfav = []
+    
+    favoritos = Ofertasfavorito.where("user_id = ?", current_user.id).order("fecha desc")
+
+    for fav in favoritos
+      
+      if fav.bazar_id == BZ_param("BazarId").to_i
+        
+        oferta = Bazarcms::Oferta.find_by_id(fav.oferta_id)
+        if (!oferta.nil?)
+          f = oferta.attributes
+          @empresasfav << f
+        end 
+        # logger.debug "empresa local", fav.to_json.inspect 
+      else 
+        f = datos_empresa_remota(fav.bazar_id, fav.empresa_id)
+        f['bazar_id'] = fav.bazar_id 
+        if f['estado'] == "OK"
+          @empresasfav << f
+        end
+      end 
+    end 
+
+
     
     # traza = ""
     # @empresasfav.each {|f| traza += f['nombre']+"<br/>"+f.inspect+"<br/>" }

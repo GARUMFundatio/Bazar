@@ -114,6 +114,33 @@ class ApiController < ApplicationController
         
   end
   
+  def infooferta
+    
+    @oferta = Bazarcms::Oferta.find_by_id(params[:id])
+    
+    if !@oferta.nil?
+    
+      @info = @oferta.attributes 
+      
+    else
+       
+      @info = {:id => -1,
+                  :estado => "ERROR",
+                  :nombre => "No encontrada"
+                }
+    end 
+    
+    respond_to do |format|
+        # no tiene mucho sentido format.html # empresas.html.erb
+        format.html { redirect_to "/api/ejemploinfooferta"}
+        format.xml { render }
+        format.json { render :json => @info }
+    end
+        
+  end
+  
+  
+  
   def perfiles
     
     @info = []
