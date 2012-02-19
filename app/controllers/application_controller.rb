@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
             :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota,
-            :logo_helper, :logo_grande_helper
+            :logo_helper, :logo_grande_helper, :datos_oferta_remota
   
   helper :all
   
@@ -230,24 +230,24 @@ class ApplicationController < ActionController::Base
    
    def datos_oferta_remota (bazar, oferta)
                  
-     res = Rails.cache.fetch("emp-json-#{bazar}-#{oferta}", :expires_in => 8.hours) do
-       logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{oferta}"
+     res = Rails.cache.fetch("ofe-json-#{bazar}-#{oferta}", :expires_in => 8.hours) do
+       logger.debug "----> no estaba cacheado ofe-json-#{bazar}-#{oferta}"
        res = dohttpget(bazar, "/api/infooferta.json/#{oferta}")
      end
        
      if (res.length > 1)
        begin
-         empre = JSON.parse(res)
+         ofe = JSON.parse(res)
        rescue 
          
-         logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
-         empre = nil
-         expire_fragment "emp-json-#{bazar}-#{empresa}"
+         logger.debug "OJO ---> No es parseable este json: #{res} de ofe-json-#{bazar}-#{oferta}"
+         ofe = nil
+         expire_fragment "ofe-json-#{bazar}-#{oferta}"
        else
-          logger.debug "json empresa2 ------->"+empre.inspect
+          logger.debug "json empresa2 ------->"+ofe.inspect
         end
      else 
-       empre = nil
+       ofe = nil
      end 
      
      empre
