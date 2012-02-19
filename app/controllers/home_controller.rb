@@ -426,9 +426,11 @@ class HomeController < ApplicationController
         # logger.debug "empresa local", fav.to_json.inspect 
       else 
         f = datos_empresa_remota(fav.bazar_id, fav.empresa_id)
-        f['bazar_id'] = fav.bazar_id 
-        if f['estado'] == "OK"
-          @empresasfav << f
+        if !f.nil?
+          f['bazar_id'] = fav.bazar_id 
+          if f['estado'] == "OK"
+            @empresasfav << f
+          end
         end
       end 
     end 

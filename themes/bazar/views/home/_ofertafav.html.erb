@@ -7,10 +7,29 @@
   </div>
   <div class="cajon-pie-favoritos" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta//<%= ofertafav['id'] -%>').trigger('click');">
     <div class="icono-small-empresa">
-      icono pequeño
+      
+      <% img = logo_grande_helper(ofertafav['bazar_id'], ofertafav['empresa_id']) %>
+
+      <% if !img.nil?  %>
+        <% if !img.include?("sinlogo.png") %>
+          <div class="empresa-fondo-logo">
+            <%= link_to(image_tag(img, :width => 60), "/home/fichaempresa/#{ofertafav['bazar_id']}/#{ofertafav['empresa_id']}") %> 
+          </div>
+        <% end %>
+      <% end %>
+      
     </div>
-    <div class="">
-      add favoritos 
+    
+    <div id="favofe-<%= ofertafav['bazar_id']-%>-<%= ofertafav['id'] -%>" class="oferta-favorito">
+
+      <img class="oferta-favorito-icon" src="<%= current_theme_image_path('corazon-white.png') %>">
+
+      <script type="text/javascript" charset="utf-8">
+        $("#favofe-<%= ofertafav['bazar_id']-%>-<%= ofertafav['id']-%>").click(function() {
+          $("#favofe-<%= ofertafav['bazar_id']-%>-<%= ofertafav['id']-%>").load("/home/delofefav/<%= ofertafav['bazar_id']-%>\/<%= ofertafav['id']-%>");
+        });        
+      </script>
+
     </div>
   </div>
 
