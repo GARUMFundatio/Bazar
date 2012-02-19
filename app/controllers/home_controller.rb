@@ -437,7 +437,7 @@ class HomeController < ApplicationController
     @ofertasfav = []
     @demandasfav = []
     
-    favoritos = Ofertasfavorito.where("user_id = ?", current_user.id).order("fecha desc")
+    favoritos = Bazarcms::Ofertasfavorito.where("user_id = ?", current_user.id).order("fecha desc")
 
     for fav in favoritos
       
@@ -450,10 +450,11 @@ class HomeController < ApplicationController
         end 
         # logger.debug "empresa local", fav.to_json.inspect 
       else 
-        f = datos_empresa_remota(fav.bazar_id, fav.empresa_id)
-        f['bazar_id'] = fav.bazar_id 
+        f = datos_oferta_remota(fav.bazar_id, fav.oferta_id)
         if f['estado'] == "OK"
           @empresasfav << f
+        else 
+          logger.debug "Error: No se ha podido leer la oferta #{fav.oferta_id} del bazar #{fav.bazar_id}"
         end
       end 
     end 
