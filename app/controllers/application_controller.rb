@@ -228,7 +228,31 @@ class ApplicationController < ActionController::Base
       
    end 
    
-
+   def datos_oferta_remota (bazar, oferta)
+                 
+     res = Rails.cache.fetch("emp-json-#{bazar}-#{oferta}", :expires_in => 8.hours) do
+       logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{oferta}"
+       res = dohttpget(bazar, "/api/infooferta.json/#{oferta}")
+     end
+       
+     if (res.length > 1)
+       begin
+         empre = JSON.parse(res)
+       rescue 
+         
+         logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
+         empre = nil
+         expire_fragment "emp-json-#{bazar}-#{empresa}"
+       else
+          logger.debug "json empresa2 ------->"+empre.inspect
+        end
+     else 
+       empre = nil
+     end 
+     
+     empre
+      
+   end
   private
     def current_user_session
       logger.debug "ApplicationController::current_user_session"
