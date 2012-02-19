@@ -433,7 +433,6 @@ class HomeController < ApplicationController
       end 
     end 
 
-
     @ofertasfav = []
     @demandasfav = []
     
@@ -446,24 +445,38 @@ class HomeController < ApplicationController
         oferta = Bazarcms::Oferta.find_by_id(fav.oferta_id)
         if (!oferta.nil?)
           f = oferta.attributes
-          @empresasfav << f
+          f['bazar_id'] = BZ_param("BazarId")
+          if oferta.tipo == "O"
+            @ofertasfav << f
+          else 
+            @demandasfav << f
+          end 
         end 
         # logger.debug "empresa local", fav.to_json.inspect 
       else 
         f = datos_oferta_remota(fav.bazar_id, fav.oferta_id)
-        if f['estado'] == "OK"
-          @empresasfav << f
+        if !f.nil? 
+          if f['estado'] == "OK"
+            f['bazar_id'] = fav.bazar_id
+            if f['tipo'] == "O"
+              @ofertasfav << f
+            else 
+              @demandasfav << f            
+            end
+          else 
+            logger.debug "Error: No se ha podido leer la oferta #{fav.oferta_id} del bazar #{fav.bazar_id}: -> #{f.inspect}"
+          end
         else 
-          logger.debug "Error: No se ha podido leer la oferta #{fav.oferta_id} del bazar #{fav.bazar_id}"
-        end
+          logger.debug "Error: No se ha podido leer la oferta #{fav.oferta_id} del bazar #{fav.bazar_id} respuesta nula"          
+        end 
       end 
     end 
 
 
     
-    # traza = ""
-    # @empresasfav.each {|f| traza += f['nombre']+"<br/>"+f.inspect+"<br/>" }
-    # render :text => traza
+#    traza = ""
+#    @ofertasfav.each {|f| traza += "--->"+"<br/>"+f.inspect+"<br/>" }
+#    render :text => traza
 
   end
   

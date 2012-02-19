@@ -45,7 +45,18 @@
   
   <div class="seccion-contenido">
 
-    <%= render(:partial => "oferta", :collection => @ofertasfav) %>
+    <% if @ofertasfav.count > 0 %>
+      <%= render(:partial => "ofertafav", :collection => @ofertasfav) %>
+    <% else %>
+      <div class="seccion-cajon" >
+        <div class="cajon-titulo">
+          No tienes ofertas favoritas
+        </div>
+        <div class="cajon-cuerpo">
+          Pulsa aquí para ver las ofertas que te recomendamos.
+        </div>
+      </div>
+    <% end %>
 
   </div>
 
@@ -59,7 +70,18 @@
   </div>
   
   <div class="seccion-contenido">
-    <%= render(:partial => "oferta", :collection => @demandasfav) %>
+    <% if @demandasfav.count > 0 %>
+      <%= render(:partial => "ofertafav", :collection => @demandasfav) %>
+    <% else %>
+      <div class="seccion-cajon" >
+        <div class="cajon-titulo">
+          No tienes demandas favoritas
+        </div>
+        <div class="cajon-cuerpo">
+          Pulsa aquí para ver las demandas que te recomendamos.
+        </div>
+      </div>
+    <% end %>
   </div>
 
 </div>
@@ -73,7 +95,18 @@
   </div>
   
   <div class="seccion-contenido">
+    <% if @empresasfav.count > 0 %>
     <%= render(:partial => "empresafav", :collection => @empresasfav) %>
+    <% else %>
+      <div class="seccion-cajon" >
+        <div class="cajon-titulo">
+          No tienes empresas favoritas
+        </div>
+        <div class="cajon-cuerpo">
+          Pulsa aquí para ver las empresas que te recomendamos.
+        </div>
+      </div>
+    <% end %>
   </div>
 
 </div>
