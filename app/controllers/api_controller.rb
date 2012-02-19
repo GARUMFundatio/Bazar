@@ -121,6 +121,7 @@ class ApiController < ApplicationController
     if !@oferta.nil?
     
       @info = @oferta.attributes 
+      @info[:estado] = "OK"
       
     else
        
