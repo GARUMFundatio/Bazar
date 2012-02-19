@@ -329,6 +329,26 @@ a {
   
 }
 
+.cajon-cuerpo-corto {
+  position: absolute;
+  float: left;
+  color: #000000;
+  width: 183px;
+  height: 80px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-left: 30px;
+  margin-top: 57px;
+  overflow: hidden;
+}
+
 .cajon-pie {
   position: absolute;
   float: left;
@@ -348,6 +368,24 @@ a {
   margin-top: 187px;
 }
 
+.cajon-pie-favoritos {
+  position: absolute;
+  float: left;
+  color: #000000;
+  width: 183px;
+  height: 60px;
+  font-family: Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  text-align: left;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+  text-decoration: none;
+  padding-top: 0px;
+  padding-left: 30px;  
+  margin-top: 160px;
+}
 .seccion-empresa {
   float: left;
   color: #ffffff;
