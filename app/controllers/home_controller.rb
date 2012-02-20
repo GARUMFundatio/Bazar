@@ -238,8 +238,6 @@ class HomeController < ApplicationController
   
   def fichaoferta
     
-    # if local we get the info from database 
-    # if not, we make a remote get 
     
     @fav = Bazarcms::Ofertasfavorito.find_by_user_id_and_bazar_id_and_oferta_id(current_user.id, params[:bazar], params[:id])
 
@@ -251,7 +249,7 @@ class HomeController < ApplicationController
         @oferta.clicks = 1 
       end 
       @oferta.save 
-
+       
       @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
       render :layout => false 
       
@@ -456,7 +454,7 @@ class HomeController < ApplicationController
             @demandasfav << f
           end 
         end 
-        # logger.debug "empresa local", fav.to_json.inspect 
+        logger.debug "oferta local ----> "+f.inspect 
       else 
         f = datos_oferta_remota(fav.bazar_id, fav.oferta_id)
         if !f.nil? 

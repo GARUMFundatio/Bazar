@@ -90,7 +90,11 @@ end
       </div>
                     
       <div class="ficha-opciones-item-texto">
-        guardar en favoritos
+        <% if !@fav.nil? %>
+          guardar en favoritos
+        <% else %>
+          borrar de favoritos        
+        <% end %>
       </div>      
   </div>
 
