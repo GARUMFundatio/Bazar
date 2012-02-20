@@ -241,7 +241,9 @@ class HomeController < ApplicationController
     # if local we get the info from database 
     # if not, we make a remote get 
     
-    if params[:bazar] == BZ_param("BazarId")
+    @fav = Bazarcms::Ofertasfavorito.find_by_user_id_and_bazar_id_and_oferta_id(current_user.id, params[:bazar], params[:id])
+
+    if params[:bazar].to_i == BZ_param("BazarId").to_i
       @oferta = Bazarcms::Oferta.find_by_id(params[:id])
       if !@oferta.clicks.nil?
         @oferta.clicks += 1 

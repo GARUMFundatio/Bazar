@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= javascript_include_tag :defaults %>
 
 <div class="ficha-container">
     
@@ -60,10 +61,34 @@ end
 
   <div class="ficha-opciones-item">
       
-      <div class="ficha-opciones-item-icono">
-        <img src="<%= current_theme_image_path('favorito.png') %>"  onClick="window.alert('click in fav');" >        
+      <div id="favofe-<%= params[:bazar]-%>-<%= params[:id] -%>" class="ficha-opciones-item-icono">
+
+         <% if !@fav.nil? %>
+
+          <img class="oferta-favorito-icon" src="<%= current_theme_image_path('corazon-white.png') %>">
+          <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+              $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").click(function() {
+                $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/delofefav/<%= params[:bazar]-%>/<%= params[:id]-%>");
+              }); 
+            });       
+          </script>
+
+        <% else %>
+
+          <img class="oferta-favorito-icon" src="<%= current_theme_image_path('corazon-black.png') %>">
+          <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {            
+              $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").click(function() {
+                $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/addofefav/<%= params[:bazar]-%>/<%= params[:id]-%>");
+              });
+            });
+          </script>
+
+        <% end %>
+
       </div>
-      
+                    
       <div class="ficha-opciones-item-texto">
         guardar en favoritos
       </div>      
