@@ -65,22 +65,22 @@ end
 
          <% if !@fav.nil? %>
 
-          <img class="oferta-favorito-icon" src="<%= current_theme_image_path('corazon-white.png') %>">
+          <img src="<%= current_theme_image_path('corazon-white.png') %>">
           <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {
               $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").click(function() {
-                $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/delofefav/<%= params[:bazar]-%>/<%= params[:id]-%>");
+                $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/delofefav/<%= params[:bazar]-%>/<%= params[:id]-%>/-/");
               }); 
             });       
           </script>
 
         <% else %>
 
-          <img class="oferta-favorito-icon" src="<%= current_theme_image_path('corazon-black.png') %>">
+          <img src="<%= current_theme_image_path('corazon-black.png') %>">
           <script type="text/javascript" charset="utf-8">
             $(document).ready(function() {            
               $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").click(function() {
-                $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/addofefav/<%= params[:bazar]-%>/<%= params[:id]-%>");
+                $("#favofe-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/addofefav/<%= params[:bazar]-%>/<%= params[:id]-%>/-/");
               });
             });
           </script>

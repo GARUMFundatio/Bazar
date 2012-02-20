@@ -1,8 +1,8 @@
-<img class="oferta-favorito-icon" src="<%= current_theme_image_path('corazon-black.png') %>">
+<img class="<%= params[:class] -%>" src="<%= current_theme_image_path('corazon-black.png') %>">
 
 <script type="text/javascript" charset="utf-8">
   $("#favofe-<%= params[:bazar]-%>-<%= params[:id]-%>").unbind('click');
   $("#favofe-<%= params[:bazar]-%>-<%= params[:id]-%>").click(function() {
-    $("#favofe-<%= params[:bazar]-%>-<%= params[:id]-%>").load("/home/addofefav/<%= params[:bazar]-%>\/<%= params[:id]-%>");
+    $("#favofe-<%= params[:bazar]-%>-<%= params[:id]-%>").load("/home/addofefav/<%= params[:bazar]-%>/<%= params[:id]-%>/<%= params[:class] -%>");
   });        
 </script>
