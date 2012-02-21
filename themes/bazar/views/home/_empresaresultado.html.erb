@@ -3,21 +3,7 @@
 <% end %>
 
 
-<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaempresa/<%= empresaresultado.cluster_id -%>/<%= empresaresultado.empresa_id -%>').trigger('click');">
-  
-  <% if empresaresultado.cluster_id == BZ_param("BazarId").to_i && empresaresultado.empresa_id == current_user.id %>
-  
-    <div class="item-edit-icono">
-      <img src="<%= current_theme_image_path('editar.png') %>" onClick="// $('#fichaoferta').attr('href', '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresaresultado.id -%>').trigger('click');" >
-    </div>
-
-  <% else %>  
-  
-    <div class="add-favoritos">
-      <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
-    </div>
-  
-  <% end %>
+<div class="seccion-cajon" onClick="window.location = '/home/fichaempresa/<%= empresaresultado.cluster_id -%>/<%= empresaresultado.empresa_id -%>';">
   
   <div class="empresa-fondo">
     <% img = logo_grande_helper(empresaresultado.cluster_id, empresaresultado.empresa_id) %>
