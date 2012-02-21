@@ -436,6 +436,14 @@ a {
   height: 60px;
 }
 
+.empresa-fondo-logo-grande {
+  float: left;
+  text-align: center;
+  display: table-cell;
+	vertical-align: middle;  
+  
+}
+
 .empresa-favorito {
   position: absolute;
   bottom: 0px;
