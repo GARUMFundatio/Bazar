@@ -3,16 +3,12 @@
 <% end %>
 
 
-<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= empresaresultado.cluster_id -%>/<%= empresaresultado.empresa_id -%>').trigger('click');">
+<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaempresa/<%= empresaresultado.cluster_id -%>/<%= empresaresultado.empresa_id -%>').trigger('click');">
   
   <% if empresaresultado.cluster_id == BZ_param("BazarId").to_i && empresaresultado.empresa_id == current_user.id %>
   
     <div class="item-edit-icono">
-      <img src="<%= current_theme_image_path('editar.png') %>" onClick="$('#fichaoferta').attr('href', '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresaresultado.id -%>').trigger('click');" >
-    </div>
-
-    <div class="item-delete-icono">
-      <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="window.alert('click in borrar sin terminar');" >
+      <img src="<%= current_theme_image_path('editar.png') %>" onClick="// $('#fichaoferta').attr('href', '/home/fichaempresa/<%= BZ_param("BazarId")-%>/<%= empresaresultado.id -%>').trigger('click');" >
     </div>
 
   <% else %>  
@@ -24,9 +20,13 @@
   <% end %>
   
   <div class="empresa-fondo">
-    <% img = logo_grande_helper(BZ_param('BazarId'), empresaresultado.empresa_id) %>
+    <% img = logo_grande_helper(empresaresultado.cluster_id, empresaresultado.empresa_id) %>
     <% if !img.nil? %>
-      <%= link_to(image_tag(img), bazarcms_empresa_path(empresaresultado.empresa_id, :bazar_id => BZ_param('BazarId'))) %> 
+      <% if !img.include?("sinlogo.png") %>
+        <%= image_tag(img) %> 
+      <% else %>
+        <%= empresaresultado.info -%>          
+      <% end %>
     <% else %>
       <%= empresaresultado.info -%>  
     <% end %>
