@@ -100,7 +100,7 @@ class ApplicationController < ActionController::Base
         empre = Bazarcms::Empresa.find_by_id(empresa)
 
         if !empre.nil? 
-          url = empre.logo.url(:thumb)
+          url = empre.logo.url(:s223)
         else 
           url = nil
         end 
