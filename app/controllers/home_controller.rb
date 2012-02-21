@@ -318,7 +318,7 @@ class HomeController < ApplicationController
     # sacar tambien las de otros bazares
     # quitar la que ya tenemos como favoritas
     
-    @empresasrecomendadas = Bazarcms::Empresa.where("nombre not like 'Describa su%' ").order("updated_at desc").limit(18)
+    @empresasrecomendadas = Bazarcms::Empresa.where("nombre not like 'Escriba su%' ").order("updated_at desc").limit(18)
       
     @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
 
