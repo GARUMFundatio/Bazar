@@ -2,6 +2,17 @@
   <div id="pag1">
 <% end %>
 
+<% 
+
+if empresaresultado.cluster_id == BZ_param("BazarId").to_i      
+  empre = Bazarcms::Empresa.find_by_id(empresaresultado.empresa_id)
+  if (!empre.nil?)
+    f = empre.attributes
+  end 
+else 
+  f = datos_empresa_remota(empresaresultado.cluster_id, empresaresultado.empresa_id)
+end 
+%>
 
 <div class="seccion-cajon" onClick="window.location = '/home/fichaempresa/<%= empresaresultado.cluster_id -%>/<%= empresaresultado.empresa_id -%>';">
   
@@ -18,7 +29,9 @@
     <% end %>
     
     <div class="empresa-descripcion">
-      <%= truncate_html(empresaresultado.info, :length => 60).html_safe -%>
+      <% if !f.nil? %>
+          <%= truncate_html(f['desc'], :length => 60).html_safe -%>
+      <% end %>
     </div>
 
   </div>

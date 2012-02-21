@@ -86,6 +86,7 @@ class ApiController < ApplicationController
       @info = {:id => @empresa.id,
                   :estado => "OK",
                   :nombre => @empresa.nombre,
+                  :desc => @empresa.desc,
                   :rating => @empresa.rating,
                   :rating_cliente => @empresa.rating_cliente,
                   :rating_total_cliente => @empresa.rating_total_cliente,
