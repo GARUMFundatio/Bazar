@@ -29,7 +29,7 @@ end
     <% end %>
     
     <div class="empresa-descripcion">
-      <% if !f.nil? %>
+      <% if !f['desc'].nil? %>
         <% if f['desc'].length > 1 %>
           <%= truncate_html(f['desc'], :length => 60).html_safe -%>
         <% else %>
