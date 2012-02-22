@@ -346,7 +346,8 @@ class HomeController < ApplicationController
     
       @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id = ?", params[:id]).order("fecha desc")
       @demandas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id = ?", params[:id]).order("fecha desc")        
-
+      @imagenes = Bazarcms::Empresasimagen.where("empresa_id = ?", params[:id])
+      
       render
       
     else 
