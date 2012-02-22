@@ -550,6 +550,14 @@ class HomeController < ApplicationController
     render :layout => false
   end
 
+  def crearimagenempresa
+    
+     @img = Bazarcms::Empresasimagen.create( params[:empresasimagen])
+     @img.empresa_id = current_user.id 
+     @img.save
+    
+    
+  end 
   
   def test
     
