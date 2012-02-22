@@ -189,12 +189,14 @@
          <%= form_for :empresasimagen, :url => "/home/crearimagenempresa/", :html => { :multipart => true } do |form| %>
          <label class="cabinet">
              <input type="file" class="file" id="empresasimagen_imagen" name="empresasimagen[imagen]" 
-                 onchange="$(this).closest('form').submit();"/>
+                 onchange="$(this).closest('form').submit(); 
+                 $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+                 
          </label>
          <% end %>
        </div>
 
-        <div class="add-item-texto">
+        <div id="cargaimagen" class="add-item-texto">
           <%= t(:text_anadir_una_foto) -%>
         </div>
       </div>
