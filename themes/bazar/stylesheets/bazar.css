@@ -1413,6 +1413,10 @@ input[type="text"]:focus{
   
 }
 
+.empresa-imagen {
+  margin-top: -5px;
+}
+
 .add-image label {
   background: url(../images/add.png) 0 0 no-repeat;
   height: 60px;
