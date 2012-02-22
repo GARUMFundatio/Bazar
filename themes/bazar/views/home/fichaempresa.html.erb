@@ -184,12 +184,15 @@
     <% if params[:id].to_i == current_user.id %>
     
       <div class="seccion-cajon" onClick="">
-        
-        <div class="add-item-icono">
-          
-          <img src="<%= current_theme_image_path('add.png') %>"  >
 
-        </div>
+       <div class="add-image">
+         <%= form_for :empresasimagen, :url => "/home/crearimagenempresa/", :html => { :multipart => true } do |form| %>
+         <label class="cabinet">
+             <input type="file" class="file" id="empresasimagen_imagen" name="empresasimagen[imagen]" 
+                 onchange="$(this).closest('form').submit();"/>
+         </label>
+         <% end %>
+       </div>
 
         <div class="add-item-texto">
           <%= t(:text_anadir_una_foto) -%>
@@ -198,15 +201,7 @@
 
     <% end %>
     
-    <div class="seccion-cajon">  
-        
-        <div style="display: block; width: 100px; height: 20px; overflow: hidden;">
-        <button style="width: 110px; height: 30px; position: relative; top: -5px; left: -5px;"><a href="javascript: void(0)">Upload File</a></button>
-        <input type="file" id="upload_input" name="upload" style="font-size: 50px; width: 120px; opacity: 0; filter:alpha(opacity: 0);  position: relative; top: -40px;; left: -20px" />
-        </div>
-      
-    </div>
-
+  
   </div>
 
 </div>
