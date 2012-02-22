@@ -380,8 +380,12 @@ $(document).ready(function() {
      		'overlayShow'	:	true
      	});
   
-  $('input[placeholder]').placeholder();
+ // $('input[placeholder]').placeholder();
+  
+  <% if params[:go] == "imagenes" %>
 
+    $.scrollTo('#imagenes', 'slow');
+  <% end %>
  });
 
 </script>

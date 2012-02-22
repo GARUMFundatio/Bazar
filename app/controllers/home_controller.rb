@@ -557,7 +557,7 @@ class HomeController < ApplicationController
     @img.empresa_id = current_user.id 
     @img.save
     
-    redirect_to "/home/fichaempresa/#{BZ_param('BazarId')}/#{current_user.id}}?go=imagenes"
+    redirect_to "/home/fichaempresa/#{BZ_param('BazarId')}/#{current_user.id}/?go=imagenes"
     
   end 
   
