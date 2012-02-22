@@ -176,6 +176,7 @@ es:
   text_guardar_estos_datos: "guardar estos datos"
   text_hasta_ahora_las_llamadas_grandes_redes_sociales_se_han_construido_como_una: "Hasta ahora las llamadas «grandes redes sociales» se han construido como una"
   text_hay_limitaciones: "¿Hay limitaciones?"
+  text_no_tiene_imagenes: "No tiene imágenes"
   text_hemos_creado_una_pagina_de_ejemplos_de_como_usar_el_api_de_bazar_cada_una_de_las_funciones_disponibles_cuenta_con_su_descripcion_ejemplos_de_uso_y_un_ejemplo_de_que_se_obtiene_cuando_se_invoca_puedes_ver_toda_esta_informacion_en_la_pagina_de: "Hemos creado una página de ejemplos de como usar el API de Bazar. Cada una de las funciones disponibles cuenta con su descripción, ejemplos de uso y un ejemplo de que se obtiene cuando se invoca. Puedes ver toda esta información en la página de"
   text_http_bazar_garumfundatio_org_api_empresas_json: "http://bazar.garumfundatio.org/api/empresas.json"
   text_http_bazar_garumfundatio_org_api_info_xml: "http://bazar.garumfundatio.org/api/info.xml"

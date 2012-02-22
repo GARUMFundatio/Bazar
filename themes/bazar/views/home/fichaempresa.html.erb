@@ -155,17 +155,13 @@
     
       <div class="seccion-cajon ilumina5" onClick="">
         
-        <div class="add-item-icono">
-          <img src="<%= current_theme_image_path('add.png') %>" onClick="window.alert('click in fav');" >
-        </div>
-
         <div class="add-item-texto">
           <%= t(:text_publicar_una_demanda) -%>
         </div>
       </div>
 
     <% end %>
-
+    
     <%= render(:partial => "oferta", :collection => @demandas) %>
 
   </div>
@@ -201,7 +197,17 @@
 
     <% end %>
     
-    <%= render(:partial => "empresaimagen", :collection => @imagenes) %>
+    <% if @imagenes.count > 0 %>
+      <%= render(:partial => "empresaimagen", :collection => @imagenes) %>
+    <% else %>
+      <div class="seccion-cajon" onClick="">
+
+        <div class="add-item-texto">
+          <%= t(:no_tiene_imagenes) -%>
+        </div>
+        
+      </div>
+    <% end %>
     
   </div>
 
