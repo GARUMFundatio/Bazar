@@ -1,9 +1,15 @@
-<div class="seccion-cajon" onclick="">
+<div id="img-<%= empresaimagen.id -%>" class="seccion-cajon">
 
  <div class="empresa-imagen">
   <a class="galeria" rel="galeria" href="<%= empresaimagen.imagen.url %>">
     <%= image_tag empresaimagen.imagen.url(:c223) %>
   </a>
  </div>
-
+ 
+ <div class="imagen-delete-icono">
+   <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="$('#img-<%= empresaimagen.id -%>').hide(); $.ajax({
+      url: '/home/delempresaimagen/<%= empresaimagen.empresa_id -%>/<%= empresaimagen.id -%>'
+      });" >
+ </div>
+ 
 </div>

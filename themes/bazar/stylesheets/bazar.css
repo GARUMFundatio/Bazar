@@ -1483,6 +1483,7 @@ input[type="text"]:focus{
 
 }
 
+
 .item-delete-icono:hover {
   background-image: url(bgwhite50.png);
   background-repeat: repeat;  
@@ -1504,6 +1505,33 @@ input[type="text"]:focus{
   filter:alpha(opacity=90);
   filter: “alpha(opacity=90)”;
  
+}
+
+
+.imagen-delete-icono {
+  position: relative;
+  float: right;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  margin-top: -62px;
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;  
+
+}
+
+.imagen-delete-icono img {
+  padding-top: 20px; 
+
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+ 
+}
+
+.imagen-delete-icono:hover {
+  background-image: url(bgblack20.png);
+  background-repeat: repeat;  
 }
 
 

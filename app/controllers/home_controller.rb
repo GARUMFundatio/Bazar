@@ -561,6 +561,23 @@ class HomeController < ApplicationController
     
   end 
   
+  def delempresaimagen
+
+    if (params[:empresa].to_i == current_user.id)
+      @img = Bazarcms::Empresasimagen.find_by_id_and_empresa_id(params[:id], params[:empresa])
+      if  @img.nil? 
+        redirect_to "/home/fichaempresa/#{BZ_param('BazarId')}/#{current_user.id}/?go=imagenes"
+      else 
+        @img.delete 
+        render :text => "OK"
+      end 
+    else 
+      render :text => "No se puede borrar esta foto"
+    end 
+    
+  end 
+
+
   def test
     
   end
