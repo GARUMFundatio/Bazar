@@ -8,7 +8,7 @@
  
  <div class="imagen-delete-icono">
    <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="$('#img-<%= ofertaimagen.id -%>').hide(); $.ajax({
-      url: '/home/delofertaimagen/<%= ofertaimagen.empresa_id -%>/<%= ofertaimagen.id -%>'
+      url: '/home/delofertaimagen/<%= ofertaimagen.oferta_id -%>/<%= ofertaimagen.id -%>'
       });" >
  </div>
  

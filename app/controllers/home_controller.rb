@@ -582,7 +582,7 @@ class HomeController < ApplicationController
   def crearimagenoferta
     
     if ( params[:empresa].to_i == current_user.id )
-      @img = Bazarcms::ofertasimagen.create(params[:ofertasimagen])
+      @img = Bazarcms::Ofertasimagen.create(params[:ofertasimagen])
       @img.oferta_id = params[:id] 
       @img.save
     end 
@@ -592,7 +592,13 @@ class HomeController < ApplicationController
   
   def delofertaimagen
 
-    if (params[:empresa].to_i == current_user.id)
+    @oferta = Bazarcms::Oferta.find_by_id(params[:oferta])
+    
+    if @oferta.nil?
+      redirect_to "/home"
+    end
+    
+    if (@oferta.empresa_id == current_user.id)
       @img = Bazarcms::Ofertasimagen.find_by_id_and_oferta_id(params[:id], params[:oferta])
       if  @img.nil? 
         redirect_to "/home/fichaoferta/#{BZ_param('BazarId')}/#{params[:id]}/?go=imagenes"
