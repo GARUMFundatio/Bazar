@@ -241,7 +241,7 @@
         <p class="ficha-empresa-texto"><%= @empresa.fundada %></p>
 
         <p class="ficha-empresa-titulo">Ámbito:</p>
-        <p class="ficha-empresa-texto">** Internacional</p>
+        <p class="ficha-empresa-texto"><%= Bazarcms::Empresa.Ambitostexto(@empresa.ambito) %></p>
 
         <p class="ficha-empresa-titulo">Nº de empleados:</p>
         <p class="ficha-empresa-texto"><%= Bazarcms::Empresasdato.REtexto(@empresasdatos.empleados) %> </p>
