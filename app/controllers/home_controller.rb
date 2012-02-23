@@ -350,6 +350,20 @@ class HomeController < ApplicationController
       @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id = ?", params[:id]).order("fecha desc")
       @demandas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id = ?", params[:id]).order("fecha desc")        
       @imagenes = Bazarcms::Empresasimagen.where("empresa_id = ?", params[:id])
+      @empresasdatos = Bazarcms::Empresasdato.where("empresa_id = ?", params[:id]).order("periodo desc").limit(1)
+      
+      if @empresadatos.nil? 
+        @empresasdatos = Bazarcms::Empresasdato.new
+        @empresasdatos.empresa_id = params[:id] 
+        @empresasdatos.periodo = DateTime.now.year
+        @empresasdatos.periodo = 0
+        @empresasdatos.empleados = 0
+        @empresasdatos.ventas = 0
+        @empresasdatos.compras = 0
+        @empresasdatos.resultados = 0
+        @empresasdatos.save
+      end 
+      
       
       render
       
