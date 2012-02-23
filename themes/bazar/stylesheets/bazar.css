@@ -284,6 +284,23 @@ a {
   background-repeat: repeat;
 }
 
+.seccion-cajon-imagen {
+  float: left;
+  color: #ffffff;
+  width: 243px;
+  height: 228px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 15px;
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;
+}
+
 .seccion-cajon:hover {
   background-image: url(bgblack40.png);
   background-repeat: repeat;
@@ -1413,18 +1430,18 @@ input[type="text"]:focus{
   
 }
 
-.empresa-imagen {
-  margin-top: -5px;
-}
 
-.add-image label {
+
+.add-image label.cabinet {
   background: url(../images/add.png) 0 0 no-repeat;
   height: 60px;
   width: 60px;
   font-size: 94px;
+  display: block;
+  overflow: hidden;
   
 }
-.add-image input.file {
+.add-image label.cabinet input.file {
   
   position: relative;
 	height: 60px;
@@ -1437,6 +1454,10 @@ input[type="text"]:focus{
   filter:alpha(opacity=0);
   filter: “alpha(opacity=0)”; 
   z-index: 999;
+}
+
+.empresa-imagen {
+  margin-top: -5px;
 }
 
 .add-item-texto {
@@ -1659,6 +1680,5 @@ background:#77b6ef;
     height: 100%;
     width: auto;
     opacity: 0;
-    -moz-opacity: 0;
     filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }

@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('si.files')) %>
 
 <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
   <% editar = true %>
@@ -98,6 +99,10 @@
       <div class="seccion-menu-item" onclick="$.scrollTo('#demandas', 'slow')">
         Demandas
       </div>
+ 
+      <div class="seccion-menu-item" onclick="$.scrollTo('#imagenes', 'slow')">
+        Imágenes
+      </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#sobre', 'slow')">
         Sobre la empresa
@@ -179,23 +184,24 @@
     Imágenes
   </div>
   
-  <div id="imagenes" class="seccion-contenido">
+  <div id="imagenes" class="seccion-contenido" >
     
     <% if params[:id].to_i == current_user.id %>
     
-      <div class="seccion-cajon" onClick="">
+      <div class="seccion-cajon-imagen" >
 
+        <%= form_for :empresasimagen, :url => "/home/crearimagenempresa/", :html => { :multipart => true } do |form| %>
        <div class="add-image">
-         <%= form_for :empresasimagen, :url => "/home/crearimagenempresa/", :html => { :multipart => true } do |form| %>
          <label class="cabinet">
              <input type="file" class="file" id="empresasimagen_imagen" name="empresasimagen[imagen]" 
                  onchange="$(this).closest('form').submit(); 
                  $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
                  
          </label>
-         <% end %>
        </div>
+       <% end %>
 
+       
         <div id="cargaimagen" class="add-item-texto">
           <%= t(:text_anadir_una_foto) -%>
         </div>
@@ -383,9 +389,9 @@ $(document).ready(function() {
      	});
   
  // $('input[placeholder]').placeholder();
+  SI.Files.stylizeAll();
   
   <% if params[:go] == "imagenes" %>
-
     $.scrollTo('#imagenes', 'slow');
   <% end %>
  });
