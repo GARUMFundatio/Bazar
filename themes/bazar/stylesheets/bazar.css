@@ -178,6 +178,16 @@ a {
   
 }
 
+.caja-seccion-oferta {
+  float: left;
+  width: 816px;
+  background-color: #ffffff;
+  padding-top: 50px;
+  padding-left: 30px;
+  
+}
+
+
 .caja-indice {
   position: relative;
   float: left;
@@ -741,7 +751,6 @@ a {
 .ficha-caja-detalle {
   width: 761px;
   height: 283px;
-  margin-left: 30px;
   margin-top: 40px;
   background-color: #ffffff;
 
@@ -898,7 +907,6 @@ a {
   filter:alpha(opacity=50);
   filter: “alpha(opacity=50)”;
   
-  margin-left: 30px;
   margin-top: 15px;
   margin-right: 30px;
 }
@@ -916,7 +924,6 @@ a {
   opacity:.70;
   filter:alpha(opacity=70);
   filter: “alpha(opacity=70)”;
-  margin-left: 30px;
   margin-right: 30px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -936,7 +943,6 @@ a {
   opacity:.70;
   filter:alpha(opacity=70);
   filter: “alpha(opacity=70)”;
-  margin-left: 30px;
   margin-right: 30px;
   padding-top: 20px;
   padding-bottom: 20px;

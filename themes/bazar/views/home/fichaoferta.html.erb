@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 <%= javascript_include_tag :defaults %>
+<%= javascript_include_tag(current_theme_javascript_path('si.files')) %>
 
 <div class="ficha-container">
     
@@ -118,123 +119,170 @@ end
   <%= helper_formatea(@oferta.texto) -%>
 </div>
 
-<div class="ficha fotos">
-<br/>
-<br/>
-<br/>
-<br/>
-fotos fancybox 
-<br/>
-<br/>
-<br/>
-<br/>
+<!-- Imágenes -->
+
+   
+<div class="caja-seccion-oferta">
+
+  <div id="imagenes" class="seccion-contenido" >
+    
+    <% if owner %>
+    
+      <div class="seccion-cajon-imagen" >
+
+        <%= form_for :ofertasimagen, :url => "/home/crearimagenoferta/", :html => { :multipart => true } do |form| %>
+       <div class="add-image">
+         <label class="cabinet">
+             <input type="file" class="file" id="ofertasimagen_imagen" name="ofertasimagen[imagen]" 
+                 onchange="$(this).closest('form').submit(); 
+                 $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+                 
+         </label>
+       </div>
+       <% end %>
+
+       
+        <div id="cargaimagen" class="add-item-texto">
+          <%= t(:text_anadir_una_foto) -%>
+        </div>
+      </div>
+
+    <% end %>
+    
+    <% if @imagenes.count > 0 %>
+      <%= render(:partial => "ofertaimagen", :collection => @imagenes) %>
+    <% else %>
+      <% if owner %>
+        <div class="seccion-cajon" onClick="">
+
+          <div class="add-item-texto">
+            <%= t(:text_no_tiene_imagenes) -%>
+          </div>
+        
+        </div>
+      <% end %>
+    <% end %>
+    
+  </div>
+
 </div>
 
-<div class="ficha-caja-detalle">
 
-  <div class="ficha-caja-enlace">
 
-    <% if !owner %>
+
+<div class="caja-seccion-oferta">
+
+  <div class="ficha-caja-detalle">
+
+    <div class="ficha-caja-enlace">
+
+      <% if !owner %>
     
-    <div class="ficha-caja-enlace-imagen">
-      <img src="<%= current_theme_image_path('flecha.png') %>" onClick="window.alert('click en el enlace externo');" >
-    </div>
+      <div class="ficha-caja-enlace-imagen">
+        <img src="<%= current_theme_image_path('flecha.png') %>" onClick="window.alert('click en el enlace externo');" >
+      </div>
     
-    <div class="ficha-caja-enlace-texto">
-      <% if @oferta.tipo == 'O'%>
-        web con más información sobre la oferta
+      <div class="ficha-caja-enlace-texto">
+        <% if @oferta.tipo == 'O'%>
+          web con más información sobre la oferta
+        <% else %>
+          web con más información sobre la demanda
+        <% end %>
+      
+      </div>
+
       <% else %>
-        web con más información sobre la demanda
+    
+        <div class="ficha-caja-enlace-texto">
+        
+          <br/><br/><br/>
+    
+          Web externa: <br/></br>
+    
+          <% if !@oferta.url.nil? %>
+            <%= @oferta.url %>
+          <% else %>
+            Edite si quiere incluir un enlace a la página con información extra de la oferta.
+          <% end %>
+        
+        </div>
+
+        <div class="ficha-caja-enlace-edit">
+          <img src="<%= current_theme_image_path('editar.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+        </div>
+
+    
       <% end %>
       
     </div>
 
+    <div class="ficha-caja-gris trans25">
+      <div class="ficha-caja-gris-titulo">
+        Empresas destinatarias       
+      </div>
+      <div class="ficha-caja-gris-texto">
+        Sillas, hoteles, poli, pvc, ...
+      </div>
+
+      <% if owner %>
+
+        <div class="ficha-caja-gris-edit">
+          <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+        </div>
+      
+      <% end %>
+    
+    </div>
+
+    <div class="ficha-caja-gris trans25">
+      <div class="ficha-caja-gris-titulo">
+        Fecha de publicación:       
+      </div>
+
+      <div class="ficha-caja-gris-fecha">
+        <%= @oferta.fecha.strftime("%d-%m-%y") %>
+      </div>
+
+      <div class="ficha-caja-gris-titulo">
+        Ámbito:       
+      </div>
+    
+      <div class="ficha-caja-gris-fecha">
+        Internacional
+      </div>
+    
+      <% if owner %>
+
+        <div class="ficha-caja-gris-edit">
+          <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+        </div>
+      
+      <% end %>
+    
+    </div>
+
+  </div>
+
+</div>
+
+<div class="caja-seccion-oferta">
+  
+  <div class="ficha-masdetalles-titulo">
+    Más detalles ...
+  </div>
+
+  <div class="ficha-masdetalles-texto">
+    <% if @oferta.tipo == 'O'%>
+      <%= @oferta.clicks -%> visitas de esta oferta
     <% else %>
-    
-      <div class="ficha-caja-enlace-texto">
-        
-        <br/><br/><br/>
-    
-        Web externa: <br/></br>
-    
-        <% if !@oferta.url.nil? %>
-          <%= @oferta.url %>
-        <% else %>
-          Edite si quiere incluir un enlace a la página con información extra de la oferta.
-        <% end %>
-        
-      </div>
-
-      <div class="ficha-caja-enlace-edit">
-        <img src="<%= current_theme_image_path('editar.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
-      </div>
-
-    
+      <%= @oferta.clicks -%> visitas de esta demanda
     <% end %>
-      
   </div>
 
-  <div class="ficha-caja-gris trans25">
-    <div class="ficha-caja-gris-titulo">
-      Empresas destinatarias       
-    </div>
-    <div class="ficha-caja-gris-texto">
-      Sillas, hoteles, poli, pvc, ...
-    </div>
-
-    <% if owner %>
-
-      <div class="ficha-caja-gris-edit">
-        <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
-      </div>
-      
-    <% end %>
-    
+  <div class="ficha-masdetalles-texto2">
+   XX veces guardada en favoritos 
   </div>
 
-  <div class="ficha-caja-gris trans25">
-    <div class="ficha-caja-gris-titulo">
-      Fecha de publicación:       
-    </div>
-
-    <div class="ficha-caja-gris-fecha">
-      <%= @oferta.fecha.strftime("%d-%m-%y") %>
-    </div>
-
-    <div class="ficha-caja-gris-titulo">
-      Ámbito:       
-    </div>
-    
-    <div class="ficha-caja-gris-fecha">
-      Internacional
-    </div>
-    
-    <% if owner %>
-
-      <div class="ficha-caja-gris-edit">
-        <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
-      </div>
-      
-    <% end %>
-    
-  </div>
-
-</div>
-
-<div class="ficha-masdetalles-titulo ">
-Más detalles ...
-</div>
-
-<div class="ficha-masdetalles-texto">
-  <% if @oferta.tipo == 'O'%>
-    <%= @oferta.clicks -%> visitas de esta oferta
-  <% else %>
-    <%= @oferta.clicks -%> visitas de esta demanda
-  <% end %>
-</div>
-
-<div class="ficha-masdetalles-texto2">
- XX veces guardada en favoritos 
 </div>
 
 </div>
