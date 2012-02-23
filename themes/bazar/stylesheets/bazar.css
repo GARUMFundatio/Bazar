@@ -594,9 +594,10 @@ a {
 /* ficha */ 
 .ficha-container {
   background-color: white;
-  width: 831px;
+  width: 851px;
   padding: 0;
   margin: 0;
+  overflow: hidden;
   
 }
 
