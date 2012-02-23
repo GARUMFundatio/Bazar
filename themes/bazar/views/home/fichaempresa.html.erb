@@ -233,85 +233,26 @@
   </div>
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
-    <div class="seccion-cajon ilumina5">
+    <div class="seccion-cajon">
 
-      <div class="ficha-sector-cifra">
-        <%= @totalempresas %> 
-      </div>
+      <div class="ficha-empresa-sobre">
 
-      <div class="ficha-sector-texto">
-        empresas en INDUSTRIA 
+        <p class="ficha-empresa-titulo">Fundación:</p>
+        <p class="ficha-empresa-texto"><%= @empresa.fundada %></p>
+
+        <p class="ficha-empresa-titulo">Ámbito:</p>
+        <p class="ficha-empresa-texto">** Internacional</p>
+
+        <p class="ficha-empresa-titulo">Nº de empleados:</p>
+        <p class="ficha-empresa-texto">** 23</p>
+         
       </div>
       
       <div class="ficha-sector-imagen">
         <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
       </div>
-      
     </div>
-
-    <div class="seccion-cajon ilumina5">
-
-      <div class="ficha-sector-cifra">
-        <%= @totalempresas %> 
-      </div>
-
-      <div class="ficha-sector-texto">
-        empresas en DISTRIBUCIÓN 
-      </div>
-      
-      <div class="ficha-sector-imagen">
-        <img src="<%= current_theme_image_path('sector02black.png') %>" onClick="window.alert('click in fav');" >
-      </div>
-      
-    </div>
-
-    <div class="seccion-cajon ilumina5">
-
-      <div class="ficha-sector-cifra">
-        <%= @totalempresas %> 
-      </div>
-
-      <div class="ficha-sector-texto">
-        empresas en FINANZAS 
-      </div>
-      
-      <div class="ficha-sector-imagen">
-        <img src="<%= current_theme_image_path('sector03black.png') %>" onClick="window.alert('click in fav');" >
-      </div>
-      
-    </div>
-
-    <div class="seccion-cajon ilumina5">
-
-      <div class="ficha-sector-cifra">
-        <%= @totalempresas %> 
-      </div>
-
-      <div class="ficha-sector-texto">
-        empresas en CONOCIMIENTO 
-      </div>
-      
-      <div class="ficha-sector-imagen">
-        <img src="<%= current_theme_image_path('sector04black.png') %>" onClick="window.alert('click in fav');" >
-      </div>
-      
-    </div>
-    
-    <div class="seccion-cajon ilumina5">
-
-      <div class="ficha-sector-cifra">
-        <%= @totalempresas %> 
-      </div>
-
-      <div class="ficha-sector-texto">
-        empresas en COOPERATIVA
-      </div>
-      
-      <div class="ficha-sector-imagen">
-        <img src="<%= current_theme_image_path('sector05black.png') %>" onClick="window.alert('click in fav');" >
-      </div>
-      
-    </div>
+  </div>
     
 </div>
 
@@ -343,19 +284,14 @@
         <%= @totalempresas %> 
       </div>
 
-      <div class="ficha-sector-texto">
-        empresas en INDUSTRIA 
-      </div>
-      
-      <div class="ficha-sector-imagen">
-        <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
-      </div>
+
       
     </div>
   </div>
 <div/>
 
 <a id="fichaoferta" class="fancybox.ajax" href=""></a>
+<a id="fichaempresa" class="fancybox.ajax" href=""></a>
 
 <script>
 
@@ -367,6 +303,16 @@ $(document).ready(function() {
   $('.ilumina10').transify({opacityOrig:.10,opacityNew:.40,fadeSpeed:500});
   
   $("#fichaoferta").fancybox({
+		 'width' : 850,
+		 'height' : 600,
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
+  
+  $("#fichaempresa").fancybox({
 		 'width' : 850,
 		 'height' : 600,
      'margin' : 0,
