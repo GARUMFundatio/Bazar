@@ -579,7 +579,33 @@ class HomeController < ApplicationController
     
   end 
 
+  def crearimagenoferta
+    
+    if ( params[:empresa].to_i == current_user.id )
+      @img = Bazarcms::ofertasimagen.create(params[:ofertasimagen])
+      @img.oferta_id = params[:id] 
+      @img.save
+    end 
+    redirect_to "/home/fichaoferta/#{BZ_param('BazarId')}/#{params[:id]}/?go=imagenes"
+    
+  end 
+  
+  def delofertaimagen
 
+    if (params[:empresa].to_i == current_user.id)
+      @img = Bazarcms::Ofertasimagen.find_by_id_and_oferta_id(params[:id], params[:oferta])
+      if  @img.nil? 
+        redirect_to "/home/fichaoferta/#{BZ_param('BazarId')}/#{params[:id]}/?go=imagenes"
+      else 
+        @img.delete 
+        render :text => "OK"
+      end 
+    else 
+      render :text => "No se puede borrar esta foto"
+    end 
+    
+  end
+  
   def test
     
   end

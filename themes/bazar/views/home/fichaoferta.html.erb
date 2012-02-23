@@ -130,7 +130,7 @@ end
     
       <div class="seccion-cajon-imagen" >
 
-        <%= form_for :ofertasimagen, :url => "/home/crearimagenoferta/", :html => { :multipart => true } do |form| %>
+        <%= form_for :ofertasimagen, :url => "/home/crearimagenoferta/#{@oferta.id}/#{current_user.id}", :html => { :multipart => true } do |form| %>
        <div class="add-image">
          <label class="cabinet">
              <input type="file" class="file" id="ofertasimagen_imagen" name="ofertasimagen[imagen]" 
@@ -166,8 +166,6 @@ end
   </div>
 
 </div>
-
-
 
 
 <div class="caja-seccion-oferta">
@@ -286,3 +284,26 @@ end
 </div>
 
 </div>
+
+$(document).ready(function() {
+	
+   $("a[rel=galeria]").fancybox(
+     {
+        'width': 650,
+        'height': 600,
+     		'transitionIn'	:	'elastic',
+     		'transitionOut'	:	'elastic',
+     		'speedIn'		:	600, 
+     		'speedOut'		:	200, 
+     		'overlayShow'	:	true
+     	});
+  
+  SI.Files.stylizeAll();
+  
+  <% if params[:go] == "imagenes" %>
+    $.scrollTo('#imagenes', 'slow');
+  <% end %>
+
+ });
+
+</script>
