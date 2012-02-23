@@ -963,6 +963,15 @@ a {
   
 }
 
+.caja-imagenes-oferta {
+  position: relative;
+  width: 183px;
+  height: 60px;
+  opacity:1;
+  filter:alpha(opacity=100);
+  filter: “alpha(opacity=100)”;
+}
+
 /* ficha oferta sectores */ 
 
 .ficha-sector-cifra {

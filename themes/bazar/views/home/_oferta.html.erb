@@ -31,9 +31,11 @@
       <%= truncate_html(oferta.texto, :length => 120).html_safe -%>
     <% else %>
       <%= truncate_html(oferta.texto, :length => 60).html_safe -%><br/>
-      <% for img in imgs %>
-         <%= image_tag img.imagen.url(:c60) %>
-      <% end %>
+      <div class="caja-imagenes-oferta">        
+        <% for img in imgs %>
+           <%= image_tag img.imagen.url(:c60), :width => 50 %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 
