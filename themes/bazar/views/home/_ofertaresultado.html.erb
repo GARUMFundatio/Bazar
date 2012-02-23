@@ -28,8 +28,11 @@
   </div>
 
 
-
-  <% imgs = Bazarcms::Ofertasimagen.where("oferta_id = ?", ofertaresultado.oferta_id).limit(3) %>
+  <% if ofertaresultado.cluster_id == BZ_param("BazarId").to_i %>
+    <% imgs = Bazarcms::Ofertasimagen.where("oferta_id = ?", ofertaresultado.oferta_id).limit(3) %>
+  <% else %>
+    <% imgs = [] %>
+  <% end %>
   
   <div class="cajon-cuerpo" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
     <% if imgs.count <= 0 %>
