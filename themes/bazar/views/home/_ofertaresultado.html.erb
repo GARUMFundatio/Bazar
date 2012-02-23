@@ -17,18 +17,34 @@
 
   <% else %>  
   
-    <div class="add-favoritos">
+    <!-- div class="add-favoritos">
       <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
-    </div>
+    </div -->
   
   <% end %>
   
   <div class="cajon-titulo" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
     <%= ofertaresultado.info -%>
   </div>
+
+
+
+  <% imgs = Bazarcms::Ofertasimagen.where("oferta_id = ?", ofertaresultado.oferta_id).limit(3) %>
+  
   <div class="cajon-cuerpo" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
-    <%= truncate_html(ofertaresultado.nombre_empresa, :length => 120).html_safe -%>
+    <% if imgs.count <= 0 %>
+      <%= truncate_html(ofertaresultado.nombre_empresa, :length => 120).html_safe -%>
+    <% else %>
+      <%= truncate_html(ofertaresultado.nombre_empresa, :length => 60).html_safe -%><br/>
+      <div class="caja-imagenes-oferta">        
+        <% for img in imgs %>
+           <%= image_tag img.imagen.url(:c60), :width => 50 %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
+  
+  
   <div class="cajon-pie" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
     Válida hasta el <%= ofertaresultado.enlace %>
   </div>
