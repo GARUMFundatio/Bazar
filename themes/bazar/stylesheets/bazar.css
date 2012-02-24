@@ -1362,7 +1362,15 @@ input[type="text"]:focus{
   height: 60px;
   background-color: #000000;
   margin-left: 1px;
+
 }
+
+.fichaempresa-cajaicono img {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 
 .fichaempresa-desc {
   float: left;

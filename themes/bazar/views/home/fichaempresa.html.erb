@@ -57,7 +57,7 @@
       </div>
       
       <div class="fichaempresa-cajaicono ilumina5">
-        IND
+        <img src="<%= current_theme_image_path("sector#{@empresa.sector}white.png") %>" width="40px" />
       </div>
       
       <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
@@ -253,7 +253,8 @@
       <div class="ficha-empresa-sobre">
         
         <p class="ficha-empresa-titulo">Sector:</p>
-        <p class="ficha-empresa-texto2"><%= Bazarcms::Empresa.Sectorestexto(@empresa.sector) %></p>
+        <p class="ficha-empresa-texto2"><%= Bazarcms::Empresa.Sectorestexto(@empresa.sector) %> 
+          &nbsp; &nbsp; <img src="<%= current_theme_image_path("sector#{@empresa.sector}white.png") %>" width="40px" /></p>
 
         <p class="ficha-empresa-titulo">Facturación anual:</p>
         <p class="ficha-empresa-texto2">
@@ -270,10 +271,6 @@
     
   </div>
     
-</div>
-
-<div class="ficha-sector-imagen">
-  <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
 </div>
 
 
