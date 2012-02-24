@@ -797,6 +797,23 @@ a {
   margin-top: 5px;
 }
 
+.ficha-empresa-texto2 {
+  float:top;
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: left;
+  letter-spacing: -0.05em; 
+  line-height: 110%;
+  opacity:1;
+  filter:alpha(opacity=100);
+  filter: “alpha(opacity=100)”;   
+  margin-left: 10px;
+  margin-top: 5px;
+  
+}
+
 .ficha-caja-detalle {
   width: 761px;
   height: 283px;

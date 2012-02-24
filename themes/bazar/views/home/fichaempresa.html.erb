@@ -259,9 +259,9 @@
         <p class="ficha-empresa-texto2">
           <%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas) %> 
           <% if @empresa.moneda == 0 %>
-            <img src="<%= current_theme_image_path('euronote.png') %>" />
+            €
           <% else %>
-            <img src="<%= current_theme_image_path('dollarnote.png') %>" />
+            $
           <% end %>
         </p>
          
