@@ -1302,8 +1302,9 @@ input[type="text"]:focus{
 }
 
 .fichaempresa-icono-editar {
-  margin-left: 20px;
-  margin-top: 20px;
+
+  padding-left: 10px;
+  padding-top: 10px;
 
   opacity:1;
   filter:alpha(opacity=100);
@@ -1313,7 +1314,10 @@ input[type="text"]:focus{
 
 
 .fichaempresa-titular {
-  width: 731px;
+  position: relative;
+  width: 765px;
+  display: block;
+  float: left;
 }
 
 .fichaempresa-titulo {

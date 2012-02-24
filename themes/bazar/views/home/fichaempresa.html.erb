@@ -78,13 +78,10 @@
       
       <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
       
-        <div class="fichaempresa-iconos ilumina5" onClick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+        <div class="fichaempresa-cajaicono" onClick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
           <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>"  >
         </div>
-        
-      <% else %>
-      
-      
+
       <% end %>
       
       <div class="fichaempresa-enlace">
