@@ -61,7 +61,15 @@
       </div>
 
       <div class="fichaempresa-cajaicono">
-        <p><%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas) -%></p>
+        <p>
+          <%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas).split("-")[1] -%> 
+          <% if @empresa.moneda == 0 %>
+            €
+          <% else %>
+            $
+          <% end %>
+          
+        </p>
       </div>
 
       <div class="fichaempresa-cajaicono">

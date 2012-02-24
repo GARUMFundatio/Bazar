@@ -1385,12 +1385,13 @@ input[type="text"]:focus{
 
 .fichaempresa-cajaicono p {
   float: left;
+  width: 60px;
   margin-left: 0px;
-  margin-top: 0px;
+  margin-top: 25px;
   color: #ffffff;
   font-family: Arial,sans-serif;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
 }
 
