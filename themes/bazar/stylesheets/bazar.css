@@ -1315,14 +1315,14 @@ input[type="text"]:focus{
 
 .fichaempresa-titular {
   position: relative;
-  width: 765px;
+  width: 810px;
   display: block;
   float: left;
 }
 
 .fichaempresa-titulo {
   float: left;
-  width: 490px;
+  width: 471px;
   height: 53px;
   
   color: #ffffff;
