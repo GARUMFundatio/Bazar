@@ -56,8 +56,16 @@
         <%= @empresa.nombre -%>
       </div>
       
-      <div class="fichaempresa-cajaicono ilumina5">
+      <div class="fichaempresa-cajaicono">
         <img src="<%= current_theme_image_path("sector#{@empresa.sector}white.png") %>" width="40px" />
+      </div>
+
+      <div class="fichaempresa-cajaicono">
+        <p><%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas) -%></p>
+      </div>
+
+      <div class="fichaempresa-cajaicono">
+        <p>Rating</p>
       </div>
       
       <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
@@ -68,13 +76,6 @@
         
       <% else %>
       
-        <div class="fichaempresa-cajaicono ilumina5">
-          5M€
-        </div>
-
-        <div class="fichaempresa-cajaicono ilumina5">
-          *****
-        </div>
       
       <% end %>
       

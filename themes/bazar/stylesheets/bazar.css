@@ -1357,18 +1357,41 @@ input[type="text"]:focus{
 }
 
 .fichaempresa-cajaicono {
+  position: relative;
   float: left;
   width: 60px;
   height: 60px;
-  background-color: #000000;
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;  margin-left: 1px;
+
+}
+
+.fichaempresa-cajaicono:hover {
+  position: relative;
+  float: left;
+  width: 60px;
+  height: 60px;
+  background-image: url(bgblack40.png);
   margin-left: 1px;
 
 }
+
 
 .fichaempresa-cajaicono img {
   float: left;
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.fichaempresa-cajaicono p {
+  float: left;
+  margin-left: 0px;
+  margin-top: 0px;
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
 }
 
 
