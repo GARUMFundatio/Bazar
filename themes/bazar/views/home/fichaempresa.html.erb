@@ -253,7 +253,7 @@
       <div class="ficha-empresa-sobre">
         
         <p class="ficha-empresa-titulo">Sector:</p>
-        <p class="ficha-empresa-texto2"><%= @empresa.sector %></p>
+        <p class="ficha-empresa-texto2"><%= Bazarcms::Empresa.Sectorestexto(@empresa.sector) %></p>
 
         <p class="ficha-empresa-titulo">Facturación anual:</p>
         <p class="ficha-empresa-texto2">
