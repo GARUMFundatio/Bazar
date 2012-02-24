@@ -349,7 +349,15 @@ class HomeController < ApplicationController
       if @empresa.ambito.nil?
         @empresa.ambito = "2"
       end 
-      
+
+      if @empresa.sector.nil?
+        @empresa.sector = "01"
+      else 
+        if @empresa.sector.length <= 1 
+          @empresa.sector = "01"
+        end
+      end 
+
       @empresa.save 
     
       @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id = ?", params[:id]).order("fecha desc")

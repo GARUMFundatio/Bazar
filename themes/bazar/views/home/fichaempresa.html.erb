@@ -233,10 +233,10 @@
   </div>
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
+
     <div class="seccion-cajon">
-
       <div class="ficha-empresa-sobre">
-
+        
         <p class="ficha-empresa-titulo">Fundación:</p>
         <p class="ficha-empresa-texto"><%= @empresa.fundada %></p>
 
@@ -247,14 +247,35 @@
         <p class="ficha-empresa-texto"><%= Bazarcms::Empresasdato.REtexto(@empresasdatos.empleados) %> </p>
          
       </div>
-      
-      <div class="ficha-sector-imagen">
-        <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
+    </div>
+
+    <div class="seccion-cajon">
+      <div class="ficha-empresa-sobre">
+        
+        <p class="ficha-empresa-titulo">Sector:</p>
+        <p class="ficha-empresa-texto2"><%= @empresa.sector %></p>
+
+        <p class="ficha-empresa-titulo">Facturación anual:</p>
+        <p class="ficha-empresa-texto2">
+          <%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas) %> 
+          <% if @empresa.moneda == 0 %>
+            <img src="<%= current_theme_image_path('euronote.png') %>" />
+          <% else %>
+            <img src="<%= current_theme_image_path('dollarnote.png') %>" />
+          <% end %>
+        </p>
+         
       </div>
     </div>
+    
   </div>
     
 </div>
+
+<div class="ficha-sector-imagen">
+  <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
+</div>
+
 
 <div class="caja-seccion" id="sedes">
   <div class="ficha-indice">
