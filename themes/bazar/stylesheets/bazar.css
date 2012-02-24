@@ -1566,6 +1566,7 @@ input[type="text"]:focus{
 
 
 .add-image {
+  position: relative;
   cursor: pointer;
   display: block;
   margin-top: 80px;
