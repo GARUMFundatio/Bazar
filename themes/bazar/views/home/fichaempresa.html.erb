@@ -72,8 +72,8 @@
         </p>
       </div>
 
-      <div class="fichaempresa-cajaicono" style="width: 121px">
-        <p>Rating</p>
+      <div class="fichaempresa-rating">
+          <%= helper_rating_show_ng(params[:bazar], params[:id]).html_safe -%>
       </div>
       
       <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>

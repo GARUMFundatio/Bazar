@@ -1322,7 +1322,7 @@ input[type="text"]:focus{
 
 .fichaempresa-titulo {
   float: left;
-  width: 471px;
+  width: 470px;
   height: 53px;
   
   color: #ffffff;
@@ -1370,6 +1370,8 @@ input[type="text"]:focus{
 
 }
 
+
+
 .fichaempresa-cajaicono:hover {
   position: relative;
   float: left;
@@ -1399,6 +1401,36 @@ input[type="text"]:focus{
   text-align: center;
 }
 
+.fichaempresa-rating {
+  position: relative;
+  float: left;
+  width: 121px;
+  height: 60px;
+  padding-left: 20px;
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;  margin-left: 1px;
+
+}
+
+.fichaempresa-rating:hover {
+  position: relative;
+  float: left;
+  width: 121px;
+  height: 60px;
+  padding-left: 20px;
+  background-image: url(bgblack40.png);
+  margin-left: 1px;
+
+}
+
+.fichaempresa-rating-img {
+ position: relative;
+ display: block;
+ float: left;
+ margin-left: 3px;
+ margin-top: 23px; 
+ margin-right: 2px;
+}
 
 .fichaempresa-desc {
   float: left;
