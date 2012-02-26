@@ -118,4 +118,11 @@
     //window.alert($(this).attr("class")+" -->"+$(this).attr('id')+":"+$(this).html());
   }
   
+  function selsector(cual) {
+    $(".empresa-editar-sector-selected").attr("class", "empresa-editar-sector");
+    $("#"+cual).attr('class', "empresa-editar-sector-selected");
+    $("#bazarcms_empresa_sector").val(cual);
+    //window.alert($(this).attr("class")+" -->"+$(this).attr('id')+":"+$(this).html());
+  }
+  
 </script>
