@@ -1500,6 +1500,36 @@ input[type="text"]:focus{
   
 }
 
+.caja-empresa-editar-ambito {
+  
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 0px;
+  padding:0px; 
+  width:500px;
+  height: 60px; 
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 19px;
+  opacity:.7;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+  
+}
+
+.empresa-editar-ambito {
+
+  float: left;
+  position: relative;
+  display: block;
+  height: 60px;
+  width: 121px;
+
+
+
+}
+
 .caja-empresa-editar-input {
   
   margin: 0px 0px 10px 50px;
@@ -1809,9 +1839,6 @@ background:#77b6ef;
   width: 220px;
 }
 
-/* editar ambito */ 
-
-.
 
 
 /* input para añadir imágenes */ 

@@ -16,20 +16,20 @@
 
     <p><%= f.text_field :fundada, :placeholder => t(:text_fundada), :class => "caja-empresa-editar-input" %></p>
 
-    <div class="caja-empresa-titulo">
-      <%= t(:text_ambito) %>
-      
+    <div class="caja-empresa-editar-titulo">
+      <p><%= t(:text_ambito) %></p>
     </div>
     
     <div class="caja-empresa-editar-ambito">
       
       <% Bazarcms::Empresa.Ambitos.each do |k, v| %>
         
-        <div id="<%= v -%>" class="empresa-ambito-editar">
+        <div id="<%= v -%>" class="empresa-editar-ambito">
           <%= k -%>
         </div>
         
       <% end %>
+      
     </div>
 
     <p><%= f.text_field :ambito, :placeholder => t(:text_ambito), :class => "caja-empresa-editar-input" %></p>
