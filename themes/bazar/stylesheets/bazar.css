@@ -1512,6 +1512,7 @@ input[type="text"]:focus{
   font-family: arial, sans-serif; 
   font-weight: bold;
   font-size: 19px;
+  text-align: center;
   opacity:.7;
   filter:alpha(opacity=70);
   filter: “alpha(opacity=70)”;
@@ -1523,12 +1524,45 @@ input[type="text"]:focus{
   float: left;
   position: relative;
   display: block;
-  height: 60px;
+  height: 40px;
   width: 121px;
-
-
+  margin-left: 1px;
+  padding-top: 20px;
+  background-image: url(bgblack10.png);
+  background-repeat: repeat;
 
 }
+
+.empresa-editar-ambito-selected {
+
+  float: left;
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 121px;
+  margin-left: 1px;
+  padding-top: 20px;
+  background-image: url(bgblack40.png);
+  background-repeat: repeat;
+
+}
+
+.empresa-editar-ambito:hover {
+
+  float: left;
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 121px;
+  margin-left: 1px;
+  padding-top: 20px;
+  background-image: url(bgblack40.png);
+  background-repeat: repeat;
+
+}
+
+
+
 
 .caja-empresa-editar-input {
   

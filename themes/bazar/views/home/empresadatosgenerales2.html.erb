@@ -17,15 +17,19 @@
     <p><%= f.text_field :fundada, :placeholder => t(:text_fundada), :class => "caja-empresa-editar-input" %></p>
 
     <div class="caja-empresa-editar-titulo">
-      <p><%= t(:text_ambito) %></p>
+      <p><%= t(:text_ambito) %> (<%= @empresa.ambito %>)</p>
     </div>
     
     <div class="caja-empresa-editar-ambito">
       
       <% Bazarcms::Empresa.Ambitos.each do |k, v| %>
         
-        <div id="<%= v -%>" class="empresa-editar-ambito">
-          <%= k -%>
+        <% if @empresa.ambito == v %>
+        <div id="<%= v -%>" class="empresa-editar-ambito-selected" onclick="selambito('<%= v -%>');">
+        <% else %>
+        <div id="<%= v -%>" class="empresa-editar-ambito" onclick="selambito('<%= v -%>');">        
+        <% end %>
+          <%= k %>
         </div>
         
       <% end %>
@@ -69,6 +73,13 @@
       return false;
   });
   
-  $('input[placeholder]').placeholder();
-    
+ // $('input[placeholder]').placeholder();
+  
+  function selambito(cual) {
+    $(".empresa-editar-ambito-selected").attr("class", "empresa-editar-ambito");
+    $("#"+cual).attr('class', "empresa-editar-ambito-selected");
+    $("#bazarcms_empresa_ambito").val(cual);
+    //window.alert($(this).attr("class")+" -->"+$(this).attr('id')+":"+$(this).html());
+  }
+  
 </script>
