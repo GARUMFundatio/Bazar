@@ -36,7 +36,30 @@
       
     </div>
 
-    <p><%= f.hidden_field :ambito, :placeholder => t(:text_ambito), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.hidden_field :ambito, :class => "caja-empresa-editar-input" %></p>
+
+    <div class="caja-empresa-editar-titulo">
+      <p><%= t(:text_sector) %> </p>
+    </div>
+    
+    <div class="caja-empresa-editar-ambito">
+      
+      <% Bazarcms::Empresa.Sectores.sort_by { |k,v| v  }.each do |k, v| %>
+        
+        <% if @empresa.sector == v %>
+        <div id="<%= v -%>" class="empresa-editar-sector-selected" onclick="selsector('<%= v -%>');">
+        <% else %>
+        <div id="<%= v -%>" class="empresa-editar-sector" onclick="selsector('<%= v -%>');">        
+        <% end %>
+          <%= k %>
+        </div>
+        
+      <% end %>
+      
+    </div>
+
+    <p><%= f.hidden_field :sector, :class => "caja-empresa-editar-input" %></p>
+
 
     <div class="caja-empresa-editar-titulo">
       <%= t(:text_numero_de_empleados) %>
