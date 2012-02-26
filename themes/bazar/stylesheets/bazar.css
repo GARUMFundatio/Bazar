@@ -1561,18 +1561,42 @@ input[type="text"]:focus{
 
 }
 
+.caja-empresa-editar-sector {
+  
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-bottom: 0px;
+  padding:0px; 
+  width:500px;
+  height: 60px; 
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 15px;
+  opacity:.7;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+  
+}
+
 .empresa-editar-sector {
 
   float: left;
   position: relative;
-  display: block;
-  height: 40px;
-  width: 121px;
+  display: table-cell;
+  vertical-align: middle;
+  height: 60px;
+  width: 60px;
   margin-left: 1px;
-  padding-top: 20px;
   background-image: url(bgblack10.png);
   background-repeat: repeat;
+  
+}
 
+.empresa-editar-sector img {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
 }
 
 .empresa-editar-sector-selected {
@@ -1580,13 +1604,18 @@ input[type="text"]:focus{
   float: left;
   position: relative;
   display: block;
-  height: 40px;
-  width: 121px;
+  height: 60px;
+  width: 60px;
   margin-left: 1px;
-  padding-top: 20px;
   background-image: url(bgblack40.png);
   background-repeat: repeat;
 
+}
+
+.empresa-editar-sector-selected img {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
 }
 
 .empresa-editar-sector:hover {
@@ -1594,10 +1623,9 @@ input[type="text"]:focus{
   float: left;
   position: relative;
   display: block;
-  height: 40px;
-  width: 121px;
+  height: 60px;
+  width: 60px;
   margin-left: 1px;
-  padding-top: 20px;
   background-image: url(bgblack40.png);
   background-repeat: repeat;
 

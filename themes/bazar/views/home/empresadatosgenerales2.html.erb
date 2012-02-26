@@ -51,7 +51,7 @@
         <% else %>
         <div id="<%= v -%>" class="empresa-editar-sector" onclick="selsector('<%= v -%>');">        
         <% end %>
-          <%= k %>
+          <img src="<%= current_theme_image_path("sector#{v}black.png") %>" width="40px" />
         </div>
         
       <% end %>
