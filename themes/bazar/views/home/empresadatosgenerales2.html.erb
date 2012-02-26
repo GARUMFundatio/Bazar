@@ -47,9 +47,12 @@
 
       <select id="bazarcms_empresasdato_empleados" name="bazarcms_empresasdato[empleados]" class="caja-empresa-editar-input">
         <% for rango in Bazarcms::Empresasdato.RangoEmpleados.sort{|a,b| a[1]<=>b[1]} %>
-          
-        <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
-
+        
+          <% if @empresasdatos.empleados.to_i == rango[1].to_i %>  
+            <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
+          <% else %>
+            <option value="<%= rango[1] %>"><%= rango[0] %></option>
+          <% end %>
         <% end %>
       </select>
     </p>

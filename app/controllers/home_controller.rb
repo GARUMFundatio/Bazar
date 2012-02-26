@@ -363,20 +363,20 @@ class HomeController < ApplicationController
       @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id = ?", params[:id]).order("fecha desc")
       @demandas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id = ?", params[:id]).order("fecha desc")        
       @imagenes = Bazarcms::Empresasimagen.where("empresa_id = ?", params[:id])
-      @empresasdatos = Bazarcms::Empresasdato.where("empresa_id = ?", params[:id]).order("periodo desc").limit(1)
+      @ed = Bazarcms::Empresasdato.where("empresa_id = ?", params[:id]).order("periodo desc").limit(1)
       
-      if @empresadatos.nil? 
+      if @ed.nil? 
         @empresasdatos = Bazarcms::Empresasdato.new
         @empresasdatos.empresa_id = params[:id] 
         @empresasdatos.periodo = DateTime.now.year
-        @empresasdatos.periodo = 0
         @empresasdatos.empleados = 0
         @empresasdatos.ventas = 0
         @empresasdatos.compras = 0
         @empresasdatos.resultados = 0
         @empresasdatos.save
+      else 
+        @empresasdatos = @ed[0]
       end 
-      
       
       render
       
@@ -427,6 +427,36 @@ class HomeController < ApplicationController
     else
       @empresa = Bazarcms::Empresa.find_by_id(current_user.id)      
     end 
+
+    @ed = Bazarcms::Empresasdato.where("empresa_id = ?", params[:id]).order("periodo desc").limit(1)
+    
+    logger.debug "empresasdatos -> "+@empresasdatos.inspect
+    if @ed.nil? 
+      logger.debug "No hay datos para esta empresa"
+      @empresasdatos = Bazarcms::Empresasdato.new
+      @empresasdatos.empresa_id = params[:id] 
+      @empresasdatos.periodo = DateTime.now.year
+      @empresasdatos.empleados = 0
+      @empresasdatos.ventas = 0
+      @empresasdatos.compras = 0
+      @empresasdatos.resultados = 0
+      @empresasdatos.save
+    else 
+      
+      if @ed[0].periodo != DateTime.now.year
+        logger.debug "No hay datos para este año!!!! los creo con el último año"
+        @empresasdatos = Bazarcms::Empresasdato.new
+        @empresasdatos.empresa_id = params[:id] 
+        @empresasdatos.periodo = DateTime.now.year
+        @empresasdatos.empleados = @ed[0].empleados
+        @empresasdatos.ventas = @ed[0].ventas
+        @empresasdatos.compras = @ed[0].compras
+        @empresasdatos.resultados = @ed[0].resultados
+        @empresasdatos.save
+      else
+        @empresasdatos = @ed[0]
+      end      
+    end 
     
     render :layout => false
   end
@@ -441,6 +471,22 @@ class HomeController < ApplicationController
     else
       @empresa = Bazarcms::Empresa.find_by_id(current_user.id)      
     end 
+
+    if ( !params[:bazarcms_empresasdato].nil? )
+      if ( params[:id].to_i == current_user.id )
+        @empresasdatos = Bazarcms::Empresasdato.find_by_empresa_id_and_periodo(params[:id], DateTime.now.year)
+      else
+        @empresasdatos = Bazarcms::Empresasdato.find_by_empresa_id_and_periodo(current_user.id, DateTime.now.year)
+      end 
+
+      if !@empresasdatos.nil? 
+        @empresasdatos.update_attributes(params[:bazarcms_empresasdato])
+      else 
+        logger.debug "No he encontrado datos para estos parametros --->"+params.inspect
+      end 
+    
+    end 
+    
     
     if @empresa.update_attributes(params[:bazarcms_empresa])
        #redirect_to("/home/fichaempresa/#{params[:id]}/#{params[:bazar]}/") 
