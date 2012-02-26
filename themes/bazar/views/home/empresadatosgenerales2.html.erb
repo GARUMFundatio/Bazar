@@ -17,12 +17,12 @@
     <p><%= f.text_field :fundada, :placeholder => t(:text_fundada), :class => "caja-empresa-editar-input" %></p>
 
     <div class="caja-empresa-editar-titulo">
-      <p><%= t(:text_ambito) %> (<%= @empresa.ambito %>)</p>
+      <p><%= t(:text_ambito) %> </p>
     </div>
     
     <div class="caja-empresa-editar-ambito">
       
-      <% Bazarcms::Empresa.Ambitos.each do |k, v| %>
+      <% Bazarcms::Empresa.Ambitos.sort_by { |k,v| v  }.each do |k, v| %>
         
         <% if @empresa.ambito == v %>
         <div id="<%= v -%>" class="empresa-editar-ambito-selected" onclick="selambito('<%= v -%>');">
@@ -36,7 +36,7 @@
       
     </div>
 
-    <p><%= f.text_field :ambito, :placeholder => t(:text_ambito), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.hidden_field :ambito, :placeholder => t(:text_ambito), :class => "caja-empresa-editar-input" %></p>
 
     <div class="caja-empresa-editar-titulo">
       <%= t(:text_numero_de_empleados) %>
