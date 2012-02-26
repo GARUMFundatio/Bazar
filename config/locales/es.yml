@@ -39,6 +39,7 @@ es:
   text_al_hacerlo_te_devolvera_un_fichero_en_formato_xml_que_habitualmente_saben_manejar_otros_programas_o_tu_aplicacion: "Al hacerlo te devolverá un fichero en formato XML que habitualmente saben manejar otros programas o tu aplicación"
   text_al_tiempo_que_les_facilita_establecer_alianzas_conocer_mejor_su_sector_y: ", al tiempo que les facilita establecer alianzas, conocer mejor su sector y"
   text_alguno: alguno
+  text_ambito: "Ámbito"
   text_anadir_una_foto: "AÑADIR UNA FOTO"
   text_anadir_una_sede: "AÑADIR UNA SEDE"
   text_anterior: Anterior
@@ -255,6 +256,7 @@ es:
   text_nuevo_parametro: "Nuevo Parametro"
   text_nuevo_usuario: "Nuevo Usuario"
   text_nuevos: nuevos
+  text_numero_de_empleados: "Número de empleados"
   text_oferta_demanda: "Oferta / Demanda"
   text_ofertas: Ofertas
   text_ofertas_demandas: "Ofertas / Demandas"
