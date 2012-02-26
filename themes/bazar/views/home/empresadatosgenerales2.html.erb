@@ -42,7 +42,17 @@
       <%= t(:text_numero_de_empleados) %>
     </div>
 
-    <p><%= f.text_area :desc, :placeholder => t(:text_numero_de_empleados), :class => "caja-empresa-editar-texto" %></p>
+    <p>
+      <% rangos = Bazarcms::Empresasdato.RangoEmpleados.sort{|a,b| a[1]<=>b[1]} %>
+
+      <select id="bazarcms_empresasdato_empleados" name="bazarcms_empresasdato[empleados]" class="caja-empresa-editar-input">
+        <% for rango in Bazarcms::Empresasdato.RangoEmpleados.sort{|a,b| a[1]<=>b[1]} %>
+          
+        <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
+
+        <% end %>
+      </select>
+    </p>
 
     <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
 

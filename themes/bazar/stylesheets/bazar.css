@@ -1511,7 +1511,7 @@ input[type="text"]:focus{
   color: #000000 ;
   font-family: arial, sans-serif; 
   font-weight: bold;
-  font-size: 19px;
+  font-size: 15px;
   text-align: center;
   opacity:.7;
   filter:alpha(opacity=70);
