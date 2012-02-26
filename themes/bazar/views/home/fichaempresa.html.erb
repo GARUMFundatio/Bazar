@@ -285,9 +285,18 @@
          
       </div>
     </div>
-    
+ 
+    <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+
+      <div class="fichaempresa-cajaicono" onClick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales2/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+        <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>"  >
+      </div>
+
+    <% end %>
+
+
   </div>
-    
+        
 </div>
 
 
