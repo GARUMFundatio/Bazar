@@ -156,6 +156,7 @@ es:
   text_estructura_distribuida: "estructura distribuida"
   text_estructura_sea_distribuida: "estructura sea distribuida"
   text_f_a_q: f.a.q.
+  text_facturacion_anual: "Facturación anual"
   text_fecha: "Fecha:"
   text_ficha_de_empresa: "ficha de empresa"
   text_filtrar_por_datos_economicos: "Filtrar por Datos Económicos"
@@ -268,6 +269,7 @@ es:
   text_paises_activos_de_un_bazar: "Países Activos de un Bazar"
   text_paises_con_empresas_de_este_bazar: "Países con Empresas de este Bazar"
   text_paises_seleccionados: "Países Seleccionados:"
+  text_palabras_clave_actividad: "Palabras clave actividad"
   text_parametro: "Parámetro:"
   text_parametros_de_bazar: "Parámetros de Bazar"
   text_para: "Para:"
@@ -331,6 +333,7 @@ es:
   text_rol: Rol
   text_rss: RSS
   text_se_parece_a_una_red_social_cada_empresa_tiene_su_ficha_publica_sus_noticias_busca_empresas_que_puedan_estar_interesadas_en_sus_productos_o_que_le_provean_con_confiabilidad_a_mejores_precios: "se parece a una red social. Cada empresa tiene su ficha, publica sus noticias, busca empresas que puedan estar interesadas en sus productos o que le provean con confiabilidad a mejores precios."
+  text_sector: "Sector"
   text_sectores: Sectores
   text_seleccione_el_tipo_de_resultado_que_desea_ver: "Seleccione el tipo de resultado que desea ver"
   text_seleccione_uno_o_varios_paises_en_la_caja_de_busqueda: "Seleccione uno o varios países en la caja de búsqueda"

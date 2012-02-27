@@ -98,6 +98,12 @@
       </select>
     </p>
 
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_palabras_clave_actividad) %>
+    </div>
+    
+    <p><%= f.text_area :actividad_list, :size => "60x4", :placeholder => t(:text_palabras_clave_actividad), :class => "caja-empresa-editar-texto" %></p>
+
     <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
 
   <% end %>
