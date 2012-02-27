@@ -32,7 +32,7 @@
   
 	</script> 
 
-  <p><%= f.text_field :fecha_hasta, :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
+  <p><%= f.text_field :fecha_hasta, :value => "#{@oferta.fecha_hasta.strftime('%d/%m/%y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
 
   <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
 
