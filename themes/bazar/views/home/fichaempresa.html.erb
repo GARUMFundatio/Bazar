@@ -288,7 +288,7 @@
  
     <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
 
-      <div class="fichaempresa-cajaicono" onClick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales2/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+      <div class="fichaempresa-cajaicono" onclick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales2/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
         <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>"  >
       </div>
 
@@ -335,6 +335,7 @@
 <div/>
 
 <a id="fichaoferta" class="fancybox.ajax" href=""></a>
+<a id="fichaeditaroferta" class="fancybox.ajax" href=""></a>
 <a id="fichaempresa" class="fancybox.ajax" href=""></a>
 
 <script>
@@ -355,9 +356,20 @@ $(document).ready(function() {
 		 'transitionOut' : 'none',
 		 'type' : 'iframe'
 	 });
+
+   $("#fichaeditaroferta").fancybox({
+ 		 'width' : 850,
+ 		 'height' : 600,
+      'margin' : 0,
+ 		 'autoScale' : false,
+ 		 'transitionIn' : 'none',
+ 		 'transitionOut' : 'none',
+ 		 'type' : 'iframe'
+ 	 });
+
   
   $("#fichaempresa").fancybox({
-		 'width' : 850,
+		 'width' : 600,
 		 'height' : 600,
      'margin' : 0,
 		 'autoScale' : false,

@@ -271,6 +271,22 @@ class HomeController < ApplicationController
     
   end
   
+  def editaroferta
+    
+    if params[:bazar].to_i == BZ_param("BazarId").to_i
+      @oferta = Bazarcms::Oferta.find_by_id(params[:oferta])
+      @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
+      @imagenes = Bazarcms::Ofertasimagen.where("oferta_id = ?", params[:oferta])
+      
+      render :layout => false 
+      
+    else 
+      render :text => "No se puede editar esta oferta", :layout => false       
+    end 
+    
+  end
+  
+  
   def busquedaoferta
     
     # TODO: controlar el tipo (O/D) que vamos a enviar como parametro
