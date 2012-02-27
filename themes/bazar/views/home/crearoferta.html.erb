@@ -21,19 +21,18 @@
   <% form_for @oferta, :url => "/home/actofertadatosgenerales/" do |f| %>
 
     <div class="caja-empresa-editar-titulo">
-      <%= t(:text_titulo_de_la_oferta) %>
+      <%= t(:text_que_titulo_quieres_ponerle) %>
     </div>
 
-    <p><%= f.text_field :titulo, :placeholder => t(:text_titulo_de_la_oferta), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_field :titulo, :placeholder => t(:text_ej_sillas_de_plastico_personalizadas), :class => "caja-empresa-editar-input" %></p>
+
 
     <div class="caja-empresa-editar-titulo">
-      <%= t(:text_texto_de_la_oferta) %>
-    </div>
-
-    <p><%= f.text_area :texto, :placeholder => t(:text_texto_de_la_oferta), :class => "caja-empresa-editar-texto" %></p>
-
-    <div class="caja-empresa-editar-titulo">
-      <%= t(:text_oferta_valida_hasta) %>
+      <% if params[:tipo] == "O"%>
+        <%= t(:text_hasta_cuando_es_valida_la_oferta) %>
+      <% else %>
+        <%= t(:text_hasta_cuando_es_valida_la_demanda) %>
+      <% end %>
     </div>
 
   	<script> 
@@ -48,6 +47,13 @@
   	</script> 
 
     <p><%= f.text_field :fecha_hasta, :value => "#{DateTime.now.strftime('%d/%m/%y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_describela_un_poco) %>
+    </div>
+
+    <p><%= f.text_area :texto, :placeholder => t(:text_no_te_extiendas_demasiado), :class => "caja-empresa-editar-texto" %></p>
+
 
     <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
 
