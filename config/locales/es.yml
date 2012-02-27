@@ -305,7 +305,9 @@ es:
   text_proyecto_bazar: "Proyecto Bazar"
   text_publicar: Publicar
   text_publicar_una_demanda: "PUBLICAR UNA DEMANDA"
+  text_publicar_una_nueva_demanda: "Publicar una nueva demanda"
   text_publicar_una_oferta: "PUBLICAR UNA OFERTA"
+  text_publicar_una_nueva_oferta: "Publicar una nueva oferta"
   text_puede_usar_asteriscos_o_espacios_para_buscar_por_varias_palabras: "Puede usar asteriscos o espacios para buscar por varias palabras."
   text_pulse_buscar_para_empezar_la_busqueda: "Pulse Buscar para empezar la búsqueda"
   text_que_es_bazar: "¿Qué es Bazar?"

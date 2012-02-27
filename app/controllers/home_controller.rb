@@ -349,6 +349,12 @@ class HomeController < ApplicationController
       @oferta.empresa_id = params[:id]
     end 
     
+    if (params[:tipo] == "O")
+      @oferta.tipo = "O"
+    else 
+      @oferta.tipo = "D"      
+    end
+    
     render :layout => false 
     
   end

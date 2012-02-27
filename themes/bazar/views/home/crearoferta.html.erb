@@ -11,7 +11,11 @@
 <div class="caja-empresa-editar">
 
   <div class="caja-empresa-titulo">
-    <p><%= t(:text_informacion_general_de_tu_oferta) %> </p>
+    <% if params[:tipo] == "O"%>
+      <p><%= t(:text_publicar_una_nueva_oferta) %> </p>
+    <% else %>
+      <p><%= t(:text_publicar_una_nueva_demanda) %> </p>
+    <% end %>
   </div>
 
   <% form_for @oferta, :url => "/home/actofertadatosgenerales/" do |f| %>
@@ -43,7 +47,7 @@
 
   	</script> 
 
-    <p><%= f.text_field :fecha_hasta, :value => "#{@oferta.fecha_hasta.strftime('%d/%m/%y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_field :fecha_hasta, :value => "#{DateTime.now.strftime('%d/%m/%y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
 
     <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
 
