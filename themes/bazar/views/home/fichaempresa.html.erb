@@ -1,6 +1,8 @@
 <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('si.files')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
+
 
 <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
   <% editar = true %>

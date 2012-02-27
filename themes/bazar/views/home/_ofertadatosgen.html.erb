@@ -1,3 +1,4 @@
+
 <div class="caja-empresa-titulo">
   <p><%= t(:text_informacion_general_de_tu_oferta) %> </p>
 </div>
@@ -19,6 +20,17 @@
   <div class="caja-empresa-editar-titulo">
     <%= t(:text_oferta_valida_hasta) %>
   </div>
+
+	<script> 
+
+		/* TODO estoy hay que localizarlo dependiendo de la lengua elegida */
+
+	$(function() {
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$( "#bazarcms_oferta_fecha_hasta" ).datepicker( $.datepicker.regional[ "es" ] );
+	});
+  
+	</script> 
 
   <p><%= f.text_field :fecha_hasta, :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
 
