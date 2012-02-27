@@ -169,7 +169,7 @@
       <div class="seccion-cajon ilumina5" onClick="">
         
         <div class="add-item-icono">
-          <img src="<%= current_theme_image_path('add.png') %>" onClick="window.alert('click in fav');" >
+          <img src="<%= current_theme_image_path('add.png') %>" onclick="$('#fichaoferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=D').trigger('click');" >
         </div>
 
         <div class="add-item-texto">

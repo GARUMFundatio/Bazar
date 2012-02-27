@@ -25,6 +25,7 @@ es:
   label_volver_al_listado: "Volver al listado"
   label_volver_al_listado_de_noticias: "Volver al listado de Noticias"
   text_a_los_miembros_de_su_mismo_bazar: "a los miembros de su mismo bazar."
+  text_a_que_tipo_de_empresa_va_dirigida: "¿A que tipo de empresa va dirigida?"
   text_a_todos_los_usuarios: "a todos los usuarios"
   text_acciones: Acciones
   text_act: Act
@@ -318,6 +319,8 @@ es:
   text_publicar_una_nueva_oferta: "Publicar una nueva oferta"
   text_puede_usar_asteriscos_o_espacios_para_buscar_por_varias_palabras: "Puede usar asteriscos o espacios para buscar por varias palabras."
   text_pulse_buscar_para_empezar_la_busqueda: "Pulse Buscar para empezar la búsqueda"
+  text_que_ambito_quieres_darle_a_la_oferta: "¿Qué ámbito quieres darle a la oferta?"
+  text_que_ambito_quieres_darle_a_la_demanda: "¿Qué ámbito quieres darle a la demanda?"
   text_que_es_bazar: "¿Qué es Bazar?"
   text_que_es_un_bazar: "¿Qué es un Bazar? »"
   text_que_pedirias_a_un_gran_mercado_electronico_para_empresas: "¿Qué pedirías a un gran mercado electrónico para empresas?"
@@ -377,6 +380,7 @@ es:
   text_url: Url
   text_pagina_web_de_la_empresa: "página web de la empresa"
   text_ultimas_ofertas_demandas: "Últimas Ofertas / Demandas"
+  text_usa_palabras_clave_para_describirla: "Usa varias palabras clave separadas por comas para describirla"
   text_use_los_desplazadores_para_limitar_la_busqueda: "Use los desplazadores para limitar la búsqueda."
   text_user: "Usuario:"
   text_usuario: Usuario

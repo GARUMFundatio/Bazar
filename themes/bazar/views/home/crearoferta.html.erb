@@ -8,6 +8,8 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
 
+<div class="container-empresa-editar">
+  
 <div class="caja-empresa-editar">
 
   <div class="caja-empresa-titulo">
@@ -61,20 +63,48 @@
 
     <p><%= f.text_field :url, :placeholder => "http://www.com/offer", :class => "caja-empresa-editar-input" %></p>
 
-    <% if params[:tipo] == "O"%>
-      <%= f.submit t(:text_publicar_esta_oferta), :class => "caja-empresa-editar-boton" %>
-    <% else %>
-      <%= f.submit t(:text_publicar_esta_demanda), :class => "caja-empresa-editar-boton" %>
-    <% end %>
-
-
-  <% end %>
-
 
 </div>
 
+<div class="caja-empresa-editar-gris" >
+  
+  <div class="caja-empresa-editar-titulo-corto">
+    <%= t(:text_a_que_tipo_de_empresa_va_dirigida) %>
+  </div>
+
+  <p><%= f.text_area :texto, :placeholder => t(:text_usa_palabras_clave_para_describirla), :class => "caja-empresa-editar-texto-corto" %></p>
+  
+  <div class="caja-empresa-editar-titulo-corto">
+    <% if params[:tipo] == "O"%>
+      <%= t(:text_que_ambito_quieres_darle_a_la_oferta) %>
+    <% else %>
+      <%= t(:text_que_ambito_quieres_darle_a_la_demanda) %>    
+    <% end %>
+  </div>
+
+  
+</div>
+
+
+<br/><br/><br/><br/><br/>
+
+<div class="caja-empresa-editar">
+
+<% if params[:tipo] == "O"%>
+  <%= f.submit t(:text_publicar_esta_oferta), :class => "caja-empresa-editar-boton" %>
+<% else %>
+  <%= f.submit t(:text_publicar_esta_demanda), :class => "caja-empresa-editar-boton" %>
+<% end %>
+
+</div>
+
+
+
+  <% end %>
+  
 <br/>
 
+</div>
 <script>
  /* 
    $('.edit_bazarcms_empresa').submit(function(){

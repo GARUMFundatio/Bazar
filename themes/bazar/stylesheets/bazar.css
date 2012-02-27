@@ -1454,7 +1454,21 @@ input[type="text"]:focus{
 
 .caja-empresa-editar {
   background-color: #ffffff;
+  padding: 0;
+  margin: 0;
 
+}
+
+.caja-empresa-editar-gris {
+  width: 500px;
+  padding-top: 15px;
+  margin-left: 50px;
+  background-image: url(bgblack10.png); 
+  background-repeat: repeat;
+}
+
+.container-empresa-editar {
+   background-color: #ffffff;
 }
 
 .caja-empresa-titulo {
@@ -1489,6 +1503,24 @@ input[type="text"]:focus{
   margin-bottom: 0px;
   padding:0px; 
   width:500px;
+  height: 25px; 
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 19px;
+  opacity:.7;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+  
+}
+
+.caja-empresa-editar-titulo-corto {
+  
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-bottom: 0px;
+  padding:0px; 
+  width:450px;
   height: 25px; 
   color: #000000 ;
   font-family: arial, sans-serif; 
@@ -1650,6 +1682,19 @@ input[type="text"]:focus{
   margin: 0px 0px 10px 50px;
   padding: 14px; 
   width: 500px;
+  height: 160px; 
+  color: #14668C ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 18px;
+  
+}
+
+.caja-empresa-editar-texto-corto {
+  
+  margin: 0px 0px 10px 25px;
+  padding: 14px; 
+  width: 450px;
   height: 160px; 
   color: #14668C ;
   font-family: arial, sans-serif; 
