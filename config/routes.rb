@@ -50,6 +50,7 @@ Bazar::Application.routes.draw do
   match '/busqueda-oferta' => "home#busquedaoferta"
   match '/home/ofertadatosgenerales/:bazar/:id' => "home#ofertadatosgenerales", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/home/actofertadatosgenerales/:bazar/:id' => "home#actofertadatosgenerales", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
+  match '/home/crearoferta/:bazar/:id' => "home#crearoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   
   match '/home/empresas/' => "home#empresas"
   match '/home/fichaempresa/:bazar/:id' => "home#fichaempresa", :constrants => { :id => /\d+/ , :bazar => /\d+/ }

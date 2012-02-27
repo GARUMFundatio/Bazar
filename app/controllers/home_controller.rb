@@ -333,6 +333,12 @@ class HomeController < ApplicationController
     
   end
   
+  def crearoferta
+
+    render :layout => false 
+    
+  end
+  
   
   def empresas
 
