@@ -55,11 +55,20 @@
     <p><%= f.text_area :texto, :placeholder => t(:text_no_te_extiendas_demasiado), :class => "caja-empresa-editar-texto" %></p>
 
 
-    <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_hay_alguna_pagina_web_con_mas_informacion) %>
+    </div>
+
+    <p><%= f.text_field :url, :placeholder => "http://www.com/offer", :class => "caja-empresa-editar-input" %></p>
+
+    <% if params[:tipo] == "O"%>
+      <%= f.submit t(:text_publicar_esta_oferta), :class => "caja-empresa-editar-boton" %>
+    <% else %>
+      <%= f.submit t(:text_publicar_esta_demanda), :class => "caja-empresa-editar-boton" %>
+    <% end %>
+
 
   <% end %>
-
-
 
 
 </div>
