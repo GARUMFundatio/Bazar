@@ -1,0 +1,81 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<%= javascript_include_tag :defaults %>
+
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
+
+<div class="caja-empresa-editar">
+
+  <div class="caja-empresa-titulo">
+    <p><%= t(:text_informacion_general_de_tu_oferta) %> </p>
+  </div>
+
+  <% form_for @oferta, :url => "/home/actofertadatosgenerales/" do |f| %>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_titulo_de_la_oferta) %>
+    </div>
+
+    <p><%= f.text_field :titulo, :placeholder => t(:text_titulo_de_la_oferta), :class => "caja-empresa-editar-input" %></p>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_texto_de_la_oferta) %>
+    </div>
+
+    <p><%= f.text_area :texto, :placeholder => t(:text_texto_de_la_oferta), :class => "caja-empresa-editar-texto" %></p>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_oferta_valida_hasta) %>
+    </div>
+
+  	<script> 
+
+  		/* TODO estoy hay que localizarlo dependiendo de la lengua elegida */
+
+  	$(function() {
+  		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+  		$( "#bazarcms_oferta_fecha_hasta" ).datepicker( $.datepicker.regional[ "es" ] );
+  	});
+
+  	</script> 
+
+    <p><%= f.text_field :fecha_hasta, :value => "#{@oferta.fecha_hasta.strftime('%d/%m/%y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
+
+    <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
+
+  <% end %>
+
+
+
+
+</div>
+
+<br/>
+
+<script>
+ /* 
+   $('.edit_bazarcms_empresa').submit(function(){
+      var params = $(this).serialize();
+      var self = this;
+
+      $.post(
+        '/home/actofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>',
+          params,
+          function(data){
+            parent.location.reload();
+            // window.alert(data);
+            console.log(data);
+          },
+          'html'
+        );
+      return false;
+  });
+*/
+  
+//  $('input[placeholder]').placeholder();
+    
+</script>

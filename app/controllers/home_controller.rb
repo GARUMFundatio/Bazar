@@ -334,7 +334,21 @@ class HomeController < ApplicationController
   end
   
   def crearoferta
-
+    
+    @oferta = Bazarcms::Oferta.new
+    
+    if (params[:bazar].to_i != BZ_param("BazarId").to_i)
+      @oferta.bazar_id = BZ_param("BazarId")
+    else 
+      @oferta.bazar_id = params[:bazar]
+    end 
+    
+    if (params[:id].to_i != current_user.id)
+      @oferta.empresa_id = current_user.id
+    else 
+      @oferta.empresa_id = params[:id]
+    end 
+    
     render :layout => false 
     
   end
