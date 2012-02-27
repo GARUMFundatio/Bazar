@@ -3,7 +3,7 @@
  
   <% if oferta.bazar_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
     <div class="item-edit-icono">
-      <img src="<%= current_theme_image_path('editar.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/editaroferta/<%= current_user.id -%>/<%= oferta.id -%>').trigger('click');" >
+      <img src="<%= current_theme_image_path('editar.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId") -%>/<%= oferta.id -%>').trigger('click');" >
     </div>
 
     <div class="item-delete-icono">

@@ -273,7 +273,7 @@ class HomeController < ApplicationController
   
   def editaroferta
     
-    if params[:bazar].to_i == BZ_param("BazarId").to_i
+    if current_user.id == params[:id].to_i
       @oferta = Bazarcms::Oferta.find_by_id(params[:oferta])
       @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
       @imagenes = Bazarcms::Ofertasimagen.where("oferta_id = ?", params[:oferta])
