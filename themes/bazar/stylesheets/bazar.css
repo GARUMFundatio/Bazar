@@ -1481,11 +1481,32 @@ input[type="text"]:focus{
   position: relative;
   width: 181px;
   height: 322px;
-  display: block;
+  text-align: center;
   background-image: url(bgblack05.png); 
   background-repeat: repeat;
 }
 
+.caja-empresas-resultado-busqueda-cifra {
+  position: relative;
+  float: top;
+  display: block;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  margin-top: 80px;
+  font-size: 90px;
+  height: 120px;
+}
+
+.caja-empresas-resultado-busqueda-texto {
+  position: relative;
+  float: top;
+  display: block;  
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 17px;
+  height: 40px;
+}
 
 
 .container-empresa-editar {
