@@ -1478,7 +1478,6 @@ input[type="text"]:focus{
 
 .caja-empresa-resultados-gris {
   float: left;
-  position: relative;
   width: 181px;
   height: 322px;
   text-align: center;
@@ -1494,6 +1493,17 @@ input[type="text"]:focus{
   font-weight: bold;
   margin-top: 80px;
   font-size: 90px;
+  height: 120px;
+}
+
+.caja-empresas-resultado-busqueda-cifra2 {
+  position: relative;
+  float: top;
+  display: block;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  margin-top: 80px;
+  font-size: 45px;
   height: 120px;
 }
 
@@ -1750,7 +1760,7 @@ input[type="text"]:focus{
   margin: 0px 10px 10px 25px;
   padding: 14px; 
   width: 450px;
-  height: 160px; 
+  height: 51px; 
   color: #14668C ;
   font-family: arial, sans-serif; 
   font-weight: bold;
