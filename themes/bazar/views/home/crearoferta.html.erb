@@ -163,6 +163,7 @@
   });
 */
 var url = "pals=&ambito=";
+var revisa = setTimeout("estima()",1000);
 
 function monta() {
   tags = encodeURI($("#tags").val());
@@ -171,10 +172,17 @@ function monta() {
 }
 
 function estima() {
+
+  oldurl = url; 
+  monta(); 
+  
+  if (oldurl == url) {
+    return;
+  }
+  
+  clearTimeout(revisa);
   
   $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
-  tags = encodeURI($("#tags").val());
-  
   
   $("#resultado").load("/home/empresasestimadas?"+url, function(response, status, xhr) {
     if (status == "error") {
@@ -185,10 +193,9 @@ function estima() {
       $("#resultado").html(response);      
     }
   });  
+  
+  revisa = setTimeout("estima()",1000);
 
 };
-
-monta(); 
-estima();
 
 </script>
