@@ -60,6 +60,7 @@ Bazar::Application.routes.draw do
   match '/home/actempresadatosgenerales/:bazar/:id' => "home#actempresadatosgenerales", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/home/crearimagenempresa' => "home#crearimagenempresa"
   match '/home/delempresaimagen/:empresa/:id' => "home#delempresaimagen", :constrants => { :id => /\d+/ , :empresa => /\d+/ }
+  match '/home/empresasestimadas' => "home#empresasestimadas"
    
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }

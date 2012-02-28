@@ -745,6 +745,28 @@ class HomeController < ApplicationController
     
   end
   
+  def empresasestimadas
+  
+    total = "todas"
+
+    if !params[:pals].nil?
+      pals = params[:pals].split("+")
+    else 
+      pals = nil
+    end 
+    
+    if !params[:ambito].nil?
+      ambito = params[:ambito]
+    else 
+      ambito = nil
+    end 
+    
+    logger.debug "viene ----> "+params.inspect+" "+ambito.inspect+" "+pals.inspect
+    total = Bazarcms::Empresa.empresasestimadas(ambito, pals)
+    render :text => total
+
+  end
+  
   def test
     
   end
