@@ -75,7 +75,7 @@
     </div>
 
     <p>
-      <textarea id="tags" class="caja-empresa-editar-texto-corto" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="estima();"></textarea>
+      <textarea id="tags" class="caja-empresa-editar-texto-corto" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"></textarea>
       
   
     <div class="caja-empresa-editar-titulo-corto">
@@ -87,7 +87,7 @@
     </div>
     <div>
       <br/>
-      <select id="bazarcms_oferta_ambito" name="bazarcms_oferta[ambito]" class="caja-empresa-editar-input-corto" onchange="estima();">
+      <select id="bazarcms_oferta_ambito" name="bazarcms_oferta[ambito]" class="caja-empresa-editar-input-corto" onchange="monta();">
         <% for rango in Bazarcms::Oferta.Ambitos.sort{|a,b| a[1]<=>b[1]} %>
       
           <% if @oferta.ambito.to_i == rango[1].to_i %>  
@@ -162,13 +162,21 @@
       return false;
   });
 */
+var url = "pals=&ambito=";
+
+function monta() {
+  tags = encodeURI($("#tags").val());
+  ambito=$("#bazarcms_oferta_ambito").val();
+  url = "pals="+tags+"&ambito="+ambito;
+}
 
 function estima() {
   
   $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
   tags = encodeURI($("#tags").val());
   
-  $("#resultado").load("/home/empresasestimadas?pals="+tags+"&ambito="+$("#bazarcms_oferta_ambito").val(), function(response, status, xhr) {
+  
+  $("#resultado").load("/home/empresasestimadas?"+url, function(response, status, xhr) {
     if (status == "error") {
       var msg = "Error: ";
       $("#error").html(msg + xhr.status + " " + xhr.statusText);
@@ -179,5 +187,8 @@ function estima() {
   });  
 
 };
+
+monta(); 
+estima();
 
 </script>
