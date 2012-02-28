@@ -1480,8 +1480,13 @@ input[type="text"]:focus{
   float: left;
   position: relative;
   width: 181px;
+  height: 322px;
   display: block;
+  background-image: url(bgblack05.png); 
+  background-repeat: repeat;
 }
+
+
 
 .container-empresa-editar {
    background-color: #ffffff;
