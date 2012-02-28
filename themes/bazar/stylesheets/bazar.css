@@ -1702,6 +1702,19 @@ input[type="text"]:focus{
   font-size: 18px;
   
 }
+
+.caja-empresa-editar-input-corto {
+  
+  margin: 0px 10px 10px 25px;
+  padding: 14px; 
+  width: 450px;
+  height: 160px; 
+  color: #14668C ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 18px;
+  
+}
 .caja-empresa-editar-boton {
     position: relative;    
     background: #14668C ;
