@@ -1459,12 +1459,28 @@ input[type="text"]:focus{
 
 }
 
-.caja-empresa-editar-gris {
-  width: 500px;
-  padding-top: 15px;
+.caja-empresa-container-gris {
+  width: 682px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   margin-left: 50px;
   background-image: url(bgblack10.png); 
   background-repeat: repeat;
+}
+
+.caja-empresa-editar-gris {
+  float: left;
+  position: relative;
+  width: 500px;
+  background-image: url(bgblack10.png); 
+  background-repeat: repeat;
+}
+
+.caja-empresa-resultados-gris {
+  float: left;
+  position: relative;
+  width: 181px;
+  display: block;
 }
 
 .container-empresa-editar {

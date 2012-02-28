@@ -66,45 +66,57 @@
 
 </div>
 
-<div class="caja-empresa-editar-gris" >
+<div class="caja-empresa-container-gris">
+  <div class="caja-empresa-editar-gris" >
   
-  <div class="caja-empresa-editar-titulo-corto">
-    <%= t(:text_a_que_tipo_de_empresa_va_dirigida) %>
-  </div>
+    <div class="caja-empresa-editar-titulo-corto">
+      <%= t(:text_a_que_tipo_de_empresa_va_dirigida) %>
+    </div>
 
-  <p><%= f.text_area :texto, :placeholder => t(:text_usa_palabras_clave_para_describirla), :class => "caja-empresa-editar-texto-corto" %></p>
+    <p><%= f.text_area :texto, :placeholder => t(:text_usa_palabras_clave_para_describirla), :class => "caja-empresa-editar-texto-corto" %></p>
   
-  <div class="caja-empresa-editar-titulo-corto">
-    <% if params[:tipo] == "O"%>
-      <%= t(:text_que_ambito_quieres_darle_a_la_oferta) %>
-    <% else %>
-      <%= t(:text_que_ambito_quieres_darle_a_la_demanda) %>    
-    <% end %>
-  </div>
-  <div>
-    <br/>
-    <select id="bazarcms_oferta_ambito" name="bazarcms_oferta[ambito]" class="caja-empresa-editar-input-corto">
-      <% for rango in Bazarcms::Oferta.Ambitos.sort{|a,b| a[1]<=>b[1]} %>
-      
-        <% if @oferta.ambito.to_i == rango[1].to_i %>  
-          <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
-        <% else %>
-          <option value="<%= rango[1] %>"><%= rango[0] %></option>
-        <% end %>
+    <div class="caja-empresa-editar-titulo-corto">
+      <% if params[:tipo] == "O"%>
+        <%= t(:text_que_ambito_quieres_darle_a_la_oferta) %>
+      <% else %>
+        <%= t(:text_que_ambito_quieres_darle_a_la_demanda) %>    
       <% end %>
-    </select>
+    </div>
+    <div>
+      <br/>
+      <select id="bazarcms_oferta_ambito" name="bazarcms_oferta[ambito]" class="caja-empresa-editar-input-corto">
+        <% for rango in Bazarcms::Oferta.Ambitos.sort{|a,b| a[1]<=>b[1]} %>
+      
+          <% if @oferta.ambito.to_i == rango[1].to_i %>  
+            <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
+          <% else %>
+            <option value="<%= rango[1] %>"><%= rango[0] %></option>
+          <% end %>
+        <% end %>
+      </select>
+      <br/>
+    </div>
+  
+  </div>
+  
+  <div class="caja-empresa-resultados-gris">
+    
+    13
     <br/>
+    <%= t(:text_empresas_con_estos_criterios) %>
+    
   </div>
   
 </div>
 
-<div class="caja-empresa-editar" >
+  <div class="caja-empresa-editar" >
   
-  <div class="caja-empresa-editar-titulo">
-    <%= t(:text_quieres_anadir_alguna_fotografia) %>
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_quieres_anadir_alguna_fotografia) %>
+    </div>
+  
   </div>
-  
-</div>
+
 
 
 
