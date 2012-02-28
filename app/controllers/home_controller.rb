@@ -750,7 +750,7 @@ class HomeController < ApplicationController
     total = "todas"
 
     if !params[:pals].nil?
-      pals = params[:pals].split("+")
+      pals = params[:pals].split(",")
     else 
       pals = []
     end 
@@ -762,8 +762,8 @@ class HomeController < ApplicationController
     end 
     
     logger.debug "viene ----> "+params.inspect+" "+ambito.inspect+" "+pals.inspect
-    total = Bazarcms::Empresa.empresasestimadas(ambito, pals)
-    render :text => total
+    @total, @empresas = Bazarcms::Empresa.empresasestimadas(ambito, pals)
+    render :text => @total
 
   end
   

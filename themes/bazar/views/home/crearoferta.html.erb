@@ -3,6 +3,7 @@
 
 <%= javascript_include_tag :defaults %>
 
+<%= javascript_include_tag(current_theme_javascript_path('jquery.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
@@ -73,7 +74,9 @@
       <%= t(:text_a_que_tipo_de_empresa_va_dirigida) %>
     </div>
 
-    <p><%= f.text_area :texto, :placeholder => t(:text_usa_palabras_clave_para_describirla), :class => "caja-empresa-editar-texto-corto" %></p>
+    <p>
+      <textarea id="tags" class="caja-empresa-editar-texto-corto" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="estima();"></textarea>
+      
   
     <div class="caja-empresa-editar-titulo-corto">
       <% if params[:tipo] == "O"%>
@@ -84,7 +87,7 @@
     </div>
     <div>
       <br/>
-      <select id="bazarcms_oferta_ambito" name="bazarcms_oferta[ambito]" class="caja-empresa-editar-input-corto">
+      <select id="bazarcms_oferta_ambito" name="bazarcms_oferta[ambito]" class="caja-empresa-editar-input-corto" onchange="estima();">
         <% for rango in Bazarcms::Oferta.Ambitos.sort{|a,b| a[1]<=>b[1]} %>
       
           <% if @oferta.ambito.to_i == rango[1].to_i %>  
@@ -118,8 +121,6 @@
     </div>
   
   </div>
-
-
 
 
 <br/><br/><br/><br/><br/>
@@ -161,7 +162,22 @@
       return false;
   });
 */
+
+function estima() {
   
-//  $('input[placeholder]').placeholder();
-    
+  $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
+  tags = encodeURI($("#tags").val());
+  
+  $("#resultado").load("/home/empresasestimadas?pals="+tags+"&ambito="+$("#bazarcms_oferta_ambito").val(), function(response, status, xhr) {
+    if (status == "error") {
+      var msg = "Error: ";
+      $("#error").html(msg + xhr.status + " " + xhr.statusText);
+    }
+    else {
+      $("#resultado").html(response);      
+    }
+  });  
+
+};
+
 </script>
