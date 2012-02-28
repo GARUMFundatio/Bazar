@@ -752,7 +752,7 @@ class HomeController < ApplicationController
     if !params[:pals].nil?
       pals = params[:pals].split("+")
     else 
-      pals = nil
+      pals = []
     end 
     
     if !params[:ambito].nil?

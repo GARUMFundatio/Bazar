@@ -192,5 +192,29 @@ class ApiController < ApplicationController
         
   end
 
+  def buscaempresas
+    
+    query = "*"
+    tipo = "OR"
+    @info = []
+    
+    if !params[:q].nil? 
+      query = params[:q]
+    end 
+    
+    if !params[:tipo].nil? 
+      tipo = params[:tipo]
+    end 
+    
+    resultados = Bazarcms::Empresa.find_with_ferret(query, :limit => :all)
+    for resu in resultados 
+      @info << resu.attributes
+    end 
+   
+    respond_to do |format|
+        format.json { render :json => @info }
+    end
+    
+  end
 
 end
