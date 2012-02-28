@@ -750,9 +750,9 @@ class HomeController < ApplicationController
     total = "todas"
 
     if !params[:pals].nil?
-      pals = params[:pals].split(",")
+      pals = params[:pals]
     else 
-      pals = []
+      pals = ""
     end 
     
     if !params[:ambito].nil?

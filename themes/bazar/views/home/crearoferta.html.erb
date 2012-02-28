@@ -162,25 +162,25 @@
       return false;
   });
 */
-var url = "pals=&ambito=";
-var revisa = setTimeout("estima()",1000);
+var url    = "pals=&ambito=0";
+var oldurl = "";
+var processing = 0;
 
 function monta() {
   tags = encodeURI($("#tags").val());
   ambito=$("#bazarcms_oferta_ambito").val();
   url = "pals="+tags+"&ambito="+ambito;
+  console.log(url+" ---> "+processing);
 }
 
 function estima() {
-
-  oldurl = url; 
-  monta(); 
   
   if (oldurl == url) {
+    setTimeout("estima()",1000);    
     return;
   }
-  
-  clearTimeout(revisa);
+   
+  oldurl = url; 
   
   $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
   
@@ -194,8 +194,12 @@ function estima() {
     }
   });  
   
-  revisa = setTimeout("estima()",1000);
-
+  setTimeout("estima()",1000);
+  console.log("ya está ..");
+  
 };
+
+var revisa = setTimeout("estima()",1000);
+monta();
 
 </script>
