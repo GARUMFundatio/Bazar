@@ -190,6 +190,13 @@ function estima() {
       $("#error").html(msg + xhr.status + " " + xhr.statusText);
     }
     else {
+      if (parseInt(response) > 999) {
+        $("#resultado").attr("class", "caja-empresas-resultado-busqueda-cifra2");
+      }
+      else {
+        $("#resultado").attr("class", "caja-empresas-resultado-busqueda-cifra");        
+      }
+      
       $("#resultado").html(response);      
     }
   });  
