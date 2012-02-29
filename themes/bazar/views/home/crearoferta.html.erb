@@ -174,12 +174,19 @@ function monta() {
 }
 
 function estima() {
-  
+  if (processing == 1) {
+    setTimeout("estima()",1000);
+    console.log("está en otra petición");   
+    return
+    }
+    
   if (oldurl == url) {
     setTimeout("estima()",1000);    
     return;
   }
    
+  processing = 1; 
+  
   oldurl = url; 
   
   $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
@@ -201,8 +208,10 @@ function estima() {
     }
   });  
   
+  processing = 0; 
+  
   setTimeout("estima()",1000);
-  console.log("ya está ..");
+  console.log("ya está -> "+url);
   
 };
 
