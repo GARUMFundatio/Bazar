@@ -170,9 +170,8 @@ function monta() {
   tags = encodeURI($("#tags").val());
   ambito=$("#bazarcms_oferta_ambito").val();
   url = "pals="+tags+"&ambito="+ambito;
-  $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
+  // $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
   console.log(url+" ---> "+processing);
-  estima();
 }
 
 function estima() {
@@ -180,7 +179,7 @@ function estima() {
   clearTimeout(revisa);
   
   if (processing == 1) {
-    revisa = setTimeout("estima()",1000);
+    revisa = setTimeout("estima()",100);
     console.log("----> está en otra petición");   
     return
     }
@@ -200,7 +199,9 @@ function estima() {
   $("#resultado").load("/home/empresasestimadas?"+url, function(response, status, xhr) {
     if (status == "error") {
       var msg = "Error: ";
-      $("#error").html(msg + xhr.status + " " + xhr.statusText);
+      console.log(msg + xhr.status + " " + xhr.statusText);
+      processing = 0; 
+      revisa = setTimeout("estima()",200);
     }
     else {
       if (parseInt(response) > 999) {
