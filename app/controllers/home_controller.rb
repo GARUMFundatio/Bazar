@@ -757,8 +757,12 @@ class HomeController < ApplicationController
     
     if !params[:ambito].nil?
       ambito = params[:ambito]
+      if ambito == "1"
+        
+      end 
     else 
       ambito = nil
+      paises = nil
     end 
     
     logger.debug "viene ----> "+params.inspect+" "+ambito.inspect+" "+pals.inspect
