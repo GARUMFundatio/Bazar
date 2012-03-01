@@ -170,18 +170,24 @@ function monta() {
   tags = encodeURI($("#tags").val());
   ambito=$("#bazarcms_oferta_ambito").val();
   url = "pals="+tags+"&ambito="+ambito;
+  $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
   console.log(url+" ---> "+processing);
+  estima();
 }
 
 function estima() {
+  
+  clearTimeout(revisa);
+  
   if (processing == 1) {
-    setTimeout("estima()",1000);
-    console.log("está en otra petición");   
+    revisa = setTimeout("estima()",1000);
+    console.log("----> está en otra petición");   
     return
     }
     
   if (oldurl == url) {
-    setTimeout("estima()",1000);    
+    console.log("----> ya la habiamos hecho");   
+    revisa = setTimeout("estima()",1000);    
     return;
   }
    
@@ -203,15 +209,16 @@ function estima() {
       else {
         $("#resultado").attr("class", "caja-empresas-resultado-busqueda-cifra");        
       }
-      
+     
       $("#resultado").html(response);      
+      processing = 0; 
+
+      revisa = setTimeout("estima()",1000);
+      console.log("ya está -> "+url);
+      
     }
   });  
   
-  processing = 0; 
-  
-  setTimeout("estima()",1000);
-  console.log("ya está -> "+url);
   
 };
 
