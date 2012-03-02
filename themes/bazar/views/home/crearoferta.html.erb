@@ -168,9 +168,12 @@ var processing = 0;
 
 <% paises = "" %> 
 <% ubis = Bazarcms::Empresa.find_by_id(current_user.id).ubicaciones %> 
-<% for ubi in ubis %> 
-  <% paises += ubi.ciudad.pais_codigo+"+" %>
-<% end %>
+<% for ubi in ubis 
+     if !paises.include? ubi.ciudad.pais_codigo 
+      paises += ubi.ciudad.pais_codigo+"+"
+     end 
+   end 
+%>
 
 var paises="<%= paises -%>";
 
