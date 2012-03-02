@@ -14,11 +14,17 @@
 <div class="caja-empresa-editar">
 
   <div class="caja-empresa-titulo">
+    <div class="caja-empresa-titulo-texto">
     <% if params[:tipo] == "O"%>
-      <p><%= t(:text_publicar_una_nueva_oferta) %> </p>
+      <%= t(:text_publicar_una_nueva_oferta) %>
     <% else %>
-      <p><%= t(:text_publicar_una_nueva_demanda) %> </p>
+      <%= t(:text_publicar_una_nueva_demanda) %>
     <% end %>
+    </div>
+    <div class="caja-empresa-cerrar">
+      <img src="<%= current_theme_image_path("cerrar.png") %>" />
+      <%= t("text_cerrar") %>
+    </div>
   </div>
 
   <% form_for @oferta, :url => "/home/actofertadatosgenerales/" do |f| %>
@@ -212,7 +218,7 @@ function estima() {
       var msg = "Error: ";
       console.log(msg + xhr.status + " " + xhr.statusText);
       processing = 0; 
-      revisa = setTimeout("estima()",200);
+      revisa = setTimeout("estima()", 400);
     }
     else {
       if (parseInt(response) > 999) {
@@ -224,9 +230,14 @@ function estima() {
      
       $("#resultado").html(response);      
       processing = 0; 
-
-      revisa = setTimeout("estima()",1000);
       console.log("ya está -> "+url);
+
+      if (oldurl == url) { 
+        revisa = setTimeout("estima()", 1000);
+      }
+      else {
+        revisa = setTimeout("estima()", 100);        
+      } 
       
     }
   });  

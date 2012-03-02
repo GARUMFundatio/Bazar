@@ -141,7 +141,7 @@
       <div class="seccion-cajon ilumina5" onClick="">
         
         <div class="add-item-icono">
-          <img src="<%= current_theme_image_path('add.png') %>" onclick="$('#fichaoferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=O').trigger('click');" >
+          <img src="<%= current_theme_image_path('add.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=O').trigger('click');" >
         </div>
 
         <div class="add-item-texto">
@@ -169,7 +169,7 @@
       <div class="seccion-cajon ilumina5" onClick="">
         
         <div class="add-item-icono">
-          <img src="<%= current_theme_image_path('add.png') %>" onclick="$('#fichaoferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=D').trigger('click');" >
+          <img src="<%= current_theme_image_path('add.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=D').trigger('click');" >
         </div>
 
         <div class="add-item-texto">
@@ -356,16 +356,21 @@ $(document).ready(function() {
 		 'autoScale' : false,
 		 'transitionIn' : 'none',
 		 'transitionOut' : 'none',
+		 'hideOnOverlayClick':false,
+     'hideOnContentClick':false,
 		 'type' : 'iframe'
 	 });
 
    $("#fichaeditaroferta").fancybox({
  		 'width' : 850,
  		 'height' : 600,
-      'margin' : 0,
+     'margin' : 0,
  		 'autoScale' : false,
  		 'transitionIn' : 'none',
  		 'transitionOut' : 'none',
+ 		 'hideOnOverlayClick':false,
+     'hideOnContentClick':false,
+		 'modal': true,
  		 'type' : 'iframe'
  	 });
 

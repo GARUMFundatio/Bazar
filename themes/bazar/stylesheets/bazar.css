@@ -1530,13 +1530,22 @@ input[type="text"]:focus{
     
 }
 
-.caja-empresa-titulo p {
+.caja-empresa-titulo-texto {
   font-family: Arial,sans-serif;
   font-weight: bold;
   font-size: 25px;
   text-align: left;
   padding-top: 15px;
   padding-left: 20px;
+}
+
+.caja-empresa-cerrar  {
+ float: right;
+ position: relative;
+ display: block;
+ height: 60px;
+ width: 121px;
+ 
 }
 
 .caja-empresa-editar-login-error {
