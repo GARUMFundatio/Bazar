@@ -1543,10 +1543,52 @@ input[type="text"]:focus{
  float: right;
  position: relative;
  display: block;
+ margin-top: -15px;
+ margin-right: 0px;
+ margin-left: 0px;
+ padding: 0px;
  height: 60px;
  width: 121px;
+ background-image: url(bgblack05.png);
+ background-repeat: repeat;
  
 }
+
+.caja-empresa-cerrar-icono  {
+ float: left;
+ position: relative;
+ display: block;
+ height: 20px;
+ width: 21px;
+ margin-left: 27px;
+ margin-top: 20px;
+ color: #000000;
+ font-family: arial, sans-serif; 
+ font-weight: bold;
+ font-size: 15px;
+ opacity:.80;
+ filter:alpha(opacity=80);
+ filter: “alpha(opacity=80)”;
+}
+
+.caja-empresa-cerrar-texto  {
+ float: left;
+ position: relative;
+ display: block;
+ height: 20px;
+ width: 61px;
+ margin-left: 1px;
+ margin-top: 17px;
+ color: #000000;
+ font-family: arial, sans-serif; 
+ font-weight: bold;
+ font-size: 15px;
+ opacity:.30;
+ filter:alpha(opacity=30);
+ filter: “alpha(opacity=30)”;
+}
+
+
 
 .caja-empresa-editar-login-error {
   color: #CC3300;

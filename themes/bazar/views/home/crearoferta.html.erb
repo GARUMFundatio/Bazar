@@ -15,16 +15,23 @@
 
   <div class="caja-empresa-titulo">
     <div class="caja-empresa-titulo-texto">
-    <% if params[:tipo] == "O"%>
-      <%= t(:text_publicar_una_nueva_oferta) %>
-    <% else %>
-      <%= t(:text_publicar_una_nueva_demanda) %>
-    <% end %>
+      <% if params[:tipo] == "O"%>
+        <%= t(:text_publicar_una_nueva_oferta) %>
+      <% else %>
+        <%= t(:text_publicar_una_nueva_demanda) %>
+      <% end %>
+      
+      <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+        <div class="caja-empresa-cerrar-icono">
+          <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+        </div>
+        <div class="caja-empresa-cerrar-texto">
+          <%= t("text_cerrar") %>          
+        </div>
+      </div>
+      
     </div>
-    <div class="caja-empresa-cerrar">
-      <img src="<%= current_theme_image_path("cerrar.png") %>" />
-      <%= t("text_cerrar") %>
-    </div>
+
   </div>
 
   <% form_for @oferta, :url => "/home/actofertadatosgenerales/" do |f| %>
