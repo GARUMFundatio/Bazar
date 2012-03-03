@@ -71,7 +71,7 @@ Bazar::Application.routes.draw do
   match '/home/delofertaimagen/:oferta/:id' => "home#delofertaimagen", :constrants => { :id => /\d+/ , :oferta => /\d+/ }
   match '/home/editaroferta/:oferta/:id' => "home#editaroferta", :constrants => { :id => /\d+/ , :oferta => /\d+/ }
   match '/home/imagenesoferta/:oferta' => "home#imagenesoferta", :constrants => {:oferta => /\d+/ }
-
+  match '/home/subirimagenoferta/:oferta' =>  "home#subirimagenoferta", :constrants => {:oferta => /\d+/ }
   match '/home/test/' => "home#test"
    
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }

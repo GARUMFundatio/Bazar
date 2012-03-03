@@ -369,6 +369,15 @@ class HomeController < ApplicationController
 
   end 
   
+  def subirimagenoferta
+    logger.debug "datos recibidos:"+params.inspect
+    @img = Bazarcms::Ofertasimagen.new
+    @img.imagen = params[:imagen]
+    @img.oferta_id = params[:oferta]
+    @img.save
+    render :text => "imagen subida "+ params.inspect
+  end
+  
   def empresas
 
     # TODO:

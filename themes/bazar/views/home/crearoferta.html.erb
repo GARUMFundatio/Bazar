@@ -257,9 +257,24 @@ function estima() {
 
 function subirimagen() {
   
-  // $(this).closest('form').submit(); 
+  // $("#subirfoto").submit(); 
+  var data = new FormData();
+  jQuery.each($('#ofertasimagen_imagen')[0].files, function(i, file) {
+      data.append('imagen', file);
+  });
+    
+  $.ajax({type: "POST",
+          url: "/home/subirimagenoferta/<%= @oferta.id %>",
+          data: data,
+          cache: false,
+          contentType: false,
+          processData: false,
+          success: function(){$("#imagenes").load("/home/imagenesoferta/<%= @oferta.id -%>");}
+          });
+
   $('#imagenes').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('spinner.gif') -%>\'>');
-  return true;
+  return false;
+  
 }
 
 var revisa = setTimeout("estima()",1000);
