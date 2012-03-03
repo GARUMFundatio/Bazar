@@ -204,12 +204,12 @@ function estima() {
   
   if (processing == 1) {
     revisa = setTimeout("estima()",100);
-    console.log("----> está en otra petición");   
+    // console.log("----> está en otra petición");   
     return
     }
     
   if (oldurl == url) {
-    console.log("----> ya la habiamos hecho");   
+    // console.log("----> ya la habiamos hecho");   
     revisa = setTimeout("estima()",1000);    
     return;
   }
@@ -223,7 +223,7 @@ function estima() {
   $("#resultado").load("/home/empresasestimadas?"+url, function(response, status, xhr) {
     if (status == "error") {
       var msg = "Error: ";
-      console.log(msg + xhr.status + " " + xhr.statusText);
+      // console.log(msg + xhr.status + " " + xhr.statusText);
       processing = 0; 
       revisa = setTimeout("estima()", 400);
     }
@@ -237,7 +237,7 @@ function estima() {
      
       $("#resultado").html(response);      
       processing = 0; 
-      console.log("ya está -> "+url);
+      // console.log("ya está -> "+url);
 
       if (oldurl == url) { 
         revisa = setTimeout("estima()", 1000);
