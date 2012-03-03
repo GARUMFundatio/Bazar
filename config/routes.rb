@@ -70,6 +70,7 @@ Bazar::Application.routes.draw do
   match '/home/crearimagenoferta/:id/:empresa' => "home#crearimagenoferta", :constrants => { :id => /\d+/ , :empresa => /\d+/ }
   match '/home/delofertaimagen/:oferta/:id' => "home#delofertaimagen", :constrants => { :id => /\d+/ , :oferta => /\d+/ }
   match '/home/editaroferta/:oferta/:id' => "home#editaroferta", :constrants => { :id => /\d+/ , :oferta => /\d+/ }
+  match '/home/imagenes/:oferta/:id' => "home#imagenesoferta", :constrants => { :id => /\d+/ , :oferta => /\d+/ }
 
   match '/home/test/' => "home#test"
    

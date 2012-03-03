@@ -133,6 +133,10 @@
       <%= t(:text_quieres_anadir_alguna_fotografia) %>
     </div>
   
+    <div id="imagenes">
+    
+    </div>
+
   </div>
 
 
@@ -195,7 +199,7 @@ function monta() {
   ambito=$("#bazarcms_oferta_ambito").val();
   url = "pals="+tags+"&ambito="+ambito+"&paises="+paises;
   // $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
-  console.log(url+" ---> "+processing);
+ //  console.log(url+" ---> "+processing);
 }
 
 function estima() {
@@ -205,7 +209,7 @@ function estima() {
   if (processing == 1) {
     revisa = setTimeout("estima()",100);
     // console.log("----> está en otra petición");   
-    return
+    return;
     }
     
   if (oldurl == url) {

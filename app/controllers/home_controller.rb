@@ -354,11 +354,19 @@ class HomeController < ApplicationController
     else 
       @oferta.tipo = "D"      
     end
+    @oferta.titulo = t(:text_ej_sillas_de_plastico_personalizadas)
+    @oferta.save 
     
     render :layout => false 
     
   end
   
+  def imagenesoferta 
+  
+    @oferta = Bazarcms::Oferta.find_by_id_and_empresa_id(params[:oferta], params[:id])
+    @imagenes =  Bazarcms::Ofertasimagen.where("oferta_id = ?", params[:oferta])
+
+  end 
   
   def empresas
 
