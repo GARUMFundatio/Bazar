@@ -21,7 +21,8 @@
         <%= t(:text_publicar_una_nueva_demanda) %>
       <% end %>
       
-      <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+      <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();$.ajax(type: "POST",
+              url: "/home/cancelaoferta/<%= @oferta.id %>");">
         <div class="caja-empresa-cerrar-icono">
           <img src="<%= current_theme_image_path("cerrar.png") %>" />          
         </div>
@@ -135,7 +136,7 @@
   
   </div>
 
-  <div class="caja-empresa-editar-largo" >
+  <div class="caja-empresa-editar-imagenes" >
 
   
     <div id="imagenes">

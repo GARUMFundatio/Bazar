@@ -1859,7 +1859,21 @@ input[type="text"]:focus{
   
 }
 
+.caja-empresa-editar-imagenes {
+  position: relative;
+  display: block;
+  float: left;
+  width: 732px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  background-color: #ffffff;
   
+}
+
+
 /* añadir un item */ 
 
 .add-item-icono {

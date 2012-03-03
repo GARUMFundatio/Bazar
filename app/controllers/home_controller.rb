@@ -365,6 +365,8 @@ class HomeController < ApplicationController
   
     @oferta = Bazarcms::Oferta.find_by_id(params[:oferta])
     @imagenes =  Bazarcms::Ofertasimagen.where("oferta_id = ?", params[:oferta])
+    @mostrar = nil
+    @owner = true 
     render :layout => false
 
   end 
@@ -376,6 +378,22 @@ class HomeController < ApplicationController
     @img.oferta_id = params[:oferta]
     @img.save
     render :text => "imagen subida "+ params.inspect
+  end
+  
+  def cancelaoferta
+
+    @oferta.find_by_oferta_id_and_empresa_id(params[:oferta], current_user.id)
+    
+    if !@oferta.nil?
+      @imagenes = Bazarcms::Ofertasimagen.where("oferta_id = ?", param[:oferta])
+      for img in @imagenes 
+        img.delete
+      end
+      @oferta.delete
+    end 
+    
+    redirect_to("/home/fichaempresa/#{current_user.id}/#{BZ_param("BazarId")}/")
+     
   end
   
   def empresas

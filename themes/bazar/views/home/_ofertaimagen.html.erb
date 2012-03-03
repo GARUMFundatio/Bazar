@@ -1,15 +1,22 @@
 <div id="img-<%= ofertaimagen.id -%>" class="seccion-cajon">
 
  <div class="empresa-imagen">
+  <% if !@mostrar.nil? %> 
   <a class="galeria" rel="galeria" href="<%= ofertaimagen.imagen.url %>">
+  <% else %>
+  <a class="galeria" href="#">
+  <% end %>
     <%= image_tag ofertaimagen.imagen.url(:c223) %>
   </a>
  </div>
  
  <div class="imagen-delete-icono">
-   <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="$('#img-<%= ofertaimagen.id -%>').hide(); $.ajax({
-      url: '/home/delofertaimagen/<%= ofertaimagen.oferta_id -%>/<%= ofertaimagen.id -%>'
-      });" >
+   <% if @owner %>
+      <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="$('#img-<%= ofertaimagen.id -%>').hide(); $.ajax({
+        url: '/home/delofertaimagen/<%= ofertaimagen.oferta_id -%>/<%= ofertaimagen.id -%>'
+        });" />
+    <% end %>
+    
  </div>
  
 </div>
