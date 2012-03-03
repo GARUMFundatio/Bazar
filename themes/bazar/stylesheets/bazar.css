@@ -1847,6 +1847,19 @@ input[type="text"]:focus{
     cursor: pointer;
 }
 
+.caja-empresa-editar-largo {
+  position: relative;
+  display: block;
+  float: left;
+  width: 682px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left: 50px;
+  background-color: #ffffff;
+  
+}
+
+  
 /* añadir un item */ 
 
 .add-item-icono {

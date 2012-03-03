@@ -363,8 +363,9 @@ class HomeController < ApplicationController
   
   def imagenesoferta 
   
-    @oferta = Bazarcms::Oferta.find_by_id_and_empresa_id(params[:oferta], params[:id])
+    @oferta = Bazarcms::Oferta.find_by_id(params[:oferta])
     @imagenes =  Bazarcms::Ofertasimagen.where("oferta_id = ?", params[:oferta])
+    render :layout => false
 
   end 
   

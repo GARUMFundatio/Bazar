@@ -127,11 +127,16 @@
   
 </div>
 
-  <div class="caja-empresa-editar" >
+  <div class="caja-empresa-editar-largo" >
   
-    <div class="caja-empresa-editar-titulo">
+    <div class="caja-empresa-editar-titulo-corto">
       <%= t(:text_quieres_anadir_alguna_fotografia) %>
     </div>
+  
+  </div>
+
+  <div class="caja-empresa-editar-largo" >
+
   
     <div id="imagenes">
     
@@ -139,25 +144,19 @@
 
   </div>
 
+  <div class="caja-empresa-editar">
 
-<br/><br/><br/><br/><br/>
-
-<div class="caja-empresa-editar">
-
-<% if params[:tipo] == "O"%>
-  <%= f.submit t(:text_publicar_esta_oferta), :class => "caja-empresa-editar-boton" %>
-<% else %>
-  <%= f.submit t(:text_publicar_esta_demanda), :class => "caja-empresa-editar-boton" %>
-<% end %>
-
-</div>
-
-
+  <% if params[:tipo] == "O"%>
+    <%= f.submit t(:text_publicar_esta_oferta), :class => "caja-empresa-editar-boton" %>
+  <% else %>
+    <%= f.submit t(:text_publicar_esta_demanda), :class => "caja-empresa-editar-boton" %>
   <% end %>
+
+  </div>
+
+<% end %>
   
 <br/>
-
-
 
 </div>
 <script>
@@ -256,7 +255,16 @@ function estima() {
   
 };
 
+function subirimagen() {
+  
+  // $(this).closest('form').submit(); 
+  $('#imagenes').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('spinner.gif') -%>\'>');
+  return true;
+}
+
 var revisa = setTimeout("estima()",1000);
+
 monta();
+$("#imagenes").load("/home/imagenesoferta/<%= @oferta.id -%>")
 
 </script>
