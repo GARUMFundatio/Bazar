@@ -335,7 +335,17 @@ class HomeController < ApplicationController
   
   def crearoferta
     
-    @oferta = Bazarcms::Oferta.new
+    nueva = false 
+    if (params[:tipo] == "O")
+      @oferta = Bazarcms::Oferta.find_by_tipo_and_empresa_id("EO", params[:id])
+    else 
+      @oferta = Bazarcms::Oferta.find_by_tipo_and_empresa_id("ED", params[:id])
+    end
+
+    if (@oferta.nil?)
+      @oferta = Bazarcms::Oferta.new
+      nueva = true
+    end 
     
     if (params[:bazar].to_i != BZ_param("BazarId").to_i)
       @oferta.bazar_id = BZ_param("BazarId")
@@ -350,11 +360,15 @@ class HomeController < ApplicationController
     end 
     
     if (params[:tipo] == "O")
-      @oferta.tipo = "o"
+      @oferta.tipo = "EO"
     else 
-      @oferta.tipo = "d"      
+      @oferta.tipo = "ED"      
     end
-    @oferta.titulo = t(:text_ej_sillas_de_plastico_personalizadas)
+    
+    if (nueva) 
+      @oferta.titulo = t(:text_ej_sillas_de_plastico_personalizadas)      
+    end
+    
     @oferta.save 
     
     render :layout => false 

@@ -12,11 +12,14 @@
 <script>
 
 function cancelar() {
+  
   parent.jQuery.fancybox.close();
+  /* de momento la dejamos sin borrar por si es un error
   $.ajax({type: 'POST',
           url: '/home/cancelaroferta/<%= @oferta.id %>'
           });
-          
+  */
+  
 }
 
 </script>
@@ -270,7 +273,7 @@ function subirimagen() {
           success: function(){$("#imagenes").load("/home/imagenesoferta/<%= @oferta.id -%>");}
           });
 
-  $('#imagenes').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('spinner.gif') -%>\'>');
+  $('#cargaimagen').html('Subiendo foto <img src=\'<%= current_theme_image_path('spinner.gif') -%>\'>');
   return false;
   
 }
