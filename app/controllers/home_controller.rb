@@ -350,9 +350,9 @@ class HomeController < ApplicationController
     end 
     
     if (params[:tipo] == "O")
-      @oferta.tipo = "O"
+      @oferta.tipo = "o"
     else 
-      @oferta.tipo = "D"      
+      @oferta.tipo = "d"      
     end
     @oferta.titulo = t(:text_ej_sillas_de_plastico_personalizadas)
     @oferta.save 
@@ -380,12 +380,12 @@ class HomeController < ApplicationController
     render :text => "imagen subida "+ params.inspect
   end
   
-  def cancelaoferta
+  def cancelaroferta
 
-    @oferta.find_by_oferta_id_and_empresa_id(params[:oferta], current_user.id)
+    @oferta = Bazarcms::Oferta.find_by_id_and_empresa_id(params[:oferta], current_user.id)
     
     if !@oferta.nil?
-      @imagenes = Bazarcms::Ofertasimagen.where("oferta_id = ?", param[:oferta])
+      @imagenes = Bazarcms::Ofertasimagen.where("oferta_id = ?", params[:oferta])
       for img in @imagenes 
         img.delete
       end

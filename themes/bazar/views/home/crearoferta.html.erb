@@ -9,6 +9,19 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
 
+<script>
+
+function cancelar() {
+  parent.jQuery.fancybox.close();
+  $.ajax({type: 'POST',
+          url: '/home/cancelaroferta/<%= @oferta.id %>'
+          });
+          
+}
+
+</script>
+
+
 <div class="container-empresa-editar">
   
 <div class="caja-empresa-editar">
@@ -21,8 +34,8 @@
         <%= t(:text_publicar_una_nueva_demanda) %>
       <% end %>
       
-      <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();$.ajax(type: "POST",
-              url: "/home/cancelaoferta/<%= @oferta.id %>");">
+      <div class="caja-empresa-cerrar" onclick="cancelar();">
+
         <div class="caja-empresa-cerrar-icono">
           <img src="<%= current_theme_image_path("cerrar.png") %>" />          
         </div>
@@ -160,25 +173,9 @@
 <br/>
 
 </div>
-<script>
- /* 
-   $('.edit_bazarcms_empresa').submit(function(){
-      var params = $(this).serialize();
-      var self = this;
 
-      $.post(
-        '/home/actofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>',
-          params,
-          function(data){
-            parent.location.reload();
-            // window.alert(data);
-            console.log(data);
-          },
-          'html'
-        );
-      return false;
-  });
-*/
+<script>
+
 var url    = "pals=&ambito=0";
 var oldurl = "";
 var processing = 0;
@@ -280,7 +277,27 @@ function subirimagen() {
 
 var revisa = setTimeout("estima()",1000);
 
+
+
+$(window).bind('beforeunload', function(){
+		return '¿vas a cancelar la publicación';
+});
+
+
+$(window).bind('unload', function(){
+/*
+  $.ajax({type: 'POST',
+          async: false,
+          url: '/home/cancelaroferta/<%= @oferta.id %>'
+          });
+		console.log("saliendo. ahora debería borrar la oferta ...");
+*/
+});
+
+
 monta();
-$("#imagenes").load("/home/imagenesoferta/<%= @oferta.id -%>")
+$("#imagenes").load("/home/imagenesoferta/<%= @oferta.id -%>");
+
 
 </script>
+
