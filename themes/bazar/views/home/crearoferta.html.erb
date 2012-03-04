@@ -7,6 +7,7 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
 
 <script>
@@ -57,7 +58,7 @@ function cancelar() {
       <%= t(:text_que_titulo_quieres_ponerle) %>
     </div>
 
-    <p><%= f.text_field :titulo, :placeholder => t(:text_ej_sillas_de_plastico_personalizadas), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_field :titulo, :placeholder => t(:text_ej_sillas_de_plastico_personalizadas), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
 
 
     <div class="caja-empresa-editar-titulo">
@@ -79,20 +80,20 @@ function cancelar() {
 
   	</script> 
 
-    <p><%= f.text_field :fecha_hasta, :value => "#{DateTime.now.strftime('%d/%m/%y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_field :fecha_hasta, :value => "#{DateTime.now.strftime('%d/%m/%Y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
 
     <div class="caja-empresa-editar-titulo">
       <%= t(:text_describela_un_poco) %>
     </div>
 
-    <p><%= f.text_area :texto, :placeholder => t(:text_no_te_extiendas_demasiado), :class => "caja-empresa-editar-texto" %></p>
+    <p><%= f.text_area :texto, :placeholder => t(:text_no_te_extiendas_demasiado), :class => "caja-empresa-editar-texto", :onchange => "valida();" %></p>
 
 
     <div class="caja-empresa-editar-titulo">
       <%= t(:text_hay_alguna_pagina_web_con_mas_informacion) %>
     </div>
 
-    <p><%= f.text_field :url, :placeholder => "http://www.com/offer", :class => "caja-empresa-editar-input" %></p>
+    <p><%= f.text_field :url, :placeholder => "http://www.com/offer", :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
 
 
 </div>
@@ -279,9 +280,31 @@ function subirimagen() {
 }
 
 function valida() {
+
+var errores = 0; 
+var tmp = "";
+
+  tmp = $('input#bazarcms_oferta_titulo').val();
+  if ( tmp == "" ) {
+    $('input#bazarcms_oferta_titulo').attr('background-color','red');
+    $('input#bazarcms_oferta_titulo').attr('opacity','.20'); 
+    $('input#bazarcms_oferta_titulo').attr('filter','alpha(opacity=20)'); 
+    $('input#bazarcms_oferta_titulo').focus();
+    $.scrollTo('input#bazarcms_oferta_titulo', 'fast')
+    errores = errores + 1;
+  }
+  else {
+    
+  }
   
-  
-}
+  if (errores >= 1 ) {
+    return false;  
+  }
+  else {
+    return true;  
+  }
+
+};
 
 var revisa = setTimeout("estima()",1000);
 
