@@ -62,7 +62,7 @@ function cancelar() {
     <p><%= f.text_field :titulo, :placeholder => t(:text_ej_sillas_de_plastico_personalizadas), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
 
 
-    <div class="caja-empresa-editar-titulo">
+    <div id="oferta-fecha" class="caja-empresa-editar-titulo">
       <% if params[:tipo] == "O"%>
         <%= t(:text_hasta_cuando_es_valida_la_oferta) %>
       <% else %>
@@ -86,7 +86,7 @@ function cancelar() {
 
     <p><%= f.text_field :fecha_hasta, :value => "#{DateTime.now.strftime('%d/%m/%Y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
 
-    <div class="caja-empresa-editar-titulo">
+    <div id="oferta-texto" class="caja-empresa-editar-titulo">
       <%= t(:text_describela_un_poco) %>
     </div>
 
@@ -294,11 +294,24 @@ var tmp = "";
     $.scrollTo('#oferta-titulo', 'slow')
     $('input#bazarcms_oferta_titulo').focus();
     errores = errores + 1;
+    return false;
   }
   else {
-    $('input#bazarcms_oferta_titulo').css('border-color','green');
-    
+    $('input#bazarcms_oferta_titulo').css('border-color','green');  
   }
+  
+  tmp = $('textarea#bazarcms_oferta_texto').val();
+  if ( tmp == "" ) {
+    $('textarea#bazarcms_oferta_texto').css('border-color','red');
+    $.scrollTo('#oferta-fecha', 'slow')
+    $('textarea#bazarcms_oferta_texto').focus();
+    errores = errores + 1;
+    return false;
+  }
+  else {
+    $('textarea#bazarcms_oferta_texto').css('border-color','green');  
+  }
+  
   
   if (errores >= 1 ) {
     return false;  
