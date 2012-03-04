@@ -294,6 +294,12 @@ a {
   background-repeat: repeat;
 }
 
+.seccion-cajon:hover {
+  background-image: url(bgblack40.png);
+  background-repeat: repeat;
+}
+
+
 .seccion-cajon-imagen {
   float: left;
   color: #ffffff;
@@ -307,14 +313,27 @@ a {
   text-align: center;
   text-decoration: none;
   padding-top: 15px;
-  background-image: url(bgblack05.png);
+  background-image: url(bgblack10.png);
   background-repeat: repeat;
 }
 
-.seccion-cajon:hover {
-  background-image: url(bgblack40.png);
+.seccion-cajon-imagen:hover {
+  float: left;
+  color: #ffffff;
+  width: 243px;
+  height: 228px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 15px;
+  background-image: url(bgblack20.png);
   background-repeat: repeat;
 }
+
 
 .cajon-titulo {
   position: absolute;
