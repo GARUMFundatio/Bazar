@@ -54,10 +54,11 @@ function cancelar() {
 
   <% form_for @oferta, :url => "/home/actofertadatosgenerales/" do |f| %>
 
-    <div class="caja-empresa-editar-titulo">
+    <div id="oferta-titulo" class="caja-empresa-editar-titulo">
       <%= t(:text_que_titulo_quieres_ponerle) %>
     </div>
-
+    
+    <% @oferta.titulo = "" if @oferta.titulo == "nil" %>
     <p><%= f.text_field :titulo, :placeholder => t(:text_ej_sillas_de_plastico_personalizadas), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
 
 
@@ -75,7 +76,10 @@ function cancelar() {
 
   	$(function() {
   		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
-  		$( "#bazarcms_oferta_fecha_hasta" ).datepicker( $.datepicker.regional[ "es" ] );
+  		$( "#bazarcms_oferta_fecha_hasta" ).datepicker({minDate: 0
+  		                                              },
+  		                                                $.datepicker.regional[ "es" ]
+  		                                              );
   	});
 
   	</script> 
@@ -286,14 +290,13 @@ var tmp = "";
 
   tmp = $('input#bazarcms_oferta_titulo').val();
   if ( tmp == "" ) {
-    $('input#bazarcms_oferta_titulo').attr('background-color','red');
-    $('input#bazarcms_oferta_titulo').attr('opacity','.20'); 
-    $('input#bazarcms_oferta_titulo').attr('filter','alpha(opacity=20)'); 
+    $('input#bazarcms_oferta_titulo').css('border-color','red');
+    $.scrollTo('#oferta-titulo', 'slow')
     $('input#bazarcms_oferta_titulo').focus();
-    $.scrollTo('input#bazarcms_oferta_titulo', 'fast')
     errores = errores + 1;
   }
   else {
+    $('input#bazarcms_oferta_titulo').css('border-color','green');
     
   }
   

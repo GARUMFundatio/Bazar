@@ -366,7 +366,7 @@ class HomeController < ApplicationController
     end
     
     if (nueva) 
-      @oferta.titulo = t(:text_ej_sillas_de_plastico_personalizadas)      
+      @oferta.titulo = "nil"
     end
     
     @oferta.save 
