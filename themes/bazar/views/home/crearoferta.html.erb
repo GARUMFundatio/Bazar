@@ -27,6 +27,8 @@ function cancelar() {
 
 
 <div id="container" class="container-empresa-editar">
+
+<% form_for @oferta, :url => "/home/publicaroferta/#{@oferta.id}" do |f| %>
   
 <div class="caja-empresa-editar">
 
@@ -52,7 +54,6 @@ function cancelar() {
 
   </div>
 
-  <% form_for @oferta, :url => "/home/publicaroferta/#{@oferta.id}", :remote => true do |f| %>
 
     <div id="oferta-titulo" class="caja-empresa-editar-titulo">
       <%= t(:text_que_titulo_quieres_ponerle) %>
@@ -61,7 +62,7 @@ function cancelar() {
     <% @oferta.titulo = "" if @oferta.titulo == "nil" %>
     <p><%= f.text_field :titulo, :placeholder => t(:text_ej_sillas_de_plastico_personalizadas), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
 
-
+    
     <div id="oferta-fecha" class="caja-empresa-editar-titulo">
       <% if params[:tipo] == "O"%>
         <%= t(:text_hasta_cuando_es_valida_la_oferta) %>
@@ -110,7 +111,7 @@ function cancelar() {
     </div>
 
     <p>
-      <textarea id="tags" class="caja-empresa-editar-texto-corto" name="bazarcms_oferta[tags]" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"></textarea>
+      <textarea id="tags" class="caja-empresa-editar-texto-corto" name="tags" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"></textarea>
     </p>
   
     <div class="caja-empresa-editar-titulo-corto">
@@ -176,9 +177,11 @@ function cancelar() {
 
   </div>
 
-<% end %>
+
   
 <br/>
+<% end %>
+
 
 </div>
 
@@ -329,7 +332,7 @@ $(".edit_bazarcms_oferta").submit(function() {
     var texto = '<div style="background-color: white; width: 100%; height: 600px"><div class="caja-empresa-editar-titulo"><%= params[:tipo] == "O" ? t(:text_publicando_la_oferta) : t(:text_publicando_la_demanda) %><img src="<%= current_theme_image_path("spinner.gif") -%>" ></diiv></div>';
      
     $("#container").html(texto);
-    
+    $(window).unbind('beforeunload');
     parent.jQuery.fancybox.close();
     
     return true;
@@ -343,7 +346,7 @@ var revisa = setTimeout("estima()",1000);
 
 
 $(window).bind('beforeunload', function(){
-		return '¿vas a cancelar la publicación';
+		return '';
 });
 
 

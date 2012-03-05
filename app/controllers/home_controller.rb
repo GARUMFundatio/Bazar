@@ -414,6 +414,8 @@ class HomeController < ApplicationController
 
     @oferta = Bazarcms::Oferta.find_by_id_and_empresa_id(params[:oferta], current_user.id)
     @oferta.update_attributes(params[:bazarcms_oferta])
+    @oferta.palabrasclave_list = params[:tags]
+    @oferta.save
     
     logger.debug params.inspect 
     
