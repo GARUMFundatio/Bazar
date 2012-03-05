@@ -110,8 +110,8 @@ function cancelar() {
     </div>
 
     <p>
-      <textarea id="tags" class="caja-empresa-editar-texto-corto" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"></textarea>
-      
+      <textarea id="tags" class="caja-empresa-editar-texto-corto" name="bazarcms_oferta[tags]" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"></textarea>
+    </p>
   
     <div class="caja-empresa-editar-titulo-corto">
       <% if params[:tipo] == "O"%>
