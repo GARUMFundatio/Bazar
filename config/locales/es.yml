@@ -312,6 +312,8 @@ es:
   text_prohibited_this_roles_user_from_being_saved: "prohibited this roles_user from being saved:"
   text_prohibited_this_user_session_from_being_saved: "prohibited this user session from being saved:"
   text_proyecto_bazar: "Proyecto Bazar"
+  text_publicando_la_oferta: "Publicando la oferta. No cierre la ventana."
+  text_publicando_la_demand: "Publicando la demanda. No cierre la ventana."
   text_publicar: Publicar
   text_publicar_una_demanda: "PUBLICAR UNA DEMANDA"
   text_publicar_esta_demanda: "Publicar esta demanda"

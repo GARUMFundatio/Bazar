@@ -26,7 +26,7 @@ function cancelar() {
 </script>
 
 
-<div class="container-empresa-editar">
+<div id="container" class="container-empresa-editar">
   
 <div class="caja-empresa-editar">
 
@@ -324,18 +324,21 @@ var tmp = "";
 
 $("form").submit(function() {
 
-  if ($("input:first").val() == "correct") {
-    $("span").text("Validated...").show();
-    return true;
-  }
+  if (valida() == true ) {
   
-  $("span").text("Not valid!").show().fadeOut(1000);
+    var texto = '<div style="background-color: white; width: 100%; height: 600px"><div class="caja-empresa-editar-titulo"><%= params[:tipo] == "O" ? t(:text_publicando_la_oferta) : t(:text_publicando_la_demanda) %><img src="<%= current_theme_image_path("spinner.gif") -%>" ></diiv></div>';
+     
+    $("#container").html(texto);
+  
+    alert("Enviamos las ofertas");
+    
+  }
+
   return false;
 });
 
 
 var revisa = setTimeout("estima()",1000);
-
 
 
 $(window).bind('beforeunload', function(){
