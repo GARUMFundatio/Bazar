@@ -841,7 +841,7 @@ class HomeController < ApplicationController
     if (tipo == "total")
       render :text => @total
     else
-      render :text => @total.to_yaml
+      render :text => @total
     end 
     
   end
