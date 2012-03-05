@@ -431,8 +431,22 @@ class HomeController < ApplicationController
       paises = "all"
     end 
     
-    @empresas = Bazarcms::Empresa.empresasestimadas(@oferta.ambito, params[:tags], paises, "data")
-    logger.debug "seleccionadas: "+@empresas.inspect
+    data = Bazarcms::Empresa.empresasestimadas(@oferta.ambito, params[:tags], paises, "data")
+    logger.debug "seleccionadas: "+data.inspect
+    
+    micluster = BZ_param("BazarId").to_i 
+    
+    for empre in JSON.parse(data)
+      logger.debug empre.inspect+" cluster "+empre[0].to_s+" empresa "+empre[1].to_s
+      
+      if empre[0] != micluster 
+        emp = datos_empresa_remota (empre[0], empre[1])
+        logger.debug emp.inspect 
+      else 
+        emp = Bazarcms::Empresa.find(empre[1])
+        logger.debug emp.inspect         
+      end 
+    end
     
     redirect_to("/home/fichaempresa/#{current_user.id}/#{BZ_param("BazarId")}/")
 
