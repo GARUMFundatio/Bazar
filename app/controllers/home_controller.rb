@@ -843,7 +843,8 @@ class HomeController < ApplicationController
     else
       render :text => @total
     end 
-    
+
+
   end
   
   def test
