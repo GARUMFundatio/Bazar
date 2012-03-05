@@ -52,7 +52,7 @@ function cancelar() {
 
   </div>
 
-  <% form_for @oferta, :url => "/home/publicaroferta/#{@oferta.id}" do |f| %>
+  <% form_for @oferta, :url => "/home/publicaroferta/#{@oferta.id}", :remote => true do |f| %>
 
     <div id="oferta-titulo" class="caja-empresa-editar-titulo">
       <%= t(:text_que_titulo_quieres_ponerle) %>
@@ -330,24 +330,8 @@ $(".edit_bazarcms_oferta").submit(function() {
      
     $("#container").html(texto);
     
-    /*
+    parent.jQuery.fancybox.close();
     
-    var $inputs = $('.edit_bazarcms_oferta :input');
-    var values = {};
-    $inputs.each(function() {
-        values[this.name] = $(this).val();
-    });
-    
-    $.ajax({type: "POST",
-            url: "/home/publicaroferta/<%= @oferta.id %>",
-            data: values,
-            cache: false,
-            success: function(){alert("ya está")}
-            });
-    
-  
-    alert("Enviamos las ofertas:");
-    */
     return true;
   }
 
