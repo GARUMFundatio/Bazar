@@ -73,6 +73,7 @@ Bazar::Application.routes.draw do
   match '/home/imagenesoferta/:oferta' => "home#imagenesoferta", :constrants => {:oferta => /\d+/ }
   match '/home/subirimagenoferta/:oferta' =>  "home#subirimagenoferta", :constrants => {:oferta => /\d+/ }
   match '/home/cancelaroferta/:oferta' =>  "home#cancelaroferta", :constrants => {:oferta => /\d+/ }
+  match '/home/publicaroferta/:oferta' =>  "home#publicaroferta", :constrants => {:oferta => /\d+/ }
   
   match '/home/test/' => "home#test"
    

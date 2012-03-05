@@ -410,6 +410,18 @@ class HomeController < ApplicationController
      
   end
   
+  def publicaroferta
+
+    @oferta = Bazarcms::Oferta.find_by_id_and_empresa_id(params[:oferta], current_user.id)
+    @oferta.update_attributes(params[:bazarcms_oferta])
+    
+    logger.debug params.inspect 
+    
+    redirect_to("/home/fichaempresa/#{current_user.id}/#{BZ_param("BazarId")}/")
+
+  end
+  
+  
   def empresas
 
     # TODO:
