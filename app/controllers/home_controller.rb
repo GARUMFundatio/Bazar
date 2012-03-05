@@ -813,6 +813,12 @@ class HomeController < ApplicationController
   
     total = "todas"
     paises = ""
+    if !params[:tipo].nil?
+      tipo = params[:tipo]
+    else 
+      tipo = "total"
+    end 
+    
     if !params[:pals].nil?
       pals = params[:pals]
     else 
@@ -821,7 +827,7 @@ class HomeController < ApplicationController
     
     if !params[:ambito].nil?
       ambito = params[:ambito]
-      if ambito == "1"
+      if ambito == "0" || ambito == "1"
         paises = params[:paises]
       end 
     else 
@@ -830,9 +836,14 @@ class HomeController < ApplicationController
     end 
     
     logger.debug "viene ----> "+params.inspect+" "+ambito.inspect+" "+pals.inspect
-    @total, @empresas = Bazarcms::Empresa.empresasestimadas(ambito, pals, paises)
-    render :text => @total
+    @total, @empresas = Bazarcms::Empresa.empresasestimadas(ambito, pals, paises, tipo)
 
+    if (tipo == "total")
+      render :text => @total
+    else
+      render :text => @total.to_yaml
+    end 
+    
   end
   
   def test
