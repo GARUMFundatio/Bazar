@@ -419,6 +419,21 @@ class HomeController < ApplicationController
     
     logger.debug params.inspect 
     
+    if @oferta.ambito == "1"
+      paises = ""
+      ubis = Bazarcms::Empresa.find_by_id(current_user.id).ubicaciones
+      for ubi in ubis 
+        if !paises.include? ubi.ciudad.pais_codigo 
+          paises += ubi.ciudad.pais_codigo+"+"
+        end 
+      end
+    else 
+      paises = "all"
+    end 
+    
+    @empresas = Bazarcms::Empresa.empresasestimadas(@oferta.ambito, params[:tags], paises, "data")
+    logger.debug "seleccionadas: "+@empresas.inspect
+    
     redirect_to("/home/fichaempresa/#{current_user.id}/#{BZ_param("BazarId")}/")
 
   end

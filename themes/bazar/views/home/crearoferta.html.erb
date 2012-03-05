@@ -111,7 +111,7 @@ function cancelar() {
     </div>
 
     <p>
-      <textarea id="tags" class="caja-empresa-editar-texto-corto" name="tags" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"></textarea>
+      <textarea id="tags" class="caja-empresa-editar-texto-corto" name="tags" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"><%= @oferta.palabrasclave_list %></textarea>
     </p>
   
     <div class="caja-empresa-editar-titulo-corto">
