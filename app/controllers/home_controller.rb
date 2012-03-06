@@ -426,8 +426,8 @@ class HomeController < ApplicationController
       @oferta.tipo = "D"
     end
     @oferta.fecha = DateTime.now 
-    @ofertas.vistas = 0 
-    @ofertas.clicks = 0
+    @oferta.vistas = 0 
+    @oferta.clicks = 0
     @oferta.save
     
     logger.debug params.inspect 
