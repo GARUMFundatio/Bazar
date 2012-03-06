@@ -557,7 +557,8 @@ class HomeController < ApplicationController
       
     end
     
-    redirect_to("/home/fichaempresa/#{BZ_param("BazarId")}/#{current_user.id}/")
+    render :layout => false 
+    # redirect_to("/home/fichaempresa/#{BZ_param("BazarId")}/#{current_user.id}/")
 
   end
   
