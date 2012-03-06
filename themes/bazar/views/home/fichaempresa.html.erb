@@ -404,7 +404,7 @@ $(document).ready(function() {
   <% end %>
 
   <% if params[:go] == "oferta" %>
-    $.scrollTo('#imagenes', 'slow');
+    $('#fichaeditaroferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId") -%>/<%= params[:oferta] -%>').trigger('click');
   <% end %>
 
  });

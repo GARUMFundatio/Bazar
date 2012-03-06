@@ -454,9 +454,10 @@ class HomeController < ApplicationController
     logger.debug "seleccionadas: "+data.inspect
     
     micluster = BZ_param("BazarId").to_i 
-    
+    total = 0
     for empre in JSON.parse(data)
       logger.debug empre.inspect+" cluster "+empre[0].to_s+" empresa "+empre[1].to_s
+      total += 1 
       
       if empre[0] != micluster 
         emp = datos_empresa_remota (empre[0], empre[1])
@@ -564,6 +565,11 @@ class HomeController < ApplicationController
       
     end
     
+    @oferta.total_empresas = total 
+    @oferta.contactos = 0
+    @oferta.fav_empresa = 0
+    @oferta.fav_oferta = 0
+     
     render :layout => false 
     # redirect_to("/home/fichaempresa/#{BZ_param("BazarId")}/#{current_user.id}/")
 

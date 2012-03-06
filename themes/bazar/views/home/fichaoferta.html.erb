@@ -3,17 +3,29 @@
 <%= javascript_include_tag(current_theme_javascript_path('si.files')) %>
 
 <div class="ficha-container">
-    
-<div class="ficha-caja-header">
-  <div class="ficha-caja-header-empresa">
+
+<div class="caja-empresa-editar">
+  <div class="caja-empresa-titulo-texto">
     logo sector :: 
     <% if !@empresa.nil? %>
       <%= @empresa.nombre %>
     <% else %>
       Ficha de empresa incompleta
     <% end %>
+    
+    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      <div class="caja-empresa-cerrar-texto">
+        <%= t("text_cerrar") %>          
+      </div>
+    </div>
+
   </div>
 </div>
+
 
 <% 
 
