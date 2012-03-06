@@ -413,8 +413,19 @@ class HomeController < ApplicationController
   def publicaroferta
 
     @oferta = Bazarcms::Oferta.find_by_id_and_empresa_id(params[:oferta], current_user.id)
+    
+    tmp = params[:bazarcms_oferta][:fecha_hasta].split("\/-")
+    logger.debug "fecha hasta "+params[:bazarcms_oferta][:fecha_hasta]+" "+tmp.inspect 
+    params[:bazarcms_oferta][:fecha_hasta] = "#{tmp[2]}-#{tmp[1]}-#{tmp[0]}"
+
     @oferta.update_attributes(params[:bazarcms_oferta])
     @oferta.palabrasclave_list = params[:tags]
+    if @oferta.tipo == "EO"
+      @oferta.tipo = "O"
+    else 
+      @oferta.tipo = "D"
+    end
+    
     @oferta.save
     
     logger.debug params.inspect 
