@@ -249,6 +249,12 @@ class HomeController < ApplicationController
       else 
         @oferta.clicks = 1 
       end 
+      if !@oferta.vistas.nil?
+        @oferta.vistas += 1 
+      else 
+        @oferta.vistas = 1 
+      end 
+
       @oferta.save 
        
       @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
