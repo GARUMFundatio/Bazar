@@ -4,8 +4,8 @@
 
 <div class="ficha-container">
 
-<div class="caja-empresa-editar">
-  <div class="caja-empresa-titulo-texto">
+<div class="caja-empresa-titulo">
+  <div class="caja-empresa-titulo-texto" >
     logo sector :: 
     <% if !@empresa.nil? %>
       <%= @empresa.nombre %>
@@ -301,22 +301,23 @@ end
 
 $(document).ready(function() {
 	
-   $("a[rel=galeria]").fancybox(
-     {
-        'width': 650,
-        'height': 600,
-     		'transitionIn'	:	'elastic',
-     		'transitionOut'	:	'elastic',
-     		'speedIn'		:	600, 
-     		'speedOut'		:	200, 
-     		'overlayShow'	:	true
-     	});
   
   SI.Files.stylizeAll();
   
   <% if params[:go] == "imagenes" %>
     $.scrollTo('#imagenes', 'slow');
   <% end %>
+
+  $("a[rel=galeria]").fancybox(
+    {
+       'width': 650,
+       'height': 600,
+    		'transitionIn'	:	'elastic',
+    		'transitionOut'	:	'elastic',
+    		'speedIn'		:	600, 
+    		'speedOut'		:	200, 
+    		'overlayShow'	:	true
+    	});
 
  });
 
