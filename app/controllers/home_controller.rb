@@ -425,6 +425,7 @@ class HomeController < ApplicationController
     else 
       @oferta.tipo = "D"
     end
+    @oferta.fecha = DateTime.now 
     
     @oferta.save
     
