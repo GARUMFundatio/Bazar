@@ -205,7 +205,13 @@ var paises="<%= paises -%>";
 function monta() {
   tags = encodeURI($("#tags").val());
   ambito=$("#bazarcms_oferta_ambito").val();
-  url = "pals="+tags+"&ambito="+ambito+"&paises="+paises;
+  if (ambito == "0") {
+    url = "pals="+tags+"&ambito="+ambito+"&paises=";    
+  }
+  else {
+    url = "pals="+tags+"&ambito="+ambito+"&paises="+paises;
+  }
+  
   // $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
  //  console.log(url+" ---> "+processing);
 }

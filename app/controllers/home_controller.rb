@@ -455,7 +455,12 @@ class HomeController < ApplicationController
         nombre = emp.nombre
 
         user = User.find_by_id(empre[1])
-        para = user.email
+        if (!user.nil?)
+          para = user.email
+        else 
+          logger.debug "Error: no tiene correo o no se localiza la empresa <-----------"
+          para = "erroresencorreo@bazarum.com"
+        end 
         
         if @oferta.tipo == "O"
           tmp = "oferta"
@@ -464,14 +469,16 @@ class HomeController < ApplicationController
         end 
         
         texto = "
-
-        La empresa: #{nombre} le ha enviado una #{tmp}.
+        <html><body style='background-color: #fff;color: #666; font-family: arial;font-size: 15px;font-weight: bold;'>
+        La empresa: <b>#{nombre}</b> le ha enviado una #{tmp}.
         </br>
-        Le sugerimos: 
+        Le sugerimos:
         </br>
-        * <a href='#{Cluster.find_by_id(micluster).url}/home/fichaempresa/#{micluster}/#{current_user.id}'>Visitar la ficha de empresa de #{nombre}</a>
+        * <a href='#{Cluster.find_by_id(micluster).url}/home/fichaempresa/#{micluster}/#{current_user.id}?go=oferta&oferta=#{@oferta.id}'>Ver la #{tmp}: #{@oferta.titulo}</a>
         </br>
-        
+        * <a href='#{Cluster.find_by_id(micluster).url}/home/fichaempresa/#{micluster}/#{current_user.id}'>Ver la ficha de empresa de #{nombre}</a>
+        </br>
+        </body></html>
         "
 
         BazarMailer.enviamensaje("#{BZ_param('Titular')} <noreplay@garumfundatio.org>", 
@@ -481,57 +488,57 @@ class HomeController < ApplicationController
 
       else  
 
-        emp = Bazarcms::Empresa.find_by_id(current_user.id)
-        nombre = emp.nombre
-
-        user = User.find_by_id(current_user.id)
-        para = user.email
-
-        @mensaje2 = Mensaje.new()
-        @mensaje2.fecha = DateTime.now
-
-        @mensaje2.bazar_origen = BZ_param('BazarId')
-        @mensaje2.de = user.id
-        @mensaje2.de_nombre = emp.nombre
-        @mensaje2.de_email = user.email
-
-
-        @mensaje2.bazar_destino = params[:bazar]
-        @mensaje2.para = params[:empresa]
-
-        # Estos datos los coge en remoto
-
-        @mensaje2.para_nombre = "" 
-        @mensaje2.para_email = "" 
-
-
-        @mensaje2.tipo = "M"
-        @mensaje2.leido = nil 
-        @mensaje2.borrado = nil
-
-        @mensaje2.asunto = "#{BZ_param('Titular')}: La empresa #{nombre} le ha añadido a sus favoritos."
-        @mensaje2.texto = "
-
-        <br/>
-        La empresa: #{nombre} le ha añadido a sus favoritos.
-        </br>
-        Le sugerimos: 
-        </br>
-        * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/empresas/#{current_user.id}?bazar_id=#{BZ_param('BazarId')}'>Ver la ficha de empresa de #{nombre}</a>
-        </br>
-        * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/ficharating/#{current_user.id}?bazar_id=#{BZ_param('BazarId')}'>Ver el rating de #{nombre}</a>
-        </br>
-        * <a href='#{Cluster.find_by_id(params[:bazar]).url}/favorito/addfav?bazar=#{BZ_param('BazarId')}&empresa=#{current_user.id}&nombre_empresa=#{nombre.gsub(' ','_')}&pre=auto'>Añadir #{nombre} a sus favoritos</a>
-
-        "
-
-
-        logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
-
-        dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
-
-        @mensaje2.destroy
-
+#      emp = Bazarcms::Empresa.find_by_id(current_user.id)
+#      nombre = emp.nombre
+#
+#      user = User.find_by_id(current_user.id)
+#      para = user.email
+#
+#      @mensaje2 = Mensaje.new()
+#      @mensaje2.fecha = DateTime.now
+#
+#      @mensaje2.bazar_origen = BZ_param('BazarId')
+#      @mensaje2.de = user.id
+#      @mensaje2.de_nombre = emp.nombre
+#      @mensaje2.de_email = user.email
+#
+#
+#      @mensaje2.bazar_destino = params[:bazar]
+#      @mensaje2.para = params[:empresa]
+#
+#      # Estos datos los coge en remoto
+#
+#      @mensaje2.para_nombre = "" 
+#      @mensaje2.para_email = "" 
+#
+#
+#      @mensaje2.tipo = "M"
+#      @mensaje2.leido = nil 
+#      @mensaje2.borrado = nil
+#
+#      @mensaje2.asunto = "#{BZ_param('Titular')}: La empresa #{nombre} le ha añadido a sus favoritos."
+#      @mensaje2.texto = "
+#
+#      <br/>
+#      La empresa: #{nombre} le ha añadido a sus favoritos.
+#      </br>
+#      Le sugerimos: 
+#      </br>
+#      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/empresas/#{current_user.id}?bazar_id=#{BZ_param('BazarId')}'>Ver la ficha de empresa de #{nombre}</a>
+#      </br>
+#      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/bazarcms/ficharating/#{current_user.id}?bazar_id=#{BZ_param('BazarId')}'>Ver el rating de #{nombre}</a>
+#      </br>
+#      * <a href='#{Cluster.find_by_id(params[:bazar]).url}/favorito/addfav?bazar=#{BZ_param('BazarId')}&empresa=#{current_user.id}&nombre_empresa=#{nombre.gsub(' ','_')}&pre=auto'>Añadir #{nombre} a sus favoritos</a>
+#
+#      "
+#
+#
+#      logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
+#
+#      dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
+#
+#      @mensaje2.destroy
+#
       end
       
       
