@@ -557,7 +557,7 @@ class HomeController < ApplicationController
       
     end
     
-    redirect_to("/home/fichaempresa/#{current_user.id}/#{BZ_param("BazarId")}/")
+    redirect_to("/home/fichaempresa/#{BZ_param("BazarId")}/#{current_user.id}/")
 
   end
   
