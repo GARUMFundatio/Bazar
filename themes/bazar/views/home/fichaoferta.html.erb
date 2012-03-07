@@ -258,7 +258,18 @@ end
       </div>
     
       <div class="ficha-caja-gris-fecha">
-        Internacional
+        
+        <% case @oferta.ambito %>
+        <% when "0" %>
+          <%= t(:texto_mi_bazar) %>
+        <% when "1" %>
+          <%= t(:texto_nacional) %>
+        <% when "2" %>
+          <%= t(:texto_internacional) %>
+        <% else %>
+          <%= t(:texto_mi_bazar) %>
+        <% end %>
+        
       </div>
     
       <% if owner %>
@@ -302,7 +313,7 @@ end
 $(document).ready(function() {
 	
   
-  SI.Files.stylizeAll();
+  // SI.Files.stylizeAll();
   
   <% if params[:go] == "imagenes" %>
     $.scrollTo('#imagenes', 'slow');

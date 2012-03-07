@@ -207,6 +207,7 @@ es:
   text_informacion_del_bazar: "Información del Bazar"
   text_informacion_del_usuario: "Información del Usuario"
   text_informacion_general_sobre_tu_empresa: "Información general sobre tu empresa"
+  text_intenacional: "Internacional"
   text_instalar_bazar_y_unirse_a_la_red_de_bazares_ser_la_opcion_recomendada_a_grupos_empresariales_asociaciones_sectoriales_de_empresas_y_entidades_dedicadas_a_la_promocion_economica_local: "instalar Bazar y unirse a la red de bazares, será la opción recomendada a grupos empresariales, asociaciones sectoriales de empresas y entidades dedicadas a la promoción económica local"
   text_introduzca_los_terminos_de_la_busqueda: "Introduzca los términos de la búsqueda"
   text_introduzca_su_correo_y_pulse_cambiar_contrasena: "Introduzca su correo y pulse \"Cambiar Contraseña\"."
@@ -234,10 +235,12 @@ es:
   text_mensajes_y_notificaciones: "Mensajes y Notificaciones"
   text_mercado: mercado
   text_mercados: mercados
+  text_mi_bazar: "Mi Bazar"
   text_mientras_para_una_empresa_individual_la_opcion_mas_interesante_sera_unirse_a_un_bazar_sostenido_por_alguna_institucion_empresarial_o_publica_donde_esten_las_empresas_que_le_conocen_y_con_las_que_puede_aprender_y_comerciar_preferentemente: ", mientras para una empresa individual, la opción más interesante será unirse a un bazar sostenido por alguna institución empresarial o pública donde estén las empresas que le conocen y con las que puede aprender y comerciar preferentemente."
   text_muchos_bazares_un_gran_mercado: "Muchos bazares, un gran mercado"
   text_numero_empleados: "Nº Empleados:"
   text_navegue_por_los_resultados: "Navegue por los resultados."
+  text_nacional: "Nacional"
   text_new_actividad: "Nueva actividad"
   text_new_favorito: "Nuevo favorito"
   text_new_gruposconf: "Nuevo grupo de configuración"
