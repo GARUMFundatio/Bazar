@@ -8,6 +8,8 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
 
+<div class="ficha-container">
+  
 <div class="caja-empresa-editar">
 <% if params[:edit] == "gen" %>
   <%= render 'ofertadatosgen' %>
@@ -27,10 +29,7 @@
 
 </div>
 
-<br/>
-<br/>
-<br/>
-
+</div>
 <script>
  /* 
    $('.edit_bazarcms_empresa').submit(function(){
