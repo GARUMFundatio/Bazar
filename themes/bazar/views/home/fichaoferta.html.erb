@@ -36,9 +36,9 @@
 <% 
 
 if params[:bazar].to_i == @oferta.bazar_id && @oferta.empresa_id == current_user.id 
-  owner = true
+  @owner = true
 else 
-  owner = false 
+  @owner = false 
 end
 
 %>
@@ -52,7 +52,7 @@ end
 </div>
 
 
-<% if ! owner %>
+<% if ! @owner %>
 
   <div class="ficha-titulo">
     <%= @oferta.titulo %>
@@ -74,7 +74,7 @@ end
   <%= t(:text_oferta_valida_hasta_el) %> <%= @oferta.fecha_hasta.strftime("%d-%m-%Y") %>
 </div>
 
-<% if !owner %>
+<% if !@owner %>
 
 <div class="ficha-opciones">
 
@@ -124,7 +124,7 @@ end
     </div>
     
     <div class="ficha-opciones-item-texto">
-      contactar empresa
+      <%= t(:text_contactar_empresa) %>
     </div>      
     
   </div>
@@ -144,7 +144,7 @@ end
 
   <div id="imagenes" class="seccion-contenido" >
     
-    <% if owner %>
+    <% if @owner %>
     
       <div class="seccion-cajon-imagen" >
 
@@ -170,7 +170,7 @@ end
     <% if @imagenes.count > 0 %>
       <%= render(:partial => "ofertaimagen", :collection => @imagenes) %>
     <% else %>
-      <% if owner %>
+      <% if @owner %>
         <div class="seccion-cajon" onClick="">
 
           <div class="add-item-texto">
@@ -192,7 +192,7 @@ end
 
     <div class="ficha-caja-enlace">
 
-      <% if !owner %>
+      <% if !@owner %>
     
       <div class="ficha-caja-enlace-imagen">
         <img src="<%= current_theme_image_path('flecha.png') %>" onClick="window.alert('click en el enlace externo');" >
@@ -248,7 +248,7 @@ end
         <% end %>
       </div>
 
-      <% if owner %>
+      <% if @owner %>
 
         <div class="ficha-caja-gris-edit">
           <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
@@ -286,7 +286,7 @@ end
         
       </div>
     
-      <% if owner %>
+      <% if @owner %>
 
         <div class="ficha-caja-gris-edit">
           <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
