@@ -324,18 +324,26 @@ class HomeController < ApplicationController
     # admin/dinamizador 
   
     @oferta = Bazarcms::Oferta.find_by_id(params[:id])
-    
-    if !params[:bazarcms_oferta][:fecha_hasta].nil?  
-      fe = params[:bazarcms_oferta][:fecha_hasta].split('/')
-      params[:bazarcms_oferta][:fecha_hasta] = fe[2]+'-'+fe[1]+'-'+fe[0]
+
+    if !params[:bazarcms_oferta].nil?      
+      if !params[:bazarcms_oferta][:fecha_hasta].nil?  
+        fe = params[:bazarcms_oferta][:fecha_hasta].split('/')
+        params[:bazarcms_oferta][:fecha_hasta] = fe[2]+'-'+fe[1]+'-'+fe[0]
+      end 
+
+      if @oferta.update_attributes(params[:bazarcms_oferta])
+         redirect_to("/home/fichaoferta/#{params[:bazar]}/#{params[:id]}/") 
+       else
+         render :action => "ofertadatosgenerales", :layout => false 
+       end
+    else 
+      if !params[:tags].nil?
+        @oferta.palabrasclave_list = params[:tags]
+        @oferta.save
+        redirect_to("/home/fichaoferta/#{params[:bazar]}/#{params[:id]}/")         
+      end 
     end 
     
-    if @oferta.update_attributes(params[:bazarcms_oferta])
-       redirect_to("/home/fichaoferta/#{params[:bazar]}/#{params[:id]}/") 
-       # render :text => "OK", :layout => false
-     else
-       render :action => "ofertadatosgenerales", :layout => false 
-     end
     
   end
   

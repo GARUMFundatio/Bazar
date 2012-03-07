@@ -239,7 +239,7 @@ end
       <div class="ficha-caja-gris-texto">
         <% palabras = "" %>
         <% for pal in @oferta.palabrasclave_list%>
-          <% palabras += pal+"," %>
+          <% palabras += pal+", " %>
         <% end %>
         <% if palabras.length > 2 %>
           <%= truncate_html(palabras, :length => 60).html_safe -%>
@@ -251,7 +251,7 @@ end
       <% if @owner %>
 
         <div class="ficha-caja-gris-edit">
-          <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+          <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=palabras';" >
         </div>
       
       <% end %>

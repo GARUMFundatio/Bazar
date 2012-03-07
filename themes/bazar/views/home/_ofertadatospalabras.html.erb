@@ -20,7 +20,7 @@
 <% form_for @oferta, :url => "/home/actofertadatosgenerales/#{@oferta.bazar_id}/#{@oferta.id}" do |f| %>
 
   <div class="caja-empresa-editar-titulo">
-    <%= t(:text_empresa_destinatarias) %>
+    <%= t(:text_empresas_destinatarias) %>
   </div>
 
   <textarea id="tags" class="caja-empresa-editar-texto-corto" name="tags" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20"><%= @oferta.palabrasclave_list %></textarea>

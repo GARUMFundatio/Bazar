@@ -10,15 +10,15 @@
 
 <div class="caja-empresa-editar">
 <% if params[:edit] == "gen" %>
-
   <%= render 'ofertadatosgen' %>
-
 <% end %>
 
 <% if params[:edit] == "url" %>
-
   <%= render("ofertadatosurl") %>
+<% end %>
 
+<% if params[:edit] == "palabras" %>
+  <%= render("ofertadatospalabras") %>
 <% end %>
 
 </div>
