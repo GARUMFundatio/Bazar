@@ -6,7 +6,13 @@
 
 <div class="caja-empresa-titulo">
   <div class="caja-empresa-titulo-texto" >
-    logo sector :: 
+    
+    <% if !@empresa.sector.nil? %>
+      <img src="<%= current_theme_image_path("sector#{@empresa.sector}black.png") %>" height="30px" />
+    <% else %>
+      <img src="<%= current_theme_image_path("sector01black.png") %>" width="40px" />
+    <% end %>
+     
     <% if !@empresa.nil? %>
       <%= @empresa.nombre %>
     <% else %>
@@ -65,7 +71,7 @@ end
 
 
 <div class="ficha-valida">
-  Oferta válida hasta el <%= @oferta.fecha_hasta.strftime("%d-%m-%y") %>
+  <%= t(:text_oferta_valida_hasta_el) %> <%= @oferta.fecha_hasta.strftime("%d-%m-%Y") %>
 </div>
 
 <% if !owner %>
