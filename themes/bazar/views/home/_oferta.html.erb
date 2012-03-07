@@ -1,4 +1,4 @@
-<div class="seccion-cajon" >
+<div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" >
 
  
   <% if oferta.bazar_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
@@ -6,9 +6,14 @@
       <img src="<%= current_theme_image_path('editar.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId") -%>/<%= oferta.id -%>').trigger('click');" >
     </div>
 
-    <div class="item-delete-icono">
-      <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="window.alert('click in fav');" >
+    <div id="ofe-del-<%= oferta.bazar_id -%>-<%= oferta.id -%>" class="item-delete-icono">
+      <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="muestraconfirmacion(<%= oferta.bazar_id -%>, <%= oferta.id -%>)" >
     </div>
+    
+    <div id="ofe-conf-<%= oferta.bazar_id -%>-<%= oferta.id -%>" class="item-delete-icono-confirm" style="display:none" onclick="borraoferta(<%= oferta.bazar_id -%>,<%= oferta.id -%>);">
+      <%= t(:text_seguro_que_desea_borrarla) %>
+    </div>
+    
 
   <% else %>
 
@@ -39,8 +44,9 @@
     <% end %>
   </div>
 
-  <div class="cajon-pie" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= oferta.id -%>').trigger('click');">
+  <div class="cajon-pie">
     Válida hasta el <%= oferta.fecha_hasta.strftime("%d-%m-%y") %>
   </div>
+
 
 </div>
