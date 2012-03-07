@@ -1,6 +1,20 @@
 
 <div class="caja-empresa-titulo">
-  <p><%= t(:text_informacion_general_de_tu_oferta) %> </p>
+  <div class="caja-empresa-titulo-texto" >
+    
+    <%= t(:text_informacion_general_de_tu_oferta) %>
+    
+    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      <div class="caja-empresa-cerrar-texto">
+        <%= t("text_cerrar") %>          
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <% form_for @oferta, :url => "/home/actofertadatosgenerales/#{@oferta.bazar_id}/#{@oferta.id}" do |f| %>
