@@ -98,6 +98,7 @@ es:
   text_de_la_antiguedad_a_las_redes_tecnologicas_de_hoy_no_han_aparecido_impulsados_por_individuos_aislados_que_se_conectaban_en_un_unico_espacio_sino_por_la_interconexion_de_mercados_locales_mas_pequenos_en_los_que_los_individuos_se_conocian_previamente_muy_bien_entre_si: "de la Antiguedad a las redes tecnológicas de hoy, no han aparecido impulsados por individuos aislados que se conectaban en un único espacio, sino por la interconexión de mercados locales más pequeños en los que los individuos se conocían previamente muy bien entre si."
   text_debe_tener_la_forma_de_una: "Debe tener la forma de una"
   text_definir_busqueda_de_usuarios_login_empresa_nombre_con_autocomplete: "definir busqueda de usuarios (login) + empresa (nombre) con autocomplete"
+  text_DEMANDA: "DEMANDA"
   text_demandan: "Demandan:"
   text_demandas: Demandas
   text_desc: Desc
@@ -166,6 +167,7 @@ es:
   text_fecha: "Fecha:"
   text_fecha_de_publicacion: "Fecha de publicación"
   text_ficha_de_empresa: "ficha de empresa"
+  text_ficha_de_empresa_incompleta: "Ficha de empresa incompleta"
   text_filtrar_por_datos_economicos: "Filtrar por Datos Económicos"
   text_filtrar_por_pais: "Filtrar por País"
   text_filtrar_por_perfiles: "Filtrar por Perfiles"
@@ -275,6 +277,7 @@ es:
   text_nuevos: nuevos
   text_numero_de_empleados: "Número de empleados"
   text_oferta_demanda: "Oferta / Demanda"
+  text_OFERTA: "OFERTA"
   text_ofertas: Ofertas
   text_ofertas_demandas: "Ofertas / Demandas"
   text_ofertas_diferenciadas_y_demandas_restringidas: "ofertas diferenciadas y demandas restringidas"

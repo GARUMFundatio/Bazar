@@ -10,7 +10,7 @@
     <% if !@empresa.nil? %>
       <%= @empresa.nombre %>
     <% else %>
-      Ficha de empresa incompleta
+      <%= t(:ficha_de_empresa_incompleta) %>
     <% end %>
     
     <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
@@ -39,9 +39,9 @@ end
 
 <div class="ficha-tipo">
   <% if @oferta.tipo == 'O'%>
-    OFERTA
+    <%= t(:text_OFERTA) %> 
   <% else %>
-    DEMANDA
+    <%= t(:text_DEMANDA) %>
   <% end %>
 </div>
 
