@@ -923,7 +923,7 @@ a {
 
 .ficha-caja-gris-texto {
   width: 205px;
-  height: 104px;
+  height: 124px;
   float: top;
   color: #000000;
   font-family: Arial,sans-serif;
@@ -935,7 +935,7 @@ a {
   filter:alpha(opacity=50);
   filter: “alpha(opacity=50)”;
   margin-left: 30px;
-  margin-top: 30px;
+  margin-top: 10px;
 
 }
 
