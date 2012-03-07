@@ -231,7 +231,15 @@ end
         Empresas destinatarias       
       </div>
       <div class="ficha-caja-gris-texto">
-        Sillas, hoteles, poli, pvc, ...
+        <% palabras = "" %>
+        <% for pal in @oferta.palabrasclave_list%>
+          <% palabras += pal+"," %>
+        <% end %>
+        <% if palabras.length > 2 %>
+          <%= truncate_html(palabras, :length => 60).html_safe -%>
+        <% else %>
+          <%= t(:text_no_definio_palabras_claves) %>
+        <% end %>
       </div>
 
       <% if owner %>
@@ -246,28 +254,28 @@ end
 
     <div class="ficha-caja-gris trans25">
       <div class="ficha-caja-gris-titulo">
-        Fecha de publicación:       
+        <%= t(:text_fecha_de_publicacion) %>:       
       </div>
 
       <div class="ficha-caja-gris-fecha">
-        <%= @oferta.fecha.strftime("%d-%m-%y") %>
+        <%= @oferta.fecha.strftime("%d-%m-%Y") %>
       </div>
 
       <div class="ficha-caja-gris-titulo">
-        Ámbito:       
+        <%= t(:text_ambito) %>:       
       </div>
     
       <div class="ficha-caja-gris-fecha">
         
         <% case @oferta.ambito %>
         <% when "0" %>
-          <%= t(:texto_mi_bazar) %>
+          <%= t(:text_mi_bazar) %>
         <% when "1" %>
-          <%= t(:texto_nacional) %>
+          <%= t(:text_nacional) %>
         <% when "2" %>
-          <%= t(:texto_internacional) %>
+          <%= t(:text_internacional) %>
         <% else %>
-          <%= t(:texto_mi_bazar) %>
+          <%= t(:text_mi_bazar) %>
         <% end %>
         
       </div>
@@ -289,7 +297,7 @@ end
 <div class="caja-seccion-oferta">
   
   <div class="ficha-masdetalles-titulo">
-    Más detalles ...
+    <%= t(:text_mas_detalles) %> 
   </div>
 
   <div class="ficha-masdetalles-texto">

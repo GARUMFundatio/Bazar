@@ -163,6 +163,7 @@ es:
   text_f_a_q: f.a.q.
   text_facturacion_anual: "Facturación anual"
   text_fecha: "Fecha:"
+  text_fecha_de_publicacion: "Fecha de publicación"
   text_ficha_de_empresa: "ficha de empresa"
   text_filtrar_por_datos_economicos: "Filtrar por Datos Económicos"
   text_filtrar_por_pais: "Filtrar por País"
@@ -207,7 +208,7 @@ es:
   text_informacion_del_bazar: "Información del Bazar"
   text_informacion_del_usuario: "Información del Usuario"
   text_informacion_general_sobre_tu_empresa: "Información general sobre tu empresa"
-  text_intenacional: "Internacional"
+  text_internacional: "Internacional"
   text_instalar_bazar_y_unirse_a_la_red_de_bazares_ser_la_opcion_recomendada_a_grupos_empresariales_asociaciones_sectoriales_de_empresas_y_entidades_dedicadas_a_la_promocion_economica_local: "instalar Bazar y unirse a la red de bazares, será la opción recomendada a grupos empresariales, asociaciones sectoriales de empresas y entidades dedicadas a la promoción económica local"
   text_introduzca_los_terminos_de_la_busqueda: "Introduzca los términos de la búsqueda"
   text_introduzca_su_correo_y_pulse_cambiar_contrasena: "Introduzca su correo y pulse \"Cambiar Contraseña\"."
@@ -230,6 +231,7 @@ es:
   text_los_bazares_son_mercados_locales_locales_no_necesariamente_en_un_sentido_territorial_sino_de_red_una_red_de_artesanos_o_un_grupo_empresarial_obtienen_una_ventaja_especial_de_formar_un_bazar_propio_en_vez_de_integrarse_en_otro_existente_tener_datos_y_compartir_estadisticas_de_su_propio_metabolismo_comun_las_empresas_de_cada_bazar_tienen_acceso_como_grupo_a_los_agregados_estadisticos_que_describen_su_uso_ademas_de_a_los_resumenes_de_actividad_de_sus_componentes_individuales_dicho_de_otro_modo: "Los bazares son mercados locales. Locales no necesariamente en un sentido territorial, sino de red: una red de artesanos o un grupo empresarial obtienen una ventaja especial de formar un bazar propio en vez de integrarse en otro existente: tener datos y compartir estadísticas de su propio metabolismo común. Las empresas de cada bazar tienen acceso, como grupo, a los agregados estadisticos que describen su uso además de a los resúmenes de actividad de sus componentes individuales. Dicho de otro modo,"
   text_los_datos_de_este_bazar: "Los datos de este bazar »"
   text_los_formatos_soportados_son_xml_json_y_csv: "Los formatos soportados son: XML, JSON y CSV."
+  text_mas_detalles: "Más detalles ..."
   text_mensaje_enviado_desde_bazar: "Mensaje enviado desde Bazar"
   text_mensajes: Mensajes
   text_mensajes_y_notificaciones: "Mensajes y Notificaciones"
@@ -247,6 +249,7 @@ es:
   text_new_rol: "Nuevo rol"
   text_new_roles_user: "Nuevo rol de usuario"
   text_new_usersession: "Nueva sesión de usuario"
+  text_no_definio_palabras_claves: "No definio palabras claves"
   text_no_hay_mensajes: "No hay mensajes."
   text_no_hay_mensajes_sin_leer: "No hay mensajes sin leer."
   text_no_hay_notificaciones: "No hay notificaciones."
