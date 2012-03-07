@@ -223,8 +223,8 @@ end
         
         </div>
 
-        <div class="ficha-caja-enlace-edit">
-          <img src="<%= current_theme_image_path('editar.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+        <div class="ficha-caja-enlace-edit" onclick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';">
+          <img src="<%= current_theme_image_path('editar.png') %>"  >
         </div>
 
     
@@ -250,8 +250,8 @@ end
 
       <% if @owner %>
 
-        <div class="ficha-caja-gris-edit">
-          <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=palabras';" >
+        <div class="ficha-caja-gris-edit" onclick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=palabras';" >
+          <img src="<%= current_theme_image_path('editargris.png') %>" >
         </div>
       
       <% end %>
@@ -288,8 +288,8 @@ end
     
       <% if @owner %>
 
-        <div class="ficha-caja-gris-edit">
-          <img src="<%= current_theme_image_path('editargris.png') %>" onClick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';" >
+        <div class="ficha-caja-gris-edit" onclick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=ambito';" >
+          <img src="<%= current_theme_image_path('editargris.png') %>" >
         </div>
       
       <% end %>
