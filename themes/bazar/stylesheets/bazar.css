@@ -678,6 +678,7 @@ a {
   filter: “alpha(opacity=80)”;   
   margin-left: 30px;
   margin-top: 15px;
+  width: 805px;
 }
 
 .ficha-titulo-total {
