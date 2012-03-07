@@ -405,9 +405,12 @@ es:
   text_valoracion_como_cliente: "Valoración como Cliente de:"
   text_valoracion_como_proveedor: "Valoración como Proveedor de:"
   text_vision_general: "visión general"
+  text_veces_guardada_en_favoritos: "veces guardada en favoritos"
   text_ventas: "Ventas:"
   text_ver_ocultar: Ver/ocultar
   text_visible: Visible
+  text_visitas_de_esta_demanda: "visitas de esta demanda"
+  text_visitas_de_esta_oferta: "visitas de esta oferta"
   text_volver_a_la_pagina_principal: "Volver a la página principal"
   text_xml: XML
   text_xml_json: "XML, JSON"

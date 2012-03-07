@@ -308,14 +308,14 @@ end
 
   <div class="ficha-masdetalles-texto">
     <% if @oferta.tipo == 'O'%>
-      <%= @oferta.clicks -%> visitas de esta oferta
+      <%= @oferta.clicks -%> <%= t(:text_visitas_de_esta_oferta) %> 
     <% else %>
-      <%= @oferta.clicks -%> visitas de esta demanda
+      <%= @oferta.clicks -%> <%= t(:text_visitas_de_esta_demanda) %> 
     <% end %>
   </div>
 
   <div class="ficha-masdetalles-texto2">
-   XX veces guardada en favoritos 
+   XX <%= t(:text_veces_guardada_en_favoritos) %> 
   </div>
 
 </div>
