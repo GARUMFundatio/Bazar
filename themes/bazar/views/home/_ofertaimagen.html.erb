@@ -10,14 +10,15 @@
     <%= image_tag host+ofertaimagen.imagen.url(:c223) %>
   </a>
  </div>
+
+ <% if @owner %>
  
  <div class="imagen-delete-icono">
-   <% if @owner %>
       <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="$('#img-<%= ofertaimagen.id -%>').hide(); $.ajax({
         url: '/home/delofertaimagen/<%= ofertaimagen.oferta_id -%>/<%= ofertaimagen.id -%>'
-        });" />
-    <% end %>
-    
+        });" />    
  </div>
+ 
+ <% end %>
  
 </div>
