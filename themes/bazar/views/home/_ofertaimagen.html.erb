@@ -6,7 +6,7 @@
   <% else %>
   <a class="galeria" href="#">
   <% end %>
-    <% host = Cluster.find(BZ_param("BazarId").url)+"/" %>
+    <% host = Cluster.find(BZ_param("BazarId")).url+"/" %>
     <%= image_tag host+ofertaimagen.imagen.url(:c223) %>
   </a>
  </div>
