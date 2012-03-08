@@ -77,7 +77,7 @@ Bazar::Application.routes.draw do
   
   match '/home/test/' => "home#test"
   match '/home/editarcorreo/:bazar/:id' =>  "home#editarcorreo", :constrants => {:bazar => /\d+/ , :id => /\d+/ }
-  match '/home/enviarcorreo/:bazar/:id' =>  "home#enviarcorreo", :constrants => {:bazar => /\d+/ , :id => /\d+/ }
+  match '/home/enviarcorreo/:id' =>  "home#enviarcorreo", :constrants => {:id => /\d+/ }
 
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
   match '/mensajeremoto' => "mensajes#mensajeremoto"

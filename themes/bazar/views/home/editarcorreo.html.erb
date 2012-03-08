@@ -8,6 +8,8 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
 
+<div class="ficha-container">
+  
 <div class="caja-empresa-titulo">
   <div class="caja-empresa-titulo-texto" >
     <img src="<%= current_theme_image_path("sobre-azul.png") %>" /> 
@@ -26,22 +28,86 @@
   </div>
 </div>
 
-<% form_for @mensaje, :url => "/home/enviamensaje/#{@mensaje.bazar_destino}/#{@mensaje.para}" do |f| %>
+<% form_for @mensaje, :url => "/home/enviarmensaje/#{@mensaje.id}" do |f| %>
 
   <div class="caja-empresa-editar-titulo">
     <%= t(:text_ponle_un_titulo_a_tu_mensaje) %>
   </div>
 
-  <p><%= f.text_field :asunto, :placeholder => t(:text_ejemplo_de_asunto_de_mensaje), :class => "caja-empresa-editar-input" %></p>
+  <p><%= f.text_field :asunto, :placeholder => t(:text_ejemplo_de_asunto_de_mensaje), :class => "caja-empresa-editar-input" , :onchange => "valida();" %></p>
 
   <div class="caja-empresa-editar-titulo">
     <%= t(:text_que_quieres_decirles) %>
   </div>
 
-  <p><%= f.text_area :texto, :placeholder => t(:text_escribe_aqui_tu_mensaje), :class => "caja-empresa-editar-texto" %></p>
+  <p><%= f.text_area :texto, :placeholder => t(:text_escribe_aqui_tu_mensaje), :class => "caja-empresa-editar-texto", :onchange => "valida();" %></p>
 
 
   <%= f.submit t(:text_enviar_el_mensaje), :class => "caja-empresa-editar-boton" %>
 
 <% end %>
 
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  function valida() {
+
+  var errores = 0; 
+  var tmp = "";
+
+    tmp = $('input#mensaje_asunto').val();
+    if ( tmp == "" ) {
+      $('input#mensaje_asunto').css('border-color','red');
+      $.scrollTo('#mensaje_asunto', 'slow');
+      $('input#mensaje_asunto').focus();
+      errores = errores + 1;
+      return false;
+    }
+    else {
+      $('input#mensaje_asunto').css('border-color','green');  
+    }
+
+    tmp = $('textarea#mensaje_texto').val();
+    if ( tmp == "" ) {
+      $('textarea#mensaje_texto').css('border-color','red');
+      $.scrollTo('#mensaje_texto', 'slow');
+      $('textarea#mensaje_texto').focus();
+      errores = errores + 1;
+      return false;
+    }
+    else {
+      $('textarea#mensaje_texto').css('border-color','green');  
+    }
+
+
+    if (errores >= 1 ) {
+      return false;  
+    }
+    else {
+      return true;  
+    }
+
+  };
+
+  $(".edit_mensaje").submit(function() {
+
+    if (valida() == true ) {
+
+      var texto = '<div style="background-color: white; width: 100%; height: 600px"><div class="caja-empresa-editar-titulo"><br/><br/><br/><%= params[:tipo] == "O" ? t(:text_publicando_la_oferta) : t(:text_publicando_la_demanda) %><img src="<%= current_theme_image_path("spinner.gif") -%>" ></div></div>';
+
+      $("#container-mensaje").html(texto);
+      $("#container-mensaje").show();
+      $.scrollTo('#container-mensaje', 'slow');
+
+      // $("#container").hide();
+
+      $(window).unbind('beforeunload');
+
+      return true;
+    }
+
+    return false;
+  });
+  
+  
+</script>
