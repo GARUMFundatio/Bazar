@@ -1010,7 +1010,8 @@ class HomeController < ApplicationController
   end
   
   def editarcorreo 
-    
+
+
     @mensaje = Mensaje.new 
     
     @mensaje.fecha = DateTime.now 
@@ -1024,24 +1025,21 @@ class HomeController < ApplicationController
     @mensaje.bazar_origen = BZ_param("BazarId")
     @mensaje.bazar_destino = params[:bazar]
 
-    @mensaje.de_email = ""
-    @mensaje.de_nombre = ""
+    @mensaje.de_email = current_user.email
+    
+    nombre = Bazarcms::Empresa.find(current_user.id).nombre
+    if nombre.nil? 
+      nombre = current_user.email
+    end 
+    
+    @mensaje.de_nombre = nombre
+     
     @mensaje.para_email = ""
     @mensaje.para_nombre = ""
     
-    @mensaje.save
-    
-    render :layout => false 
-    
-  end
-  
-  def enviarcorreo 
-    
     if params[:bazar].to_i == BZ_param("BazarId").to_i
       @empresa = Bazarcms::Empresa.find_by_id(params[:id])
-      if !@empresa.total_mostradas.nil?
-        @empresa.total_mostradas += 1 
-      else 
+      if @empresa.total_mostradas.nil?
         @empresa.total_mostradas = 1 
       end 
       
@@ -1059,19 +1057,27 @@ class HomeController < ApplicationController
 
       @empresa.save 
     
-      
-      render
+      @mensaje.para_email = User.find(params[:id]).email
+      @mensaje.para_nombre = @empresa.nombre
+  
       
     else 
       
-      res = dohttpget(params[:bazar], "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}")
+      res = datos_empresa_remota(params[:bazar], "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}")
+      @mensaje.para_email = res[:email]
+      @mensaje.para_nombre = res[:nombre]
       
-      if (res == "404")
-        res = dohttpget(params[:bazar], "/bazarcms/empresas/#{params[:id]}?bazar_id=#{params[:bazar]}&display=inside")        
-      end 
-      
-      
-    end
+    end    
+    
+    @mensaje.save
+    
+    render :layout => false 
+    
+  end
+  
+  def enviarcorreo 
+    
+
     
     logger.debug("params          : "+params.inspect)
     logger.debug("params - mensaje: "+params[:mensaje].inspect)
@@ -1080,6 +1086,8 @@ class HomeController < ApplicationController
     @mensaje = Mensaje.find_by_id(params[:id])
     @mensaje.update_attributes(params[:mensaje])
     @mensaje.save 
+    
+    render :layout  => false 
     
     #redirect_to "/home/fichaempresa/#{@mensaje.bazar_destino}/#{@mensaje.para}"
 
