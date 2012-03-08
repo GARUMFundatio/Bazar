@@ -1036,7 +1036,7 @@ class HomeController < ApplicationController
   end
   
   def enviarcorreo 
-  
+    render :text => "OK redigiendo "
   end
   
   

@@ -8,6 +8,50 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
 
+<script type="text/javascript" charset="utf-8">
+  function valida() {
+
+  var errores = 0; 
+  var tmp = "";
+    alert ("validando");
+    tmp = $('input#mensaje_asunto').val();
+    if ( tmp == "" ) {
+      $('input#mensaje_asunto').css('border-color','red');
+      $.scrollTo('#mensaje-asunto', 'slow');
+      $('input#mensaje_asunto').focus();
+      errores = errores + 1;
+      return false;
+    }
+    else {
+      $('input#mensaje_asunto').css('border-color','green');  
+    }
+
+    tmp = $('textarea#mensaje_texto').val();
+    if ( tmp == "" ) {
+      $('textarea#mensaje_texto').css('border-color','red');
+      $.scrollTo('#mensaje-texto', 'slow');
+      $('textarea#mensaje_texto').focus();
+      errores = errores + 1;
+      return false;
+    }
+    else {
+      $('textarea#mensaje_texto').css('border-color','green');  
+    }
+
+
+    if (errores >= 1 ) {
+      return false;  
+    }
+    else {
+      return true;  
+    }
+
+  };
+
+</script>
+
+
+
 <div class="ficha-container">
   
 <div class="caja-empresa-titulo">
@@ -28,7 +72,7 @@
   </div>
 </div>
 
-<% form_for @mensaje, :url => "/home/enviarmensaje/#{@mensaje.id}" do |f| %>
+<% form_for @mensaje, :url => "/home/enviarcorreo/#{@mensaje.id}" do |f| %>
 
   <div class="caja-empresa-editar-titulo">
     <%= t(:text_ponle_un_titulo_a_tu_mensaje) %>
@@ -49,47 +93,16 @@
 
 </div>
 
-<script type="text/javascript" charset="utf-8">
-  function valida() {
-
-  var errores = 0; 
-  var tmp = "";
-
-    tmp = $('input#mensaje_asunto').val();
-    if ( tmp == "" ) {
-      $('input#mensaje_asunto').css('border-color','red');
-      $.scrollTo('#mensaje_asunto', 'slow');
-      $('input#mensaje_asunto').focus();
-      errores = errores + 1;
-      return false;
-    }
-    else {
-      $('input#mensaje_asunto').css('border-color','green');  
-    }
-
-    tmp = $('textarea#mensaje_texto').val();
-    if ( tmp == "" ) {
-      $('textarea#mensaje_texto').css('border-color','red');
-      $.scrollTo('#mensaje_texto', 'slow');
-      $('textarea#mensaje_texto').focus();
-      errores = errores + 1;
-      return false;
-    }
-    else {
-      $('textarea#mensaje_texto').css('border-color','green');  
-    }
 
 
-    if (errores >= 1 ) {
-      return false;  
-    }
-    else {
-      return true;  
-    }
+<script>
 
-  };
+$(document).ready(function() {
+  
+  $("input#mensaje_asunto").change(valida());
+  $("textarea#mensaje_texto").change(valida());
 
-  $(".edit_mensaje").submit(function() {
+  $("#mensaje_submit").submit(function() {
 
     if (valida() == true ) {
 
@@ -103,11 +116,12 @@
 
       $(window).unbind('beforeunload');
 
-      return true;
+      return false;
     }
 
     return false;
   });
   
+});
   
 </script>
