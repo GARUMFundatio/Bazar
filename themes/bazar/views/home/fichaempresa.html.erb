@@ -19,7 +19,7 @@
       Tus Datos
     <% else %>
 
-      <div class="fichaempresa-iconos">
+      <div class="fichaempresa-iconos" onClick="$('#correo').attr('href', '/home/editarcorreo/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
         <img class="fichaempresa-icono" src="<%= current_theme_image_path('sobre.png') %>">
       </div>
       
@@ -402,6 +402,20 @@ $(document).ready(function() {
 		 'transitionOut' : 'none',
 		 'type' : 'iframe'
 	 });
+
+
+  
+  $("#correo").fancybox({
+		 'width' : 831,
+		 'height' : 539,
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'modal': true,
+		 'type' : 'iframe'
+	 });
+
 	
    $("a[rel=galeria]").fancybox(
      {
