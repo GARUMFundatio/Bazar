@@ -48,9 +48,10 @@
       <%= truncate_html(oferta.texto, :length => 120).html_safe -%>
     <% else %>
       <%= truncate_html(oferta.texto, :length => 60).html_safe -%><br/>
-      <div class="caja-imagenes-oferta">        
+      <div class="caja-imagenes-oferta">
+         <% host = Cluster.find(BZ_param("BazarId")).url+"/" %>        
         <% for img in imgs %>
-           <%= image_tag img.imagen.url(:c60), :width => 50 %>
+           <%= image_tag host+img.imagen.url(:c60), :width => 50 %>
         <% end %>
       </div>
     <% end %>
