@@ -29,6 +29,10 @@ module ApplicationHelper
 
   def sql2texto (sql)
 
+    if sql.nil? 
+      return "<span></span>"
+    end 
+    
     text = "<span>"
 
     for para in sql.split('&')
