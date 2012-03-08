@@ -29,7 +29,7 @@
 <% form_for @mensaje, :url => "/home/enviamensaje/#{@mensaje.bazar_destino}/#{@mensaje.para}" do |f| %>
 
   <div class="caja-empresa-editar-titulo">
-    <%= t(:text_ponle_titulo_a_tu_mensaje) %>
+    <%= t(:text_ponle_un_titulo_a_tu_mensaje) %>
   </div>
 
   <p><%= f.text_field :asunto, :placeholder => t(:text_ejemplo_de_asunto_de_mensaje), :class => "caja-empresa-editar-input" %></p>
