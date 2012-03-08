@@ -5,7 +5,7 @@
     <% if !img.nil?  %>
       <% if !img.include?("sinlogo.png") %>
         <div class="empresa-fondo-logo">
-          <%= link_to(image_tag(img, :alt => "#{empresafav['nombre']}", :width => 233), "/home/fichaempresa/#{empresafav['bazar_id']}/#{empresafav['id']}") %> 
+          <%= link_to(image_tag(img, :alt => "#{empresafav['nombre']}", :width => 223), "/home/fichaempresa/#{empresafav['bazar_id']}/#{empresafav['id']}") %> 
         </div>
       <% else %>
         <%= empresafav['nombre'] -%>
