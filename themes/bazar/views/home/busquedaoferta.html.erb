@@ -46,6 +46,7 @@
   };
 
   function borraoferta (bazar, oferta) {
+    $('#ofe-'+bazar+'-'+oferta).fadeOut('slow');
     $.ajax({
             type: "POST",
             url: "/home/cancelaroferta/"+oferta
@@ -88,14 +89,17 @@ $(document).ready(function() {
 		 'modal': true,
 		 'type' : 'iframe'
 	 });
-	
+	 
+	 $('.item-delete-icono-confirm').mouseleave(function() {
+     $('.item-delete-icono-confirm').hide();
+     $('.item-delete-icono').show();
+   });
+   
+   
   $('input[placeholder]').placeholder();
 
  });
 
- $('.item-delete-icono-confirm').mouseleave(function() {
-   $('.item-delete-icono-confirm').hide();
-   $('.item-delete-icono').show();
- });
+
  
 </script>

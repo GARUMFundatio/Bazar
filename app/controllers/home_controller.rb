@@ -422,7 +422,7 @@ class HomeController < ApplicationController
       @oferta.delete
     end 
     
-    redirect_to("/home/fichaempresa/#{current_user.id}/#{BZ_param("BazarId")}/")
+    render :text => "OK"
      
   end
   
