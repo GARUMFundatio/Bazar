@@ -6,18 +6,20 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
 
-<script type="text/javascript" charset="utf-8">
+<script>
   function valida() {
 
   var errores = 0; 
   var tmp = "";
-    alert ("validando");
+
     tmp = $('input#mensaje_asunto').val();
+    // alert ("validando asunto :("+tmp+")");
     if ( tmp == "" ) {
       $('input#mensaje_asunto').css('border-color','red');
-      $.scrollTo('#mensaje-asunto', 'slow');
+      $.scrollTo('#mensaje_asunto', 'slow');
       $('input#mensaje_asunto').focus();
       errores = errores + 1;
       return false;
@@ -27,9 +29,10 @@
     }
 
     tmp = $('textarea#mensaje_texto').val();
+    // alert("validando texto: ("+tmp+")");
     if ( tmp == "" ) {
       $('textarea#mensaje_texto').css('border-color','red');
-      $.scrollTo('#mensaje-texto', 'slow');
+      $.scrollTo('#mensaje_texto', 'slow');
       $('textarea#mensaje_texto').focus();
       errores = errores + 1;
       return false;
@@ -99,24 +102,25 @@
 
 $(document).ready(function() {
   
-  $("input#mensaje_asunto").change(valida());
-  $("textarea#mensaje_texto").change(valida());
+  // $("input#mensaje_asunto").change(valida());
+  // $("textarea#mensaje_texto").change(valida());
 
-  $("#mensaje_submit").submit(function() {
-
+  $(".edit_mensaje").submit(function() {
+    
     if (valida() == true ) {
-
+     
+      /*
       var texto = '<div style="background-color: white; width: 100%; height: 600px"><div class="caja-empresa-editar-titulo"><br/><br/><br/><%= params[:tipo] == "O" ? t(:text_publicando_la_oferta) : t(:text_publicando_la_demanda) %><img src="<%= current_theme_image_path("spinner.gif") -%>" ></div></div>';
 
       $("#container-mensaje").html(texto);
       $("#container-mensaje").show();
       $.scrollTo('#container-mensaje', 'slow');
-
+      */ 
       // $("#container").hide();
 
       $(window).unbind('beforeunload');
 
-      return false;
+      return true;
     }
 
     return false;

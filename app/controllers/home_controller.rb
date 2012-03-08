@@ -1036,7 +1036,53 @@ class HomeController < ApplicationController
   end
   
   def enviarcorreo 
-    render :text => "OK redigiendo "
+    
+    if params[:bazar].to_i == BZ_param("BazarId").to_i
+      @empresa = Bazarcms::Empresa.find_by_id(params[:id])
+      if !@empresa.total_mostradas.nil?
+        @empresa.total_mostradas += 1 
+      else 
+        @empresa.total_mostradas = 1 
+      end 
+      
+      if @empresa.ambito.nil?
+        @empresa.ambito = "2"
+      end 
+
+      if @empresa.sector.nil?
+        @empresa.sector = "01"
+      else 
+        if @empresa.sector.length <= 1 
+          @empresa.sector = "01"
+        end
+      end 
+
+      @empresa.save 
+    
+      
+      render
+      
+    else 
+      
+      res = dohttpget(params[:bazar], "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}")
+      
+      if (res == "404")
+        res = dohttpget(params[:bazar], "/bazarcms/empresas/#{params[:id]}?bazar_id=#{params[:bazar]}&display=inside")        
+      end 
+      
+      
+    end
+    
+    logger.debug("params          : "+params.inspect)
+    logger.debug("params - mensaje: "+params[:mensaje].inspect)
+    
+   
+    @mensaje = Mensaje.find_by_id(params[:id])
+    @mensaje.update_attributes(params[:mensaje])
+    @mensaje.save 
+    
+    #redirect_to "/home/fichaempresa/#{@mensaje.bazar_destino}/#{@mensaje.para}"
+
   end
   
   

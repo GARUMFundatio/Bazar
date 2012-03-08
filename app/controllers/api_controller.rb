@@ -95,6 +95,7 @@ class ApiController < ApplicationController
                   :url => @empresa.url,
                   :logo => @empresa.logo.url(:s223),
                   :fundada => @empresa.fundada,
+                  :email => User.find(@empresa.id).email,
                   :consultas => Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas where empresa_id = #{@empresa.id}")}
     else
        
