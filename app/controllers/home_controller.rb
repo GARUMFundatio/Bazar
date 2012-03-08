@@ -1009,6 +1009,37 @@ class HomeController < ApplicationController
 
   end
   
+  def editarcorreo 
+    
+    @mensaje = Mensaje.new 
+    
+    @mensaje.fecha = DateTime.now 
+    @mensaje.tipo = "M"
+    @mensaje.borrado = "N"
+    @mensaje.leido = "N"
+    @mensaje.de = current_user.id
+    @mensaje.para = params[:id]
+    @mensaje.texto = ""
+    @mensaje.asunto = ""
+    @mensaje.bazar_origen = BZ_param("BazarId")
+    @mensaje.bazar_destino = params[:bazar]
+
+    @mensaje.de_email = ""
+    @mensaje.de_nombre = ""
+    @mensaje.para_email = ""
+    @mensaje.para_nombre = ""
+    
+    @mensaje.save
+    
+    render :layout => false 
+    
+  end
+  
+  def enviarcorreo 
+  
+  end
+  
+  
   def test
     
   end
