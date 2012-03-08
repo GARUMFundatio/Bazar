@@ -50,6 +50,24 @@
 
 <!-- sección ofertas recomendadas -->
 
+
+<script>
+
+function muestraconfirmacion (bazar, oferta) {
+  $('#ofe-conf-'+bazar+'-'+oferta).show(); 
+  $('#ofe-del-'+bazar+'-'+oferta).hide();
+};
+
+function borraoferta (bazar, oferta) {
+  $('#ofe-'+bazar+'-'+oferta).fadeOut('slow');
+  $.ajax({
+          type: "POST",
+          url: "/home/cancelaroferta/"+oferta
+  });
+};
+
+</script>
+
 <div class="caja-seccion" id="ofertas-recomendadas">
   <div class="caja-indice">
   Ofertas <br/>recomendadas
