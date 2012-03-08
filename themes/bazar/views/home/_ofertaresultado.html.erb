@@ -2,7 +2,7 @@
   <div id="pag1">
 <% end %>
 
-<% if ofertaresultado.cluster_id == BZ_param("BazarId").to_i && ofertaresultado.empresa_id == current_user.id %>
+<% if ofertaresultado.cluster_id.to_i == BZ_param("BazarId").to_i && ofertaresultado.empresa_id == current_user.id %>
   <% @owner = true %>
 <% else %>
   <% @owner = false %>
@@ -12,13 +12,13 @@
 <% if @owner %>
   <div id="ofe-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="seccion-cajon" >
 <% else %>
-  <div id="ofe-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="seccion-cajon" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
+  <div id="ofe-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="seccion-cajon" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');">
 <% end %>
 
 
   <% if @owner %>
   
-    <div class="item-edit-icono" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');" >
+    <div class="item-edit-icono" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');" >
       <img src="<%= current_theme_image_path('editar.png') %>" >
     </div>
 

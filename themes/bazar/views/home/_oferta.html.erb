@@ -8,7 +8,7 @@
 <% if @owner %>
   <div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" >
 <% else %>
-  <div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= oferta.id -%>').trigger('click');" >
+  <div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= oferta.bazar_id -%>/<%= oferta.id -%>').trigger('click');" >
 <% end %>
 
   <% if @owner %>
