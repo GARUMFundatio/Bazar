@@ -2,7 +2,9 @@
 
  <div class="empresa-imagen">
   <a class="galeria" rel="galeria" href="<%= empresaimagen.imagen.url %>">
-    <%= image_tag empresaimagen.imagen.url(:c223) %>
+    <% host = Cluster.find(BZ_param("BazarId")).url %>
+    <%= image_tag host+empresaimagen.imagen.url(:c223) %>
+    
   </a>
  </div>
  
