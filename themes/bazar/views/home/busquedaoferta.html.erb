@@ -37,6 +37,24 @@
     
   </div>
   
+  <script>
+
+  function muestraconfirmacion (bazar, oferta) {
+    $('#ofe-conf-'+bazar+'-'+oferta).show(); 
+    $('#ofe-del-'+bazar+'-'+oferta).hide();
+    return false;
+  };
+
+  function borraoferta (bazar, oferta) {
+    $.ajax({
+            type: "POST",
+            url: "/home/cancelaroferta/"+oferta
+    });
+    return false;
+  };
+
+  </script>
+  
   <div class="seccion-contenido">
     
     <% @item = 0 %>
@@ -74,4 +92,5 @@ $(document).ready(function() {
 
  });
 
+ 
 </script>

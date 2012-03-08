@@ -1993,6 +1993,7 @@ input[type="text"]:focus{
   margin-top: 168px;
   background-image: url(bgwhite10.png);
   background-repeat: repeat;  
+  z-index: 90;
 
 }
 

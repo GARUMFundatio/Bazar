@@ -3,7 +3,7 @@
 <% end %>
 
 
-<div class="seccion-cajon ilumina5" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');">
+<div id="ofe-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="seccion-cajon" >
   
   <% if ofertaresultado.cluster_id == BZ_param("BazarId").to_i && ofertaresultado.empresa_id == current_user.id %>
   
@@ -11,9 +11,14 @@
       <img src="<%= current_theme_image_path('editar.png') %>" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');" >
     </div>
 
-    <div class="item-delete-icono">
-      <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="window.alert('click in borrar sin terminar');" >
+    <div id="ofe-del-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="item-delete-icono">
+      <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="muestraconfirmacion(<%= ofertaresultado.cluster_id -%>, <%= ofertaresultado.oferta_id -%>)" >
     </div>
+    
+    <div id="ofe-conf-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="item-delete-icono-confirm" style="display:none" onclick="borraoferta(<%= ofertaresultado.cluster_id -%>,<%= ofertaresultado.oferta_id -%>);">
+      <%= t(:text_seguro_que_desea_borrarla) %>
+    </div>
+
 
   <% else %>  
   
@@ -48,8 +53,8 @@
   </div>
   
   
-  <div class="cajon-pie" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= ofertaresultado.id -%>').trigger('click');">
-    Válida hasta el <%= ofertaresultado.enlace %>
+  <div class="cajon-pie">
+    Válida hasta el <%= ofertaresultado.enlace[0,10] %>
   </div>
 </div>
 

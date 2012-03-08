@@ -244,18 +244,20 @@ class HomeController < ApplicationController
 
     if params[:bazar].to_i == BZ_param("BazarId").to_i
       @oferta = Bazarcms::Oferta.find_by_id(params[:id])
-      if !@oferta.clicks.nil?
-        @oferta.clicks += 1 
-      else 
-        @oferta.clicks = 1 
+      if !@oferta.nil?
+        if !@oferta.clicks.nil?
+          @oferta.clicks += 1 
+        else 
+          @oferta.clicks = 1 
+        end 
+        if !@oferta.vistas.nil?
+          @oferta.vistas += 1 
+        else 
+          @oferta.vistas = 1 
+        end 
+        @oferta.save 
       end 
-      if !@oferta.vistas.nil?
-        @oferta.vistas += 1 
-      else 
-        @oferta.vistas = 1 
-      end 
-
-      @oferta.save 
+      
        
       @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
       @imagenes = Bazarcms::Ofertasimagen.where("oferta_id = ?", params[:id])
