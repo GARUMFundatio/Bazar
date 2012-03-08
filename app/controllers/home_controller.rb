@@ -470,7 +470,7 @@ class HomeController < ApplicationController
       total += 1 
       
       if empre[0] != micluster 
-        emp = datos_empresa_remota (empre[0], empre[1])
+        emp = datos_empresa_remota(empre[0], empre[1])
         logger.debug emp.inspect 
       else 
         emp = Bazarcms::Empresa.find(empre[1])
