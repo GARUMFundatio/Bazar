@@ -93,7 +93,7 @@ class ApiController < ApplicationController
                   :rating_proveedor => @empresa.rating_proveedor,
                   :rating_total_proveedor => @empresa.rating_total_proveedor,
                   :url => @empresa.url,
-                  :logo => @empresa.logo.url(:s233),
+                  :logo => @empresa.logo.url(:s223),
                   :fundada => @empresa.fundada,
                   :consultas => Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas where empresa_id = #{@empresa.id}")}
     else

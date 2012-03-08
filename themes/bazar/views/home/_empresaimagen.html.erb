@@ -6,10 +6,14 @@
   </a>
  </div>
  
+ <% if @owner %>
+ 
  <div class="imagen-delete-icono">
    <img src="<%= current_theme_image_path('borrar-white.png') %>" onClick="$('#img-<%= empresaimagen.id -%>').hide(); $.ajax({
       url: '/home/delempresaimagen/<%= empresaimagen.empresa_id -%>/<%= empresaimagen.id -%>'
       });" >
  </div>
+ 
+ <% end %>
  
 </div>
