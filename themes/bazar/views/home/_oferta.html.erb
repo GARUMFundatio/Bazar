@@ -1,13 +1,24 @@
-<div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" >
 
- 
-  <% if oferta.bazar_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
-    <div class="item-edit-icono">
-      <img src="<%= current_theme_image_path('editar.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId") -%>/<%= oferta.id -%>').trigger('click');" >
+<% if oferta.bazar_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
+  <% @owner = true %>
+<% else %>
+  <% @owner = false %>
+<% end %>
+
+<% if @owner %>
+  <div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" >
+<% else %>
+  <div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= oferta.id -%>').trigger('click');" >
+<% end %>
+
+  <% if @owner %>
+  
+    <div class="item-edit-icono" onclick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= oferta.bazar_id -%>/<%= oferta.id -%>').trigger('click');">
+      <img src="<%= current_theme_image_path('editar.png') %>"  >
     </div>
 
-    <div id="ofe-del-<%= oferta.bazar_id -%>-<%= oferta.id -%>" class="item-delete-icono">
-      <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="muestraconfirmacion(<%= oferta.bazar_id -%>, <%= oferta.id -%>)" >
+    <div id="ofe-del-<%= oferta.bazar_id -%>-<%= oferta.id -%>" class="item-delete-icono" onclick="muestraconfirmacion(<%= oferta.bazar_id -%>, <%= oferta.id -%>)">
+      <img src="<%= current_theme_image_path('borrar-white.png') %>"  >
     </div>
     
     <div id="ofe-conf-<%= oferta.bazar_id -%>-<%= oferta.id -%>" class="item-delete-icono-confirm" style="display:none" onclick="borraoferta(<%= oferta.bazar_id -%>,<%= oferta.id -%>);">
@@ -25,13 +36,14 @@
 
   <% end %>
 
-  <div class="cajon-titulo" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= oferta.id -%>').trigger('click');">
+
+  <div class="cajon-titulo" >
     <%= oferta.titulo -%>
   </div>
 
   <% imgs = Bazarcms::Ofertasimagen.where("oferta_id = ?", oferta.id).limit(3) %>
   
-  <div class="cajon-cuerpo" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId")-%>/<%= oferta.id -%>').trigger('click');">
+  <div class="cajon-cuerpo">
     <% if imgs.count <= 0 %>
       <%= truncate_html(oferta.texto, :length => 120).html_safe -%>
     <% else %>

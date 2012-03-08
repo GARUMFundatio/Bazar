@@ -236,7 +236,7 @@ $(document).ready(function() {
   $('.ilumina10').transify({opacityOrig:.10,opacityNew:.40,fadeSpeed:500});
   
   $("#fichaoferta").fancybox({
-		 'width' : 831,
+		 'width' : 850,
 		 // 'height' : 'auto',
      'margin' : 0,
 		 'autoScale' : false,
@@ -248,6 +248,10 @@ $(document).ready(function() {
 	
   // $('input[placeholder]').placeholder();
 
+  $('.item-delete-icono-confirm').mouseleave(function() {
+    $('.item-delete-icono-confirm').hide();
+    $('.item-delete-icono').show();
+  });
 
 
  });
