@@ -1063,10 +1063,15 @@ class HomeController < ApplicationController
       
     else 
       
-      res = datos_empresa_remota(params[:bazar], "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}")
-      @mensaje.para_email = res[:email]
-      @mensaje.para_nombre = res[:nombre]
+      res = datos_empresa_remota(params[:bazar], params[:id])
+      logger.debug "Los datos que llegaron fueron: "+res.inspect
       
+      if !res.nil? 
+        @mensaje.para_email = res['email']
+        @mensaje.para_nombre = res['nombre']
+      else 
+        logger.debug "ERROR: No he podido conseguir los datos remotos de la empresa #{params[:id]} del bazar #{params[:bazar]}"
+       end 
     end    
     
     @mensaje.save
