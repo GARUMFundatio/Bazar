@@ -19,7 +19,7 @@
       Tus Datos
     <% else %>
 
-      <div class="fichaempresa-iconos" onClick="$('#correo').attr('href', '/home/editarcorreo/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+      <div class="fichaempresa-iconos" onclick="$('#correo').attr('href', '/home/editarcorreo/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
         <img class="fichaempresa-icono" src="<%= current_theme_image_path('sobre.png') %>">
       </div>
       

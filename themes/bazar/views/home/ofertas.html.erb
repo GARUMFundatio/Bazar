@@ -225,6 +225,7 @@ function borraoferta (bazar, oferta) {
 </div>
 
 <a id="fichaoferta" class="fancybox.ajax" href=""></a>
+<a id="correo" class="fancybox.ajax" href=""></a>
 
 <script>
 
@@ -246,6 +247,17 @@ $(document).ready(function() {
 		 'type' : 'iframe'
 	 });
 	
+	 $("#correo").fancybox({
+ 		 'width' : 831,
+ 		 'height' : 539,
+      'margin' : 0,
+ 		 'autoScale' : false,
+ 		 'transitionIn' : 'none',
+ 		 'transitionOut' : 'none',
+ 		 'modal': true,
+ 		 'type' : 'iframe'
+ 	 });
+  
   // $('input[placeholder]').placeholder();
 
   $('.item-delete-icono-confirm').mouseleave(function() {

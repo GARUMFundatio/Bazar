@@ -117,10 +117,10 @@ end
       </div>      
   </div>
 
-  <div class="ficha-opciones-item">
+  <div class="ficha-opciones-item" onclick="location.href='/home/editarcorreo/<%= params[:bazar]-%>/<%= @empresa.id -%>';">
 
     <div class="ficha-opciones-item-icono">
-      <img src="<%= current_theme_image_path('sobre.png') %>" onClick="window.alert('click in correo');" >
+      <img src="<%= current_theme_image_path('sobre.png') %>" >
     </div>
     
     <div class="ficha-opciones-item-texto">
@@ -322,6 +322,7 @@ end
 
 </div>
 
+
 <script>
 
 $(document).ready(function() {
@@ -332,6 +333,7 @@ $(document).ready(function() {
   <% if params[:go] == "imagenes" %>
     $.scrollTo('#imagenes', 'slow');
   <% end %>
+
 
   $("a[rel=galeria]").fancybox(
     {
