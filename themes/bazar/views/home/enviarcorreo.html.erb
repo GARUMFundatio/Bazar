@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<%= javascript_include_tag :defaults %>
+
+
+<div style="background-color: white; width: 100%; height: 600px">
+  <div class="caja-empresa-editar-titulo">      
+    Enviado el correo 
+  </div>
+
+  <div class="caja-empresa-editar-titulo">  
+    Reedirigiendo a la ficha de empresa. 
+  </div>
+
+</div>
+
+<script>
+
+parent.location.reload();
+
+</script>
