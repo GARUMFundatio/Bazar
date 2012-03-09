@@ -1076,9 +1076,7 @@ class HomeController < ApplicationController
   end
   
   def enviarcorreo 
-    
-
-    
+        
     logger.debug("params          : "+params.inspect)
     logger.debug("params - mensaje: "+params[:mensaje].inspect)
     
@@ -1086,6 +1084,24 @@ class HomeController < ApplicationController
     @mensaje = Mensaje.find_by_id(params[:id])
     @mensaje.update_attributes(params[:mensaje])
     @mensaje.save 
+    
+    micluster = BZ_param("BazarId")
+    
+    texto = "
+    <html><body style='background-color: #fff;color: #666; font-family: arial;font-size: 15px;font-weight: bold;'>
+    
+    #{@mensaje.texto}
+    
+    </br>
+    * <a href='#{Cluster.find_by_id(micluster).url}/home/fichaempresa/#{micluster}/#{current_user.id}'>Ver la ficha de empresa de #{@mensaje.de_nombre}</a>
+    </br>
+    </body></html>
+    "
+
+    BazarMailer.enviamensaje("#{@mensaje.de_nombre} <#{@mensaje.de_email}>", 
+                                @mensaje.para_email, 
+                                "#{@mensaje.asunto}", 
+                                texto).deliver
     
     render :layout  => false 
     
