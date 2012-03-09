@@ -60,7 +60,7 @@
 <div class="caja-empresa-titulo">
   <div class="caja-empresa-titulo-texto" >
     <img src="<%= current_theme_image_path("sobre-azul.png") %>" /> 
-    <%= t(:text_envia_un_mensaje_a) %>
+    <%= t(:text_envia_un_mensaje_a) %> <%= @mensaje.para_nombre %>
     
     <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
 
