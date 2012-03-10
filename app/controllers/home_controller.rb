@@ -1123,6 +1123,16 @@ class HomeController < ApplicationController
     else 
       # comprobamos si ha votado más de una vez
       
+      rating = Bazarcms::Rating.where("( ori_bazar_id = ? and ori_empresa_id = ? and des_bazar_id = ? and des_empresa_id = ? )", 
+                                      BZ_param("BazarId").to_i, current_user.id, params[:bazar].to_i, params[:id].to_i)
+      if !rating.nil? 
+        logger.debug "Ya existía un rating para esta empresa"
+      else 
+        
+        
+        
+      end 
+      
     end 
 
     redirect_to "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}"
