@@ -210,7 +210,8 @@ class ApplicationController < ActionController::Base
          
          for valor in valores 
            
-           str += "<div class='fichaempresa-rating-show-detail'>"+t(:text_puntuar_con) 
+           str += "<div class='fichaempresa-rating-show-detail'>"
+           str += "<div class='fichaempresa-rating-show-detail-text'>"+t(:text_puntuar_con)+"</div>"
            val = "#{valor}".split('.')[0]
            for ii in ['1', '2', '3', '4', '5'] 
 

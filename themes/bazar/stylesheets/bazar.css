@@ -1472,6 +1472,11 @@ input[type="text"]:focus{
   margin-left: 0px;
   margin-bottom: 1px;
   padding-left: 5px;
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: left;
   background-image: url(bgblack05.png);
   background-repeat: repeat;
 }
