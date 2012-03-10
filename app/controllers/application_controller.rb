@@ -189,8 +189,17 @@ class ApplicationController < ActionController::Base
            end 
              
            if (tipo == "ori")
-              valor = rating.des_valor 
+              valor = rating.des_valor
+              logger.debug "Me lo salto solo sacamos los que le han votado"
+              next 
            else 
+              rat = Bazarcms::Rating.where("ori_bazar_id = ? and ori_empresa_id = ? and des_bazar_id = ? and des_empresa_id = ?",
+                                            bazar, empresa, rating.ori_bazar_id, rating.ori_empresa_id).limit(1)
+              if rat == []
+                logger.debug "Me salto esta valoración por que no ha sido correspondida"
+                next 
+              end 
+                                            
               valor = rating.ori_valor 
            end 
            
