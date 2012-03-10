@@ -1114,7 +1114,19 @@ class HomeController < ApplicationController
 
   end
   
-  
+  def rating 
+    
+    # validamos que no nos estemos votando a nosotros mismos 
+    
+    if (params[:bazar].to_i == BZ_param("BazarId").to_i && params[:id].to_i == current_user.id )
+      logger.debug "Good try"
+      redirect_to "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}"
+    end 
+
+    redirect_to "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}"
+    
+  end
+    
   def test
     
   end
