@@ -1455,18 +1455,19 @@ input[type="text"]:focus{
 .fichaempresa-rating-show {
   position: relative;
   float: left;
-  width: 243px;
+  width: 269px;
   height: 243px;
   margin-left: -142px;
   margin-top: 24px;
-  padding-left: 20px;
+  padding-left: 0px;
   background-color: #3C97E8;
+  z-index: 200;
 }
 
 .fichaempresa-rating-show-detail {
   position: relative;
   float: left;
-  width: 243px;
+  width: 259px;
   height: 60px;
   margin-left: 0px;
   margin-bottom: 1px;

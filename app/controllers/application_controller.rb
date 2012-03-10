@@ -172,7 +172,10 @@ class ApplicationController < ActionController::Base
          ratings = Bazarcms::Rating.where("1 = 1")
 
          str = ""
-
+         
+         valores = {"1" => 0, "2" => 0, "3" => 0, "4" => 0, "5" => 0}
+         total = 0 
+         
          for rating in ratings
            
            logger.debug "rating: "+rating.inspect
@@ -194,11 +197,20 @@ class ApplicationController < ActionController::Base
            if valor.nil?
               logger.debug "No tiene valor!!"
               next
+           else 
+              valores["#{valor}".split('.')[0]] += 1
            end 
+           total += 1 
            
            logger.debug "Entra: id #{rating.id} valor #{valor}"
            
-           str += "<div class='fichaempresa-rating-show-detail'> " 
+         end
+         
+         str += "<div class='fichaempresa-rating-show-detail'> #{total} "+t(:text_empresas_han_votado)+"</div>" 
+         
+         for valor in valores 
+           
+           str += "<div class='fichaempresa-rating-show-detail'> Puntuar con " 
            val = "#{valor}".split('.')[0]
            for ii in ['1', '2', '3', '4', '5'] 
 
