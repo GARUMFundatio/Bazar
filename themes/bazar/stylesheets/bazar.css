@@ -1452,6 +1452,21 @@ input[type="text"]:focus{
  margin-right: 2px;
 }
 
+.fichaempresa-rating-show {
+  position: relative;
+  float: left;
+  width: 243px;
+  height: 243px;
+  margin-left: -142px;
+  margin-top: 24px;
+  padding-left: 20px;
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;
+}
+
+
+
+
 .fichaempresa-desc {
   float: left;
   width: 585px;
