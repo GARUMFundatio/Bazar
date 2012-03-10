@@ -1128,8 +1128,121 @@ class HomeController < ApplicationController
       if !rating.nil? 
         logger.debug "Ya existía un rating para esta empresa"
       else 
+        logger.debug "rating: el valor que viene para votar es: #{params[:valor]}"
         
+        if params[:valor].to_i <= 0 || params[:valor].to_i > 5 
+          valor = 2
+        else 
+          valor = params[:valor]
+        end 
         
+        @rating = Bazarcms::Rating.new
+        
+        @rating.ori_fecha = DateTime.now      
+        @rating.role = "C"
+        @rating.token = rand(99999)+1
+          
+        @rating.ori_cliente_plazos = 0
+        @rating.ori_cliente_comunicacion = 0
+           
+        @rating.ori_proveedor_expectativas = valor
+        @rating.ori_proveedor_plazos = valor
+        @rating.ori_proveedor_comunicacion = valor
+        
+        @rating.save 
+      
+        @rating.iden = "#{@rating.id}-#{@rating.ori_bazar_id}-#{@rating.ori_empresa_id}"
+        @rating.save 
+        
+        if (@rating.des_bazar_id == BZ_param('BazarId').to_i)  
+          @rating.calculo(@rating.des_bazar_id, @rating.des_empresa_id)
+        else
+          # lo enviamos a destino
+          logger.debug "Enviando rating a #{@rating.des_bazar_id}"
+          dohttppost(@rating.des_bazar_id, "/bazarcms/recrating", @rating.to_json)
+        end 
+        
+        # avisamos con un correo a la empresa destinataria
+
+        if (@rating.des_bazar_id.to_i == BZ_param("BazarId").to_i)
+
+          logger.debug "Es un mensaje con una empresa local!!!"
+
+          emp = Bazarcms::Empresa.find_by_id(current_user.id)
+          nombre = emp.nombre
+          user = User.find_by_id(@rating.des_empresa_id)
+          para = user.email
+          texto = "
+          <html><body style='background-color: #fff;color: #666; font-family: arial;font-size: 15px;font-weight: bold;'>
+          La empresa: #{nombre} ha evaluado su empresa.
+          </br>
+          Le sugerimos: 
+          </br>
+          * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/home/fichaempresa/#{BZ_param('BazarId')}/#{@rating.des_empresa_id}'>Evalue a la empresa #{nombre}.</a> 
+          Esta acción le aparecerá en tareas pendientes. Recuerde que hasta que no evalue a la otra empresa no afectará al rating de las dos empresas.
+          </br>
+          * <a href='#{Cluster.find_by_id(BZ_param('BazarId')).url}/home/fichaempresa/#{BZ_param('BazarId')}/#{current_user.id}'>Ver la ficha de empresa de #{nombre}</a>
+          </br>
+          </body></html>
+          "
+          BazarMailer.enviamensaje("#{BZ_param('Titular')} <noreplay@garumfundatio.org>", 
+                                      para, 
+                                      "#{BZ_param('Titular')}: La empresa #{nombre} ha evaluado su empresa.", 
+                                      texto).deliver      
+
+        else  
+
+          emp = Bazarcms::Empresa.find_by_id(current_user.id)
+          nombre = emp.nombre
+
+          user = User.find_by_id(current_user.id)
+          para = user.email
+
+          @mensaje2 = Mensaje.new()
+          @mensaje2.fecha = DateTime.now
+
+          @mensaje2.bazar_origen = BZ_param('BazarId')
+          @mensaje2.de = user.id
+          @mensaje2.de_nombre = emp.nombre
+          @mensaje2.de_email = user.email
+
+
+          @mensaje2.bazar_destino = @rating.des_bazar_id
+          @mensaje2.para = @rating.des_empresa_id
+
+          # Estos datos los coge en remoto
+
+          @mensaje2.para_nombre = "" 
+          @mensaje2.para_email = "" 
+
+
+          @mensaje2.tipo = "M"
+          @mensaje2.leido = nil 
+          @mensaje2.borrado = nil
+
+          @mensaje2.asunto = "#{BZ_param('Titular')}: La empresa #{nombre} ha evaluado su empresa."
+          @mensaje2.texto = "
+          <html><body style='background-color: #fff;color: #666; font-family: arial;font-size: 15px;font-weight: bold;'>
+          <br/>
+          La empresa: #{nombre} ha evaluado su empresa.
+          </br>
+          Le sugerimos: 
+          </br>
+          * <a href='#{Cluster.find_by_id(@rating.des_bazar_id).url}/home/fichaempresa/#{BZ_param('BazarId')}/#{current_user.id}'>Evalue a la empresa #{nombre}.</a> 
+          Esta acción le aparecerá en tareas pendientes. Recuerde que hasta que no evalue a la otra empresa no afectará al rating de las dos empresas.
+          </br>
+          * <a href='#{Cluster.find_by_id(@rating.des_bazar_id).url}/bazarcms/empresas/#{current_user.id}?bazar_id=#{BZ_param('BazarId')}'>Ver la ficha de empresa de #{nombre}</a>
+          </br>
+          </body></html>
+          "
+
+          logger.debug "Enviando el mensaje a #{@mensaje2.bazar_destino}"
+
+          dohttppost(@mensaje2.bazar_destino, "/mensajeremoto", @mensaje2.to_json)
+
+          @mensaje2.destroy
+
+        end
         
       end 
       

@@ -217,7 +217,7 @@ class ApplicationController < ActionController::Base
              per = 0 
            end 
            str += "<div class='fichaempresa-rating-show-detail2' style='background-size: #{per}\% auto;' 
-           onclick='document.location.href=\"/home/rating/#{bazar}/#{empresa}\";' >"
+           onclick='document.location.href=\"/home/rating/#{bazar}/#{empresa}/#{valor[0]}\";' >"
            str += "<div class='fichaempresa-rating-show-detail-text2'>"+t(:text_puntuar_con)
            val = "#{valor}".split('.')[0]
            for ii in ['1', '2', '3', '4', '5'] 
