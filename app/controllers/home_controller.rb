@@ -1120,7 +1120,9 @@ class HomeController < ApplicationController
     
     if (params[:bazar].to_i == BZ_param("BazarId").to_i && params[:id].to_i == current_user.id )
       logger.debug "Good try"
-      redirect_to "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}"
+    else 
+      # comprobamos si ha votado más de una vez
+      
     end 
 
     redirect_to "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}"
