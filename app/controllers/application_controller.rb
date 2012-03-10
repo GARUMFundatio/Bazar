@@ -168,12 +168,13 @@ class ApplicationController < ActionController::Base
 
        if (bazar.to_i == BZ_param("BazarId").to_i)
 
-         ratings = Bazarcms::Rating.where("")
+         ratings = Bazarcms::Rating.where("1 = 1")
 
          str = ""
 
          for rating in ratings
            
+           logger.debug "rating: "+rating.inspect
            tipo = ""
            tipo = "ori" if (rating.ori_bazar == bazar && rating.ori_empresa_id == empresa)
            tipo = "des" if (rating.des_bazar == bazar && rating.des_empresa_id == empresa)
@@ -187,6 +188,8 @@ class ApplicationController < ActionController::Base
            end 
            
            next if valor.nil?
+           
+           logger.debug "Entra: valor #{valor}"
            
            str += "<div class='fichaempresa-rating-show-detail'> " 
            val = "#{valor}".split('.')[0]
