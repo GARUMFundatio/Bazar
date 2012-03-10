@@ -211,7 +211,7 @@ class ApplicationController < ActionController::Base
          str += "</div>" 
          
          for valor in valores 
-           if total >= 0 
+           if total > 0
              per = valor[1] * 100 / total 
            else 
              per = 0 
