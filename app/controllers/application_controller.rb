@@ -206,25 +206,25 @@ class ApplicationController < ActionController::Base
            
          end
          
-         str += "<div class='fichaempresa-rating-show-detail'> #{total} "+
-         str += "<div class='fichaempresa-rating-show-detail-text'>"+t(:text_empresas_han_votado)+"</div>"
+         str += "<div class='fichaempresa-rating-show-detail'>"
+         str += " <div class='fichaempresa-rating-show-detail-text'> #{total} "+t(:text_empresas_han_votado)+"</div>"
          str += "</div>" 
          
          for valor in valores 
            
-           str += "<div class='fichaempresa-rating-show-detail'>"
-           str += "<div class='fichaempresa-rating-show-detail-text'>"+t(:text_puntuar_con)+"</div>"
+           str += "<div class='fichaempresa-rating-show-detail2'>"
+           str += "<div class='fichaempresa-rating-show-detail-text2'>"+t(:text_puntuar_con)
            val = "#{valor}".split('.')[0]
            for ii in ['1', '2', '3', '4', '5'] 
 
-             if (ii > val) 
-               str += "<img class='fichaempresa-rating-img' src='"+current_theme_image_path('estrellawhite40.png')+"'>"
-             else 
-               str += "<img class='fichaempresa-rating-img' src='"+current_theme_image_path('estrellawhite.png')+"'>"
+             if (ii <=  val) 
+               str += "<img  src='"+current_theme_image_path('estrellawhite.png')+"' style='margin-left: 5px;'>"
+#             else 
+#               str += "<img src='"+current_theme_image_path('estrellawhite40.png')+"'>"
              end 
 
            end 
-           str += "</div>"
+           str += "</div>"+"</div>"
          end 
          
        else 
