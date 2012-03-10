@@ -166,6 +166,7 @@ class ApplicationController < ActionController::Base
 
     def helper_rating_show_detail_ng(bazar, empresa)
 
+      logger.debug "Detalle de rating para bazar #{bazar} empresa #{empresa}"
        if (bazar.to_i == BZ_param("BazarId").to_i)
 
          ratings = Bazarcms::Rating.where("1 = 1")
@@ -176,10 +177,13 @@ class ApplicationController < ActionController::Base
            
            logger.debug "rating: "+rating.inspect
            tipo = ""
-           tipo = "ori" if (rating.ori_bazar_id == bazar && rating.ori_empresa_id == empresa)
-           tipo = "des" if (rating.des_bazar_id == bazar && rating.des_empresa_id == empresa)
+           tipo = "ori" if (rating.ori_bazar_id == bazar.to_i && rating.ori_empresa_id == empresa.to_i)
+           tipo = "des" if (rating.des_bazar_id == bazar.to_i && rating.des_empresa_id == empresa.to_i)
               
-           next if tipo == ""
+           if tipo == ""
+             logger.debug "Me lo salto"
+             next
+           end 
              
            if (tipo == "ori")
               valor = rating.ori_valor 
@@ -187,7 +191,10 @@ class ApplicationController < ActionController::Base
               valor = rating.des_valor 
            end 
            
-           next if valor.nil?
+           if valor.nil?
+              logger.debug "No tiene valor!!"
+              next
+           end 
            
            logger.debug "Entra: id #{rating.id} valor #{valor}"
            
