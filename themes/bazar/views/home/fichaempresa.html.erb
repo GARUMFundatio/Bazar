@@ -74,9 +74,9 @@
         </p>
       </div>
 
-      <div class="fichaempresa-rating">
+      <div id="rating" class="fichaempresa-rating">
           <%= helper_rating_show_ng(params[:bazar], params[:id]).html_safe -%>
-          <div class="fichaempresa-rating-show">
+          <div id="ratingdetails" class="fichaempresa-rating-show style='display:none'">
             <%= helper_rating_show_detail_ng(params[:bazar], params[:id]).html_safe -%>
           </div>
       </div>
@@ -436,6 +436,13 @@ $(document).ready(function() {
  // $('input[placeholder]').placeholder();
   // SI.Files.stylizeAll();
   
+  $("#rating").bind("mouseenter", function () {
+              $("#ratingdetails").show(500);
+          }).bind("mouseleave", function () {
+              $("#ratingdetails").hide(500);
+          });
+  
+  
   <% if params[:go] == "imagenes" %>
     $.scrollTo('#imagenes', 'slow');
   <% end %>
@@ -443,6 +450,8 @@ $(document).ready(function() {
   <% if params[:go] == "oferta" %>
     $('#fichaeditaroferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId") -%>/<%= params[:oferta] -%>').trigger('click');
   <% end %>
+  
+  
 
  });
 
