@@ -1154,6 +1154,7 @@ class HomeController < ApplicationController
       @rating.des_bazar_id = params[:bazar]
       @rating.des_empresa_id = params[:id]
       
+      @rating.ori_valor = valor
       @rating.ori_cliente_plazos = valor
       @rating.ori_cliente_comunicacion = valor
          
