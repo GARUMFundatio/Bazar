@@ -1136,7 +1136,7 @@ class HomeController < ApplicationController
       if rating != []
         logger.debug "Ya existía un rating para esta empresa: "+rating.inspect
         logger.debug "TODO: la actalizamos para poder hacer las pruebas"
-        @rating = Bazarcms::Rating(rating[0].attributes)
+        @rating = Bazarcms::Rating.find_by_id(rating[0].id)
       else 
         logger.debug "rating: el valor que viene para votar es: #{params[:valor]}"                
         @rating = Bazarcms::Rating.new
