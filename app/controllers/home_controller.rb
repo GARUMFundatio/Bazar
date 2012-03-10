@@ -1141,9 +1141,16 @@ class HomeController < ApplicationController
         @rating.ori_fecha = DateTime.now      
         @rating.role = "C"
         @rating.token = rand(99999)+1
-          
-        @rating.ori_cliente_plazos = 0
-        @rating.ori_cliente_comunicacion = 0
+
+        @rating.ori_bazar_id = BZ_param("BazarId").to_i 
+        @rating.ori_empresa_id = current_user.id 
+        @rating.ori_empresa_nombre = Bazarcms::Empresa.find_by_id(current_user.id).nombre
+        
+        @rating.des_bazar_id = params[:bazar]
+        @rating.des_empresa_id = params[:id]
+        
+        @rating.ori_cliente_plazos = valor
+        @rating.ori_cliente_comunicacion = valor
            
         @rating.ori_proveedor_expectativas = valor
         @rating.ori_proveedor_plazos = valor
@@ -1153,6 +1160,8 @@ class HomeController < ApplicationController
       
         @rating.iden = "#{@rating.id}-#{@rating.ori_bazar_id}-#{@rating.ori_empresa_id}"
         @rating.save 
+        
+        @rating.calculo(@rating.ori_bazar_id, @rating.ori_empresa_id)
         
         if (@rating.des_bazar_id == BZ_param('BazarId').to_i)  
           @rating.calculo(@rating.des_bazar_id, @rating.des_empresa_id)

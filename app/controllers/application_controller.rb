@@ -189,9 +189,9 @@ class ApplicationController < ActionController::Base
            end 
              
            if (tipo == "ori")
-              valor = rating.ori_valor 
-           else 
               valor = rating.des_valor 
+           else 
+              valor = rating.ori_valor 
            end 
            
            if valor.nil?
