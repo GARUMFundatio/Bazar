@@ -1141,6 +1141,7 @@ class HomeController < ApplicationController
         logger.debug "rating: el valor que viene para votar es: #{params[:valor]}"                
         @rating = Bazarcms::Rating.new
       end 
+      logger.debug "-------------> rating: "+@rating.inspect 
       
       @rating.ori_fecha = DateTime.now      
       @rating.role = "C"
