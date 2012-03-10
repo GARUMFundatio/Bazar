@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
             :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota,
-            :logo_helper, :logo_grande_helper, :datos_oferta_remota, :helper_rating_show_ng
+            :logo_helper, :logo_grande_helper, :datos_oferta_remota, :helper_rating_show_ng, :helper_rating_show_detail_ng
   
   helper :all
   
@@ -164,7 +164,86 @@ class ApplicationController < ActionController::Base
       str 
     end
 
+    def helper_rating_show_detail_ng(bazar, empresa)
 
+       if (bazar.to_i == BZ_param("BazarId").to_i)
+
+         ratings = Bazarcms::Rating.where("")
+
+         str = ""
+
+         for rating in ratings
+           
+           tipo = ""
+           tipo = "ori" if (rating.ori_bazar == bazar && rating.ori_empresa_id == empresa)
+           tipo = "des" if (rating.des_bazar == bazar && rating.des_empresa_id == empresa)
+              
+           next if tipo == ""
+             
+           if (tipo == "ori")
+              valor = rating.ori_valor 
+           else 
+              valor = rating.des_valor 
+           end 
+           
+           next if valor.nil?
+           
+           str += "<div class='fichaempresa-rating-show-detail'> " 
+           val = "#{valor}".split('.')[0]
+           for ii in ['1', '2', '3', '4', '5'] 
+
+             if (ii > val) 
+               str += "<img class='fichaempresa-rating-img' src='"+current_theme_image_path('estrellawhite40.png')+"'>"
+             else 
+               str += "<img class='fichaempresa-rating-img' src='"+current_theme_image_path('estrellawhite.png')+"'>"
+             end 
+
+           end 
+           str += "</div>"
+         end 
+         
+       else 
+
+         # si no es de este bazar le pedimos al otro bazar que nos 
+         # de su rating. 
+         # TODO JT esto habría que cachearlo para optimizar las comunicaciones
+
+         res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
+           logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
+           res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+         end
+
+         logger.debug "json empresa ------->"+res.inspect
+         if (res.length > 1)
+           begin
+             empre = JSON.parse(res)
+           rescue 
+
+             logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
+             valor = 0
+             expire_fragment "emp-json-#{bazar}-#{empresa}"
+            else
+              logger.debug "json empresa2 ------->"+empre.inspect
+
+              if (!empre['rating'].nil?)
+                logger.debug "json empresa3 ------->#{empre['rating']}"
+                valor = empre['rating']
+              else 
+                valor = 0
+              end 
+            end
+         else 
+           valor = 0
+         end 
+
+         url = "/bazarcms/ficharating/#{empresa}?bazar_id=#{bazar}"
+
+       end
+
+
+       str += ""
+       str 
+     end
 
    def logo_grande_helper(bazar, empresa)
 
