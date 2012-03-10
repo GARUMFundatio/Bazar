@@ -1515,7 +1515,7 @@ input[type="text"]:focus{
   text-align: left;
   background-image: url(bgblack05.png);
   background-repeat: no-repeat;
-  background-color: #EEE;
+  background-color: #4AA3E5;
   background-size: 50% auto;
   z-index: 300;
 }
