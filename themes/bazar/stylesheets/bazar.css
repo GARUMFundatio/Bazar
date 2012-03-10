@@ -1477,26 +1477,25 @@ input[type="text"]:focus{
   font-weight: bold;
   font-size: 13px;
   text-align: left;
-  background-image: url(bgblack05.png);
-  background-repeat: repeat;
+  background-color: #4AA3E5;
   z-index: 300;
 }
+
 .fichaempresa-rating-show-detail-text {
   position: relative;
   float: left;
   height: 37px;
-  width: 244px;
+  width: 264px;
   margin-left: 0px;
   margin-bottom: 1px;
-  padding-left: 20px;
+  padding-left: 0px;
   padding-top: 23px;
   color: #ffffff;
   font-family: Arial,sans-serif;
   font-weight: bold;
   font-size: 13px;
-  text-align: left;
-  background-image: url(bgblack05.png);
-  background-repeat: repeat;
+  text-align: center;
+
   z-index: 400;
 }
 
@@ -1513,12 +1512,13 @@ input[type="text"]:focus{
   font-weight: bold;
   font-size: 13px;
   text-align: left;
-  background-image: url(bgblack05.png);
+  cursor: pointer;
+  background-image: url(bgwhite20.png);
   background-repeat: no-repeat;
   background-color: #4AA3E5;
-  background-size: 50% auto;
   z-index: 300;
 }
+
 .fichaempresa-rating-show-detail-text2 {
   position: relative;
   float: left;
@@ -1533,7 +1533,14 @@ input[type="text"]:focus{
   font-weight: bold;
   font-size: 13px;
   text-align: left;
+  cursor: pointer;
 }
+
+.fichaempresa-rating-show-detail2:hover{
+  cursor: pointer;
+  background-color: #C1DBEE;
+}
+
 
 .fichaempresa-desc {
   float: left;

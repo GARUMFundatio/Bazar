@@ -211,8 +211,12 @@ class ApplicationController < ActionController::Base
          str += "</div>" 
          
          for valor in valores 
-           
-           str += "<div class='fichaempresa-rating-show-detail2'>"
+           if total >= 0 
+             per = valor[1] * 100 / total 
+           else 
+             per = 0 
+           end 
+           str += "<div class='fichaempresa-rating-show-detail2' style='background-size: #{per}\% auto;'>"
            str += "<div class='fichaempresa-rating-show-detail-text2'>"+t(:text_puntuar_con)
            val = "#{valor}".split('.')[0]
            for ii in ['1', '2', '3', '4', '5'] 
