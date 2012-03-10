@@ -206,7 +206,9 @@ class ApplicationController < ActionController::Base
            
          end
          
-         str += "<div class='fichaempresa-rating-show-detail'> #{total} "+t(:text_empresas_han_votado)+"</div>" 
+         str += "<div class='fichaempresa-rating-show-detail'> #{total} "+
+         str += "<div class='fichaempresa-rating-show-detail-text'>"+t(:text_empresas_han_votado)+"</div>"
+         str += "</div>" 
          
          for valor in valores 
            
