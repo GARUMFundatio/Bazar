@@ -176,8 +176,8 @@ class ApplicationController < ActionController::Base
            
            logger.debug "rating: "+rating.inspect
            tipo = ""
-           tipo = "ori" if (rating.ori_bazar == bazar && rating.ori_empresa_id == empresa)
-           tipo = "des" if (rating.des_bazar == bazar && rating.des_empresa_id == empresa)
+           tipo = "ori" if (rating.ori_bazar_id == bazar && rating.ori_empresa_id == empresa)
+           tipo = "des" if (rating.des_bazar_id == bazar && rating.des_empresa_id == empresa)
               
            next if tipo == ""
              
@@ -189,7 +189,7 @@ class ApplicationController < ActionController::Base
            
            next if valor.nil?
            
-           logger.debug "Entra: valor #{valor}"
+           logger.debug "Entra: id #{rating.id} valor #{valor}"
            
            str += "<div class='fichaempresa-rating-show-detail'> " 
            val = "#{valor}".split('.')[0]
