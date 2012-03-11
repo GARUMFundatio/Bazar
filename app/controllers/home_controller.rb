@@ -606,10 +606,14 @@ class HomeController < ApplicationController
     
     @empresasrecomendadas = Bazarcms::Empresa.where("nombre not like 'Escriba su%' and id <> ?", current_user.id).order("updated_at desc").limit(18)
       
-    @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
-
+    @totalempresasbazar = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
+    @totalempresas = Cluster.count_by_sql("select sum(empresas) from clusters") 
+    
+    @ambitos = Bazarcms::Empresa.ambitos
+    
     # @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
     # @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
+    
     
   end
 
