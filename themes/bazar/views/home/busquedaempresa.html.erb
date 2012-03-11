@@ -6,15 +6,7 @@
   <div class="resultado-indice">
     <div class="resultado-indice-texto">
       <% cuantas = @empresasresultados.count %>
-      <% if cuantas == 0 %>
-        No hay Empresas<br/>con este criterio
-      <% else %>
-        <% if cuantas == 1 %>
-          1 Empresa
-        <% else %>
-          <%= cuantas %> Empresas
-        <% end %>
-      <% end %>
+      <%= cuantas %> <%= t(:text_empresas) %>
     </div>
     
     <div class="resultado-filtro ilumina10">
