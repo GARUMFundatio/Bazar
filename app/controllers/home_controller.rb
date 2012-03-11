@@ -231,9 +231,15 @@ class HomeController < ApplicationController
     end 
     
     @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
-    @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
-    @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
     
+    @totalofertasbazar = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
+    @totalofertas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+    where tipo = 'O' order by cluster_id, oferta_id ")
+    
+    
+    @totaldemandasbazar = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
+    @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+    where tipo = 'D' order by cluster_id, oferta_id ")
     
   end
   

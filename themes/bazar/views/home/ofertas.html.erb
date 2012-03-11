@@ -47,7 +47,13 @@ function borraoferta (bazar, oferta) {
       </div>
       
       <div class="seccion-cifra">
-        <%= @totalempresas %> 
+        
+        <% if params[:tipo] == 'O' %>
+          <%= @totalofertasbazar %>
+        <% else %>
+          <%= @totaldemandasbazar %>
+        <% end %>
+        
       </div>
       <div class="seccion-cifra-titulo">
         <% if params[:tipo] == 'O' %>
@@ -75,15 +81,19 @@ function borraoferta (bazar, oferta) {
       </div>    
     </div>
 
-
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
         <%= t(:text_el_mundo) %>
       </div>
 
       <div class="seccion-cifra">
-        <%= @totalempresas %> 
+        <% if params[:tipo] == 'O' %>
+          <%= @totalofertas %>
+        <% else %>
+          <%= @totaldemandas %>
+        <% end %>
       </div>
+
       <div class="seccion-cifra-titulo">
         <% if params[:tipo] == 'O' %>
           <%= t(:text_ofertas) %>
