@@ -101,7 +101,12 @@ es:
   text_definir_busqueda_de_usuarios_login_empresa_nombre_con_autocomplete: "definir busqueda de usuarios (login) + empresa (nombre) con autocomplete"
   text_DEMANDA: "DEMANDA"
   text_demandan: "Demandan:"
-  text_demandas: Demandas
+  text_demandas: "Demandas"
+  text_demandas_en_INDUSTRIA: "demandas en INDUSTRIA"
+  text_demandas_en_DISTRIBUCION: "demandas en DISTRIBUCIÖN"
+  text_demandas_en_FINANZAS: "demandas en FINANZAS"
+  text_demandas_en_CONOCIMIENTO: "demandas en CONOCIMIENTO"
+  text_demandas_en_COOPERTATIVAS: "demandas en COOPERATIVAS"
   text_desc: Desc
   text_describela_un_poco: "Descríbela un poco"
   text_descripcion: Descripción
@@ -291,6 +296,11 @@ es:
   text_ofertas: Ofertas
   text_ofertas_demandas: "Ofertas / Demandas"
   text_ofertas_diferenciadas_y_demandas_restringidas: "ofertas diferenciadas y demandas restringidas"
+  text_ofertas_en_INDUSTRIA: "ofertas en INDUSTRIA"
+  text_ofertas_en_DISTRIBUCION: "ofertas en DISTRIBUCIÖN"
+  text_ofertas_en_FINANZAS: "ofertas en FINANZAS"
+  text_ofertas_en_CONOCIMIENTO: "ofertas en CONOCIMIENTO"
+  text_ofertas_en_COOPERATIVAS: "ofertas en COOPERATIVAS"
   text_oferta_valida_hasta: "Oferta válida hasta"
   text_oferta_valida_hasta_el: "Oferta válida hasta el"
   text_ofrecen: "Ofrecen:"
