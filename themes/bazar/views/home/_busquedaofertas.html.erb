@@ -2,14 +2,14 @@
 
 <div class="caja-seccion" id="busqueda">
   <div class="ficha-indice">
-    <div class="caja-busqueda-filtros ilumina10">
+    <div class="caja-busqueda-filtros ilumina10" onclick="$('#porempleados').show(200);">
       <div class="caja-busqueda-texto">
-        Filtrar por el nº de empleados de la empresa
+        <%= t(:text_filtrar_por_el_n_de_empleados_de_la_empresa) %>
       </div>
     </div>
-    <div class="caja-busqueda-filtros ilumina10">
+    <div class="caja-busqueda-filtros ilumina10" onclick="$('#porfacturacion').show(200);">
       <div class="caja-busqueda-texto">
-        Filtrar por la facturación anual de la empresa
+        <%= t(:text_filtrar_por_la_facturacion_anual_de_la_empresa) %>
       </div>
     </div>
     
@@ -24,7 +24,17 @@
         <% else %>
           <input class="busqueda-input" id="busqueda" name="q" placeholder="¿Qué demanda buscas?" size="50" >
         <% end %>
+        
+        <div id="porempleados" style="display:none">
+          por empleados
+        </div>
+        
+        <div id="porfacturacion" style="display:none">
+          por facturacion
+        </div>
+        
        <input type="submit" class="busqueda-boton" value="" />
+       
      </form>
     </div>
 

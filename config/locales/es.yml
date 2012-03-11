@@ -188,6 +188,8 @@ es:
   text_ficha_de_empresa: "ficha de empresa"
   text_ficha_de_empresa_incompleta: "Ficha de empresa incompleta"
   text_filtrar_por_datos_economicos: "Filtrar por Datos Económicos"
+  text_filtrar_por_el_n_de_empleados_de_la_empresa: "Filtrar por el nº de empleados de la empresa"
+  text_filtrar_por_la_facturacion_anual_de_la_empresa: "Filtrar por la facturación anual de la empresa"
   text_filtrar_por_pais: "Filtrar por País"
   text_filtrar_por_perfiles: "Filtrar por Perfiles"
   text_filtros_avanzados_para_seleccionar_las_empresas: "Filtros avanzados para seleccionar las Empresas"
