@@ -1176,6 +1176,60 @@ input[type="text"]:focus{
 	outline: none;
 }
 
+.caja-busqueda-input2 {
+  width: 733px;
+  margin: 0px; 
+  background-color: #ffffff;
+}
+
+.caja-busqueda-filtro-container {
+  position: relative;
+  width: 733px;
+  height: 60px;
+  margin: 0px; 
+  background-color: #ffffff;
+}
+
+.caja-busqueda-texto-filtro {
+  position: relative;
+  float: left;
+  width: 112px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 20px;
+  color:#666666;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 1px;  
+}
+
+.caja-busqueda-slider {
+  position: relative;
+  float: left;
+  width: 425px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 5px ;
+   
+  background-color: #ffffff;  
+}
+
+.caja-busqueda-texto-resultado {
+  position: relative;
+  float: left;
+  width: 142px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 15px;
+  color:#666666;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 1px;  
+}
+
+
 
 /* resultados busquedas */
 
