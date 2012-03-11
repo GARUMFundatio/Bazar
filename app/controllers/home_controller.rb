@@ -225,9 +225,9 @@ class HomeController < ApplicationController
     # quitar la que ya tenemos como favoritas
     
     if params[:tipo] == "O"
-      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'O' ").order("fecha_hasta desc").limit(18)
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id <> ?", current_user.id).order("fecha_hasta desc").limit(18)
     else 
-      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'D' ").order("fecha_hasta desc").limit(18)
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id <> ?", current_user.id).order("fecha_hasta desc").limit(18)
     end 
     
     @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")

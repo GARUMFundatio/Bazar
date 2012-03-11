@@ -21,7 +21,7 @@ function borraoferta (bazar, oferta) {
 
 <div class="caja-seccion" id="ofertas-recomendadas">
   <div class="ficha-indice">
-  Destacadas para ti
+    <%= t(:text_destacadas_para_ti) %>
   </div>
   
   <div class="seccion-contenido">
@@ -36,14 +36,14 @@ function borraoferta (bazar, oferta) {
 
 <div class="caja-seccion" id="localizacion">
   <div class="ficha-indice">
-  Por localización
+    <%= t(:text_por_localizacion) %>
   </div>
   
   <div class="seccion-contenido">
     
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
-        Tu Bazar
+        <%= t(:text_tu_bazar) %>
       </div>
       
       <div class="seccion-cifra">
@@ -51,16 +51,16 @@ function borraoferta (bazar, oferta) {
       </div>
       <div class="seccion-cifra-titulo">
         <% if params[:tipo] == 'O' %>
-          ofertas
+          <%= t(:text_ofertas) %>
         <% else %>
-          demandas
+          <%= t(:text_demandas) %>
         <% end %>
       </div>    
     </div>
 
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
-        España
+        <%= t(:text_tu_pais)%>
       </div>
 
       <div class="seccion-cifra">
@@ -68,16 +68,17 @@ function borraoferta (bazar, oferta) {
       </div>
       <div class="seccion-cifra-titulo">
         <% if params[:tipo] == 'O' %>
-          ofertas
+          <%= t(:text_ofertas) %>
         <% else %>
-          demandas
+          <%= t(:text_demandas) %>
         <% end %>
       </div>    
     </div>
 
+
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
-        Europa
+        <%= t(:text_el_mundo) %>
       </div>
 
       <div class="seccion-cifra">
@@ -85,26 +86,9 @@ function borraoferta (bazar, oferta) {
       </div>
       <div class="seccion-cifra-titulo">
         <% if params[:tipo] == 'O' %>
-          ofertas
+          <%= t(:text_ofertas) %>
         <% else %>
-          demandas
-        <% end %>
-      </div>    
-    </div>
-
-    <div class="seccion-cajon ilumina5">  
-      <div class="ficha-titulo-total">
-        El mundo
-      </div>
-
-      <div class="seccion-cifra">
-        <%= @totalempresas %> 
-      </div>
-      <div class="seccion-cifra-titulo">
-        <% if params[:tipo] == 'O' %>
-          ofertas
-        <% else %>
-          demandas
+          <%= t(:text_demandas) %>
         <% end %>
         
       </div>    
@@ -118,7 +102,7 @@ function borraoferta (bazar, oferta) {
 
 <div class="caja-seccion" id="datos-bazar">
   <div class="ficha-indice">
-  Por Sectores
+  <%= t(:text_por_sectores) %>
   </div>
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
@@ -130,9 +114,9 @@ function borraoferta (bazar, oferta) {
 
       <div class="ficha-sector-texto">
         <% if params[:tipo] == 'O'%>
-          ofertas en INDUSTRIA 
+          <%= t(:text_ofertas_en_INDUSTRIA) %> 
         <% else %>
-          demandas en INDUSTRIA
+          <%= t(:text_demandas_en_INDUSTRIA) %> 
         <% end %>
       </div>
       
@@ -150,9 +134,9 @@ function borraoferta (bazar, oferta) {
 
       <div class="ficha-sector-texto">
         <% if params[:tipo] == 'O'%>
-          ofertas en DISTRIBUCIÓN 
+          <%= t(:text_ofertas_en_DISTRIBUCION) %> 
         <% else %>
-          demandas en DISTRIBUCIÓN
+          <%= t(:text_demandas_en_DISTRIBUCION) %>
         <% end %>
       </div>
       
@@ -170,9 +154,9 @@ function borraoferta (bazar, oferta) {
 
       <div class="ficha-sector-texto">
         <% if params[:tipo] == 'O'%>
-          ofertas en FINANZAS 
+          <%= t(:text_ofertas_en_FINANZAS) %> 
         <% else %>
-          demandas en FINANZAS
+          <%= t(:text_demandas_en_FINANZAS) %> 
         <% end %>
       </div>
       
@@ -190,9 +174,9 @@ function borraoferta (bazar, oferta) {
 
       <div class="ficha-sector-texto">
         <% if params[:tipo] == 'O'%>
-          ofertas en CONOCIMIENTO 
+          <%= t(:text_ofertas_en_CONOCIMIENTO) %> 
         <% else %>
-          demandas en CONOCIMIENTO
+          <%= t(:text_demandas_en_CONOCIMIENTO) %> 
         <% end %>
       </div>
       
@@ -210,9 +194,9 @@ function borraoferta (bazar, oferta) {
 
       <div class="ficha-sector-texto">
         <% if params[:tipo] == 'O'%>
-          ofertas en COOPERATIVA
+          <%= t(:text_ofertas_en_COOPERATIVAS) %> 
         <% else %>
-          demandas en COOPERATIVA
+          <%= t(:text_demandas_en_COOPERATIVAS) %> 
         <% end %>
       </div>
       
