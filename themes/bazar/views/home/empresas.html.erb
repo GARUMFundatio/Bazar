@@ -20,7 +20,7 @@
 
 <div class="caja-seccion" id="empresas-recomendadas">
   <div class="ficha-indice">
-  Destacadas para ti
+    <%= t(:text_destacadas_para_ti) %>
   </div>
   
   <div class="seccion-contenido">
@@ -35,60 +35,47 @@
 
 <div class="caja-seccion" id="localizacion">
   <div class="ficha-indice">
-  Por localización
+    <%= t(:text_por_localizacion) %>
   </div>
   
   <div class="seccion-contenido">
     
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
-        Tu Bazar
+        <%= t(:text_tu_bazar) %>
       </div>
       
       <div class="seccion-cifra">
         <%= @totalempresas %> 
       </div>
       <div class="seccion-cifra-titulo">
-        empresas
+        <%= t(:empresas) %>
       </div>    
     </div>
 
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
-        España
+        <%= t(:text_tu_pais)%>
       </div>
 
       <div class="seccion-cifra">
         <%= @totalempresas %> 
       </div>
       <div class="seccion-cifra-titulo">
-        empresas
+        <%= t(:empresas) %>
       </div>    
     </div>
 
     <div class="seccion-cajon ilumina5">  
       <div class="ficha-titulo-total">
-        Europa
+        <%= t(:text_el_mundo) %>
       </div>
 
       <div class="seccion-cifra">
         <%= @totalempresas %> 
       </div>
       <div class="seccion-cifra-titulo">
-        empresas
-      </div>    
-    </div>
-
-    <div class="seccion-cajon ilumina5">  
-      <div class="ficha-titulo-total">
-        El mundo
-      </div>
-
-      <div class="seccion-cifra">
-        <%= @totalempresas %> 
-      </div>
-      <div class="seccion-cifra-titulo">
-        empresas
+        <%= t(:empresas) %>
       </div>    
     </div>
 
