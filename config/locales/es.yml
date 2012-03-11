@@ -440,6 +440,9 @@ es:
   text_vision_general: "visión general"
   text_veces_guardada_en_favoritos: "veces guardada en favoritos"
   text_ventas: "Ventas:"
+  text_ver_las_mas_recientes_primero: "ver las más recientes primero"
+  text_ver_las_mas_cercanas_geográficamente_primero: "ver las más cercanas geográficamente primero"
+  text_ver_solo_empresas_de_mi_bazar: "ver solo las empresas de mi bazar"
   text_ver_ocultar: Ver/ocultar
   text_visible: Visible
   text_visitas_de_esta_demanda: "visitas de esta demanda"
