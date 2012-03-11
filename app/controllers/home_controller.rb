@@ -240,9 +240,12 @@ class HomeController < ApplicationController
     @totaldemandasbazar = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
     @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
     where tipo = 'D' order by cluster_id, oferta_id ")
-    
-    @ambitos = Bazarcms::Oferta.ambitos
-    
+
+    if params[:tipo] == "O"
+      @ambitos = Bazarcms::Oferta.ambitos("O")
+    else 
+      @ambitos = Bazarcms::Oferta.ambitos("D")      
+    end 
   end
   
   def fichaoferta
