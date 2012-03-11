@@ -52,8 +52,15 @@
     <% @total = @empresasresultados.count %>
     <% @pagina = 1 %>
     
-    <%= render(:partial => "empresaresultado", :collection => @empresasresultados) %>
-
+    <% if @empresasresultados.count > 0 %>
+      <%= render(:partial => "empresaresultado", :collection => @empresasresultados) %>
+    <% else %>
+      <div class="seccion-cajon" >
+       <div class="cajon-cuerpo">
+         <%= t(:text_no_se_ha_encontrado_ninguna) %><br/><%= t(:text_prueba_con_otra_busqueda) %>
+       </div>
+      </div>
+    <% end %>
   </div>
 
 </div>
