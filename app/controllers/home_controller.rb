@@ -241,7 +241,7 @@ class HomeController < ApplicationController
     @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
     where tipo = 'D' order by cluster_id, oferta_id ")
     
-    @ambitos = Bazarcms::Ofertasresultado.ambitos
+    @ambitos = Bazarcms::Oferta.ambitos
     
   end
   
