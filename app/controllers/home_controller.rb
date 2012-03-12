@@ -767,10 +767,10 @@ class HomeController < ApplicationController
     when "recientes"
       resus = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i)
       for resu in resus 
-        resu.orden = resu.enlace
+        resu.enlace = resu.orden[4,10]
         resu.save
       end 
-      @empresasresultados = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i).order("orden desc")  
+      @empresasresultados = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i).order("enlace desc")  
     when "cercanas"      
       resus = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i)
       

@@ -61,7 +61,8 @@ Bazar::Application.routes.draw do
   match '/home/crearimagenempresa' => "home#crearimagenempresa"
   match '/home/delempresaimagen/:empresa/:id' => "home#delempresaimagen", :constrants => { :id => /\d+/ , :empresa => /\d+/ }
   match '/home/empresasestimadas' => "home#empresasestimadas"
-   
+  match '/home/filtraresultadosempresas/:resu/:tipo' => "home#filtraresultadosempresas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
+  
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
   match '/home/addfav/:bazar/:id' => "home#addfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
