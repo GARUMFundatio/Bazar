@@ -9,7 +9,7 @@
     </div>
     
     <div class="resultado-filtro ilumina10">
-      <div class="resultado-filtro-icono">
+      <div class="resultado-filtro-icono" onclick="filtra('recientes');">
         <img src="<%= current_theme_image_path('calendar.png') %>">
       </div>
       <div class="resultado-filtro-texto">
@@ -18,7 +18,7 @@
     </div>
 
     <div class="resultado-filtro ilumina10">
-      <div class="resultado-filtro-icono">
+      <div class="resultado-filtro-icono" onclick="filtra('cercanos');">
         <img src="<%= current_theme_image_path('world.png') %>">
       </div>
       <div class="resultado-filtro-texto">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="resultado-filtro ilumina10">
-      <div class="resultado-filtro-icono">
+      <div class="resultado-filtro-icono" onclick="filtra('mibazar');">
         <img src="<%= current_theme_image_path('mibazar.png') %>">
       </div>
       <div class="resultado-filtro-texto">
@@ -38,7 +38,11 @@
   </div>
   
   <script>
-
+  
+  function filtra(tipo) {
+    
+  };
+  
   function muestraconfirmacion (bazar, oferta) {
     $('#ofe-conf-'+bazar+'-'+oferta).show(); 
     $('#ofe-del-'+bazar+'-'+oferta).hide();
