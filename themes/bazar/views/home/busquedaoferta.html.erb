@@ -40,7 +40,8 @@
   <script>
   
   function filtra(tipo) {
-    alert(tipo);
+    $('#resultados').fadeOut("slow");
+    $("#resultados").load("/home/filtraresultadosofertas/"+"<%= @ofertasresultados[0].ofertasconsulta_id -%>"+"/"+tipo).fadeIn("slow");
   };
   
   function muestraconfirmacion (bazar, oferta) {
@@ -75,6 +76,7 @@
        </div>
       </div>
     <% end %>
+    
   </div>
 
 </div>

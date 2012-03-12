@@ -317,6 +317,20 @@ class HomeController < ApplicationController
     
   end
   
+  def filtraresultadosofertas
+    
+    
+    case params[:tipo]
+    when "mibazar"
+      @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ? and cluster_id = ?", params[:resu].to_i, BZ_param("BazarId").to_i)
+    else 
+      @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i)      
+    end 
+    
+    render :layout => false
+    
+  end
+  
   def ofertadatosgenerales
     
     if ( params[:bazar].to_i == BZ_param("BazarId").to_i )

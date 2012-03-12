@@ -74,6 +74,7 @@ Bazar::Application.routes.draw do
   match '/home/subirimagenoferta/:oferta' =>  "home#subirimagenoferta", :constrants => {:oferta => /\d+/ }
   match '/home/cancelaroferta/:oferta' =>  "home#cancelaroferta", :constrants => {:oferta => /\d+/ }
   match '/home/publicaroferta/:oferta' =>  "home#publicaroferta", :constrants => {:oferta => /\d+/ }
+  match '/home/filtraresultadosofertas/:resu/:tipo' => "home#filtraresultadosofertas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
   
   match '/home/test/' => "home#test"
   match '/home/editarcorreo/:bazar/:id' =>  "home#editarcorreo", :constrants => {:bazar => /\d+/ , :id => /\d+/ }
