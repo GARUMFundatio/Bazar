@@ -24,7 +24,6 @@ gem 'ya2yaml'
 # gem "tiny_mce", "~> 0.1.4"
 gem 'themes_for_rails'
 gem 'truncate_html'
-gem 'metric_fu'
 
 gem 'bazarcms', :path => '../bazarcms'
 
