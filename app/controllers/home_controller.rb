@@ -761,6 +761,73 @@ class HomeController < ApplicationController
     
   end
 
+  def filtraresultadosempresas
+    
+    case params[:tipo]
+    when "recientes"
+      resus = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i)
+      for resu in resus 
+        resu.orden = resu.enlace
+        resu.save
+      end 
+      @empresasresultados = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i).order("orden desc")  
+    when "cercanas"      
+      resus = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i)
+      
+      misubis  = []
+      ubis = Bazarcms::Ubicacion.select("ciudad_id").where("empresa_id = ?", current_user.id)
+      ubis.each do |u|
+        ciudad = Ciudad.find(u.ciudad_id)
+        if !ciudad.nil?
+          misubis << ciudad.geocode
+        end
+      end
+      logger.debug "mis ubicaciones #{misubis.inspect}"
+      
+      micluster = BZ_param("BazarId").to_i 
+        
+      for resu in resus 
+        
+        if micluster == resu.cluster_id 
+          susubis  = []
+          ubis = Bazarcms::Ubicacion.select("ciudad_id").where("empresa_id = ?", resu.empresa_id)
+          ubis.each do |u|
+            ciudad = Ciudad.find(u.ciudad_id)
+            if !ciudad.nil?
+              susubis << ciudad.geocode
+            end
+          end
+                    
+          for ubiori in misubis 
+            dis = 99999.0
+            for ubides in susubis
+              d = Bazarcms::Ubicacion.distancia(ubiori, ubides)
+              if d < dis 
+                dis = d 
+              end 
+            end 
+          end
+          
+          resu.orden = sprintf("%05d",d)
+        else 
+          # TODO hacerlo en remoto para las ofertas de otros sitios, incluido hacer un api de ubicaciones ;-)
+          resu.orden = "01000"
+        end 
+        
+        resu.save
+      end 
+
+      @empresasresultados = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i).order("orden asc")                
+    when "mibazar"
+      @empresasresultados = Bazarcms::Empresasresultado.where("empresasconsulta_id = ? and cluster_id = ?", params[:resu].to_i, BZ_param("BazarId").to_i)
+    else 
+      @empresasresultados = Bazarcms::Empresasresultado.where("empresasconsulta_id = ?", params[:resu].to_i).order("orden desc")  
+    end 
+    
+    render :layout => false
+    
+  end
+
   def empresadatosgenerales
     
     # TODO hay que controlar que solo el usuario puede cambiarlo o tiene permisos 

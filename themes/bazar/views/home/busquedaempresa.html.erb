@@ -9,7 +9,7 @@
       <%= cuantas %> <%= t(:text_empresas) %>
     </div>
     
-    <div class="resultado-filtro ilumina10">
+    <div class="resultado-filtro ilumina10" onclick="filtra('recientes');">
       <div class="resultado-filtro-icono">
         <img src="<%= current_theme_image_path('calendar.png') %>">
       </div>
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="resultado-filtro ilumina10">
+    <div class="resultado-filtro ilumina10" onclick="filtra('recientes');">
       <div class="resultado-filtro-icono">
         <img src="<%= current_theme_image_path('world.png') %>">
       </div>
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="resultado-filtro ilumina10">
+    <div class="resultado-filtro ilumina10" onclick="filtra('recientes');">
       <div class="resultado-filtro-icono">
         <img src="<%= current_theme_image_path('mibazar.png') %>">
       </div>
@@ -37,8 +37,18 @@
     </div>
     
   </div>
+
+  <script>
   
-  <div class="seccion-contenido">
+  function filtra(tipo) {
+
+    $('#resultados').fadeOut("slow");
+    $("#resultados").load("/home/filtraresultadosempresas/"+"<%= @empresasresultados[0].empresasconsulta_id -%>"+"/"+tipo).fadeIn("slow");
+  };
+  
+  </script>
+    
+  <div id="resultados" class="seccion-contenido">
     
     <% @item = 0 %>
     <% @total = @empresasresultados.count %>
