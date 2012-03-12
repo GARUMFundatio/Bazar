@@ -756,7 +756,8 @@ class HomeController < ApplicationController
     params[:q] = '*' if (params[:q] == '') 
     params[:tipo] = 'O' if params[:tipo].nil?
     @empresas, @empresasresultados = Bazarcms::Empresa.busca(:tipo => params[:tipo], :q => params[:q], 
-                                                          :user => current_user.id, :bazar => BZ_param("BazarId").to_i)
+                                                          :user => current_user.id, :bazar => BZ_param("BazarId").to_i,
+                                                          :empleados => params[:empleados].gsub("+"," "), :ventas => params[:ventas].gsub("+", " "))
     
   end
 
