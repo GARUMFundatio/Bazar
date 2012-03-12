@@ -5,7 +5,12 @@
 <div class="caja-seccion" id="ofertas-recomendadas">
   <div class="resultado-indice">
     <div id="resultadototal" class="resultado-indice-texto">
-      <%= @ofertasresultados.count -%> <%= t(:text_ofertas) %>
+      <%= @ofertasresultados.count -%> 
+      <% if params[:tipo] == "O" %>
+        <%= t(:text_ofertas) %>
+      <% else %>
+        <%= t(:text_demandas) %>
+      <% end %>
     </div>
     
     <div class="resultado-filtro ilumina10" onclick="filtra('recientes');">
@@ -17,7 +22,7 @@
       </div>
     </div>
 
-    <div class="resultado-filtro ilumina10" onclick="filtra('cercanos');">
+    <div class="resultado-filtro ilumina10" onclick="filtra('cercanas');">
       <div class="resultado-filtro-icono">
         <img src="<%= current_theme_image_path('world.png') %>">
       </div>

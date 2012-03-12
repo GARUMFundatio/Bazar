@@ -319,12 +319,65 @@ class HomeController < ApplicationController
   
   def filtraresultadosofertas
     
-    
     case params[:tipo]
+    when "recientes"
+      resus = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i)
+      for resu in resus 
+        resu.orden = resu.enlace
+        resu.save
+      end 
+      @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i).order("orden desc")  
+    when "cercanas"      
+      resus = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i)
+      
+      misubis  = []
+      ubis = Bazarcms::Ubicacion.select("ciudad_id").where("empresa_id = ?", current_user.id)
+      ubis.each do |u|
+        ciudad = Ciudad.find(u.ciudad_id)
+        if !ciudad.nil?
+          misubis << ciudad.geocode
+        end
+      end
+      logger.debug "mis ubicaciones #{misubis.inspect}"
+      
+      micluster = BZ_param("BazarId").to_i 
+        
+      for resu in resus 
+        
+        if micluster == resu.cluster_id 
+          susubis  = []
+          ubis = Bazarcms::Ubicacion.select("ciudad_id").where("empresa_id = ?", resu.empresa_id)
+          ubis.each do |u|
+            ciudad = Ciudad.find(u.ciudad_id)
+            if !ciudad.nil?
+              susubis << ciudad.geocode
+            end
+          end
+                    
+          for ubiori in misubis 
+            dis = 99999.0
+            for ubides in susubis
+              d = Bazarcms::Ubicacion.distancia(ubiori, ubides)
+              if d < dis 
+                dis = d 
+              end 
+            end 
+          end
+          
+          resu.orden = sprintf("%05d",d)
+        else 
+          # TODO hacerlo en remoto para las ofertas de otros sitios, incluido hacer un api de ubicaciones ;-)
+          resu.orden = "01000"
+        end 
+        
+        resu.save
+      end 
+
+      @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i).order("orden asc")                
     when "mibazar"
       @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ? and cluster_id = ?", params[:resu].to_i, BZ_param("BazarId").to_i)
     else 
-      @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i)      
+      @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i).order("orden desc")  
     end 
     
     render :layout => false
