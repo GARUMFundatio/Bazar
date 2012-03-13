@@ -2,6 +2,7 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('si.files')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.geo-1.0a4.min')) %>
 
 
 <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
@@ -345,6 +346,18 @@ function borraoferta (bazar, oferta) {
 
     <% end %>
 
+    <% if @sedes.count > 0 %>
+      <%= render(:partial => "empresasede", :collection => @sedes) %>
+    <% else %>
+      <div class="seccion-cajon" onClick="">
+
+        <div class="add-item-texto">
+          <%= t(:text_no_tiene_sedes) -%>
+        </div>
+        
+      </div>
+    <% end %>
+    
     <div class="seccion-cajon ilumina5">
 
       <div class="ficha-sector-cifra">

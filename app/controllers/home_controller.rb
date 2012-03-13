@@ -719,6 +719,7 @@ class HomeController < ApplicationController
       @demandas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id = ?", params[:id]).order("fecha desc")        
       @imagenes = Bazarcms::Empresasimagen.where("empresa_id = ?", params[:id])
       @ed = Bazarcms::Empresasdato.where("empresa_id = ?", params[:id]).order("periodo desc").limit(1)
+      @sedes = Bazarcms::Ubicacion.where("empresa_id = ?",params[:id])
       
       if @ed.nil? 
         @empresasdatos = Bazarcms::Empresasdato.new
