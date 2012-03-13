@@ -9,7 +9,7 @@
  
  <% if @owner %>
  
- <div class="imagen-delete-icono">
+ <div class="item-delete-sede-icono">
    <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="$('#img-<%= empresasede.id -%>').hide(); $.ajax({
       url: '/home/delempresasede/<%= empresasede.empresa_id -%>/<%= empresasede.id -%>'
       });" >

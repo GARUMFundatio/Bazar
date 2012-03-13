@@ -2211,6 +2211,52 @@ input[type="text"]:focus{
   background-repeat: repeat;  
 }
 
+.item-delete-sede-icono {
+  position: relative;
+  float: right;
+  width: 60px;
+  height: 60px;
+  margin-right: 0px;
+  margin-top: 1px;
+  background-image: url(bgwhite10.png);
+  background-repeat: repeat;  
+  z-index: 90;
+
+}
+
+.item-delete-sede-icono img {
+  padding-top: 20px; 
+
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+ 
+}
+.item-delete-sede-icono-confirm {
+  position: relative;
+  float: right;
+  width: 243px;
+  height: 43px;
+  margin-top: 122px;
+  padding-top: 18px;
+  background-color: #ffffff;
+  color: #aaa; 
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 13px;
+  opacity:1;
+  filter: alpha(opacity=100);
+  filter: “alpha(opacity=100)”;
+  z-index: 100;
+  
+}
+
+
+.item-delete-sede-icono:hover {
+  background-image: url(bgwhite50.png);
+  background-repeat: repeat;  
+}
+
 
 /* menu de navegacion */ 
 
