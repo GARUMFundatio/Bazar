@@ -28,6 +28,9 @@ $(function() {
     zoom: 4
   }); 
   
+  $("#sede-mapa-<%= empresasede.id -%>" ).geomap( "append", { 
+    type: "Point", coordinates: [ <%= empresasede.ciudad.longitud -%>, <%= empresasede.ciudad.latitud -%> ] }, 
+    "map point" );
   
 });
 
