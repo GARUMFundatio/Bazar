@@ -777,7 +777,7 @@ class HomeController < ApplicationController
       misubis  = []
       ubis = Bazarcms::Ubicacion.select("ciudad_id").where("empresa_id = ?", current_user.id)
       ubis.each do |u|
-        ciudad = Ciudad.find(u.ciudad_id)
+        ciudad = Ciudad.find_by_id(u.ciudad_id)
         if !ciudad.nil?
           misubis << ciudad.geocode
         end
@@ -792,7 +792,7 @@ class HomeController < ApplicationController
           susubis  = []
           ubis = Bazarcms::Ubicacion.select("ciudad_id").where("empresa_id = ?", resu.empresa_id)
           ubis.each do |u|
-            ciudad = Ciudad.find(u.ciudad_id)
+            ciudad = Ciudad.find_by_id(u.ciudad_id)
             if !ciudad.nil?
               susubis << ciudad.geocode
             else 
