@@ -795,7 +795,10 @@ class HomeController < ApplicationController
             ciudad = Ciudad.find(u.ciudad_id)
             if !ciudad.nil?
               susubis << ciudad.geocode
+            else 
+              logger.debug "Error: ciudad no encontrada #{u.ciudad_id}"
             end
+
           end
                     
           for ubiori in misubis 
