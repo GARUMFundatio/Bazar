@@ -1,0 +1,34 @@
+<div id="sede-<%= empresasede.id -%>" class="seccion-cajon">
+
+  <div class="seccion-cajon-titulo">
+    <%= empresasede.ciudad.descripcion %>
+  </div>  
+ <div id="sede-mapa-<%= empresasede.id -%>" style="height:150px; width:243px; font-size:0px;" >
+
+ </div>
+ 
+ <% if @owner %>
+ 
+ <div class="imagen-delete-icono">
+   <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="$('#img-<%= empresasede.id -%>').hide(); $.ajax({
+      url: '/home/delempresasede/<%= empresasede.empresa_id -%>/<%= empresasede.id -%>'
+      });" >
+ </div>
+ 
+ <% end %>
+ 
+</div>
+
+<script>
+
+$(function() { 
+  $("#sede-mapa-<%= empresasede.id -%>" ).geomap({
+    center: [ <%= empresasede.ciudad.longitud -%>, <%= empresasede.ciudad.latitud -%> ],
+    mode: "static",
+    zoom: 4
+  }); 
+  
+  
+});
+
+</script>
