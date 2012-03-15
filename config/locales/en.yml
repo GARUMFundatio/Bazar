@@ -1,7 +1,38 @@
 --- 
 en: 
+  activemodel: 
+    errors: 
+      format: ""
+      messages: 
+        accepted: ""
+        blank: ""
+        confirmation: ""
+        empty: ""
+        equal_to: ""
+        even: ""
+        exclusion: ""
+        greater_than: ""
+        greater_than_or_equal_to: ""
+        inclusion: ""
+        invalid: ""
+        less_than: ""
+        less_than_or_equal_to: ""
+        not_a_number: ""
+        not_an_integer: ""
+        odd: ""
+        record_invalid: ""
+        taken: ""
+        too_long: ""
+        too_short: ""
+        wrong_length: ""
+      template: 
+        body: ""
+        header: 
+          one: ""
+          other: ""
   activerecord: 
     errors: 
+      format: ""
       full_messages: 
         format: ""
       messages: 
@@ -18,7 +49,7 @@ en:
         invalid: ""
         less_than: ""
         less_than_or_equal_to: ""
-        not_a_number: ""
+        not_a_number: "is not a digit"
         not_an_integer: ""
         odd: ""
         record_invalid: "Validation failed: %{errors}"
@@ -304,3 +335,18 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  will_paginate: 
+    next_label: "Next &#8594;"
+    page_entries_info: 
+      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
+      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+      single_page: 
+        one: "Displaying 1 %{model}"
+        other: "Displaying all %{count} %{model}"
+        zero: "No %{model} found"
+      single_page_html: 
+        one: "Displaying <b>1</b> %{model}"
+        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+        zero: "No %{model} found"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Previous"
