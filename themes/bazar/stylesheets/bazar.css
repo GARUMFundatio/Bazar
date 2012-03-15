@@ -2314,7 +2314,7 @@ input[type="text"]:focus{
   margin-left: 30px;
   margin-bottom: 0px;
   padding:0px; 
-  width:500px;
+  width:800px;
   color: #666666 ;
   font-family: arial, sans-serif; 
   font-weight: bold;
@@ -2330,7 +2330,7 @@ input[type="text"]:focus{
   margin-bottom: 1px;
   padding:0px;
   padding-top: 20px;
-  width:161px;
+  width:121px;
   height: 40px;
   color: #666666 ;
   font-family: arial, sans-serif; 
@@ -2356,7 +2356,7 @@ input[type="text"]:focus{
   margin-bottom: 1px;
   padding:0px;
   padding-top: 20px;
-  width:161px;
+  width:121px;
   height: 40px;
   color: #ffffff;
   font-family: arial, sans-serif; 
