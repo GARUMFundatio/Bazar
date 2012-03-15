@@ -1439,12 +1439,13 @@ class HomeController < ApplicationController
   end 
   
   def delsede
-    
-    @ubicacion = Bazarcms::Ubicacion.find_by_id_and_empresa_id(params[:id], current_user.id)
-    if !@ubicacion.nil? 
-      @ubicacion.delete
+    if params[:empresa].to_i == current_user.id
+      @ubicacion = Bazarcms::Ubicacion.find_by_id_and_empresa_id(params[:id], current_user.id)
+      if !@ubicacion.nil? 
+        @ubicacion.delete
+      end 
     end 
-    
+    render :layout => false
   end 
   
   def test

@@ -149,6 +149,20 @@ function borraoferta (bazar, oferta) {
   });
 };
 
+function muestraconfirmacion2 (sede) {
+  $('#sede-conf-'+sede).show(); 
+  $('#sede-del-'+sede).hide();
+};
+
+function borrasede (empresa, sede) {
+  $('#sede-'+sede).fadeOut('slow');
+  $.ajax({
+          type: "POST",
+          url: "/home/delsede/"+empresa+"/"+sede
+  });
+};
+
+
 </script>
 
 <div class="caja-seccion" id="ofertas">
@@ -358,15 +372,6 @@ function borraoferta (bazar, oferta) {
       </div>
     <% end %>
     
-    <div class="seccion-cajon ilumina5">
-
-      <div class="ficha-sector-cifra">
-        <%= @totalempresas %> 
-      </div>
-
-
-      
-    </div>
   </div>
 <div/>
 

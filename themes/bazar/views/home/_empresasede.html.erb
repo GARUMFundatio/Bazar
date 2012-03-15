@@ -11,11 +11,21 @@
  
  <% if @owner %>
  
- <div class="item-delete-sede-icono">
+ <!-- div class="item-delete-sede-icono">
    <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="$('#img-<%= empresasede.id -%>').hide(); $.ajax({
       url: '/home/delempresasede/<%= empresasede.empresa_id -%>/<%= empresasede.id -%>'
       });" >
+ </div -->
+ 
+ <div id="sede-del-<%= empresasede.id -%>" class="item-delete-sede-icono" onclick="muestraconfirmacion2(<%= empresasede.id -%>)" >
+   <img src="<%= current_theme_image_path('borrar-white.png') %>" >
  </div>
+ 
+ <div id="sede-conf-<%= empresasede.id -%>" class="item-delete-sede-confirm" style="display:none" onclick="borrasede(<%= empresasede.empresa_id -%>, <%= empresasede.id -%>);">
+   <%= t(:text_seguro_que_desea_borrarla) %>
+ </div>
+ 
+ 
  
  <% end %>
  
