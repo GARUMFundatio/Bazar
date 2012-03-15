@@ -77,8 +77,8 @@
 
     <% paises = Pais.where("total_empresas_mercado > 0 ").order("total_empresas_mercado desc") %>
     <% for pais in paises %>
-      <div id="busca1" class="caja-busqueda-general-opciones-item" onclick="selecciona('1')">
-        <%= t(:text_ofertas) %>
+      <div id="pais1" class="caja-busqueda-general-opciones-item" onclick="selecciona('1')">
+        <%= pais.descripcion %>
       </div>
     <% end %>
         

@@ -2327,7 +2327,7 @@ input[type="text"]:focus{
   float: left;
   margin-top: 0px;
   margin-left: 1px;
-  margin-bottom: 0px;
+  margin-bottom: 1px;
   padding:0px;
   padding-top: 20px;
   width:161px;
@@ -2353,7 +2353,7 @@ input[type="text"]:focus{
   float: left;
   margin-top: 0px;
   margin-left: 1px;
-  margin-bottom: 0px;
+  margin-bottom: 1px;
   padding:0px;
   padding-top: 20px;
   width:161px;
