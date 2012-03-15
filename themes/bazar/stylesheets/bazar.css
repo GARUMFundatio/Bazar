@@ -2217,7 +2217,7 @@ input[type="text"]:focus{
   width: 60px;
   height: 60px;
   margin-right: 0px;
-  margin-top: 1px;
+  margin-top: 3px;
   background-image: url(bgwhite10.png);
   background-repeat: repeat;  
   z-index: 90;

@@ -36,5 +36,6 @@ gem 'bazarcms', :path => '../bazarcms'
 # gem 'ruby-debug'
 group :development, :test do
 	gem 'ruby-debug'
+	gem 'translate-rails3'
 end
 

@@ -32,6 +32,8 @@ Bazar::Application.configure do
     :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
   
   config.i18n.default_locale = :es
+  config.from_locales = [:es]
+  config.to_locales = [:en, :pt, :eo]
   
   
 end
