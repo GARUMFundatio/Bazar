@@ -1138,6 +1138,22 @@ a {
   background-repeat: repeat;
 }
 
+.caja-busqueda-general {
+  height: 121px;
+  width: 733px;
+  margin: 0px; 
+/*  background-image: url(bgblack05.png);
+  background-repeat: repeat; */
+}
+
+.caja-busqueda-general:hover {
+  /*
+  background-image: url(bgblack40.png);
+  background-repeat: repeat;
+  */
+  
+}
+
 
 .busqueda-input {
   width: 651px;
