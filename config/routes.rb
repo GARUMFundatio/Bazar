@@ -62,6 +62,7 @@ Bazar::Application.routes.draw do
   match '/home/delempresaimagen/:empresa/:id' => "home#delempresaimagen", :constrants => { :id => /\d+/ , :empresa => /\d+/ }
   match '/home/empresasestimadas' => "home#empresasestimadas"
   match '/home/filtraresultadosempresas/:resu/:tipo' => "home#filtraresultadosempresas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
+  match '/home/addsede/:id' => "home#addsede", :constrants => { :id => /\d+/ }
   
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -129,10 +130,13 @@ Bazar::Application.routes.draw do
   match '/api/ejemplopaises' => 'api#ejemplopaises'
 
 
-  scope '/translate' do
-    match '/translate_list', :to => 'translate#index'
-    match '/translate', :to => 'translate#translate'
-    match '/translate_reload', :to => 'translate#reload', :as => 'translate_reload'
-  end
+#    scope '/translate' do
+#      match '/translate_list', :to => 'translate#index'
+#      match '/translate', :to => 'translate#translate'
+#      match '/translate_reload', :to => 'translate#reload', :as => 'translate_reload'
+#    end
+#  
+#   Translate::Routes.translation_ui(map) if RAILS_ENV != "production"
+  
   
 end

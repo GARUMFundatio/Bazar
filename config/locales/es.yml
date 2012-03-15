@@ -43,6 +43,7 @@ es:
   text_ambito: "Ámbito"
   text_anadir_una_foto: "AÑADIR UNA FOTO"
   text_anadir_una_sede: "AÑADIR UNA SEDE"
+  text_añadir_una_nueva_sede: "añade una nueva sede"
   text_anterior: Anterior
   text_api_application_programming_interface_es_la_forma_que_tiene_el_proyecto_bazar_de_compartir_la_informacion_de_la_red_de_bazares_con_tus_aplicaciones_y_o_herramientas: "API (Application Programming Interface) es la forma que tiene el Proyecto Bazar de compartir la información de la red de bazares con tus aplicaciones y/o herramientas."
   text_api_bazares: "API Bazares"
@@ -109,6 +110,7 @@ es:
   text_demandas_en_COOPERATIVAS: "demandas en COOPERATIVAS"
   text_desc: Desc
   text_describela_un_poco: "Descríbela un poco"
+  text_describe_la_sede_o_su_direccion: "describe la sede o su dirección"
   text_descripcion: Descripción
   text_descripcion_de_la_empresa: "descripción de la empresa"
   text_destacadas_para_ti: "Destacadas para ti"
@@ -127,6 +129,7 @@ es:
   text_editing_usersession: "Editando sesión de usuario"
   text_ejemplo: "Ejemplo:"
   text_ej_sillas_de_plastico_personalizadas: "Ej: Sillas de plástico personalizadas"
+  text_ej_fabrica_o_direccion: "Ej: 'fábrica' o 'calle león 14, Bilbao, España'"
   text_ejemplo_1_como_obtener_informacion_de_un_bazar_proyecto_bazar: "Ejemplo 1 Como obtener información de un Bazar - Proyecto Bazar"
   text_ejemplo_2_como_obtener_que_empresas_hay_en_un_bazar_proyecto_bazar: "Ejemplo 2 Como obtener que empresas hay en un bazar - Proyecto Bazar"
   text_ejemplo_3_como_obtener_informacion_de_una_empresa_proyecto_bazar: "Ejemplo 3 Como obtener información de una empresa - Proyecto Bazar"
@@ -156,6 +159,7 @@ es:
   text_empresas_han_votado: "empresas han votado"
   text_empresas_que_sean_de_estos_sectores: "Empresas que sean de estos sectores"
   text_empresas_que_sigo: "Empresas que sigo"
+  text_en_que_ciudad_esta_la_sede: "¿En que ciudad está la sede?"
   text_en_pocas_palabras: "En pocas palabras:"
   text_enlace: "Enlace:"
   text_enlace_al_bazar: "Enlace al Bazar:"
@@ -400,6 +404,7 @@ es:
   text_seguro_que_desea_borrarla: "¿Seguro que desea borrarla?"
   text_sector: "Sector"
   text_sectores: Sectores
+  text_selecciona_una_de_la_lista: "empieza teclear la ciudad y selecciona una de la lista"
   text_seleccione_el_tipo_de_resultado_que_desea_ver: "Seleccione el tipo de resultado que desea ver"
   text_seleccione_uno_o_varios_paises_en_la_caja_de_busqueda: "Seleccione uno o varios países en la caja de búsqueda"
   text_seleccione_uno_o_varios_sectores_en_la_caja_de_busqueda: "Seleccione uno o varios sectores en la caja de búsqueda."

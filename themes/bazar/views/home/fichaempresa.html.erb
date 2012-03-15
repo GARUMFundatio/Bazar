@@ -333,10 +333,10 @@ function borraoferta (bazar, oferta) {
 
     <% if params[:id].to_i == current_user.id %>
     
-      <div class="seccion-cajon ilumina5" onClick="">
+      <div class="seccion-cajon" onclick="$('#sede').attr('href', '/home/addsede/<%= @empresa.id -%>').trigger('click');">
         
         <div class="add-item-icono">
-          <img src="<%= current_theme_image_path('add.png') %>" onClick="window.alert('click in fav');" >
+          <img src="<%= current_theme_image_path('add.png') %>" >
         </div>
 
         <div class="add-item-texto">
@@ -374,6 +374,7 @@ function borraoferta (bazar, oferta) {
 <a id="fichaeditaroferta" class="fancybox.ajax" href=""></a>
 <a id="fichaempresa" class="fancybox.ajax" href=""></a>
 <a id="correo" class="fancybox.ajax" href=""></a>
+<a id="sede" class="fancybox.ajax" href=""></a>
 
 <script>
 
@@ -434,7 +435,17 @@ $(document).ready(function() {
 		 'type' : 'iframe'
 	 });
 
-	
+	 $("#sede").fancybox({
+ 		 'width' : 831,
+ 		 'height' : 539,
+     'margin' : 0,
+ 		 'autoScale' : false,
+ 		 'transitionIn' : 'none',
+ 		 'transitionOut' : 'none',
+ 		 'modal': true,
+ 		 'type' : 'iframe'
+ 	 });
+  
    $("a[rel=galeria]").fancybox(
      {
         'width': 650,

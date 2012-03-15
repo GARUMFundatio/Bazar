@@ -1420,7 +1420,12 @@ class HomeController < ApplicationController
     redirect_to "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}"
     
   end
-    
+  
+  def addsede
+    @ubicacion = Bazarcms::Ubicacion.new()
+    render :layout => false
+  end
+  
   def test
     
   end
