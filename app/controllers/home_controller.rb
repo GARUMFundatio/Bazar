@@ -1448,6 +1448,11 @@ class HomeController < ApplicationController
     render :layout => false
   end 
   
+  def busquedageneral
+    
+    render :layout => false
+  end
+  
   def test
     
   end

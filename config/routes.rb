@@ -44,6 +44,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -188,6 +189,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -332,6 +334,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -476,6 +479,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -620,6 +624,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -764,6 +769,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }

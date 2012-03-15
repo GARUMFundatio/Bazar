@@ -118,12 +118,12 @@
               
       </div>
       
-      <div id="socioenlaces" class="ilumina" style="width:304px;">
+      <div id="socioenlaces" class="ilumina" style="width:304px;" onclick="$('#busqueda').attr('href', '/home/busquedageneral/').trigger('click');">
         <div class="home-lupa">
-          <img src="<%= current_theme_image_path('lupa-white.png') %>" onClick="window.alert('click in fav');" >
+          <img src="<%= current_theme_image_path('lupa-white.png') %>"  >
         </div>
         <div class="home-texto-busqueda">
-          <a class="login-link" href="/login"><%=t(:text_buscar_empresas_ofertas_o_demandas)%></a>          
+          <%=t(:text_buscar_empresas_ofertas_o_demandas)%>          
         </div>
       </div>
           
@@ -206,6 +206,7 @@
 
   </div> <!-- fin container -->
 
+<a id="busqueda" class="fancybox.ajax" href=""></a>
 
 <script type="text/javascript">
 
@@ -214,6 +215,16 @@ $(document).ready(function() {
   $('.transpa').transify({opacityOrig:.35});
   $('.ilumina').transify({opacityOrig:.35,opacityNew:.15,fadeSpeed:500});
 
+	 $("#busqueda").fancybox({
+		 'width' : 831,
+		 'height' : 539,
+    'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'modal': true,
+		 'type' : 'iframe'
+	 });
  
 });
 

@@ -2217,6 +2217,7 @@ input[type="text"]:focus{
   width: 75%;
   height: 40px;
   margin-top: 16px;
+  margin-left: 10px;
   color: #000000; 
   font-family: arial, sans-serif; 
   font-weight: normal;
