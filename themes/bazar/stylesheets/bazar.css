@@ -2211,6 +2211,22 @@ input[type="text"]:focus{
   background-repeat: repeat;  
 }
 
+.item-texto-sede {
+  position: relative;
+  float: left;
+  width: 75%;
+  height: 40px;
+  margin-top: 16px;
+  color: #000000; 
+  font-family: arial, sans-serif; 
+  font-weight: normal;
+  font-size: 13px;
+  text-align: left;
+  opacity:.5;
+  filter: alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+}
+
 .item-delete-sede-icono {
   position: relative;
   float: right;

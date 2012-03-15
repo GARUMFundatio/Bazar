@@ -6,8 +6,11 @@
     <%= empresasede.ciudad.descripcion %>
   </div>  
  <div id="sede-mapa-<%= empresasede.id -%>" style="height:150px; width:243px; font-size:0px;" >
-
  </div>
+ <div id="sede-texto-<%= empresasede.id -%>" class="item-texto-sede">
+   <%= empresasede.desc %>
+ </div>
+ 
  
  <% if @owner %>
  
