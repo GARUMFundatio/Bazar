@@ -2294,7 +2294,7 @@ input[type="text"]:focus{
 .caja-busqueda-general-opciones-titulo {
   position: relative;
   float: left;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-left: 30px;
   margin-bottom: 0px;
   padding:0px; 
@@ -2310,7 +2310,7 @@ input[type="text"]:focus{
 .caja-busqueda-general-opciones {
   position: relative;
   float: left;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 30px;
   margin-bottom: 0px;
   padding:0px; 
