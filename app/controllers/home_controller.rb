@@ -1423,8 +1423,29 @@ class HomeController < ApplicationController
   
   def addsede
     @ubicacion = Bazarcms::Ubicacion.new()
+    @ubicacion.empresa_id = current_user.id 
+    
     render :layout => false
   end
+  
+  def grabasede 
+    @ubicacion = Bazarcms::Ubicacion.new()
+    @ubicacion.update_attributes(params[:bazarcms_ubicacion])
+    @ubicacion.empresa_id = current_user.id
+    @ubicacion.save 
+    
+    render :layout => false
+    
+  end 
+  
+  def delsede
+    
+    @ubicacion = Bazarcms::Ubicacion.find_by_id_and_empresa_id(params[:id], current_user.id)
+    if !@ubicacion.nil? 
+      @ubicacion.delete
+    end 
+    
+  end 
   
   def test
     

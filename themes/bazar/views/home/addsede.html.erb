@@ -7,7 +7,7 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery-1.7.1.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
-
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
 
 <div id="container" class="container-empresa-editar">
 
@@ -31,7 +31,10 @@
 
   </div>
 
-  <%= form_for(@ubicacion, :html => { :onsubmit => "return validar();" }) do |f| %>
+  <%= form_for(@ubicacion, :url => "/home/grabasede", :html => { :onsubmit => "return validar();" }) do |f| %>
+
+  <div id="oferta-titulo" class="caja-empresa-editar-titulo">
+  </div>
 
     <div id="oferta-titulo" class="caja-empresa-editar-titulo">
       <%= t(:text_describe_la_sede_o_su_direccion) %>
@@ -48,6 +51,7 @@
  
     <%= f.hidden_field :ciudad_id %>
 
+
 	<% 
 	if !@ubicacion.ciudad.nil?
 		ciudad = @ubicacion.ciudad.descripcion
@@ -59,8 +63,14 @@
     <%= text_field(:ciudad, :id, :placeholder => t(:text_selecciona_una_de_la_lista), :value => ciudad ,:class => "caja-empresa-editar-input") %>
   </td>
 
-  <div class="actions" style="display:block;">
-    <%= f.submit "Guardar" %> <a href="#" title="Cancelar" onclick="$('#nuevaubicacion').css('display','none');"></a>
+  <div id="oferta-titulo" class="caja-empresa-editar-titulo">
+  </div>
+  <div id="oferta-titulo" class="caja-empresa-editar-titulo">
+  </div>
+
+  <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
+
+  <div id="oferta-titulo" class="caja-empresa-editar-titulo">
   </div>
   
 <% end %>
@@ -77,13 +87,16 @@ function validar() {
 	valido = 1; 
 
 	if ($("#bazarcms_ubicacion_desc" ).val() == "") {
-		window.alert ("Rellene el campo descripción de la ubicación. Ejemplo: Oficinas centrales.");
+		// window.alert ("Rellene el campo descripción de la ubicación. Ejemplo: Oficinas centrales.");
+		$.scrollTo('#bazarcms_ubicacion_desc', 'slow');
+		$("#bazarcms_ubicacion_desc" ).focus();
 		valido = 0;
 	}
 
 	if ($("#bazarcms_ubicacion_ciudad_id" ).val() == "") {
-		window.alert ("Debe seleccionar una ciudad de la lista que aparece mientras escribe el nombre de su ciudad.");
+		// window.alert ("Debe seleccionar una ciudad de la lista que aparece mientras escribe el nombre de su ciudad.");
 		$("#ciudad_id" ).val( $("#ciudad_id").val().substring(0,3) );
+		$.scrollTo('#ciudad_id', 'slow');
 		$("#ciudad_id" ).focus();
 		valido = 0;
 	}
