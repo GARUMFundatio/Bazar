@@ -14,7 +14,7 @@
   
 <div class="caja-empresa-titulo">
   <div class="caja-empresa-titulo-texto" >
-    <img src="<%= current_theme_image_path("sobre-azul.png") %>" /> 
+    
     <%= t(:text_busqueda) %> 
     <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
 
@@ -34,11 +34,57 @@
      <input type="submit" class="busqueda-boton" value="" />
      <input type="hidden" id="empleados2"name="empleados" />
      <input type="hidden" id="ventas2" name="ventas" />
+     <input type="hidden" id="tipo" name="tipo" value="2"/>
    </form>
   </div>
 
+<script type="text/javascript" charset="utf-8">
+  
+  function selecciona(cual) {
+    $("#busca1").attr("class", "caja-busqueda-general-opciones-item");
+    $("#busca2").attr("class", "caja-busqueda-general-opciones-item");
+    $("#busca3").attr("class", "caja-busqueda-general-opciones-item");
+    $("#busca"+cual).attr("class", "caja-busqueda-general-opciones-item-selected");
+    $("#tipo").val(cual);
+  };
+  
+</script>
 
-  <div class="caja-busqueda-input2">
+  <div class="caja-busqueda-general-opciones-titulo">
+    <%= t(:text_buscas_ofertas_demandas_o_empresas) %>
+  </div>
+  
+  <div class="caja-busqueda-general-opciones">
+    <div id="busca1" class="caja-busqueda-general-opciones-item" onclick="selecciona('1')">
+      <%= t(:text_ofertas) %>
+    </div>
+    
+    <div id="busca2" class="caja-busqueda-general-opciones-item" onclick="selecciona('2')">
+      <%= t(:text_demandas) %>
+    </div>
+    
+    <div id="busca3" class="caja-busqueda-general-opciones-item-selected" onclick="selecciona('3')">
+      <%= t(:text_empresas) %>
+    </div>
+    
+  </div>
+
+  <div class="caja-busqueda-general-opciones-titulo">
+    <%= t(:text_delimitamos_la_busqueda_a_algun_pais) %>
+  </div>
+  
+  <div class="caja-busqueda-general-opciones">
+
+    <% paises = Pais.where("total_empresas_mercado > 0 ").order("total_empresas_mercado desc") %>
+    <% for pais in paises %>
+      <div id="busca1" class="caja-busqueda-general-opciones-item" onclick="selecciona('1')">
+        <%= t(:text_ofertas) %>
+      </div>
+    <% end %>
+        
+  </div>
+  
+  <div class="caja-busqueda-general-opciones">
     <div id="porempleados" class="caja-busqueda-filtro-container" >
 
       <div class="caja-busqueda-texto-filtro">
