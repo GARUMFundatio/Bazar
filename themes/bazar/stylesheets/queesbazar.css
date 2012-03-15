@@ -1,0 +1,679 @@
+body {
+    background-color: #566477;
+}
+
+.container {
+    position: relative;
+    width: 1100px;
+    overflow: hidden;
+    background-image: url(../images/queesbazar/fondo.png);
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    margin: 0 auto !important;
+    text-align: left;
+}
+
+.header {
+    position: relative;
+    width: 1100px;
+    height: 60px;
+    overflow: hidden;
+    background-image: url(../images/queesbazar/fondo-header.png);
+    background-position: 0 0;
+    margin: 0 auto !important;
+    text-align: left;	
+}
+
+.footer {
+    position: relative;
+    width: 1100px;
+    height: 60px;
+    background-color: #000;
+    overflow: hidden;
+    margin: 0 auto !important;
+    text-align: left;	
+}
+
+.caja-logo {
+  float: left;
+  width: 190px;
+  height: 60px;
+}
+
+.caja-entrar {
+  float: right;
+  width: 120px;
+  height: 60px;
+  margin: 17px 20px !important;
+}
+
+.caja-entrar a {
+  width: 90px;
+  height: 60px;
+  margin: 17px 0px !important;
+  color: #fff;
+  font-family: Helvetica,sans-serif;
+  font-weight: bold;
+  font-size:15px;
+  opacity:.70;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+  text-decoration:none;
+}
+
+#logo {
+  float: right;
+  width: 150px;
+  margin: auto auto auto auto;
+}
+
+#logo img {
+  float: right;
+  margin: 10px;
+}
+
+#caja-nombre {
+  width: 200px;
+  height: 60px;
+  float: right;
+}
+
+h1 {
+  font-family: Helvetica,sans-serif;
+  font-weight: bold;
+  font-size:20px;
+  color: #fff;
+  padding: 0px;
+  margin: 7px;
+}
+
+h1 a {
+  color: #fff;
+  text-decoration:none;
+}
+
+h2 {
+  font-family:Helvetica,sans-serif;
+  font-weight: bold;
+  font-size:12px;
+  color: #fff;
+  padding: 0px;
+  margin: 3px 3px 3px 7px;
+}
+
+a {
+  text-decoration:none;
+}
+
+.cuerpo {
+    position: relative;
+    width: 975px;
+    overflow: hidden;
+    margin: 20px  auto auto auto;
+    padding-bottom: 1px;
+    background-color: #000;
+    text-align: left;	
+}
+
+.caja-titulo {
+  float: top;
+  bottom: 0px;
+  width: 818px;
+  height: 121px;
+  margin: 15px 0 0 40px;
+  text-align: left;
+  padding-top: 15px;
+  color: #fff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 49px;
+}
+
+.caja-des {
+  float: top;
+  bottom: 0px;
+  width: 426px;
+  height: 169px;
+  margin: 15px 0 0 40px;
+  text-align: left;
+  padding-top: 15px;
+  color: #ffffff;
+  opacity:.50;
+  filter:alpha(opacity=50);
+  filter: “alpha(opacity=50)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+
+.caja-entrar2 {
+  float: left;
+  bottom: 0px;
+  width: 240px;
+  height: 60px;
+  margin: 15px 0 0 40px;
+  text-align: left;
+  padding-top: 15px;
+  
+  color: #ffffff;
+  background-color: #000000;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.caja-entrar2-corazon {
+  float: left;
+  width: 50px;
+  height: 60px;
+  margin-top: 5px;
+  margin-left: 15px;
+  overflow: hidden;
+}
+
+.caja-entrar2-texto {
+  float: top;
+  margin-top: 4px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.caja-entrar2-texto a {
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.cuerpo2 {
+    position: relative;
+    width: 975px;
+    overflow: hidden;
+    margin: 20px  auto auto auto;
+    padding-bottom: 1px;
+    text-align: left;	
+}
+.caja-totales {
+  float: left;
+  bottom: 0px;
+  width: 243px;
+  height: 243px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  padding-top: 0px;
+  margin-left: 0px;
+  
+  color: #ffffff;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.caja-oferta {
+  float: left;
+  bottom: 0px;
+  width: 120px;
+  height: 80px;
+  margin: 0px 1px 1px 0px;
+  text-align: left;
+/*
+  padding-top: 1px;
+  margin-left: 1px;
+*/  
+  color: #ffffff;
+  background-color: #000;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.oferta-total {
+  float: left;
+  bottom: 0px;
+  width: 120px;
+  height: 40px;
+  margin: 0px 0 0px 0px;
+  text-align: center;
+
+  padding-top: 8px;
+  
+  color: #ffffff;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.oferta-texto {
+  float: left;
+  bottom: 0px;
+  width: 120px;
+  height: 39px;
+  padding-top: 1px;
+  margin: 0px 0 0 0px;
+  text-align: center;
+  
+  color: #ffffff;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+.caja-textos {
+  float: left;
+  bottom: 0px;
+  width: 243px;
+  height: 243px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  padding-top: 1px;
+  margin-left: 1px;
+  
+  color: #ffffff;
+  background-color: #000;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.textos-titulo {
+  float: left;
+  bottom: 0px;
+  width: 243px;
+  height: 40px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  padding-top: 18px;
+  padding-left: 15px;
+  
+  color: #ffffff;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.textos-parrafo {
+  float: left;
+  bottom: 0px;
+  width: 220px;
+  height: 40px;
+  padding-top: 1px;
+  padding-left: 15px;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+  
+  color: #ffffff;
+  opacity:.40;
+  filter:alpha(opacity=40);
+  filter: “alpha(opacity=40)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.textos-enlace {
+  float: left;
+  bottom: 0px;
+  width: 220px;
+  height: 20px;
+  padding-top: 1px;
+  padding-left: 1px;
+  text-align: left;
+  
+  color: #ffffff;
+
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.textos-enlace a {
+  
+  color: #ffffff;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-decoration: none;
+  
+}
+
+.caja-empresas {
+  float: left;
+  bottom: 0px;
+  width: 242px;
+  height: 80px;
+  margin: 0px 1px 1px 0px;
+  text-align: left;
+  padding-top: 1px;
+  
+  color: #ffffff;
+  background-color: #000;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.empresas-total {
+  float: left;
+  bottom: 0px;
+  width: 243px;
+  height: 40px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  padding-top: 8px;
+  padding-left: 40px;
+
+  color: #ffffff;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.empresas-texto {
+  float: left;
+  bottom: 0px;
+  width: 190px;
+  height: 39px;
+  /*
+  padding-top: 1px;
+  */
+  padding-left: 40px;
+  padding-right: -40px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  
+  color: #ffffff;
+  opacity:.60;
+  filter:alpha(opacity=60);
+  filter: “alpha(opacity=60)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* cuerpo 3 bazares cerca de ti */ 
+
+.cuerpo3 {
+    position: relative;
+    width: 975px;
+    overflow: hidden;
+    /* margin: 50px  auto auto auto; 
+    margin-left: 1px;  */
+    padding-top: 55px;
+    padding-bottom: 55px;
+    text-align: left;	
+}
+
+.caja-cerca {
+  
+  float: left;
+  bottom: 0px;
+  width: 243px;
+  height: 80px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+    
+}
+
+.texto-cerca {
+  
+  float: left;
+  bottom: 0px;
+  width: 200px;
+  height: 60px;
+  margin: 15px 0 0 10px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+    
+}
+
+
+.caja-bazar {
+  float: left;
+  bottom: 0px;
+  width: 242px;
+  height: 80px;
+  margin: 0px 1px 1px 0px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  background-color: #000;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.bazar-titulo {
+  float: left;
+  bottom: 0px;
+  width: 240px;
+  height: 20px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  padding-top: 10px;
+  padding-left: 15px;
+  
+  color: #ffffff;
+  opacity:.80;
+  filter:alpha(opacity=80);
+  filter: “alpha(opacity=80)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.bazar-totales {
+  float: left;
+  bottom: 0px;
+  width: 210px;
+  height: 39px;
+
+  padding-left: 15px;
+  padding-right: -40px;
+  margin: 0px 0 0 0px;
+  text-align: left;
+  
+  color: #ffffff;
+  opacity:.40;
+  filter:alpha(opacity=40);
+  filter: “alpha(opacity=40)”;
+  
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cuerpo4 {
+    position: relative;
+    width: 975px;
+    height: 80px;
+    background-color: #000;
+    overflow: hidden;
+/*    padding-top: 55px;
+*/
+    margin-bottom: 55px;
+    text-align: center;	
+}
+
+
+.texto-solicitar {
+  
+  float: left;
+  bottom: 0px;
+  width: 960px;
+  height: 60px;
+  margin: 25px 0  auto 0;
+  text-align: center;
+  overflow: hidden;
+  
+  color: #ffffff;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+    
+}
+
+.texto-solicitar a {
+    
+  color: #ffffff;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  text-decoration: none;  
+}
+
+.cuerpo5 {
+    position: relative;
+    width: 975px;
+    height: 243px;
+    background-color: #000;
+    overflow: hidden;
+/*    padding-top: 55px;
+*/
+    margin-bottom: 55px;
+    text-align: center;	
+}
+
+.titulo-porque {
+  
+  float: left;
+  bottom: 0px;
+  width: 960px;
+  height: 50px;
+  margin: 25px 10px  auto 30px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  opacity:.90;
+  filter:alpha(opacity=90);
+  filter: “alpha(opacity=90)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+    
+}
+
+
+.texto-porque {
+  
+  float: left;
+  bottom: 0px;
+  width: 960px;
+  height: 180px;
+  margin: 2px 1px  auto 30px;
+  text-align: left;
+  overflow: hidden;
+  
+  color: #ffffff;
+  opacity:.40;
+  filter:alpha(opacity=40);
+  filter: “alpha(opacity=40)”;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+    
+}
+
+
+/* enlaces publicos */ 
+
+#caja-correo {
+  float: right;
+  width: 320px;
+  height: 30px;
+  margin: 21px 0 0 1px;
+  text-align: left;
+  color: #fff;
+  font-family: Helvetica,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#caja-correo a {
+  color: #aaa;
+  text-decoration: none;
+  font-family: Helvetica,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* slide show */ 
+
+.caja-slide {
+    float: right;
+    width: 490px;
+    height:300px;
+}
+
+#slideshow {
+  position:relative;
+    float: top;
+    width: 200px;
+    height:300px;
+}
+
+#slideshow IMG {
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:8;
+    opacity:0.0;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+    opacity:1.0;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
+}
+
+

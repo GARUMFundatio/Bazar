@@ -1,5 +1,6 @@
 module ApplicationHelper
   
+ 
   def pageless(total_pages, url=nil, container=nil)
     opts = {
       :totalPages => total_pages,
@@ -28,6 +29,10 @@ module ApplicationHelper
 
   def sql2texto (sql)
 
+    if sql.nil? 
+      return "<span></span>"
+    end 
+    
     text = "<span>"
 
     for para in sql.split('&')

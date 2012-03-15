@@ -1,0 +1,33 @@
+<%= form_for(@favorito) do |f| %>
+  <% if @favorito.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@favorito.errors.count, "error") %><%=t(:text_prohibited_this_favorito_from_being_saved)%></h2>
+
+      <ul>
+      <% @favorito.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bazar_id %><br />
+    <%= f.text_field :bazar_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :empresa_id %><br />
+    <%= f.text_field :empresa_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

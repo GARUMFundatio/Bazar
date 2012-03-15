@@ -1,0 +1,55 @@
+
+  
+<div class="caja-empresa-titulo">
+  <div class="caja-empresa-titulo-texto" >
+    
+    <%= t(:text_informacion_general_de_tu_oferta) %>
+    
+    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      <div class="caja-empresa-cerrar-texto">
+        <%= t("text_cerrar") %>          
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% form_for @oferta, :url => "/home/actofertadatosgenerales/#{@oferta.bazar_id}/#{@oferta.id}" do |f| %>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_titulo_de_la_oferta) %>
+  </div>
+
+  <p><%= f.text_field :titulo, :placeholder => t(:text_titulo_de_la_oferta), :class => "caja-empresa-editar-input" %></p>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_texto_de_la_oferta) %>
+  </div>
+
+  <p><%= f.text_area :texto, :placeholder => t(:text_texto_de_la_oferta), :class => "caja-empresa-editar-texto" %></p>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_oferta_valida_hasta) %>
+  </div>
+
+	<script> 
+
+		/* TODO estoy hay que localizarlo dependiendo de la lengua elegida */
+
+	$(function() {
+		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+		$( "#bazarcms_oferta_fecha_hasta" ).datepicker( $.datepicker.regional[ "es" ] );
+	});
+  
+	</script> 
+
+  <p><%= f.text_field :fecha_hasta, :value => "#{@oferta.fecha_hasta.strftime('%d/%m/%Y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input" %></p>
+
+  <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
+
+<% end %>
+

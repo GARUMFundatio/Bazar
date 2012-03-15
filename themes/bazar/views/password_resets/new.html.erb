@@ -1,0 +1,29 @@
+
+<br/>
+<br/>
+
+<%= flash[:error] %><br/>
+
+
+<% form_tag password_resets_path do %>
+
+
+  <%= text_field_tag :email, nil, :placeholder => "Tu correo", :class => "login-input"%>
+  
+  <br/>
+  <br/>
+  
+  <%= submit_tag "Cambiar Contraseña", :class => "login-boton cambiar" %> 
+  
+  
+<% end %>
+
+
+<br/>
+<br/>
+<br/>
+
+<script>
+    $('input[placeholder]').placeholder();
+</script>
+

@@ -1,0 +1,131 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<%= javascript_include_tag :defaults %>
+
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
+
+<script>
+  function valida() {
+
+  var errores = 0; 
+  var tmp = "";
+
+    tmp = $('input#mensaje_asunto').val();
+    // alert ("validando asunto :("+tmp+")");
+    if ( tmp == "" ) {
+      $('input#mensaje_asunto').css('border-color','red');
+      $.scrollTo('#mensaje_asunto', 'slow');
+      $('input#mensaje_asunto').focus();
+      errores = errores + 1;
+      return false;
+    }
+    else {
+      $('input#mensaje_asunto').css('border-color','green');  
+    }
+
+    tmp = $('textarea#mensaje_texto').val();
+    // alert("validando texto: ("+tmp+")");
+    if ( tmp == "" ) {
+      $('textarea#mensaje_texto').css('border-color','red');
+      $.scrollTo('#mensaje_texto', 'slow');
+      $('textarea#mensaje_texto').focus();
+      errores = errores + 1;
+      return false;
+    }
+    else {
+      $('textarea#mensaje_texto').css('border-color','green');  
+    }
+
+
+    if (errores >= 1 ) {
+      return false;  
+    }
+    else {
+      return true;  
+    }
+
+  };
+
+</script>
+
+
+
+<div class="ficha-container">
+  
+<div class="caja-empresa-titulo">
+  <div class="caja-empresa-titulo-texto" >
+    <img src="<%= current_theme_image_path("sobre-azul.png") %>" /> 
+    <%= t(:text_envia_un_mensaje_a) %> <%= @mensaje.para_nombre %>
+    
+    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      <div class="caja-empresa-cerrar-texto">
+        <%= t("text_cerrar") %>          
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% form_for @mensaje, :url => "/home/enviarcorreo/#{@mensaje.id}" do |f| %>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_ponle_un_titulo_a_tu_mensaje) %>
+  </div>
+
+  <p><%= f.text_field :asunto, :placeholder => t(:text_ejemplo_de_asunto_de_mensaje), :class => "caja-empresa-editar-input" , :onchange => "valida();" %></p>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_que_quieres_decirles) %>
+  </div>
+
+  <p><%= f.text_area :texto, :placeholder => t(:text_escribe_aqui_tu_mensaje), :class => "caja-empresa-editar-texto", :onchange => "valida();" %></p>
+
+
+  <%= f.submit t(:text_enviar_el_mensaje), :class => "caja-empresa-editar-boton" %>
+
+<% end %>
+
+</div>
+
+
+
+<script>
+
+$(document).ready(function() {
+  
+  // $("input#mensaje_asunto").change(valida());
+  // $("textarea#mensaje_texto").change(valida());
+
+  $(".edit_mensaje").submit(function() {
+    
+    if (valida() == true ) {
+     
+      /*
+      var texto = '<div style="background-color: white; width: 100%; height: 600px"><div class="caja-empresa-editar-titulo"><br/><br/><br/><%= params[:tipo] == "O" ? t(:text_publicando_la_oferta) : t(:text_publicando_la_demanda) %><img src="<%= current_theme_image_path("spinner.gif") -%>" ></div></div>';
+
+      $("#container-mensaje").html(texto);
+      $("#container-mensaje").show();
+      $.scrollTo('#container-mensaje', 'slow');
+      */ 
+      // $("#container").hide();
+
+      $(window).unbind('beforeunload');
+
+      return true;
+    }
+
+    return false;
+  });
+  
+});
+  
+</script>

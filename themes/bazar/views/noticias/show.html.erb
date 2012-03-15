@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%=t(:text_titulo)%></b>
+  <%= @noticia.titulo %>
+</p>
+
+<p>
+  <b><%=t(:text_texto)%></b>
+  <%= @noticia.texto %>
+</p>
+
+<p>
+  <b><%=t(:text_fecha)%></b>
+  <%= @noticia.fecha %>
+</p>
+
+<p>
+  <b><%=t(:text_visible)%></b>
+  <%= @noticia.visible %>
+</p>
+
+
+<%= link_to t(:label_edit), edit_noticia_path(@noticia) %> |
+<%= link_to t(:label_back), noticias_path %>

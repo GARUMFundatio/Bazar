@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
             :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota,
-            :logo_helper
+            :logo_helper, :logo_grande_helper, :datos_oferta_remota, :helper_rating_show_ng, :helper_rating_show_detail_ng
   
   helper :all
   
@@ -93,23 +93,212 @@ class ApplicationController < ActionController::Base
      str 
    end
 
-   def logo_helper(bazar, empresa)
+   def helper_rating_show_ng(bazar, empresa)
 
       if (bazar.to_i == BZ_param("BazarId").to_i)
 
         empre = Bazarcms::Empresa.find_by_id(empresa)
 
         if !empre.nil? 
-          url = empre.logo.url(:thumb)
+          valor = empre.rating
+          nombre = empre.nombre.gsub(' ','_')
         else 
-          url = nil
+          valor = 0
+          nombre = "Sin rating"
         end 
+
+        url = "/bazarcms/ficharating/#{empresa}?bazar_id=#{bazar}"
 
       else 
 
         # si no es de este bazar le pedimos al otro bazar que nos 
         # de su rating. 
         # TODO JT esto habría que cachearlo para optimizar las comunicaciones
+
+        res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
+          logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
+          res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+        end
+
+        logger.debug "json empresa ------->"+res.inspect
+        if (res.length > 1)
+          begin
+            empre = JSON.parse(res)
+          rescue 
+
+            logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
+            valor = 0
+            expire_fragment "emp-json-#{bazar}-#{empresa}"
+           else
+             logger.debug "json empresa2 ------->"+empre.inspect
+
+             if (!empre['rating'].nil?)
+               logger.debug "json empresa3 ------->#{empre['rating']}"
+               valor = empre['rating']
+             else 
+               valor = 0
+             end 
+           end
+        else 
+          valor = 0
+        end 
+
+        url = "/bazarcms/ficharating/#{empresa}?bazar_id=#{bazar}"
+
+      end
+
+      val = "#{valor}".split('.')[0]
+      str = ""
+
+      for ii in ['1', '2', '3', '4', '5'] 
+
+        if (ii > val) 
+          str += "<img class='fichaempresa-rating-img' src='"+current_theme_image_path('estrellawhite40.png')+"'>"
+        else 
+          str += "<img class='fichaempresa-rating-img' src='"+current_theme_image_path('estrellawhite.png')+"'>"
+        end 
+
+      end 
+
+      str += ""
+      str 
+    end
+
+    def helper_rating_show_detail_ng(bazar, empresa)
+
+      logger.debug "Detalle de rating para bazar #{bazar} empresa #{empresa}"
+       if (bazar.to_i == BZ_param("BazarId").to_i)
+
+         ratings = Bazarcms::Rating.where("1 = 1")
+
+         str = ""
+         
+         valores = {"1" => 0, "2" => 0, "3" => 0, "4" => 0, "5" => 0}
+         total = 0 
+         
+         for rating in ratings
+           
+           logger.debug "rating: "+rating.inspect
+           tipo = ""
+           tipo = "ori" if (rating.ori_bazar_id == bazar.to_i && rating.ori_empresa_id == empresa.to_i)
+           tipo = "des" if (rating.des_bazar_id == bazar.to_i && rating.des_empresa_id == empresa.to_i)
+              
+           if tipo == ""
+             logger.debug "Me lo salto"
+             next
+           end 
+             
+           if (tipo == "ori")
+              valor = rating.des_valor
+              logger.debug "Me lo salto solo sacamos los que le han votado"
+              next 
+           else 
+              rat = Bazarcms::Rating.where("ori_bazar_id = ? and ori_empresa_id = ? and des_bazar_id = ? and des_empresa_id = ?",
+                                            bazar, empresa, rating.ori_bazar_id, rating.ori_empresa_id).limit(1)
+              if rat == []
+                logger.debug "Me salto esta valoración por que no ha sido correspondida"
+                next 
+              end 
+                                            
+              valor = rating.ori_valor 
+           end 
+           
+           if valor.nil?
+              logger.debug "No tiene valor!!"
+              next
+           else 
+              valores["#{valor}".split('.')[0]] += 1
+           end 
+           total += 1 
+           
+           logger.debug "Entra: id #{rating.id} valor #{valor}"
+           
+         end
+         
+         str += "<div class='fichaempresa-rating-show-detail'>"
+         str += " <div class='fichaempresa-rating-show-detail-text'> #{total} "+t(:text_empresas_han_votado)+"</div>"
+         str += "</div>" 
+         
+         for valor in valores 
+           if total > 0
+             per = valor[1] * 100 / total 
+           else 
+             per = 0 
+           end 
+           str += "<div class='fichaempresa-rating-show-detail2' style='background-size: #{per}\% auto;' 
+           onclick='document.location.href=\"/home/rating/#{bazar}/#{empresa}/#{valor[0]}\";' >"
+           str += "<div class='fichaempresa-rating-show-detail-text2'>"+t(:text_puntuar_con)
+           val = "#{valor}".split('.')[0]
+           for ii in ['1', '2', '3', '4', '5'] 
+
+             if (ii <=  val) 
+               str += "<img  src='"+current_theme_image_path('estrellawhite.png')+"' style='margin-left: 5px;'>"
+#             else 
+#               str += "<img src='"+current_theme_image_path('estrellawhite40.png')+"'>"
+             end 
+
+           end 
+           str += "</div>"+"</div>"
+         end 
+         
+       else 
+
+         # si no es de este bazar le pedimos al otro bazar que nos 
+         # de su rating. 
+         # TODO JT esto habría que cachearlo para optimizar las comunicaciones
+
+         res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
+           logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
+           res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+         end
+
+         logger.debug "json empresa ------->"+res.inspect
+         if (res.length > 1)
+           begin
+             empre = JSON.parse(res)
+           rescue 
+
+             logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
+             valor = 0
+             expire_fragment "emp-json-#{bazar}-#{empresa}"
+            else
+              logger.debug "json empresa2 ------->"+empre.inspect
+
+              if (!empre['rating'].nil?)
+                logger.debug "json empresa3 ------->#{empre['rating']}"
+                valor = empre['rating']
+              else 
+                valor = 0
+              end 
+            end
+         else 
+           valor = 0
+         end 
+
+         url = "/bazarcms/ficharating/#{empresa}?bazar_id=#{bazar}"
+
+       end
+
+
+       str += ""
+       str 
+     end
+
+   def logo_grande_helper(bazar, empresa)
+
+      if (bazar.to_i == BZ_param("BazarId").to_i)
+
+        empre = Bazarcms::Empresa.find_by_id(empresa)
+
+        if !empre.nil? 
+          url = empre.logo.url(:s223)
+        else 
+          url = nil
+        end 
+
+      else 
+
+        # si no es de este bazar le pedimos al otro bazar que nos de su logo
 
         res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
           logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
@@ -141,10 +330,60 @@ class ApplicationController < ActionController::Base
         end 
 
       end
-
-
+      
       url
     end
+
+    def logo_helper(bazar, empresa)
+
+       if (bazar.to_i == BZ_param("BazarId").to_i)
+
+         empre = Bazarcms::Empresa.find_by_id(empresa)
+
+         if !empre.nil? 
+           url = empre.logo.url(:thumb)
+         else 
+           url = nil
+         end 
+
+       else 
+
+         # si no es de este bazar le pedimos al otro bazar que nos de su logo
+
+         res = Rails.cache.fetch("emp-json-#{bazar}-#{empresa}", :expires_in => 8.hours) do
+           logger.debug "----> no estaba cacheado emp-json-#{bazar}-#{empresa}"
+           res = dohttpget(bazar, "/api/infoempresa.json/#{empresa}")
+         end
+
+         logger.debug "json empresa ------->"+res.inspect
+         if (res.length > 1)
+           begin
+             empre = JSON.parse(res)
+           rescue 
+
+             logger.debug "OJO ---> No es parseable este json: #{res} de emp-json-#{bazar}-#{empresa}"
+             url = nil
+             expire_fragment "emp-json-#{bazar}-#{empresa}"
+            else
+              logger.debug "json empresa2 ------->"+empre.inspect
+
+              if (!empre['logo'].nil?)
+                logger.debug "json empresa3 ------->#{empre['logo']}"
+                cluster = Cluster.find(bazar)
+                url = "#{cluster.url}/"+empre['logo']
+              else 
+                url = nil
+              end 
+            end
+         else 
+           url = nil
+         end 
+
+       end
+
+
+       url
+     end
 
 
   
@@ -180,6 +419,31 @@ class ApplicationController < ActionController::Base
       
    end 
    
+   def datos_oferta_remota (bazar, oferta)
+                 
+     res = Rails.cache.fetch("ofe-json-#{bazar}-#{oferta}", :expires_in => 8.hours) do
+       logger.debug "----> no estaba cacheado ofe-json-#{bazar}-#{oferta}"
+       res = dohttpget(bazar, "/api/infooferta.json/#{oferta}")
+     end
+       
+     if (res.length > 1)
+       begin
+         ofe = JSON.parse(res)
+       rescue 
+         
+         logger.debug "OJO ---> No es parseable este json: #{res} de ofe-json-#{bazar}-#{oferta}"
+         ofe = nil
+         expire_fragment "ofe-json-#{bazar}-#{oferta}"
+       else
+          logger.debug "json empresa2 ------->"+ofe.inspect
+        end
+     else 
+       ofe = nil
+     end 
+     
+     ofe
+      
+   end
   private
     def current_user_session
       logger.debug "ApplicationController::current_user_session"
@@ -316,7 +580,11 @@ class ApplicationController < ActionController::Base
          logger.debug "dohttpget -------------> "+response.inspect
          case response.curl_return_code
          when 0
-           return response.body
+           if response.code == 404 
+             return "404"
+           else 
+             return response.body
+           end 
          else
            logger.debug "ERROR en la petición ---------->"+response.inspect
            return ""

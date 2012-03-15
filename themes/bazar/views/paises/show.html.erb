@@ -1,0 +1,90 @@
+<% if !current_user.nil? %>
+	<a class="volver-home-link" href="/home"><%=t(:text_volver_a_la_pagina_de_busquedas)%></a>
+<% end %>
+
+<h3 class="page-title"><%=t(:text_datos_de)%> <%= @pais.descripcion -%></h3>
+
+<table id="results" class="tabla" cellspacing="0">
+
+	<tr>
+		<td>
+			<b><%=t(:text_nombre)%></b>
+		</td>
+
+		<td>
+			<%= link_to(@pais.descripcion, paises_path+'/'+@pais.friendly_id) %> 
+		</td>
+
+	</tr>
+	<tr>
+		<td>
+			<b><%=t(:text_empresas_en_este_bazar)%></b>
+		</td>
+		
+		<td>
+			<%= @pais.total_empresas_bazar %>
+		</td>
+
+	</tr>
+	<tr>
+		<td>
+			<b><%=t(:text_total_empresas_en_la_red)%></b>
+		</td>
+
+		<td>
+			<%= @pais.total_empresas_mercado %>
+		</td>
+
+	</tr>
+	
+</table>
+
+<br />
+
+<h3 class="page-title"><%=t(:text_empresas_de_este_bazar_ubicadas_en)%><%= @pais.descripcion -%></h3>
+
+<table id="results" class="tabla" cellspacing="0">
+	
+<% for ubicacion in Bazarcms::Ubicacion.all %>
+
+<% if !ubicacion.ciudad.nil? %>
+	<% if ubicacion.ciudad.pais.id == @pais.id %>
+	<tr>
+
+		<td>
+			<% empre = Bazarcms::Empresa.find(ubicacion.empresa_id) %>
+			<%= link_to(empre.nombre, '/bazarcms/empresas/show2/'+empre.friendly_id) %>
+		</td>
+
+		<td>
+			<%= ubicacion.desc %>
+		</td>
+
+		<td>
+			<%= link_to(ubicacion.ciudad.descripcion, '/ciudades/'+ubicacion.ciudad.friendly_id) %>
+		</td>
+		
+	</tr>
+	
+	<% end %>
+<% end %>	
+	
+<% end %>
+
+</table>
+
+<% if current_user.nil? %>
+
+<br/>
+<br/>
+
+<b><%=t(:text_es_necesario_registrarse_para_poder_usar_bazar)%></b>
+
+<br/>
+<br/>
+
+<a class="volver-home-link" href="/home/datos"><%=t(:text_los_datos_de_este_bazar)%></a>
+<a class="volver-home-link" href="/home/registrarse"><%=t(:text_darse_de_alta_en_este_bazar)%></a>
+<a class="volver-home-link" href="/home/bazares"><%=t(:text_que_es_un_bazar)%></a>
+
+<% end %>

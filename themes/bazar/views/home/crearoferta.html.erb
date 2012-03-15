@@ -1,0 +1,383 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<%= javascript_include_tag :defaults %>
+
+<%= javascript_include_tag(current_theme_javascript_path('jquery.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
+
+<script>
+
+function cancelar() {
+  
+  parent.jQuery.fancybox.close();
+  /* de momento la dejamos sin borrar por si es un error
+  $.ajax({type: 'POST',
+          url: '/home/cancelaroferta/<%= @oferta.id %>'
+          });
+  */
+  
+}
+
+</script>
+
+<div id="container-mensaje" class="container-empresa-editar" style="display:none;">
+</div>
+
+<div id="container" class="container-empresa-editar">
+
+<% form_for @oferta, :url => "/home/publicaroferta/#{@oferta.id}" do |f| %>
+  
+<div class="caja-empresa-editar">
+
+  <div class="caja-empresa-titulo">
+    <div class="caja-empresa-titulo-texto">
+      <% if params[:tipo] == "O"%>
+        <%= t(:text_publicar_una_nueva_oferta) %>
+      <% else %>
+        <%= t(:text_publicar_una_nueva_demanda) %>
+      <% end %>
+      
+      <div class="caja-empresa-cerrar" onclick="cancelar();">
+
+        <div class="caja-empresa-cerrar-icono">
+          <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+        </div>
+        <div class="caja-empresa-cerrar-texto">
+          <%= t("text_cerrar") %>          
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+
+
+    <div id="oferta-titulo" class="caja-empresa-editar-titulo">
+      <%= t(:text_que_titulo_quieres_ponerle) %>
+    </div>
+    
+    <% @oferta.titulo = "" if @oferta.titulo == "nil" %>
+    <p><%= f.text_field :titulo, :placeholder => t(:text_ej_sillas_de_plastico_personalizadas), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
+
+    
+    <div id="oferta-fecha" class="caja-empresa-editar-titulo">
+      <% if params[:tipo] == "O"%>
+        <%= t(:text_hasta_cuando_es_valida_la_oferta) %>
+      <% else %>
+        <%= t(:text_hasta_cuando_es_valida_la_demanda) %>
+      <% end %>
+    </div>
+
+  	<script> 
+
+  		/* TODO estoy hay que localizarlo dependiendo de la lengua elegida */
+
+  	$(function() {
+  		$.datepicker.setDefaults( $.datepicker.regional[ "es" ] );
+  		$( "#bazarcms_oferta_fecha_hasta" ).datepicker({minDate: 0
+  		                                              },
+  		                                                $.datepicker.regional[ "es" ]
+  		                                              );
+  	});
+
+  	</script> 
+
+    <p><%= f.text_field :fecha_hasta, :value => "#{DateTime.now.strftime('%d/%m/%Y')}", :placeholder => t(:text_oferta_valida_hasta), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
+
+    <div id="oferta-texto" class="caja-empresa-editar-titulo">
+      <%= t(:text_describela_un_poco) %>
+    </div>
+
+    <p><%= f.text_area :texto, :placeholder => t(:text_no_te_extiendas_demasiado), :class => "caja-empresa-editar-texto", :onchange => "valida();" %></p>
+
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_hay_alguna_pagina_web_con_mas_informacion) %>
+    </div>
+
+    <p><%= f.text_field :url, :placeholder => "http://www.com/offer", :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
+
+
+</div>
+
+<div class="caja-empresa-container-gris">
+  <div class="caja-empresa-editar-gris" >
+  
+    <div class="caja-empresa-editar-titulo-corto">
+      <%= t(:text_a_que_tipo_de_empresa_va_dirigida) %>
+    </div>
+
+    <p>
+      <textarea id="tags" class="caja-empresa-editar-texto-corto" name="tags" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"><%= @oferta.palabrasclave_list %></textarea>
+    </p>
+  
+    <div class="caja-empresa-editar-titulo-corto">
+      <% if params[:tipo] == "O"%>
+        <%= t(:text_que_ambito_quieres_darle_a_la_oferta) %>
+      <% else %>
+        <%= t(:text_que_ambito_quieres_darle_a_la_demanda) %>    
+      <% end %>
+    </div>
+    <div>
+      <br/>
+      <select id="bazarcms_oferta_ambito" name="bazarcms_oferta[ambito]" class="caja-empresa-editar-input-corto" onchange="monta();">
+        <% for rango in Bazarcms::Oferta.Ambitos.sort{|a,b| a[1]<=>b[1]} %>
+      
+          <% if @oferta.ambito.to_i == rango[1].to_i %>  
+            <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
+          <% else %>
+            <option value="<%= rango[1] %>"><%= rango[0] %></option>
+          <% end %>
+        <% end %>
+      </select>
+      <br/>
+    </div>
+  
+  </div>
+  
+  <div id="caja-empresas-resultado-busqueda" class="caja-empresa-resultados-gris">
+  
+    <div id="resultado" class="caja-empresas-resultado-busqueda-cifra2">Todas</div> 
+    
+    <div class="caja-empresas-resultado-busqueda-texto">
+    <%= t(:text_empresas_con_estos_criterios) %>
+    </div>
+
+  </div>
+  
+</div>
+
+  <div class="caja-empresa-editar-largo" >
+  
+    <div class="caja-empresa-editar-titulo-corto">
+      <%= t(:text_quieres_anadir_alguna_fotografia) %>
+    </div>
+  
+  </div>
+
+  <div class="caja-empresa-editar-imagenes" >
+
+  
+    <div id="imagenes">
+    
+    </div>
+
+  </div>
+
+  <div class="caja-empresa-editar">
+
+  <% if params[:tipo] == "O"%>
+    <%= f.submit t(:text_publicar_esta_oferta), :class => "caja-empresa-editar-boton" %>
+  <% else %>
+    <%= f.submit t(:text_publicar_esta_demanda), :class => "caja-empresa-editar-boton" %>
+  <% end %>
+
+  </div>
+
+
+  
+<br/>
+<% end %>
+
+
+</div>
+
+<script>
+
+var url    = "pals=&ambito=0";
+var oldurl = "";
+var processing = 0;
+
+<% paises = "" %> 
+<% ubis = Bazarcms::Empresa.find_by_id(current_user.id).ubicaciones %> 
+<% for ubi in ubis 
+     if !paises.include? ubi.ciudad.pais_codigo 
+      paises += ubi.ciudad.pais_codigo+"+"
+     end 
+   end 
+%>
+
+var paises="<%= paises -%>";
+
+function monta() {
+  tags = encodeURI($("#tags").val());
+  ambito=$("#bazarcms_oferta_ambito").val();
+  if (ambito == "0") {
+    url = "pals="+tags+"&ambito="+ambito+"&paises=";    
+  }
+  else {
+    url = "pals="+tags+"&ambito="+ambito+"&paises="+paises;
+  }
+  
+  // $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
+ //  console.log(url+" ---> "+processing);
+}
+
+function estima() {
+  
+  clearTimeout(revisa);
+  
+  if (processing == 1) {
+    revisa = setTimeout("estima()",100);
+    // console.log("----> está en otra petición");   
+    return;
+    }
+    
+  if (oldurl == url) {
+    // console.log("----> ya la habiamos hecho");   
+    revisa = setTimeout("estima()",1000);    
+    return;
+  }
+   
+  processing = 1; 
+  
+  oldurl = url; 
+  
+  $("#resultado").html("<img src='<%= current_theme_image_path('spinner.gif') %>' />");
+  
+  $("#resultado").load("/home/empresasestimadas?"+url, function(response, status, xhr) {
+    if (status == "error") {
+      var msg = "Error: ";
+      // console.log(msg + xhr.status + " " + xhr.statusText);
+      processing = 0; 
+      revisa = setTimeout("estima()", 400);
+    }
+    else {
+      if (parseInt(response) > 999) {
+        $("#resultado").attr("class", "caja-empresas-resultado-busqueda-cifra2");
+      }
+      else {
+        $("#resultado").attr("class", "caja-empresas-resultado-busqueda-cifra");        
+      }
+     
+      $("#resultado").html(response);      
+      processing = 0; 
+      // console.log("ya está -> "+url);
+
+      if (oldurl == url) { 
+        revisa = setTimeout("estima()", 1000);
+      }
+      else {
+        revisa = setTimeout("estima()", 100);        
+      } 
+      
+    }
+  });  
+  
+  
+};
+
+function subirimagen() {
+  
+  // $("#subirfoto").submit(); 
+  var data = new FormData();
+  jQuery.each($('#ofertasimagen_imagen')[0].files, function(i, file) {
+      data.append('imagen', file);
+  });
+    
+  $.ajax({type: "POST",
+          url: "/home/subirimagenoferta/<%= @oferta.id %>",
+          data: data,
+          cache: false,
+          contentType: false,
+          processData: false,
+          success: function(){$("#imagenes").load("/home/imagenesoferta/<%= @oferta.id -%>");}
+          });
+
+  $('#cargaimagen').html('Subiendo foto <img src=\'<%= current_theme_image_path('spinner.gif') -%>\'>');
+  return false;
+  
+}
+
+function valida() {
+
+var errores = 0; 
+var tmp = "";
+
+  tmp = $('input#bazarcms_oferta_titulo').val();
+  if ( tmp == "" ) {
+    $('input#bazarcms_oferta_titulo').css('border-color','red');
+    $.scrollTo('#oferta-titulo', 'slow');
+    $('input#bazarcms_oferta_titulo').focus();
+    errores = errores + 1;
+    return false;
+  }
+  else {
+    $('input#bazarcms_oferta_titulo').css('border-color','green');  
+  }
+  
+  tmp = $('textarea#bazarcms_oferta_texto').val();
+  if ( tmp == "" ) {
+    $('textarea#bazarcms_oferta_texto').css('border-color','red');
+    $.scrollTo('#oferta-fecha', 'slow');
+    $('textarea#bazarcms_oferta_texto').focus();
+    errores = errores + 1;
+    return false;
+  }
+  else {
+    $('textarea#bazarcms_oferta_texto').css('border-color','green');  
+  }
+  
+  
+  if (errores >= 1 ) {
+    return false;  
+  }
+  else {
+    return true;  
+  }
+
+};
+
+$(".edit_bazarcms_oferta").submit(function() {
+
+  if (valida() == true ) {
+  
+    var texto = '<div style="background-color: white; width: 100%; height: 600px"><div class="caja-empresa-editar-titulo"><br/><br/><br/><%= params[:tipo] == "O" ? t(:text_publicando_la_oferta) : t(:text_publicando_la_demanda) %><img src="<%= current_theme_image_path("spinner.gif") -%>" ></div></div>';
+     
+    $("#container-mensaje").html(texto);
+    $("#container-mensaje").show();
+    $.scrollTo('#container-mensaje', 'slow');
+    
+    // $("#container").hide();
+    
+    clearTimeout(revisa);
+    $(window).unbind('beforeunload');
+    // setTimeout("parent.jQuery.fancybox.close()", 4000);
+    
+    return true;
+  }
+
+  return false;
+});
+
+
+var revisa = setTimeout("estima()",1000);
+
+
+$(window).bind('beforeunload', function(){
+		return '';
+});
+
+
+$(window).bind('unload', function(){
+/*
+  $.ajax({type: 'POST',
+          async: false,
+          url: '/home/cancelaroferta/<%= @oferta.id %>'
+          });
+		console.log("saliendo. ahora debería borrar la oferta ...");
+*/
+});
+
+
+monta();
+$("#imagenes").load("/home/imagenesoferta/<%= @oferta.id -%>");
+
+
+</script>
+

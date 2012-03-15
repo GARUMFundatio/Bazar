@@ -86,14 +86,16 @@ class ApiController < ApplicationController
       @info = {:id => @empresa.id,
                   :estado => "OK",
                   :nombre => @empresa.nombre,
+                  :desc => @empresa.desc,
                   :rating => @empresa.rating,
                   :rating_cliente => @empresa.rating_cliente,
                   :rating_total_cliente => @empresa.rating_total_cliente,
                   :rating_proveedor => @empresa.rating_proveedor,
                   :rating_total_proveedor => @empresa.rating_total_proveedor,
                   :url => @empresa.url,
-                  :logo => @empresa.logo.url(:thumb),
+                  :logo => @empresa.logo.url(:s223),
                   :fundada => @empresa.fundada,
+                  :email => User.find(@empresa.id).email,
                   :consultas => Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas where empresa_id = #{@empresa.id}")}
     else
        
@@ -113,6 +115,34 @@ class ApiController < ApplicationController
     end
         
   end
+  
+  def infooferta
+    
+    @oferta = Bazarcms::Oferta.find_by_id(params[:id])
+    
+    if !@oferta.nil?
+    
+      @info = @oferta.attributes 
+      @info[:estado] = "OK"
+      
+    else
+       
+      @info = {:id => -1,
+                  :estado => "ERROR",
+                  :nombre => "No encontrada"
+                }
+    end 
+    
+    respond_to do |format|
+        # no tiene mucho sentido format.html # empresas.html.erb
+        format.html { redirect_to "/api/ejemploinfooferta"}
+        format.xml { render }
+        format.json { render :json => @info }
+    end
+        
+  end
+  
+  
   
   def perfiles
     
@@ -163,5 +193,29 @@ class ApiController < ApplicationController
         
   end
 
+  def buscaempresas
+    
+    query = "*"
+    tipo = "OR"
+    @info = []
+    
+    if !params[:q].nil? 
+      query = params[:q]
+    end 
+    
+    if !params[:tipo].nil? 
+      tipo = params[:tipo]
+    end 
+    
+    resultados = Bazarcms::Empresa.find_with_ferret(query, :limit => :all)
+    for resu in resultados 
+      @info << resu.attributes
+    end 
+   
+    respond_to do |format|
+        format.json { render :json => @info }
+    end
+    
+  end
 
 end

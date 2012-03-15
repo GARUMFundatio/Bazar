@@ -1,0 +1,123 @@
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+
+<%= render(:partial => "busquedaofertas") %>
+
+<div class="caja-seccion" id="ofertas-recomendadas">
+  <div class="resultado-indice">
+    <div id="resultadototal" class="resultado-indice-texto">
+      <%= @ofertasresultados.count -%> 
+      <% if params[:tipo] == "O" %>
+        <%= t(:text_ofertas) %>
+      <% else %>
+        <%= t(:text_demandas) %>
+      <% end %>
+    </div>
+    
+    <div class="resultado-filtro ilumina10" onclick="filtra('recientes');">
+      <div class="resultado-filtro-icono" >
+        <img src="<%= current_theme_image_path('calendar.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        <%= t(:text_ver_las_mas_recientes_primero) %>
+      </div>
+    </div>
+
+    <div class="resultado-filtro ilumina10" onclick="filtra('cercanas');">
+      <div class="resultado-filtro-icono">
+        <img src="<%= current_theme_image_path('world.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        <%= t(:text_ver_las_mas_cercanas_geográficamente_primero) %>
+      </div>
+    </div>
+
+    <div class="resultado-filtro ilumina10" onclick="filtra('mibazar');">
+      <div class="resultado-filtro-icono" >
+        <img src="<%= current_theme_image_path('mibazar.png') %>">
+      </div>
+      <div class="resultado-filtro-texto">
+        <%= t(:text_ver_solo_empresas_de_mi_bazar) %>
+      </div>
+    </div>
+    
+  </div>
+  
+  <script>
+  
+  function filtra(tipo) {
+    $('#resultados').fadeOut("slow");
+    $("#resultados").load("/home/filtraresultadosofertas/"+"<%= @ofertasresultados[0].ofertasconsulta_id -%>"+"/"+tipo).fadeIn("slow");
+  };
+  
+  function muestraconfirmacion (bazar, oferta) {
+    $('#ofe-conf-'+bazar+'-'+oferta).show(); 
+    $('#ofe-del-'+bazar+'-'+oferta).hide();
+    return false;
+  };
+
+  function borraoferta (bazar, oferta) {
+    $('#ofe-'+bazar+'-'+oferta).fadeOut('slow');
+    $.ajax({
+            type: "POST",
+            url: "/home/cancelaroferta/"+oferta
+    });
+    return false;
+  };
+
+  </script>
+  
+  <div id="resultados" class="seccion-contenido">
+    
+    <% @item = 0 %>
+    <% @total = @ofertasresultados.count %>
+    <% @pagina = 1 %>
+    
+    <% if @ofertasresultados.count > 0 %>
+      <%= render(:partial => "ofertaresultado", :collection => @ofertasresultados) %>
+    <% else %>
+      <div class="seccion-cajon" >
+       <div class="cajon-cuerpo">
+         <%= t(:text_no_se_ha_encontrado_ninguna) %> <%= t(:text_prueba_con_otra_busqueda) %>
+       </div>
+      </div>
+    <% end %>
+    
+  </div>
+
+</div>
+
+<a id="fichaoferta" class="fancybox.ajax" href=""></a>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  $('.ilumina10').transify({opacityOrig:.10,opacityNew:.40,fadeSpeed:500});
+  
+  $("#fichaoferta").fancybox({
+		 'width' : 850,
+		 // 'height' : 'auto',
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'modal': true,
+		 'type' : 'iframe'
+	 });
+	 
+	 $('.item-delete-icono-confirm').mouseleave(function() {
+     $('.item-delete-icono-confirm').hide();
+     $('.item-delete-icono').show();
+   });
+   
+   
+  $('input[placeholder]').placeholder();
+
+ });
+
+
+ 
+</script>

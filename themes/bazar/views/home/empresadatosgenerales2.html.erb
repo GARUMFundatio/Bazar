@@ -1,0 +1,152 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>  
+  
+<div class="caja-empresa-editar">
+
+  <div class="caja-empresa-titulo">
+    <p><%= t(:text_informacion_general_sobre_tu_empresa) %> </p>
+  </div>
+
+  <% form_for @empresa, :url => "/home/actempresadatosgenerales/#{BZ_param("BazarId")}/#{@empresa.id}" do |f| %>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_fundada) %>
+    </div>
+
+    <p><%= f.text_field :fundada, :placeholder => t(:text_fundada), :class => "caja-empresa-editar-input" %></p>
+
+    <div class="caja-empresa-editar-titulo">
+      <p><%= t(:text_ambito) %> </p>
+    </div>
+    
+    <div class="caja-empresa-editar-ambito">
+      
+      <% Bazarcms::Empresa.Ambitos.sort_by { |k,v| v  }.each do |k, v| %>
+        
+        <% if @empresa.ambito == v %>
+        <div id="<%= v -%>" class="empresa-editar-ambito-selected" onclick="selambito('<%= v -%>');">
+        <% else %>
+        <div id="<%= v -%>" class="empresa-editar-ambito" onclick="selambito('<%= v -%>');">        
+        <% end %>
+          <%= k %>
+        </div>
+        
+      <% end %>
+      
+    </div>
+
+    <p><%= f.hidden_field :ambito, :class => "caja-empresa-editar-input" %></p>
+
+    <div class="caja-empresa-editar-titulo">
+      <p><%= t(:text_sector) %> </p>
+    </div>
+    
+    <div class="caja-empresa-editar-ambito">
+      
+      <% Bazarcms::Empresa.Sectores.sort_by { |k,v| v  }.each do |k, v| %>
+        
+        <% if @empresa.sector == v %>
+        <div id="<%= v -%>" class="empresa-editar-sector-selected" onclick="selsector('<%= v -%>');">
+        <% else %>
+        <div id="<%= v -%>" class="empresa-editar-sector" onclick="selsector('<%= v -%>');">        
+        <% end %>
+          <img src="<%= current_theme_image_path("sector#{v}black.png") %>" width="40px" />
+        </div>
+        
+      <% end %>
+      
+    </div>
+
+    <p><%= f.hidden_field :sector, :class => "caja-empresa-editar-input" %></p>
+
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_numero_de_empleados) %>
+    </div>
+
+    <p>
+      <% rangos = Bazarcms::Empresasdato.RangoEmpleados.sort{|a,b| a[1]<=>b[1]} %>
+
+      <select id="bazarcms_empresasdato_empleados" name="bazarcms_empresasdato[empleados]" class="caja-empresa-editar-input">
+        <% for rango in Bazarcms::Empresasdato.RangoEmpleados.sort{|a,b| a[1]<=>b[1]} %>
+        
+          <% if @empresasdatos.empleados.to_i == rango[1].to_i %>  
+            <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
+          <% else %>
+            <option value="<%= rango[1] %>"><%= rango[0] %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </p>
+    
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_facturacion_anual) %>
+    </div>
+
+    <p>
+
+      <select id="bazarcms_empresasdato_ventas" name="bazarcms_empresasdato[ventas]" class="caja-empresa-editar-input">
+        <% for rango in Bazarcms::Empresasdato.RangoDatos.sort{|a,b| a[1]<=>b[1]} %>
+        
+          <% if @empresasdatos.ventas.to_i == rango[1].to_i %>  
+            <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
+          <% else %>
+            <option value="<%= rango[1] %>"><%= rango[0] %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </p>
+
+    <div class="caja-empresa-editar-titulo">
+      <%= t(:text_palabras_clave_actividad) %>
+    </div>
+    
+    <p><%= f.text_area :actividad_list, :size => "60x4", :placeholder => t(:text_palabras_clave_actividad), :class => "caja-empresa-editar-texto" %></p>
+
+    <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
+
+  <% end %>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<script>
+  
+   $('.edit_bazarcms_empresa').submit(function(){
+      var params = $(this).serialize();
+      var self = this;
+
+      $.post(
+        '/home/actempresadatosgenerales/<%= BZ_param("BazarId") -%>/<%= @empresa.id -%>',
+          params,
+          function(data){
+            parent.location.reload();
+            // window.alert(data);
+            console.log(data);
+          },
+          'html'
+        );
+      return false;
+  });
+  
+ // $('input[placeholder]').placeholder();
+  
+  function selambito(cual) {
+    $(".empresa-editar-ambito-selected").attr("class", "empresa-editar-ambito");
+    $("#"+cual).attr('class', "empresa-editar-ambito-selected");
+    $("#bazarcms_empresa_ambito").val(cual);
+    //window.alert($(this).attr("class")+" -->"+$(this).attr('id')+":"+$(this).html());
+  }
+  
+  function selsector(cual) {
+    $(".empresa-editar-sector-selected").attr("class", "empresa-editar-sector");
+    $("#"+cual).attr('class', "empresa-editar-sector-selected");
+    $("#bazarcms_empresa_sector").val(cual);
+    //window.alert($(this).attr("class")+" -->"+$(this).attr('id')+":"+$(this).html());
+  }
+  
+</script>

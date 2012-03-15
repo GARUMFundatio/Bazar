@@ -1,0 +1,89 @@
+<% if @item == 0 %>
+  <div id="pag1">
+<% end %>
+
+<% 
+
+if empresaresultado.cluster_id == BZ_param("BazarId").to_i      
+  empre = Bazarcms::Empresa.find_by_id(empresaresultado.empresa_id)
+  if (!empre.nil?)
+    f = empre.attributes
+  end 
+else 
+  f = datos_empresa_remota(empresaresultado.cluster_id, empresaresultado.empresa_id)
+end 
+%>
+
+<div class="seccion-cajon" onClick="window.location = '/home/fichaempresa/<%= empresaresultado.cluster_id -%>/<%= empresaresultado.empresa_id -%>';">
+  
+  <div class="empresa-fondo">
+    <% img = logo_grande_helper(empresaresultado.cluster_id, empresaresultado.empresa_id) %>
+    <% if !img.nil? %>
+      <% if !img.include?("sinlogo.png") %>
+        <%= image_tag(img) %> 
+      <% else %>
+        <%= empresaresultado.info -%>          
+      <% end %>
+    <% else %>
+      <%= empresaresultado.info -%>  
+    <% end %>
+    
+    <div class="empresa-descripcion">
+      <% if !f['desc'].nil? %>
+        <% if f['desc'].length > 1 %>
+          <%= truncate_html(f['desc'], :length => 60).html_safe -%>
+        <% else %>
+          <%= truncate_html(empresaresultado.info, :length => 60).html_safe -%>
+        <% end %>
+      <% else %>
+        <%= truncate_html(empresaresultado.info, :length => 60).html_safe -%>
+      <% end %>
+    </div>
+
+  </div>
+  
+</div>
+
+<% @item += 1 %>
+
+<% if @item % 15 == 0 || @item == @total%>
+ 
+
+
+  <div class="cajon-paginado">
+
+    <% if @pagina != (@total/15) + 1  %>
+
+    <div class="cajon-paginado-boton ilumina5" onclick="$('#pag<%= @pagina -%>').hide(); $('#pag<%= @pagina+1 -%>').show();$.scrollTo('#busqueda', 'slow')">
+      <div class="cajon-paginado-boton-texto">
+        Empresas siguientes
+      </div>
+    </div>
+    
+    <% end %>
+
+    <% if @pagina != 1 %>
+    
+    <div class="cajon-paginado-boton ilumina5"  onclick="$('#pag<%= @pagina -%>').hide(350); $('#pag<%= @pagina-1 -%>').show(350); $.scrollTo('#busqueda', 'slow');">
+      <div class="cajon-paginado-boton-texto">
+        Empresas anteriores
+      </div>
+    </div> 
+
+    <% end %>
+    
+    <div class="cajon-paginado-pagina">
+      <div class="cajon-paginado-pagina-texto">
+        Página <%= @pagina -%> de <%= (@total / 15) + 1 -%>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  
+  <% @pagina += 1 %>
+
+  <% if @item != @total %>
+    <div id="pag<%= @pagina -%>" style="display:none">
+  <% end %>
+<% end %>

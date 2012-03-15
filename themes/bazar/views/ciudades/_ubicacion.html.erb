@@ -1,0 +1,18 @@
+<% if !ubicacion.ciudad.nil? %>
+<tr>
+
+	<td>
+		
+		<% ciudad = Ciudad.find(ubicacion.ciudad) %>
+		
+		<%= link_to(ciudad.descripcion, ciudades_path+'/'+ciudad.friendly_id) %>, 
+		<%= link_to(ciudad.pais.descripcion, paises_path+'/'+ciudad.pais.friendly_id) %>
+	
+	</td>
+
+	<td>
+		<%= link_to(Bazarcms::Empresa.find(ubicacion.empresa_id).nombre, bazarcms_empresa_path(ubicacion.empresa_id, :bazar_id => BZ_param('BazarId'))) %>
+	</td>
+
+</tr>
+<% end %>

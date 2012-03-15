@@ -1,0 +1,244 @@
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+
+<!-- Sección menús -->
+<div class="caja-seccion">
+  <div class="caja-indice">
+  &nbsp;
+  </div>
+  
+  <div class="seccion-contenido">
+    
+    <div class="seccion-header">
+      Resumen
+    </div>
+
+    <div class="seccion-subheader">
+      Lo más nuevo y relevante
+    </div>
+
+    <div class="seccion-menu">
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas-recomendadas', 'slow')">
+        <a href="#">Ofertas recomendadas</a>
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#demandas-recomendadas', 'slow')">
+        <a href="#">Demandas recomendadas</a>
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#empresas-interesantes', 'slow')">
+        <a href="#">Empresas interesantes</a>
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#empresas-nuevas', 'slow')">
+        <a href="#">Empresas nuevas en Bazar</a>
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#tu-empresa', 'slow')">
+        <a href="#">Tu empresa en Bazar</a>
+      </div>
+
+      <div class="seccion-menu-item" onclick="$.scrollTo('#datos-bazar', 'slow')">
+        <a href="#">Datos de este Bazar</a>
+      </div>
+      
+    </div>
+
+  </div>
+
+</div>
+
+<!-- sección ofertas recomendadas -->
+
+
+<script>
+
+function muestraconfirmacion (bazar, oferta) {
+  $('#ofe-conf-'+bazar+'-'+oferta).show(); 
+  $('#ofe-del-'+bazar+'-'+oferta).hide();
+};
+
+function borraoferta (bazar, oferta) {
+  $('#ofe-'+bazar+'-'+oferta).fadeOut('slow');
+  $.ajax({
+          type: "POST",
+          url: "/home/cancelaroferta/"+oferta
+  });
+};
+
+</script>
+
+<div class="caja-seccion" id="ofertas-recomendadas">
+  <div class="caja-indice">
+  Ofertas <br/>recomendadas
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <%= render(:partial => "oferta", :collection => @ofertas) %>
+
+  </div>
+
+</div>
+
+<!-- sección demandas recomendadas -->
+
+<div class="caja-seccion" id="demandas-recomendadas">
+  <div class="caja-indice">
+  Demandas <br/>recomendadas
+  </div>
+  
+  <div class="seccion-contenido">
+    <%= render(:partial => "oferta", :collection => @demandas) %>
+  </div>
+
+</div>
+
+
+<!-- sección Empresas recomendadas -->
+
+<div class="caja-seccion" id="empresas-interesantes">
+  <div class="caja-indice">
+  Empresas que <br/>pueden interesarte
+  </div>
+  
+  <div class="seccion-contenido">
+    <%= render(:partial => "empresa", :collection => @empresasrecomendadas) %>
+  </div>
+
+</div>
+
+<!-- sección Empresas nuevas -->
+
+<div class="caja-seccion" id="empresas-nuevas">
+  <div class="caja-indice">
+  Empresas nuevas <br/>en tu bazar
+  </div>
+  <div class="seccion-contenido">
+  	<%= render(:partial => "empresa", :collection => @empresasrecientes) %>
+  </div>
+
+</div>
+
+<!-- sección tu empresa -->
+
+<div class="caja-seccion" id="tu-empresa">
+  <div class="caja-indice">
+  Tu empresa en el <br/> bazar
+  </div>
+  
+  <div class="seccion-contenido">
+    
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        veces guardada como favorita 
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        ofertas son favoritas 
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        demandas son favoritas 
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        visitas 
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        valoración de tu empresa 
+      </div>    
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- datos del bazar  -->
+
+<div class="caja-seccion" id="datos-bazar">
+  <div class="caja-indice">
+  Los datos de <br/> <%= h BZ_param("Titular") %>
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+    <div class="seccion-cajon ilumina5">
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        empresas 
+      </div>
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+      <div class="seccion-cifra">
+        <%= @totalofertas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        ofertas
+      </div> 
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+      <div class="seccion-cifra">
+        <%= @totaldemandas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        demandas
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+
+<a id="fichaoferta" class="fancybox.ajax" href=""></a>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans25').transify({opacityOrig:.25});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  
+ });
+
+ $("#fichaoferta").fancybox({
+		 'width' : 831,
+		 // 'height' : 'auto',
+    'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
+
+</script>

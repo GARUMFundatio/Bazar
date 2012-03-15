@@ -1,0 +1,30 @@
+
+<div class="caja-empresa-titulo">
+  <div class="caja-empresa-titulo-texto" >
+    
+    <%= t(:text_informacion_general_de_tu_oferta) %> 
+    
+    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      <div class="caja-empresa-cerrar-texto">
+        <%= t("text_cerrar") %>          
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% form_for @oferta, :url => "/home/actofertadatosgenerales/#{@oferta.bazar_id}/#{@oferta.id}" do |f| %>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_empresas_destinatarias) %>
+  </div>
+
+  <textarea id="tags" class="caja-empresa-editar-texto-corto" name="tags" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20"><%= @oferta.palabrasclave_list %></textarea>
+
+  <%= f.submit t(:text_guardar_estos_datos), :class => "caja-empresa-editar-boton" %>
+
+<% end %>

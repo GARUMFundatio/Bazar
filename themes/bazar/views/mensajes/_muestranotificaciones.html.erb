@@ -1,0 +1,32 @@
+<%= javascript_include_tag 'jquery.pageless' -%>
+
+<div>
+
+<% if @mensajes.count > 0 %>	
+<table id="results" class="tabla" cellspacing="0">
+	<% if params[:page].to_i == 1%>
+	  <tr>
+	    <th><%=t(:text_de)%></th>
+	    <th><%=t(:text_asunto)%></th>
+	    <th><%=t(:text_fecha)%></th>
+	    <th></th>
+	  </tr>
+	<% end %>
+
+<%= render :partial => 'mensaje', :collection => @mensajes %>
+
+</table>
+
+<%= pageless(@mensajes.total_pages, mensajes_path) %>
+
+
+<% else %>
+	<% if params[:tipo] == 'N' %>
+		<p><%=t(:text_no_hay_notificaciones)%></p>
+	<% else %>
+  		<p><%=t(:text_no_hay_mensajes)%></p>
+	<% end %>
+<% end %>
+
+
+</div>

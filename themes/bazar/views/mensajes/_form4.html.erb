@@ -1,0 +1,29 @@
+<%= form_for(@mensaje, :url => {:action => 'enviarnotificacion'}) do |f| %>
+
+<div class="field">
+    <%= f.hidden_field :de %>
+    <%= f.hidden_field :para %>
+    <%= f.hidden_field :tipo %>
+    <%= f.hidden_field :fecha %>
+    <%= f.hidden_field :leido %>
+    <%= f.hidden_field :borrado %>
+</div>
+
+ <div class="field">
+	<%=t(:text_de)%> <%= User.find(@mensaje.de).login -%> <%=t(:text_a_todos_los_usuarios)%>
+ </div> 
+
+  <div class="field">
+    <%= f.label :Asunto %>:  <%= f.text_field :asunto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Texto %><br />
+    <%= f.text_area :texto, :size => "60x10" %>
+  </div>
+
+  <div class="actions">
+	<%= f.submit "Enviar" %>
+  </div>
+
+<% end %>

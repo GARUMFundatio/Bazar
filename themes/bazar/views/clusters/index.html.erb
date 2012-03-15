@@ -1,0 +1,42 @@
+<h3 class="page-title"><%=t(:text_listado_de_bazares)%></h3>
+
+<table class="tabla" cellspacing="0">
+  <tr>
+    <th><%=t(:text_id)%></th>
+    <th><%=t(:text_nombre)%></th>
+    <th><%=t(:text_descripcion)%></th>
+    <th><%=t(:text_act)%></th>
+    <th><%=t(:text_url)%></th>
+    <th>#</th>
+    <th colspan="2"><%=t(:text_acciones)%></th>
+  </tr>
+
+<% @clusters.each do |cluster| %>
+ <% if (cluster.activo == "N") %>
+  <tr style="text-align:left;">
+<% else %>
+  <tr style="font-weight:bold; text-align:left;">
+<% end %>   
+	<td><%= cluster.id %></td>
+    <td><%= cluster.nombre %></td>
+    <td><%= cluster.desc %></td>
+    <td>
+	<% if cluster.activo == 'S' %>
+		<%= image_tag('flag_green.png')%>
+	<% else %>
+		<%= image_tag('flag_red.png')%>
+	<% end %>
+	</td>
+    <td><%= cluster.url %></td>
+    <td><%= cluster.empresas %></td>
+	<% if (cluster.activo == "S")%>
+    	<td><%= link_to image_tag('delete.png'), cluster, :confirm => 'Esta seguro de desactivarlo?', :method => :delete %></td>
+	<% else %>
+		<td><%= link_to image_tag('add.png'), '/clusters/activar/'+cluster.id.to_s %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @clusters %>
+

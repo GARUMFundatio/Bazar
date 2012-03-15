@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><%=t(:text_login)%></b>
+  <%= @usersession.login %>
+</p>
+
+<p>
+  <b><%=t(:text_password)%></b>
+  <%= @usersession.password %>
+</p>
+
+<p>
+  <b><%=t(:text_remember_me)%></b>
+  <%= @usersession.remember_me %>
+</p>
+
+
+<%= link_to t(:label_edit), edit_usersession_path(@usersession) %> |
+<%= link_to t(:label_back), usersessions_path %>

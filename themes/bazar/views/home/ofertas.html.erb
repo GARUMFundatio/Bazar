@@ -1,0 +1,265 @@
+
+<%= render(:partial => "busquedaofertas") %>
+
+<!-- sección ofertas recomendadas -->
+<script>
+
+function muestraconfirmacion (bazar, oferta) {
+  $('#ofe-conf-'+bazar+'-'+oferta).show(); 
+  $('#ofe-del-'+bazar+'-'+oferta).hide();
+};
+
+function borraoferta (bazar, oferta) {
+  $('#ofe-'+bazar+'-'+oferta).fadeOut('slow');
+  $.ajax({
+          type: "POST",
+          url: "/home/cancelaroferta/"+oferta
+  });
+};
+
+</script>
+
+<div class="caja-seccion" id="ofertas-recomendadas">
+  <div class="ficha-indice">
+    <%= t(:text_destacadas_para_ti) %>
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <%= render(:partial => "oferta", :collection => @ofertasrecomendadas) %>
+
+  </div>
+
+</div>
+
+<!-- Por localización -->
+
+<div class="caja-seccion" id="localizacion">
+  <div class="ficha-indice">
+    <%= t(:text_por_localizacion) %>
+  </div>
+  
+  <div class="seccion-contenido">
+    
+    <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        <%= t(:text_tu_bazar) %>
+      </div>
+      
+      <div class="seccion-cifra">
+        
+        <% if params[:tipo] == 'O' %>
+          <%= @totalofertasbazar %>
+        <% else %>
+          <%= @totaldemandasbazar %>
+        <% end %>
+        
+      </div>
+      <div class="seccion-cifra-titulo">
+        <% if params[:tipo] == 'O' %>
+          <%= t(:text_ofertas) %>
+        <% else %>
+          <%= t(:text_demandas) %>
+        <% end %>
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        <%= t(:text_tu_pais)%>
+      </div>
+
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        <% if params[:tipo] == 'O' %>
+          <%= t(:text_ofertas) %>
+        <% else %>
+          <%= t(:text_demandas) %>
+        <% end %>
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina5">  
+      <div class="ficha-titulo-total">
+        <%= t(:text_el_mundo) %>
+      </div>
+
+      <div class="seccion-cifra">
+        <% if params[:tipo] == 'O' %>
+          <%= @totalofertas %>
+        <% else %>
+          <%= @totaldemandas %>
+        <% end %>
+      </div>
+
+      <div class="seccion-cifra-titulo">
+        <% if params[:tipo] == 'O' %>
+          <%= t(:text_ofertas) %>
+        <% else %>
+          <%= t(:text_demandas) %>
+        <% end %>
+        
+      </div>    
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Pro sectores  -->
+
+<div class="caja-seccion" id="datos-bazar">
+  <div class="ficha-indice">
+  <%= t(:text_por_sectores) %>
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["01"] %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          <%= t(:text_ofertas_en_INDUSTRIA) %> 
+        <% else %>
+          <%= t(:text_demandas_en_INDUSTRIA) %> 
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["02"] %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          <%= t(:text_ofertas_en_DISTRIBUCION) %> 
+        <% else %>
+          <%= t(:text_demandas_en_DISTRIBUCION) %>
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector02black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["03"] %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          <%= t(:text_ofertas_en_FINANZAS) %> 
+        <% else %>
+          <%= t(:text_demandas_en_FINANZAS) %> 
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector03black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["04"] %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          <%= t(:text_ofertas_en_CONOCIMIENTO) %> 
+        <% else %>
+          <%= t(:text_demandas_en_CONOCIMIENTO) %> 
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector04black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+    
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["05"] %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <% if params[:tipo] == 'O'%>
+          <%= t(:text_ofertas_en_COOPERATIVAS) %> 
+        <% else %>
+          <%= t(:text_demandas_en_COOPERATIVAS) %> 
+        <% end %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector05black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+    
+</div>
+
+<a id="fichaoferta" class="fancybox.ajax" href=""></a>
+<a id="correo" class="fancybox.ajax" href=""></a>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  $('.ilumina10').transify({opacityOrig:.10,opacityNew:.40,fadeSpeed:500});
+  
+  $("#fichaoferta").fancybox({
+		 'width' : 850,
+		 // 'height' : 'auto',
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'modal' : true,
+		 'type' : 'iframe'
+	 });
+	
+	 $("#correo").fancybox({
+ 		 'width' : 831,
+ 		 'height' : 539,
+      'margin' : 0,
+ 		 'autoScale' : false,
+ 		 'transitionIn' : 'none',
+ 		 'transitionOut' : 'none',
+ 		 'modal': true,
+ 		 'type' : 'iframe'
+ 	 });
+  
+  // $('input[placeholder]').placeholder();
+
+  $('.item-delete-icono-confirm').mouseleave(function() {
+    $('.item-delete-icono-confirm').hide();
+    $('.item-delete-icono').show();
+  });
+
+
+ });
+ 
+</script>

@@ -1,0 +1,122 @@
+<% if @item == 0 %>
+  <div id="pag1">
+<% end %>
+
+<% if ofertaresultado.cluster_id.to_i == BZ_param("BazarId").to_i && ofertaresultado.empresa_id == current_user.id %>
+  <% @owner = true %>
+<% else %>
+  <% @owner = false %>
+<% end %>
+
+
+<% if @owner %>
+  <div id="ofe-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="seccion-cajon" >
+<% else %>
+  <div id="ofe-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="seccion-cajon" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');">
+<% end %>
+
+
+  <% if @owner %>
+  
+    <div class="item-edit-icono" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= ofertaresultado.cluster_id -%>/<%= ofertaresultado.oferta_id -%>').trigger('click');" >
+      <img src="<%= current_theme_image_path('editar.png') %>" >
+    </div>
+
+    <div id="ofe-del-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="item-delete-icono" onclick="muestraconfirmacion(<%= ofertaresultado.cluster_id -%>, <%= ofertaresultado.oferta_id -%>)" >
+      <img src="<%= current_theme_image_path('borrar-white.png') %>" >
+    </div>
+    
+    <div id="ofe-conf-<%= ofertaresultado.cluster_id -%>-<%= ofertaresultado.oferta_id -%>" class="item-delete-icono-confirm" style="display:none" onclick="borraoferta(<%= ofertaresultado.cluster_id -%>,<%= ofertaresultado.oferta_id -%>);">
+      <%= t(:text_seguro_que_desea_borrarla) %>
+    </div>
+
+
+  <% else %>  
+  
+    <!-- div class="add-favoritos">
+      <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
+    </div -->
+  
+  <% end %>
+  
+  <div class="cajon-titulo" >
+    <%= ofertaresultado.info -%>
+  </div>
+
+
+  <% if ofertaresultado.cluster_id == BZ_param("BazarId").to_i %>
+    <% imgs = Bazarcms::Ofertasimagen.where("oferta_id = ?", ofertaresultado.oferta_id).limit(3) %>
+  <% else %>
+    <% imgs = [] %>
+  <% end %>
+  
+  <div class="cajon-cuerpo">
+    <% if imgs.count <= 0 %>
+      <%= truncate_html(ofertaresultado.nombre_empresa, :length => 120).html_safe -%>
+    <% else %>
+      <%= truncate_html(ofertaresultado.nombre_empresa, :length => 60).html_safe -%><br/>
+      <div class="caja-imagenes-oferta">        
+        <% for img in imgs %>
+           <%= image_tag img.imagen.url(:c60), :width => 50 %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  
+  
+  <div class="cajon-pie">
+    Válida hasta el <%= ofertaresultado.enlace[0,10] %>
+  </div>
+</div>
+
+<% @item += 1 %>
+
+<% if @item % 15 == 0 || @item == @total%>
+ 
+
+
+  <div class="cajon-paginado">
+
+    <% if @pagina != (@total/15) + 1  %>
+
+    <div class="cajon-paginado-boton ilumina5" onclick="$('#pag<%= @pagina -%>').hide(); $('#pag<%= @pagina+1 -%>').show();$.scrollTo('#busqueda', 'slow')">
+      <div class="cajon-paginado-boton-texto">
+        <% if params[:tipo] == 'O'%>
+          Ofertas siguientes
+        <% else %>
+          Demandas siguientes
+        <% end %>
+      </div>
+    </div>
+    
+    <% end %>
+
+    <% if @pagina != 1 %>
+    
+    <div class="cajon-paginado-boton ilumina5"  onclick="$('#pag<%= @pagina -%>').hide(350); $('#pag<%= @pagina-1 -%>').show(350); $.scrollTo('#busqueda', 'slow');">
+      <div class="cajon-paginado-boton-texto">
+        <% if params[:tipo] == 'O'%>
+          Ofertas anteriores
+        <% else %>
+          Demandas anteriores
+        <% end %>
+      </div>
+    </div> 
+
+    <% end %>
+    
+    <div class="cajon-paginado-pagina">
+      <div class="cajon-paginado-pagina-texto">
+        Página <%= @pagina -%> de <%= (@total / 15) + 1 -%>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  
+  <% @pagina += 1 %>
+
+  <% if @item != @total %>
+    <div id="pag<%= @pagina -%>" style="display:none">
+  <% end %>
+<% end %>

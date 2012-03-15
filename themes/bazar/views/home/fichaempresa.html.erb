@@ -1,0 +1,471 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('si.files')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.geo-1.0a4.min')) %>
+
+
+<% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+  <% editar = true %>
+<% else %>
+  <% editar = false %>
+<% end %>
+
+<!-- sección cabecera empresa -->
+
+<div class="caja-seccion" id="empresas-recomendadas">
+  <div class="ficha-indice">
+
+    <% if editar %>
+      Tus Datos
+    <% else %>
+
+      <div class="fichaempresa-iconos" onclick="$('#correo').attr('href', '/home/editarcorreo/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+        <img class="fichaempresa-icono" src="<%= current_theme_image_path('sobre.png') %>">
+      </div>
+      
+      <div id="fav-<%= params[:bazar]-%>-<%= params[:id] -%>" class="fichaempresa-iconos">
+  
+        <% if !@fav.nil? %>
+          <img class="fichaempresa-icono" src="<%= current_theme_image_path('corazon-white.png') %>">
+
+          <script type="text/javascript" charset="utf-8">
+            $("#fav-<%= params[:bazar]-%>-<%= params[:id] -%>").click(function() {
+              $("#fav-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/delfav/<%= params[:bazar]-%>\/<%= params[:id]-%>");
+            });        
+          </script>
+          
+        <% else %>
+          <img class="fichaempresa-icono" src="<%= current_theme_image_path('corazon-black.png') %>">
+          <script type="text/javascript" charset="utf-8">
+            $("#fav-<%= params[:bazar]-%>-<%= params[:id] -%>").click(function() {
+              $("#fav-<%= params[:bazar]-%>-<%= params[:id] -%>").load("/home/addfav/<%= params[:bazar]-%>\/<%= params[:id]-%>");
+            });        
+          </script>
+
+        <% end %>
+
+      </div>
+
+    <% end %>
+
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <div class="fichaempresa-titular">
+      
+      <div class="fichaempresa-titulo">
+        <%= @empresa.nombre -%>
+      </div>
+      
+      <div class="fichaempresa-cajaicono">
+        <img src="<%= current_theme_image_path("sector#{@empresa.sector}white.png") %>" width="40px" />
+      </div>
+
+      <div class="fichaempresa-cajaicono">
+        <p>
+          <%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas).split("-")[1] -%> 
+          <% if @empresa.moneda == 0 %>
+            €
+          <% else %>
+            $
+          <% end %>
+          
+        </p>
+      </div>
+
+      <div id="rating" class="fichaempresa-rating">
+          <%= helper_rating_show_ng(params[:bazar], params[:id]).html_safe -%>
+          <div id="ratingdetails" class="fichaempresa-rating-show style='display:none'">
+            <%= helper_rating_show_detail_ng(params[:bazar], params[:id]).html_safe -%>
+          </div>
+      </div>
+      
+      
+      <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+      
+        <div class="fichaempresa-cajaicono" onClick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+          <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>"  >
+        </div>
+
+      <% end %>
+      
+      <div class="fichaempresa-enlace">
+        <%= @empresa.url -%>
+      </div>
+
+    </div>
+
+    <a id="fichaempresa" class="fancybox.ajax" href=""></a>
+    
+    <div class="fichaempresa-desc">
+      <%= helper_formatea(@empresa.desc) -%>
+    </div>
+      
+    <div class="seccion-menu">
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas', 'slow')">
+        Ofertas
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#demandas', 'slow')">
+        Demandas
+      </div>
+ 
+      <div class="seccion-menu-item" onclick="$.scrollTo('#imagenes', 'slow')">
+        Imágenes
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#sobre', 'slow')">
+        Sobre la empresa
+      </div>
+      
+      <div class="seccion-menu-item" onclick="$.scrollTo('#sedes', 'slow')">
+        Sedes
+      </div>
+      
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- sección ofertas y demandas realizadas -->
+
+<script>
+
+function muestraconfirmacion (bazar, oferta) {
+  $('#ofe-conf-'+bazar+'-'+oferta).show(); 
+  $('#ofe-del-'+bazar+'-'+oferta).hide();
+};
+
+function borraoferta (bazar, oferta) {
+  $('#ofe-'+bazar+'-'+oferta).fadeOut('slow');
+  $.ajax({
+          type: "POST",
+          url: "/home/cancelaroferta/"+oferta
+  });
+};
+
+</script>
+
+<div class="caja-seccion" id="ofertas">
+  <div class="ficha-indice">
+  Ofertas
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <% if params[:id].to_i == current_user.id %>
+    
+      <div class="seccion-cajon ilumina5" onClick="">
+        
+        <div class="add-item-icono">
+          <img src="<%= current_theme_image_path('add.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=O').trigger('click');" >
+        </div>
+
+        <div class="add-item-texto">
+          <%= t(:text_publicar_una_oferta) -%>
+        </div>
+      </div>
+
+    <% end %>
+
+    <%= render(:partial => "oferta", :collection => @ofertas) %>
+    
+  </div>
+
+</div>
+
+<div class="caja-seccion" id="demandas">
+  <div class="ficha-indice">
+  Demandas
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <% if params[:id].to_i == current_user.id %>
+    
+      <div class="seccion-cajon ilumina5" onClick="">
+        
+        <div class="add-item-icono">
+          <img src="<%= current_theme_image_path('add.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=D').trigger('click');" >
+        </div>
+
+        <div class="add-item-texto">
+          <%= t(:text_publicar_una_demanda) -%>
+        </div>
+      </div>
+
+    <% end %>
+    
+    <%= render(:partial => "oferta", :collection => @demandas) %>
+
+  </div>
+
+</div>
+
+<!-- Imágenes -->
+
+<div class="caja-seccion" id="localizacion">
+  <div class="ficha-indice">
+    Imágenes
+  </div>
+  
+  <div id="imagenes" class="seccion-contenido" >
+    
+    <% if params[:id].to_i == current_user.id %>
+    
+      <div class="seccion-cajon-imagen" >
+
+        <%= form_for :empresasimagen, :url => "/home/crearimagenempresa/", :html => { :multipart => true } do |form| %>
+       <div class="add-image">
+         <label class="cabinet">
+             <input type="file" class="file" id="empresasimagen_imagen" name="empresasimagen[imagen]" 
+                 onchange="$(this).closest('form').submit(); 
+                 $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+                 
+         </label>
+       </div>
+       <% end %>
+
+       
+        <div id="cargaimagen" class="add-item-texto">
+          <%= t(:text_anadir_una_foto) -%>
+        </div>
+      </div>
+
+    <% end %>
+    
+    <% if @imagenes.count > 0 %>
+      <%= render(:partial => "empresaimagen", :collection => @imagenes) %>
+    <% else %>
+      <div class="seccion-cajon" onClick="">
+
+        <div class="add-item-texto">
+          <%= t(:text_no_tiene_imagenes) -%>
+        </div>
+        
+      </div>
+    <% end %>
+    
+  </div>
+
+</div>
+
+<!-- Sobre la empresa  -->
+
+<div class="caja-seccion" id="sobre">
+  <div class="ficha-indice">
+  Sobre la Empresa
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+
+    <div class="seccion-cajon">
+      <div class="ficha-empresa-sobre">
+        
+        <p class="ficha-empresa-titulo">Fundación:</p>
+        <p class="ficha-empresa-texto"><%= @empresa.fundada %></p>
+
+        <p class="ficha-empresa-titulo">Ámbito:</p>
+        <p class="ficha-empresa-texto"><%= Bazarcms::Empresa.Ambitostexto(@empresa.ambito) %></p>
+
+        <p class="ficha-empresa-titulo">Nº de empleados:</p>
+        <p class="ficha-empresa-texto"><%= Bazarcms::Empresasdato.REtexto(@empresasdatos.empleados) %> </p>
+         
+      </div>
+    </div>
+
+    <div class="seccion-cajon">
+      <div class="ficha-empresa-sobre">
+        
+        <p class="ficha-empresa-titulo">Sector:</p>
+        <p class="ficha-empresa-texto2"><%= Bazarcms::Empresa.Sectorestexto(@empresa.sector) %> 
+          &nbsp; &nbsp; <img src="<%= current_theme_image_path("sector#{@empresa.sector}white.png") %>" width="40px" /></p>
+
+        <p class="ficha-empresa-titulo">Facturación anual:</p>
+        <p class="ficha-empresa-texto2">
+          <%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas) %> 
+          <% if @empresa.moneda == 0 %>
+            €
+          <% else %>
+            $
+          <% end %>
+        </p>
+         
+      </div>
+    </div>
+ 
+ 
+    <div class="seccion-cajon">
+      <div class="ficha-empresa-sobre">
+        
+        <p class="ficha-empresa-texto2">
+          <%= truncate_html(@empresa.actividad_list.to_s, :length => 100).html_safe  %> 
+        </p>
+         
+      </div>
+    </div>
+ 
+    <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+
+      <div class="fichaempresa-cajaicono" onclick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales2/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+        <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>"  >
+      </div>
+
+    <% end %>
+
+
+  </div>
+        
+</div>
+
+
+<div class="caja-seccion" id="sedes">
+  <div class="ficha-indice">
+    <%= t(:text_sedes) %>
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+
+    <% if params[:id].to_i == current_user.id %>
+    
+      <div class="seccion-cajon ilumina5" onClick="">
+        
+        <div class="add-item-icono">
+          <img src="<%= current_theme_image_path('add.png') %>" onClick="window.alert('click in fav');" >
+        </div>
+
+        <div class="add-item-texto">
+          <%= t(:text_anadir_una_sede) -%>
+        </div>
+      </div>
+
+    <% end %>
+
+    <% if @sedes.count > 0 %>
+      <%= render(:partial => "empresasede", :collection => @sedes) %>
+    <% else %>
+      <div class="seccion-cajon" onClick="">
+
+        <div class="add-item-texto">
+          <%= t(:text_no_tiene_sedes) -%>
+        </div>
+        
+      </div>
+    <% end %>
+    
+    <div class="seccion-cajon ilumina5">
+
+      <div class="ficha-sector-cifra">
+        <%= @totalempresas %> 
+      </div>
+
+
+      
+    </div>
+  </div>
+<div/>
+
+<a id="fichaoferta" class="fancybox.ajax" href=""></a>
+<a id="fichaeditaroferta" class="fancybox.ajax" href=""></a>
+<a id="fichaempresa" class="fancybox.ajax" href=""></a>
+<a id="correo" class="fancybox.ajax" href=""></a>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  $('.ilumina10').transify({opacityOrig:.10,opacityNew:.40,fadeSpeed:500});
+  
+  $("#fichaoferta").fancybox({
+		 'width' : 850,
+		 'height' : 600,
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'hideOnOverlayClick':false,
+     'hideOnContentClick':false,
+     'modal': true,
+		 'type' : 'iframe'
+	 });
+
+   $("#fichaeditaroferta").fancybox({
+ 		 'width' : 850,
+ 		 'height' : 600,
+     'margin' : 0,
+ 		 'autoScale' : false,
+ 		 'transitionIn' : 'none',
+ 		 'transitionOut' : 'none',
+ 		 'hideOnOverlayClick':false,
+     'hideOnContentClick':false,
+		 'modal': true,
+ 		 'type' : 'iframe'
+ 	 });
+
+  
+  $("#fichaempresa").fancybox({
+		 'width' : 600,
+		 'height' : 600,
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
+
+
+  
+  $("#correo").fancybox({
+		 'width' : 831,
+		 'height' : 539,
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'modal': true,
+		 'type' : 'iframe'
+	 });
+
+	
+   $("a[rel=galeria]").fancybox(
+     {
+        'width': 650,
+        'height': 600,
+     		'transitionIn'	:	'elastic',
+     		'transitionOut'	:	'elastic',
+     		'speedIn'		:	600, 
+     		'speedOut'		:	200, 
+     		'overlayShow'	:	true
+     	});
+  
+ // $('input[placeholder]').placeholder();
+  // SI.Files.stylizeAll();
+  
+  $("#rating").bind("mouseenter", function () {
+              $("#ratingdetails").show(50);
+          }).bind("mouseleave", function () {
+              $("#ratingdetails").hide(50);
+          });
+  
+  
+  <% if params[:go] == "imagenes" %>
+    $.scrollTo('#imagenes', 'slow');
+  <% end %>
+
+  <% if params[:go] == "oferta" %>
+    $('#fichaeditaroferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId") -%>/<%= params[:oferta] -%>').trigger('click');
+  <% end %>
+  
+  
+
+ });
+
+</script>

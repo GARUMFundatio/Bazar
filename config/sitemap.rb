@@ -59,5 +59,8 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
     sitemap.add "/bazarcms/perfiles/#{perfil.friendly_id}", :priority => 0.5, :changefreq => 'weekly'
   end  
 
+  Bazarcms::Rating.where('ori_fecha is not null and des_fecha is not null').each do |rating|
+    sitemap.add "/bazarcms/ficharating/#{rating.ori_empresa_id}?bazar_id=#{rating.ori_bazar_id}", :priority => 0.7, :changefreq => 'daily'
+  end  
   
 end

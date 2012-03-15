@@ -1,0 +1,65 @@
+
+<% if oferta.bazar_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
+  <% @owner = true %>
+<% else %>
+  <% @owner = false %>
+<% end %>
+
+<% if @owner %>
+  <div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" >
+<% else %>
+  <div id="ofe-<%= oferta.bazar_id -%>-<%= oferta.id -%>"  class="seccion-cajon" onClick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= oferta.bazar_id -%>/<%= oferta.id -%>').trigger('click');" >
+<% end %>
+
+  <% if @owner %>
+  
+    <div class="item-edit-icono" onclick="$('#fichaoferta').attr('href', '/home/fichaoferta/<%= oferta.bazar_id -%>/<%= oferta.id -%>').trigger('click');">
+      <img src="<%= current_theme_image_path('editar.png') %>"  >
+    </div>
+
+    <div id="ofe-del-<%= oferta.bazar_id -%>-<%= oferta.id -%>" class="item-delete-icono" onclick="muestraconfirmacion(<%= oferta.bazar_id -%>, <%= oferta.id -%>)">
+      <img src="<%= current_theme_image_path('borrar-white.png') %>"  >
+    </div>
+    
+    <div id="ofe-conf-<%= oferta.bazar_id -%>-<%= oferta.id -%>" class="item-delete-icono-confirm" style="display:none" onclick="borraoferta(<%= oferta.bazar_id -%>,<%= oferta.id -%>);">
+      <%= t(:text_seguro_que_desea_borrarla) %>
+    </div>
+    
+
+  <% else %>
+
+  <!-- solo tiene que aparecer si está recomendada por el sistema -->
+
+    <!-- div class="add-favoritos">
+      <img src="<%= current_theme_image_path('addfav.png') %>" onClick="window.alert('click in fav');" >
+    </div -->
+
+  <% end %>
+
+
+  <div class="cajon-titulo" >
+    <%= oferta.titulo -%>
+  </div>
+
+  <% imgs = Bazarcms::Ofertasimagen.where("oferta_id = ?", oferta.id).limit(3) %>
+  
+  <div class="cajon-cuerpo">
+    <% if imgs.count <= 0 %>
+      <%= truncate_html(oferta.texto, :length => 120).html_safe -%>
+    <% else %>
+      <%= truncate_html(oferta.texto, :length => 60).html_safe -%><br/>
+      <div class="caja-imagenes-oferta">
+         <% host = Cluster.find(BZ_param("BazarId")).url+"/" %>        
+        <% for img in imgs %>
+           <%= image_tag host+img.imagen.url(:c60), :width => 50 %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="cajon-pie">
+    Válida hasta el <%= oferta.fecha_hasta.strftime("%d-%m-%y") %>
+  </div>
+
+
+</div>

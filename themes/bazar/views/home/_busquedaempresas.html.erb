@@ -1,0 +1,104 @@
+<!-- búsqueda de empresa -->
+<%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.ui.slider')) %><%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<div class="caja-seccion" id="busqueda">
+  <div class="ficha-indice">
+    <div class="caja-busqueda-filtros ilumina10" onclick="$('#porempleados').toggle(500);">
+      <div class="caja-busqueda-texto">
+        <%= t(:text_filtrar_por_el_n_de_empleados_de_la_empresa) %>
+      </div>
+    </div>
+    <div class="caja-busqueda-filtros ilumina10" onclick="$('#porfacturacion').toggle(500);">
+      <div class="caja-busqueda-texto">
+        <%= t(:text_filtrar_por_la_facturacion_anual_de_la_empresa) %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <div class="caja-busqueda-input">
+      <form accept-charset="UTF-8" action="/busqueda-empresa" method="post">
+       <input class="busqueda-input" id="busqueda" name="q" placeholder="¿Qué empresa buscas?" size="50" >
+       <input type="submit" class="busqueda-boton" value="" />
+       <input type="hidden" id="empleados2"name="empleados" />
+       <input type="hidden" id="ventas2" name="ventas" />
+     </form>
+    </div>
+
+    <div class="caja-busqueda-input2">
+      <div id="porempleados" class="caja-busqueda-filtro-container" style="display:none">
+
+        <div class="caja-busqueda-texto-filtro">
+          <%=t(:text_numero_empleados)%>
+        </div>
+
+        <div class="caja-busqueda-slider" id="slider-range" ></div>
+
+        <div class="caja-busqueda-texto-resultado" id="empleados">
+          <%= t(:text_todos) %>
+        </div>
+
+      </div>
+
+      <div id="porfacturacion" class="caja-busqueda-filtro-container" style="display:none">
+
+        <div class="caja-busqueda-texto-filtro">
+          <%=t(:text_ventas)%>
+        </div>
+
+        <div class="caja-busqueda-slider" id="slider-range2" ></div>
+
+        <div class="caja-busqueda-texto-resultado" id="ventas">
+          <%= t(:text_todos) %>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  
+</div>
+
+
+<script type="text/javascript" charset="utf-8">
+
+
+$(function() {
+  
+  <%= Bazarcms::Empresasdato.listaRE %>
+  <%= Bazarcms::Empresasdato.listaRD %>
+
+  $( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: maxRE,
+    values: [ 0, maxRE ],
+    slide: function( event, ui ) {
+      $( "#empleados" ).html( "Entre " + listaRE[ui.values[ 0 ]] + " y " + listaRE2[ui.values[ 1 ]]  );
+      $( "#empleados2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+    }
+  });
+  
+  $( "#empleados" ).val( "Todos");
+  $( "#empleados2" ).val( "0+"+maxRE);
+
+  $( "#slider-range2" ).slider({
+    range: true,
+    min: 0,
+    max: maxRD,
+    values: [ 0, maxRD ],
+    slide: function( event, ui ) {
+      $( "#ventas" ).html( "Entre " + listaRD[ui.values[ 0 ]] + " y " + listaRD2[ui.values[ 1 ]] );
+      $( "#ventas2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+    }
+  });
+
+  $( "#ventas" ).val( "Todos");
+  $( "#ventas2" ).val( "0+"+maxRD);
+
+});  
+
+</script>

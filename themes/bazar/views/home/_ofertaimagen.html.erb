@@ -1,0 +1,24 @@
+<div id="img-<%= ofertaimagen.id -%>" class="seccion-cajon">
+
+ <div class="empresa-imagen">
+  <% if !@mostrar.nil? %> 
+  <a class="galeria" rel="galeria" href="<%= ofertaimagen.imagen.url %>">
+  <% else %>
+  <a class="galeria" href="#">
+  <% end %>
+    <% host = Cluster.find(BZ_param("BazarId")).url+"/" %>
+    <%= image_tag host+ofertaimagen.imagen.url(:c223) %>
+  </a>
+ </div>
+
+ <% if @owner %>
+ 
+ <div class="imagen-delete-icono">
+      <img src="<%= current_theme_image_path('borrar-white.png') %>" onclick="$('#img-<%= ofertaimagen.id -%>').hide(); $.ajax({
+        url: '/home/delofertaimagen/<%= ofertaimagen.oferta_id -%>/<%= ofertaimagen.id -%>'
+        });" />    
+ </div>
+ 
+ <% end %>
+ 
+</div>

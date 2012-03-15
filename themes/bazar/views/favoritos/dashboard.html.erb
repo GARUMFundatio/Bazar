@@ -1,0 +1,36 @@
+<% cache "bazar_favoritos_dash_#{current_user.id}", {:expires_in => 30.minutes.to_i} do %>
+
+<h3 class="page-title"><%=t(:text_empresas_que_sigo)%></h3>
+
+<table class="tabla" cellspacing="0">
+
+<% for fav in @favoritos %>
+<tr>
+
+	<td width="102px">
+		<% img = logo_helper(fav.bazar_id, fav.empresa_id) %>
+		<% if !img.nil? %>
+			<%= link_to(image_tag(img), bazarcms_empresa_path(fav.empresa_id, :bazar_id => fav.bazar_id)) %> 
+		<% end %>
+	</td>
+	
+	<td>	
+		<%= link_to(fav.nombre_empresa, bazarcms_empresa_path(fav.empresa_id, :bazar_id => fav.bazar_id)) %> 
+		<%= helper_rating_show2(fav.bazar_id, fav.empresa_id).html_safe %>
+	</td>
+
+	<td class="dos-iconos">
+		<%= link_to image_tag("email.png"), new_mensaje_url+"?aquien=#{fav.empresa_id}&bazar_destino=#{fav.bazar_id}&nombre=#{fav.nombre_empresa}&tipo=M", :title => 'Enviar Mensaje de Correo' %>
+	
+		<%= helper_favo(fav.bazar_id, fav.empresa_id, fav.nombre_empresa, "cajafavoritos") %>
+	</td>
+
+</tr>
+<% end %>
+
+</table>
+<% if @total > 5 %>
+	<%= link_to("Ver más favoritos (#{@total-5}+) &raquo;".html_safe, favoritos_path, :class => "volver-home-link") %>
+<% end %>
+
+<% end %>

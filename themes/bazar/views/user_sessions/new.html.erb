@@ -1,0 +1,35 @@
+<div id="caja-login">
+ 
+  <% if @user_session.errors.any? %>
+	<div class="login-error">
+      <% @user_session.errors.full_messages.each do |msg| %>
+        <%= msg %><br/>
+      <% end %>
+	</div>
+  <% end %>
+
+
+<% form_for @user_session, :url => user_sessions_path do |f| %>
+
+  <p><%= f.text_field :login, :placeholder => "Tu email", :class => "login-input" %></p>
+  <p><%= f.password_field :password, :placeholder => "Tu contraseña", :class => "login-input" %></p>
+  <%= f.hidden_field :remember_me, :value => :true %>
+
+  <%= link_to("Has olvidado tu contraseña?", new_password_reset_path, :class => "login-enlace") -%>
+  
+  <%= f.submit "Identifícate", :class => "login-boton" %>
+
+<% end %>
+ 
+ 
+
+
+</div>
+
+<br/>
+<br/>
+<br/>
+
+<script>
+    $('input[placeholder]').placeholder();
+</script>

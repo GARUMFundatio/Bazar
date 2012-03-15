@@ -1,0 +1,201 @@
+<script type="text/javascript" charset="utf-8">
+  
+  (function ($) {
+  $.fn.vAlign = function() {
+  	return this.each(function(i){
+  	var ah = $(this).height();
+  	var ph = $(this).parent().height();
+  	var mh = Math.ceil((ph-ah) / 2);
+  	$(this).css('margin-top', mh);
+  	});
+  };
+  })(jQuery);  
+
+</script>
+
+
+<%= render(:partial => "busquedaempresas") %>
+
+<!-- sección empresas recomendadas -->
+
+<div class="caja-seccion" id="empresas-recomendadas">
+  <div class="ficha-indice">
+    <%= t(:text_destacadas_para_ti) %>
+  </div>
+  
+  <div class="seccion-contenido">
+
+    <%= render(:partial => "empresa", :collection => @empresasrecomendadas) %>
+
+  </div>
+
+</div>
+
+<!-- Por localización -->
+
+<div class="caja-seccion" id="localizacion">
+  <div class="ficha-indice">
+    <%= t(:text_por_localizacion) %>
+  </div>
+  
+  <div class="seccion-contenido">
+    
+    <div class="seccion-cajon ilumina10">  
+      <div class="ficha-titulo-total">
+        <%= t(:text_tu_bazar) %>
+      </div>
+      
+      <div class="seccion-cifra">
+        <%= @totalempresasbazar %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        <%= t(:empresas) %>
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina10">  
+      <div class="ficha-titulo-total">
+        <%= t(:text_tu_pais)%>
+      </div>
+
+      <div class="seccion-cifra">
+        <%= @totalempresasbazar %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        <%= t(:empresas) %>
+      </div>    
+    </div>
+
+    <div class="seccion-cajon ilumina10">  
+      <div class="ficha-titulo-total">
+        <%= t(:text_el_mundo) %>
+      </div>
+
+      <div class="seccion-cifra">
+        <%= @totalempresas %> 
+      </div>
+      <div class="seccion-cifra-titulo">
+        <%= t(:empresas) %>
+      </div>    
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Por sectores  -->
+
+<div class="caja-seccion" id="datos-bazar">
+  <div class="ficha-indice">
+  <%= t(:text_por_sectores) %>
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+    <div class="seccion-cajon  ilumina10">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["01"] %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <%= t(:text_empresas_en_INDUSTRIA) %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector01black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon  ilumina10">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["02"] %>
+      </div>
+
+      <div class="ficha-sector-texto">
+        <%= t(:text_empresas_en_DISTRIBUCION) %> 
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector02black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina10">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["03"] %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <%= t(:text_empresas_en_FINANZAS) %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector03black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+
+    <div class="seccion-cajon ilumina10">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["04"] %> 
+      </div>
+
+      <div class="ficha-sector-texto">
+        <%= t(:text_empresas_en_CONOCIMIENTO) %> 
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector04black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+    
+    <div class="seccion-cajon  ilumina10">
+
+      <div class="ficha-sector-cifra">
+        <%= @ambitos["05"] %>
+      </div>
+
+      <div class="ficha-sector-texto">
+        <%= t(:text_empresas_en_COOPERATIVAS) %>
+      </div>
+      
+      <div class="ficha-sector-imagen">
+        <img src="<%= current_theme_image_path('sector05black.png') %>" onClick="window.alert('click in fav');" >
+      </div>
+      
+    </div>
+    
+</div>
+
+<a id="fichaempresa" class="fancybox.ajax" href=""></a>
+
+<script>
+
+$(document).ready(function() {
+
+  $('.trans20').transify({opacityOrig:.20});
+  $('.trans70').transify({opacityOrig:.70});
+  $('.ilumina5').transify({opacityOrig:.05,opacityNew:.40,fadeSpeed:500});
+  $('.ilumina10').transify({opacityOrig:.10,opacityNew:.40,fadeSpeed:500});
+  
+  $("#fichaempresa").fancybox({
+		 'width' : 831,
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'type' : 'iframe'
+	 });
+	
+  $('input[placeholder]').placeholder();
+
+
+ });
+
+</script>

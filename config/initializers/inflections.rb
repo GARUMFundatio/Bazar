@@ -36,4 +36,5 @@ inflect.irregular 'estadisticasconsulta', 'estadisticasconsultas'
 inflect.irregular 'slug', 'slugs'
 inflect.irregular 'pais', 'paises'
 
+
 end

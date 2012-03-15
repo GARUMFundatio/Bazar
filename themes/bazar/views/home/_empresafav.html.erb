@@ -1,0 +1,28 @@
+<div class="seccion-empresa ilumina5" onClick="// window.location = '/home/fichaempresa/<%= empresafav['bazar_id']-%>/<%= empresafav['id'] -%>'; ">
+  <div class="empresa-fondo">
+    <% img = logo_grande_helper(empresafav['bazar_id'], empresafav['id']) %>
+    
+    <% if !img.nil?  %>
+      <% if !img.include?("sinlogo.png") %>
+        <div class="empresa-fondo-logo">
+          <%= link_to(image_tag(img, :alt => "#{empresafav['nombre']}", :width => 223), "/home/fichaempresa/#{empresafav['bazar_id']}/#{empresafav['id']}") %> 
+        </div>
+      <% else %>
+        <%= empresafav['nombre'] -%>
+      <% end %>
+    <% else %>
+      <%= empresafav['nombre'] -%>
+    <% end %>
+    <div id="fav-<%= empresafav['bazar_id']-%>-<%= empresafav['id'] -%>" class="empresa-favorito">
+
+      <img class="empresa-favorito-icon" src="<%= current_theme_image_path('corazon-white.png') %>">
+
+      <script type="text/javascript" charset="utf-8">
+        $("#fav-<%= empresafav['bazar_id']-%>-<%= empresafav['id']-%>").click(function() {
+          $("#fav-<%= empresafav['bazar_id']-%>-<%= empresafav['id']-%>").load("/home/delfav/<%= empresafav['bazar_id']-%>\/<%= empresafav['id']-%>");
+        });        
+      </script>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<%= javascript_include_tag :defaults %>
+
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.ui.datepicker-es')) %>
+
+<div class="ficha-container">
+  
+<div class="caja-empresa-editar">
+<% if params[:edit] == "gen" %>
+  <%= render 'ofertadatosgen' %>
+<% end %>
+
+<% if params[:edit] == "url" %>
+  <%= render("ofertadatosurl") %>
+<% end %>
+
+<% if params[:edit] == "palabras" %>
+  <%= render("ofertadatospalabras") %>
+<% end %>
+
+<% if params[:edit] == "ambito" %>
+  <%= render("ofertadatosambito") %>
+<% end %>
+
+</div>
+
+</div>
+
+<script>
+
+</script>
