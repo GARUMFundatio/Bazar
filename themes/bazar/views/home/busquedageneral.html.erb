@@ -35,10 +35,15 @@
      <input type="hidden" id="empleados2"name="empleados" />
      <input type="hidden" id="ventas2" name="ventas" />
      <input type="hidden" id="tipo" name="tipo" value="2"/>
+     <input type="hidden" id="paises" name="paises" value=""/>
+     
    </form>
   </div>
 
 <script type="text/javascript" charset="utf-8">
+  
+  var paises = []
+  var totalpaises = 0;
   
   function selecciona(cual) {
     $("#busca1").attr("class", "caja-busqueda-general-opciones-item");
@@ -46,6 +51,32 @@
     $("#busca3").attr("class", "caja-busqueda-general-opciones-item");
     $("#busca"+cual).attr("class", "caja-busqueda-general-opciones-item-selected");
     $("#tipo").val(cual);
+  };
+
+  function selepais(cual) {
+
+    var resu = "";
+    var ii = 0; 
+    for (ii = 0; ii < totalpaises; ii++) {
+      if (paises[ii][0] == cual) {
+        if (paises[ii][1] == 1) {
+          paises[ii][1] = 0;
+        }
+        else {
+          paises[ii][1] = 1;
+        }
+      } 
+      if (paises[ii][1] == 0) {
+        $("#pais"+paises[ii][0]).attr("class", "caja-busqueda-general-opciones-item");        
+      }
+      else {
+        resu += paises[ii][0]+"+"
+        $("#pais"+paises[ii][0]).attr("class", "caja-busqueda-general-opciones-item-selected");                
+      }
+      
+    }
+
+    $("#paises").val(resu);
   };
   
 </script>
@@ -77,7 +108,7 @@
 
     <% paises = Pais.where("total_empresas_mercado > 0 ").order("total_empresas_mercado desc") %>
     <% for pais in paises %>
-      <div id="pais1" class="caja-busqueda-general-opciones-item" onclick="selecciona('1')">
+      <div id="pais<%= pais.codigo %>" class="caja-busqueda-general-opciones-item" onclick="selepais('<%= pais.codigo %>')">
         <%= pais.descripcion %>
       </div>
     <% end %>
@@ -121,6 +152,12 @@
 
 
 $(function() {
+
+  <% paises = Pais.where("total_empresas_mercado > 0 ").order("total_empresas_mercado desc") %>
+  <% for pais in paises %>
+    paises[totalpaises] = ['<%= pais.codigo %>', 0];
+    totalpaises += 1; 
+  <% end %>
   
   <%= Bazarcms::Empresasdato.listaRE %>
   <%= Bazarcms::Empresasdato.listaRD %>
