@@ -44,6 +44,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -64,7 +65,7 @@ Bazar::Application.routes.draw do
   match '/home/filtraresultadosempresas/:resu/:tipo' => "home#filtraresultadosempresas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
   match '/home/addsede/:id' => "home#addsede", :constrants => { :id => /\d+/ }
   match '/home/grabasede/' => "home#grabasede"
-  match '/home/delsede/:id' => "home#delsede", :constrants => { :id => /\d+/ }
+  match '/home/delsede/:empresa/:id' => "home#delsede", :constrants => { :empresa => /\d+/, :id => /\d+/ }
   
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -188,6 +189,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -208,7 +210,7 @@ Bazar::Application.routes.draw do
   match '/home/filtraresultadosempresas/:resu/:tipo' => "home#filtraresultadosempresas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
   match '/home/addsede/:id' => "home#addsede", :constrants => { :id => /\d+/ }
   match '/home/grabasede/' => "home#grabasede"
-  match '/home/delsede/:id' => "home#delsede", :constrants => { :id => /\d+/ }
+  match '/home/delsede/:empresa/:id' => "home#delsede", :constrants => { :empresa => /\d+/, :id => /\d+/ }
   
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -332,6 +334,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -352,7 +355,7 @@ Bazar::Application.routes.draw do
   match '/home/filtraresultadosempresas/:resu/:tipo' => "home#filtraresultadosempresas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
   match '/home/addsede/:id' => "home#addsede", :constrants => { :id => /\d+/ }
   match '/home/grabasede/' => "home#grabasede"
-  match '/home/delsede/:id' => "home#delsede", :constrants => { :id => /\d+/ }
+  match '/home/delsede/:empresa/:id' => "home#delsede", :constrants => { :empresa => /\d+/, :id => /\d+/ }
   
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -476,6 +479,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -496,7 +500,7 @@ Bazar::Application.routes.draw do
   match '/home/filtraresultadosempresas/:resu/:tipo' => "home#filtraresultadosempresas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
   match '/home/addsede/:id' => "home#addsede", :constrants => { :id => /\d+/ }
   match '/home/grabasede/' => "home#grabasede"
-  match '/home/delsede/:id' => "home#delsede", :constrants => { :id => /\d+/ }
+  match '/home/delsede/:empresa/:id' => "home#delsede", :constrants => { :empresa => /\d+/, :id => /\d+/ }
   
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -620,6 +624,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -640,7 +645,7 @@ Bazar::Application.routes.draw do
   match '/home/filtraresultadosempresas/:resu/:tipo' => "home#filtraresultadosempresas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
   match '/home/addsede/:id' => "home#addsede", :constrants => { :id => /\d+/ }
   match '/home/grabasede/' => "home#grabasede"
-  match '/home/delsede/:id' => "home#delsede", :constrants => { :id => /\d+/ }
+  match '/home/delsede/:empresa/:id' => "home#delsede", :constrants => { :empresa => /\d+/, :id => /\d+/ }
   
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -764,6 +769,7 @@ Bazar::Application.routes.draw do
   match '/home/datos' => "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
+  match '/home/busquedageneral' => "home#busquedageneral"
 
   match '/home/ofertas/:tipo' => "home#ofertas"
   match '/home/fichaoferta/:bazar/:id' => "home#fichaoferta", :constrants => { :id => /\d+/ , :bazar => /\d+/ }
@@ -784,7 +790,7 @@ Bazar::Application.routes.draw do
   match '/home/filtraresultadosempresas/:resu/:tipo' => "home#filtraresultadosempresas", :constrants => { :resu => /\d+/ , :tipo => /\s+/ }
   match '/home/addsede/:id' => "home#addsede", :constrants => { :id => /\d+/ }
   match '/home/grabasede/' => "home#grabasede"
-  match '/home/delsede/:id' => "home#delsede", :constrants => { :id => /\d+/ }
+  match '/home/delsede/:empresa/:id' => "home#delsede", :constrants => { :empresa => /\d+/, :id => /\d+/ }
   
   match '/home/favoritos/' => "home#favoritos"
   match '/home/delfav/:bazar/:id' => "home#delfav", :constrants => { :id => /\d+/ , :bazar => /\d+/ }

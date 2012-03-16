@@ -1,0 +1,195 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<%= javascript_include_tag :defaults %>
+
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.ui.slider')) %>
+
+
+<div class="ficha-container">
+  
+<div class="caja-empresa-titulo">
+  <div class="caja-empresa-titulo-texto" >
+    
+    <%= t(:text_busqueda) %> 
+    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      <div class="caja-empresa-cerrar-texto">
+        <%= t("text_cerrar") %>          
+      </div>
+    </div>
+
+  </div>
+
+  <div class="caja-busqueda-general">
+    <form accept-charset="UTF-8" action="/busqueda-empresa" method="post">
+     <input class="busqueda-input" id="busqueda" name="q" placeholder="<%= t(:text_que_estas_buscando) %>" size="50" >
+     <input type="submit" class="busqueda-boton" value="" />
+     <input type="hidden" id="empleados2"name="empleados" />
+     <input type="hidden" id="ventas2" name="ventas" />
+     <input type="hidden" id="tipo" name="tipo" value="2"/>
+     <input type="hidden" id="paises" name="paises" value=""/>
+     
+   </form>
+  </div>
+
+<script type="text/javascript" charset="utf-8">
+  
+  var paises = []
+  var totalpaises = 0;
+  
+  function selecciona(cual) {
+    $("#busca1").attr("class", "caja-busqueda-general-opciones-item");
+    $("#busca2").attr("class", "caja-busqueda-general-opciones-item");
+    $("#busca3").attr("class", "caja-busqueda-general-opciones-item");
+    $("#busca"+cual).attr("class", "caja-busqueda-general-opciones-item-selected");
+    $("#tipo").val(cual);
+  };
+
+  function selepais(cual) {
+
+    var resu = "";
+    var ii = 0; 
+    for (ii = 0; ii < totalpaises; ii++) {
+      if (paises[ii][0] == cual) {
+        if (paises[ii][1] == 1) {
+          paises[ii][1] = 0;
+        }
+        else {
+          paises[ii][1] = 1;
+        }
+      } 
+      if (paises[ii][1] == 0) {
+        $("#pais"+paises[ii][0]).attr("class", "caja-busqueda-general-opciones-item");        
+      }
+      else {
+        resu += paises[ii][0]+"+"
+        $("#pais"+paises[ii][0]).attr("class", "caja-busqueda-general-opciones-item-selected");                
+      }
+      
+    }
+
+    $("#paises").val(resu);
+  };
+  
+</script>
+
+  <div class="caja-busqueda-general-opciones-titulo">
+    <%= t(:text_buscas_ofertas_demandas_o_empresas) %>
+  </div>
+  
+  <div class="caja-busqueda-general-opciones">
+    <div id="busca1" class="caja-busqueda-general-opciones-item" onclick="selecciona('1')">
+      <%= t(:text_ofertas) %>
+    </div>
+    
+    <div id="busca2" class="caja-busqueda-general-opciones-item" onclick="selecciona('2')">
+      <%= t(:text_demandas) %>
+    </div>
+    
+    <div id="busca3" class="caja-busqueda-general-opciones-item-selected" onclick="selecciona('3')">
+      <%= t(:text_empresas) %>
+    </div>
+    
+  </div>
+
+  <div class="caja-busqueda-general-opciones-titulo">
+    <%= t(:text_delimitamos_la_busqueda_a_algun_pais) %>
+  </div>
+  
+  <div class="caja-busqueda-general-opciones">
+
+    <% paises = Pais.where("total_empresas_mercado > 0 ").order("total_empresas_mercado desc") %>
+    <% for pais in paises %>
+      <div id="pais<%= pais.codigo %>" class="caja-busqueda-general-opciones-item" onclick="selepais('<%= pais.codigo %>')">
+        <%= pais.descripcion %>
+      </div>
+    <% end %>
+        
+  </div>
+  
+  <div class="caja-busqueda-general-opciones">
+    <div id="porempleados" class="caja-busqueda-filtro-container" >
+
+      <div class="caja-busqueda-texto-filtro">
+        <%=t(:text_numero_empleados)%>
+      </div>
+
+      <div class="caja-busqueda-slider" id="slider-range" ></div>
+
+      <div class="caja-busqueda-texto-resultado" id="empleados">
+        <%= t(:text_todos) %>
+      </div>
+
+    </div>
+
+    <div id="porfacturacion" class="caja-busqueda-filtro-container">
+
+      <div class="caja-busqueda-texto-filtro">
+        <%=t(:text_ventas)%>
+      </div>
+
+      <div class="caja-busqueda-slider" id="slider-range2" ></div>
+
+      <div class="caja-busqueda-texto-resultado" id="ventas">
+        <%= t(:text_todos) %>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+
+
+$(function() {
+
+  <% paises = Pais.where("total_empresas_mercado > 0 ").order("total_empresas_mercado desc") %>
+  <% for pais in paises %>
+    paises[totalpaises] = ['<%= pais.codigo %>', 0];
+    totalpaises += 1; 
+  <% end %>
+  
+  <%= Bazarcms::Empresasdato.listaRE %>
+  <%= Bazarcms::Empresasdato.listaRD %>
+
+  $( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: maxRE,
+    values: [ 0, maxRE ],
+    slide: function( event, ui ) {
+      $( "#empleados" ).html( "Entre " + listaRE[ui.values[ 0 ]] + " y " + listaRE2[ui.values[ 1 ]]  );
+      $( "#empleados2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+    }
+  });
+  
+  $( "#empleados" ).val( "Todos");
+  $( "#empleados2" ).val( "0+"+maxRE);
+
+  $( "#slider-range2" ).slider({
+    range: true,
+    min: 0,
+    max: maxRD,
+    values: [ 0, maxRD ],
+    slide: function( event, ui ) {
+      $( "#ventas" ).html( "Entre " + listaRD[ui.values[ 0 ]] + " y " + listaRD2[ui.values[ 1 ]] );
+      $( "#ventas2" ).val( ui.values[ 0 ] + "+" + ui.values[ 1 ] );
+    }
+  });
+
+  $( "#ventas" ).val( "Todos");
+  $( "#ventas2" ).val( "0+"+maxRD);
+
+});  
+
+</script>
