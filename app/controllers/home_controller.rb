@@ -1449,9 +1449,14 @@ class HomeController < ApplicationController
   end 
   
   def busquedageneral
-    
     render :layout => false
   end
+  
+  def redirigebusqueda
+    
+    render :layout => false 
+
+  end 
   
   def test
     
