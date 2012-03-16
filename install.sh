@@ -5,7 +5,7 @@ set -x
 RAILS_ENV=production
 export RAILS_ENV
 
-echo "Instalación de Bazar. La instalacion tardara varios minitos." 
+echo "Instalación de Bazar. La instalación tardará varios minutos." 
 
 exec 9> install.log
 exec 1>&9
