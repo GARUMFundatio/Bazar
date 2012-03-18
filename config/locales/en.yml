@@ -3,6 +3,7 @@ en:
 
 # queesbazar.html 
 
+  text_que_es_bazar: "What is Bazar?"
   text_bazar: "Bazar"
   text_entrar: " Log in"
   text_oferta_demanda_red: "Supply and demand networked"
@@ -10,6 +11,7 @@ en:
   text_bazar_solicita_entrada: "Request your entry in Bazar"
   text_ofertas: "offers"
   text_demandas: "demands"
+  text_empresas: "companies"
   text_empresas_en_bazar: "companies in Bazar"
   text_bazares_conectados: "bazars connected"
   text_que_ofrece_titulo: "What Bazar offers?"
@@ -24,3 +26,15 @@ en:
 
 
   text_crear_un_bazar_parrafo: "If you have knowledge of free software and Ruby on Rails you can create a Bazar for companies in your environment..</p>  <p>This page you have all the documentation and source code:: </p> <div class='textos-enlace' ><p> <a href='http://www.garumfundatio.org/bazar'>Documentation and code to install a Bazar.</a>"
+
+  text_bazares_cerca_ti: "Bazars<br/> Near you"
+
+  text_por_que_bazar_titulo: "Why Bazar"
+
+  text_por_que_bazar_parrafo: "<p>Bazar is the first program developed by Garum and it combines the traditional functions of a b2b marketplace with a social layer that allows user/business interaction beyond mere monetary transaction.</p>
+
+        <p>Bazar is like a social network. Each company has its profile, look for companies that may be interested in their products or that provide with reliability at better prices.</p>
+
+        <p>Unlike a social network Bazar is aimed at businesses and business groups and associations. It is free software programmed in Ruby, has a distributed structure and serves to generate market</p>"
+
+

@@ -3,6 +3,7 @@ eo:
 
 # queesbazar.html 
 
+  text_que_es_bazar: "Kio estas Bazar?"
   text_bazar: "Bazar"
   text_entrar: " Ensaluti"
   text_oferta_demanda_red: "Mendado kaj ofertado enretaj"
@@ -10,6 +11,7 @@ eo:
   text_bazar_solicita_entrada: "Peti vian eniron al Bazar"
   text_ofertas: "ofertoj"
   text_demandas: "mendoj"
+  text_empresas: "entreprenoj"
   text_empresas_en_bazar: "entreprenoj en Bazar"
   text_bazares_conectados: "bazaroj konektitaj"
   text_que_ofrece_titulo: "Kion Bazar ofertas?"
@@ -23,3 +25,15 @@ eo:
   text_crear_un_bazar_titulo: "Krei bazaron"
 
   text_crear_un_bazar_parrafo: "Se vi havas konojn pri libera programaro kaj Ruby on Rails vi povas krei Bazaron por la entreprenoj ĉirkaŭ vi.</p>  <p>En tiu ĉi paĝo vi havas la tutajn dokumentaron kaj fontkodon: </p> <div class='textos-enlace' ><p> <a href='http://www.garumfundatio.org/bazar'>Dokumentaro kaj kodo por instali bazaron.</a>"
+
+  text_bazares_cerca_ti: "Bazaroj<br/> Proksime de vi"
+
+  text_por_que_bazar_titulo: "Kial Bazar"
+
+  text_por_que_bazar_parrafo: "<p>Bazar estas la unua programo farita de Garum kaj ĝi kombinas tradiciajn funkciojn de b2b marketplace kun socia tavolo kiu permesas la interagadon de la uzantoj-entreprenoj trans la nura mona transakcio.</p>
+
+        <p>Bazar ŝajnas socia reto. Ĉiu entrepreno havas profilon, serĉas entreprenojn kiuj povu interesiĝi pri ĝiaj produktoj aŭ kiuj provizu konfidece je pli bonaj prezoj.</p>
+
+        <p>Kontraste kun socia reto Bazar celas entreprenojn kaj grupojn kaj asociojn de entreprenoj. Ĝi estas libera programaro farita per Ruby, ĝi havas distribuitan strukturon kaj servas por estigi merkatojn.</p>"
+
+

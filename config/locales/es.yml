@@ -3,6 +3,7 @@ es:
 
 # queesbazar.html 
 
+  text_que_es_bazar: "¿Que es Bazar?"
   text_bazar: "Bazar"
   text_entrar: " Entrar"
   text_oferta_demanda_red: "Oferta y demanda en red"
@@ -10,6 +11,7 @@ es:
   text_bazar_solicita_entrada: "Solicita tu entrada en bazar"
   text_ofertas: "ofertas"
   text_demandas: "demandas"
+  text_empresas: "empresas"
   text_empresas_en_bazar: "empresas en Bazar"
   text_bazares_conectados: "bazares conectados"
   text_que_ofrece_titulo: "¿Qué ofrece?"
@@ -23,6 +25,17 @@ es:
   text_crear_un_bazar_titulo: "Crear un bazar"
 
   text_crear_un_bazar_parrafo: "Si tienes conocimientos de software libre y Ruby on Rails puedes crear un Bazar para las empresas de tu entorno.</p>  <p>En esta página tienes toda la documentación y el código fuente: </p> <div class='textos-enlace' ><p> <a href='http://www.garumfundatio.org/bazar'>Documentación y código para instalar un Bazar.</a>"
+
+  text_bazares_cerca_ti: "Bazares<br/> Cerca de ti"
+
+  text_por_que_bazar_titulo: "Por qué Bazar"
+
+  text_por_que_bazar_parrafo: "<p>Bazar es el primer programa desarrollado por Garum y combina las funcionalidades clásicas de un marketplace b2b con una capa social que permite la interacción de los usuarios-empresa más allá de la mera transacción monetaria.</p>
+
+        <p>Bazar se parece a una red social. Cada empresa tiene su ficha, busca empresas que puedan estar interesadas en sus productos o que le provean con confiabilidad a mejores precios.</p>
+
+        <p>A diferencia de una red social Bazar está dirigido a empresas y a grupos y asociaciones de empresas. Es software libre programado en Ruby, tiene una estructura distribuida y sirve para generar mercados.</p>"
+
 
   label_back: Atrás
   label_destroy: Eliminar
@@ -170,7 +183,7 @@ es:
   text_el_corazon_de_bazar_es_un_sistema_de_ofertas_y_pedidos_optimizado_para_ayudar_a_cada_empresa_a_encontrar_nuevos_clientes_distribuidores_y_proveedores: "el corazón de Bazar es un sistema de ofertas y pedidos optimizado para ayudar a cada empresa a encontrar nuevos clientes, distribuidores y proveedores"
   text_el_mundo: "El mundo"
   text_empresa: "Empresa"
-  text_empresas: "Empresas"
+  
   text_empresas_actualizadas: "Empresas Actualizadas"
   text_empresas_con_estos_criterios: "Empresas con estos criterios"
   text_empresas_de_este_bazar_ubicadas_en: "Empresas de este bazar ubicadas en"

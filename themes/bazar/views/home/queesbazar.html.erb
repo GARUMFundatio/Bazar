@@ -9,7 +9,7 @@
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 	
-	<title><%= h BZ_param("Titular") %> - ¿Que es Bazar?</title>
+	<title><%= h BZ_param("Titular") %> - <%=t(:text_que_es_bazar)%></title>
 	<%= javascript_include_tag :defaults %>
 	<%= javascript_include_tag "jquery-ui.js" %>
 	<%= javascript_include_tag "jquery.cycle.all.min.js" %>
@@ -177,7 +177,7 @@
 
       <div class="caja-cerca">
         <div class="texto-cerca">
-          Bazares<br/> Cerca de ti
+           <%=raw t(:text_bazares_cerca_ti)%>
         </div>
       </div>
 
@@ -187,9 +187,9 @@
             <%= cluster[0] %>
           </div>
           <div class="bazar-totales">
-            <%= cluster[1] %> empresas<br/>
-            <%= cluster[2] %> ofertas,
-            <%= cluster[3] %> demandas<br/>
+            <%= cluster[1] %> <%=t(:text_empresas)%><br/>
+            <%= cluster[2] %> <%=t(:text_ofertas)%>,
+            <%= cluster[3] %> <%=t(:text_demandas)%><br/>
           </div>
         </div>
       <% end %>
@@ -198,22 +198,17 @@
 
     <div class="cuerpo4 ilumina40">  
         <div class="texto-solicitar">
-          <a href="/registrarse">Solicita tu entrada en un Bazar</a>
+          <a href="/registrarse"><%=t(:text_bazar_solicita_entrada)%></a>
         </div>
     </div>
 
     <div class="cuerpo5 trans20">  
       <div class="titulo-porque">
-        Por qué Bazar
+        <%=t(:text_por_que_bazar_titulo)%>
       </div>
 
       <div class="texto-porque">
-        <p>Bazar es el primer programa desarrollado por Garum y combina las funcionalidades clásicas de un marketplace b2b con una capa social que permite la interacción de los usuarios-empresa más allá de la mera transacción monetaria.</p>
-
-        <p>Bazar se parece a una red social. Cada empresa tiene su ficha, busca empresas que puedan estar interesadas en sus productos o que le provean con confiabilidad a mejores precios.</p>
-
-        <p>A diferencia de una red social Bazar está dirigido a empresas y a grupos y asociaciones de empresas. Es software libre programado en Ruby, tiene una estructura distribuida y sirve para generar mercados.</p>
-        
+        <%=raw t(:text_por_que_bazar_parrafo)%>       
       </div>
      </div>
 
