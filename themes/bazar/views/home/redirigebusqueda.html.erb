@@ -1,0 +1,17 @@
+<script>
+
+if (<%= params[:tipo] %> == '1') {
+  parent.location.href = "/busqueda-oferta?tipo=O&q=<%= params[:q]%>&empleados=<%= params[:empleados]-%>&ventas=<%=params[:ventas]-%>&paises=<%= params[:paises]%>"  
+}
+
+if (<%= params[:tipo] %> == '2') {
+  parent.location.href = "/busqueda-oferta?tipo=D&q=<%= params[:q]%>&empleados=<%= params[:empleados]-%>&ventas=<%=params[:ventas]-%>&paises=<%= params[:paises]%>"  
+}
+
+if (<%= params[:tipo] %> == '3') {
+  parent.location.href = "/busqueda-empresa?q=<%= params[:q]%>&empleados=<%= params[:empleados]-%>&ventas=<%=params[:ventas]-%>&paises=<%= params[:paises]%>"  
+}
+
+parent.$.fancybox.close();
+
+</script>
