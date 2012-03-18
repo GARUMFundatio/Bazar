@@ -1,5 +1,17 @@
 --- 
-eo: 
+eo:
+
+# queesbazar.html 
+
+  text_bazar: "Bazar"
+  text_entrar: " Ensaluti"
+  text_oferta_demanda_red: "Mendado kaj ofertado enretaj"
+  text_bazar_permite: "Bazar permesas al via entrepreno aliri enretan merkaton kie oni mendas kaj ofertas produktojn kaj servojn."
+  text_bazar_solicita_entrada: "Peti vian eniron al Bazar"
+
+
+
+ 
   activerecord: 
     errors: 
       full_messages: 
@@ -295,7 +307,7 @@ eo:
   text_asunto: ""
   text_aumentar_sus_ventas_y_mejorar_sus_estrategias_de_compras: ""
   text_ayuda_busqueda_avanzada: ""
-  text_bazar: ""
+
   text_bazar_el_software_sirve_para_construir_bazares_que_se_unen_desde_el_primer_dia_en_un_unico_gran_mercado_global: ""
   text_bazar_facilita_que_las_pequenas_empresas_y_los_emprendedores_encuentren_nuevos_mercados_a_escala_global_en_un_entorno_confiable_sin_los_costes_de_la_internacionalizacion_fisica: ""
   text_bazares: ""
@@ -348,7 +360,7 @@ eo:
   text_empresas_que_demandan_este_sector: ""
   text_empresas_que_sean_de_estos_sectores: ""
   text_empresas_que_sigo: "Entreprenoj kiujn mi sekvas"
-  text_entrar: ensaluti
+
   text_enviar_mensaje_a_incluir_nombre_y_empresa: ""
   text_este_es_el_directorio_alf_betico_de_empresas_haz_click_en_una_letra_para_ver_una_lista_de_las_empresas_cuyo_nombre_comienza_por_dicha_letra: ""
   text_estimar_empresas_con_estas_condiciones: ""

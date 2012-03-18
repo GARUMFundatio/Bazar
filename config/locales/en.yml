@@ -1,352 +1,480 @@
---- 
+---
 en: 
-  activemodel: 
-    errors: 
-      format: ""
-      messages: 
-        accepted: ""
-        blank: ""
-        confirmation: ""
-        empty: ""
-        equal_to: ""
-        even: ""
-        exclusion: ""
-        greater_than: ""
-        greater_than_or_equal_to: ""
-        inclusion: ""
-        invalid: ""
-        less_than: ""
-        less_than_or_equal_to: ""
-        not_a_number: ""
-        not_an_integer: ""
-        odd: ""
-        record_invalid: ""
-        taken: ""
-        too_long: ""
-        too_short: ""
-        wrong_length: ""
-      template: 
-        body: ""
-        header: 
-          one: ""
-          other: ""
-  activerecord: 
-    errors: 
-      format: ""
-      full_messages: 
-        format: ""
-      messages: 
-        accepted: ""
-        blank: ""
-        confirmation: ""
-        empty: ""
-        equal_to: ""
-        even: ""
-        exclusion: ""
-        greater_than: ""
-        greater_than_or_equal_to: ""
-        inclusion: ""
-        invalid: ""
-        less_than: ""
-        less_than_or_equal_to: ""
-        not_a_number: "is not a digit"
-        not_an_integer: ""
-        odd: ""
-        record_invalid: "Validation failed: %{errors}"
-        taken: "has already been taken"
-        too_long: ""
-        too_short: ""
-        wrong_length: ""
-      template: 
-        body: "There were problems with the following fields:"
-        header: 
-          one: "1 error prohibited this %{model} from being saved"
-          other: "%{count} errors prohibited this %{model} from being saved"
-  authlogic: 
-    attributes: 
-      user_session: 
-        email: ""
-        login: ""
-        password: ""
-        remember_me: ""
-    error_messages: 
-      consecutive_failed_logins_limit_exceeded: ""
-      email_invalid: ""
-      login_blank: ""
-      login_invalid: ""
-      login_not_found: ""
-      no_authentication_details: ""
-      not_active: ""
-      not_approved: ""
-      not_confirmed: ""
-      password_blank: ""
-      password_invalid: Invalid
-    models: 
-      user_session: ""
-  date: 
-    abbr_day_names: 
-      - Sun
-      - Mon
-      - Tue
-      - Wed
-      - Thu
-      - Fri
-      - Sat
-    abbr_month_names: 
-      - ~
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
-    day_names: 
-      - Sunday
-      - Monday
-      - Tuesday
-      - Wednesday
-      - Thursday
-      - Friday
-      - Saturday
-    formats: 
-      default: "%Y-%m-%d"
-      long: "%B %d, %Y"
-      short: "%b %d"
-    month_names: 
-      - ~
-      - January
-      - February
-      - March
-      - April
-      - May
-      - June
-      - July
-      - August
-      - September
-      - October
-      - November
-      - December
-    order: 
-      - !ruby/symbol year
-      - !ruby/symbol month
-      - !ruby/symbol day
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
-        one: "about 1 hour"
-        other: "about %{count} hours"
-      about_x_months: 
-        one: "about 1 month"
-        other: "about %{count} months"
-      about_x_years: 
-        one: "about 1 year"
-        other: "about %{count} years"
-      almost_x_years: 
-        one: "almost 1 year"
-        other: "almost %{count} years"
-      half_a_minute: "half a minute"
-      less_than_x_minutes: 
-        one: "less than a minute"
-        other: "less than %{count} minutes"
-      less_than_x_seconds: 
-        one: "less than 1 second"
-        other: "less than %{count} seconds"
-      over_x_years: 
-        one: "over 1 year"
-        other: "over %{count} years"
-      x_days: 
-        one: "1 day"
-        other: "%{count} days"
-      x_minutes: 
-        one: "1 minute"
-        other: "%{count} minutes"
-      x_months: 
-        one: "1 month"
-        other: "%{count} months"
-      x_seconds: 
-        one: "1 second"
-        other: "%{count} seconds"
-    prompts: 
-      day: Day
-      hour: Hour
-      minute: Minute
-      month: Month
-      second: Seconds
-      year: Year
-  errors: 
-    dynamic_format: "%{message}"
-    format: "%{attribute} %{message}"
-    messages: 
-      accepted: "must be accepted"
-      blank: "can't be blank"
-      confirmation: "doesn't match confirmation"
-      empty: "can't be empty"
-      equal_to: "must be equal to %{count}"
-      even: "must be even"
-      exclusion: "is reserved"
-      greater_than: "must be greater than %{count}"
-      greater_than_or_equal_to: "must be greater than or equal to %{count}"
-      inclusion: "is not included in the list"
-      invalid: "is invalid"
-      less_than: "must be less than %{count}"
-      less_than_or_equal_to: "must be less than or equal to %{count}"
-      not_a_number: "is not a number"
-      not_an_integer: "must be an integer"
-      odd: "must be odd"
-      too_long: "is too long (maximum is %{count} characters)"
-      too_short: "is too short (minimum is %{count} characters)"
-      wrong_length: "is the wrong length (should be %{count} characters)"
-  helpers: 
-    select: 
-      prompt: "Please select"
-    submit: 
-      create: "Create %{model}"
-      submit: "Save %{model}"
-      update: "Update %{model}"
-  number: 
-    currency: 
-      format: 
-        delimiter: ","
-        format: "%u%n"
-        precision: 2
-        separator: "."
-        significant: false
-        strip_insignificant_zeros: false
-        unit: $
-    format: 
-      delimiter: ","
-      precision: 3
-      separator: "."
-      significant: false
-      strip_insignificant_zeros: false
-    human: 
-      decimal_units: 
-        format: "%n %u"
-        units: 
-          billion: Billion
-          million: Million
-          quadrillion: Quadrillion
-          thousand: Thousand
-          trillion: Trillion
-          unit: ""
-      format: 
-        delimiter: ""
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units: 
-        format: "%n %u"
-        units: 
-          byte: 
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
-    percentage: 
-      format: 
-        delimiter: ""
-    precision: 
-      format: 
-        delimiter: ""
-  support: 
-    array: 
-      last_word_connector: ", and "
-      two_words_connector: " and "
-      words_connector: ", "
-  text_a_los_miembros_de_su_mismo_bazar: ""
-  text_a_todos_los_usuarios: ""
-  text_accion: Action
-  text_acciones: ""
-  text_acordado_inicialmente: ""
-  text_act: ""
-  text_actividad: "Activity:"
-  text_actividad_de_las_empresas_que_sigo: "Activity of the companies that I follow"
-  text_actividad_en_el_bazar: "Activity in the Bazaar"
-  text_actividades_que_engloba_este_sector: "Activities in this sector includes:"
-  text_actualizada_la_informacion_con_el_directorio_de_bazares: ""
-  text_actvidad_del_bazar: ""
-  text_ademas_al_formarse_una_gran_red_distribuida_de_bazares_como_cada_bazar_esta_mantenido_por_un_grupo_de_empresas_o_una_institucion_diferente_el_coste_y_la_situacion_de_la_infraestructura_los_servidores_se_reparte_entre_muchos_lugares_y_agentes_distintos_haciendo_a_la: ""
-  text_ademas_las_redes_centralizadas_no_solo_son_poco_robustas_ya_que_toda_la_red_depende_de_unico_agente_sino_que_a_poco_que_crezca_el_mercado_ese_agente_el: ""
-  text_administrador: ""
-  text_al: ""
-  text_al_hacerlo_te_devolvera_un_fichero_en_formato_xml_que_habitualmente_saben_manejar_otros_programas_o_tu_aplicacion: "When do you return an XML file format usually know how to use other programs or your application"
-  text_al_tiempo_que_les_facilita_establecer_alianzas_conocer_mejor_su_sector_y: ""
-  text_alguno: any
-  text_anadir_una_nueva_ubicacion: "Adding a New Location"
-  text_ano: Year
-  text_anterior: Previous
-  text_api_application_programming_interface_es_la_forma_que_tiene_el_proyecto_bazar_de_compartir_la_informacion_de_la_red_de_bazares_con_tus_aplicaciones_y_o_herramientas: ""
-  text_api_bazares: "Bazar API"
-  text_api_directorio_garum_fundatio: ""
-  text_apis_disponibles_en_cada_uno_de_los_bazares: ""
-  text_apis_disponibles_en_el_directorio_de_bazares: ""
-  text_asi_soy_miembro_de_un_grupo_empresarial_y_estoy_en_su_bazar_puedo_hacer_ofertas_especificas_solo_para_los_miembros_de_mi_mismo_grupo_o_restringir_una_demanda_a_esas_mismas_empresas_o_si_mi_bazar_es_territorial_esta_formado_por_las_empresas_de_mi_ciudad_por_ejemplo_puedo_hacer_ofertas_que_tengan_en_cuenta_tanto_la: ""
-  text_asunto: Subject
-  text_aumentar_sus_ventas_y_mejorar_sus_estrategias_de_compras: ""
-  text_ayuda_busqueda_avanzada: "Advanced Search Help"
-  text_bazar: Bazar
-  text_bazar_el_software_sirve_para_construir_bazares_que_se_unen_desde_el_primer_dia_en_un_unico_gran_mercado_global: ""
-  text_bazar_facilita_que_las_pequenas_empresas_y_los_emprendedores_encuentren_nuevos_mercados_a_escala_global_en_un_entorno_confiable_sin_los_costes_de_la_internacionalizacion_fisica: ""
-  text_bazares: ""
-  text_bazares_conectados: ""
-  text_borrado: ""
-  text_busca_empresas: ""
-  text_buscar: ""
-  text_buscar_en_sectores: ""
-  text_buscar_paises: ""
-  text_busqueda_avanzada: ""
-  text_cambiar_contrasena: ""
-  text_cercania: ""
-  text_cerrar_informacion: ""
-  text_ciudad_incorrecta: ""
-  text_clicks_en_la_informacion: ""
-  text_cliente: ""
-  text_comentario: ""
-  text_coming_soon: ""
-  text_como_optimizar_la_busqueda: ""
-  text_con_estos_criterios_de_busqueda_hay: ""
-  text_definir_busqueda_de_usuarios_login_empresa_nombre_con_autocomplete: ""
-  text_entrar: login
-  text_introduzca_los_terminos_de_la_busqueda: ""
-  text_ir_a_la_pagina_de_busquedas: ""
-  text_la_informacion_del_proyecto_bazar_va_a_estar_accesible_para_todo_el_mundo_algunas_llamadas_a_la_api_como_la_busqueda_de_empresas_estara_solo_disponible_para_usuarios_registrado_en_cualquiera_de_los_nodos_que_componen_la_red_de_bazares_para_encontrar_un_bazar_puedes_consultar_el: ""
-  text_no_solo_quiere_decir_que_el_codigo_sea_abierto_y_que_no_haya_que_pagar_licencias_de_uso_quiere_decir_que_hay_una_comunidad_de_desarrolladores_alimentada_y_animada_por_la_fundacion_innovando_y_mejorando_las_funcionalidades_permanentemente_por_eso_las_empresas_locales_de_desarrolladores_pueden_dar_servicio_sobre_bazar_y_desarrollar_sin_costes_y_con_todo_el_apoyo_nuevas_funcionalidades_para_necesidades_especificas_en_consecuencia_invertir_en_una_instalacion_de_bazar_para_un_cluster_de_empresas_o_una_asociacion_empresarial_significa_que_el_dinero_y_el_i_d_se_quedaran_y_desarrollaran_en_lo_local: ""
-  text_progreso_de_la_busqueda: ""
-  text_puede_introducir_varios_terminos_de_busqueda_separados_por_espacios_por_ejemplo_madrid_web: ""
-  text_pulse_buscar_para_empezar_la_busqueda: ""
-  text_resultados_de_la_busqueda: "Search Results:"
-  text_seleccione_algun_sector_en_la_caja_de_busqueda: ""
-  text_seleccione_uno_o_varios_paises_en_la_caja_de_busqueda: ""
-  text_seleccione_uno_o_varios_sectores_en_la_caja_de_busqueda: ""
-  text_use_los_desplazadores_para_limitar_la_busqueda: ""
-  text_volver_a_la_pagina_de_busquedas: ""
-  time: 
-    am: am
-    formats: 
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
-    pm: pm
-  will_paginate: 
-    next_label: "Next &#8594;"
-    page_entries_info: 
-      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
-      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
-      single_page: 
-        one: "Displaying 1 %{model}"
-        other: "Displaying all %{count} %{model}"
-        zero: "No %{model} found"
-      single_page_html: 
-        one: "Displaying <b>1</b> %{model}"
-        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
-        zero: "No %{model} found"
-    page_gap: "&hellip;"
-    previous_label: "&#8592; Previous"
+
+# queesbazar.html 
+
+  text_bazar: "Bazar"
+  text_entrar: " Log in"
+  text_oferta_demanda_red: "Supply and demand networked"
+  text_bazar_permite: "Bazar allows your company access to a networked market where offer and demand products and services."
+  text_bazar_solicita_entrada: "Request your entry in Bazar"
+
+
+
+  label_back: Atrás
+  label_destroy: Eliminar
+  label_edit: Editar
+  label_grafico_de_topologia_de_redes: "Gráfico de topología de Redes"
+  label_listado_de_bazares: "Listado de Bazares"
+  label_mailing_a_usuarios: "Mailing a Usuarios"
+  label_new_conf: "Nueva Configuración"
+  label_new_gruposconf: "Nuevo grupo de confirguración"
+  label_new_rol: "Nuevo Rol"
+  label_new_roles_user: "Nuevo rol de usuario"
+  label_new_usersession: "Nueva sesión de usuario"
+  label_noticias: Noticias
+  label_notificacion_a_usuarios: "Notificación a Usuarios"
+  label_nuevo_usuario: "Nuevo Usuario"
+  label_publicar_una_noticia: "Publicar una noticia"
+  label_show: Mostrar
+  label_usuarios: Usuarios
+  label_volver: Volver
+  label_volver_a_editar: "Volver a Editar"
+  label_volver_a_la_lista_de_bazares: "Volver a la lista de bazares"
+  label_volver_a_la_lista_de_mensajes: "Volver a la lista de mensajes"
+  label_volver_a_la_lista_de_notificaciones: "Volver a la lista de notificaciones"
+  label_volver_al_listado: "Volver al listado"
+  label_volver_al_listado_de_noticias: "Volver al listado de Noticias"
+  text_a_los_miembros_de_su_mismo_bazar: "a los miembros de su mismo bazar."
+  text_a_que_tipo_de_empresa_va_dirigida: "¿A que tipo de empresa va dirigida?"
+  text_a_todos_los_usuarios: "a todos los usuarios"
+  text_acciones: Acciones
+  text_act: Act
+  text_actividad: "Actividad:"
+  text_actividad_de_las_empresas_que_sigo: "Actividad de las Empresas que sigo"
+  text_actividad_en_el_bazar: "Actividad en el Bazar"
+  text_actualizada_la_informacion_con_el_directorio_de_bazares: "Actualizada la información con el directorio de bazares."
+  text_actvidad_del_bazar: "Actvidad del Bazar"
+  text_ademas_al_formarse_una_gran_red_distribuida_de_bazares_como_cada_bazar_esta_mantenido_por_un_grupo_de_empresas_o_una_institucion_diferente_el_coste_y_la_situacion_de_la_infraestructura_los_servidores_se_reparte_entre_muchos_lugares_y_agentes_distintos_haciendo_a_la: "Además, al formarse una gran red distribuida de bazares, como cada bazar está mantenido por un grupo de empresas o una institución diferente, el coste y la situación de la infraestructura (los servidores) se reparte entre muchos lugares y agentes distintos, haciendo a la"
+  text_ademas_las_redes_centralizadas_no_solo_son_poco_robustas_ya_que_toda_la_red_depende_de_unico_agente_sino_que_a_poco_que_crezca_el_mercado_ese_agente_el: "Además, las redes centralizadas no sólo son poco robustas -ya que toda la red depende de un único agente- sino que, a poco que crezca el mercado, ese agente, el «"
+  text_administrador: Administrador
+  text_al_hacerlo_te_devolvera_un_fichero_en_formato_xml_que_habitualmente_saben_manejar_otros_programas_o_tu_aplicacion: "Al hacerlo te devolverá un fichero en formato XML que habitualmente saben manejar otros programas o tu aplicación"
+  text_al_tiempo_que_les_facilita_establecer_alianzas_conocer_mejor_su_sector_y: ", al tiempo que les facilita establecer alianzas, conocer mejor su sector y"
+  text_alguno: alguno
+  text_ambito: "Ámbito"
+  text_anadir_una_foto: "AÑADIR UNA FOTO"
+  text_anadir_una_sede: "AÑADIR UNA SEDE"
+  text_añadir_una_nueva_sede: "añade una nueva sede"
+  text_anterior: Anterior
+  text_api_application_programming_interface_es_la_forma_que_tiene_el_proyecto_bazar_de_compartir_la_informacion_de_la_red_de_bazares_con_tus_aplicaciones_y_o_herramientas: "API (Application Programming Interface) es la forma que tiene el Proyecto Bazar de compartir la información de la red de bazares con tus aplicaciones y/o herramientas."
+  text_api_bazares: "API Bazares"
+  text_api_directorio_garum_fundatio: "API Directorio Garum Fundatio"
+  text_apis_disponibles_en_cada_uno_de_los_bazares: "APIs disponibles en cada uno de los bazares:"
+  text_apis_disponibles_en_el_directorio_de_bazares: "APIs disponibles en el directorio de bazares:"
+  text_asi_soy_miembro_de_un_grupo_empresarial_y_estoy_en_su_bazar_puedo_hacer_ofertas_especificas_solo_para_los_miembros_de_mi_mismo_grupo_o_restringir_una_demanda_a_esas_mismas_empresas_o_si_mi_bazar_es_territorial_esta_formado_por_las_empresas_de_mi_ciudad_por_ejemplo_puedo_hacer_ofertas_que_tengan_en_cuenta_tanto_la: "Así, si soy miembro de un grupo empresarial y estoy en su bazar, puedo hacer ofertas específicas sólo para los miembros de mi mismo grupo o restringir una demanda a esas mismas empresas. O si mi bazar es territorial -está formado por las empresas de mi ciudad por ejemplo- puedo hacer ofertas que tengan en cuenta tanto la"
+  text_asunto: Asunto
+  text_aumentar_sus_ventas_y_mejorar_sus_estrategias_de_compras: "aumentar sus ventas y mejorar sus estrategias de compras"
+  text_avisos_pendientes: "Taréas Pendientes"
+  text_ayuda_busqueda_avanzada: "Ayuda Búsqueda Avanzada"
+  text_busqueda_avanzada: "» Búsqueda Avanzada"
+
+  text_bazar_el_software_sirve_para_construir_bazares_que_se_unen_desde_el_primer_dia_en_un_unico_gran_mercado_global: "Bazar, el software, sirve para construir «bazares» que se unen, desde el primer día, en un único gran mercado global."
+  text_bazar_facilita_que_las_pequenas_empresas_y_los_emprendedores_encuentren_nuevos_mercados_a_escala_global_en_un_entorno_confiable_sin_los_costes_de_la_internacionalizacion_fisica: "Bazar facilita que las pequeñas empresas y los emprendedores encuentren nuevos mercados a escala global en un entorno confiable sin los costes de la internacionalización física"
+  text_bazares_conectados: "Bazares Conectados:"
+  text_borrado: "Borrado:"
+  text_buscar: Buscar
+  text_buscar_en_sectores: "Buscar en sectores"
+  text_buscar_paises: "Buscar Países"
+  text_buscar_empresas_ofertas_o_demandas: "Buscar Empresas, Ofertas o Demandas"
+  text_buscas_ofertas_demandas_o_empresas: "¿Buscas ofertas, demandas o empresas? Elije uno:"
+  text_busqueda: "Búsqueda"
+  text_cambiar_contrasena: "Cambiar Contraseña"
+  text_cercania: cercanía
+  text_cerrar: "cerrar"
+  text_cerrar_informacion: "Cerrar Información"
+  text_cerrar_sesion: "cerrar sesión"
+  text_como_la: "como  la"
+  text_como_se_usa_el_api: "¿Como se usa el API?"
+  text_como_cliente: "Como Cliente"
+  text_como_proveedor: "Como Proveedor"
+  text_compras: "Compras:"
+  text_con_esta_llamada_del_api_obtienes_la_informacion_de_una_empresa_es_necesario_poner_el_codigo_de_la_empresa_al_final_del_enlace: "Con esta llamada del API obtienes la información de una empresa. Es necesario poner el código de la empresa al final del enlace."
+  text_con_esta_llamada_del_api_te_devuelve_la_informacion_general_de_un_bazar: "Con esta llamada del API te devuelve la información general de un bazar."
+  text_con_esta_llamada_del_api_te_devuelve_las_empresas_que_estan_de_un_bazar: "Con esta llamada del API te devuelve las empresas que están de un bazar."
+  text_con_esta_llamada_del_api_te_devuelve_los_paises_activos_de_un_bazar: "Con esta llamada del API te devuelve los paises activos de un bazar."
+  text_con_esta_llamada_del_api_te_devuelve_los_perfiles_activos_de_un_bazar: "Con esta llamada del API te devuelve los perfiles activos de un bazar."
+  text_confianza: confianza
+  text_consultas_realizadas: "Consultas Realizadas:"
+  text_contactar_empresa: "Contactar empresa"
+  text_correo: "Correo"
+  text_cuando_montar_un_bazar: "¿Cuándo montar un bazar?"
+  text_cuando_creamos_que_a_las_empresas_de_nuestro_sector_nuestro_grupo_o_nuestra_ciudad_les_proporcionara_una_ventaja_tener_un_espacio_especifico_para_ellas_en_el_gran_mercado_global_porque_tengan_una_denominacion_de_origen_comun_o_un_marchamo_de_calidad_o_simplemente_cuando_comerciar_y_compartir_conocimiento_entre_ellas_organizando_cursos_seminarios_o_realizando_convocatorias_tenga_sentido_en_si_mismo_es_decir_cuando_el_bazar_vaya_a_compartir_la_identidad_que_define_a_una_comunidad_en_la_red_social: "Cuando creamos que a las empresas de nuestro sector, nuestro grupo o nuestra ciudad les proporcionará una ventaja tener un espacio específico para ellas en el gran mercado global (porque tengan una denominación de origen común o un marchamo de calidad) o simplemente cuando comerciar y compartir conocimiento entre ellas (organizando cursos,  seminarios o realizando convocatorias) tenga sentido en si mismo, es decir, cuando el bazar  vaya a compartir la identidad que define a una comunidad en la red social."
+  text_cuanto_mas_accesible_y_mejor_es_la_calidad_de_la_informacion_que_se_maneja_en_una_red_mejor_es_su_rendimiento_creemos_en_los_proyectos_abiertos_en_internet: ". Cuanto más accesible y mejor es la calidad de la información que se maneja en una red, mejor es su rendimiento. Creemos en los proyectos abiertos en Internet."
+  text_darse_de_alta_en_este_bazar_raquo: "Darse de alta en este bazar &raquo;"
+  text_dashboard: Dashboard
+  text_datos_de: "Datos de"
+  text_datos_de_bazar: "Datos de Bazar"
+  text_datos_de_esta_ubicacion: "Datos de esta Ubicación"
+  text_datos_de_tu_cuenta: "datos de tu cuenta"
+  text_de: "De:"
+  text_de_aquellos_a_los_que_me_dirijo: "de aquellos a los que me dirijo."
+  text_de_estos_sectores: "de estos sectores."
+  text_de_instalaciones_con_infraestructura_propia_que_permiten_a_cada_empresa_poder_llegar_a_cualquier_otra_al_tiempo_que_aseguran_que_nadie_puede_apropiarse_del_mercado_y_que_la_estructura_global_es_realmente_robusta: ", de instalaciones con infraestructura propia, que permiten a cada empresa poder llegar a cualquier otra, al tiempo que aseguran que nadie puede apropiarse del mercado y que la estructura global es realmente robusta."
+  text_de_la_antiguedad_a_las_redes_tecnologicas_de_hoy_no_han_aparecido_impulsados_por_individuos_aislados_que_se_conectaban_en_un_unico_espacio_sino_por_la_interconexion_de_mercados_locales_mas_pequenos_en_los_que_los_individuos_se_conocian_previamente_muy_bien_entre_si: "de la Antiguedad a las redes tecnológicas de hoy, no han aparecido impulsados por individuos aislados que se conectaban en un único espacio, sino por la interconexión de mercados locales más pequeños en los que los individuos se conocían previamente muy bien entre si."
+  text_debe_tener_la_forma_de_una: "Debe tener la forma de una"
+  text_definir_busqueda_de_usuarios_login_empresa_nombre_con_autocomplete: "definir busqueda de usuarios (login) + empresa (nombre) con autocomplete"
+  text_delimitamos_la_busqueda_a_algun_pais: "¿Delimitamos la búsqueda a algún país? Puedes elegir varios:"
+  text_DEMANDA: "DEMANDA"
+  text_demandan: "Demandan:"
+  text_demandas: "Demandas"
+  text_demandas_en_INDUSTRIA: "demandas en INDUSTRIA"
+  text_demandas_en_DISTRIBUCION: "demandas en DISTRIBUCIÓN"
+  text_demandas_en_FINANZAS: "demandas en FINANZAS"
+  text_demandas_en_CONOCIMIENTO: "demandas en CONOCIMIENTO"
+  text_demandas_en_COOPERATIVAS: "demandas en COOPERATIVAS"
+  text_desc: Desc
+  text_describela_un_poco: "Descríbela un poco"
+  text_describe_la_sede_o_su_direccion: "describe la sede o su dirección"
+  text_descripcion: Descripción
+  text_descripcion_de_la_empresa: "descripción de la empresa"
+  text_destacadas_para_ti: "Destacadas para ti"
+  text_dinamizador: Dinamizador
+  text_directorio_de_bazares: "Directorio de Bazares"
+  text_distribucion_de_la_empresas: "Distribución de las Empresas"
+  text_dueno_de_la_red: "dueño de la red"
+  text_editar_bazar: "Editar Bazar"
+  text_editar_noticia: "Editar Noticia"
+  text_editar_un_parametro: "Editar un Parámetro"
+  text_editing_actividad: "Editando actividad"
+  text_editing_favorito: "Editando favorito"
+  text_editing_gruposconf: "Editando grupo de configuración"
+  text_editing_rol: "Editando rol"
+  text_editing_roles_user: "Editando rol de usuario"
+  text_editing_usersession: "Editando sesión de usuario"
+  text_ejemplo: "Ejemplo:"
+  text_ej_sillas_de_plastico_personalizadas: "Ej: Sillas de plástico personalizadas"
+  text_ej_fabrica_o_direccion: "Ej: 'fábrica' o 'calle león 14, Bilbao, España'"
+  text_ejemplo_1_como_obtener_informacion_de_un_bazar_proyecto_bazar: "Ejemplo 1 Como obtener información de un Bazar - Proyecto Bazar"
+  text_ejemplo_2_como_obtener_que_empresas_hay_en_un_bazar_proyecto_bazar: "Ejemplo 2 Como obtener que empresas hay en un bazar - Proyecto Bazar"
+  text_ejemplo_3_como_obtener_informacion_de_una_empresa_proyecto_bazar: "Ejemplo 3 Como obtener información de una empresa - Proyecto Bazar"
+  text_ejemplo_4_como_obtener_los_perfiles_activos_de_un_bazar_proyecto_bazar: "Ejemplo 4 Como obtener los perfiles activos de un bazar - Proyecto Bazar"
+  text_ejemplo_5_como_obtener_los_paises_activos_de_un_bazar_proyecto_bazar: "Ejemplo 5 Como obtener los países activos de un bazar - Proyecto Bazar"
+  text_ejemplo_de_asunto_de_mensaje: "ej: Ofrecimiento de acuerdo"
+  text_ejemplos_api_proyecto_bazar: "Ejemplos API - Proyecto Bazar"
+  text_ejemplos_del_api: "Ejemplos del API"
+  text_ejemplos_del_api_del_proyecto_bazar: "Ejemplos del API del Proyecto Bazar"
+  text_el_basamento_invisible_de_los_mercados_es_la_confianza: "El basamento invisible de los mercados es la confianza"
+  text_el_corazon_de_bazar_es_un_sistema_de_ofertas_y_pedidos_optimizado_para_ayudar_a_cada_empresa_a_encontrar_nuevos_clientes_distribuidores_y_proveedores: "el corazón de Bazar es un sistema de ofertas y pedidos optimizado para ayudar a cada empresa a encontrar nuevos clientes, distribuidores y proveedores"
+  text_el_mundo: "El mundo"
+  text_empresa: "Empresa"
+  text_empresas: "Empresas"
+  text_empresas_actualizadas: "Empresas Actualizadas"
+  text_empresas_con_estos_criterios: "Empresas con estos criterios"
+  text_empresas_de_este_bazar_ubicadas_en: "Empresas de este bazar ubicadas en"
+  text_empresas_destinatarias: "Empresas destinatarias"
+  text_empresas_del_bazar: "Empresas del Bazar"
+  text_empresas_en_el_mercado: "Empresas en el Mercado"
+  text_empresas_en_INDUSTRIA: "empresas en INDUSTRIA"
+  text_empresas_en_DISTRIBUCION: "empresas en DISTRIBUCIÓN"
+  text_empresas_en_FINANZAS: "empresas en FINANZAS"
+  text_empresas_en_CONOCIMIENTO: "empresas en CONOCIMIENTO"
+  text_empresas_en_COOPERATIVAS: "empresas en COOPERATIVAS"
+  text_empresas_en_esta_ubicaci_n: "Empresas en esta Ubicación"
+  text_empresas_en_este_bazar: "Empresas en este Bazar"
+  text_empresas_han_votado: "empresas han votado"
+  text_empresas_que_sean_de_estos_sectores: "Empresas que sean de estos sectores"
+  text_empresas_que_sigo: "Empresas que sigo"
+  text_en_que_ciudad_esta_la_sede: "¿En que ciudad está la sede?"
+  text_en_pocas_palabras: "En pocas palabras:"
+  text_enlace: "Enlace:"
+  text_enlace_al_bazar: "Enlace al Bazar:"
+  text_enlace_externo_a_la_oferta: "Enlace externo a la oferta"
+
+  text_enviando_el_correo: "Enviando el correo"
+  text_enviar_mensaje: "Enviar Mensaje"
+  text_enviar_el_mensaje: "Envíar el mensaje"
+  text_envia_un_mensaje_a: "Envía un mensaje a"
+  text_enviar_mensaje_a_incluir_nombre_y_empresa: "Enviar Mensaje a: Incluir nombre y empresa"
+  text_enviar_mensaje_a_todos_los_usuarios: "Enviar Mensaje a todos los Usuarios"
+  text_enviar_notificacion: "Enviar Notificación"
+  text_enviar_notificacion_a_todos_los_usuarios: "Enviar Notificación a todos los Usuarios"
+  text_es: Es
+  text_es_el_primer_programa_desarrollado_por: "es el primer programa desarrollado por"
+  text_es_necesario_registrarse_para_poder_usar_bazar: "Es necesario registrarse para poder usar Bazar"
+  text_es_necesario_registrarse_para_poder_usar_bazar_al_100: "Es necesario registrarse para poder usar Bazar al 100%"
+  text_es_un: "es un"
+  text_escribe_aqui_tu_mensaje: "escribe aquí tu mensaje"
+  text_estamos_en_beta_pero_ya_puedes_darte_de_alta_y_empezar_a_usar_este_bazar_todos_los_dias_vamos_incorporando_nuevas_funcionalidades: "Estamos en Beta pero ya puedes darte de alta y empezar a usar este Bazar. Todos los días vamos incorporando nuevas funcionalidades."
+  text_este_es_el_directorio_alf_betico_de_empresas_haz_click_en_una_letra_para_ver_una_lista_de_las_empresas_cuyo_nombre_comienza_por_dicha_letra: "Este es el directorio alfábetico de empresas. Haz click en una letra para ver una lista de las empresas cuyo nombre comienza por dicha letra."
+  text_este_sistema_tiene_dos_virtudes_especialmente_interesantes: "Este sistema tiene dos virtudes especialmente interesantes:"
+  text_estoy_hay_que_quitarlo_cuando_esten_todos_los_parametros_igual_que_borrar: "* Estoy hay que quitarlo cuando esten todos los parametros igual que borrar."
+  text_estructura_distribuida: "estructura distribuida"
+  text_estructura_sea_distribuida: "estructura sea distribuida"
+  text_f_a_q: f.a.q.
+  text_facturacion_anual: "Facturación anual"
+  text_fecha: "Fecha:"
+  text_fecha_de_publicacion: "Fecha de publicación"
+  text_ficha_de_empresa: "ficha de empresa"
+  text_ficha_de_empresa_incompleta: "Ficha de empresa incompleta"
+  text_filtrar_por_datos_economicos: "Filtrar por Datos Económicos"
+  text_filtrar_por_el_n_de_empleados_de_la_empresa: "Filtrar por el nº de empleados de la empresa"
+  text_filtrar_por_la_facturacion_anual_de_la_empresa: "Filtrar por la facturación anual de la empresa"
+  text_filtrar_por_pais: "Filtrar por País"
+  text_filtrar_por_perfiles: "Filtrar por Perfiles"
+  text_filtros_avanzados_para_seleccionar_las_empresas: "Filtros avanzados para seleccionar las Empresas"
+  text_formatos_disponibles: "Formatos Disponibles:"
+  text_formatos_soportados: "Formatos soportados."
+  text_france: "France ."
+  text_funcion: "Función:"
+  text_funcionalidades_del_proyecto_bazar: "Funcionalidades del proyecto Bazar"
+  text_garum: garum
+  text_garum_fundatio: "Garum Fundatio"
+  text_generador_de_mercados: "generador de mercados"
+  text_generar_mercados: "generar mercados"
+  text_gran_mercado_electronico_no_debe_tener_propietario: "gran mercado electrónico no debe tener propietario"
+  text_gran_red_distribuida_de_bazares: "gran red distribuida de «bazares»"
+  text_grupo: Grupo
+  text_guardar_estos_datos: "guardar estos datos"
+  text_hasta_ahora_las_llamadas_grandes_redes_sociales_se_han_construido_como_una: "Hasta ahora las llamadas «grandes redes sociales» se han construido como una"
+  text_hasta_cuando_es_valida_la_oferta: "¿Hasta cuándo es válida la oferta?"
+  text_hasta_cuando_es_valida_la_demanda: "¿Hasta cuándo es válida la demanda?"
+  text_hay_alguna_pagina_web_con_mas_informacion: "¿Hay alguna web en la que se dé más información?"
+  text_hay_limitaciones: "¿Hay limitaciones?"
+  text_no_tiene_imagenes: "No tiene imágenes"
+  text_hemos_creado_una_pagina_de_ejemplos_de_como_usar_el_api_de_bazar_cada_una_de_las_funciones_disponibles_cuenta_con_su_descripcion_ejemplos_de_uso_y_un_ejemplo_de_que_se_obtiene_cuando_se_invoca_puedes_ver_toda_esta_informacion_en_la_pagina_de: "Hemos creado una página de ejemplos de como usar el API de Bazar. Cada una de las funciones disponibles cuenta con su descripción, ejemplos de uso y un ejemplo de que se obtiene cuando se invoca. Puedes ver toda esta información en la página de"
+  text_http_bazar_garumfundatio_org_api_empresas_json: "http://bazar.garumfundatio.org/api/empresas.json"
+  text_http_bazar_garumfundatio_org_api_info_xml: "http://bazar.garumfundatio.org/api/info.xml"
+  text_http_bazar_garumfundatio_org_api_infoempresa_xml_5: "http://bazar.garumfundatio.org/api/infoempresa.xml/5"
+  text_http_bazar_garumfundatio_org_api_paises_json: "http://bazar.garumfundatio.org/api/paises.json"
+  text_http_bazar_garumfundatio_org_api_perfiles_json: "http://bazar.garumfundatio.org/api/perfiles.json"
+  text_http_enlace_del_bazar_api_empresas_xml_json: "http://enlace-del-bazar/api/empresas.[ xml | json ]"
+  text_http_enlace_del_bazar_api_info_xml_json_html: "http://enlace-del-bazar/api/info.[ xml | json | html ]"
+  text_http_enlace_del_bazar_api_infoempresa_xml_json_id_empresa: "http://enlace-del-bazar/api/infoempresa.[ xml | json ]/id-empresa"
+  text_http_enlace_del_bazar_api_paises_xml_json: "http://enlace-del-bazar/api/paises.[ xml | json ]"
+  text_http_enlace_del_bazar_api_perfiles_xml_json: "http://enlace-del-bazar/api/perfiles.[ xml | json ]"
+  text_id: Id
+  text_incorporar_modulos_de: "incorporará módulos de"
+  text_info_garumfundatio_org: info@garumfundatio.org
+  text_informacion_actualizada_el: "Información actualizada el"
+  text_informacion_de_una_empresa: "Información de una Empresa"
+  text_informacion_general_de_tu_oferta: "Información General de tu oferta"
+  text_informacion_del_bazar: "Información del Bazar"
+  text_informacion_del_usuario: "Información del Usuario"
+  text_informacion_general_sobre_tu_empresa: "Información general sobre tu empresa"
+  text_internacional: "Internacional"
+  text_instalar_bazar_y_unirse_a_la_red_de_bazares_ser_la_opcion_recomendada_a_grupos_empresariales_asociaciones_sectoriales_de_empresas_y_entidades_dedicadas_a_la_promocion_economica_local: "instalar Bazar y unirse a la red de bazares, será la opción recomendada a grupos empresariales, asociaciones sectoriales de empresas y entidades dedicadas a la promoción económica local"
+  text_introduzca_los_terminos_de_la_busqueda: "Introduzca los términos de la búsqueda"
+  text_introduzca_su_correo_y_pulse_cambiar_contrasena: "Introduzca su correo y pulse \"Cambiar Contraseña\"."
+  text_json: JSON
+  text_la_informacion_del_proyecto_bazar_va_a_estar_accesible_para_todo_el_mundo_algunas_llamadas_a_la_api_como_la_busqueda_de_empresas_estara_solo_disponible_para_usuarios_registrado_en_cualquiera_de_los_nodos_que_componen_la_red_de_bazares_para_encontrar_un_bazar_puedes_consultar_el: "La información del Proyecto Bazar va a estar accesible para todo el mundo. Algunas llamadas a la API como la búsqueda de empresas estará solo disponible para usuarios registrado en cualquiera de los nodos que componen la red de bazares. Para encontrar un bazar puedes consultar el"
+  text_volver_a_la_pagina_de_busquedas: "« Volver a la página de búsquedas"
+  text_las_empresas_que_esten_en: "las empresas que estén en"
+  text_las_empresas_reproducen_en_la_red_global_las_redes_de_confianza: "Las empresas reproducen en la red global las redes de confianza"
+  text_last_login: "Última vez conectado"
+  text_leido: "Leido:"
+  text_listado_de_bazares: "Listado de Bazares"
+  text_listado_de_usuarios: "Listado de Usuarios"
+  text_listing_gruposconfs: "Listando grupos de configuración"
+  text_listing_roles: "Listando roles"
+  text_listing_roles_users: "Listando roles de usuario"
+  text_listing_usersessions: "Listando sesiones de usuario"
+  text_login: Usuario
+  text_login_count: "Conexiones"
+  text_los_administradores_de_cada_bazar_conocen_a_sus_miembros: "Los administradores de cada bazar conocen a sus miembros"
+  text_los_bazares_son_mercados_locales_locales_no_necesariamente_en_un_sentido_territorial_sino_de_red_una_red_de_artesanos_o_un_grupo_empresarial_obtienen_una_ventaja_especial_de_formar_un_bazar_propio_en_vez_de_integrarse_en_otro_existente_tener_datos_y_compartir_estadisticas_de_su_propio_metabolismo_comun_las_empresas_de_cada_bazar_tienen_acceso_como_grupo_a_los_agregados_estadisticos_que_describen_su_uso_ademas_de_a_los_resumenes_de_actividad_de_sus_componentes_individuales_dicho_de_otro_modo: "Los bazares son mercados locales. Locales no necesariamente en un sentido territorial, sino de red: una red de artesanos o un grupo empresarial obtienen una ventaja especial de formar un bazar propio en vez de integrarse en otro existente: tener datos y compartir estadísticas de su propio metabolismo común. Las empresas de cada bazar tienen acceso, como grupo, a los agregados estadisticos que describen su uso además de a los resúmenes de actividad de sus componentes individuales. Dicho de otro modo,"
+  text_los_datos_de_este_bazar: "Los datos de este bazar »"
+  text_los_formatos_soportados_son_xml_json_y_csv: "Los formatos soportados son: XML, JSON y CSV."
+  text_mas_detalles: "Más detalles ..."
+  text_mensaje_enviado_desde_bazar: "Mensaje enviado desde Bazar"
+  text_mensajes: Mensajes
+  text_mensajes_y_notificaciones: "Mensajes y Notificaciones"
+  text_mercado: mercado
+  text_mercados: mercados
+  text_mi_bazar: "Mi Bazar"
+  text_mientras_para_una_empresa_individual_la_opcion_mas_interesante_sera_unirse_a_un_bazar_sostenido_por_alguna_institucion_empresarial_o_publica_donde_esten_las_empresas_que_le_conocen_y_con_las_que_puede_aprender_y_comerciar_preferentemente: ", mientras para una empresa individual, la opción más interesante será unirse a un bazar sostenido por alguna institución empresarial o pública donde estén las empresas que le conocen y con las que puede aprender y comerciar preferentemente."
+  text_muchos_bazares_un_gran_mercado: "Muchos bazares, un gran mercado"
+  text_numero_empleados: "Nº Empleados:"
+  text_navegue_por_los_resultados: "Navegue por los resultados."
+  text_nacional: "Nacional"
+  text_new_actividad: "Nueva actividad"
+  text_new_favorito: "Nuevo favorito"
+  text_new_gruposconf: "Nuevo grupo de configuración"
+  text_new_rol: "Nuevo rol"
+  text_new_roles_user: "Nuevo rol de usuario"
+  text_new_usersession: "Nueva sesión de usuario"
+  text_no_definio_palabras_claves: "No definió palabras claves"
+  text_no_hay_mensajes: "No hay mensajes."
+  text_no_hay_mensajes_sin_leer: "No hay mensajes sin leer."
+  text_no_hay_notificaciones: "No hay notificaciones."
+  text_no_hay_notificaciones_sin_leer: "No hay notificaciones sin leer."
+  text_no_solo_quiere_decir_que_el_codigo_sea_abierto_y_que_no_haya_que_pagar_licencias_de_uso_quiere_decir_que_hay_una_comunidad_de_desarrolladores_alimentada_y_animada_por_la_fundacion_innovando_y_mejorando_las_funcionalidades_permanentemente_por_eso_las_empresas_locales_de_desarrolladores_pueden_dar_servicio_sobre_bazar_y_desarrollar_sin_costes_y_con_todo_el_apoyo_nuevas_funcionalidades_para_necesidades_especificas_en_consecuencia_invertir_en_una_instalacion_de_bazar_para_un_cluster_de_empresas_o_una_asociacion_empresarial_significa_que_el_dinero_y_el_i_d_se_quedaran_y_desarrollaran_en_lo_local: "no sólo quiere decir que el código sea abierto y que no haya que pagar licencias de uso. Quiere decir que hay una comunidad de desarrolladores, alimentada y animada por la fundación, innovando y mejorando las funcionalidades permanentemente. Por eso las empresas locales de desarrolladores pueden dar servicio sobre Bazar y desarrollar, sin costes y con todo el apoyo, nuevas funcionalidades para necesidades específicas. En consecuencia, invertir en una instalación de Bazar para un cluster de empresas o una asociación empresarial significa que el dinero y el I+D se quedarán y desarrollarán en lo local."
+  text_no_se_ha_encontrado_ninguna: "No se ha encontrado ninguna."
+  text_no_se_ha_podido_guardar: "No se ha podido guardar:"
+  text_no_se_ha_podido_salvar_el_rol: "No se ha podido guardar el rol:"
+  text_no_se_ha_podido_salvar_los_datos_del_usuario: "No se han podido guardar los datos del usuario:"
+  text_no_te_extiendas_demasiado: "No seas demasiado extenso, la gente no lee los textos largos. Con un par de párrafos quedará mejor."
+  text_no_van_a_dar_paso_a_empresas_fraudulentas_o_permitir_comportamientos_abusivos_porque_irian_contra_su_propia_imagen_y_contra_los_intereses_y_proyeccion_de_cada_una_de_las_empresas_de_su_red_a_las_que_quieren_potenciar: ", no van a dar paso a empresas fraudulentas o permitir comportamientos abusivos porque irían contra su propia imagen y contra los intereses y proyección de cada una de las empresas de su red a las que quieren potenciar."
+  text_nombre: "Nombre:"
+  text_nombre_de_la_empresa: "nombre de la empresa"
+  text_noticias: Noticias
+  text_notificaciones: Notificaciones
+  text_nuestra_intencion_es_que_sea_muy_sencillo_extraer_informacion_de_la_red_de_bazares_por_ejemplo_para_obtener_la_informacion_general_de_un_bazar_solo_tendrias_que_abrir_el_siguiente_enlace: "Nuestra intención es que sea muy sencillo extraer información de la red de bazares. Por ejemplo para obtener la información general de un bazar solo tendrías que abrir el siguiente enlace:"
+  text_nunca: Nunca
+  text_nueva_noticia: "Nueva Noticia"
+  text_nuevas_empresas: "Nuevas Empresas"
+  text_nuevo_bazar: "Nuevo bazar"
+  text_nuevo_parametro: "Nuevo Parametro"
+  text_nuevo_usuario: "Nuevo Usuario"
+  text_nuevos: nuevos
+  text_numero_de_empleados: "Número de empleados"
+  text_oferta_demanda: "Oferta / Demanda"
+  text_OFERTA: "OFERTA"
+  text_ofertas: Ofertas
+  text_ofertas_demandas: "Ofertas / Demandas"
+  text_ofertas_diferenciadas_y_demandas_restringidas: "ofertas diferenciadas y demandas restringidas"
+  text_ofertas_en_INDUSTRIA: "ofertas en INDUSTRIA"
+  text_ofertas_en_DISTRIBUCION: "ofertas en DISTRIBUCIÓN"
+  text_ofertas_en_FINANZAS: "ofertas en FINANZAS"
+  text_ofertas_en_CONOCIMIENTO: "ofertas en CONOCIMIENTO"
+  text_ofertas_en_COOPERATIVAS: "ofertas en COOPERATIVAS"
+  text_oferta_valida_hasta: "Oferta válida hasta"
+  text_oferta_valida_hasta_el: "Oferta válida hasta el"
+  text_ofrecen: "Ofrecen:"
+  text_pais: "Pais"
+  text_paises: "Países:"
+  text_paises_activos_de_un_bazar: "Países Activos de un Bazar"
+  text_paises_con_empresas_de_este_bazar: "Países con Empresas de este Bazar"
+  text_paises_seleccionados: "Países Seleccionados:"
+  text_palabras_clave_actividad: "Palabras clave actividad"
+  text_parametro: "Parámetro:"
+  text_parametros_de_bazar: "Parámetros de Bazar"
+  text_para: "Para:"
+  text_para_empezar_debe_basarse_en: ": para empezar, debe basarse en"
+  text_para_tu: "para tu"
+  text_parametro: Parámetro
+  text_password: Password
+  text_password_is_not_valid: "La contraseña no es válida"
+  text_perfiles_activos_de_un_bazar: "Perfiles Activos de un Bazar"
+  text_pero_a_diferencia_de_una_red_social_bazar_esta_limitado_a_empresas_y_a_grupos_y_asociaciones_de_empresas_por_eso: "Pero a diferencia de una red social Bazar está limitado a empresas y a grupos y asociaciones de empresas. Por eso"
+  text_pero_el_mercado_tradicional_no_era_solo_un_lugar_para_la_compraventa_era_tambien_un_espacio_de_interaccion_politica_y_social_y_se_olvida_demasiado_a_menudo_el_lugar_donde_maestros_filosofos_y_jueces_arbitraban_conflictos_y_se_encontraban_con_sus_discipulos_el_mercado_no_es_exclusivamente_una_relacion_monetaria_sino_sobre_todo_una_relacion_social: "Pero el mercado tradicional no era sólo un lugar para la compraventa. Era también un espacio de interacción política y social y -se olvida demasiado a menudo- el lugar donde maestros, filósofos y jueces arbitraban conflictos y se encontraban con sus discípulos.  El mercado no es exclusivamente una relación monetaria sino sobre todo una relación social."
+  text_pero_realmente_lo_mas_valioso_de_bazar_es_aquello_para_lo_que_sirve: "Pero realmente, lo más valioso de Bazar es aquello para lo que sirve."
+  text_pero_si_cada_instalacion_de_bazar_el_software_es_un_bazar_y_la_red_de_bazares_forma_un_gran_mercado_unico_que_sentido_tiene_abrir_un_nuevo_bazar_por_que_no_unirse_a_alguno_existente_si_el_resultado_acceder_al_gran_mercado_va_a_ser_el_mismo: "Pero si cada instalación de Bazar, el software, es un bazar y la red de bazares forma un gran mercado único, ¿qué sentido tiene abrir un nuevo bazar? ¿por qué no unirse a alguno existente si el resultado -acceder al gran mercado- va a ser el mismo?"
+  text_pero_sobre_todo_debe_tener_su_infraestructura_repartida_entre_muchos_agentes_en_muchos_lugares_y_con_muchas_conexiones_y_ordenadores_distintos: ", pero sobre todo, debe tener su infraestructura repartida entre muchos agentes, en muchos lugares y con muchas conexiones y ordenadores distintos."
+  text_pero_sobre_todos_pueden_hacer: "Pero sobre todos, pueden hacer"
+  text_pero_una_red_distribuida_de_que_podiamos_haber_pensado_el_gran_mercado_global_como_una_red_distribuida_de_empresas_cada_cual_mantendria_su_propia_infraestructura_y_al_conectarse_a_las_demas_se_generaria_la_red_pero_los_mercados_globales_reales_nunca_han_sido_asi_mas_que_en_las_abstracciones_de_los_economistas_los_mercados_globales_desde_el: "Pero ¿una red distribuida de qué? Podíamos haber pensado el gran mercado global como una red distribuida de empresas: cada cual mantendría su propia infraestructura y al conectarse a las demás se generaría la red. Pero los mercados globales reales nunca han sido así más que en las abstracciones de los economistas. Los mercados globales, desde el"
+  text_poniendo_en_contacto_a_clientes_y_proveedores_en_todo_el_mundo: "poniendo en contacto a clientes y proveedores en todo el mundo"
+  text_ponle_un_titulo_a_tu_mensaje: "Ponle un título a tu mensaje"
+  text_por_eso: "Por eso"
+  text_por_eso_si_cada_instalacion_de_bazar_es_una_red_distribuida_de_empresas_basada_en_la_confianza_su_resultado_global_es_una: "Por eso si cada instalación de Bazar es una red distribuida de empresas basada en la confianza, su resultado global es una"
+  text_por_eso_un: "Por eso un"
+  text_por_localizacion: "Por localización"
+  text_por_sectores: "Por sectores"
+  text_por_que_abrir_un_bazar: "¿Por qué abrir un bazar?"
+  text_por_que_compartimos_la_informacion: "¿Por qué compartimos la información?"
+  text_por_que_es_clave_para_agilizar_las_relaciones_entre_los_usuarios_del: "Por que es clave para agilizar las relaciones entre los usuarios del"
+  text_posicionarse_en_mercados_internacionales_vendiendo_desde_el_primer_dia: "posicionarse en mercados internacionales vendiendo desde el primer día"
+  text_progreso_de_la_busqueda: "Progreso de la búsqueda"
+  text_prohibited_this_actividad_from_being_saved: "prohibited this actividad from being saved:"
+  text_prohibited_this_cluster_from_being_saved: "prohibited this cluster from being saved:"
+  text_prohibited_this_conf_from_being_saved: "prohibited this conf from being saved:"
+  text_prohibited_this_favorito_from_being_saved: "prohibited this favorito from being saved:"
+  text_prohibited_this_gruposconf_from_being_saved: "prohibited this gruposconf from being saved:"
+  text_prohibited_this_roles_user_from_being_saved: "prohibited this roles_user from being saved:"
+  text_prohibited_this_user_session_from_being_saved: "prohibited this user session from being saved:"
+  text_proyecto_bazar: "Proyecto Bazar"
+  text_prueba_con_otra_busqueda: "Prueba con otra búsqueda."
+  text_publicando_la_oferta: "Publicando la oferta. No cierre la ventana."
+  text_publicando_la_demand: "Publicando la demanda. No cierre la ventana."
+  text_publicar: Publicar
+  text_publicar_una_demanda: "PUBLICAR UNA DEMANDA"
+  text_publicar_esta_demanda: "Publicar esta demanda"
+  text_publicar_una_nueva_demanda: "Publicar una nueva demanda"
+  text_publicar_una_oferta: "PUBLICAR UNA OFERTA"
+  text_publicar_esta_oferta: "Publicar esta oferta"
+  text_publicar_una_nueva_oferta: "Publicar una nueva oferta"
+  text_puede_usar_asteriscos_o_espacios_para_buscar_por_varias_palabras: "Puede usar asteriscos o espacios para buscar por varias palabras."
+  text_pulse_buscar_para_empezar_la_busqueda: "Pulse Buscar para empezar la búsqueda"
+  text_puntuar_con: "Puntuar con"
+  text_que_ambito_quieres_darle_a_la_oferta: "¿Qué ámbito quieres darle a la oferta?"
+  text_que_ambito_quieres_darle_a_la_demanda: "¿Qué ámbito quieres darle a la demanda?"
+  text_que_estas_buscando: "¿Qué estás buscando?"
+  text_que_es_bazar: "¿Qué es Bazar?"
+  text_que_es_un_bazar: "¿Qué es un Bazar? »"
+  text_que_pedirias_a_un_gran_mercado_electronico_para_empresas: "¿Qué pedirías a un gran mercado electrónico para empresas?"
+  text_que_es_el_api_del_proyecto_bazar: "¿Qué es el API del Proyecto Bazar?"
+  text_que_existen_en_el_mundo_presencial_y_que_son_fundamentales_para_que_las_pequenas_y_medianas_empresas_puedan_proyectarse_fuera_de_sus_mercados_inmediatos_tal_vez_no_conozcamos_a_una_empresa_determinada_pero_si_forma_parte_de_un_bazar_organizado_por_una_institucion_en_la_que_confiamos_y_que_cuenta_con_empresas_que_admiramos_seguramente_le_otorguemos_una_confianza_de_partida_mayor_que_si_no_fuera_asi: "que existen en el mundo presencial y que son fundamentales para que las pequeñas y medianas empresas puedan proyectarse fuera de sus mercados inmediatos. Tal vez no conozcamos a una empresa determinada, pero si forma parte de un bazar organizado por una institución en la que confiamos y que cuenta con empresas que admiramos, seguramente le otorguemos una confianza de partida mayor que si no fuera así."
+  text_que_fuera_robusto_que_un_problema_en_la_red_un_ataque_informatico_o_un_cataclismo_politico_en_un_determinado_lugar_no_pusieran_en_cuestion_el_mercado_en_su_conjunto: "Que fuera robusto: que un problema en la red, un ataque informático o un cataclismo político en un determinado lugar no pusieran en cuestión el mercado en su conjunto."
+  text_que_hubiera_un_sistema_que_sin_embargo_mantuviera_fuera_a_spammers_productos_fraudulentos_y_en_general_a_quien_mintiera_o_utilizara_informacion_enganosa_estropeando_la_confianza_en_el_propio_mercado: "Que hubiera un sistema que sin embargo mantuviera fuera a spammers, productos fraudulentos y en general a quien mintiera o utilizara información engañosa estropeando la confianza en el propio mercado"
+  text_que_la: "Que la"
+  text_que_nadie_se_colocara_en_medio_de_las_empresas_pudiendo_exigir_un_pago_para_que_comercien_entre_si: "Que nadie se colocara en medio de las empresas pudiendo exigir un pago para que comercien entre si"
+  text_que_permitiera_a_las_empresas_de_un_grupo_o_un_lugar_trabajar_juntos_de_manera_preferente: "Que permitiera a las empresas de un grupo o un lugar trabajar juntos de manera preferente"
+  text_que_sirve_a_las_empresas_y_los_emprendedores_para: "que sirve a las empresas y los emprendedores para"
+  text_que_titulo_quieres_ponerle: "¿Que título quieres ponerle?"
+  text_quieres_anadir_alguna_fotografia: "¿Quieres añadir alguna fotografía?"
+  text_que_quieres_decirles: "¿Qué quieres decirles?"
+  text_quieres_ser_de_los_primeros_envianos_un_correo_a_info_arroba_garumfundatio_org: "¿Quieres ser de los primeros? Envíanos un correo a: info (arroba) garumfundatio.org"
+  text_rating_elearning_arbitraje_mensajeria_interna_publicacion_de_contenidos: "rating, e-learning, arbitraje, mensajería interna, publicación de contenidos"
+  text_recogiendo_ese_espiritu: "Recogiendo ese espíritu"
+  text_recomendaciones_pendientes: "Recomendaciones Pendientes"
+  text_red_centralizada: "red centralizada"
+  text_red_distribuida: "red distribuida"
+  text_red_global_autosostenible_y_tremendamente_robusta: "red global autosostenible y tremendamente robusta"
+  text_registrarse: Registrarse
+  text_remember_me: "Recordarme"
+  text_resultado: "Resultado:"
+  text_resultados: "Resultados:"
+  text_rol: Rol
+  text_rss: RSS
+  text_se_parece_a_una_red_social_cada_empresa_tiene_su_ficha_publica_sus_noticias_busca_empresas_que_puedan_estar_interesadas_en_sus_productos_o_que_le_provean_con_confiabilidad_a_mejores_precios: "se parece a una red social. Cada empresa tiene su ficha, publica sus noticias, busca empresas que puedan estar interesadas en sus productos o que le provean con confiabilidad a mejores precios."
+  text_sedes: "Sedes"
+  text_seguro_que_desea_borrarla: "¿Seguro que desea borrarla?"
+  text_sector: "Sector"
+  text_sectores: Sectores
+  text_selecciona_una_de_la_lista: "empieza teclear la ciudad y selecciona una de la lista"
+  text_seleccione_el_tipo_de_resultado_que_desea_ver: "Seleccione el tipo de resultado que desea ver"
+  text_seleccione_uno_o_varios_paises_en_la_caja_de_busqueda: "Seleccione uno o varios países en la caja de búsqueda"
+  text_seleccione_uno_o_varios_sectores_en_la_caja_de_busqueda: "Seleccione uno o varios sectores en la caja de búsqueda."
+  text_si_estas_interesado_en_montar_un_bazar_escribe_a_la: "Si estás interesado en montar un bazar, escribe a la"
+  text_significa_que_la_informacion_y_los_datos_no_dependen_de_una_empresa_o_institucion_centralizadora_externa_las_instalaciones_de_bazar_son_autonomas_aunque_se_interconecten_y_lo_mejor_es_que_se_interconectan: "significa que la información y los datos no dependen de una empresa o institución centralizadora externa. Las instalaciones de Bazar son autónomas, aunque se interconecten; y lo mejor es que se interconectan,"
+  text_siguiente: Siguiente
+  text_sociologia: sociología
+  text_software_libre: "software libre"
+  text_solo: Solo
+  text_titulo: Título
+  text_texto: Texto
+  text_texto_de_la_oferta: "Texto de la oferta"
+  text_tiene_una: ", tiene una"
+  text_tiene_unos_gastos_gigantescos_de_infraestructura_lo_que_orienta_toda_su_actividad_a_monetarizar_y_capturar_para_si_el_valor_de_la_red: "», tiene unos gastos gigantescos de infraestructura; lo que orienta toda su actividad a monetarizar y capturar para si, el valor de la red."
+  text_tienen_informacion_especifica_de_la_que_aprender_para_mejorar_sus_estrategias: "tienen información específica de la que aprender para mejorar sus estrategias"
+  text_tipo: Tipo
+  text_titulo: "Titulo:"
+  text_titulo_de_la_oferta: "Título de la oferta"
+  text_todos: "todos"
+  text_todos_los_paises_de_este_bazar: "Todos los países de este Bazar »"
+  text_total_consultas_realizadas: "Total Consultas Realizadas:"
+  text_total_empresas: "Total Empresas:"
+  text_total_empresas_en_este_bazar: "Total Empresas en este Bazar:"
+  text_total_empresas_en_la_red: "Total Empresas en la Red"
+  text_tu_bazar: "Tu bazar"
+  text_tu_pagina: "Tu Página"
+  text_tu_pais: "Tu país"
+  text_tus_favoritos: "tus favoritos"
+  text_ubicaciones_de_este_bazar: "Ubicaciones de este Bazar »"
+  text_ubicaciones_de_las_empresas_de_este_bazar: "Ubicaciones de las Empresas de este Bazar"
+  text_una_gran_empresa_ofrecia_a_traves_de_la_web_el_servicio_a_todos_los_usuarios_el_lado_bueno_es_que_podia_controlar_con_relativa_facilidad_que_nadie_incumpliera_las_condiciones_de_servicio_y_no_sin_polemica_ni_problemas_mantener_fuera_a_quienes_trataran_de_utilizar_la_red_con_fines_ilicitos_o_indeseados_el_lado_malo_es_que_la_centralizacion_tambien_tiene_un_coste_para_los_usuarios_la_extension_de_los_servicios_centralizados_ha_convertido_en_comunes_las_noticias_de_saturaciones_que_llevan_a_la_caida_del_servicio_de_ataques_de_grupos_mas_o_menos_organizados_que_buscan_relevancia_publica_y_de_cortes_en_el_acceso_en_paises_enteros_en_momentos_de_inestabilidad_politica: ": una gran empresa ofrecía, a través de la web, el servicio a todos los usuarios. El lado bueno es que podía controlar con relativa facilidad que nadie incumpliera las condiciones de servicio y, no sin polémica ni problemas, mantener fuera a quienes trataran de utilizar la red con fines ilícitos o indeseados. El lado malo es que la centralización también tiene un coste para los usuarios: la extensión de los servicios centralizados ha convertido en comunes las noticias de saturaciones que llevan a la caída del servicio, de ataques de grupos más o menos organizados que buscan relevancia pública y de cortes en el acceso en países enteros en momentos de inestabilidad política."
+  text_url: Url
+  text_pagina_web_de_la_empresa: "página web de la empresa"
+  text_ultimas_ofertas_demandas: "Últimas Ofertas / Demandas"
+  text_usa_palabras_clave_para_describirla: "Usa varias palabras clave separadas por comas para describirla"
+  text_use_los_desplazadores_para_limitar_la_busqueda: "Use los desplazadores para limitar la búsqueda."
+  text_user: "Usuario:"
+  text_usuario: Usuario
+  text_valor: Valor
+  text_valoracion_como_cliente: "Valoración como Cliente de:"
+  text_valoracion_como_proveedor: "Valoración como Proveedor de:"
+  text_vision_general: "visión general"
+  text_veces_guardada_en_favoritos: "veces guardada en favoritos"
+  text_ventas: "Ventas:"
+  text_ver_las_mas_recientes_primero: "ver las más recientes primero"
+  text_ver_las_mas_cercanas_geográficamente_primero: "ver las más cercanas geográficamente primero"
+  text_ver_solo_empresas_de_mi_bazar: "ver solo las empresas de mi bazar"
+  text_ver_ocultar: Ver/ocultar
+  text_visible: Visible
+  text_visitas_de_esta_demanda: "visitas de esta demanda"
+  text_visitas_de_esta_oferta: "visitas de esta oferta"
+  text_volver_a_la_pagina_principal: "Volver a la página principal"
+  text_xml: XML
+  text_xml_json: "XML, JSON"
+  text_xml_json_html: "XML, JSON, HTML"
+  text_y_muchos_mas: "y muchos más."
+  text_y_sirve_para: "y sirve para"

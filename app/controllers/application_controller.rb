@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::Base
+
   protect_from_forgery
+
+  before_filter :set_locale
 
   helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
             :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota,
@@ -9,6 +12,11 @@ class ApplicationController < ActionController::Base
   
   require "net/http"
   require "uri"
+
+
+  def set_locale
+      I18n.locale = params[:locale] if params.include?('locale')
+  end
 
   def BZ_param(clave)
     conf = Rails.cache.fetch("BZ#{clave}", :expires_in => 15.minutes) do
