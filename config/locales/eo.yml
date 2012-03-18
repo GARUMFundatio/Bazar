@@ -52,4 +52,6 @@ eo:
   text_cerrar_sesion: "elsaluti"
   text_buscar_empresas_ofertas_o_demandas: "Serĉi Entreprenojn, Ofertojn aŭ Demandojn"
 
+  text_bazar_software_libre_licencia: "<a href='http://garumfundatio.org/bazar'>Bazar</a> estas libera programaro farita de <a href='http://garumfundatio.org' style='text-decoration: none'>Garum Fundatio</a> sub la terminoj de la permesilo GPL v3."
+
 

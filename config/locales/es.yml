@@ -52,6 +52,8 @@ es:
   text_cerrar_sesion: "cerrar sesión"
   text_buscar_empresas_ofertas_o_demandas: "Buscar Empresas, Ofertas o Demandas"
 
+  text_bazar_software_libre_licencia: "<a href='http://garumfundatio.org/bazar'>Bazar</a> es software libre desarrollado por <a href='http://garumfundatio.org' style='text-decoration: none'>Garum Fundatio</a> bajo los términos de la licencia GPL v3."
+
 
 
   label_back: Atrás
@@ -261,7 +263,7 @@ es:
   text_funcion: "Función:"
   text_funcionalidades_del_proyecto_bazar: "Funcionalidades del proyecto Bazar"
   text_garum: garum
-  text_garum_fundatio: "Garum Fundatio"
+
   text_generador_de_mercados: "generador de mercados"
   text_generar_mercados: "generar mercados"
   text_gran_mercado_electronico_no_debe_tener_propietario: "gran mercado electrónico no debe tener propietario"

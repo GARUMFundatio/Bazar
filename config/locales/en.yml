@@ -53,4 +53,6 @@ en:
   text_cerrar_sesion: "log Out"
   text_buscar_empresas_ofertas_o_demandas: "Search Companies, Offer or Demands"
 
+  text_bazar_software_libre_licencia: "<a href='http://garumfundatio.org/bazar'>Bazar</a> is free software developed by <a href='http://garumfundatio.org' style='text-decoration: none'>Garum Fundatio</a> under the terms of the license GPL v3."
+
 
