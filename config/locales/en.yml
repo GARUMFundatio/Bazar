@@ -1,17 +1,20 @@
 ---
 en: 
 
+# recurrentes
+
+  text_entrar: " Log in"
+  text_ofertas: "offers"
+  text_demandas: "demands"
+  text_empresas: "companies"
+
 # queesbazar.html 
 
   text_que_es_bazar: "What is Bazar?"
   text_bazar: "Bazar"
-  text_entrar: " Log in"
   text_oferta_demanda_red: "Supply and demand networked"
   text_bazar_permite: "Bazar allows your company access to a networked market where offer and demand products and services."
   text_bazar_solicita_entrada: "Request your entry in Bazar"
-  text_ofertas: "offers"
-  text_demandas: "demands"
-  text_empresas: "companies"
   text_empresas_en_bazar: "companies in Bazar"
   text_bazares_conectados: "bazars connected"
   text_que_ofrece_titulo: "What Bazar offers?"
@@ -36,5 +39,18 @@ en:
         <p>Bazar is like a social network. Each company has its profile, look for companies that may be interested in their products or that provide with reliability at better prices.</p>
 
         <p>Unlike a social network Bazar is aimed at businesses and business groups and associations. It is free software programmed in Ruby, has a distributed structure and serves to generate market</p>"
+
+# Layout bazar.html
+
+  text_mercado: "market"
+  text_sociologia: "sociology"
+  text_f_a_q: "f.a.q."
+  text_tu_pagina: "Your page"
+  text_vision_general: "overview"
+  text_tus_favoritos: "your favorites"
+  text_ficha_de_empresa: "company profile"
+  text_datos_de_tu_cuenta: "your account details"
+  text_cerrar_sesion: "log Out"
+  text_buscar_empresas_ofertas_o_demandas: "Search Companies, Offer or Demands"
 
 

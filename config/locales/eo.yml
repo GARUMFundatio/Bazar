@@ -1,17 +1,20 @@
 --- 
 eo:
 
+# recurrentes
+
+  text_entrar: " Ensaluti"
+  text_ofertas: "ofertoj"
+  text_demandas: "mendoj"
+  text_empresas: "entreprenoj"
+
 # queesbazar.html 
 
   text_que_es_bazar: "Kio estas Bazar?"
   text_bazar: "Bazar"
-  text_entrar: " Ensaluti"
   text_oferta_demanda_red: "Mendado kaj ofertado enretaj"
   text_bazar_permite: "Bazar permesas al via entrepreno aliri enretan merkaton kie oni mendas kaj ofertas produktojn kaj servojn."
   text_bazar_solicita_entrada: "Peti vian eniron al Bazar"
-  text_ofertas: "ofertoj"
-  text_demandas: "mendoj"
-  text_empresas: "entreprenoj"
   text_empresas_en_bazar: "entreprenoj en Bazar"
   text_bazares_conectados: "bazaroj konektitaj"
   text_que_ofrece_titulo: "Kion Bazar ofertas?"
@@ -35,5 +38,18 @@ eo:
         <p>Bazar ŝajnas socia reto. Ĉiu entrepreno havas profilon, serĉas entreprenojn kiuj povu interesiĝi pri ĝiaj produktoj aŭ kiuj provizu konfidece je pli bonaj prezoj.</p>
 
         <p>Kontraste kun socia reto Bazar celas entreprenojn kaj grupojn kaj asociojn de entreprenoj. Ĝi estas libera programaro farita per Ruby, ĝi havas distribuitan strukturon kaj servas por estigi merkatojn.</p>"
+
+# Layout bazar.html
+
+  text_mercado: "merkato"
+  text_sociologia: "sociologio"
+  text_f_a_q: "oftaj demandoj"
+  text_tu_pagina: "Via paĝo"
+  text_vision_general: "ĝenerala rigardo"
+  text_tus_favoritos: "viaj preferitaĵoj"
+  text_ficha_de_empresa: "entreprenprofilo"
+  text_datos_de_tu_cuenta: "datumoj de via konto"
+  text_cerrar_sesion: "elsaluti"
+  text_buscar_empresas_ofertas_o_demandas: "Serĉi Entreprenojn, Ofertojn aŭ Demandojn"
 
 
