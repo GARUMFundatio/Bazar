@@ -1,5 +1,14 @@
 ---
-es: 
+es:
+
+# queesbazar.html 
+
+  text_bazar: "Bazar"
+  text_entrar: " Entrar"
+  text_oferta_demanda_red: "Oferta y demanda en red"
+  text_bazar_permite: "Bazar permite a tu empresa acceder a un mercado en red donde se ofrecen y demandan productos y servicios."
+  text_bazar_solicita_entrada: "Solicita tu entrada en bazar"
+
   label_back: Atrás
   label_destroy: Eliminar
   label_edit: Editar
@@ -56,7 +65,7 @@ es:
   text_avisos_pendientes: "Taréas Pendientes"
   text_ayuda_busqueda_avanzada: "Ayuda Búsqueda Avanzada"
   text_busqueda_avanzada: "» Búsqueda Avanzada"
-  text_bazar: Bazar
+
   text_bazar_el_software_sirve_para_construir_bazares_que_se_unen_desde_el_primer_dia_en_un_unico_gran_mercado_global: "Bazar, el software, sirve para construir «bazares» que se unen, desde el primer día, en un único gran mercado global."
   text_bazar_facilita_que_las_pequenas_empresas_y_los_emprendedores_encuentren_nuevos_mercados_a_escala_global_en_un_entorno_confiable_sin_los_costes_de_la_internacionalizacion_fisica: "Bazar facilita que las pequeñas empresas y los emprendedores encuentren nuevos mercados a escala global en un entorno confiable sin los costes de la internacionalización física"
   text_bazares_conectados: "Bazares Conectados:"
@@ -168,7 +177,7 @@ es:
   text_enlace: "Enlace:"
   text_enlace_al_bazar: "Enlace al Bazar:"
   text_enlace_externo_a_la_oferta: "Enlace externo a la oferta"
-  text_entrar: "entrar"
+
   text_enviando_el_correo: "Enviando el correo"
   text_enviar_mensaje: "Enviar Mensaje"
   text_enviar_el_mensaje: "Envíar el mensaje"

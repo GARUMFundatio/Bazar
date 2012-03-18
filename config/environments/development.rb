@@ -31,9 +31,10 @@ Bazar::Application.configure do
     :sender_address => %{"Bazar Garum" <juantomas@geofun.es>},
     :exception_recipients => %w{juantomas.garcia@gmail.com}                                                   
   
+  config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+  
   config.i18n.default_locale = :es
-  config.from_locales = [:es]
-  config.to_locales = [:en, :pt, :eo]
+
   
   
 end

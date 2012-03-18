@@ -81,7 +81,7 @@
     </div> <!-- fin caja logo -->
 
     <div class="caja-entrar ilumina2">
-     <div id="entrar"><a href="/login" class="ilumina2"><img src="/themes/bazar/images/queesbazar/candado.png" > Entrar</a></div>
+     <div id="entrar"><a href="/login" class="ilumina2"><img src="/themes/bazar/images/queesbazar/candado.png" ><%=t(:text_entrar)%></a></div>
     </div> <!-- fin caja entrar -->
 
   </div> <!-- fin del header -->
@@ -90,8 +90,8 @@
   <div class="cuerpo trans20">
 
     <div class="caja-titulo">
-      Bazar.<br/>
-      Oferta y demanda en red.
+      <%=t(:text_bazar)%><br/>
+      <%=t(:text_oferta_demanda_red)%>
     </div>
     
  
@@ -108,11 +108,7 @@
     </div>
   
     <div class="caja-des">
-      Bazar permite a tu empresa 
-      acceder a un mercado en red 
-      donde se ofrecen y demandan productos 
-      y servicios.
-      
+      <%=t(:text_bazar_permite)%> 
     </div>
 
     <div class="caja-entrar2 ilumina40" >
@@ -120,8 +116,7 @@
         <img src="/themes/bazar/images/queesbazar/corazon.png">
       </div>
       <div class="caja-entrar2-texto">
-        <a href="/registrarse">Solicita tu entrada en 
-        el bazar</a>
+        <a href="/registrarse"><%=t(:text_bazar_solicita_entrada)%> </a>
       </div>
     </div>
     
