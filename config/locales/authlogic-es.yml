@@ -12,6 +12,7 @@ es:
       not_confirmed: Su cuenta no está confirmada
       not_approved: Su cuenta no ha sido aprobada
       no_authentication_details: Debe introducir sus datos de identificación.
+      general_credentials_error: Combinación Login/Contraseña no es válida
     models:
       user_session: Sesión de usuario
     attributes:

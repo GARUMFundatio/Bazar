@@ -54,4 +54,11 @@ eo:
 
   text_bazar_software_libre_licencia: "<a href='http://garumfundatio.org/bazar'>Bazar</a> estas libera programaro farita de <a href='http://garumfundatio.org' style='text-decoration: none'>Garum Fundatio</a> sub la terminoj de la permesilo GPL v3."
 
+# new.html en user_sessions
+
+  text_tu_email: "Via retpoŝtadreso"
+  text_tu_contrasena: "Via pasvorto"
+  text_has_olvidado_tu_contraseña: "Ĉu vi forgesis vian pasvorton?"
+  text_identificate: "Ensaluti"
+
 

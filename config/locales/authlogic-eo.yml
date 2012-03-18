@@ -1,0 +1,23 @@
+eo:
+  authlogic:
+    error_messages:
+      login_blank: ne povas esti malplena
+      login_not_found: ne estas valida
+      login_invalid: vi devas uzi nur literojn, numerojn, spacojn, kaj .-_@
+      consecutive_failed_logins_limit_exceeded: limnombro de sinsekvaj malsukcesaj ensalutoj estis transpasita, la konto estis malvalidigita.
+      email_invalid: ne estas retpoŝtadreso valida.
+      password_blank: ne povas esti malplena
+      password_invalid: ne estas valida
+      not_active: Via konto estas malvalidigita 
+      not_confirmed: Via konto ne estas konfirmita
+      not_approved: Via konto ne estas aprobita
+      no_authentication_details: Vi provizis neniun datumon por aŭtentokontrolo.
+      general_credentials_error: Kombino Salutnomo/Pasvorto ne estas valida
+    models:
+      user_session: Sesión de usuario
+    attributes:
+      user_session:
+        login: salutnomo
+        email: retpoŝtadreso
+        password: pasvorto
+        remember_me: memori min

@@ -55,4 +55,11 @@ en:
 
   text_bazar_software_libre_licencia: "<a href='http://garumfundatio.org/bazar'>Bazar</a> is free software developed by <a href='http://garumfundatio.org' style='text-decoration: none'>Garum Fundatio</a> under the terms of the license GPL v3."
 
+# new.html en user_sessions
+
+  text_tu_email: "Your email"
+  text_tu_contrasena: "Your password"
+  text_has_olvidado_tu_contraseña: "Forgot your password?"
+  text_identificate: "Sign in"
+
 
