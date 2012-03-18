@@ -8,6 +8,21 @@ es:
   text_oferta_demanda_red: "Oferta y demanda en red"
   text_bazar_permite: "Bazar permite a tu empresa acceder a un mercado en red donde se ofrecen y demandan productos y servicios."
   text_bazar_solicita_entrada: "Solicita tu entrada en bazar"
+  text_ofertas: "ofertas"
+  text_demandas: "demandas"
+  text_empresas_en_bazar: "empresas en Bazar"
+  text_bazares_conectados: "bazares conectados"
+  text_que_ofrece_titulo: "¿Qué ofrece?"
+
+  text_que_ofrece_parrafo: "Busca y publica ofertas y demandas. Negocia, compra y vende. Sigue la actividad de las empresas que te interesan y encuentra clientes y mejores proveedores en cualquier parte del mundo. </p><p>Un escaparate mundial para tu empresa"
+
+  text_preguntas_titulo: "Preguntas"
+
+  text_preguntas_parrafo: "Busca y publica ofertas y demandas. Negocia, compra y vende. Seguir la actividad y comunicarse con las empresas que nos interesan. Encontrar clientes y mejores proveedores en cualquier parte del mundo. Conocer el nivel de confianza de cada empresa"
+
+  text_crear_un_bazar_titulo: "Crear un bazar"
+
+  text_crear_un_bazar_parrafo: "Si tienes conocimientos de software libre y Ruby on Rails puedes crear un Bazar para las empresas de tu entorno.</p>  <p>En esta página tienes toda la documentación y el código fuente: </p> <div class='textos-enlace' ><p> <a href='http://www.garumfundatio.org/bazar'>Documentación y código para instalar un Bazar.</a>"
 
   label_back: Atrás
   label_destroy: Eliminar
@@ -68,7 +83,7 @@ es:
 
   text_bazar_el_software_sirve_para_construir_bazares_que_se_unen_desde_el_primer_dia_en_un_unico_gran_mercado_global: "Bazar, el software, sirve para construir «bazares» que se unen, desde el primer día, en un único gran mercado global."
   text_bazar_facilita_que_las_pequenas_empresas_y_los_emprendedores_encuentren_nuevos_mercados_a_escala_global_en_un_entorno_confiable_sin_los_costes_de_la_internacionalizacion_fisica: "Bazar facilita que las pequeñas empresas y los emprendedores encuentren nuevos mercados a escala global en un entorno confiable sin los costes de la internacionalización física"
-  text_bazares_conectados: "Bazares Conectados:"
+
   text_borrado: "Borrado:"
   text_buscar: Buscar
   text_buscar_en_sectores: "Buscar en sectores"
@@ -114,7 +129,7 @@ es:
   text_delimitamos_la_busqueda_a_algun_pais: "¿Delimitamos la búsqueda a algún país? Puedes elegir varios:"
   text_DEMANDA: "DEMANDA"
   text_demandan: "Demandan:"
-  text_demandas: "Demandas"
+  
   text_demandas_en_INDUSTRIA: "demandas en INDUSTRIA"
   text_demandas_en_DISTRIBUCION: "demandas en DISTRIBUCIÓN"
   text_demandas_en_FINANZAS: "demandas en FINANZAS"

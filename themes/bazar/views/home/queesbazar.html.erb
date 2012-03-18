@@ -116,7 +116,7 @@
         <img src="/themes/bazar/images/queesbazar/corazon.png">
       </div>
       <div class="caja-entrar2-texto">
-        <a href="/registrarse"><%=t(:text_bazar_solicita_entrada)%> </a>
+        <a href="/registrarse"><%=t(:text_bazar_solicita_entrada)%></a>
       </div>
     </div>
     
@@ -127,70 +127,46 @@
       
     <div class="caja-oferta trans20">
       <div class="oferta-total"><%= @totalofertas %></div>
-      <div class="oferta-texto">ofertas</div>
+      <div class="oferta-texto"><%=t(:text_ofertas)%></div>
     </div>
     
     <div class="caja-oferta trans20">
       <div class="oferta-total"><%= @totaldemandas %></div>
-      <div class="oferta-texto">demandas</div>
+      <div class="oferta-texto"><%=t(:text_demandas)%></div>
     </div>
 
     <div class="caja-empresas trans20">
       <div class="empresas-total"><%= @totalempresas %></div>
-      <div class="empresas-texto">empresas en Bazar</div>
+      <div class="empresas-texto"><%=t(:text_empresas_en_bazar)%></div>
     </div>
 
     <div class="caja-empresas trans20">
       <div class="empresas-total"><%= @totalbazares %></div>
-      <div class="empresas-texto">bazares conectados</div>
+      <div class="empresas-texto"><%=t(:text_bazares_conectados)%></div>
     </div>
     
     </div>
 
     <div class="caja-textos trans20">
-      <div class="textos-titulo">¿Qué ofrece?</div>
+      <div class="textos-titulo"><%=t(:text_que_ofrece_titulo)%></div>
       <div class="textos-parrafo">
-        <p>Busca y publica ofertas y
-          demandas. Negocia, compra y
-          vende. Sigue la actividad de
-          las empresas que te interesan
-          y encuentra clientes y mejores
-          proveedores en cualquier 
-          parte del mundo. </p>
-        <p>Un escaparate mundial para
-          tu empresa</p>
+        <p><%=raw t(:text_que_ofrece_parrafo)%></p>
       </div>
     </div>
 
 
     <div class="caja-textos trans20">
-      <div class="textos-titulo">Preguntas</div>
+      <div class="textos-titulo"><%=t(:text_preguntas_titulo)%></div>
       <div class="textos-parrafo">
-        <p>Busca y publica ofertas y
-          demandas. Negocia, compra y
-          vende. Seguir la actividad y 
-          comunicarse con las 
-          empresas que nos interesan.
-          Encontrar clientes y mejores
-          proveedores en cualquier parte
-          del mundo. Conocer el nivel
-          de confianza de cada empresa</p>
+        <p><%=raw t(:text_preguntas_parrafo)%></p>
       </div>
     </div>
 
 
     <div class="caja-textos trans20">
-      <div class="textos-titulo">Crear un bazar</div>
+      <div class="textos-titulo"><%=t(:text_crear_un_bazar_titulo)%></div>
       <div class="textos-parrafo">
-        <p>Si tienes conocimientos de
-          software libre y Ruby on Rails
-          puedes crear un Bazar para 
-          las empresas de tu entorno.</p>
-        <p>En esta página tienes toda la 
-          documentación y el código 
-          fuente: </p>
-          <div class="textos-enlace ">
-            <p><a href="http://www.garumfundatio.org/bazar">Documentación y código para instalar un Bazar.</a></p>
+        <p><%=raw t(:text_crear_un_bazar_parrafo)%></p>
           </div>
           
       </div>
