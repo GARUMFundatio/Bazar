@@ -313,7 +313,8 @@ class HomeController < ApplicationController
     params[:tipo] = 'O' if params[:tipo].nil?
     @ofertas, @ofertasresultados = Bazarcms::Oferta.busca(:tipo => params[:tipo], :q => params[:q], 
                                                           :user => current_user.id, :bazar => BZ_param("BazarId").to_i, 
-                                                          :empleados=> params[:empleados].gsub("+", " "), :ventas => params[:ventas].gsub("+", " "))
+                                                          :empleados=> params[:empleados].gsub("+", " "), :ventas => params[:ventas].gsub("+", " "),
+                                                          :paises => params[:paises].gsub("+", " "))
     
   end
   
@@ -756,9 +757,12 @@ class HomeController < ApplicationController
     # TODO: controlar el tipo (O/D) que vamos a enviar como parametro
     params[:q] = '*' if (params[:q] == '') 
     params[:tipo] = 'O' if params[:tipo].nil?
+    params[:paises] = '' if params[:paises].nil?
+    
     @empresas, @empresasresultados = Bazarcms::Empresa.busca(:tipo => params[:tipo], :q => params[:q], 
                                                           :user => current_user.id, :bazar => BZ_param("BazarId").to_i,
-                                                          :empleados => params[:empleados].gsub("+"," "), :ventas => params[:ventas].gsub("+", " "))
+                                                          :empleados => params[:empleados].gsub("+"," "), :ventas => params[:ventas].gsub("+", " "),
+                                                          :paises => params[:paises].gsub("+", " "))
     
   end
 
