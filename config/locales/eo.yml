@@ -7,6 +7,7 @@ eo:
   text_ofertas: "ofertoj"
   text_demandas: "mendoj"
   text_empresas: "entreprenoj"
+  text_veces_guardada_favorita: "fojojn konservita kiel preferata"
 
 # queesbazar.html 
 
@@ -49,7 +50,7 @@ eo:
   text_f_a_q: "oftaj demandoj"
   text_tu_pagina: "Via paĝo"
   text_vision_general: "ĝenerala rigardo"
-  text_tus_favoritos: "viaj preferitaĵoj"
+  text_tus_favoritos: "viaj preferataj"
   text_ficha_de_empresa: "entreprenprofilo"
   text_datos_de_tu_cuenta: "datumoj de via konto"
   text_cerrar_sesion: "elsaluti"
@@ -76,7 +77,6 @@ eo:
   text_mas_nuevo_relevante: "Jen kio plej novas kaj elstaras"
   text_empresas_pueden_interesarte: "Entreprenoj kiuj<br/>povus interesi vin"
   text_datos_de: "La datumoj de"
-  text_veces_guardada_favorita: "fojojn konservita kiel preferata"
   text_ofertas_favoritas: "ofertoj estas prefererataj"
   text_demandas_favoritas: "mendoj estas preferataj"
   text_visitas: "vizitoj"
@@ -85,4 +85,32 @@ eo:
 # partial _oferta.html -> cajetin de oferta en index.html -> home
 
   text_valida_hasta: "Valida ĝis la"
+
+# ficha de oferta  fichaoferta.html -> ventana emergente con la oferta/demanda
+
+  text_oferta_fichaoferta: "OFERTO"
+  text_demanda_fichaoferta: "MENDO"
+  text_oferta_valida_hasta: "Oferto valida ĝis la"
+  text_borrar_favoritos: "forigi el preferataj"
+  text_guardar_favoritos: "konservi kiel preferatan"
+  text_contactar_empresa: "Kontakti entreprenon"
+  text_no_tiene_imagenes: "Sen bildoj"
+  text_subiendo_imagen: "Alŝutado de la bildo ..."
+  text_anadir_foto: "ALDONI BILDON"
+  text_web_mas_informacion_oferta: "retejo kun pli da informo pri la oferto"
+  text_web_mas_informacion_demanda: "retejo kun pli da informo pri la mendo"
+  text_web_externa: "Ekstera retejo:"
+  text_incluir_web_externa: "Redakti kaze vi volas aldoni ligilon al la retpaĝo kun ekstra informo pri la oferto."
+  text_empresas_destinatarias: "Celentreprenoj"
+  text_no_definio_palabras_claves: "Sen ŝlosilvortoj"
+  text_fecha_de_publicacion: "Publikigodato"
+  text_ambito: "Atingo"
+  text_mi_bazar: "Mia Bazaro"
+  text_nacional: "Nacia"
+  text_internacional: "Internacia"
+  text_mas_detalles: "Pli da detaloj ..."
+  text_visitas_de_esta_oferta: "vizitoj al tiu ĉi oferto"
+  text_visitas_de_esta_demanda: "vizitoj al tiu ĉi mendo"
+  text_cerrar: "fermi"
+  text_ficha_empresa_incompleta: "Entreprenprofilo nekompleta"
 

@@ -7,6 +7,7 @@ en:
   text_ofertas: "offers"
   text_demandas: "demands"
   text_empresas: "companies"
+  text_veces_guardada_favorita: "times saved as favorite"
 
 # queesbazar.html 
 
@@ -77,7 +78,6 @@ en:
   text_mas_nuevo_relevante: "What's new and relevant"
   text_empresas_pueden_interesarte: "Companies that <br/>may interest you"
   text_datos_de: "The data of"
-  text_veces_guardada_favorita: "times saved as favorite"
   text_ofertas_favoritas: "offers are favorite"
   text_demandas_favoritas: "demands are favorite"
   text_visitas: "visits"
@@ -86,3 +86,31 @@ en:
 # partial _oferta.html -> cajetin de oferta en index.html -> home
 
   text_valida_hasta: "Expires on"
+
+# ficha de oferta  fichaoferta.html -> ventana emergente con la oferta/demanda
+
+  text_oferta_fichaoferta: "OFFER"
+  text_demanda_fichaoferta: "DEMAND"
+  text_oferta_valida_hasta: "Offer valid until"
+  text_borrar_favoritos: "remove from favorites"
+  text_guardar_favoritos: "save to favorites"
+  text_contactar_empresa: "Contact company"
+  text_no_tiene_imagenes: "Without pictures"
+  text_subiendo_imagen: "Uploading the image ..."
+  text_anadir_foto: "ADD A IMAGE"
+  text_web_mas_informacion_oferta: "website with more information on offer"
+  text_web_mas_informacion_demanda: "website with more information on demand"
+  text_web_externa: "External Web:"
+  text_incluir_web_externa: "Edit if you want to include a link to the page with extra information about the offer."
+  text_empresas_destinatarias: "Addresses companies"
+  text_no_definio_palabras_claves: "Without keywords"
+  text_fecha_de_publicacion: "Date of publication"
+  text_ambito: "Ambit"
+  text_mi_bazar: "My Bazar"
+  text_nacional: "National"
+  text_internacional: "International"
+  text_mas_detalles: "More details ..."
+  text_visitas_de_esta_oferta: "visits of this offer"
+  text_visitas_de_esta_demanda: "visits of this demand"
+  text_cerrar: "close"
+  text_ficha_empresa_incompleta: "Company profile incomplete"

@@ -16,7 +16,7 @@
     <% if !@empresa.nil? %>
       <%= @empresa.nombre %>
     <% else %>
-      <%= t(:ficha_de_empresa_incompleta) %>
+      <%= t(:ficha_empresa_incompleta) %>
     <% end %>
     
     <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
@@ -45,9 +45,9 @@ end
 
 <div class="ficha-tipo">
   <% if @oferta.tipo == 'O'%>
-    <%= t(:text_OFERTA) %> 
+    <%= t(:text_oferta_fichaoferta) %> 
   <% else %>
-    <%= t(:text_DEMANDA) %>
+    <%= t(:text_demanda_fichaoferta) %>
   <% end %>
 </div>
 
@@ -71,7 +71,7 @@ end
 
 
 <div class="ficha-valida">
-  <%= t(:text_oferta_valida_hasta_el) %> <%= @oferta.fecha_hasta.strftime("%d-%m-%Y") %>
+  <%= t(:text_oferta_valida_hasta) %> <%= @oferta.fecha_hasta.strftime("%d-%m-%Y") %>
 </div>
 
 <% if !@owner %>
@@ -110,9 +110,9 @@ end
                     
       <div class="ficha-opciones-item-texto">
         <% if !@fav.nil? %>
-          borrar de favoritos        
+          <%= t(:text_borrar_favoritos) %>        
         <% else %>
-          guardar en favoritos
+          <%= t(:text_guardar_favoritos) %> 
         <% end %>
       </div>      
   </div>
@@ -152,8 +152,8 @@ end
        <div class="add-image">
          <label class="cabinet">
              <input type="file" class="file" id="ofertasimagen_imagen" name="ofertasimagen[imagen]" 
-                 onchange="$(this).closest('form').submit(); 
-                 $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+                 onchange="$(this).closest('form').submit();
+                 $('#cargaimagen').html('t(:text_subiendo_imagen) <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
                  
          </label>
        </div>
@@ -161,7 +161,7 @@ end
 
        
         <div id="cargaimagen" class="add-item-texto">
-          <%= t(:text_anadir_una_foto) -%>
+          <%= t(:text_anadir_foto) -%>
         </div>
       </div>
 
@@ -200,9 +200,9 @@ end
     
       <div class="ficha-caja-enlace-texto">
         <% if @oferta.tipo == 'O'%>
-          web con más información sobre la oferta
+          <%= t(:text_web_mas_informacion_oferta) -%>
         <% else %>
-          web con más información sobre la demanda
+          <%= t(:text_web_mas_informacion_demanda) -%>
         <% end %>
       
       </div>
@@ -213,12 +213,12 @@ end
         
           <br/><br/><br/>
     
-          Web externa: <br/></br>
+          <%= t(:text_web_externa) -%> <br/></br>
     
           <% if !@oferta.url.nil? %>
             <%= @oferta.url %>
           <% else %>
-            Edite si quiere incluir un enlace a la página con información extra de la oferta.
+            <%= t(:text_incluir_web_externa) -%>
           <% end %>
         
         </div>
@@ -315,7 +315,7 @@ end
   </div>
 
   <div class="ficha-masdetalles-texto2">
-   XX <%= t(:text_veces_guardada_en_favoritos) %> 
+   XX <%= t(:text_veces_guardada_favorita) %> 
   </div>
 
 </div>
