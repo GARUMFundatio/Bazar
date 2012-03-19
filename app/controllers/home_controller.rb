@@ -312,6 +312,8 @@ class HomeController < ApplicationController
     params[:q] = '*' if (params[:q] == '') 
     params[:tipo] = 'O' if params[:tipo].nil?
     params[:paises] = '' if params[:paises].nil?
+    params[:empleados] = '0 10' if params[:empleados].nil?
+    params[:ventas] = '0 10' if params[:ventas].nil?
     
     @ofertas, @ofertasresultados = Bazarcms::Oferta.busca(:tipo => params[:tipo], :q => params[:q], 
                                                           :user => current_user.id, :bazar => BZ_param("BazarId").to_i, 
@@ -760,6 +762,8 @@ class HomeController < ApplicationController
     params[:q] = '*' if (params[:q] == '') 
     params[:tipo] = 'O' if params[:tipo].nil?
     params[:paises] = '' if params[:paises].nil?
+    params[:empleados] = '0 10' if params[:empleados].nil?
+    params[:ventas] = '0 10' if params[:ventas].nil?
     
     @empresas, @empresasresultados = Bazarcms::Empresa.busca(:tipo => params[:tipo], :q => params[:q], 
                                                           :user => current_user.id, :bazar => BZ_param("BazarId").to_i,
