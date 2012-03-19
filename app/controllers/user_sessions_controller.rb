@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     if params[:display] == "inside"
       render :layout => false
     else
-      render
+      render :layout => false 
     end
     
   end
