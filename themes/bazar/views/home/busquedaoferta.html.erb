@@ -46,7 +46,9 @@
   
   function filtra(tipo) {
     $('#resultados').fadeOut("slow");
-    $("#resultados").load("/home/filtraresultadosofertas/"+"<%= @ofertasresultados[0].ofertasconsulta_id -%>"+"/"+tipo).fadeIn("slow");
+    <% if !@ofertasresultados[0].nil? %>
+      $("#resultados").load("/home/filtraresultadosofertas/"+"<%= @ofertasresultados[0].ofertasconsulta_id -%>"+"/"+tipo).fadeIn("slow");
+    <% end %> 
   };
   
   function muestraconfirmacion (bazar, oferta) {
