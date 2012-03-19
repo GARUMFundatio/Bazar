@@ -7,7 +7,7 @@ class PasswordResetsController < ApplicationController
   theme "bazar"
   
   def new
-         
+    render :layout => false
   end
 
   def create
@@ -24,7 +24,6 @@ class PasswordResetsController < ApplicationController
 
   def edit
     logger.debug "entro edit"
-    
     render
   end
 

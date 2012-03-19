@@ -1,6 +1,18 @@
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag "jquery-ui.js" %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
 
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('queesbazar')) %>
+
+<div class="ficha-container">
+
+
+<div id="caja-login">
 <br/>
 <br/>
+<br/>
+
 
 <%= flash[:error] %><br/>
 
@@ -17,11 +29,13 @@
   
   
 <% end %>
+<br/>
+<br/>
+<br/>
 
+</div>
 
-<br/>
-<br/>
-<br/>
+</div>
 
 <script>
     $('input[placeholder]').placeholder();
