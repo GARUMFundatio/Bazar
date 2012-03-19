@@ -1,13 +1,13 @@
-<b>Bienvenido a <%= @bazar %>.</b> 
+<b><%= t(:text_bienvenido)%> <%= @bazar %>.</b> 
 <br/>
 <br/>
 
-Su usuario es: <%= @username %>
+<%= t(:text_su_usuario_es)%> <%= @username %>
 <br/>
 <br/>
 
 
-Para entrar en Bazar use el siguiente enlace: 
+<%= t(:text_enlace_entrar_bazar)%> 
 <br/>
 <br/>
 
@@ -16,16 +16,15 @@ Para entrar en Bazar use el siguiente enlace:
 <br/>
 <br/>
 
-Cuando entre en Bazar le recomendamos alguna de estas acciones: 
+<%= t(:text_recomendaciones_al_entrar)%>
 
 <br/>
 <br/>
-* <a href="<%= @url %>/bazarcms/empresas/<%= @userid -%>/edit">Rellenar los datos de su empresa, los sectores
-	de actividad y las ubicaciones de su empresa.</a> 
+* <a href="<%= @url %>/bazarcms/empresas/<%= @userid -%>/edit"><%= t(:text_datos_empresa_sectores_ubicaciones)%></a>
 <br/>
 <br/>
-* <a href="<%= @url %>/home"> Realice alguna búsqueda de empresas / Ofertas / Demandas.</a> 
+* <a href="<%= @url %>/home"><%= t(:text_busqueda_empresas_ofertas_demandas)%></a>
 <br/>
 <br/>
 
-* Añada a sus favoritos las empresas que le puedan interesar.
+* <%= t(:text_anadir_favoritos_empresas)%>

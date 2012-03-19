@@ -131,3 +131,13 @@ eo:
 
   text_fundada: "Fondita en"
 
+# confirmacion_registo.html
+
+  text_bienvenido: "Bonvenon al"
+  text_su_usuario_es: "Via uzantonomo estas:"
+  text_enlace_entrar_bazar: "Por eniri al Bazar uzu la sekvan ligilon:"
+  text_recomendaciones_al_entrar: "Kiam vi eniros al Bazar ni rekomendas al vi iujn el tiuj ĉi agoj:"
+  text_datos_empresa_sectores_ubicaciones: "Plenigi la datumojn de via entrepreno, la agsektorojn kaj sidejojn de via entrepreno."
+  text_busqueda_empresas_ofertas_demandas: "Fari iujn serĉojn de entreprenoj / Ofertoj / Mendoj."
+  text_anadir_favoritos_empresas: "Aldoni al viaj preferataj la entreprenojn kiuj povus interesi vin."
+

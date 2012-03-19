@@ -134,6 +134,16 @@ es:
 
   text_fundada: "Fundada en"
 
+# confirmacion_registo.html
+
+  text_bienvenido: "Bienvenido a"
+  text_su_usuario_es: "Su usuario es:"
+  text_enlace_entrar_bazar: "Para entrar en Bazar use el siguiente enlace:"
+  text_recomendaciones_al_entrar: "Cuando entre en Bazar le recomendamos alguna de estas acciones:"
+  text_datos_empresa_sectores_ubicaciones: "Rellenar los datos de su empresa, los sectores de actividad y las ubicaciones de su empresa."
+  text_busqueda_empresas_ofertas_demandas: "Realice alguna búsqueda de empresas / Ofertas / Demandas."
+  text_anadir_favoritos_empresas: "Añada a sus favoritos las empresas que le puedan interesar."
+
 
   
 

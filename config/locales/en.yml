@@ -131,3 +131,13 @@ en:
   text_no_tiene_sedes: "Without Locations"
 
   text_fundada: "Founded in"
+
+# confirmacion_registo.html
+
+  text_bienvenido: "Welcome to"
+  text_su_usuario_es: "Your username is:"
+  text_enlace_entrar_bazar: "To enter in Bazar use the following link:"
+  text_recomendaciones_al_entrar: "When you enter Bazar we recommend any of these actions:"
+  text_datos_empresa_sectores_ubicaciones: "Fill in the details of your company, business sectors and locations of your company."
+  text_busqueda_empresas_ofertas_demandas: "Make a search for companies / offers / demands."
+  text_anadir_favoritos_empresas: "Add to your favorites companies that may interes you."
