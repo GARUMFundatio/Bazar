@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
     if params[:display] == "inside"
       render :layout => false
     else
-      render
+      render :layout => false 
     end
     
   end
@@ -19,10 +19,11 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successful!"
-      redirect_back_or_default root_url('/home')
+      # redirect_back_or_default root_url('/home')
       # redirect_to "/home", :format => params[:format]
+      render :layout => false
     else
-      render :action => :new
+      render :action => :new, :layout => false
     end
   end
   

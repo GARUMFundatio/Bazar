@@ -1,4 +1,34 @@
+<div class="ficha-container">
+  
+  <div class="caja-empresa-titulo">
+
+    <div class="caja-empresa-titulo-texto" >
+    
+      <%= t(:text_buscando) %> 
+
+    </div>
+
+  </div>
+
+
+  <div class="caja-busqueda-general-opciones-titulo">
+  </div>
+
+  <div class="caja-busqueda-general-opciones-titulo">
+  </div>
+
+  <div class="caja-busqueda-general-opciones-titulo">
+    <%= t(:text_en_breve_mostraremos_los_resultados_de_su_busqueda) %>
+  </div>
+
+
+</div>
+
+
+
+
 <script>
+
 
 if (<%= params[:tipo] %> == '1') {
   parent.location.href = "/busqueda-oferta?tipo=O&q=<%= params[:q]%>&empleados=<%= params[:empleados]-%>&ventas=<%=params[:ventas]-%>&paises=<%= params[:paises]%>"  
@@ -12,6 +42,7 @@ if (<%= params[:tipo] %> == '3') {
   parent.location.href = "/busqueda-empresa?q=<%= params[:q]%>&empleados=<%= params[:empleados]-%>&ventas=<%=params[:ventas]-%>&paises=<%= params[:paises]%>"  
 }
 
-parent.$.fancybox.close();
+
+// parent.$.fancybox.close();
 
 </script>
