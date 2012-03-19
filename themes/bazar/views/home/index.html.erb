@@ -9,37 +9,37 @@
   <div class="seccion-contenido">
     
     <div class="seccion-header">
-      Resumen
+      <%=t(:text_resumen)%>
     </div>
 
     <div class="seccion-subheader">
-      Lo más nuevo y relevante
+      <%=t(:text_mas_nuevo_relevante)%>
     </div>
 
     <div class="seccion-menu">
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas-recomendadas', 'slow')">
-        <a href="#">Ofertas recomendadas</a>
+        <a href="#"><%=raw t(:text_ofertas_recomendadas)%></a>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#demandas-recomendadas', 'slow')">
-        <a href="#">Demandas recomendadas</a>
+        <a href="#"><%=raw t(:text_demandas_recomendadas)%></a>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#empresas-interesantes', 'slow')">
-        <a href="#">Empresas interesantes</a>
+        <a href="#"><%=raw t(:text_empresas_interesantes)%></a>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#empresas-nuevas', 'slow')">
-        <a href="#">Empresas nuevas en Bazar</a>
+        <a href="#"><%=raw t(:text_empresas_nuevas_bazar)%></a>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#tu-empresa', 'slow')">
-        <a href="#">Tu empresa en Bazar</a>
+        <a href="#"><%=raw t(:text_tu_empresa_bazar)%></a>
       </div>
 
       <div class="seccion-menu-item" onclick="$.scrollTo('#datos-bazar', 'slow')">
-        <a href="#">Datos de este Bazar</a>
+        <a href="#"><%=raw t(:text_datos_este_bazar)%></a>
       </div>
       
     </div>

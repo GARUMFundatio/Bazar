@@ -61,4 +61,14 @@ eo:
   text_has_olvidado_tu_contraseña: "Ĉu vi forgesis vian pasvorton?"
   text_identificate: "Ensaluti"
 
+# index.html -> home -> resumen
+
+  text_ofertas_recomendadas: "Rekomenditaj <br/>ofertoj"
+  text_demandas_recomendadas: "Rekomenditaj <br/>mendoj"
+  text_empresas_interesantes: "Interesaj <br/>entreprenoj"
+  text_empresas_nuevas_bazar: "Novaj entreprenoj<br/> en Bazar"
+  text_tu_empresa_bazar: "Via entrepreno en<br/>Bazar"
+  text_datos_este_bazar: "Datumoj de tiu ĉi<br/>Bazar"
+  text_resumen: "Resumo"
+  text_mas_nuevo_relevante: "Jen kio plej novas kaj elstaras"
 
