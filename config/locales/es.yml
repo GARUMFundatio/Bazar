@@ -73,6 +73,13 @@ es:
   text_datos_este_bazar: "Datos de este <br/>Bazar"
   text_resumen: "Resumen"
   text_mas_nuevo_relevante: "Lo más nuevo y relevante"
+  text_empresas_pueden_interesarte: "Empresas que <br/>pueden interesarte"
+  text_datos_de: "Los datos de"
+  text_veces_guardada_favorita: "veces guardada como favorita"
+  text_ofertas_favoritas: "ofertas son favoritas"
+  text_demandas_favoritas: "demandas son favoritas"
+  text_visitas: "visitas"
+  text_valoracion_tu_empresa: "valoración de tu empresa"
 
 
   label_back: Atrás
