@@ -82,3 +82,7 @@ en:
   text_demandas_favoritas: "demands are favorite"
   text_visitas: "visits"
   text_valoracion_tu_empresa: "assessment of your company"
+
+# partial _oferta.html -> cajetin de oferta en index.html -> home
+
+  text_valida_hasta: "Expires on"

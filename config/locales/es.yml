@@ -84,6 +84,10 @@ es:
   text_visitas: "visitas"
   text_valoracion_tu_empresa: "valoración de tu empresa"
 
+# partial _oferta.html -> cajetin de oferta en index.html -> home
+
+  text_valida_hasta: "Válida hasta el"
+
 
   label_back: Atrás
   label_destroy: Eliminar

@@ -82,3 +82,7 @@ eo:
   text_visitas: "vizitoj"
   text_valoracion_tu_empresa: "taksado de via entrepreno"
 
+# partial _oferta.html -> cajetin de oferta en index.html -> home
+
+  text_valida_hasta: "Valida ĝis la"
+
