@@ -118,12 +118,12 @@
       <%=t(:text_bazar_permite)%> 
     </div>
 
-    <div class="caja-entrar2 ilumina40" >
+    <div class="caja-entrar2 ilumina40" onclick="$('#registrarse').attr('href', '/registrarse').trigger('click');">
       <div class="caja-entrar2-corazon">
         <img src="/themes/bazar/images/queesbazar/corazon.png">
       </div>
       <div class="caja-entrar2-texto">
-        <a href="/registrarse"><%=t(:text_bazar_solicita_entrada)%></a>
+        <a href="#"><%=t(:text_bazar_solicita_entrada)%></a>
       </div>
     </div>
     
@@ -203,9 +203,9 @@
     </div>
 
 
-    <div class="cuerpo4 ilumina40">  
+    <div class="cuerpo4 ilumina40" onclick="$('#registrarse').attr('href', '/registrarse').trigger('click');">  
         <div class="texto-solicitar">
-          <a href="/registrarse"><%=t(:text_bazar_solicita_entrada)%></a>
+          <a href="#"><%=t(:text_bazar_solicita_entrada)%></a>
         </div>
     </div>
 
@@ -236,6 +236,7 @@
   </div> <!-- fin container -->
 
 <a id="login" class="fancybox.ajax" href=""></a>
+<a id="registrarse" class="fancybox.ajax" href=""></a>
 
 <script type="text/javascript">
 
@@ -264,6 +265,17 @@ $(document).ready(function() {
  $("#login").fancybox({
 	 'width' : 500,
 	 'height' : 280,
+   'margin' : 0,
+	 'autoScale' : false,
+	 'transitionIn' : 'none',
+	 'transitionOut' : 'none',
+	 'modal': false,
+	 'type' : 'iframe'
+ });
+
+ $("#registrarse").fancybox({
+	 'width' : 500,
+	 'height' : 400,
    'margin' : 0,
 	 'autoScale' : false,
 	 'transitionIn' : 'none',
