@@ -7,6 +7,7 @@ es:
   text_ofertas: "ofertas"
   text_demandas: "demandas"
   text_empresas: "empresas"
+  text_veces_guardada_favorita: "veces guardada como favorita"
 
 # queesbazar.html 
 
@@ -78,7 +79,6 @@ es:
   text_mas_nuevo_relevante: "Lo más nuevo y relevante"
   text_empresas_pueden_interesarte: "Empresas que <br/>pueden interesarte"
   text_datos_de: "Los datos de"
-  text_veces_guardada_favorita: "veces guardada como favorita"
   text_ofertas_favoritas: "ofertas son favoritas"
   text_demandas_favoritas: "demandas son favoritas"
   text_visitas: "visitas"
@@ -88,6 +88,37 @@ es:
 
   text_valida_hasta: "Válida hasta el"
 
+# ficha de oferta  fichaoferta.html -> ventana emergente con la oferta/demanda
+
+  text_oferta_fichaoferta: "OFERTA"
+  text_demanda_fichaoferta: "DEMANDA"
+  text_oferta_valida_hasta: "Oferta válida hasta el"
+  text_borrar_favoritos: "borrar de favoritos"
+  text_guardar_favoritos: "guardar en favoritos"
+  text_contactar_empresa: "Contactar empresa"
+  text_no_tiene_imagenes: "No tiene imágenes"
+  text_subiendo_imagen: "Subiendo la imagen ..."
+  text_anadir_foto: "AÑADIR UNA FOTO"
+  text_web_mas_informacion_oferta: "web con más información sobre la oferta"
+  text_web_mas_informacion_demanda: "web con más información sobre la demanda"
+  text_web_externa: "Web externa:"
+  text_incluir_web_externa: "Edite si quiere incluir un enlace a la página con información extra de la oferta."
+  text_empresas_destinatarias: "Empresas destinatarias"
+  text_no_definio_palabras_claves: "No definió palabras claves"
+  text_fecha_de_publicacion: "Fecha de publicación"
+  text_ambito: "Ámbito"
+  text_mi_bazar: "Mi Bazar"
+  text_nacional: "Nacional"
+  text_internacional: "Internacional"
+  text_mas_detalles: "Más detalles ..."
+  text_visitas_de_esta_oferta: "visitas de esta oferta"
+  text_visitas_de_esta_demanda: "visitas de esta demanda"
+  text_cerrar: "cerrar"
+  text_ficha_empresa_incompleta: "Ficha de empresa incompleta"
+
+
+
+  
 
   label_back: Atrás
   label_destroy: Eliminar
@@ -129,8 +160,8 @@ es:
   text_al_hacerlo_te_devolvera_un_fichero_en_formato_xml_que_habitualmente_saben_manejar_otros_programas_o_tu_aplicacion: "Al hacerlo te devolverá un fichero en formato XML que habitualmente saben manejar otros programas o tu aplicación"
   text_al_tiempo_que_les_facilita_establecer_alianzas_conocer_mejor_su_sector_y: ", al tiempo que les facilita establecer alianzas, conocer mejor su sector y"
   text_alguno: alguno
-  text_ambito: "Ámbito"
-  text_anadir_una_foto: "AÑADIR UNA FOTO"
+
+
   text_anadir_una_sede: "AÑADIR UNA SEDE"
   text_añadir_una_nueva_sede: "añade una nueva sede"
   text_anterior: Anterior
@@ -158,7 +189,7 @@ es:
   text_busqueda: "Búsqueda"
   text_cambiar_contrasena: "Cambiar Contraseña"
   text_cercania: cercanía
-  text_cerrar: "cerrar"
+
   text_cerrar_informacion: "Cerrar Información"
 
   text_como_la: "como  la"
@@ -173,7 +204,7 @@ es:
   text_con_esta_llamada_del_api_te_devuelve_los_perfiles_activos_de_un_bazar: "Con esta llamada del API te devuelve los perfiles activos de un bazar."
   text_confianza: confianza
   text_consultas_realizadas: "Consultas Realizadas:"
-  text_contactar_empresa: "Contactar empresa"
+
   text_correo: "Correo"
   text_cuando_montar_un_bazar: "¿Cuándo montar un bazar?"
   text_cuando_creamos_que_a_las_empresas_de_nuestro_sector_nuestro_grupo_o_nuestra_ciudad_les_proporcionara_una_ventaja_tener_un_espacio_especifico_para_ellas_en_el_gran_mercado_global_porque_tengan_una_denominacion_de_origen_comun_o_un_marchamo_de_calidad_o_simplemente_cuando_comerciar_y_compartir_conocimiento_entre_ellas_organizando_cursos_seminarios_o_realizando_convocatorias_tenga_sentido_en_si_mismo_es_decir_cuando_el_bazar_vaya_a_compartir_la_identidad_que_define_a_una_comunidad_en_la_red_social: "Cuando creamos que a las empresas de nuestro sector, nuestro grupo o nuestra ciudad les proporcionará una ventaja tener un espacio específico para ellas en el gran mercado global (porque tengan una denominación de origen común o un marchamo de calidad) o simplemente cuando comerciar y compartir conocimiento entre ellas (organizando cursos,  seminarios o realizando convocatorias) tenga sentido en si mismo, es decir, cuando el bazar  vaya a compartir la identidad que define a una comunidad en la red social."
@@ -192,7 +223,7 @@ es:
   text_debe_tener_la_forma_de_una: "Debe tener la forma de una"
   text_definir_busqueda_de_usuarios_login_empresa_nombre_con_autocomplete: "definir busqueda de usuarios (login) + empresa (nombre) con autocomplete"
   text_delimitamos_la_busqueda_a_algun_pais: "¿Delimitamos la búsqueda a algún país? Puedes elegir varios:"
-  text_DEMANDA: "DEMANDA"
+
   text_demandan: "Demandan:"
   
   text_demandas_en_INDUSTRIA: "demandas en INDUSTRIA"
@@ -239,7 +270,7 @@ es:
   text_empresas_actualizadas: "Empresas Actualizadas"
   text_empresas_con_estos_criterios: "Empresas con estos criterios"
   text_empresas_de_este_bazar_ubicadas_en: "Empresas de este bazar ubicadas en"
-  text_empresas_destinatarias: "Empresas destinatarias"
+
   text_empresas_del_bazar: "Empresas del Bazar"
   text_empresas_en_el_mercado: "Empresas en el Mercado"
   text_empresas_en_INDUSTRIA: "empresas en INDUSTRIA"
@@ -281,9 +312,9 @@ es:
 
   text_facturacion_anual: "Facturación anual"
   text_fecha: "Fecha:"
-  text_fecha_de_publicacion: "Fecha de publicación"
+
   text_ficha_de_empresa: "ficha de empresa"
-  text_ficha_de_empresa_incompleta: "Ficha de empresa incompleta"
+
   text_filtrar_por_datos_economicos: "Filtrar por Datos Económicos"
   text_filtrar_por_el_n_de_empleados_de_la_empresa: "Filtrar por el nº de empleados de la empresa"
   text_filtrar_por_la_facturacion_anual_de_la_empresa: "Filtrar por la facturación anual de la empresa"
@@ -308,7 +339,7 @@ es:
   text_hasta_cuando_es_valida_la_demanda: "¿Hasta cuándo es válida la demanda?"
   text_hay_alguna_pagina_web_con_mas_informacion: "¿Hay alguna web en la que se dé más información?"
   text_hay_limitaciones: "¿Hay limitaciones?"
-  text_no_tiene_imagenes: "No tiene imágenes"
+
   text_hemos_creado_una_pagina_de_ejemplos_de_como_usar_el_api_de_bazar_cada_una_de_las_funciones_disponibles_cuenta_con_su_descripcion_ejemplos_de_uso_y_un_ejemplo_de_que_se_obtiene_cuando_se_invoca_puedes_ver_toda_esta_informacion_en_la_pagina_de: "Hemos creado una página de ejemplos de como usar el API de Bazar. Cada una de las funciones disponibles cuenta con su descripción, ejemplos de uso y un ejemplo de que se obtiene cuando se invoca. Puedes ver toda esta información en la página de"
   text_http_bazar_garumfundatio_org_api_empresas_json: "http://bazar.garumfundatio.org/api/empresas.json"
   text_http_bazar_garumfundatio_org_api_info_xml: "http://bazar.garumfundatio.org/api/info.xml"
@@ -329,7 +360,7 @@ es:
   text_informacion_del_bazar: "Información del Bazar"
   text_informacion_del_usuario: "Información del Usuario"
   text_informacion_general_sobre_tu_empresa: "Información general sobre tu empresa"
-  text_internacional: "Internacional"
+
   text_instalar_bazar_y_unirse_a_la_red_de_bazares_ser_la_opcion_recomendada_a_grupos_empresariales_asociaciones_sectoriales_de_empresas_y_entidades_dedicadas_a_la_promocion_economica_local: "instalar Bazar y unirse a la red de bazares, será la opción recomendada a grupos empresariales, asociaciones sectoriales de empresas y entidades dedicadas a la promoción económica local"
   text_introduzca_los_terminos_de_la_busqueda: "Introduzca los términos de la búsqueda"
   text_introduzca_su_correo_y_pulse_cambiar_contrasena: "Introduzca su correo y pulse \"Cambiar Contraseña\"."
@@ -352,25 +383,25 @@ es:
   text_los_bazares_son_mercados_locales_locales_no_necesariamente_en_un_sentido_territorial_sino_de_red_una_red_de_artesanos_o_un_grupo_empresarial_obtienen_una_ventaja_especial_de_formar_un_bazar_propio_en_vez_de_integrarse_en_otro_existente_tener_datos_y_compartir_estadisticas_de_su_propio_metabolismo_comun_las_empresas_de_cada_bazar_tienen_acceso_como_grupo_a_los_agregados_estadisticos_que_describen_su_uso_ademas_de_a_los_resumenes_de_actividad_de_sus_componentes_individuales_dicho_de_otro_modo: "Los bazares son mercados locales. Locales no necesariamente en un sentido territorial, sino de red: una red de artesanos o un grupo empresarial obtienen una ventaja especial de formar un bazar propio en vez de integrarse en otro existente: tener datos y compartir estadísticas de su propio metabolismo común. Las empresas de cada bazar tienen acceso, como grupo, a los agregados estadisticos que describen su uso además de a los resúmenes de actividad de sus componentes individuales. Dicho de otro modo,"
   text_los_datos_de_este_bazar: "Los datos de este bazar »"
   text_los_formatos_soportados_son_xml_json_y_csv: "Los formatos soportados son: XML, JSON y CSV."
-  text_mas_detalles: "Más detalles ..."
+
   text_mensaje_enviado_desde_bazar: "Mensaje enviado desde Bazar"
   text_mensajes: Mensajes
   text_mensajes_y_notificaciones: "Mensajes y Notificaciones"
 
   text_mercados: mercados
-  text_mi_bazar: "Mi Bazar"
+
   text_mientras_para_una_empresa_individual_la_opcion_mas_interesante_sera_unirse_a_un_bazar_sostenido_por_alguna_institucion_empresarial_o_publica_donde_esten_las_empresas_que_le_conocen_y_con_las_que_puede_aprender_y_comerciar_preferentemente: ", mientras para una empresa individual, la opción más interesante será unirse a un bazar sostenido por alguna institución empresarial o pública donde estén las empresas que le conocen y con las que puede aprender y comerciar preferentemente."
   text_muchos_bazares_un_gran_mercado: "Muchos bazares, un gran mercado"
   text_numero_empleados: "Nº Empleados:"
   text_navegue_por_los_resultados: "Navegue por los resultados."
-  text_nacional: "Nacional"
+
   text_new_actividad: "Nueva actividad"
   text_new_favorito: "Nuevo favorito"
   text_new_gruposconf: "Nuevo grupo de configuración"
   text_new_rol: "Nuevo rol"
   text_new_roles_user: "Nuevo rol de usuario"
   text_new_usersession: "Nueva sesión de usuario"
-  text_no_definio_palabras_claves: "No definió palabras claves"
+
   text_no_hay_mensajes: "No hay mensajes."
   text_no_hay_mensajes_sin_leer: "No hay mensajes sin leer."
   text_no_hay_notificaciones: "No hay notificaciones."
@@ -396,7 +427,7 @@ es:
   text_nuevos: nuevos
   text_numero_de_empleados: "Número de empleados"
   text_oferta_demanda: "Oferta / Demanda"
-  text_OFERTA: "OFERTA"
+  
   text_ofertas: Ofertas
   text_ofertas_demandas: "Ofertas / Demandas"
   text_ofertas_diferenciadas_y_demandas_restringidas: "ofertas diferenciadas y demandas restringidas"
@@ -405,7 +436,7 @@ es:
   text_ofertas_en_FINANZAS: "ofertas en FINANZAS"
   text_ofertas_en_CONOCIMIENTO: "ofertas en CONOCIMIENTO"
   text_ofertas_en_COOPERATIVAS: "ofertas en COOPERATIVAS"
-  text_oferta_valida_hasta: "Oferta válida hasta"
+  
   text_oferta_valida_hasta_el: "Oferta válida hasta el"
   text_ofrecen: "Ofrecen:"
   text_pais: "Pais"
@@ -541,15 +572,15 @@ es:
   text_valoracion_como_cliente: "Valoración como Cliente de:"
   text_valoracion_como_proveedor: "Valoración como Proveedor de:"
   text_vision_general: "visión general"
-  text_veces_guardada_en_favoritos: "veces guardada en favoritos"
+
   text_ventas: "Ventas:"
   text_ver_las_mas_recientes_primero: "ver las más recientes primero"
   text_ver_las_mas_cercanas_geográficamente_primero: "ver las más cercanas geográficamente primero"
   text_ver_solo_empresas_de_mi_bazar: "ver solo las empresas de mi bazar"
   text_ver_ocultar: Ver/ocultar
   text_visible: Visible
-  text_visitas_de_esta_demanda: "visitas de esta demanda"
-  text_visitas_de_esta_oferta: "visitas de esta oferta"
+
+
   text_volver_a_la_pagina_principal: "Volver a la página principal"
   text_xml: XML
   text_xml_json: "XML, JSON"
