@@ -57,7 +57,6 @@ class UsersController < ApplicationController
     @user = User.new
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @user }
     end
   end
 
@@ -89,12 +88,9 @@ class UsersController < ApplicationController
   end
 
   def registrarse
-    
+
     @user = User.new
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @user }
-    end
+    render :layout => false 
     
   end 
   
@@ -102,37 +98,64 @@ class UsersController < ApplicationController
     params[:user][:rol_ids] ||= [2]
     @user = User.new(params[:user])
     
-    respond_to do |format|
-      if @user.save
-
-        # avisamos al usuario de que se ha registrado
-        
-        BazarMailer.confirmacion_registro(@user).deliver      
-        
-        # avisamos al admin de que hay una nueva alta
-        
-        begin 
-          Mail.deliver do
-                to "Admin Bazar <#{Conf.find_by_nombre('CorreoAdmin').valor}>"
-              from 'No replay <noreplay@bazar.com>'
-           subject "Nuevo Usuario en #{Conf.find_by_nombre('Titular').valor}"
-              body "
-                        
-              En estos momentos hay #{User.all.count} usuarios registrados.
-            
-              "
-          end
-        rescue
-          logger.debug "Se ha producido un error al intentar avisar al administrador de una nueva alta!!!"
+    if @user.save
+      
+      empresa = Bazarcms::Empresa.new 
+      empresa.id = @user.id 
+      empresa.user_id = @user.id 
+      empresa.nombre = "Escriba su nombre Aquí"
+      empresa.desc = ""
+      empresa.fundada = 2012
+      empresa.moneda = 0 
+      empresa.url = ""
+      empresa.rating = 0 
+      empresa.total_favoritos = 0 
+      empresa.total_mostradas = 0 
+      empresa.rating_cliente = 0 
+      empresa.rating_proveedor = 0 
+      empresa.rating_total_cliente = 0 
+      empresa.rating_total_proveedor = 0
+      empresa.logo_file_name = ""
+      empresa.sector = "01"
+      empresa.ambito = 2
+      empresa.save 
+      
+      datos = Bazarcms::Empresasdato.new
+      datos.empresa_id = @user.id 
+      datos.periodo = 2011
+      datos.empleados = 0 
+      datos.ventas = 0
+      datos.compras = 0 
+      datos.resultados = 0 
+      datos.save 
+      
+      # avisamos al usuario de que se ha registrado
+      
+      BazarMailer.confirmacion_registro(@user).deliver      
+      
+      # avisamos al admin de que hay una nueva alta
+      
+      begin 
+        Mail.deliver do
+              to "Admin Bazar <#{Conf.find_by_nombre('CorreoAdmin').valor}>"
+            from 'No replay <noreplay@bazar.com>'
+         subject "Nuevo Usuario en #{Conf.find_by_nombre('Titular').valor}"
+            body "
+                      
+            En estos momentos hay #{User.all.count} usuarios registrados.
+          
+           "
         end
-        
-        
-        format.html { redirect_to('/home', :notice => 'Se ha creado correctamente el usuario.') }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
-      else
-        format.html { render :action => "registrarse" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+      rescue
+        logger.debug "Se ha producido un error al intentar avisar al administrador de una nueva alta!!!"
       end
+
+      render :layout => false 
+
+    else
+
+      render :action => "registrarse", :layout => false
+
     end
     
   end

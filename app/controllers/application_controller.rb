@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
 
 
   def set_locale
-      I18n.locale = params[:locale] if params.include?('locale')
+      # I18n.locale = params[:locale] if params.include?('locale')
+      I18n.locale = params[:locale] || ((lang = request.env['HTTP_ACCEPT_LANGUAGE']) && lang[/^[a-z]{2}/])
   end
 
   def BZ_param(clave)
