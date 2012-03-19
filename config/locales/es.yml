@@ -41,6 +41,9 @@ es:
 
 # Layout bazar.html
 
+  text_ofertas_layout: "Ofertas"
+  text_demandas_layout: "Demandas"
+  text_empresas_layout: "Empresas"
   text_mercado: "mercado"
   text_sociologia: "sociología"
   text_f_a_q: "f.a.q."
@@ -80,6 +83,10 @@ es:
   text_demandas_favoritas: "demandas son favoritas"
   text_visitas: "visitas"
   text_valoracion_tu_empresa: "valoración de tu empresa"
+
+# partial _oferta.html -> cajetin de oferta en index.html -> home
+
+  text_valida_hasta: "Válida hasta el"
 
 
   label_back: Atrás
