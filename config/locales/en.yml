@@ -62,4 +62,20 @@ en:
   text_has_olvidado_tu_contraseña: "Forgot your password?"
   text_identificate: "Sign in"
 
+# index.html -> home -> resumen
 
+  text_ofertas_recomendadas: "Recommended <br/>Offers"
+  text_demandas_recomendadas: "Recommended <br/>demands"
+  text_empresas_interesantes: "Interesting <br/>companies"
+  text_empresas_nuevas_bazar: "New companies <br/>in Bazar"
+  text_tu_empresa_bazar: "Your company in <br/>Bazar"
+  text_datos_este_bazar: "Data from this <br/>Bazar"
+  text_resumen: "Summary"
+  text_mas_nuevo_relevante: "What's new and relevant"
+  text_empresas_pueden_interesarte: "Companies that <br/>may interest you"
+  text_datos_de: "The data of"
+  text_veces_guardada_favorita: "times saved as favorite"
+  text_ofertas_favoritas: "offers are favorite"
+  text_demandas_favoritas: "demands are favorite"
+  text_visitas: "visits"
+  text_valoracion_tu_empresa: "assessment of your company"

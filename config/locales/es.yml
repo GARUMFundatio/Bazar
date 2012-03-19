@@ -55,13 +55,31 @@ es:
   text_bazar_software_libre_licencia: "<a href='http://garumfundatio.org/bazar'>Bazar</a> es software libre desarrollado por <a href='http://garumfundatio.org' style='text-decoration: none'>Garum Fundatio</a> bajo los términos de la licencia GPL v3."
 
 
-# new.html en user_sessions
+# new.html -> login en user_sessions
 
   text_tu_email: "Tu email"
   text_tu_contrasena: "Tu contraseña"
   text_has_olvidado_tu_contraseña: "Has olvidado tu contraseña?"
   text_identificate: "Identifícate"
 
+
+# index.html -> home -> resumen
+
+  text_ofertas_recomendadas: "Ofertas <br/>recomendadas"
+  text_demandas_recomendadas: "Demandas <br/>recomendadas"
+  text_empresas_interesantes: "Empresas <br/>interesantes"
+  text_empresas_nuevas_bazar: "Empresas <br/>nuevas en Bazar"
+  text_tu_empresa_bazar: "Tu empresa en <br/>Bazar"
+  text_datos_este_bazar: "Datos de este <br/>Bazar"
+  text_resumen: "Resumen"
+  text_mas_nuevo_relevante: "Lo más nuevo y relevante"
+  text_empresas_pueden_interesarte: "Empresas que <br/>pueden interesarte"
+  text_datos_de: "Los datos de"
+  text_veces_guardada_favorita: "veces guardada como favorita"
+  text_ofertas_favoritas: "ofertas son favoritas"
+  text_demandas_favoritas: "demandas son favoritas"
+  text_visitas: "visitas"
+  text_valoracion_tu_empresa: "valoración de tu empresa"
 
 
   label_back: Atrás
