@@ -7,8 +7,8 @@ class UserSessionsController < ApplicationController
   
   def new
     @user_session = UserSession.new
-    if params[:display] == "inside"
-      render :layout => false
+    if !current_user.nil?
+      redirect_to "/home"
     else
       render :layout => false 
     end

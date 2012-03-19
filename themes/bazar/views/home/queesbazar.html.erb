@@ -83,7 +83,11 @@
      <div id="logo"><img src="/themes/bazar/images/queesbazar/logo-garum.png" ></div>
     </div> <!-- fin caja logo -->
 
-    <div class="caja-entrar" onclick="$('#login').attr('href', '/login').trigger('click');">
+    <% if !current_user.nil? %>
+      <div class="caja-entrar" onclick="parent.location.href='/home'">
+    <% else %>
+      <div class="caja-entrar" onclick="$('#login').attr('href', '/login').trigger('click');">
+    <% end %>
      <div id="entrar"><img src="/themes/bazar/images/queesbazar/candado.png" ><%=t(:text_entrar)%></div>
     </div> <!-- fin caja entrar -->
 
