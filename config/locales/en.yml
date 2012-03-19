@@ -95,7 +95,7 @@ en:
   text_borrar_favoritos: "remove from favorites"
   text_guardar_favoritos: "save to favorites"
   text_contactar_empresa: "Contact company"
-  text_no_tiene_imagenes: "Without pictures"
+  text_no_tiene_imagenes: "Without images"
   text_subiendo_imagen: "Uploading the image ..."
   text_anadir_foto: "ADD A IMAGE"
   text_web_mas_informacion_oferta: "website with more information on offer"
@@ -114,3 +114,20 @@ en:
   text_visitas_de_esta_demanda: "visits of this demand"
   text_cerrar: "close"
   text_ficha_empresa_incompleta: "Company profile incomplete"
+
+# ficha de empresa  fichaempresa.html
+
+  text_tus_datos: "Your data"
+  text_imagenes: "Images"
+  text_sobre_empresa: "About the company"
+  text_sedes: "Locations"
+  text_publicar_oferta: "PUBLISH AN OFFER"
+  text_publicar_demanda: "PUBLISH A DEMAND"
+  text_fundacion: "Foundation:"
+  text_numero_empleados: "Number of employees"
+  text_sector: "Sector:"
+  text_facturacion_anual: "Annual billing:"
+  text_anadir_sede: "ADD A LOCATION"
+  text_no_tiene_sedes: "Without Locations"
+
+  text_fundada: "Founded in"

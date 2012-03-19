@@ -114,3 +114,20 @@ eo:
   text_cerrar: "fermi"
   text_ficha_empresa_incompleta: "Entreprenprofilo nekompleta"
 
+# ficha de empresa  fichaempresa.html
+
+  text_tus_datos: "Viaj datumoj"
+  text_imagenes: "Bildoj"
+  text_sobre_empresa: "Pri la entrepreno"
+  text_sedes: "Sidejoj"
+  text_publicar_oferta: "PUBLIKIGI OFERTON"
+  text_publicar_demanda: "PUBLIKIGI MENDON"
+  text_fundacion: "Fondiĝo:"
+  text_numero_empleados: "Nombro da dungitoj"
+  text_sector: "Sektoro:"
+  text_facturacion_anual: "Jar-daŭra fakturado:"
+  text_anadir_sede: "ALDONI SIDEJON"
+  text_no_tiene_sedes: "Sen sidejoj"
+
+  text_fundada: "Fondita en"
+

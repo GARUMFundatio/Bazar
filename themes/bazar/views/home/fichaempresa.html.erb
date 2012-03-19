@@ -17,7 +17,7 @@
   <div class="ficha-indice">
 
     <% if editar %>
-      Tus Datos
+      <%= t(:text_tus_datos)%>
     <% else %>
 
       <div class="fichaempresa-iconos" onclick="$('#correo').attr('href', '/home/editarcorreo/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
@@ -106,23 +106,23 @@
     <div class="seccion-menu">
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas', 'slow')">
-        Ofertas
+        <%= t(:text_ofertas_layout)%>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#demandas', 'slow')">
-        Demandas
+        <%= t(:text_demandas_layout)%>
       </div>
  
       <div class="seccion-menu-item" onclick="$.scrollTo('#imagenes', 'slow')">
-        Imágenes
+        <%= t(:text_imagenes)%>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#sobre', 'slow')">
-        Sobre la empresa
+        <%= t(:text_sobre_empresa)%>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#sedes', 'slow')">
-        Sedes
+        <%= t(:text_sedes)%>
       </div>
       
     </div>
@@ -168,7 +168,7 @@ function borrasede (empresa, sede) {
 
 <div class="caja-seccion" id="ofertas">
   <div class="ficha-indice">
-  Ofertas
+  <%= t(:text_ofertas_layout)%>
   </div>
   
   <div class="seccion-contenido">
@@ -182,7 +182,7 @@ function borrasede (empresa, sede) {
         </div>
 
         <div class="add-item-texto">
-          <%= t(:text_publicar_una_oferta) -%>
+          <%= t(:text_publicar_oferta) -%>
         </div>
       </div>
 
@@ -196,7 +196,7 @@ function borrasede (empresa, sede) {
 
 <div class="caja-seccion" id="demandas">
   <div class="ficha-indice">
-  Demandas
+  <%= t(:text_demandas_layout)%>
   </div>
   
   <div class="seccion-contenido">
@@ -210,7 +210,7 @@ function borrasede (empresa, sede) {
         </div>
 
         <div class="add-item-texto">
-          <%= t(:text_publicar_una_demanda) -%>
+          <%= t(:text_publicar_demanda) -%>
         </div>
       </div>
 
@@ -226,7 +226,7 @@ function borrasede (empresa, sede) {
 
 <div class="caja-seccion" id="localizacion">
   <div class="ficha-indice">
-    Imágenes
+    <%= t(:text_imagenes)%>
   </div>
   
   <div id="imagenes" class="seccion-contenido" >
@@ -248,7 +248,7 @@ function borrasede (empresa, sede) {
 
        
         <div id="cargaimagen" class="add-item-texto">
-          <%= t(:text_anadir_una_foto) -%>
+          <%= t(:text_anadir_foto) -%>
         </div>
       </div>
 
@@ -274,7 +274,7 @@ function borrasede (empresa, sede) {
 
 <div class="caja-seccion" id="sobre">
   <div class="ficha-indice">
-  Sobre la Empresa
+  <%= t(:text_sobre_empresa)%>
   </div>
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
@@ -282,13 +282,13 @@ function borrasede (empresa, sede) {
     <div class="seccion-cajon">
       <div class="ficha-empresa-sobre">
         
-        <p class="ficha-empresa-titulo">Fundación:</p>
+        <p class="ficha-empresa-titulo"><%= t(:text_fundacion)%></p>
         <p class="ficha-empresa-texto"><%= @empresa.fundada %></p>
 
-        <p class="ficha-empresa-titulo">Ámbito:</p>
+        <p class="ficha-empresa-titulo"><%= t(:text_ambito)%></p>
         <p class="ficha-empresa-texto"><%= Bazarcms::Empresa.Ambitostexto(@empresa.ambito) %></p>
 
-        <p class="ficha-empresa-titulo">Nº de empleados:</p>
+        <p class="ficha-empresa-titulo"><%= t(:text_numero_empleados)%></p>
         <p class="ficha-empresa-texto"><%= Bazarcms::Empresasdato.REtexto(@empresasdatos.empleados) %> </p>
          
       </div>
@@ -297,11 +297,11 @@ function borrasede (empresa, sede) {
     <div class="seccion-cajon">
       <div class="ficha-empresa-sobre">
         
-        <p class="ficha-empresa-titulo">Sector:</p>
+        <p class="ficha-empresa-titulo"><%= t(:text_sector)%></p>
         <p class="ficha-empresa-texto2"><%= Bazarcms::Empresa.Sectorestexto(@empresa.sector) %> 
           &nbsp; &nbsp; <img src="<%= current_theme_image_path("sector#{@empresa.sector}white.png") %>" width="40px" /></p>
 
-        <p class="ficha-empresa-titulo">Facturación anual:</p>
+        <p class="ficha-empresa-titulo"><%= t(:text_facturacion_anual)%></p>
         <p class="ficha-empresa-texto2">
           <%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas) %> 
           <% if @empresa.moneda == 0 %>
@@ -355,7 +355,7 @@ function borrasede (empresa, sede) {
         </div>
 
         <div class="add-item-texto">
-          <%= t(:text_anadir_una_sede) -%>
+          <%= t(:text_anadir_sede) -%>
         </div>
       </div>
 

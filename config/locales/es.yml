@@ -117,6 +117,23 @@ es:
   text_ficha_empresa_incompleta: "Ficha de empresa incompleta"
 
 
+# ficha de empresa  fichaempresa.html
+
+  text_tus_datos: "Tus Datos"
+  text_imagenes: "Imágenes"
+  text_sobre_empresa: "Sobre la empresa"
+  text_sedes: "Sedes"
+  text_publicar_oferta: "PUBLICAR UNA OFERTA"
+  text_publicar_demanda: "PUBLICAR UNA DEMANDA"
+  text_fundacion: "Fundación:"
+  text_numero_empleados: "Número de empleados"
+  text_sector: "Sector:"
+  text_facturacion_anual: "Facturación anual:"
+  text_anadir_sede: "AÑADIR UNA SEDE"
+  text_no_tiene_sedes: "No tiene sedes"
+
+  text_fundada: "Fundada en"
+
 
   
 
@@ -162,7 +179,7 @@ es:
   text_alguno: alguno
 
 
-  text_anadir_una_sede: "AÑADIR UNA SEDE"
+
   text_añadir_una_nueva_sede: "añade una nueva sede"
   text_anterior: Anterior
   text_api_application_programming_interface_es_la_forma_que_tiene_el_proyecto_bazar_de_compartir_la_informacion_de_la_red_de_bazares_con_tus_aplicaciones_y_o_herramientas: "API (Application Programming Interface) es la forma que tiene el Proyecto Bazar de compartir la información de la red de bazares con tus aplicaciones y/o herramientas."
@@ -310,7 +327,7 @@ es:
   text_estructura_distribuida: "estructura distribuida"
   text_estructura_sea_distribuida: "estructura sea distribuida"
 
-  text_facturacion_anual: "Facturación anual"
+
   text_fecha: "Fecha:"
 
   text_ficha_de_empresa: "ficha de empresa"
@@ -392,7 +409,6 @@ es:
 
   text_mientras_para_una_empresa_individual_la_opcion_mas_interesante_sera_unirse_a_un_bazar_sostenido_por_alguna_institucion_empresarial_o_publica_donde_esten_las_empresas_que_le_conocen_y_con_las_que_puede_aprender_y_comerciar_preferentemente: ", mientras para una empresa individual, la opción más interesante será unirse a un bazar sostenido por alguna institución empresarial o pública donde estén las empresas que le conocen y con las que puede aprender y comerciar preferentemente."
   text_muchos_bazares_un_gran_mercado: "Muchos bazares, un gran mercado"
-  text_numero_empleados: "Nº Empleados:"
   text_navegue_por_los_resultados: "Navegue por los resultados."
 
   text_new_actividad: "Nueva actividad"
@@ -425,7 +441,7 @@ es:
   text_nuevo_parametro: "Nuevo Parametro"
   text_nuevo_usuario: "Nuevo Usuario"
   text_nuevos: nuevos
-  text_numero_de_empleados: "Número de empleados"
+
   text_oferta_demanda: "Oferta / Demanda"
   
   text_ofertas: Ofertas
@@ -485,10 +501,10 @@ es:
   text_publicando_la_oferta: "Publicando la oferta. No cierre la ventana."
   text_publicando_la_demand: "Publicando la demanda. No cierre la ventana."
   text_publicar: Publicar
-  text_publicar_una_demanda: "PUBLICAR UNA DEMANDA"
+
   text_publicar_esta_demanda: "Publicar esta demanda"
   text_publicar_una_nueva_demanda: "Publicar una nueva demanda"
-  text_publicar_una_oferta: "PUBLICAR UNA OFERTA"
+
   text_publicar_esta_oferta: "Publicar esta oferta"
   text_publicar_una_nueva_oferta: "Publicar una nueva oferta"
   text_puede_usar_asteriscos_o_espacios_para_buscar_por_varias_palabras: "Puede usar asteriscos o espacios para buscar por varias palabras."
@@ -525,9 +541,9 @@ es:
   text_rol: Rol
   text_rss: RSS
   text_se_parece_a_una_red_social_cada_empresa_tiene_su_ficha_publica_sus_noticias_busca_empresas_que_puedan_estar_interesadas_en_sus_productos_o_que_le_provean_con_confiabilidad_a_mejores_precios: "se parece a una red social. Cada empresa tiene su ficha, publica sus noticias, busca empresas que puedan estar interesadas en sus productos o que le provean con confiabilidad a mejores precios."
-  text_sedes: "Sedes"
+
   text_seguro_que_desea_borrarla: "¿Seguro que desea borrarla?"
-  text_sector: "Sector"
+
   text_sectores: Sectores
   text_selecciona_una_de_la_lista: "empieza teclear la ciudad y selecciona una de la lista"
   text_seleccione_el_tipo_de_resultado_que_desea_ver: "Seleccione el tipo de resultado que desea ver"
