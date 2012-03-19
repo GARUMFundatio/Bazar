@@ -42,6 +42,9 @@ en:
 
 # Layout bazar.html
 
+  text_ofertas_layout: "Offers"
+  text_demandas_layout: "Demands"
+  text_empresas_layout: "Companies"
   text_mercado: "market"
   text_sociologia: "sociology"
   text_f_a_q: "f.a.q."

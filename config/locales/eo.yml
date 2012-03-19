@@ -41,6 +41,9 @@ eo:
 
 # Layout bazar.html
 
+  text_ofertas_layout: "Ofertoj"
+  text_demandas_layout: "Mendoj"
+  text_empresas_layout: "Entreprenoj"
   text_mercado: "merkato"
   text_sociologia: "sociologio"
   text_f_a_q: "oftaj demandoj"
