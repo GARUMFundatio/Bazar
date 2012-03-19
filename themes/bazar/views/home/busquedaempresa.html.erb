@@ -43,7 +43,9 @@
   function filtra(tipo) {
 
     $('#resultados').fadeOut("slow");
-    $("#resultados").load("/home/filtraresultadosempresas/"+"<%= @empresasresultados[0].empresasconsulta_id -%>"+"/"+tipo).fadeIn("slow");
+    <% !if @empresasresultados[0].nil? %>
+      $("#resultados").load("/home/filtraresultadosempresas/"+"<%= @empresasresultados[0].empresasconsulta_id -%>"+"/"+tipo).fadeIn("slow");
+    <% end %>
   };
   
   </script>
