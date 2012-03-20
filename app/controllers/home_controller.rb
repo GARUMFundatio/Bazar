@@ -1108,6 +1108,19 @@ class HomeController < ApplicationController
     render :layout => false
   end
 
+  def cambiarlogo
+    logger.debug params.inspect 
+    empresa = Bazarcms::Empresa.find_by_id(current_user.id)
+    if !empresa.nil? 
+      empresa.logo = params[:empresa][:logo]
+      empresa.save
+    end 
+    
+    redirect_to "/home/fichaempresa/#{BZ_param('BazarId')}/#{current_user.id}/?go=logo"
+    
+  end 
+
+  
   def crearimagenempresa
     
     @img = Bazarcms::Empresasimagen.create( params[:empresasimagen])

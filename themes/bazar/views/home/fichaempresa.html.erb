@@ -282,16 +282,16 @@ function borrasede (empresa, sede) {
 
     <div class="seccion-cajon-imagen" >
 
-      <%= form_for :empresasimagen, :url => "/home/cambialogo/", :html => { :multipart => true } do |form| %>
+      <%= form_for :empresa, :url => "/home/cambiarlogo/", :html => { :multipart => true } do |form| %>
      <div class="add-image">
        <label class="cabinet">
-           <input type="file" class="file" id="empresasimagen_imagen" name="empresasimagen[imagen]" onchange="$(this).closest('form').submit(); $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+           <input type="file" class="file" id="empresa_logo" name="empresa[logo]" onchange="$(this).closest('form').submit(); $('#cargalogo').html('Subiendo el logo ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
 
        </label>
      </div>
      <% end %>
      
-      <div id="cargaimagen" class="add-item-texto">
+      <div id="cargalogo" class="add-item-texto">
         <%= t(:text_cambiar_logo) -%>
       </div>
     </div>
@@ -528,7 +528,10 @@ $(document).ready(function() {
               $("#ratingdetails").hide(50);
           });
   
-  
+  <% if params[:go] == "tulogo" %>
+    $.scrollTo('#tulogo', 'slow');
+  <% end %>
+
   <% if params[:go] == "imagenes" %>
     $.scrollTo('#imagenes', 'slow');
   <% end %>
