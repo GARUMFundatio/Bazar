@@ -8,6 +8,7 @@ en:
   text_demandas: "demands"
   text_empresas: "companies"
   text_veces_guardada_favorita: "times saved as favorite"
+  text_cerrar: "close"
 
 # queesbazar.html 
 
@@ -112,7 +113,6 @@ en:
   text_mas_detalles: "More details ..."
   text_visitas_de_esta_oferta: "visits of this offer"
   text_visitas_de_esta_demanda: "visits of this demand"
-  text_cerrar: "close"
   text_ficha_empresa_incompleta: "Company profile incomplete"
 
 # ficha de empresa  fichaempresa.html
@@ -145,4 +145,13 @@ en:
 # enviamensaje.html
 
   text_mensaje_enviado_desde_bazar: "Message sent from Bazar"
+
+# addsede.html
+
+  text_añadir_nueva_sede: "add a new location"
+  text_describe_la_sede_o_su_direccion: "describe the new location"
+  text_ej_fabrica_o_direccion: "Ex: 'factory' or 'lion Street 14, Bilbao, Spain'"
+  text_en_que_ciudad_esta_la_sede: "In which city is the new location?"
+  text_selecciona_una_de_la_lista: "start typing the city and select from the list"
+  text_guardar_estos_datos: "save this data"
 
