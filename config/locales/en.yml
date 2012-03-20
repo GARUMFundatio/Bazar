@@ -155,3 +155,8 @@ en:
   text_selecciona_una_de_la_lista: "start typing the city and select from the list"
   text_guardar_estos_datos: "save this data"
 
+# empresadatosgenerales2.html -> ventana emergente/modal para editar datos generales de la empresa
+
+  text_informacion_general_sobre_tu_empresa: "General information about your company"
+  text_palabras_clave_actividad: "Keywords of the activity of your company"
+

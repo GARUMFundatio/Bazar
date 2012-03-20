@@ -154,4 +154,10 @@ eo:
   text_selecciona_una_de_la_lista: "Ektajpu la nomon de la urbo kaj elektu unu el la listo"
   text_guardar_estos_datos: "konservi ĉi datumojn"
 
+# empresadatosgenerales2.html -> ventana emergente/modal para editar datos generales de la empresa
+
+  text_informacion_general_sobre_tu_empresa: "Ĝenerala informo pri via entrepreno"
+  text_palabras_clave_actividad: "Ŝlosilvortoj de la agado de via entrepreno"
+
+
 

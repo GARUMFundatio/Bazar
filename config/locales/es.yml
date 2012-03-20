@@ -159,6 +159,12 @@ es:
   text_selecciona_una_de_la_lista: "empieza teclear la ciudad y selecciona una de la lista"
   text_guardar_estos_datos: "guardar estos datos"
 
+# empresadatosgenerales2.html -> ventana emergente/modal para editar datos generales de la empresa
+
+  text_informacion_general_sobre_tu_empresa: "Información general sobre tu empresa"
+  text_palabras_clave_actividad: "Palabras clave actividad"
+
+
   
 
   label_back: Atrás
@@ -400,7 +406,7 @@ es:
   text_informacion_general_de_tu_oferta: "Información General de tu oferta"
   text_informacion_del_bazar: "Información del Bazar"
   text_informacion_del_usuario: "Información del Usuario"
-  text_informacion_general_sobre_tu_empresa: "Información general sobre tu empresa"
+
 
   text_instalar_bazar_y_unirse_a_la_red_de_bazares_ser_la_opcion_recomendada_a_grupos_empresariales_asociaciones_sectoriales_de_empresas_y_entidades_dedicadas_a_la_promocion_economica_local: "instalar Bazar y unirse a la red de bazares, será la opción recomendada a grupos empresariales, asociaciones sectoriales de empresas y entidades dedicadas a la promoción económica local"
   text_introduzca_los_terminos_de_la_busqueda: "Introduzca los términos de la búsqueda"
@@ -484,7 +490,7 @@ es:
   text_paises_activos_de_un_bazar: "Países Activos de un Bazar"
   text_paises_con_empresas_de_este_bazar: "Países con Empresas de este Bazar"
   text_paises_seleccionados: "Países Seleccionados:"
-  text_palabras_clave_actividad: "Palabras clave actividad"
+
   text_parametro: "Parámetro:"
   text_parametros_de_bazar: "Parámetros de Bazar"
   text_para: "Para:"
