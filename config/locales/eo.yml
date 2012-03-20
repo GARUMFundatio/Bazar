@@ -8,6 +8,7 @@ eo:
   text_demandas: "mendoj"
   text_empresas: "entreprenoj"
   text_veces_guardada_favorita: "fojojn konservita kiel preferata"
+  text_cerrar: "fermi"
 
 # queesbazar.html 
 
@@ -111,7 +112,6 @@ eo:
   text_mas_detalles: "Pli da detaloj ..."
   text_visitas_de_esta_oferta: "vizitoj al tiu ĉi oferto"
   text_visitas_de_esta_demanda: "vizitoj al tiu ĉi mendo"
-  text_cerrar: "fermi"
   text_ficha_empresa_incompleta: "Entreprenprofilo nekompleta"
 
 # ficha de empresa  fichaempresa.html
@@ -144,5 +144,14 @@ eo:
 # enviamensaje.html
 
   text_mensaje_enviado_desde_bazar: "Mesaĝo sendita el Bazar"
+
+# addsede.html
+
+  text_añadir_nueva_sede: "aldoni novan sidejon"
+  text_describe_la_sede_o_su_direccion: "priskribu la sidejon aŭ ĝian adreson"
+  text_ej_fabrica_o_direccion: "ekz.: 'Kongresejo' aŭ 'Strato Zamenhofo 1905, Kongresurbo, Esperantio'"
+  text_en_que_ciudad_esta_la_sede: "En kiu urbo troviĝas la sidejo?"
+  text_selecciona_una_de_la_lista: "Ektajpu la nomon de la urbo kaj elektu unu el la listo"
+  text_guardar_estos_datos: "konservi ĉi datumojn"
 
 
