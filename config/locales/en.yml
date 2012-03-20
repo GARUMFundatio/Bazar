@@ -141,3 +141,8 @@ en:
   text_datos_empresa_sectores_ubicaciones: "Fill in the details of your company, business sectors and locations of your company."
   text_busqueda_empresas_ofertas_demandas: "Make a search for companies / offers / demands."
   text_anadir_favoritos_empresas: "Add to your favorites companies that may interes you."
+
+# enviamensaje.html
+
+  text_mensaje_enviado_desde_bazar: "Message sent from Bazar"
+

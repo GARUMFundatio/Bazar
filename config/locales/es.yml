@@ -144,6 +144,9 @@ es:
   text_busqueda_empresas_ofertas_demandas: "Realice alguna búsqueda de empresas / Ofertas / Demandas."
   text_anadir_favoritos_empresas: "Añada a sus favoritos las empresas que le puedan interesar."
 
+# enviamensaje.html
+
+  text_mensaje_enviado_desde_bazar: "Mensaje enviado desde Bazar"
 
   
 
@@ -411,7 +414,7 @@ es:
   text_los_datos_de_este_bazar: "Los datos de este bazar »"
   text_los_formatos_soportados_son_xml_json_y_csv: "Los formatos soportados son: XML, JSON y CSV."
 
-  text_mensaje_enviado_desde_bazar: "Mensaje enviado desde Bazar"
+
   text_mensajes: Mensajes
   text_mensajes_y_notificaciones: "Mensajes y Notificaciones"
 
