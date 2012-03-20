@@ -757,7 +757,7 @@ class HomeController < ApplicationController
       @ed = Bazarcms::Empresasdato.where("empresa_id = ?", params[:id]).order("periodo desc").limit(1)
       @sedes = Bazarcms::Ubicacion.where("empresa_id = ?",params[:id])
       
-      if @ed.nil? 
+      if @ed[0].nil? 
         @empresasdatos = Bazarcms::Empresasdato.new
         @empresasdatos.empresa_id = params[:id] 
         @empresasdatos.periodo = DateTime.now.year

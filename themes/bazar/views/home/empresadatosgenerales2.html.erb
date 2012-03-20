@@ -14,8 +14,25 @@
       <%= t(:text_fundada) %>
     </div>
 
+    
     <p><%= f.text_field :fundada, :placeholder => t(:text_fundada), :class => "caja-empresa-editar-input" %></p>
 
+    <div class="caja-empresa-editar-titulo">
+      <p><%= t(:text_moneda) %> </p>
+    </div>
+
+    <div class="caja-empresa-editar-ambito">
+      
+        <% if @empresa.moneda == 0 %>
+          <div id="moneda0" class="empresa-editar-moneda-selected" onclick="selmoneda(0);">€</div>
+          <div id="moneda1" class="empresa-editar-moneda" onclick="selmoneda(1);">$</div>
+        <% else %>
+          <div id="moneda0" class="empresa-editar-moneda" onclick="selmoneda(0);">€</div>
+          <div id="moneda1" class="empresa-editar-moneda-selected" onclick="selmoneda(1);">$</div>        
+        <% end %>
+
+    </div>
+    <p><%= f.hidden_field :moneda, :class => "caja-empresa-editar-input" %></p>
     <div class="caja-empresa-editar-titulo">
       <p><%= t(:text_ambito) %> </p>
     </div>
@@ -51,7 +68,7 @@
         <% else %>
         <div id="<%= v -%>" class="empresa-editar-sector" onclick="selsector('<%= v -%>');">        
         <% end %>
-          <img src="<%= current_theme_image_path("sector#{v}black.png") %>" width="40px" />
+          <img src="<%= current_theme_image_path("sector#{v}black.png") %>" title="<%= k %>" width="40px" />
         </div>
         
       <% end %>
@@ -133,20 +150,24 @@
       return false;
   });
   
- // $('input[placeholder]').placeholder();
   
   function selambito(cual) {
     $(".empresa-editar-ambito-selected").attr("class", "empresa-editar-ambito");
     $("#"+cual).attr('class', "empresa-editar-ambito-selected");
     $("#bazarcms_empresa_ambito").val(cual);
-    //window.alert($(this).attr("class")+" -->"+$(this).attr('id')+":"+$(this).html());
   }
   
   function selsector(cual) {
     $(".empresa-editar-sector-selected").attr("class", "empresa-editar-sector");
     $("#"+cual).attr('class', "empresa-editar-sector-selected");
     $("#bazarcms_empresa_sector").val(cual);
-    //window.alert($(this).attr("class")+" -->"+$(this).attr('id')+":"+$(this).html());
   }
+
+  function selmoneda(cual) {
+    $(".empresa-editar-moneda-selected").attr("class", "empresa-editar-moneda");
+    $("#moneda"+cual).attr('class', "empresa-editar-moneda-selected");
+    $("#bazarcms_empresa_moneda").val(cual);
+  }
+
   
 </script>

@@ -131,6 +131,8 @@ es:
   text_facturacion_anual: "Facturación anual:"
   text_anadir_sede: "AÑADIR UNA SEDE"
   text_no_tiene_sedes: "No tiene sedes"
+  text_tu_logo: "Tu logo"
+  text_cambiar_logo: "CAMBIAR LOGO ACTUAL"
 
   text_fundada: "Fundada en"
 
@@ -428,7 +430,7 @@ es:
   text_mensajes_y_notificaciones: "Mensajes y Notificaciones"
 
   text_mercados: mercados
-
+  text_moneda: "Moneda"
   text_mientras_para_una_empresa_individual_la_opcion_mas_interesante_sera_unirse_a_un_bazar_sostenido_por_alguna_institucion_empresarial_o_publica_donde_esten_las_empresas_que_le_conocen_y_con_las_que_puede_aprender_y_comerciar_preferentemente: ", mientras para una empresa individual, la opción más interesante será unirse a un bazar sostenido por alguna institución empresarial o pública donde estén las empresas que le conocen y con las que puede aprender y comerciar preferentemente."
   text_muchos_bazares_un_gran_mercado: "Muchos bazares, un gran mercado"
   text_navegue_por_los_resultados: "Navegue por los resultados."

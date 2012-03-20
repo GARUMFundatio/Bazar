@@ -1878,6 +1878,60 @@ input[type="text"]:focus{
 
 }
 
+.empresa-editar-moneda {
+
+  float: left;
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 121px;
+  margin-left: 1px;
+  padding-top: 20px;
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 25px;
+  background-image: url(bgblack10.png);
+  background-repeat: repeat;
+
+}
+
+.empresa-editar-moneda-selected {
+
+  float: left;
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 121px;
+  margin-left: 1px;
+  padding-top: 20px;
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 25px;
+  background-image: url(bgblack40.png);
+  background-repeat: repeat;
+
+}
+
+.empresa-editar-moneda:hover {
+
+  float: left;
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 121px;
+  margin-left: 1px;
+  padding-top: 20px;
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 25px;
+  background-image: url(bgblack40.png);
+  background-repeat: repeat;
+
+}
+
 .caja-empresa-editar-sector {
   
   margin-top: 20px;
