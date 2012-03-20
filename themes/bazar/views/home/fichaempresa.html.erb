@@ -222,53 +222,7 @@ function borrasede (empresa, sede) {
 
 </div>
 
-<!-- Imágenes -->
-
-<div class="caja-seccion" id="tulogosecc">
-  <div class="ficha-indice">
-    <%= t(:text_imagenes) %>
-  </div>
-  
-  <div id="imagenes" class="seccion-contenido" >
-    
-    <% if editar %>
-    
-      <div class="seccion-cajon-imagen" >
-
-        <%= form_for :empresasimagen, :url => "/home/crearimagenempresa/", :html => { :multipart => true } do |form| %>
-       <div class="add-image">
-         <label class="cabinet">
-             <input type="file" class="file" id="empresasimagen_imagen" name="empresasimagen[imagen]" 
-                 onchange="$(this).closest('form').submit(); 
-                 $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
-                 
-         </label>
-       </div>
-       <% end %>
-
-       
-        <div id="cargaimagen" class="add-item-texto">
-          <%= t(:text_anadir_foto) -%>
-        </div>
-      </div>
-
-    <% end %>
-    
-    <% if @imagenes.count > 0 %>
-      <%= render(:partial => "empresaimagen", :collection => @imagenes) %>
-    <% else %>
-      <div class="seccion-cajon" onClick="">
-
-        <div class="add-item-texto">
-          <%= t(:text_no_tiene_imagenes) -%>
-        </div>
-        
-      </div>
-    <% end %>
-    
-  </div>
-
-</div>
+<!-- tu logo -->
 
 <% if editar %>
 
@@ -325,6 +279,55 @@ function borrasede (empresa, sede) {
 </div>
 
 <% end %>
+<!-- Imágenes -->
+
+<div class="caja-seccion" id="tulogosecc">
+  <div class="ficha-indice">
+    <%= t(:text_imagenes) %>
+  </div>
+  
+  <div id="imagenes" class="seccion-contenido" >
+    
+    <% if editar %>
+    
+      <div class="seccion-cajon-imagen" >
+
+        <%= form_for :empresasimagen, :url => "/home/crearimagenempresa/", :html => { :multipart => true } do |form| %>
+       <div class="add-image">
+         <label class="cabinet">
+             <input type="file" class="file" id="empresasimagen_imagen" name="empresasimagen[imagen]" 
+                 onchange="$(this).closest('form').submit(); 
+                 $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+                 
+         </label>
+       </div>
+       <% end %>
+
+       
+        <div id="cargaimagen" class="add-item-texto">
+          <%= t(:text_anadir_foto) -%>
+        </div>
+      </div>
+
+    <% end %>
+    
+    <% if @imagenes.count > 0 %>
+      <%= render(:partial => "empresaimagen", :collection => @imagenes) %>
+    <% else %>
+      <div class="seccion-cajon" onClick="">
+
+        <div class="add-item-texto">
+          <%= t(:text_no_tiene_imagenes) -%>
+        </div>
+        
+      </div>
+    <% end %>
+    
+  </div>
+
+</div>
+
+
 
 <!-- Sobre la empresa  -->
 
