@@ -697,27 +697,58 @@ class HomeController < ApplicationController
     
     @fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar].to_i, params[:id].to_i)
     
-    
     if params[:bazar].to_i == BZ_param("BazarId").to_i
+      
       @empresa = Bazarcms::Empresa.find_by_id(params[:id])
-      if !@empresa.total_mostradas.nil?
-        @empresa.total_mostradas += 1 
+      if @empresa.nil? 
+        @empresa = Bazarcms::Empresa.new
+        @empresa.id = params[:id] 
+        @empresa.user_id = params[:id] 
+        @empresa.nombre = "Escriba su nombre Aquí"
+        @empresa.desc = ""
+        @empresa.fundada = 2012
+        @empresa.moneda = 0 
+        @empresa.url = ""
+        @empresa.rating = 0 
+        @empresa.total_favoritos = 0 
+        @empresa.total_mostradas = 0 
+        @empresa.rating_cliente = 0 
+        @empresa.rating_proveedor = 0 
+        @empresa.rating_total_cliente = 0 
+        @empresa.rating_total_proveedor = 0
+        @empresa.logo_file_name = ""
+        @empresa.sector = "01"
+        @empresa.ambito = 2
+
+        datos = Bazarcms::Empresasdato.new
+        datos.empresa_id = params[:id]
+        datos.periodo = 2011
+        datos.empleados = 0 
+        datos.ventas = 0
+        datos.compras = 0 
+        datos.resultados = 0 
+        datos.save
+        
       else 
-        @empresa.total_mostradas = 1 
+        if !@empresa.total_mostradas.nil?
+          @empresa.total_mostradas += 1 
+        else 
+          @empresa.total_mostradas = 1 
+        end 
+      
+        if @empresa.ambito.nil?
+          @empresa.ambito = "2"
+        end 
+
+        if @empresa.sector.nil?
+          @empresa.sector = "01"
+        else 
+          if @empresa.sector.length <= 1 
+            @empresa.sector = "01"
+          end
+        end 
       end 
       
-      if @empresa.ambito.nil?
-        @empresa.ambito = "2"
-      end 
-
-      if @empresa.sector.nil?
-        @empresa.sector = "01"
-      else 
-        if @empresa.sector.length <= 1 
-          @empresa.sector = "01"
-        end
-      end 
-
       @empresa.save 
     
       @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id = ?", params[:id]).order("fecha desc")
