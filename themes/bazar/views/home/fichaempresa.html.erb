@@ -240,7 +240,7 @@ function borrasede (empresa, sede) {
          <label class="cabinet">
              <input type="file" class="file" id="empresasimagen_imagen" name="empresasimagen[imagen]" 
                  onchange="$(this).closest('form').submit(); 
-                 $('#cargaimagen').html('Subiendo la imagen ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+                 $('#cargaimagen').html('<%= t(:text_subiendo_imagen)%> <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
                  
          </label>
        </div>

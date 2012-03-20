@@ -163,7 +163,31 @@ es:
   text_palabras_clave_actividad: "Palabras clave actividad"
 
 
-  
+# crearoferta.html -> ventana emergente/modal para crear una nuevo oferta/demanda
+
+  text_publicar_una_nueva_oferta: "Publicar una nueva oferta"
+  text_publicar_una_nueva_demanda: "Publicar una nueva demanda"
+  text_que_titulo_quieres_ponerle: "¿Que título quieres ponerle?"
+  text_ej_sillas_de_plastico_personalizadas: "Ej: Sillas de plástico personalizadas"
+  text_hasta_cuando_es_valida_la_oferta: "¿Hasta cuándo es válida la oferta?"
+  text_hasta_cuando_es_valida_la_demanda: "¿Hasta cuándo es válida la demanda?"
+  text_describela_un_poco: "Descríbela un poco"
+  text_no_te_extiendas_demasiado: "No seas demasiado extenso. Con un par de párrafos quedará mejor."
+  text_hay_alguna_pagina_web_con_mas_informacion: "¿Hay alguna web en la que se dé más información?"
+  text_a_que_tipo_de_empresa_va_dirigida: "¿A que tipo de empresa va dirigida?"
+  text_www_com_oferta: "https://www.com/oferta"
+  text_usa_palabras_clave_para_describirla: "Usa varias palabras clave separadas por comas para describirla"
+  text_que_ambito_quieres_darle_a_la_oferta: "¿Qué ámbito quieres darle a la oferta?"
+  text_que_ambito_quieres_darle_a_la_demanda: "¿Qué ámbito quieres darle a la demanda?"
+  text_empresas_con_estos_criterios: "Empresas con estos criterios"
+  text_quieres_anadir_alguna_fotografia: "¿Quieres añadir alguna fotografía?"
+  text_publicar_esta_demanda: "Publicar esta demanda"
+  text_publicar_esta_oferta: "Publicar esta oferta"
+  text_enviado: "Enviado a"
+  text_redirigiendo_ficha_empresa: "Reedirigiendo a la ficha de empresa."
+  text_publicando_la_oferta: "Publicando la oferta. No cierre la ventana."
+  text_publicando_la_demanda: "Publicando la demanda. No cierre la ventana."
+
 
   label_back: Atrás
   label_destroy: Eliminar
@@ -190,7 +214,7 @@ es:
   label_volver_al_listado: "Volver al listado"
   label_volver_al_listado_de_noticias: "Volver al listado de Noticias"
   text_a_los_miembros_de_su_mismo_bazar: "a los miembros de su mismo bazar."
-  text_a_que_tipo_de_empresa_va_dirigida: "¿A que tipo de empresa va dirigida?"
+
   text_a_todos_los_usuarios: "a todos los usuarios"
   text_acciones: Acciones
   text_act: Act
@@ -277,7 +301,7 @@ es:
   text_demandas_en_CONOCIMIENTO: "demandas en CONOCIMIENTO"
   text_demandas_en_COOPERATIVAS: "demandas en COOPERATIVAS"
   text_desc: Desc
-  text_describela_un_poco: "Descríbela un poco"
+
 
   text_descripcion: Descripción
   text_descripcion_de_la_empresa: "descripción de la empresa"
@@ -296,7 +320,7 @@ es:
   text_editing_roles_user: "Editando rol de usuario"
   text_editing_usersession: "Editando sesión de usuario"
   text_ejemplo: "Ejemplo:"
-  text_ej_sillas_de_plastico_personalizadas: "Ej: Sillas de plástico personalizadas"
+
 
   text_ejemplo_1_como_obtener_informacion_de_un_bazar_proyecto_bazar: "Ejemplo 1 Como obtener información de un Bazar - Proyecto Bazar"
   text_ejemplo_2_como_obtener_que_empresas_hay_en_un_bazar_proyecto_bazar: "Ejemplo 2 Como obtener que empresas hay en un bazar - Proyecto Bazar"
@@ -313,7 +337,7 @@ es:
   text_empresa: "Empresa"
   
   text_empresas_actualizadas: "Empresas Actualizadas"
-  text_empresas_con_estos_criterios: "Empresas con estos criterios"
+
   text_empresas_de_este_bazar_ubicadas_en: "Empresas de este bazar ubicadas en"
 
   text_empresas_del_bazar: "Empresas del Bazar"
@@ -380,9 +404,8 @@ es:
   text_grupo: Grupo
 
   text_hasta_ahora_las_llamadas_grandes_redes_sociales_se_han_construido_como_una: "Hasta ahora las llamadas «grandes redes sociales» se han construido como una"
-  text_hasta_cuando_es_valida_la_oferta: "¿Hasta cuándo es válida la oferta?"
-  text_hasta_cuando_es_valida_la_demanda: "¿Hasta cuándo es válida la demanda?"
-  text_hay_alguna_pagina_web_con_mas_informacion: "¿Hay alguna web en la que se dé más información?"
+
+
   text_hay_limitaciones: "¿Hay limitaciones?"
 
   text_hemos_creado_una_pagina_de_ejemplos_de_como_usar_el_api_de_bazar_cada_una_de_las_funciones_disponibles_cuenta_con_su_descripcion_ejemplos_de_uso_y_un_ejemplo_de_que_se_obtiene_cuando_se_invoca_puedes_ver_toda_esta_informacion_en_la_pagina_de: "Hemos creado una página de ejemplos de como usar el API de Bazar. Cada una de las funciones disponibles cuenta con su descripción, ejemplos de uso y un ejemplo de que se obtiene cuando se invoca. Puedes ver toda esta información en la página de"
@@ -455,7 +478,7 @@ es:
   text_no_se_ha_podido_guardar: "No se ha podido guardar:"
   text_no_se_ha_podido_salvar_el_rol: "No se ha podido guardar el rol:"
   text_no_se_ha_podido_salvar_los_datos_del_usuario: "No se han podido guardar los datos del usuario:"
-  text_no_te_extiendas_demasiado: "No seas demasiado extenso, la gente no lee los textos largos. Con un par de párrafos quedará mejor."
+
   text_no_van_a_dar_paso_a_empresas_fraudulentas_o_permitir_comportamientos_abusivos_porque_irian_contra_su_propia_imagen_y_contra_los_intereses_y_proyeccion_de_cada_una_de_las_empresas_de_su_red_a_las_que_quieren_potenciar: ", no van a dar paso a empresas fraudulentas o permitir comportamientos abusivos porque irían contra su propia imagen y contra los intereses y proyección de cada una de las empresas de su red a las que quieren potenciar."
   text_nombre: "Nombre:"
   text_nombre_de_la_empresa: "nombre de la empresa"
@@ -481,7 +504,7 @@ es:
   text_ofertas_en_CONOCIMIENTO: "ofertas en CONOCIMIENTO"
   text_ofertas_en_COOPERATIVAS: "ofertas en COOPERATIVAS"
   
-  text_oferta_valida_hasta_el: "Oferta válida hasta el"
+
   text_ofrecen: "Ofrecen:"
   text_pais: "Pais"
   text_paises: "Países:"
@@ -526,20 +549,15 @@ es:
   text_prohibited_this_user_session_from_being_saved: "prohibited this user session from being saved:"
   text_proyecto_bazar: "Proyecto Bazar"
   text_prueba_con_otra_busqueda: "Prueba con otra búsqueda."
-  text_publicando_la_oferta: "Publicando la oferta. No cierre la ventana."
-  text_publicando_la_demand: "Publicando la demanda. No cierre la ventana."
+
   text_publicar: Publicar
 
-  text_publicar_esta_demanda: "Publicar esta demanda"
-  text_publicar_una_nueva_demanda: "Publicar una nueva demanda"
 
-  text_publicar_esta_oferta: "Publicar esta oferta"
-  text_publicar_una_nueva_oferta: "Publicar una nueva oferta"
+
   text_puede_usar_asteriscos_o_espacios_para_buscar_por_varias_palabras: "Puede usar asteriscos o espacios para buscar por varias palabras."
   text_pulse_buscar_para_empezar_la_busqueda: "Pulse Buscar para empezar la búsqueda"
   text_puntuar_con: "Puntuar con"
-  text_que_ambito_quieres_darle_a_la_oferta: "¿Qué ámbito quieres darle a la oferta?"
-  text_que_ambito_quieres_darle_a_la_demanda: "¿Qué ámbito quieres darle a la demanda?"
+
   text_que_estas_buscando: "¿Qué estás buscando?"
   text_que_es_bazar: "¿Qué es Bazar?"
   text_que_es_un_bazar: "¿Qué es un Bazar? »"
@@ -552,8 +570,8 @@ es:
   text_que_nadie_se_colocara_en_medio_de_las_empresas_pudiendo_exigir_un_pago_para_que_comercien_entre_si: "Que nadie se colocara en medio de las empresas pudiendo exigir un pago para que comercien entre si"
   text_que_permitiera_a_las_empresas_de_un_grupo_o_un_lugar_trabajar_juntos_de_manera_preferente: "Que permitiera a las empresas de un grupo o un lugar trabajar juntos de manera preferente"
   text_que_sirve_a_las_empresas_y_los_emprendedores_para: "que sirve a las empresas y los emprendedores para"
-  text_que_titulo_quieres_ponerle: "¿Que título quieres ponerle?"
-  text_quieres_anadir_alguna_fotografia: "¿Quieres añadir alguna fotografía?"
+
+
   text_que_quieres_decirles: "¿Qué quieres decirles?"
   text_quieres_ser_de_los_primeros_envianos_un_correo_a_info_arroba_garumfundatio_org: "¿Quieres ser de los primeros? Envíanos un correo a: info (arroba) garumfundatio.org"
   text_rating_elearning_arbitraje_mensajeria_interna_publicacion_de_contenidos: "rating, e-learning, arbitraje, mensajería interna, publicación de contenidos"
@@ -608,7 +626,7 @@ es:
   text_url: Url
   text_pagina_web_de_la_empresa: "página web de la empresa"
   text_ultimas_ofertas_demandas: "Últimas Ofertas / Demandas"
-  text_usa_palabras_clave_para_describirla: "Usa varias palabras clave separadas por comas para describirla"
+
   text_use_los_desplazadores_para_limitar_la_busqueda: "Use los desplazadores para limitar la búsqueda."
   text_user: "Usuario:"
   text_usuario: Usuario
