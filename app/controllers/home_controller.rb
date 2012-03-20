@@ -757,7 +757,7 @@ class HomeController < ApplicationController
       @ed = Bazarcms::Empresasdato.where("empresa_id = ?", params[:id]).order("periodo desc").limit(1)
       @sedes = Bazarcms::Ubicacion.where("empresa_id = ?",params[:id])
       
-      if @ed.nil? 
+      if @ed[0].nil? 
         @empresasdatos = Bazarcms::Empresasdato.new
         @empresasdatos.empresa_id = params[:id] 
         @empresasdatos.periodo = DateTime.now.year
@@ -1108,6 +1108,19 @@ class HomeController < ApplicationController
     render :layout => false
   end
 
+  def cambiarlogo
+    logger.debug params.inspect 
+    empresa = Bazarcms::Empresa.find_by_id(current_user.id)
+    if !empresa.nil? 
+      empresa.logo = params[:empresa][:logo]
+      empresa.save
+    end 
+    
+    redirect_to "/home/fichaempresa/#{BZ_param('BazarId')}/#{current_user.id}/?go=logo"
+    
+  end 
+
+  
   def crearimagenempresa
     
     @img = Bazarcms::Empresasimagen.create( params[:empresasimagen])

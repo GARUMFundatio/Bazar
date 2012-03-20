@@ -83,7 +83,7 @@
       </div>
       
       
-      <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+      <% if editar %>
       
         <div class="fichaempresa-cajaicono" onClick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
           <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>"  >
@@ -173,7 +173,7 @@ function borrasede (empresa, sede) {
   
   <div class="seccion-contenido">
 
-    <% if params[:id].to_i == current_user.id %>
+    <% if editar %>
     
       <div class="seccion-cajon ilumina5" onClick="">
         
@@ -201,7 +201,7 @@ function borrasede (empresa, sede) {
   
   <div class="seccion-contenido">
 
-    <% if params[:id].to_i == current_user.id %>
+    <% if editar %>
     
       <div class="seccion-cajon ilumina5" onClick="">
         
@@ -222,16 +222,73 @@ function borrasede (empresa, sede) {
 
 </div>
 
-<!-- Imágenes -->
+<!-- tu logo -->
+
+<% if editar %>
 
 <div class="caja-seccion" id="localizacion">
   <div class="ficha-indice">
-    <%= t(:text_imagenes)%>
+    <%= t(:text_tu_logo) %>
+  </div>
+
+  <div id="tulogo" class="seccion-contenido" >
+
+
+    <div class="seccion-cajon-imagen" >
+
+      <%= form_for :empresa, :url => "/home/cambiarlogo/", :html => { :multipart => true } do |form| %>
+     <div class="add-image">
+       <label class="cabinet">
+           <input type="file" class="file" id="empresa_logo" name="empresa[logo]" onchange="$(this).closest('form').submit(); $('#cargalogo').html('Subiendo el logo ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+
+       </label>
+     </div>
+     <% end %>
+     
+      <div id="cargalogo" class="add-item-texto">
+        <%= t(:text_cambiar_logo) -%>
+      </div>
+    </div>
+
+      <% if !@empresa.logo.nil?  %>
+
+        <div id="logo-<%= @empresa.id -%>" class="seccion-cajon">
+
+         <div class="empresa-imagen">
+          <a class="galeria" href="<%= @empresa.logo.url %>">
+            <% host = Cluster.find(BZ_param("BazarId")).url %>
+            <%= image_tag host+@empresa.logo.url(:s223) %>
+          </a>
+         </div>
+
+        </div>
+
+      <% else %>
+
+        <div class="seccion-cajon" onClick="">
+
+          <div class="add-item-texto">
+            <%= t(:text_no_tiene_logo) -%>
+          </div>
+
+        </div>
+      <% end %>
+
+  </div>
+
+</div>
+
+<% end %>
+<!-- Imágenes -->
+
+<div class="caja-seccion" id="tulogosecc">
+  <div class="ficha-indice">
+    <%= t(:text_imagenes) %>
   </div>
   
   <div id="imagenes" class="seccion-contenido" >
     
-    <% if params[:id].to_i == current_user.id %>
+    <% if editar %>
     
       <div class="seccion-cajon-imagen" >
 
@@ -269,6 +326,8 @@ function borrasede (empresa, sede) {
   </div>
 
 </div>
+
+
 
 <!-- Sobre la empresa  -->
 
@@ -325,7 +384,7 @@ function borrasede (empresa, sede) {
       </div>
     </div>
  
-    <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+    <% if editar %>
 
       <div class="fichaempresa-cajaicono" onclick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales2/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
         <img class="fichaempresa-icono-editar" src="<%= current_theme_image_path('editar.png') %>"  >
@@ -346,7 +405,7 @@ function borrasede (empresa, sede) {
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
 
-    <% if params[:id].to_i == current_user.id %>
+    <% if editar %>
     
       <div class="seccion-cajon" onclick="$('#sede').attr('href', '/home/addsede/<%= @empresa.id -%>').trigger('click');">
         
@@ -472,7 +531,10 @@ $(document).ready(function() {
               $("#ratingdetails").hide(50);
           });
   
-  
+  <% if params[:go] == "tulogo" %>
+    $.scrollTo('#tulogo', 'slow');
+  <% end %>
+
   <% if params[:go] == "imagenes" %>
     $.scrollTo('#imagenes', 'slow');
   <% end %>
