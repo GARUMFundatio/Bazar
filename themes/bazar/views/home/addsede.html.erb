@@ -9,6 +9,21 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
 
+<script>
+
+function cancelar() {
+  
+  parent.jQuery.fancybox.close();
+  /* de momento la dejamos sin borrar por si es un error
+  $.ajax({type: 'POST',
+          url: '/home/cancelaroferta/<%= @oferta.id %>'
+          });
+  */
+  
+}
+
+</script>
+
 <div id="container" class="container-empresa-editar">
 
 <div class="caja-empresa-editar">
