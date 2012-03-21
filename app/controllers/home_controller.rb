@@ -13,7 +13,10 @@ class HomeController < ApplicationController
     @totalbazares = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ") 
     @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
     @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
-    
+    @totalfavoritosempresa = Favorito.count_by_sql("SELECT count(*) FROM favoritos where bazar_id = #{BZ_param('BazarId')} and empresa_id = #{current_user.id}")
+    @totalfavoritosoferta = Bazarcms::Ofertasfavorito.count_by_sql("SELECT count(*) FROM ofertasfavoritos where bazar_id = #{BZ_param('BazarId')} and empresa_id = #{current_user.id}")
+    @totalfavoritosdemanda = Bazarcms::Ofertasfavorito.count_by_sql("SELECT count(*) FROM ofertasfavoritos where bazar_id = #{BZ_param('BazarId')} and empresa_id = #{current_user.id}")
+
     @ofertas = Bazarcms::Oferta.where("tipo = 'O'").order("fecha desc")
     @demandas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
     
