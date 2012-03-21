@@ -187,5 +187,16 @@ eo:
   text_publicando_la_oferta: "Publikigado de la oferto. Ne fermu la fenestron."
   text_publicando_la_demanda: "Publikigado de la mendo. Ne fermu la fenestron."
 
+# favoritos.html
+
+  text_tus_favoritos_cuerpo: "Viaj preferataj"
+  text_descripcion_favoritos: "Ĉiuj ofertoj, mendoj kaj entreprenoj kiujn vi konservis kiel preferatajn prezentitaj samloke."
+  text_no_tienes_ofertas_favoritas: "Vi havas neniun preferatan oferton"
+  text_ofertas_recomendadas_favoritos: "Klaki ĉi tie por vidi la ofertojn kiujn ni rekomendas al vi."
+  text_no_tienes_demandas_favoritas: "Vi havas neniun preferatan mendon"
+  text_demandas_recomendadas_favoritos: "Klaki ĉi tie por vidi la mendojn kiujn ni rekomendas al vi."
+  text_no_tienes_empresas_favoritas: "Vi havas neniun preferatan entreprenon"
+  text_empresas_recomendadas_favoritos: "Klaki ĉi tie por vidi la entreprenojn kiujn ni rekomendas al vi."
+
 
 

@@ -192,6 +192,17 @@ es:
   text_publicando_la_oferta: "Publicando la oferta. No cierre la ventana."
   text_publicando_la_demanda: "Publicando la demanda. No cierre la ventana."
 
+# favoritos.html
+
+  text_tus_favoritos_cuerpo: "Tus favoritos"
+  text_descripcion_favoritos: "Todas las ofertas, demandas y empresas que has marcado como favoritas reunidas en el mismo lugar."
+  text_no_tienes_ofertas_favoritas: "No tienes ofertas favoritas"
+  text_ofertas_recomendadas_favoritos: "Pulsa aquí para ver las ofertas que te recomendamos."
+  text_no_tienes_demandas_favoritas: "No tienes demandas favoritas"
+  text_demandas_recomendadas_favoritos: "Pulsa aquí para ver las demandas que te recomendamos."
+  text_no_tienes_empresas_favoritas: "No tienes empresas favoritas"
+  text_empresas_recomendadas_favoritos: "Pulsa aquí para ver las empresas que te recomendamos."
+
 
   label_back: Atrás
   label_destroy: Eliminar

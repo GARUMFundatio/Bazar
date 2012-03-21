@@ -188,4 +188,15 @@ en:
   text_publicando_la_oferta: "Publishing the offer. Do not close the window."
   text_publicando_la_demanda: "Publishing the demand. Do not close the window."
 
+# favoritos.html
+
+  text_tus_favoritos_cuerpo: "Your favorites"
+  text_descripcion_favoritos: "All offers, demands and companies that have marked as favorites gathered in one place."
+  text_no_tienes_ofertas_favoritas: "You have no favorite offers"
+  text_ofertas_recomendadas_favoritos: "Click here to see offers that we recommend."
+  text_no_tienes_demandas_favoritas: "You have no favorite demands"
+  text_demandas_recomendadas_favoritos: "Click here to see demands that we recommend."
+  text_no_tienes_empresas_favoritas: "You have no favorite companies"
+  text_empresas_recomendadas_favoritos: "Click here to see companies that we recommend."
+
 
