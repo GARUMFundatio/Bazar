@@ -239,7 +239,7 @@ function borrasede (empresa, sede) {
       <%= form_for :empresa, :url => "/home/cambiarlogo/", :html => { :multipart => true } do |form| %>
      <div class="add-image">
        <label class="cabinet">
-           <input type="file" class="file" id="empresa_logo" name="empresa[logo]" onchange="$(this).closest('form').submit(); $('#cargalogo').html('Subiendo el logo ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
+           <input type="file" class="file" id="empresa_logo" name="empresa[logo]" onchange="$(this).closest('form').submit(); $('#cargalogo').html('<%= t(:text_subiendo_imagen)%> ... <img src=\'<%= current_theme_image_path('loading.gif') -%>\'>');" />
 
        </label>
      </div>

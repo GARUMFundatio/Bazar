@@ -129,6 +129,8 @@ en:
   text_facturacion_anual: "Annual billing:"
   text_anadir_sede: "ADD A LOCATION"
   text_no_tiene_sedes: "Without Locations"
+  text_tu_logo: "Your logo"
+  text_cambiar_logo: "CHANGE CURRENT LOGO"
 
   text_fundada: "Founded in"
 
