@@ -17,19 +17,23 @@ class HomeController < ApplicationController
     @totalfavoritosoferta = Bazarcms::Ofertasfavorito.count_by_sql("SELECT count(*) FROM ofertasfavoritos where bazar_id = #{BZ_param('BazarId')} and empresa_id = #{current_user.id}")
     @totalfavoritosdemanda = Bazarcms::Ofertasfavorito.count_by_sql("SELECT count(*) FROM ofertasfavoritos where bazar_id = #{BZ_param('BazarId')} and empresa_id = #{current_user.id}")
 
-    @ofertas = Bazarcms::Oferta.where("tipo = 'O'").order("fecha desc")
-    @demandas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
+    @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id <> ?", current_user.id).order("fecha desc")
+    @demandas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id <> ?", current_user.id).order("fecha desc")
     
     @miempresa = Bazarcms::Empresa.find(current_user.id)
 
     if (!@miempresa.nil?) 
       if !@miempresa.interesantes.nil?
-        @empresasrecomendadas = Bazarcms::Empresa.where("id in (?) ", @miempresa.interesantes).limit(9)
+        @empresasrecomendadas = Bazarcms::Empresa.where("id in (?) and id <> ?", @miempresa.interesantes, @miempresa.id).order("rating desc").limit(9)
       end
     else 
       @empresasrecomendadas = nil      
     end
-
+    
+    if @empresasrecomendadas.count <= 0 
+      @empresasrecomendadas = Bazarcms::Empresa.where("id <> ?", @miempresa.id).order("rating desc, updated_at desc").limit(9)
+    end 
+    
     @empresasrecientes = Bazarcms::Empresa.where("nombre not like 'Escriba%' ").order("created_at desc").limit(9) #created_at BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() and nombre not like 'Escriba%' ")
 
   end
