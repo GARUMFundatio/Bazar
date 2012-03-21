@@ -9,25 +9,25 @@
   <div class="seccion-contenido">
     
     <div class="seccion-header">
-      Tus favoritos
+      <%= t(:text_tus_favoritos_cuerpo) %>
     </div>
 
     <div class="seccion-subheader">
-      Todas las ofertas, demandas y empresas que has marcado como favoritas reunidas en el mismo lugar.
+      <%= t(:text_descripcion_favoritos) %>
     </div>
 
     <div class="seccion-menu">
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas', 'slow')">
-        <a href="#">Ofertas</a>
+        <a href="#"><%= t(:text_ofertas_layout) %></a>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#demandas', 'slow')">
-        <a href="#">Demandas</a>
+        <a href="#"><%= t(:text_demandas_layout) %></a>
       </div>
       
       <div class="seccion-menu-item" onclick="$.scrollTo('#empresas', 'slow')">
-        <a href="#">Empresas</a>
+        <a href="#"><%= t(:text_empresas_layout) %></a>
       </div>
       
     </div>
@@ -40,7 +40,7 @@
 
 <div class="caja-seccion" id="ofertas">
   <div class="caja-indice">
-  Ofertas
+  <%= t(:text_ofertas_layout) %>
   </div>
   
   <div class="seccion-contenido">
@@ -50,10 +50,10 @@
     <% else %>
       <div class="seccion-cajon"  onclick="window.location = '/home/ofertas/O';">
         <div class="cajon-titulo">
-          No tienes ofertas favoritas
+          <%= t(:text_no_tienes_ofertas_favoritas) %>
         </div>
         <div class="cajon-cuerpo">
-          Pulsa aquí para ver las ofertas que te recomendamos.
+          <%= t(:text_ofertas_recomendadas_favoritos) %>
         </div>
       </div>
     <% end %>
@@ -66,7 +66,7 @@
 
 <div class="caja-seccion" id="demandas">
   <div class="caja-indice">
-  Demandas
+  <%= t(:text_demandas_layout) %>
   </div>
   
   <div class="seccion-contenido">
@@ -75,10 +75,10 @@
     <% else %>
       <div class="seccion-cajon"  onclick="window.location = '/home/ofertas/D';">
         <div class="cajon-titulo">
-          No tienes demandas favoritas
+          <%= t(:text_no_tienes_demandas_favoritas) %>
         </div>
         <div class="cajon-cuerpo">
-          Pulsa aquí para ver las demandas que te recomendamos.
+          <%= t(:text_demandas_recomendadas_favoritos) %>
         </div>
       </div>
     <% end %>
@@ -91,7 +91,7 @@
 
 <div class="caja-seccion" id="empresas">
   <div class="caja-indice">
-  Empresas
+  <%= t(:text_empresas_layout) %>
   </div>
   
   <div class="seccion-contenido">
@@ -100,10 +100,10 @@
     <% else %>
       <div class="seccion-cajon" onclick="window.location = '/home/empresas';">
         <div class="cajon-titulo">
-          No tienes empresas favoritas
+          <%= t(:text_no_tienes_empresas_favoritas) %>
         </div>
         <div class="cajon-cuerpo">
-          Pulsa aquí para ver las empresas que te recomendamos.
+          <%= t(:text_empresas_recomendadas_favoritos) %>
         </div>
       </div>
     <% end %>
