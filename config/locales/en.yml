@@ -161,6 +161,7 @@ en:
 
   text_informacion_general_sobre_tu_empresa: "General information about your company"
   text_palabras_clave_actividad: "Keywords of the activity of your company"
+  text_moneda: "Currency"
 
 # crearoferta.html -> ventana emergente/modal para crear una nuevo oferta/demanda
 

@@ -160,6 +160,7 @@ eo:
 
   text_informacion_general_sobre_tu_empresa: "Ĝenerala informo pri via entrepreno"
   text_palabras_clave_actividad: "Ŝlosilvortoj de la agado de via entrepreno"
+  text_moneda: "Valuto"
 
 # crearoferta.html -> ventana emergente/modal para crear una nuevo oferta/demanda
 
