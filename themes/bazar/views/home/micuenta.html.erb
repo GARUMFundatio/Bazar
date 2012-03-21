@@ -1,0 +1,80 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<%= javascript_include_tag :defaults %>
+
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+
+<div class="ficha-container">
+  
+<div class="caja-empresa-titulo">
+  <div class="caja-empresa-titulo-texto" >
+    <img src="<%= current_theme_image_path("sobre-azul.png") %>" /> 
+    <%= t(:text_edita_tus_datos) %> : <%= @user.login %>
+    
+    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      
+      <div class="caja-empresa-cerrar-texto">
+        <%= t("text_cerrar") %>          
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div>
+<%= form_for(@user, :url => '/home/actualizamicuenta/#{@user.id}') do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> <%=t(:text_no_se_ha_podido_salvar_los_datos_del_usuario)%></h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li><br/>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_tu_correo_electronico) %>
+  </div>
+  
+  <p><%= f.text_field :email, :placeholder => "", :class => "caja-empresa-editar-input" , :onchange => "// valida();" %></p>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_tu_contrasena) %>
+  </div>
+    
+  <p><%= f.text_field :password, :placeholder => "", :class => "caja-empresa-editar-input" , :onchange => "// valida();" %></p>
+
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_confirmacion_de_la_contrasena) %>
+  </div>
+    
+  <p><%= f.text_field :password_confirmation, :placeholder => "", :class => "caja-empresa-editar-input" , :onchange => "// valida();" %></p>
+
+
+  <% if current_user_is_admin %>
+    <div class="caja-empresa-editar-titulo">
+   	<% for role in Rol.all %>
+  		<%= check_box_tag "user[rol_ids][]", role.id, @user.roles.include?(role) %>
+  	    <%= role.rol %>	<br/>
+  	<% end %>
+    </div>
+  <% end %>
+
+
+  <%= f.submit t(:text_guardar), :class => "caja-empresa-editar-boton" %>
+
+<% end %>
+</div>
+
+</div>
