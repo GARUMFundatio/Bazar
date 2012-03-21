@@ -336,6 +336,9 @@ es:
   text_editing_usersession: "Editando sesión de usuario"
   text_ejemplo: "Ejemplo:"
   text_edita_tus_datos: "Edita tus datos"
+  text_guardar: "Guardar"
+  text_confirmacion_de_la_contrasena: "Confirmación de la contraseña"
+  text_tu_correo_electronico: "Tu correo electrónico"
 
 
   text_ejemplo_1_como_obtener_informacion_de_un_bazar_proyecto_bazar: "Ejemplo 1 Como obtener información de un Bazar - Proyecto Bazar"
