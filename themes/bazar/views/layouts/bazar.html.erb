@@ -108,7 +108,7 @@
                 <a href="/home/fichaempresa/<%= h BZ_param("BazarId") %>/<%= current_user.id -%>"><%=t(:text_ficha_de_empresa)%></a>
               </li>
               <li>
-                <a href="/login"><%=t(:text_datos_de_tu_cuenta)%></a>
+                <a href="#" onclick="$('#micuenta').attr('href', '/home/micuenta/<%= current_user.id %>').trigger('click');"><%=t(:text_datos_de_tu_cuenta)%></a>
               </li>
               <li>
                 <a href="/logout"><%=t(:text_cerrar_sesion)%></a>
@@ -207,6 +207,7 @@
   </div> <!-- fin container -->
 
 <a id="busquedageneral" class="fancybox.ajax" href=""></a>
+<a id="micuenta" class="fancybox.ajax" href=""></a>
 
 <script type="text/javascript">
 
@@ -216,6 +217,17 @@ $(document).ready(function() {
   $('.ilumina').transify({opacityOrig:.35,opacityNew:.15,fadeSpeed:500});
 
 	 $("#busquedageneral").fancybox({
+		 'width' : 831,
+		 'height' : 550,
+     'margin' : 0,
+		 'autoScale' : false,
+		 'transitionIn' : 'none',
+		 'transitionOut' : 'none',
+		 'modal': true,
+		 'type' : 'iframe'
+	 });
+
+	 $("#micuenta").fancybox({
 		 'width' : 831,
 		 'height' : 550,
      'margin' : 0,

@@ -1519,6 +1519,19 @@ class HomeController < ApplicationController
 
   end 
   
+  def micuenta
+    if (current_user_is_admin || current_user_is_dinamizador)
+      @user = User.find(params[:id])
+    else 
+      @user = User.find(current_user.id)      
+    end
+    render :layout => false
+  end
+  
+  def actualizamicuenta
+    
+  end 
+  
   def test
     
   end
