@@ -30,7 +30,7 @@ class HomeController < ApplicationController
       @empresasrecomendadas = nil      
     end
 
-    @empresasrecientes = Bazarcms::Empresa.where("  nombre not like 'Escriba%' ").order("created_at desc").limit(9) #created_at BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() and nombre not like 'Escriba%' ")
+    @empresasrecientes = Bazarcms::Empresa.where("nombre not like 'Escriba%' ").order("created_at desc").limit(9) #created_at BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() and nombre not like 'Escriba%' ")
 
   end
 
