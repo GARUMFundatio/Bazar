@@ -17,11 +17,11 @@ class HomeController < ApplicationController
     @ofertas = Bazarcms::Oferta.where("tipo = 'O'").order("fecha desc")
     @demandas = Bazarcms::Oferta.where("tipo = 'D'").order("fecha desc")
     
-    miempresa = Bazarcms::Empresa.find(current_user.id)
+    @miempresa = Bazarcms::Empresa.find(current_user.id)
 
-    if (!miempresa.nil?) 
-      if !miempresa.interesantes.nil?
-        @empresasrecomendadas = Bazarcms::Empresa.where("id in (?) ", miempresa.interesantes).limit(18)
+    if (!@miempresa.nil?) 
+      if !@miempresa.interesantes.nil?
+        @empresasrecomendadas = Bazarcms::Empresa.where("id in (?) ", @miempresa.interesantes).limit(18)
       end
     else 
       @empresasrecomendadas = nil      
