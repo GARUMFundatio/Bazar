@@ -1529,7 +1529,23 @@ class HomeController < ApplicationController
   end
   
   def actualizamicuenta
+    params[:user][:rol_ids] ||= []
     
+    if (current_user_is_admin || current_user_is_dinamizador)
+      @user = User.find(params[:id])
+    else 
+      @user = User.find(current_user.id)
+    end
+    
+    @user.rol_ids = params[:rol_ids] || Array.new
+    
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { render :layout => false }        
+      else
+        format.html { render :action => "micuenta", :layout => false }
+      end
+    end
   end 
   
   def test

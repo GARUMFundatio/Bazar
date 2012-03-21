@@ -39,6 +39,7 @@ Bazar::Application.routes.draw do
   match '/registrarse' => "users#registrarse"
   match '/altaregistrarse' => "users#altaregistrarse"
   match '/home/micuenta/:id' => "home#micuenta", :constrants => { :id => /\d+/ }
+  match '/home/actualizamicuenta/:id' => "home#actualizamicuenta", :constrants => { :id => /\d+/ } 
   
   match 'home' => "home#index"
   match '/home/bazares' => "home#bazares"
