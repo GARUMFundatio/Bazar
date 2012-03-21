@@ -84,6 +84,7 @@ es:
   text_demandas_favoritas: "demandas son favoritas"
   text_visitas: "visitas"
   text_valoracion_tu_empresa: "valoración de tu empresa"
+  text_empresas_nuevas_en_tu_bazar: "Empresas nuevas en tu bazar"
 
 # partial _oferta.html -> cajetin de oferta en index.html -> home
 

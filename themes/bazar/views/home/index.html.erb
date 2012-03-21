@@ -112,7 +112,7 @@ function borraoferta (bazar, oferta) {
 
 <div class="caja-seccion" id="empresas-nuevas">
   <div class="caja-indice">
-  <%=raw t(:text_datos_este_bazar)%>
+  <%= t(:text_empresas_nuevas_en_tu_bazar)%>
   </div>
   <div class="seccion-contenido">
   	<%= render(:partial => "empresa", :collection => @empresasrecientes) %>
@@ -131,7 +131,7 @@ function borraoferta (bazar, oferta) {
     
     <div class="seccion-cajon ilumina5">  
       <div class="seccion-cifra">
-        <%= @totalempresas %> 
+        <%= @totalfavoritosempresa %> 
       </div>
       <div class="seccion-cifra-titulo">
         <%=t(:text_veces_guardada_favorita)%> 
@@ -140,7 +140,7 @@ function borraoferta (bazar, oferta) {
 
     <div class="seccion-cajon ilumina5">  
       <div class="seccion-cifra">
-        <%= @totalempresas %> 
+        <%= @totalfavoritosoferta %> 
       </div>
       <div class="seccion-cifra-titulo">
        <%=t(:text_ofertas_favoritas)%> 
@@ -149,7 +149,7 @@ function borraoferta (bazar, oferta) {
 
     <div class="seccion-cajon ilumina5">  
       <div class="seccion-cifra">
-        <%= @totalempresas %> 
+        <%= @totalfavoritosdemanda %> 
       </div>
       <div class="seccion-cifra-titulo">
         <%=t(:text_demandas_favoritas)%> 
@@ -158,7 +158,7 @@ function borraoferta (bazar, oferta) {
 
     <div class="seccion-cajon ilumina5">  
       <div class="seccion-cifra">
-        <%= @totalempresas %> 
+        <%= @miempresa.total_mostradas %> 
       </div>
       <div class="seccion-cifra-titulo">
         <%=t(:text_visitas)%>
@@ -167,7 +167,11 @@ function borraoferta (bazar, oferta) {
 
     <div class="seccion-cajon ilumina5">  
       <div class="seccion-cifra">
-        <%= @totalempresas %> 
+        <% if @miempresa.rating == 0 %>
+          - 
+        <% else %>
+          <%= @miempresa.rating %>
+        <% end %> 
       </div>
       <div class="seccion-cifra-titulo">
         <%=t(:text_valoracion_tu_empresa)%>
