@@ -48,7 +48,7 @@ function cancelar() {
           <img src="<%= current_theme_image_path("cerrar.png") %>" />          
         </div>
         <div class="caja-empresa-cerrar-texto">
-          <%= t("text_cerrar") %>          
+          <%= t(:text_cerrar) %>          
         </div>
       </div>
       
@@ -100,7 +100,7 @@ function cancelar() {
       <%= t(:text_hay_alguna_pagina_web_con_mas_informacion) %>
     </div>
 
-    <p><%= f.text_field :url, :placeholder => "http://www.com/offer", :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
+    <p><%= f.text_field :url, :placeholder => t(:text_www_com_oferta), :class => "caja-empresa-editar-input", :onchange => "valida();" %></p>
 
 
 </div>
@@ -289,7 +289,7 @@ function subirimagen() {
           success: function(){$("#imagenes").load("/home/imagenesoferta/<%= @oferta.id -%>");}
           });
 
-  $('#cargaimagen').html('Subiendo foto <img src=\'<%= current_theme_image_path('spinner.gif') -%>\'>');
+  $('#cargaimagen').html('<%= t(:text_subiendo_imagen) %> <img src=\'<%= current_theme_image_path('spinner.gif') -%>\'>');
   return false;
   
 }

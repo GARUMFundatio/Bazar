@@ -159,5 +159,30 @@ eo:
   text_informacion_general_sobre_tu_empresa: "Ĝenerala informo pri via entrepreno"
   text_palabras_clave_actividad: "Ŝlosilvortoj de la agado de via entrepreno"
 
+# crearoferta.html -> ventana emergente/modal para crear una nuevo oferta/demanda
+
+  text_publicar_una_nueva_oferta: "Publikigi novan oferton"
+  text_publicar_una_nueva_demanda: "Publikigi novan mendon"
+  text_que_titulo_quieres_ponerle: "Kiun titolon vi volas doni al ĝi"
+  text_ej_sillas_de_plastico_personalizadas: "Ekz.: Plastaj personigitaj seĝoj"
+  text_hasta_cuando_es_valida_la_oferta: "Ĝis kiam validas la oferto?"
+  text_hasta_cuando_es_valida_la_demanda: "Ĝis kiam validas la mendo?"
+  text_describela_un_poco: "Priskribu ĝin iomete"
+  text_no_te_extiendas_demasiado: "Ne skribu tro longe. Paro da alineoj sufiĉos."
+  text_hay_alguna_pagina_web_con_mas_informacion: "Ĉu estas retejo kun pli da informo?"
+  text_a_que_tipo_de_empresa_va_dirigida: "Kiajn entreprenojn ĝi celas?"
+  text_www_com_oferta: "https://www.com/oferto"
+  text_usa_palabras_clave_para_describirla: "Uzu plurajn ŝlosilvortojn apartigitajn per komoj por priskribi ĝin"
+  text_que_ambito_quieres_darle_a_la_oferta: "Kian atingon vi volas doni al la oferto?"
+  text_que_ambito_quieres_darle_a_la_demanda: "Kian atingon vi volas doni al la mendo?"
+  text_empresas_con_estos_criterios: "Entreprenoj kongruas kun tiuj ĉi kriterioj"
+  text_quieres_anadir_alguna_fotografia: "Ĉu vi volas aldoni bildon?"
+  text_publicar_esta_demanda: "Publikigi tiun ĉi mendon"
+  text_publicar_esta_oferta: "Publikigi tiun ĉi oferton"
+  text_enviado: "Sendita al"
+  text_redirigiendo_ficha_empresa: "Alidirektado al la entreprenprofilo."
+  text_publicando_la_oferta: "Publikigado de la oferto. Ne fermu la fenestron."
+  text_publicando_la_demanda: "Publikigado de la mendo. Ne fermu la fenestron."
+
 
 

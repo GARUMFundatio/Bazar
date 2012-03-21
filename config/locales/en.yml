@@ -160,3 +160,29 @@ en:
   text_informacion_general_sobre_tu_empresa: "General information about your company"
   text_palabras_clave_actividad: "Keywords of the activity of your company"
 
+# crearoferta.html -> ventana emergente/modal para crear una nuevo oferta/demanda
+
+  text_publicar_una_nueva_oferta: "Publish a new offer"
+  text_publicar_una_nueva_demanda: "Publish a new demand"
+  text_que_titulo_quieres_ponerle: "What title would you like to put it?"
+  text_ej_sillas_de_plastico_personalizadas: "Ex: Custom plastic chairs"
+  text_hasta_cuando_es_valida_la_oferta: "How long is the offer valid?"
+  text_hasta_cuando_es_valida_la_demanda: "How long is the demand valid?"
+  text_describela_un_poco: "Describe it a little"
+  text_no_te_extiendas_demasiado: "Do not be too long. With a couple of paragraphs will be better."
+  text_hay_alguna_pagina_web_con_mas_informacion: "Is there a website where more information is given?"
+  text_a_que_tipo_de_empresa_va_dirigida: "What type of company is it for?"
+  text_www_com_oferta: "https://www.com/offer"
+  text_usa_palabras_clave_para_describirla: "Use multiple keywords separated by commas to describe it"
+  text_que_ambito_quieres_darle_a_la_oferta: "What ambit you want to give the offer?"
+  text_que_ambito_quieres_darle_a_la_demanda: "What ambit you want to give the demand?"
+  text_empresas_con_estos_criterios: "Companies with these criteria"
+  text_quieres_anadir_alguna_fotografia: "Want you to add a image?"
+  text_publicar_esta_demanda: "Publish this demand"
+  text_publicar_esta_oferta: "Publish this offer"
+  text_enviado: "Sent to"
+  text_redirigiendo_ficha_empresa: "Redirecting to the company profile."
+  text_publicando_la_oferta: "Publishing the offer. Do not close the window."
+  text_publicando_la_demanda: "Publishing the demand. Do not close the window."
+
+
