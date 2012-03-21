@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 
     if (!@miempresa.nil?) 
       if !@miempresa.interesantes.nil?
-        @empresasrecomendadas = Bazarcms::Empresa.where("id in (?) and id <> ?", @miempresa.interesantes, @miempresa.id).limit(9)
+        @empresasrecomendadas = Bazarcms::Empresa.where("id in (?) and id <> ?", @miempresa.interesantes, @miempresa.id).order("rating desc").limit(9)
       end
     else 
       @empresasrecomendadas = nil      
