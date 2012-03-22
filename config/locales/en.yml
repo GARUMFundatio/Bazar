@@ -208,4 +208,15 @@ en:
   text_selecciona_el_idioma_que_prefieres: "Select your preferred language"
   text_guardar: "Save"
 
+# helper helper_rating_show_detail_ng para detalles del rating
+
+  text_empresas_han_votado: "companies have voted"
+  text_puntuar_con: "Give"
+
+# empresadatosgenerales.html -> ventana emergente/modal para editar datos generales de la empresa
+  
+  text_nombre_de_la_empresa: "company name"
+  text_pagina_web_de_la_empresa: "company website"
+  text_descripcion_de_la_empresa: "company description"
+
 

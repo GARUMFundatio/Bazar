@@ -211,6 +211,17 @@ es:
   text_selecciona_el_idioma_que_prefieres: "Selecciona el idioma que prefieres"
   text_guardar: "Guardar"
 
+# helper helper_rating_show_detail_ng para detalles del rating
+
+  text_empresas_han_votado: "empresas han votado"
+  text_puntuar_con: "Puntuar con"
+
+# empresadatosgenerales.html -> ventana emergente/modal para editar datos generales de la empresa
+  
+  text_nombre_de_la_empresa: "nombre de la empresa"
+  text_pagina_web_de_la_empresa: "página web de la empresa"
+  text_descripcion_de_la_empresa: "descripción de la empresa"
+
 
 
 
@@ -329,7 +340,7 @@ es:
 
 
   text_descripcion: Descripción
-  text_descripcion_de_la_empresa: "descripción de la empresa"
+
   text_destacadas_para_ti: "Destacadas para ti"
   text_dinamizador: Dinamizador
   text_directorio_de_bazares: "Directorio de Bazares"
@@ -378,7 +389,7 @@ es:
   text_empresas_en_COOPERATIVAS: "empresas en COOPERATIVAS"
   text_empresas_en_esta_ubicaci_n: "Empresas en esta Ubicación"
   text_empresas_en_este_bazar: "Empresas en este Bazar"
-  text_empresas_han_votado: "empresas han votado"
+
   text_empresas_que_sean_de_estos_sectores: "Empresas que sean de estos sectores"
   text_empresas_que_sigo: "Empresas que sigo"
 
@@ -510,7 +521,7 @@ es:
 
   text_no_van_a_dar_paso_a_empresas_fraudulentas_o_permitir_comportamientos_abusivos_porque_irian_contra_su_propia_imagen_y_contra_los_intereses_y_proyeccion_de_cada_una_de_las_empresas_de_su_red_a_las_que_quieren_potenciar: ", no van a dar paso a empresas fraudulentas o permitir comportamientos abusivos porque irían contra su propia imagen y contra los intereses y proyección de cada una de las empresas de su red a las que quieren potenciar."
   text_nombre: "Nombre:"
-  text_nombre_de_la_empresa: "nombre de la empresa"
+
   text_noticias: Noticias
   text_notificaciones: Notificaciones
   text_nuestra_intencion_es_que_sea_muy_sencillo_extraer_informacion_de_la_red_de_bazares_por_ejemplo_para_obtener_la_informacion_general_de_un_bazar_solo_tendrias_que_abrir_el_siguiente_enlace: "Nuestra intención es que sea muy sencillo extraer información de la red de bazares. Por ejemplo para obtener la información general de un bazar solo tendrías que abrir el siguiente enlace:"
@@ -585,7 +596,7 @@ es:
 
   text_puede_usar_asteriscos_o_espacios_para_buscar_por_varias_palabras: "Puede usar asteriscos o espacios para buscar por varias palabras."
   text_pulse_buscar_para_empezar_la_busqueda: "Pulse Buscar para empezar la búsqueda"
-  text_puntuar_con: "Puntuar con"
+
 
   text_que_estas_buscando: "¿Qué estás buscando?"
   text_que_es_bazar: "¿Qué es Bazar?"
@@ -653,7 +664,7 @@ es:
   text_ubicaciones_de_las_empresas_de_este_bazar: "Ubicaciones de las Empresas de este Bazar"
   text_una_gran_empresa_ofrecia_a_traves_de_la_web_el_servicio_a_todos_los_usuarios_el_lado_bueno_es_que_podia_controlar_con_relativa_facilidad_que_nadie_incumpliera_las_condiciones_de_servicio_y_no_sin_polemica_ni_problemas_mantener_fuera_a_quienes_trataran_de_utilizar_la_red_con_fines_ilicitos_o_indeseados_el_lado_malo_es_que_la_centralizacion_tambien_tiene_un_coste_para_los_usuarios_la_extension_de_los_servicios_centralizados_ha_convertido_en_comunes_las_noticias_de_saturaciones_que_llevan_a_la_caida_del_servicio_de_ataques_de_grupos_mas_o_menos_organizados_que_buscan_relevancia_publica_y_de_cortes_en_el_acceso_en_paises_enteros_en_momentos_de_inestabilidad_politica: ": una gran empresa ofrecía, a través de la web, el servicio a todos los usuarios. El lado bueno es que podía controlar con relativa facilidad que nadie incumpliera las condiciones de servicio y, no sin polémica ni problemas, mantener fuera a quienes trataran de utilizar la red con fines ilícitos o indeseados. El lado malo es que la centralización también tiene un coste para los usuarios: la extensión de los servicios centralizados ha convertido en comunes las noticias de saturaciones que llevan a la caída del servicio, de ataques de grupos más o menos organizados que buscan relevancia pública y de cortes en el acceso en países enteros en momentos de inestabilidad política."
   text_url: Url
-  text_pagina_web_de_la_empresa: "página web de la empresa"
+
   text_ultimas_ofertas_demandas: "Últimas Ofertas / Demandas"
 
   text_use_los_desplazadores_para_limitar_la_busqueda: "Use los desplazadores para limitar la búsqueda."
