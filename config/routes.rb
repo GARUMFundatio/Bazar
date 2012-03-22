@@ -91,6 +91,7 @@ Bazar::Application.routes.draw do
   match '/home/enviarcorreo/:id' =>  "home#enviarcorreo", :constrants => {:id => /\d+/ }
 
   match '/home/rating/:bazar/:id/:valor' => "home#rating", :constrants => {:bazar => /\d+/ , :id => /\d+/, :valor => /\d+/}
+  match '/home/ficharating/:bazar/:id/:valor' => "home#ficharating", :constrants => {:bazar => /\d+/ , :id => /\d+/, :valor => /\d+/}
 
   match '/mensajes/leido/:id' => "mensajes#leido", :constrants => { :id => /\d+/ }
   match '/mensajeremoto' => "mensajes#mensajeremoto"

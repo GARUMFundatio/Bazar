@@ -242,10 +242,13 @@ class ApplicationController < ActionController::Base
              per = valor[1] * 100 / total 
            else 
              per = 0 
-           end 
-           str += "<div class='fichaempresa-rating-show-detail2' style='background-size: #{per}\% auto;' 
-           onclick='document.location.href=\"/home/rating/#{bazar}/#{empresa}/#{valor[0]}\";' >"
+           end
+
+           str += "<div class='fichaempresa-rating-show-detail2' style='background-size: #{per}\% auto;' "
+           # str += "onclick='document.location.href=\"/home/ficharating/#{bazar}/#{empresa}/#{valor[0]}\";' >"
+           str += "onclick=\"$('#ficharating').attr('href', '/home/ficharating/#{bazar}/#{empresa}/#{valor[0]}').trigger('click');\" >"
            str += "<div class='fichaempresa-rating-show-detail-text2'>"+t(:text_puntuar_con)
+
            val = "#{valor}".split('.')[0]
            for ii in ['1', '2', '3', '4', '5'] 
 

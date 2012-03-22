@@ -689,3 +689,19 @@ es:
   text_xml_json_html: "XML, JSON, HTML"
   text_y_muchos_mas: "y muchos más."
   text_y_sirve_para: "y sirve para"
+  
+  
+  text_valora_tu_relacion_con_la_empresa: "Valora tu relación con la empresa"
+  text_cliente: "Cliente"
+  text_proveedor: "Proveedor"
+  text_sin_evaluar: "Sin Evaluar"
+  text_cual_fue_su_rol: "¿Cual fué su rol?"
+  text_satisfaccion_de_expectativas: "Satisfacción de expectativas"
+  text_se_ajusta_el_producto_servicio_a_lo_descrito_en_la_oferta: "Se ajusta el producto/servicio a lo descrito en la oferta"
+  text_cumplimiento_de_plazos: "Cumplimiento de plazos"
+  text_se_entrego_el_producto_servicio_conforme_a_lo_acordado_inicialmente: "¿Se entrego el producto/servicio conforme a lo acordado inicialmente?"
+  text_comunicacion: "Comunicación"
+  text_como_de_fluida_armoniosa_o_duramente_tensa_fue_la_comunicacion_con_la_otra_parte: "¿Como de fluida, armoniosa o duramente tensa fue la comunicación con la otra parte?"
+  text_pago_dentro_de_plazos: "Pago dentro de plazos"
+  text_se_abono_el_pago_por_el_producto_servicio_dentro_de_lo_convenido_durante_el_acuerdo: "¿Se abonó por el producto/servicio dentro de lo convenido durante el acuerdo?" 
+  
