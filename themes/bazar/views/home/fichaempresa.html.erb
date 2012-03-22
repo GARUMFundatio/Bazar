@@ -440,6 +440,7 @@ function borrasede (empresa, sede) {
 <a id="fichaempresa" class="fancybox.ajax" href=""></a>
 <a id="correo" class="fancybox.ajax" href=""></a>
 <a id="sede" class="fancybox.ajax" href=""></a>
+<a id="ficharating" class="fancybox.ajax" href=""></a>
 
 <script>
 
@@ -510,7 +511,19 @@ $(document).ready(function() {
  		 'modal': true,
  		 'type' : 'iframe'
  	 });
-  
+
+	 $("#ficharating").fancybox({
+ 		 'width' : 831,
+ 		 'height' : 539,
+     'margin' : 0,
+ 		 'autoScale' : false,
+ 		 'transitionIn' : 'none',
+ 		 'transitionOut' : 'none',
+ 		 'modal': true,
+ 		 'type' : 'iframe'
+ 	 });
+
+
    $("a[rel=galeria]").fancybox(
      {
         'width': 650,
