@@ -259,7 +259,8 @@ class HomeController < ApplicationController
     
     
     @fav = Bazarcms::Ofertasfavorito.find_by_user_id_and_bazar_id_and_oferta_id(current_user.id, params[:bazar], params[:id])
-
+    @totalfavoritos = Bazarcms::Ofertasfavorito.count_by_sql("SELECT count(*) FROM ofertasfavoritos where bazar_id = #{params[:bazar]} and empresa_id = #{params[:id] } " ) 
+    
     if params[:bazar].to_i == BZ_param("BazarId").to_i
       @oferta = Bazarcms::Oferta.find_by_id(params[:id])
       if !@oferta.nil?
