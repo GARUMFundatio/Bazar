@@ -22,7 +22,7 @@
       </div>
       
       <div class="caja-empresa-cerrar-texto">
-        <%= t("text_cerrar") %>          
+        <%= t(:text_cerrar) %>          
       </div>
     </div>
 
@@ -44,7 +44,7 @@
   <% end %>
 
   <div class="caja-empresa-editar-titulo">
-    <%= t(:text_tu_correo_electronico) %>
+    <%= t(:text_tu_email) %>
   </div>
   
   <p><%= f.text_field :email, :placeholder => "", :class => "caja-empresa-editar-input" , :onchange => "// valida();" %></p>
@@ -56,7 +56,7 @@
   <p><%= f.text_field :password, :placeholder => "", :class => "caja-empresa-editar-input" , :onchange => "// valida();" %></p>
 
   <div class="caja-empresa-editar-titulo">
-    <%= t(:text_confirmacion_de_la_contrasena) %>
+    <%= t(:text_confirmacion_contrasena) %>
   </div>
     
   <p><%= f.text_field :password_confirmation, :placeholder => "", :class => "caja-empresa-editar-input" , :onchange => "// valida();" %></p>

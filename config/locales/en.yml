@@ -83,6 +83,7 @@ en:
   text_demandas_favoritas: "demands are favorite"
   text_visitas: "visits"
   text_valoracion_tu_empresa: "assessment of your company"
+  text_empresas_nuevas_en_tu_bazar: "New companies in your bazaar"
 
 # partial _oferta.html -> cajetin de oferta en index.html -> home
 
@@ -198,5 +199,13 @@ en:
   text_demandas_recomendadas_favoritos: "Click here to see demands that we recommend."
   text_no_tienes_empresas_favoritas: "You have no favorite companies"
   text_empresas_recomendadas_favoritos: "Click here to see companies that we recommend."
+
+# micuenta.html
+
+  text_edita_tus_datos: "Edit your data"
+  text_no_se_ha_podido_salvar_los_datos_del_usuario: "Failed to save user data:"
+  text_confirmacion_contrasena: "Confirmation of the password"
+  text_selecciona_el_idioma_que_prefieres: "Select your preferred language"
+  text_guardar: "Save"
 
 

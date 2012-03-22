@@ -203,6 +203,16 @@ es:
   text_no_tienes_empresas_favoritas: "No tienes empresas favoritas"
   text_empresas_recomendadas_favoritos: "Pulsa aquí para ver las empresas que te recomendamos."
 
+# micuenta.html
+
+  text_edita_tus_datos: "Edita tus datos"
+  text_no_se_ha_podido_salvar_los_datos_del_usuario: "No se han podido guardar los datos del usuario:"
+  text_confirmacion_contrasena: "Confirmación de la contraseña"
+  text_selecciona_el_idioma_que_prefieres: "Selecciona el idioma que prefieres"
+  text_guardar: "Guardar"
+
+
+
 
   label_back: Atrás
   label_destroy: Eliminar
@@ -335,11 +345,11 @@ es:
   text_editing_roles_user: "Editando rol de usuario"
   text_editing_usersession: "Editando sesión de usuario"
   text_ejemplo: "Ejemplo:"
-  text_edita_tus_datos: "Edita tus datos"
-  text_guardar: "Guardar"
-  text_confirmacion_de_la_contrasena: "Confirmación de la contraseña"
-  text_tu_correo_electronico: "Tu correo electrónico"
-  text_selecciona_el_idioma_que_prefieres: "Selecciona el idioma que prefieres"
+
+
+
+
+
 
   text_ejemplo_1_como_obtener_informacion_de_un_bazar_proyecto_bazar: "Ejemplo 1 Como obtener información de un Bazar - Proyecto Bazar"
   text_ejemplo_2_como_obtener_que_empresas_hay_en_un_bazar_proyecto_bazar: "Ejemplo 2 Como obtener que empresas hay en un bazar - Proyecto Bazar"
@@ -496,7 +506,7 @@ es:
   text_no_se_ha_encontrado_ninguna: "No se ha encontrado ninguna."
   text_no_se_ha_podido_guardar: "No se ha podido guardar:"
   text_no_se_ha_podido_salvar_el_rol: "No se ha podido guardar el rol:"
-  text_no_se_ha_podido_salvar_los_datos_del_usuario: "No se han podido guardar los datos del usuario:"
+
 
   text_no_van_a_dar_paso_a_empresas_fraudulentas_o_permitir_comportamientos_abusivos_porque_irian_contra_su_propia_imagen_y_contra_los_intereses_y_proyeccion_de_cada_una_de_las_empresas_de_su_red_a_las_que_quieren_potenciar: ", no van a dar paso a empresas fraudulentas o permitir comportamientos abusivos porque irían contra su propia imagen y contra los intereses y proyección de cada una de las empresas de su red a las que quieren potenciar."
   text_nombre: "Nombre:"

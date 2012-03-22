@@ -82,6 +82,7 @@ eo:
   text_demandas_favoritas: "mendoj estas preferataj"
   text_visitas: "vizitoj"
   text_valoracion_tu_empresa: "taksado de via entrepreno"
+  text_empresas_nuevas_en_tu_bazar: "Novaj entreprenoj en via Bazar"
 
 # partial _oferta.html -> cajetin de oferta en index.html -> home
 
@@ -197,6 +198,14 @@ eo:
   text_demandas_recomendadas_favoritos: "Klaki ĉi tie por vidi la mendojn kiujn ni rekomendas al vi."
   text_no_tienes_empresas_favoritas: "Vi havas neniun preferatan entreprenon"
   text_empresas_recomendadas_favoritos: "Klaki ĉi tie por vidi la entreprenojn kiujn ni rekomendas al vi."
+
+# micuenta.html
+
+  text_edita_tus_datos: "Redakti viajn datumojn"
+  text_no_se_ha_podido_salvar_los_datos_del_usuario: "Ne eblis konservi la uzantodatumojn:"
+  text_confirmacion_contrasena: "Pasvortokonfirmo"
+  text_selecciona_el_idioma_que_prefieres: "Elektu vian preferatan lingvon"
+  text_guardar: "Konservi"
 
 
 
