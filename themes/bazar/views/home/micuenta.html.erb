@@ -61,6 +61,29 @@
     
   <p><%= f.text_field :password_confirmation, :placeholder => "", :class => "caja-empresa-editar-input" , :onchange => "// valida();" %></p>
 
+  <div class="caja-empresa-editar-titulo">
+    <%= t(:text_selecciona_el_idioma_que_prefieres) %>
+  </div>
+
+  <select id="user_idioma" name="user[idioma]" class="caja-empresa-editar-input">
+    <% if @user.idioma == "en"%>
+      <option value="en" selected="selected">English</option>
+    <% else %>
+      <option value="en">English</option>
+    <% end %>
+    <% if @user.idioma == "es"%>
+      <option value="es" selected="selected">Español</option>
+    <% else %>
+      <option value="es">Español</option>
+    <% end %>
+    
+    <% if @user.idioma == "eo"%>
+      <option value="eo" selected="selected">Esperanto</option>
+    <% else %>
+      <option value="eo">Esperanto</option>
+    <% end %>
+  </select>
+
 
   <% if current_user_is_admin %>
     <div class="caja-empresa-editar-titulo">
