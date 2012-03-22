@@ -222,7 +222,12 @@ es:
   text_pagina_web_de_la_empresa: "página web de la empresa"
   text_descripcion_de_la_empresa: "descripción de la empresa"
 
+# empresas.html
 
+  text_destacadas_para_ti: "Destacadas para ti"
+  text_por_localizacion: "Por localización"
+  text_tu_bazar: "Tu bazar"
+  text_por_sectores: "Por sectores"
 
 
   label_back: Atrás
@@ -341,7 +346,7 @@ es:
 
   text_descripcion: Descripción
 
-  text_destacadas_para_ti: "Destacadas para ti"
+
   text_dinamizador: Dinamizador
   text_directorio_de_bazares: "Directorio de Bazares"
   text_distribucion_de_la_empresas: "Distribución de las Empresas"
@@ -573,8 +578,8 @@ es:
   text_por_eso: "Por eso"
   text_por_eso_si_cada_instalacion_de_bazar_es_una_red_distribuida_de_empresas_basada_en_la_confianza_su_resultado_global_es_una: "Por eso si cada instalación de Bazar es una red distribuida de empresas basada en la confianza, su resultado global es una"
   text_por_eso_un: "Por eso un"
-  text_por_localizacion: "Por localización"
-  text_por_sectores: "Por sectores"
+
+
   text_por_que_abrir_un_bazar: "¿Por qué abrir un bazar?"
   text_por_que_compartimos_la_informacion: "¿Por qué compartimos la información?"
   text_por_que_es_clave_para_agilizar_las_relaciones_entre_los_usuarios_del: "Por que es clave para agilizar las relaciones entre los usuarios del"
@@ -656,7 +661,7 @@ es:
   text_total_empresas: "Total Empresas:"
   text_total_empresas_en_este_bazar: "Total Empresas en este Bazar:"
   text_total_empresas_en_la_red: "Total Empresas en la Red"
-  text_tu_bazar: "Tu bazar"
+
 
   text_tu_pais: "Tu país"
 
