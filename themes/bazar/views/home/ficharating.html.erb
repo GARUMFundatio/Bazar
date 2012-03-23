@@ -368,12 +368,14 @@ $(function() {
             $('#pre4').hide();
             $('#pre5').hide();
             
+            /* 
             $('#cliente_plazos').val(0);
             $('#cliente_comunicacion').val(0);
             
             ponvalor(0, "#eva4", "-4");
             ponvalor(0, "#eva5", "-5");
-
+            */ 
+            
             $('#cliente-proveedor').val('C');
             
            });
@@ -387,6 +389,7 @@ $(function() {
             $('#pre4').show();
             $('#pre5').show();
 
+            /* 
             $('#proveedor_plazos').val(0);
             $('#proveedor_expectativas').val(0);
             $('#proveedor_comunicacion').val(0);
@@ -394,12 +397,26 @@ $(function() {
             ponvalor(0, "#eva1", "");
             ponvalor(0, "#eva2", "-2");
             ponvalor(0, "#eva3", "-3");
+            */ 
             
             $('#cliente-proveedor').val('P');
             
            });
 
 
+           $('#cliente_plazos').val(<%= params[:valor] -%>);
+           $('#cliente_comunicacion').val(<%= params[:valor] -%>);
+           
+           ponvalor(<%= params[:valor] -%>, "#eva4", "-4");
+           ponvalor(<%= params[:valor] -%>, "#eva5", "-5");
+
+           $('#proveedor_plazos').val(<%= params[:valor] -%>);
+           $('#proveedor_expectativas').val(<%= params[:valor] -%>);
+           $('#proveedor_comunicacion').val(<%= params[:valor] -%>);
+           
+           ponvalor(<%= params[:valor] -%>, "#eva1", "");
+           ponvalor(<%= params[:valor] -%>, "#eva2", "-2");
+           ponvalor(<%= params[:valor] -%>, "#eva3", "-3");
 
 });
 
