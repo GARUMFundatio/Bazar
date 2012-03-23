@@ -274,6 +274,14 @@ eo:
   text_pagina: "Paĝo"
   text_seguro_que_desea_borrarla: "Ĉu vi certas voli forigi ĝin?"
 
+# busquedageneral.html
+
+  text_busqueda: "Serĉado"
+  text_que_estas_buscando: "Kion vi serĉas?"
+  text_buscas_ofertas_demandas_o_empresas: "Ĉu vi serĉas ofertojn, mendojn aŭ entreprenojn? Elektu unu:"
+  text_delimitamos_la_busqueda_a_algun_pais: "Ĉu limigi serĉon al iu lando? Vi povas elekti plurajn:"
+  text_buscando: "Serĉado"
+  text_en_breve_mostraremos_los_resultados_de_su_busqueda: "baldaŭ montriĝis la rezultoj de via serĉo"
 
 
 
