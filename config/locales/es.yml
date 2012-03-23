@@ -254,6 +254,33 @@ es:
   text_empresas_siguientes: "Empresas siguientes"
   text_empresas_anteriores: "Empresas anteriores"
 
+# ofertas.html -> plantilla busqueda de ofertas y demandas
+
+  text_que_oferta_buscas: "¿Qué oferta buscas?"
+  text_que_demanda_buscas: "¿Qué demanda buscas?"
+
+  text_ofertas_en_industria: "ofertas en INDUSTRIA"
+  text_ofertas_en_distribucion: "ofertas en DISTRIBUCIÓN"
+  text_ofertas_en_finanzas: "ofertas en FINANZAS"
+  text_ofertas_en_conocimiento: "ofertas en CONOCIMIENTO"
+  text_ofertas_en_cooperativas: "ofertas en COOPERATIVAS"
+
+  text_demandas_en_industria: "demandas en INDUSTRIA"
+  text_demandas_en_distribucion: "demandas en DISTRIBUCIÓN"
+  text_demandas_en_finanzas: "demandas en FINANZAS"
+  text_demandas_en_conocimiento: "demandas en CONOCIMIENTO"
+  text_demandas_en_cooperativas: "demandas en COOPERATIVAS"
+
+  text_ofertas_siguientes: "Ofertas siguientes"
+  text_demandas_siguientes: "Demandas siguientes"
+  text_ofertas_anteriores: "Ofertas anteriores"
+  text_demandas_anteriores: "Demandas anteriores"
+  text_pagina: "Página"
+  text_seguro_que_desea_borrarla: "¿Seguro que desea borrarla?"
+
+
+
+
 
   label_back: Atrás
   label_destroy: Eliminar
@@ -361,11 +388,7 @@ es:
 
   text_demandan: "Demandan:"
   
-  text_demandas_en_INDUSTRIA: "demandas en INDUSTRIA"
-  text_demandas_en_DISTRIBUCION: "demandas en DISTRIBUCIÓN"
-  text_demandas_en_FINANZAS: "demandas en FINANZAS"
-  text_demandas_en_CONOCIMIENTO: "demandas en CONOCIMIENTO"
-  text_demandas_en_COOPERATIVAS: "demandas en COOPERATIVAS"
+
   text_desc: Desc
 
 
@@ -566,11 +589,7 @@ es:
   text_ofertas: Ofertas
   text_ofertas_demandas: "Ofertas / Demandas"
   text_ofertas_diferenciadas_y_demandas_restringidas: "ofertas diferenciadas y demandas restringidas"
-  text_ofertas_en_INDUSTRIA: "ofertas en INDUSTRIA"
-  text_ofertas_en_DISTRIBUCION: "ofertas en DISTRIBUCIÓN"
-  text_ofertas_en_FINANZAS: "ofertas en FINANZAS"
-  text_ofertas_en_CONOCIMIENTO: "ofertas en CONOCIMIENTO"
-  text_ofertas_en_COOPERATIVAS: "ofertas en COOPERATIVAS"
+
   
 
   text_ofrecen: "Ofrecen:"
@@ -656,7 +675,7 @@ es:
   text_rss: RSS
   text_se_parece_a_una_red_social_cada_empresa_tiene_su_ficha_publica_sus_noticias_busca_empresas_que_puedan_estar_interesadas_en_sus_productos_o_que_le_provean_con_confiabilidad_a_mejores_precios: "se parece a una red social. Cada empresa tiene su ficha, publica sus noticias, busca empresas que puedan estar interesadas en sus productos o que le provean con confiabilidad a mejores precios."
 
-  text_seguro_que_desea_borrarla: "¿Seguro que desea borrarla?"
+
 
   text_sectores: Sectores
 

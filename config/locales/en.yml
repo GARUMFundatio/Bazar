@@ -251,6 +251,31 @@ en:
   text_empresas_siguientes: "Following companies"
   text_empresas_anteriores: "Previous companies"
 
+# ofertas.html -> plantilla busqueda de ofertas y demandas
+
+  text_que_oferta_buscas: "What offer you looking for?"
+  text_que_demanda_buscas: "What demand you looking for?"
+
+  text_ofertas_en_industria: "offers in INDUSTRY"
+  text_ofertas_en_distribucion: "offers in DISTRIBUTION"
+  text_ofertas_en_finanzas: "offers in FINANCE"
+  text_ofertas_en_conocimiento: "offers in KNOWLEDGE"
+  text_ofertas_en_cooperativas: "offers in COOPERATIVES"
+
+  text_demandas_en_industria: "demands in INDUSTRY"
+  text_demandas_en_distribucion: "demandas en DISTRIBUCIÓN"
+  text_demandas_en_finanzas: "demandas en FINANZAS"
+  text_demandas_en_conocimiento: "demandas en CONOCIMIENTO"
+  text_demandas_en_cooperativas: "demandas en COOPERATIVAS"
+
+  text_ofertas_siguientes: "Following offers"
+  text_demandas_siguientes: "Following demands"
+  text_ofertas_anteriores: "Previous offers"
+  text_demandas_anteriores: "Previous demands"
+  text_pagina: "Page"
+  text_seguro_que_desea_borrarla: "Are you sure you want to delete it?"
+
+
 
 
 

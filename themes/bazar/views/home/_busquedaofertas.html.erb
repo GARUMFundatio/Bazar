@@ -22,9 +22,9 @@
     <div class="caja-busqueda-input">
       <form accept-charset="UTF-8" action="/busqueda-oferta?tipo=<%= params[:tipo] -%>" method="post">
         <% if params[:tipo] == 'O' %>
-          <input class="busqueda-input" id="busqueda" name="q" placeholder="¿Qué oferta buscas?" size="50" >
+          <input class="busqueda-input" id="busqueda" name="q" placeholder="<%= t(:text_que_oferta_buscas) %>" size="50" >
         <% else %>
-          <input class="busqueda-input" id="busqueda" name="q" placeholder="¿Qué demanda buscas?" size="50" >
+          <input class="busqueda-input" id="busqueda" name="q" placeholder="<%= t(:text_que_demanda_buscas) %>" size="50" >
         <% end %>
         
        <input type="submit" class="busqueda-boton" value="" />

@@ -250,6 +250,30 @@ eo:
   text_empresas_siguientes: "Sekvaj entreprenoj"
   text_empresas_anteriores: "Antaŭaj entreprenoj"
 
+# ofertas.html -> plantilla busqueda de ofertas y demandas
+
+  text_que_oferta_buscas: "Kiun oferton vi serĉas?"
+  text_que_demanda_buscas: "Kiun mendon vi serĉas?"
+
+  text_ofertas_en_industria: "ofertoj en INDUSTRIO"
+  text_ofertas_en_distribucion: "ofertoj en DISTRIBUADO"
+  text_ofertas_en_finanzas: "ofertoj en FINANCOJ"
+  text_ofertas_en_conocimiento: "ofertoj en SCIO"
+  text_ofertas_en_cooperativas: "ofertoj en KOOPERATIVOJ"
+
+  text_demandas_en_industria: "mendoj en INDUSTRIO"
+  text_demandas_en_distribucion: "mendoj en DISTRIBUADO"
+  text_demandas_en_finanzas: "mendoj en FINANCOJ"
+  text_demandas_en_conocimiento: "mendoj en SCIO"
+  text_demandas_en_cooperativas: "mendoj en KOOPERATIVOJ"
+
+  text_ofertas_siguientes: "Sekvaj ofertoj"
+  text_demandas_siguientes: "Sekvaj mendoj"
+  text_ofertas_anteriores: "Antaŭaj ofertoj"
+  text_demandas_anteriores: "Antaŭaj mendoj"
+  text_pagina: "Paĝo"
+  text_seguro_que_desea_borrarla: "Ĉu vi certas voli forigi ĝin?"
+
 
 
 

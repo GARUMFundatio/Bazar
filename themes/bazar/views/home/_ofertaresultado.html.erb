@@ -65,7 +65,7 @@
   
   
   <div class="cajon-pie">
-    Válida hasta el <%= ofertaresultado.enlace[0,10] %>
+    <%= t(:text_valida_hasta) %> <%= ofertaresultado.enlace[0,10] %>
   </div>
 </div>
 
@@ -82,9 +82,9 @@
     <div class="cajon-paginado-boton ilumina5" onclick="$('#pag<%= @pagina -%>').hide(); $('#pag<%= @pagina+1 -%>').show();$.scrollTo('#busqueda', 'slow')">
       <div class="cajon-paginado-boton-texto">
         <% if params[:tipo] == 'O'%>
-          Ofertas siguientes
+          <%= t(:text_ofertas_siguientes) %>  
         <% else %>
-          Demandas siguientes
+          <%= t(:text_demandas_siguientes) %>
         <% end %>
       </div>
     </div>
@@ -96,9 +96,9 @@
     <div class="cajon-paginado-boton ilumina5"  onclick="$('#pag<%= @pagina -%>').hide(350); $('#pag<%= @pagina-1 -%>').show(350); $.scrollTo('#busqueda', 'slow');">
       <div class="cajon-paginado-boton-texto">
         <% if params[:tipo] == 'O'%>
-          Ofertas anteriores
+          <%= t(:text_ofertas_anteriores) %>
         <% else %>
-          Demandas anteriores
+          <%= t(:text_ofertas_anteriores) %>
         <% end %>
       </div>
     </div> 
@@ -107,7 +107,7 @@
     
     <div class="cajon-paginado-pagina">
       <div class="cajon-paginado-pagina-texto">
-        Página <%= @pagina -%> de <%= (@total / 15) + 1 -%>
+        <%= t(:text_pagina) %> <%= @pagina -%> de <%= (@total / 15) + 1 -%>
       </div>
     </div>
   </div>
