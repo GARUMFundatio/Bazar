@@ -218,5 +218,38 @@ eo:
   text_pagina_web_de_la_empresa: "retejo de la entrepreno"
   text_descripcion_de_la_empresa: "priskribo de la entrepreno"
 
+# empresas.html
+
+  text_destacadas_para_ti: "Elstaraj por vi"
+  text_por_localizacion: "Laŭ situo"
+  text_tu_bazar: "Via bazar"
+  text_por_sectores: "Laŭ sektoroj"
+  text_empresas_en_industria: "entreprenoj en INDUSTRIO"
+  text_empresas_en_distribucion: "entreprenoj en DISTRIBUADO"
+  text_empresas_en_finanzas: "entreprenoj en FINANCOJ"
+  text_empresas_en_conocimiento: "entreprenoj en SCIO"
+  text_empresas_en_cooperativas: "entreprenoj en KOOPERATIVOJ"
+  text_filtrar_por_el_n_de_empleados_de_la_empresa: "Filtri laŭ nombro da dungitoj de la entrepreno"
+  text_filtrar_por_la_facturacion_anual_de_la_empresa: "Filtri laŭ jar-daŭra fakturado de la entrepreno"
+  text_que_empresa_buscas: "Kiun entreprenon vi serĉas?"
+  text_todos: "ĉiuj"
+  text_ventas: "Vendoj:"
+  text_tu_pais: "Via lando"
+  text_el_mundo: "La mondo"
+
+# busquedaempresa.html
+
+  text_ver_las_mas_recientes_primero: "vidi plej ĵusajn unue"
+  text_ver_las_mas_cercanas_geográficamente_primero: "vidi plej geografie proksimajn unue"
+  text_ver_solo_empresas_de_mi_bazar: "vidi nur entreprenojn de mia bazar"
+  text_no_se_ha_encontrado_ninguna: "Neniu trafo."
+  text_prueba_con_otra_busqueda: "Klopodu per alia serĉo."
+
+# partial _empresaresultado.html
+
+  text_empresas_siguientes: "Sekvaj entreprenoj"
+  text_empresas_anteriores: "Antaŭaj entreprenoj"
+
+
 
 

@@ -219,4 +219,38 @@ en:
   text_pagina_web_de_la_empresa: "company website"
   text_descripcion_de_la_empresa: "company description"
 
+# empresas.html
+
+  text_destacadas_para_ti: "Top for you"
+  text_por_localizacion: "By location"
+  text_tu_bazar: "Your bazar"
+  text_por_sectores: "By sectors"
+  text_empresas_en_industria: "companies in INDUSTRY"
+  text_empresas_en_distribucion: "companies in DISTRIBUTION"
+  text_empresas_en_finanzas: "companies in FINANCE"
+  text_empresas_en_conocimiento: "companies in KNOWLEDGE"
+  text_empresas_en_cooperativas: "companies in COOPERATIVES"
+  text_filtrar_por_el_n_de_empleados_de_la_empresa: "Filter by the number of company employees"
+  text_filtrar_por_la_facturacion_anual_de_la_empresa: "Filter by annual billing of the company"
+  text_que_empresa_buscas: "What company are looking for?"
+  text_todos: "all"
+  text_ventas: "Sales:"
+  text_tu_pais: "Your country"
+  text_el_mundo: "The world"
+
+# busquedaempresa.html
+
+  text_ver_las_mas_recientes_primero: "see the most recent first"
+  text_ver_las_mas_cercanas_geográficamente_primero: "see the first geographically closest"
+  text_ver_solo_empresas_de_mi_bazar: "see only companies in my bazar"
+  text_no_se_ha_encontrado_ninguna: "Not found any."
+  text_prueba_con_otra_busqueda: "Try another search."
+
+# partial _empresaresultado.html
+
+  text_empresas_siguientes: "Following companies"
+  text_empresas_anteriores: "Previous companies"
+
+
+
 

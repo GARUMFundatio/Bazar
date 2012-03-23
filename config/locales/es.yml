@@ -228,6 +228,31 @@ es:
   text_por_localizacion: "Por localización"
   text_tu_bazar: "Tu bazar"
   text_por_sectores: "Por sectores"
+  text_empresas_en_industria: "empresas en INDUSTRIA"
+  text_empresas_en_distribucion: "empresas en DISTRIBUCIÓN"
+  text_empresas_en_finanzas: "empresas en FINANZAS"
+  text_empresas_en_conocimiento: "empresas en CONOCIMIENTO"
+  text_empresas_en_cooperativas: "empresas en COOPERATIVAS"
+  text_filtrar_por_el_n_de_empleados_de_la_empresa: "Filtrar por el nº de empleados de la empresa"
+  text_filtrar_por_la_facturacion_anual_de_la_empresa: "Filtrar por la facturación anual de la empresa"
+  text_que_empresa_buscas: "¿Qué empresa buscas?"
+  text_todos: "todos"
+  text_ventas: "Ventas:"
+  text_tu_pais: "Tu país"
+  text_el_mundo: "El mundo"
+
+# busquedaempresa.html
+
+  text_ver_las_mas_recientes_primero: "ver las más recientes primero"
+  text_ver_las_mas_cercanas_geográficamente_primero: "ver las más cercanas geográficamente primero"
+  text_ver_solo_empresas_de_mi_bazar: "ver solo las empresas de mi bazar"
+  text_no_se_ha_encontrado_ninguna: "No se ha encontrado ninguna."
+  text_prueba_con_otra_busqueda: "Prueba con otra búsqueda."
+
+# partial _empresaresultado.html
+
+  text_empresas_siguientes: "Empresas siguientes"
+  text_empresas_anteriores: "Empresas anteriores"
 
 
   label_back: Atrás
@@ -378,7 +403,7 @@ es:
   text_ejemplos_del_api_del_proyecto_bazar: "Ejemplos del API del Proyecto Bazar"
   text_el_basamento_invisible_de_los_mercados_es_la_confianza: "El basamento invisible de los mercados es la confianza"
   text_el_corazon_de_bazar_es_un_sistema_de_ofertas_y_pedidos_optimizado_para_ayudar_a_cada_empresa_a_encontrar_nuevos_clientes_distribuidores_y_proveedores: "el corazón de Bazar es un sistema de ofertas y pedidos optimizado para ayudar a cada empresa a encontrar nuevos clientes, distribuidores y proveedores"
-  text_el_mundo: "El mundo"
+
   text_empresa: "Empresa"
   
   text_empresas_actualizadas: "Empresas Actualizadas"
@@ -387,11 +412,9 @@ es:
 
   text_empresas_del_bazar: "Empresas del Bazar"
   text_empresas_en_el_mercado: "Empresas en el Mercado"
-  text_empresas_en_INDUSTRIA: "empresas en INDUSTRIA"
-  text_empresas_en_DISTRIBUCION: "empresas en DISTRIBUCIÓN"
-  text_empresas_en_FINANZAS: "empresas en FINANZAS"
-  text_empresas_en_CONOCIMIENTO: "empresas en CONOCIMIENTO"
-  text_empresas_en_COOPERATIVAS: "empresas en COOPERATIVAS"
+
+
+
   text_empresas_en_esta_ubicaci_n: "Empresas en esta Ubicación"
   text_empresas_en_este_bazar: "Empresas en este Bazar"
 
@@ -430,8 +453,8 @@ es:
   text_ficha_de_empresa: "ficha de empresa"
 
   text_filtrar_por_datos_economicos: "Filtrar por Datos Económicos"
-  text_filtrar_por_el_n_de_empleados_de_la_empresa: "Filtrar por el nº de empleados de la empresa"
-  text_filtrar_por_la_facturacion_anual_de_la_empresa: "Filtrar por la facturación anual de la empresa"
+
+
   text_filtrar_por_pais: "Filtrar por País"
   text_filtrar_por_perfiles: "Filtrar por Perfiles"
   text_filtros_avanzados_para_seleccionar_las_empresas: "Filtros avanzados para seleccionar las Empresas"
@@ -519,7 +542,7 @@ es:
   text_no_hay_notificaciones: "No hay notificaciones."
   text_no_hay_notificaciones_sin_leer: "No hay notificaciones sin leer."
   text_no_solo_quiere_decir_que_el_codigo_sea_abierto_y_que_no_haya_que_pagar_licencias_de_uso_quiere_decir_que_hay_una_comunidad_de_desarrolladores_alimentada_y_animada_por_la_fundacion_innovando_y_mejorando_las_funcionalidades_permanentemente_por_eso_las_empresas_locales_de_desarrolladores_pueden_dar_servicio_sobre_bazar_y_desarrollar_sin_costes_y_con_todo_el_apoyo_nuevas_funcionalidades_para_necesidades_especificas_en_consecuencia_invertir_en_una_instalacion_de_bazar_para_un_cluster_de_empresas_o_una_asociacion_empresarial_significa_que_el_dinero_y_el_i_d_se_quedaran_y_desarrollaran_en_lo_local: "no sólo quiere decir que el código sea abierto y que no haya que pagar licencias de uso. Quiere decir que hay una comunidad de desarrolladores, alimentada y animada por la fundación, innovando y mejorando las funcionalidades permanentemente. Por eso las empresas locales de desarrolladores pueden dar servicio sobre Bazar y desarrollar, sin costes y con todo el apoyo, nuevas funcionalidades para necesidades específicas. En consecuencia, invertir en una instalación de Bazar para un cluster de empresas o una asociación empresarial significa que el dinero y el I+D se quedarán y desarrollarán en lo local."
-  text_no_se_ha_encontrado_ninguna: "No se ha encontrado ninguna."
+
   text_no_se_ha_podido_guardar: "No se ha podido guardar:"
   text_no_se_ha_podido_salvar_el_rol: "No se ha podido guardar el rol:"
 
@@ -593,7 +616,7 @@ es:
   text_prohibited_this_roles_user_from_being_saved: "prohibited this roles_user from being saved:"
   text_prohibited_this_user_session_from_being_saved: "prohibited this user session from being saved:"
   text_proyecto_bazar: "Proyecto Bazar"
-  text_prueba_con_otra_busqueda: "Prueba con otra búsqueda."
+
 
   text_publicar: Publicar
 
@@ -655,7 +678,7 @@ es:
   text_tipo: Tipo
   text_titulo: "Titulo:"
   text_titulo_de_la_oferta: "Título de la oferta"
-  text_todos: "todos"
+
   text_todos_los_paises_de_este_bazar: "Todos los países de este Bazar »"
   text_total_consultas_realizadas: "Total Consultas Realizadas:"
   text_total_empresas: "Total Empresas:"
@@ -663,7 +686,7 @@ es:
   text_total_empresas_en_la_red: "Total Empresas en la Red"
 
 
-  text_tu_pais: "Tu país"
+
 
   text_ubicaciones_de_este_bazar: "Ubicaciones de este Bazar »"
   text_ubicaciones_de_las_empresas_de_este_bazar: "Ubicaciones de las Empresas de este Bazar"
@@ -680,10 +703,10 @@ es:
   text_valoracion_como_proveedor: "Valoración como Proveedor de:"
   text_vision_general: "visión general"
 
-  text_ventas: "Ventas:"
-  text_ver_las_mas_recientes_primero: "ver las más recientes primero"
-  text_ver_las_mas_cercanas_geográficamente_primero: "ver las más cercanas geográficamente primero"
-  text_ver_solo_empresas_de_mi_bazar: "ver solo las empresas de mi bazar"
+
+
+
+
   text_ver_ocultar: Ver/ocultar
   text_visible: Visible
 
