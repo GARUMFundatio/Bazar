@@ -1796,7 +1796,6 @@ input[type="text"]:focus{
   opacity:.7;
   filter:alpha(opacity=70);
   filter: “alpha(opacity=70)”;
-  
 }
 
 .caja-empresa-editar-titulo-corto {
@@ -2082,6 +2081,37 @@ input[type="text"]:focus{
 
     cursor: pointer;
 }
+
+.caja-rating-editar-boton {
+    position: relative;    
+    background: #14668C ;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    width:183px;
+    height: 60px; 
+    font-family: arial, sans-serif; 
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 600px;
+    margin-bottom: 50px;
+    
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+    box-shadow: 0;
+    -moz-box-shadow: 0; 
+    -webkit-box-shadow: 0;
+    
+    text-shadow: 0;
+    border: 0;
+
+    cursor: pointer;
+}
+
 
 .caja-empresa-editar-largo {
   position: relative;
@@ -2422,6 +2452,41 @@ input[type="text"]:focus{
 }
 
 
+.caja-rating-editar-titulo {
+  
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  padding:0px; 
+  width:400px;
+  height: 45px; 
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: normal;
+  font-size: 17px;
+  opacity:.7;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+}
+
+.caja-rating-editar-texto {
+  
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding:0px; 
+  width:100px;
+  height: 15px; 
+  color: #000000 ;
+  font-family: arial, sans-serif; 
+  font-weight: bold;
+  font-size: 17px;
+  opacity:.7;
+  filter:alpha(opacity=70);
+  filter: “alpha(opacity=70)”;
+}
 
 /* menu de navegacion */ 
 
