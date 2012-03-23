@@ -1,0 +1,403 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= stylesheet_link_tag(current_theme_stylesheet_path('jquery-ui-1.8.18.custom')) %>
+
+<%= javascript_include_tag :defaults %>
+
+<%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery-ui')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.cycle.all.min')) %>
+<%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
+
+<div class="ficha-container">
+  
+<div class="caja-empresa-titulo">
+  <div class="caja-empresa-titulo-texto" >
+    
+    <%= t(:text_valora_tu_relacion_con_la_empresa) %>
+    
+    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      
+      <div class="caja-empresa-cerrar-texto">
+        <%= t(:text_cerrar) %>          
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="rating" style="display:block;">
+
+<%= form_for(@rating, :url => '/bazarcms/ratings') do |f| %>
+
+
+<%= f.hidden_field :ori_empresa_id, :value => @rating.ori_empresa_id %>
+<%= f.hidden_field :ori_bazar_id, :value => @rating.ori_bazar_id %>
+<%= f.hidden_field :ori_empresa_nombre, :value => @rating.ori_empresa_nombre %>
+
+<%= f.hidden_field :des_empresa_id, :value => @rating.des_empresa_id %>
+<%= f.hidden_field :des_bazar_id, :value => @rating.des_bazar_id %>
+<%= f.hidden_field :des_empresa_nombre, :value => @rating.des_empresa_nombre %>
+
+
+
+<table class="tabla" cellspacing="0">
+
+
+
+<tr>
+  
+  <td>
+    <div class="caja-rating-editar-titulo">
+      <b><%=t(:text_cual_fue_su_rol)%></b>
+    </div>
+  </td>
+
+  <td>
+    <p id="opciones-oferta">
+      <span><label id="check-cliente" class="caja-rating-editar-texto"><input type="radio" name="tipo" value="C" checked="checked"><%=t(:text_cliente)%></label></span>
+      <span><label id="check-proveedor" class="caja-rating-editar-texto"><input type="radio" name="tipo" value="P"><%=t(:text_proveedor)%></label></span>
+      <input id="cliente-proveedor" name="rating[cliente-proveedor]" type="hidden" value="C">
+    </p>
+  </td>
+
+</tr>
+
+<tr id="pre1">
+  
+  <td>
+    <div class="caja-rating-editar-titulo">
+      <p><b><%=t(:text_satisfaccion_de_expectativas)%></b><br/><%=t(:text_se_ajusta_el_producto_servicio_a_lo_descrito_en_la_oferta)%></p>
+    </div>
+  </td>
+
+  <td>
+  <div>
+    
+    <img id="1" class='rat1' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="2" class='rat1' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="3" class='rat1' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="4" class='rat1' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="5" class='rat1' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+
+  </div>
+  <div id="eva1"  class="caja-rating-editar-texto">
+    <%=t(:text_sin_evaluar)%>
+  </div>
+  
+  <input id="proveedor_expectativas" name="rating[proveedor_expectativas]" type="hidden">
+
+  </td>
+
+</tr>
+
+<tr id="pre2">
+  
+  <td>
+    <div class="caja-rating-editar-titulo">
+      <p><b><%=t(:text_cumplimiento_de_plazos)%></b><br/><%=t(:text_se_entrego_el_producto_servicio_conforme_a_lo_acordado_inicialmente)%></p>
+    </div>
+  </td>
+
+  <td>
+  <div>
+    
+    <img id="1-2" class='rat2' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="2-2" class='rat2' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="3-2" class='rat2' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="4-2" class='rat2' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="5-2" class='rat2' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+
+  </div>
+  <div id="eva2"  class="caja-rating-editar-texto">
+    <%=t(:text_sin_evaluar)%>
+  </div>
+
+  <input id="proveedor_plazos" name="rating[proveedor_plazos]" type="hidden">
+
+  </td>
+
+</tr>
+
+<tr id="pre3">
+  
+  <td>
+    <div class="caja-rating-editar-titulo">
+      <p><b><%=t(:text_comunicacion)%></b><br/><%=t(:text_como_de_fluida_armoniosa_o_duramente_tensa_fue_la_comunicacion_con_la_otra_parte)%></p>
+    </div>
+  </td>
+
+  <td>
+  <div>
+    
+    <img id="1-3" class='rat3' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="2-3" class='rat3' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="3-3" class='rat3' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="4-3" class='rat3' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="5-3" class='rat3' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+
+  </div>
+  <div id="eva3" class="caja-rating-editar-texto">
+    <%=t(:text_sin_evaluar)%>
+  </div>
+  
+    <input id="proveedor_comunicacion" name="rating[proveedor_comunicacion]" type="hidden">
+  
+  </td>
+
+</tr>
+
+<tr id="pre4" style="display: none">
+  
+  <td>
+    <div class="caja-rating-editar-titulo">                                <p><b><%=t(:text_pago_dentro_de_plazos)%></b></br><%=t(:text_se_abono_el_pago_por_el_producto_servicio_dentro_de_lo_convenido_durante_el_acuerdo)%></p>
+    </div>
+  </td>
+
+  <td>
+  <div>
+    
+    <img id="1-4" class='rat4' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="2-4" class='rat4' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="3-4" class='rat4' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="4-4" class='rat4' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="5-4" class='rat4' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+
+  </div>
+  <div id="eva4" class="caja-rating-editar-texto">
+    <%=t(:text_sin_evaluar)%>
+  </div>
+  
+    <input id="cliente_plazos" name="rating[cliente_plazos]" type="hidden">
+  
+  </td>
+
+</tr>
+
+<tr id="pre5" style="display: none">
+  
+  <td>
+    <div class="caja-rating-editar-titulo">
+      <p><b><%=t(:text_comunicacion)%></b><br/><%=t(:text_como_de_fluida_armoniosa_o_duramente_tensa_fue_la_comunicacion_con_la_otra_parte)%></p>
+    </div>
+  </td>
+
+  <td>
+  <div>
+    
+    <img id="1-5" class='rat5' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="2-5" class='rat5' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="3-5" class='rat5' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="4-5" class='rat5' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+    <img id="5-5" class='rat5' src='<%= current_theme_image_path("estrellawhite.png") %>'>
+
+  </div>
+  <div id="eva5" class="caja-rating-editar-texto">
+    <%=t(:text_sin_evaluar)%>
+  </div>
+  
+   <input id="cliente_comunicacion" name="rating[cliente_comunicacion]" type="hidden">
+
+  </td>
+
+</tr>
+
+
+<tr>
+
+  <td>
+    <div class="caja-rating-editar-titulo">
+      <b><%= f.label :Comentario %>:</b>
+    </div>
+  </td>
+  <td>
+  <%= f.text_area(:ori_texto, :size => "50x5") %>
+  </td>
+
+</tr>
+
+
+</table>
+
+  <div class="actions">
+    <%= f.submit "Guardar" %> 
+  </div>
+<% end %>
+
+
+</div>
+
+
+</div>
+
+
+<script>
+
+function ponvalor(valor, lab, sufi) {
+var ii; 
+
+  for (ii=1 ; ii <= 5; ii++) {
+    
+    if (ii <= valor ) {
+      $('#'+ii+sufi).attr("src", '<%= current_theme_image_path("estrellablue.png") %>');
+    }
+    else {
+      $('#'+ii+sufi).attr("src", '<%= current_theme_image_path("estrellawhite.png") %>');       
+    } 
+    
+  }
+        
+  switch (parseInt(valor))
+  {
+  case 0:
+    $(lab).html("Sin Evaluar");
+    break;
+  case 1:
+    $(lab).html("Mala");
+    break;
+  case 2:
+    $(lab).html("Regular");
+    break;
+  case 3:
+    $(lab).html("Normal");
+    break;
+  case 4:
+    $(lab).html("Buena");
+    break;
+  case 5:
+    $(lab).html("Excelente");
+    break;
+  } 
+  
+};
+
+
+
+$(function() {
+
+    $("img.rat1")
+        .click(function() {
+      // window.alert("pulsado 1 "+$(this).attr("id") );
+      var ii; 
+      var valor ; 
+      
+      valor = parseInt($(this).attr("id"));
+      ponvalor(valor, "#eva1", "");
+
+    $('#proveedor_expectativas').val(valor);
+
+        });
+
+
+
+    $("img.rat2")
+        .click(function() {
+      // window.alert("pulsado 1 "+$(this).attr("id") );
+      var ii; 
+      var valor ; 
+      
+      valor = parseInt($(this).attr("id"));
+      
+      ponvalor(valor, "#eva2", "-2");
+
+      $('#proveedor_plazos').val(valor);
+
+        });
+
+
+
+      $("img.rat3")
+          .click(function() {
+        // window.alert("pulsado 1 "+$(this).attr("id") );
+        var ii; 
+        var valor ; 
+
+        valor = parseInt($(this).attr("id"));
+
+        ponvalor(valor, "#eva3", "-3");
+        
+        $('#proveedor_comunicacion').val(valor);
+
+          });
+
+
+        $("img.rat4")
+            .click(function() {
+          // window.alert("pulsado 1 "+$(this).attr("id") );
+          var ii; 
+          var valor ; 
+
+          valor = parseInt($(this).attr("id"));
+
+          ponvalor(valor, "#eva4", "-4");
+          
+          $('#cliente_plazos').val(valor);
+
+            });
+
+
+
+        $("img.rat5")
+            .click(function() {
+          // window.alert("pulsado 1 "+$(this).attr("id") );
+          var ii; 
+          var valor ; 
+
+          valor = parseInt($(this).attr("id"));
+          ponvalor(valor, "#eva5", "-5");
+
+        $('#cliente_comunicacion').val(valor);
+
+            });
+
+
+          $("#check-cliente")
+              .click(function() {
+            $('#pre1').show();
+            $('#pre2').show();
+            $('#pre3').show();
+            $('#pre4').hide();
+            $('#pre5').hide();
+            
+            $('#cliente_plazos').val(0);
+            $('#cliente_comunicacion').val(0);
+            
+            ponvalor(0, "#eva4", "-4");
+            ponvalor(0, "#eva5", "-5");
+
+            $('#cliente-proveedor').val('C');
+            
+           });
+
+
+          $("#check-proveedor")
+              .click(function() {
+            $('#pre1').hide();
+            $('#pre2').hide();
+            $('#pre3').hide();
+            $('#pre4').show();
+            $('#pre5').show();
+
+            $('#proveedor_plazos').val(0);
+            $('#proveedor_expectativas').val(0);
+            $('#proveedor_comunicacion').val(0);
+            
+            ponvalor(0, "#eva1", "");
+            ponvalor(0, "#eva2", "-2");
+            ponvalor(0, "#eva3", "-3");
+            
+            $('#cliente-proveedor').val('P');
+            
+           });
+
+
+
+});
+
+
+
+</script>
+
