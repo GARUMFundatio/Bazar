@@ -2082,6 +2082,37 @@ input[type="text"]:focus{
     cursor: pointer;
 }
 
+.caja-rating-editar-boton {
+    position: relative;    
+    background: #14668C ;
+    display: inline-block;
+    padding: 5px 10px 6px;
+    color: #fff;
+    text-decoration: none;
+    width:183px;
+    height: 60px; 
+    font-family: arial, sans-serif; 
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 600px;
+    margin-bottom: 50px;
+    
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+    box-shadow: 0;
+    -moz-box-shadow: 0; 
+    -webkit-box-shadow: 0;
+    
+    text-shadow: 0;
+    border: 0;
+
+    cursor: pointer;
+}
+
+
 .caja-empresa-editar-largo {
   position: relative;
   display: block;
