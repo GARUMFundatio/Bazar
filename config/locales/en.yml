@@ -55,7 +55,7 @@ en:
   text_tus_favoritos: "your favorites"
   text_ficha_de_empresa: "company profile"
   text_datos_de_tu_cuenta: "your account details"
-  text_cerrar_sesion: "log Out"
+  text_cerrar_sesion: "log out"
   text_buscar_empresas_ofertas_o_demandas: "Search Companies, Offer or Demands"
 
   text_bazar_software_libre_licencia: "<a href='http://garumfundatio.org/bazar'>Bazar</a> is free software developed by <a href='http://garumfundatio.org' style='text-decoration: none'>Garum Fundatio</a> under the terms of the license GPL v3."
@@ -274,6 +274,15 @@ en:
   text_demandas_anteriores: "Previous demands"
   text_pagina: "Page"
   text_seguro_que_desea_borrarla: "Are you sure you want to delete it?"
+
+# busquedageneral.html
+
+  text_busqueda: "Search"
+  text_que_estas_buscando: "What are you looking for?"
+  text_buscas_ofertas_demandas_o_empresas: "Looking for offers, demands or companies? Choose one:"
+  text_delimitamos_la_busqueda_a_algun_pais: "Delimit the search to any country? You can choose several:"
+  text_buscando: "Searching"
+  text_en_breve_mostraremos_los_resultados_de_su_busqueda: "soon will be showed the results of your search"
 
 
 
