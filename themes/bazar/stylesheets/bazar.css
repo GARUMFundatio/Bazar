@@ -2094,9 +2094,9 @@ input[type="text"]:focus{
     font-family: arial, sans-serif; 
     font-size: 14px;
     font-weight: bold;
-    margin-top: 50px;
-    margin-left: 600px;
-    margin-bottom: 50px;
+    margin-top: 15px;
+    margin-left: 630px;
+    margin-bottom: 20px;
     
     border-radius: 5px;
     -moz-border-radius: 5px;
@@ -2460,7 +2460,7 @@ input[type="text"]:focus{
   margin-bottom: 0px;
   padding:0px; 
   width:400px;
-  height: 45px; 
+  height: 55px; 
   color: #000000 ;
   font-family: arial, sans-serif; 
   font-weight: normal;
