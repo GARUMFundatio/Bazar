@@ -1,15 +1,12 @@
 #!/bin/sh
 
-set -x
 
 RAILS_ENV=production
 export RAILS_ENV
 
 echo "Instalación de Bazar. La instalación tardará varios minutos." 
 
-exec 9> install.log
-exec 1>&9
-exec 2>&9
+cp /dev/null  install.log
 
 echo "Compilando las dependencias en el directorio vendor" 
 
@@ -60,5 +57,3 @@ echo "Actualizando la información del resto de los bazares"
 rake bazar:actualiza
 rake sitemap:refresh
 
-cat install.log | mail -s "Bazarum: Install.log" install@bazarum.com 
-cat install.log 
