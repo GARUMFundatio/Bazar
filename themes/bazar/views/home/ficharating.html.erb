@@ -31,7 +31,7 @@
 
 <div id="rating" style="display:block;">
 
-<%= form_for(@rating, :url => '/bazarcms/ratings') do |f| %>
+<%= form_for(@rating, :url => "/home/rating/#{@rating.des_bazar_id}/#{@rating.des_empresa_id}/#{params[:valor]}") do |f| %>
 
 
 <%= f.hidden_field :ori_empresa_id, :value => @rating.ori_empresa_id %>

@@ -1356,12 +1356,12 @@ class HomeController < ApplicationController
         @rating = Bazarcms::Rating.find_by_id(rating[0].id)
       else 
         logger.debug "rating: el valor que viene para votar es: #{params[:valor]}"                
-        @rating = Bazarcms::Rating.new
+        @rating = Rating.new(params[:bazarcms_rating])
       end 
       logger.debug "-------------> rating: "+@rating.inspect 
       
       @rating.ori_fecha = DateTime.now      
-      @rating.role = "C"
+      @rating.role = params[:rating]['cliente-proveedor']
       @rating.token = rand(99999)+1
 
       @rating.ori_bazar_id = BZ_param("BazarId").to_i 
@@ -1370,14 +1370,27 @@ class HomeController < ApplicationController
       
       @rating.des_bazar_id = params[:bazar]
       @rating.des_empresa_id = params[:id]
-      
-      @rating.ori_valor = valor
-      @rating.ori_cliente_plazos = valor
-      @rating.ori_cliente_comunicacion = valor
+            
+      if (@rating.role == 'C')
+        
+        @rating.ori_cliente_plazos = 0
+        @rating.ori_cliente_comunicacion = 0
          
-      @rating.ori_proveedor_expectativas = valor
-      @rating.ori_proveedor_plazos = valor
-      @rating.ori_proveedor_comunicacion = valor
+        @rating.ori_proveedor_expectativas = params[:rating][:proveedor_expectativas]
+        @rating.ori_proveedor_plazos = params[:rating][:proveedor_plazos]
+        @rating.ori_proveedor_comunicacion = params[:rating][:proveedor_comunicacion]
+        
+        
+      else 
+        
+        @rating.ori_cliente_plazos = params[:rating][:cliente_plazos]
+        @rating.ori_cliente_comunicacion = params[:rating][:cliente_comunicacion]
+         
+        @rating.ori_proveedor_expectativas = 0
+        @rating.ori_proveedor_plazos = 0
+        @rating.ori_proveedor_comunicacion = 0
+                  
+      end
       
       @rating.save 
     
