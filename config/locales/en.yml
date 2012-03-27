@@ -284,6 +284,16 @@ en:
   text_buscando: "Searching"
   text_en_breve_mostraremos_los_resultados_de_su_busqueda: "soon will be showed the results of your search"
 
+# editarcorreo.html
+
+  text_envia_un_mensaje_a: "Send a message to"
+  text_ponle_un_titulo_a_tu_mensaje: "Put a title to your message"
+  text_ejemplo_de_asunto_de_mensaje: "ex: according Offering"
+  text_que_quieres_decirles: "What do you want to say them? "
+  text_escribe_aqui_tu_mensaje: "write here your message"
+  text_enviar_el_mensaje: "Send the message"
+  text_enviando_el_correo: "Sending mail"
+
 
 
 

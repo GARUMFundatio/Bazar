@@ -283,5 +283,15 @@ eo:
   text_buscando: "Serĉado"
   text_en_breve_mostraremos_los_resultados_de_su_busqueda: "baldaŭ montriĝis la rezultoj de via serĉo"
 
+# editarcorreo.html
+
+  text_envia_un_mensaje_a: "Sendi mesaĝon al"
+  text_ponle_un_titulo_a_tu_mensaje: "Titolu vian mesaĝon"
+  text_ejemplo_de_asunto_de_mensaje: "ekz.: okordopropono"
+  text_que_quieres_decirles: "Kion vi volas diri al ili?"
+  text_escribe_aqui_tu_mensaje: "skribu ĉi tie vian mesaĝon"
+  text_enviar_el_mensaje: "Sendi la mesaĝon"
+  text_enviando_el_correo: "Sendado de la mesaĝo"
+
 
 
