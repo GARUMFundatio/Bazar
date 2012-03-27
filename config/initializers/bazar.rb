@@ -15,10 +15,17 @@
     
     Bazar::Application.configure do
 
-      puts "Configurandos el prefix de Dalli #{Conf.find_by_nombre('BazarId').valor}"
-
+      conf = Conf.find_by_nombre('BazarId')
+      if !conf.nil? 
+	valor = conf.valor
+      else 
+        valor = 99
+      end 
+      puts "Configurando el prefix de Dalli #{valor}"
       config.cache_store = :dalli_store, '127.0.0.1',
-          { :namespace => "#{Conf.find_by_nombre('BazarId').valor}_", :expires_in => 1.day, :debug => true, :compress => true, :compress_threshold => 64*1024 }
+          { :namespace => "#{valor}_", :expires_in => 1.day, :debug => true, :compress => true, :compress_threshold => 64*1024 }
+ 
+
     end 
     
   end
