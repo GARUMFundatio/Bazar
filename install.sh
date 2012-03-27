@@ -46,7 +46,8 @@ rails generate friendly_id
 echo "Creando las tablas de la base de datos" 
 rake db:migrate
 
-rake bazar:db_init
+# rake bazar:db_init
+rake db:data:load_dir dir=db/dbinit 
 
 rake friendly_id:redo_slugs MODEL=Cluster
 rake friendly_id:redo_slugs MODEL=Paises
