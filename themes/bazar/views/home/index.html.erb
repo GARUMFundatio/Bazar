@@ -158,7 +158,11 @@ function borraoferta (bazar, oferta) {
 
     <div class="seccion-cajon ilumina5">  
       <div class="seccion-cifra">
-        <%= @miempresa.total_mostradas %> 
+        <% if !@miempresa.nil? %>
+          <%= @miempresa.total_mostradas %>
+        <% else %>
+         - 
+        <% end %>
       </div>
       <div class="seccion-cifra-titulo">
         <%=t(:text_visitas)%>
@@ -167,11 +171,15 @@ function borraoferta (bazar, oferta) {
 
     <div class="seccion-cajon ilumina5">  
       <div class="seccion-cifra">
-        <% if @miempresa.rating == 0 %>
-          - 
+        <% if !@miempresa.nil? %>
+          <% if @miempresa.rating == 0 %>
+            - 
+          <% else %>
+            <%= @miempresa.rating %>
+          <% end %> 
         <% else %>
-          <%= @miempresa.rating %>
-        <% end %> 
+          -
+        <% end %>
       </div>
       <div class="seccion-cifra-titulo">
         <%=t(:text_valoracion_tu_empresa)%>
