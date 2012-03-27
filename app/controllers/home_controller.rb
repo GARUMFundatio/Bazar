@@ -1356,13 +1356,13 @@ class HomeController < ApplicationController
         @rating = Bazarcms::Rating.find_by_id(rating[0].id)
       else 
         logger.debug "rating: el valor que viene para votar es: #{params[:valor]}"                
-        @rating = Rating.new(params[:bazarcms_rating])
+        @rating = Bazarcms::Rating.new()
+        @rating.token = rand(99999)+1
       end 
       logger.debug "-------------> rating: "+@rating.inspect 
       
       @rating.ori_fecha = DateTime.now      
       @rating.role = params[:rating]['cliente-proveedor']
-      @rating.token = rand(99999)+1
 
       @rating.ori_bazar_id = BZ_param("BazarId").to_i 
       @rating.ori_empresa_id = current_user.id 
@@ -1370,7 +1370,9 @@ class HomeController < ApplicationController
       
       @rating.des_bazar_id = params[:bazar]
       @rating.des_empresa_id = params[:id]
-            
+      @rating.ori_texto = params[:bazarcms_rating]['ori_texto']
+      @rating.ori_valor = params[:valor]
+          
       if (@rating.role == 'C')
         
         @rating.ori_cliente_plazos = 0
@@ -1492,7 +1494,8 @@ class HomeController < ApplicationController
       
     end 
 
-    redirect_to "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}"
+    render :layout => false 
+    # redirect_to "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}"
     
   end
   
