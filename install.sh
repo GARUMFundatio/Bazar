@@ -7,9 +7,9 @@ export RAILS_ENV
 
 echo "Instalación de Bazar. La instalación tardará varios minutos." 
 
-exec 9> install.log
-exec 1>&9
-exec 2>&9
+# exec 9> install.log
+# exec 1>&9
+# exec 2>&9
 
 echo "Compilando las dependencias en el directorio vendor" 
 
