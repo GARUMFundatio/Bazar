@@ -20,7 +20,7 @@ class HomeController < ApplicationController
     @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id <> ?", current_user.id).order("fecha desc")
     @demandas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id <> ?", current_user.id).order("fecha desc")
     
-    @miempresa = Bazarcms::Empresa.find(current_user.id)
+    @miempresa = Bazarcms::Empresa.find_by_id(current_user.id)
 
     if (!@miempresa.nil?) 
       if !@miempresa.interesantes.nil?
