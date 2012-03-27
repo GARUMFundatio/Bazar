@@ -7,9 +7,9 @@ export RAILS_ENV
 
 echo "Instalación de Bazar. La instalación tardará varios minutos." 
 
-# exec 9> install.log
-# exec 1>&9
-# exec 2>&9
+exec 9> install.log
+exec 1>&9
+exec 2>&9
 
 echo "Compilando las dependencias en el directorio vendor" 
 
@@ -47,7 +47,7 @@ echo "Creando las tablas de la base de datos"
 rake db:migrate
 
 # rake bazar:db_init
-rake db:data:load_dir dir=db/dbinit 
+rake db:data:load_dir dir=dbinit 
 
 rake friendly_id:redo_slugs MODEL=Cluster
 rake friendly_id:redo_slugs MODEL=Paises
