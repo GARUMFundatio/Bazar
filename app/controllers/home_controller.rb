@@ -25,14 +25,15 @@ class HomeController < ApplicationController
     if (!@miempresa.nil?) 
       if !@miempresa.interesantes.nil?
         @empresasrecomendadas = Bazarcms::Empresa.where("id in (?) and id <> ?", @miempresa.interesantes, @miempresa.id).order("rating desc").limit(9)
+        if @empresasrecomendadas.count <= 0 
+          @empresasrecomendadas = Bazarcms::Empresa.where("id <> ?", @miempresa.id).order("rating desc, updated_at desc").limit(9)
+        end 
+      else 
+        @empresasrecomendadas = Bazarcms::Empresa.where("1 = 1").order("rating desc, updated_at desc").limit(9)        
       end
     else 
-      @empresasrecomendadas = nil      
+      @empresasrecomendadas = @empresasrecomendadas = Bazarcms::Empresa.where("1 = 1").order("rating desc, updated_at desc").limit(9)
     end
-    
-    if @empresasrecomendadas.count <= 0 
-      @empresasrecomendadas = Bazarcms::Empresa.where("id <> ?", @miempresa.id).order("rating desc, updated_at desc").limit(9)
-    end 
     
     @empresasrecientes = Bazarcms::Empresa.where("nombre not like 'Escriba%' ").order("created_at desc").limit(9) #created_at BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() and nombre not like 'Escriba%' ")
 
