@@ -70,7 +70,12 @@ function borraoferta (bazar, oferta) {
       </div>
 
       <div class="seccion-cifra">
-        <%= @totalempresas %> 
+        <% if params[:tipo] == 'O' %>
+          <%= @totalofertas - @totalofertasbazar %> 
+        <% else %>
+          <%= @totaldemandas - @totaldemandasbazar %> 
+        <% end %>
+        
       </div>
       <div class="seccion-cifra-titulo">
         <% if params[:tipo] == 'O' %>
