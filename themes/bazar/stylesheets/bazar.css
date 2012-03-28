@@ -257,6 +257,7 @@ a {
   text-align: center;
   text-decoration: none;
   padding-top: 15px;
+  cursor: pointer;
   
 }
 
@@ -293,6 +294,8 @@ a {
   padding-top: 15px;
   background-image: url(bgblack05.png);
   background-repeat: repeat;
+  cursor: pointer;
+  
 }
 
 .seccion-cajon:hover {
@@ -353,6 +356,7 @@ a {
   padding-top: 15px;
   padding-left: 30px;  
   overflow: hidden;
+  cursor: pointer;
 }
 
 .cajon-cuerpo {
@@ -394,6 +398,7 @@ a {
   padding-left: 30px;
   margin-top: 57px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .cajon-pie {
@@ -446,7 +451,9 @@ a {
   font-size: 13px;
   text-align: center;
   text-decoration: none;
-  padding-top: 15px;  
+  padding-top: 15px;
+  cursor: pointer;
+   
 }
 
 .empresa-fondo {
@@ -733,6 +740,8 @@ a {
   font-weight: bold;
   font-size: 13px;
   text-align: left;
+  cursor: pointer;
+  
 }
 
 
@@ -890,6 +899,7 @@ a {
   text-align: left;
   background-image: url(bgwhite10.png);
   background-repeat: repeat;  
+  cursor: pointer;
   
 }
 
@@ -974,7 +984,8 @@ a {
   text-align: left;
   background-image: url(bgblack05.png);
   background-repeat: repeat;  
-  
+  cursor: pointer;
+
 }
 
 .ficha-caja-gris-edit:hover {
@@ -1112,6 +1123,7 @@ a {
   padding-left: 15px;
   padding-top: 15px;
   margin-bottom: 1px;
+  cursor: pointer;
 }
 
 .caja-busqueda-texto {
@@ -1283,6 +1295,7 @@ input[type="text"]:focus{
   color: #ffffff;
   background-color: #ffffff;
   margin-bottom: 1px;
+  cursor: pointer;
 
 }
 
@@ -1346,7 +1359,8 @@ input[type="text"]:focus{
   float: right;
   width: 121px;
   height: 60px;
-  background-color: #000000;  
+  background-color: #000000;
+  cursor: pointer;
 }
 
 .cajon-paginado-boton-texto {
@@ -1375,6 +1389,7 @@ input[type="text"]:focus{
   background-repeat: repeat;
   display: table-cell;
   vertical-align: middle;
+  cursor: pointer;
   
 }
 
@@ -1458,7 +1473,8 @@ input[type="text"]:focus{
   height: 60px;
   background-image: url(bgblack05.png);
   background-repeat: repeat;  margin-left: 1px;
-
+  cursor: pointer;
+  
 }
 
 
@@ -1733,6 +1749,7 @@ input[type="text"]:focus{
  width: 121px;
  background-image: url(bgblack05.png);
  background-repeat: repeat;
+ cursor: pointer;
  
 }
 
@@ -1846,7 +1863,7 @@ input[type="text"]:focus{
   padding-top: 20px;
   background-image: url(bgblack10.png);
   background-repeat: repeat;
-
+  cursor: pointer;
 }
 
 .empresa-editar-ambito-selected {
@@ -1860,6 +1877,7 @@ input[type="text"]:focus{
   padding-top: 20px;
   background-image: url(bgblack40.png);
   background-repeat: repeat;
+  cursor: pointer;
 
 }
 
@@ -1892,7 +1910,7 @@ input[type="text"]:focus{
   font-size: 25px;
   background-image: url(bgblack10.png);
   background-repeat: repeat;
-
+  cursor: pointer;
 }
 
 .empresa-editar-moneda-selected {
@@ -1910,6 +1928,7 @@ input[type="text"]:focus{
   font-size: 25px;
   background-image: url(bgblack40.png);
   background-repeat: repeat;
+  cursor: pointer;
 
 }
 
@@ -1945,8 +1964,7 @@ input[type="text"]:focus{
   font-size: 15px;
   opacity:.7;
   filter:alpha(opacity=70);
-  filter: “alpha(opacity=70)”;
-  
+  filter: “alpha(opacity=70)”;  
 }
 
 .empresa-editar-sector {
@@ -1960,7 +1978,7 @@ input[type="text"]:focus{
   margin-left: 1px;
   background-image: url(bgblack10.png);
   background-repeat: repeat;
-  
+  cursor: pointer;
 }
 
 .empresa-editar-sector img {
@@ -1979,6 +1997,7 @@ input[type="text"]:focus{
   margin-left: 1px;
   background-image: url(bgblack40.png);
   background-repeat: repeat;
+  cursor: pointer;
 
 }
 
@@ -2239,7 +2258,8 @@ input[type="text"]:focus{
   background-image: url(bgwhite10.png);
   background-repeat: repeat;  
   z-index: 90;
-
+  cursor: pointer;
+  
 }
 
 .item-delete-icono-confirm {
@@ -2258,6 +2278,7 @@ input[type="text"]:focus{
   filter: alpha(opacity=100);
   filter: “alpha(opacity=100)”;
   z-index: 100;
+  cursor: pointer;
   
 }
 
@@ -2272,6 +2293,7 @@ input[type="text"]:focus{
   float: left;
   width: 60px;
   height: 60px;
+  cursor: pointer;
 
 
 }
@@ -2340,6 +2362,7 @@ input[type="text"]:focus{
   background-image: url(bgwhite10.png);
   background-repeat: repeat;  
   z-index: 90;
+  cursor: pointer;
 
 }
 
@@ -2366,6 +2389,7 @@ input[type="text"]:focus{
   filter: alpha(opacity=100);
   filter: “alpha(opacity=100)”;
   z-index: 100;
+  cursor: pointer;
   
 }
 
@@ -2424,6 +2448,7 @@ input[type="text"]:focus{
   text-align: center;
   background-image: url(bgblack10.png);
   background-repeat: repeat;
+  cursor: pointer;
   
 }
 
@@ -2449,6 +2474,7 @@ input[type="text"]:focus{
   font-size: 15px;
   text-align: center;
   background-color: #005B79;
+  cursor: pointer;
 }
 
 

@@ -55,6 +55,7 @@ body {
   opacity:.70;
   filter:alpha(opacity=70);
   filter: “alpha(opacity=70)”;
+  cursor: pointer;
 }
 
 .caja-entrar a {
@@ -171,6 +172,8 @@ a {
   font-family: Arial,sans-serif;
   font-weight: bold;
   font-size: 15px;
+  cursor: pointer;
+
 }
 
 .caja-entrar2-corazon {
@@ -490,6 +493,7 @@ a {
   font-family: Arial,sans-serif;
   font-weight: bold;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .bazar-titulo {
@@ -539,10 +543,9 @@ a {
     height: 80px;
     background-color: #000;
     overflow: hidden;
-/*    padding-top: 55px;
-*/
     margin-bottom: 55px;
     text-align: center;	
+    cursor: pointer;
 }
 
 
