@@ -43,12 +43,12 @@
   <%= t(:text_ofertas_layout) %>
   </div>
   
-  <div class="seccion-contenido">
+  <div class="seccion-contenido"  onclick="window.location = '/home/ofertas/O';">
 
     <% if @ofertasfav.count > 0 %>
       <%= render(:partial => "ofertafav", :collection => @ofertasfav) %>
     <% else %>
-      <div class="seccion-cajon"  onclick="window.location = '/home/ofertas/O';">
+      <div class="seccion-cajon" >
         <div class="cajon-titulo">
           <%= t(:text_no_tienes_ofertas_favoritas) %>
         </div>
@@ -69,11 +69,11 @@
   <%= t(:text_demandas_layout) %>
   </div>
   
-  <div class="seccion-contenido">
+  <div class="seccion-contenido"  onclick="window.location = '/home/ofertas/D';">
     <% if @demandasfav.count > 0 %>
       <%= render(:partial => "ofertafav", :collection => @demandasfav) %>
     <% else %>
-      <div class="seccion-cajon"  onclick="window.location = '/home/ofertas/D';">
+      <div class="seccion-cajon" >
         <div class="cajon-titulo">
           <%= t(:text_no_tienes_demandas_favoritas) %>
         </div>
@@ -94,11 +94,11 @@
   <%= t(:text_empresas_layout) %>
   </div>
   
-  <div class="seccion-contenido">
+  <div class="seccion-contenido" onclick="window.location = '/home/empresas';">
     <% if @empresasfav.count > 0 %>
     <%= render(:partial => "empresafav", :collection => @empresasfav) %>
     <% else %>
-      <div class="seccion-cajon" onclick="window.location = '/home/empresas';">
+      <div class="seccion-cajon" >
         <div class="cajon-titulo">
           <%= t(:text_no_tienes_empresas_favoritas) %>
         </div>
