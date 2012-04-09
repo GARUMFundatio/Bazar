@@ -35,6 +35,10 @@ touch tmp/restart.txt
 
 # actualizamos la información y enviamos los sitemaps
 
+rake paperclip:refresh:thumbnails CLASS=Bazarcms::Empresa
+rake paperclip:refresh:thumbnails CLASS=Bazarcms::Empresasimagen
+rake paperclip:refresh:thumbnails CLASS=Bazarcms::Ofertasimagen
+
 rake bazar:actualiza
 rake sitemap:refresh
 
