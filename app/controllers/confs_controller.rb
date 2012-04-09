@@ -3,6 +3,7 @@ class ConfsController < ApplicationController
   # GET /confs.xml
   
   layout "bazar"
+  before_filter :require_user
   
   def index
     @confs = Conf.order(:grupo_id)
