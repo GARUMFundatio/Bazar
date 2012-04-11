@@ -199,16 +199,16 @@ function borraoferta (bazar, oferta) {
   </div>
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
-    <div class="seccion-cajon ilumina5">
+    <div class="seccion-cajon ilumina5" onclick="parent.location='/home/empresas'">
       <div class="seccion-cifra">
         <%= @totalempresas %> 
       </div>
-      <div class="seccion-cifra-titulo">
+      <div class="seccion-cifra-titulo" >
         <%=t(:text_empresas)%> 
       </div>
     </div>
 
-    <div class="seccion-cajon ilumina5">
+    <div class="seccion-cajon ilumina5" onclick="parent.location='/home/ofertas/O'">
       <div class="seccion-cifra">
         <%= @totalofertas %> 
       </div>
@@ -217,7 +217,7 @@ function borraoferta (bazar, oferta) {
       </div> 
     </div>
 
-    <div class="seccion-cajon ilumina5">
+    <div class="seccion-cajon ilumina5" onclick="parent.location='/home/ofertas/D'">
       <div class="seccion-cifra">
         <%= @totaldemandas %> 
       </div>
