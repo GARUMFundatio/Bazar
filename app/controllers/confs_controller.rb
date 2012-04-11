@@ -9,9 +9,13 @@ class ConfsController < ApplicationController
     @confs = Conf.order(:grupo_id)
     @grupos = Gruposconf.all
     
+          
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @confs }
+      if (current_user_is_admin )
+        format.html # index.html.erb
+      else 
+        format.html (redirect_to "/home")
+      end 
     end
   end
 
