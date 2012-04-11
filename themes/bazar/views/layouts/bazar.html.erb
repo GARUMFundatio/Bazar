@@ -68,20 +68,6 @@
     </div> <!-- fin caja logo -->
 
   
-    <% if current_user.nil? %>
-      <div id="socioenlaces" class="ilumina">
-        <a href="/home/bazares"><%=t(:text_mercado)%></a>
-      </div>
-      <div id="socioenlaces"  class="ilumina">
-        <a href="/home/datos"><%=t(:text_sociologia)%></a>
-      </div>
-      <div id="socioenlaces" class="ilumina">
-        <a href="http://garumfundatio.org/faq-bazar"><%=t(:text_f_a_q)%></a>
-      </div>
-      <div id="socioenlaces" class="ilumina">
-        <a class="login-link" href="/login"><%=t(:text_entrar)%></a>
-      </div>
-    <% else %>
       <div id="socioenlaces" class="ilumina">
         <a href="/home/ofertas/O"><%=t(:text_ofertas_layout)%></a>
       </div>
@@ -91,6 +77,9 @@
       <div id="socioenlaces" class="ilumina">
         <a href="/home/empresas"><%=t(:text_empresas_layout)%></a>
       </div>
+
+      <% if current_user.nil? %>
+      <% else %>
       
       <div id="socioenlaces" class="ilumina">  
         <ul class="menu">
@@ -117,6 +106,7 @@
           </ul>
               
       </div>
+      <% end %>
       
       <div id="socioenlaces" class="ilumina" style="width:304px;" onclick="$('#busquedageneral').attr('href', '/home/busquedageneral/').trigger('click');">
         <div class="home-lupa">
@@ -127,7 +117,6 @@
         </div>
       </div>
           
-    <% end %>
       
   </div> <!-- fin del header -->
 

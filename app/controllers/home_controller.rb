@@ -63,31 +63,35 @@ class HomeController < ApplicationController
   
   def queesbazar
     
-    @totalempresas = Cluster.count_by_sql("select sum(empresas) from clusters where activo = 'S' ")      
-    @totalbazares = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ") 
-    @totalofertas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
-    where tipo = 'O' order by cluster_id, oferta_id ") 
-    @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
-    where tipo = 'D' order by cluster_id, oferta_id ") 
+    if (current_user.nil?)
+      @totalempresas = Cluster.count_by_sql("select sum(empresas) from clusters where activo = 'S' ")      
+      @totalbazares = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ") 
+      @totalofertas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+      where tipo = 'O' order by cluster_id, oferta_id ") 
+      @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+      where tipo = 'D' order by cluster_id, oferta_id ") 
     
-    clusters = Cluster.where("activo = 'S' and id > 1").order("empresas desc")
+      clusters = Cluster.where("activo = 'S' and id > 1").order("empresas desc")
     
-    @clusters = []
+      @clusters = []
     
-    for cluster in clusters
-      lin = []
-      lin << cluster.nombre
-      lin << cluster.empresas
-      lin << Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
-      where tipo = 'O' and cluster_id = #{cluster.id} order by cluster_id, oferta_id ")
-      lin << Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
-      where tipo = 'D' and cluster_id = #{cluster.id} order by cluster_id, oferta_id ")
-      lin << cluster.url
-      @clusters << lin
-    end
+      for cluster in clusters
+        lin = []
+        lin << cluster.nombre
+        lin << cluster.empresas
+        lin << Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+        where tipo = 'O' and cluster_id = #{cluster.id} order by cluster_id, oferta_id ")
+        lin << Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
+        where tipo = 'D' and cluster_id = #{cluster.id} order by cluster_id, oferta_id ")
+        lin << cluster.url
+        @clusters << lin
+      end
     
-    render :layout => false
-  
+      render :layout => false
+    else 
+      redirect_to "/home"
+    end 
+
   end 
 
   def datos 

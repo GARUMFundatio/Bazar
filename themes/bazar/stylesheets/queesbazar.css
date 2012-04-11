@@ -543,6 +543,8 @@ a {
     height: 80px;
     background-color: #000;
     overflow: hidden;
+/*    padding-top: 55px;
+*/
     margin-bottom: 55px;
     text-align: center;	
     cursor: pointer;
