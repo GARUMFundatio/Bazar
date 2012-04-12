@@ -191,8 +191,8 @@ Bazar::Application.routes.draw do
   match '/altaregistrarse' => "users#altaregistrarse"
   
   match 'home' => "home#index"
-  match '/home/bazares' => "home#bazares"
-  match '/home/datos' => "home#datos"
+  match '/home/bazares' => "home#queesbazar"
+  match '/home/datos' => "home#queesbazar" # "home#datos"
   match '/home/open' => "home#open"
   match '/home/dashboardbazar' => "home#dashboardbazar"
   match '/home/busquedageneral' => "home#busquedageneral"
