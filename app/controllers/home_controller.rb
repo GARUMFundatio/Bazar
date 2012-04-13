@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   layout "bazar"
   require 'dalli'
-  before_filter :require_user, :only => [:index]
+  before_filter :require_user, :only => [:index, :editarcorreo, :enviarcorreo]
   
   theme "bazar"
   
