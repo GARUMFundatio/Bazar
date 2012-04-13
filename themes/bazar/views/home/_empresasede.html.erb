@@ -1,12 +1,17 @@
 
-
 <div id="sede-<%= empresasede.id -%>" class="seccion-cajon">
 
   <div class="seccion-cajon-titulo">
-    <%= empresasede.ciudad.descripcion %>
+    <% if !empresa.ciudad.nil? %>
+      <%= empresasede.ciudad.descripcion %>
+    <% else %>
+      
+    <% end %>
   </div>  
+
  <div id="sede-mapa-<%= empresasede.id -%>" style="height:150px; width:243px; font-size:0px;" >
  </div>
+
  <div id="sede-texto-<%= empresasede.id -%>" class="item-texto-sede">
    <%= empresasede.desc %>
  </div>
