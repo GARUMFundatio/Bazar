@@ -261,9 +261,16 @@ class HomeController < ApplicationController
   end
   
   def fichaoferta
+    # si es un usuario registrado miro a ver si lo tiene en favoritos
+
+    if !current_user.nil?
+      @fav = Bazarcms::Ofertasfavorito.find_by_user_id_and_bazar_id_and_oferta_id(current_user.id, params[:bazar], params[:id])
+      @invitado = false 
+    else 
+      @fav = nil
+      @invitado = true 
+    end 
     
-    
-    @fav = Bazarcms::Ofertasfavorito.find_by_user_id_and_bazar_id_and_oferta_id(current_user.id, params[:bazar], params[:id])
     @totalfavoritos = Bazarcms::Ofertasfavorito.count_by_sql("SELECT count(*) FROM ofertasfavoritos where bazar_id = #{params[:bazar]} and empresa_id = #{params[:id] } " ) 
     
     if params[:bazar].to_i == BZ_param("BazarId").to_i

@@ -525,7 +525,7 @@ class ApplicationController < ActionController::Base
       unless current_user
         store_location
         flash[:notice] = "Debes entrar en el sistema para poder acceder a esta página"
-        redirect_to '/login'
+        redirect_to '/?action=login'
         return false
       end
     end

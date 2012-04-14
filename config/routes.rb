@@ -185,7 +185,7 @@ Bazar::Application.routes.draw do
   resources :users
   
   match 'micuenta' => "user#edit",          :as => :micuenta
-  match 'login' => "user_sessions#new",      :as => :login
+  match 'login' => "user_sessions#new",      :as => :login # "user_sessions#new"
   match 'logout' => "user_sessions#destroy", :as => :logout
   match '/registrarse' => "users#registrarse"
   match '/altaregistrarse' => "users#altaregistrarse"
