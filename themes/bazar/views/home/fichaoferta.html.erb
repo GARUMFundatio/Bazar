@@ -6,13 +6,17 @@
 
 <div class="caja-empresa-titulo">
   <div class="caja-empresa-titulo-texto" >
+
+    <% if !@empresa.nil? %>
     
-    <% if !@empresa.sector.nil? %>
-      <img src="<%= current_theme_image_path("sector#{@empresa.sector}black.png") %>" height="30px" />
-    <% else %>
-      <img src="<%= current_theme_image_path("sector01black.png") %>" width="40px" />
+      <% if !@empresa.sector.nil? %>
+        <img src="<%= current_theme_image_path("sector#{@empresa.sector}black.png") %>" height="30px" />
+      <% else %>
+        <img src="<%= current_theme_image_path("sector01black.png") %>" width="40px" />
+      <% end %>
+
     <% end %>
-     
+    
     <% if !@empresa.nil? %>
       <%= @empresa.nombre %>
     <% else %>
