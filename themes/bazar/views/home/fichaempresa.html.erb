@@ -4,11 +4,15 @@
 <%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.geo-1.0a4.min')) %>
 
-
-<% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
-  <% editar = true %>
+<% if !current_user.nil? %>
+  <% if BZ_param("BazarId").to_i == params[:bazar].to_i && current_user.id == params[:id].to_i %>
+    <% editar = true %>
+  <% else %>
+    <% editar = false %>
+  <% end %>
+  <% @invitado = false %>
 <% else %>
-  <% editar = false %>
+  <% @invitado = true %>
 <% end %>
 
 <!-- sección cabecera empresa -->

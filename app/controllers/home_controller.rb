@@ -715,7 +715,13 @@ class HomeController < ApplicationController
     # if local we get the info from database 
     # if not, we make a remote get 
     
-    @fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar].to_i, params[:id].to_i)
+    if !current_user.nil?
+      @fav = Favorito.find_by_user_id_and_bazar_id_and_empresa_id(current_user.id, params[:bazar].to_i, params[:id].to_i)
+      @invitado = false
+    else 
+      @fav = nil
+      @invitado = true
+    end 
     
     if params[:bazar].to_i == BZ_param("BazarId").to_i
       
