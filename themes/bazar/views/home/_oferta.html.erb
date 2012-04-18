@@ -1,6 +1,9 @@
-
-<% if oferta.bazar_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
-  <% @owner = true %>
+<% if !current_user.nil? %>
+  <% if oferta.bazar_id == BZ_param("BazarId").to_i && oferta.empresa_id == current_user.id %>
+    <% @owner = true %>
+  <% else %>
+    <% @owner = false %>
+  <% end %>
 <% else %>
   <% @owner = false %>
 <% end %>

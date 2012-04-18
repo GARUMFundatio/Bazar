@@ -38,12 +38,15 @@
 
 
 <% 
-
-if params[:bazar].to_i == @oferta.bazar_id && @oferta.empresa_id == current_user.id 
-  @owner = true
+if !current_user.nil?
+  if params[:bazar].to_i == @oferta.bazar_id && @oferta.empresa_id == current_user.id 
+    @owner = true
+  else 
+    @owner = false 
+  end
 else 
-  @owner = false 
-end
+  @owner = false
+end 
 
 %>
 

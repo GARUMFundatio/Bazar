@@ -237,9 +237,15 @@ class HomeController < ApplicationController
     # quitar la que ya tenemos como favoritas
     
     if params[:tipo] == "O"
-      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id <> ?", current_user.id).order("fecha_hasta desc").limit(18)
+      tipo = 'O'
     else 
-      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id <> ?", current_user.id).order("fecha_hasta desc").limit(18)
+      tipo = 'D'
+    end 
+    
+    if !current_user.nil?
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = '#{tipo}' and empresa_id <> ?", current_user.id).order("fecha_hasta desc").limit(18)
+    else 
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = '#{tipo}'").order("fecha_hasta desc").limit(18)
     end 
     
     @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
@@ -253,11 +259,7 @@ class HomeController < ApplicationController
     @totaldemandas = Cluster.count_by_sql("SELECT count(DISTINCT ofertasresultados.cluster_id, ofertasresultados.oferta_id) FROM ofertasresultados
     where tipo = 'D' order by cluster_id, oferta_id ")
 
-    if params[:tipo] == "O"
-      @ambitos = Bazarcms::Oferta.ambitos("O")
-    else 
-      @ambitos = Bazarcms::Oferta.ambitos("D")      
-    end 
+    @ambitos = Bazarcms::Oferta.ambitos(tipo)
   end
   
   def fichaoferta
@@ -697,15 +699,16 @@ class HomeController < ApplicationController
     # sacar tambien las de otros bazares
     # quitar la que ya tenemos como favoritas
     
-    @empresasrecomendadas = Bazarcms::Empresa.where("nombre not like 'Escriba su%' and id <> ?", current_user.id).order("updated_at desc").limit(18)
-      
+    if (!current_user.nil?)
+      @empresasrecomendadas = Bazarcms::Empresa.where("nombre not like 'Escriba su%' and id <> ?", current_user.id).order("updated_at desc").limit(18)
+    else
+      @empresasrecomendadas = Bazarcms::Empresa.where("nombre not like 'Escriba su%' ").order("updated_at desc").limit(18)
+    end   
+    
     @totalempresasbazar = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
     @totalempresas = Cluster.count_by_sql("select sum(empresas) from clusters") 
     
     @ambitos = Bazarcms::Empresa.ambitos
-    
-    # @totalofertas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'O' ") 
-    # @totaldemandas = Bazarcms::Oferta.count_by_sql("SELECT count(*) FROM ofertas where tipo = 'D' ")
     
     
   end
