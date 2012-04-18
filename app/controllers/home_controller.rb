@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   layout "bazar"
   require 'dalli'
-  before_filter :require_user, :only => [:index, :editarcorreo, :enviarcorreo]
+  before_filter :require_user, :only => [:index, :editarcorreo, :enviarcorreo, :busquedaempresa, :busquedaoferta]
   
   theme "bazar"
   
@@ -824,7 +824,7 @@ class HomeController < ApplicationController
     params[:paises] = '' if params[:paises].nil?
     params[:empleados] = '0 10' if params[:empleados].nil?
     params[:ventas] = '0 10' if params[:ventas].nil?
-    
+
     @empresas, @empresasresultados = Bazarcms::Empresa.busca(:tipo => params[:tipo], :q => params[:q], 
                                                           :user => current_user.id, :bazar => BZ_param("BazarId").to_i,
                                                           :empleados => params[:empleados].gsub("+"," "), :ventas => params[:ventas].gsub("+", " "),
