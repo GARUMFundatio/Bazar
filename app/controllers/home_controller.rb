@@ -1607,7 +1607,9 @@ class HomeController < ApplicationController
       @user = User.find(current_user.id)
     end
     
-    @user.rol_ids = params[:rol_ids] || Array.new
+    logger.debug "params ---------------->\n"+params.inspect
+    
+    @user.rol_ids = params[:user][:rol_ids] || Array.new
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
