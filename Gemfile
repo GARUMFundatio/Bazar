@@ -22,7 +22,7 @@ gem 'exception_notification', :require => 'exception_notifier'
 gem 'rails-i18n'
 gem 'ya2yaml'
 # gem "tiny_mce", "~> 0.1.4"
-gem 'themes_for_rails', "= 0.5.0.pre"
+gem 'themes_for_rails', "= 0.4.3"
 gem 'truncate_html'
 gem 'yaml_db'
 

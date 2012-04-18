@@ -5,7 +5,7 @@
 <div class="ficha-container">
 
 <div class="caja-empresa-titulo">
-  <div class="caja-empresa-titulo-texto" >
+  <div id="verempresa" class="caja-empresa-titulo-texto" >
 
     <% if !@empresa.nil? %>
     
@@ -23,7 +23,7 @@
       <%= t(:ficha_empresa_incompleta) %>
     <% end %>
     
-    <div class="caja-empresa-cerrar" onclick="parent.jQuery.fancybox.close();">
+    <div id="cerrar" class="caja-empresa-cerrar" >
 
       <div class="caja-empresa-cerrar-icono">
         <img src="<%= current_theme_image_path("cerrar.png") %>" />          
@@ -38,12 +38,15 @@
 
 
 <% 
-
-if params[:bazar].to_i == @oferta.bazar_id && @oferta.empresa_id == current_user.id 
-  @owner = true
+if !current_user.nil?
+  if params[:bazar].to_i == @oferta.bazar_id && @oferta.empresa_id == current_user.id 
+    @owner = true
+  else 
+    @owner = false 
+  end
 else 
-  @owner = false 
-end
+  @owner = false
+end 
 
 %>
 
@@ -338,17 +341,33 @@ $(document).ready(function() {
     $.scrollTo('#imagenes', 'slow');
   <% end %>
 
+  $("#cerrar").live("click", function(event) {
+      event.stopPropagation();
+      parent.jQuery.fancybox.close();
+  });
+
+  $("#verempresa").live("click", function(event) {
+      event.stopPropagation();
+      parent.location.href = "/home/fichaempresa/<%= @oferta.bazar_id %>/<%= @oferta.empresa_id %>";
+  });
+
+/* TODO: revisar como implementar la galeria dentro de un fancybox 
 
   $("a[rel=galeria]").fancybox(
     {
-       'width': 650,
-       'height': 600,
-    		'transitionIn'	:	'elastic',
-    		'transitionOut'	:	'elastic',
-    		'speedIn'		:	600, 
-    		'speedOut'		:	200, 
-    		'overlayShow'	:	true
-    	});
+     'width': 650,
+     'height': 600,
+  		'transitionIn'	:	'elastic',
+  		'transitionOut'	:	'elastic',
+  		'speedIn'		:	600, 
+  		'speedOut'		:	200, 
+  		'overlayShow'	:	true
+  });
+
+*/
+
+
+
 
  });
 
