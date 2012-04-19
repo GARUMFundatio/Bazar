@@ -56,6 +56,7 @@ class ApplicationController < ActionController::Base
       
       if params.include?('locale') 
         I18n.locale = params[:locale]
+        logger.debug "I18N -------> 1 locale forzado"+params[:locale]
         return
       end 
         
@@ -64,6 +65,7 @@ class ApplicationController < ActionController::Base
       if !current_user.nil?
         if !current_user.idioma.nil?
           I18n.locale = current_user.idioma
+          logger.debug "I18N -------> 2 por que lo fuerza el usuario"+current_user.idioma
           return 
         end
       end 
@@ -74,8 +76,9 @@ class ApplicationController < ActionController::Base
         logger.debug "HTTP_ACCEPT_LANGUAGE ----->"+lang
         case lang[0,2]
         when 'es', 'en', 'eo'
-              I18n.locale = lang[0,2]
-            return
+          I18n.locale = lang[0,2]
+          logger.debug "I18N -------> 3 el lenguaje por defecto del navegador si es que lo soporta bazaro"+lang[0,2]
+          return
         else 
           logger.debug "WARNING: No soportamos esta lengua ----->"+lang  
         end 
@@ -98,6 +101,7 @@ class ApplicationController < ActionController::Base
       end
       
       I18n.locale = lang
+      logger.debug "I18N ------->  4 lenguaje por defecto del sitio "+lang
       
   end
 
