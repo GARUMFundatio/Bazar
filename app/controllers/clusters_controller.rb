@@ -118,7 +118,23 @@ class ClustersController < ApplicationController
     
     hydra = Typhoeus::Hydra.new
     
-    uri = "http://directorio.garumfundatio.org/clusters.json"
+    # extraemos cual es el directorio de bazares 
+
+    conf = Conf.find_by_nombre("Directorio")
+    if !conf.nil? 
+      directorio = conf.valor
+    else 
+      conf = Conf.new 
+      conf.nombre = "Directorio"
+      directorio = "http://directorio.garumfundatio.org"
+      conf.valor = directorio
+      conf.grupo_id = 1
+      conf.tipo = "string"
+      conf.desc = "Directorio con los bazares"
+      conf.save 
+    end
+    
+    uri = "#{directorio}/clusters.json"
 
     r = Typhoeus::Request.new(uri, :timeout => 5000)
       

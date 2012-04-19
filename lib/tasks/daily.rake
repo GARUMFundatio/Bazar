@@ -10,10 +10,23 @@ namespace :bazar do
 
    puts "#{DateTime.now}: Actualización de la información."
    
+   # extraemos cual es el directorio de bazares 
+   
+   conf = Conf.find_by_nombre("Directorio")
+   if !conf.nil? 
+     directorio = conf.valor
+   else 
+     conf = Conf.new 
+     conf.nombre = "Directorio"
+     directorio = "http://directorio.garumfundatio.org"
+     conf.valor = directorio
+     conf.save 
+   end 
+   
    # Actualizamos la lista de clusters
 
    puts "#{DateTime.now}: Bazares: Actualizamos la información de bazares."
-   uri = "http://directorio.garumfundatio.org/clusters.json"
+   uri = "#{directorio}/clusters.json"
    hydra = Typhoeus::Hydra.new
 
     r = Typhoeus::Request.new(uri, :timeout => 10000)
@@ -230,10 +243,6 @@ namespace :bazar do
    puts "#{DateTime.now} Bazares: Fin del proceso"
 
  # fin tarea actualizar
-
-
-
-
 
 
  end
