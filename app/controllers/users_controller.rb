@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   layout "bazar"
-  theme "bazar"
+  # theme "bazar"
   
   before_filter :require_user, :only => [:index, :edit, :create, :update, :new ]
 

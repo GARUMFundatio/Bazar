@@ -20,6 +20,9 @@ namespace :bazar do
      conf.nombre = "Directorio"
      directorio = "http://directorio.garumfundatio.org"
      conf.valor = directorio
+     conf.grupo_id = 1
+     conf.tipo = "string"
+     conf.desc = "Directorio con los bazares"
      conf.save 
    end 
    
