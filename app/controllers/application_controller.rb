@@ -3,29 +3,102 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :set_locale
-
+  before_filter :set_tema
+  
   helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
             :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota,
-            :logo_helper, :logo_grande_helper, :datos_oferta_remota, :helper_rating_show_ng, :helper_rating_show_detail_ng
+            :logo_helper, :logo_grande_helper, :datos_oferta_remota, :helper_rating_show_ng, :helper_rating_show_detail_ng,
+            :set_theme
   
   helper :all
   
   require "net/http"
   require "uri"
 
+  def set_tema
+    
+    # TODO: deberíamos mirar si el usuario ha definido un tema
+    # y crear el campo en las preferencias de usuario
+    
+    # primero miramos si existe una configuración global 
+    
+    conf = Conf.find_by_nombre("Theme")
+    if !conf.nil? 
+      tema = conf.valor
+    else 
+      conf = Conf.new 
+      conf.nombre = "Theme"
+      tema = "bazar"
+      conf.valor = tema
+      conf.grupo_id = 1
+      conf.tipo = "string"
+      conf.desc = "Theme por defecto"
+      conf.save 
+    end 
+    
+    logger.debug "Theme ---------> "+tema+"<-----"
+    theme tema
+    
+  end
 
   def set_locale
       # I18n.locale = params[:locale] if params.include?('locale')
       # || ((lang = request.env['HTTP_ACCEPT_LANGUAGE']) && lang[/^[a-z]{2}/])
+      
+      # prioridades del lenguaje
+      # 1 si viene un locale definiddo por url 
+      # 2 lo que haya determinado el usuario 
+      # 3 el lenguaje por defecto del navegador
+      # 4 lenguaje por defecto del sitio 
+      # 5 Inglés 
+      
+      # 1 locale forzado
+      
+      if params.include?('locale') 
+        I18n.locale = params[:locale]
+        return
+      end 
+        
+      # 2 por que lo fuerza el usuario
+      
       if !current_user.nil?
         if !current_user.idioma.nil?
-          I18n.locale = current_user.idioma 
-        else 
-          I18n.locale = params[:locale] if params.include?('locale') 
+          I18n.locale = current_user.idioma
+          return 
         end
-      else 
-        I18n.locale = params[:locale] if params.include?('locale') 
       end 
+      
+      # 3 el lenguaje por defecto del navegador si es que lo soporta bazar
+      
+      if ((lang = request.env['HTTP_ACCEPT_LANGUAGE']) && lang[/^[a-z]{2}/])
+        logger.debug "HTTP_ACCEPT_LANGUAGE ----->"+lang
+        case lang[0,2]
+        when 'es', 'en', 'eo'
+              I18n.locale = lang[0,2]
+            return
+        else 
+          logger.debug "WARNING: No soportamos esta lengua ----->"+lang  
+        end 
+      end
+      
+      # 4 lenguaje por defecto del sitio 
+      
+      conf = conf = Conf.find_by_nombre("Lang")
+      if !conf.nil? 
+        lang = conf.valor
+      else 
+        conf = Conf.new 
+        conf.nombre = "Lang"
+        lang = "en"
+        conf.valor = lang
+        conf.grupo_id = 1
+        conf.tipo = "string"
+        conf.desc = "Idioma del Bazar"
+        conf.save 
+      end
+      
+      I18n.locale = lang
+      
   end
 
   def BZ_param(clave)

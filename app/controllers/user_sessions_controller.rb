@@ -3,7 +3,7 @@ class UserSessionsController < ApplicationController
   before_filter :require_user, :only => :destroy
   
   layout "bazar"
-  theme "bazar"
+  # theme "bazar"
   
   def new
     @user_session = UserSession.new

@@ -4,7 +4,7 @@ class PasswordResetsController < ApplicationController
   before_filter :require_no_user
   
   layout "bazar"
-  theme "bazar"
+  # theme "bazar"
   
   def new
     render :layout => false
