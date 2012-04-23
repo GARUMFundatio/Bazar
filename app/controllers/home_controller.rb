@@ -18,8 +18,8 @@ class HomeController < ApplicationController
     @totalfavoritosoferta = Bazarcms::Ofertasfavorito.count_by_sql("SELECT count(*) FROM ofertasfavoritos where bazar_id = #{BZ_param('BazarId')} and empresa_id = #{current_user.id}")
     @totalfavoritosdemanda = Bazarcms::Ofertasfavorito.count_by_sql("SELECT count(*) FROM ofertasfavoritos where bazar_id = #{BZ_param('BazarId')} and empresa_id = #{current_user.id}")
 
-    @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id <> ?", current_user.id).order("fecha desc")
-    @demandas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id <> ?", current_user.id).order("fecha desc")
+    @ofertas = Bazarcms::Oferta.where("tipo = 'O' and empresa_id <> ? and date(fecha_hasta) >= date(?)", current_user.id, Time.now).order("fecha desc")
+    @demandas = Bazarcms::Oferta.where("tipo = 'D' and empresa_id <> ? and date(fecha_hasta) >= date(?)", current_user.id, Time.now).order("fecha desc")
     
     @miempresa = Bazarcms::Empresa.find_by_id(current_user.id)
 
