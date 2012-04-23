@@ -244,9 +244,9 @@ class HomeController < ApplicationController
     end 
     
     if !current_user.nil?
-      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = '#{tipo}' and empresa_id <> ?", current_user.id).order("fecha_hasta desc").limit(18)
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = '#{tipo}' and empresa_id <> ? and date(fecha_hasta) >= date(?)", current_user.id, Time.now).order("fecha_hasta desc").limit(18)
     else 
-      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = '#{tipo}'").order("fecha_hasta desc").limit(18)
+      @ofertasrecomendadas = Bazarcms::Oferta.where("tipo = '#{tipo}' and date(fecha_hasta) >= date(?)", Time.now).order("fecha_hasta desc").limit(18)
     end 
     
     @totalempresas = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
