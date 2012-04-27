@@ -631,6 +631,16 @@ a {
   
 }
 
+.ficha-container-login {
+  background-color: white;
+  width: 500px;
+  height: 320px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  
+}
+
 .ficha-indice {
   position: relative;
   float: left;
