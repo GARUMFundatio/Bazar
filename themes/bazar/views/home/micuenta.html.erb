@@ -65,7 +65,7 @@
     <%= t(:text_selecciona_el_idioma_que_prefieres) %>
   </div>
 
-  <select id="user_idioma" name="user[idioma]" class="caja-empresa-editar-input">
+  <select id="user_idioma" name="user[idioma]" class="caja-empresa-editar-select">
     <% if @user.idioma == "en"%>
       <option value="en" selected="selected">English</option>
     <% else %>
