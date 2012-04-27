@@ -105,7 +105,8 @@ a {
 .login-input {
   
   margin: 20px 0px 10px 50px;
-  padding:14px; 
+  padding-left:14px;
+  padding-top: 10px; 
   width:380px;
   height: 50px; 
   color: #14668C ;
