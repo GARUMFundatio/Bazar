@@ -25,10 +25,17 @@
   <p><%= f.text_field :login, :placeholder => t(:text_tu_email), :class => "login-input" %></p>
   <p><%= f.password_field :password, :placeholder => t(:text_tu_contrasena), :class => "login-input" %></p>
   <%= f.hidden_field :remember_me, :value => :true %>
-
-  <%= link_to(t(:text_has_olvidado_tu_contraseña), new_password_reset_path, :class => "login-enlace") -%>
+  
+  <div class="login-caja-enlace">
+    <%= link_to(t(:text_has_olvidado_tu_contraseña), new_password_reset_path, :class => "login-enlace") -%>
+  </div>
+  
+  <div class="login-caja-enlace">  
+    <%= link_to(t(:text_bazar_solicita_entrada), new_password_reset_path, :class => "login-enlace") -%>
+  </div>
   
   <%= f.submit t(:text_identificate), :class => "login-boton" %>
+
 
 <% end %>
 

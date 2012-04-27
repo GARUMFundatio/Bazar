@@ -118,10 +118,11 @@ a {
 .login-boton {
     background: #14668C ;
     display: inline-block;
-    padding: 5px 10px 6px;
+    padding-left: 5px;
+    padding-top: 0px;
     color: #fff;
     text-decoration: none;
-    width:183px;
+    width:163px;
     height: 60px; 
     font-family: arial, sans-serif; 
     font-size: 14px;
@@ -137,7 +138,7 @@ a {
     
     text-shadow: 0;
     border: 0;
-    
+    float: right;
     position: relative;
     cursor: pointer;
 }
@@ -147,12 +148,28 @@ a {
   margin-left: 250px ;
 }
 
+.login-caja-enlace {
+
+  width: 231px;
+  height: 20px;
+  color: #14668C;
+  background-color: #444444;
+  margin-top: 5px;
+  margin-left: 50px;
+  margin-right: 5px;
+  text-align: left;	
+  
+  
+}
+
 .login-enlace {
   
   width: 231px;
   height: 60px;
   color: #14668C;
-  margin: 0px 25px 0px 50px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
   
   font-family: arial, sans-serif; 
   font-size: 14px;
@@ -257,7 +274,7 @@ a {
   font-family: Arial,sans-serif;
   font-weight: bold;
   font-size: 13px;
-  text-align: center;
+  c
   text-decoration: none;
   padding-top: 15px;
   cursor: pointer;
