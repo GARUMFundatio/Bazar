@@ -61,7 +61,9 @@
   </div>
 
   <div class="cajon-pie">
-     <%=t(:text_valida_hasta)%> <%= oferta.fecha_hasta.strftime("%d-%m-%y") %>
+    <% if !oferta.fecha_hasta.nil? %>
+      <%=t(:text_valida_hasta)%> <%= oferta.fecha_hasta.strftime("%d-%m-%y") %>
+    <% end %>
   </div>
 
 
