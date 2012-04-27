@@ -78,7 +78,9 @@ end
 
 
 <div class="ficha-valida">
-  <%= t(:text_oferta_valida_hasta) %> <%= @oferta.fecha_hasta.strftime("%d-%m-%Y") %>
+  <% if !@oferta.fecha_hasta.nil?%>
+    <%= t(:text_oferta_valida_hasta) %> <%= @oferta.fecha_hasta.strftime("%d-%m-%Y") %>
+  <% end %>
 </div>
 
 <% if !@owner %>
