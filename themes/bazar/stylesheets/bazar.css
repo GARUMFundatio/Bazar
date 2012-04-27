@@ -2052,7 +2052,7 @@ input[type="text"]:focus{
   
   margin: 0px 0px 10px 50px;
   padding-left: 14px;
-  padding-top: 10px; 
+  padding-top: 2px; 
   width: 500px;
   height: 160px; 
   color: #14668C ;
@@ -2065,7 +2065,8 @@ input[type="text"]:focus{
 .caja-empresa-editar-texto-corto {
   
   margin: 0px 0px 10px 25px;
-  padding: 14px; 
+  padding-left: 14px;
+  padding-top: 2px; 
   width: 450px;
   height: 160px; 
   color: #14668C ;
@@ -2078,7 +2079,8 @@ input[type="text"]:focus{
 .caja-empresa-editar-input-corto {
   
   margin: 0px 10px 10px 25px;
-  padding: 14px; 
+  padding-left: 14px;
+  padding-top: 10px; 
   width: 450px;
   height: 51px; 
   color: #14668C ;
