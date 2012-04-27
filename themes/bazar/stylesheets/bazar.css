@@ -106,7 +106,7 @@ a {
   
   margin: 20px 0px 10px 50px;
   padding-left:14px;
-  padding-top: 10px; 
+  padding-top: 7px; 
   width:380px;
   height: 50px; 
   color: #14668C ;
@@ -114,6 +114,12 @@ a {
   font-weight: bold;
   font-size: 24px;
   
+}
+
+.login-caja-botones {
+  position: relative;
+  width: 430px;
+  height: 70px;
 }
 
 .login-boton {
@@ -139,8 +145,9 @@ a {
     
     text-shadow: 0;
     border: 0;
-    float: right;
-    position: relative;
+    position: absolute;
+    right: 0px;
+    top: 0px;
     cursor: pointer;
 }
 
@@ -151,16 +158,14 @@ a {
 
 .login-caja-enlace {
 
-  width: 231px;
-  height: 20px;
+  width: 213px;
+  height: 0px;
   color: #14668C;
-  background-color: #444444;
-  margin-top: 5px;
+  margin-top: 16px;
   margin-left: 50px;
   margin-right: 5px;
+  padding-top: 7px;
   text-align: left;	
-  
-  
 }
 
 .login-enlace {
