@@ -2051,7 +2051,8 @@ input[type="text"]:focus{
 .caja-empresa-editar-texto {
   
   margin: 0px 0px 10px 50px;
-  padding-left: 14px; 
+  padding-left: 14px;
+  padding-top: 10px; 
   width: 500px;
   height: 160px; 
   color: #14668C ;
