@@ -278,17 +278,25 @@ class HomeController < ApplicationController
     
     if params[:bazar].to_i == BZ_param("BazarId").to_i
       @oferta = Bazarcms::Oferta.find_by_id(params[:id])
+      
       if !@oferta.nil?
+
+        if @oferta.fecha_hasta.nil? 
+          @oferta.fecha_hasta = Time.now + 30.days
+        end 
+
         if !@oferta.clicks.nil?
           @oferta.clicks += 1 
         else 
           @oferta.clicks = 1 
         end 
+        
         if !@oferta.vistas.nil?
           @oferta.vistas += 1 
         else 
           @oferta.vistas = 1 
         end 
+        
         @oferta.save 
       end 
       
