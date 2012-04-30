@@ -34,9 +34,14 @@
     <%= f.password_field :password_confirmation, :placeholder => "Confirma tu contraseña", :class => "login-input" %>
   </div>
 
-  <div class="actions" style="float: right;">
-    <%= f.submit 'Registrarse en Bazar', :class => "login-boton" %>
+  <div class="login-caja-botones">
+
+    <div class="actions" style="float: bottom;">
+      <%= f.submit 'Registrarse en Bazar', :class => "login-boton" %>
+    </div>
+
   </div>
+  
 <% end %>
 </div> <!-- FIN alta usuario -->
 

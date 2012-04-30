@@ -105,7 +105,8 @@ a {
 .login-input {
   
   margin: 20px 0px 10px 50px;
-  padding:14px; 
+  padding-left:14px;
+  padding-top: 7px; 
   width:380px;
   height: 50px; 
   color: #14668C ;
@@ -115,13 +116,20 @@ a {
   
 }
 
+.login-caja-botones {
+  position: relative;
+  width: 430px;
+  height: 70px;
+}
+
 .login-boton {
     background: #14668C ;
     display: inline-block;
-    padding: 5px 10px 6px;
+    padding-left: 5px;
+    padding-top: 0px;
     color: #fff;
     text-decoration: none;
-    width:183px;
+    width:153px;
     height: 60px; 
     font-family: arial, sans-serif; 
     font-size: 14px;
@@ -137,8 +145,9 @@ a {
     
     text-shadow: 0;
     border: 0;
-    
-    position: relative;
+    position: absolute;
+    right: 0px;
+    top: 0px;
     cursor: pointer;
 }
 
@@ -147,12 +156,26 @@ a {
   margin-left: 250px ;
 }
 
+.login-caja-enlace {
+
+  width: 213px;
+  height: 0px;
+  color: #14668C;
+  margin-top: 16px;
+  margin-left: 50px;
+  margin-right: 5px;
+  padding-top: 7px;
+  text-align: left;	
+}
+
 .login-enlace {
   
   width: 231px;
   height: 60px;
   color: #14668C;
-  margin: 0px 25px 0px 50px;
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-right: 2px;
   
   font-family: arial, sans-serif; 
   font-size: 14px;
@@ -257,7 +280,7 @@ a {
   font-family: Arial,sans-serif;
   font-weight: bold;
   font-size: 13px;
-  text-align: center;
+  c
   text-decoration: none;
   padding-top: 15px;
   cursor: pointer;
@@ -634,7 +657,7 @@ a {
 .ficha-container-login {
   background-color: white;
   width: 500px;
-  height: 320px;
+  height: 400px;
   padding: 0;
   margin: 0;
   overflow: hidden;
