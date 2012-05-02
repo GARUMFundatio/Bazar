@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag(current_theme_javascript_path('si.files')) %>
+
+<div class="ficha-container">
+
+<div class="caja-empresa-titulo">
+  <div id="verempresa" class="caja-empresa-titulo-texto" >
+
+    
+    <%= t(:text_esta_oferta_demanda_ya_no_existe) %>
+    
+    <div id="cerrar" class="caja-empresa-cerrar" >
+
+      <div class="caja-empresa-cerrar-icono">
+        <img src="<%= current_theme_image_path("cerrar.png") %>" />          
+      </div>
+      <div class="caja-empresa-cerrar-texto">
+        <%= t("text_cerrar") %>          
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+<script>
+
+$(document).ready(function() {
+  
+$("#cerrar").live("click", function(event) {
+    event.stopPropagation();
+    parent.jQuery.fancybox.close();
+});
+
+
+});
+
+</script>
