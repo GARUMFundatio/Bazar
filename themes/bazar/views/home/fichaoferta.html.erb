@@ -197,14 +197,13 @@ end
 
 <div class="caja-seccion-oferta">
 
-  <div class="ficha-caja-detalle">
+<% if !@oferta.url.nil? and !@owner %>
+  <div class="ficha-caja-detalle" onclick="document.location.href='<%= @oferta.url -%>';">
 
-    <div class="ficha-caja-enlace">
-
-      <% if !@owner %>
-    
+    <div class="ficha-caja-enlace" >
+  
       <div class="ficha-caja-enlace-imagen">
-        <img src="<%= current_theme_image_path('flecha.png') %>" onClick="window.alert('click en el enlace externo');" >
+        <img src="<%= current_theme_image_path('flecha.png') %>" >
       </div>
     
       <div class="ficha-caja-enlace-texto">
@@ -215,10 +214,17 @@ end
         <% end %>
       
       </div>
+    </div>
+  </div>
+<% end %>
 
-      <% else %>
+<% if @owner %>
     
-        <div class="ficha-caja-enlace-texto">
+<div class="ficha-caja-detalle" onclick="document.location.href='<%= @oferta.url -%>';">
+
+  <div class="ficha-caja-enlace" >
+
+        <div class="ficha-caja-enlace-texto" >
         
           <br/><br/><br/>
     
@@ -237,9 +243,10 @@ end
         </div>
 
     
-      <% end %>
       
     </div>
+  </div>
+<% end %>
 
     <div class="ficha-caja-gris trans25">
       <div class="ficha-caja-gris-titulo">

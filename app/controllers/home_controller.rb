@@ -521,7 +521,7 @@ class HomeController < ApplicationController
     else 
       @claves = ""
     end 
-    logger.debug "-------> me llega esta consulta: "+@claves+" <--- (#{consulta[0].sql})"
+#     logger.debug "-------> me llega esta consulta: "+@claves+" <--- (#{consulta[0].sql})"
     render :layout => false 
     
   end
