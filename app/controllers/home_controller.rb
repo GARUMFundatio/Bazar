@@ -298,13 +298,16 @@ class HomeController < ApplicationController
         end 
         
         @oferta.save 
-      end 
       
-       
+      
       @empresa = Bazarcms::Empresa.find_by_id(@oferta.empresa_id)
       @imagenes = Bazarcms::Ofertasimagen.where("oferta_id = ?", params[:id])
-      
       render :layout => false 
+      
+    else 
+      render :fichaofertanoexiste, :layout => false
+    end 
+
       
     else 
       # TODO: cachearlo para que vaya más rápido
