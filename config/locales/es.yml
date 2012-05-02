@@ -117,6 +117,9 @@ es:
   text_visitas_de_esta_demanda: "visitas de esta demanda"
   text_ficha_empresa_incompleta: "Ficha de empresa incompleta"
 
+# ficha de oferta no existe  fichaofertanoexiste.html -> ventana emergente con la oferta/demanda
+
+  text_esta_oferta_demanda_ya_no_existe: "Esta Oferta/Demanda ya no existe"
 
 # ficha de empresa  fichaempresa.html
 
