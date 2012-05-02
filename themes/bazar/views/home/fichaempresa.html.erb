@@ -207,10 +207,10 @@ function borrasede (empresa, sede) {
 
     <% if editar %>
     
-      <div class="seccion-cajon ilumina5" onClick="">
+      <div class="seccion-cajon ilumina5" onclick="$('#fichaeditaroferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=D').trigger('click');">
         
         <div class="add-item-icono">
-          <img src="<%= current_theme_image_path('add.png') %>" onclick="$('#fichaeditaroferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>?tipo=D').trigger('click');" >
+          <img src="<%= current_theme_image_path('add.png') %>"  >
         </div>
 
         <div class="add-item-texto">
