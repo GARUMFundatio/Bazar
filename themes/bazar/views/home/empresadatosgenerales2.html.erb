@@ -40,7 +40,7 @@
     <div class="caja-empresa-editar-ambito">
       
       <% Bazarcms::Empresa.Ambitos.sort_by { |k,v| v  }.each do |k, v| %>
-        
+        <% next if v == "1" %>
         <% if @empresa.ambito == v %>
         <div id="<%= v -%>" class="empresa-editar-ambito-selected" onclick="selambito('<%= v -%>');">
         <% else %>
@@ -105,7 +105,7 @@
 
       <select id="bazarcms_empresasdato_ventas" name="bazarcms_empresasdato[ventas]" class="caja-empresa-editar-select">
         <% for rango in Bazarcms::Empresasdato.RangoDatos.sort{|a,b| a[1]<=>b[1]} %>
-        
+          
           <% if @empresasdatos.ventas.to_i == rango[1].to_i %>  
             <option value="<%= rango[1] %>" selected="selected"><%= rango[0] %></option>
           <% else %>
