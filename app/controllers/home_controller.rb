@@ -307,8 +307,8 @@ class HomeController < ApplicationController
     else 
       # borramos la oferta si estaba en favoritos 
       
-      Bazarcms::Ofertasfavorito.where("bazar_id = ? and oferta_id = ?", params[:bazar], params[:id])
-      Bazarcms::Ofertasresultado.where("cluster_id = ? and oferta_id = ?", params[:bazar], params[:id])
+      Bazarcms::Ofertasfavorito.where("bazar_id = ? and oferta_id = ?", params[:bazar], params[:id]).destroy_all
+      Bazarcms::Ofertasresultado.where("cluster_id = ? and oferta_id = ?", params[:bazar], params[:id]).destroy_all
       
       render :fichaofertanoexiste, :layout => false
     end 
