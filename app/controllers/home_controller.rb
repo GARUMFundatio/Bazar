@@ -510,6 +510,18 @@ class HomeController < ApplicationController
     
     @oferta.save 
     
+    if !params[:auto].nil? and params[:auto] == "true"
+      consulta = Bazarcms::Empresasconsulta.where("empresa_id = ?",current_user.id).order("id desc").limit(1)
+      @auto = true
+      if consulta[0].sql == "*"
+        @claves = ""
+      else 
+        @claves = consulta[0].sql.gsub(" ", ",").gsub(",,", ",").gsub(",,", ",")
+      end
+    else 
+      @claves = ""
+    end 
+    logger.debug "-------> me llega esta consulta: "+@claves+" <--- (#{consulta[0].sql})"
     render :layout => false 
     
   end

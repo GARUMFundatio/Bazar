@@ -113,7 +113,8 @@ function cancelar() {
     </div>
 
     <p>
-      <textarea id="tags" class="caja-empresa-editar-texto-corto" name="tags" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"><%= @oferta.palabrasclave_list %></textarea>
+      <textarea id="tags" class="caja-empresa-editar-texto-corto" name="tags" cols="40"  placeholder="<%= t(:text_usa_palabras_clave_para_describirla) %>" rows="20" onchange="estima();" onkeyup="monta();"><%= @oferta.palabrasclave_list %><%= @claves if @claves != "" %></textarea>
+      
     </p>
   
     <div class="caja-empresa-editar-titulo-corto">
@@ -126,6 +127,7 @@ function cancelar() {
     <div>
       <br/>
       <select id="bazarcms_oferta_ambito" name="bazarcms_oferta[ambito]" class="caja-empresa-editar-input-corto" onchange="monta();">
+        <% @oferta.ambito = "2" if @auto %>
         <% for rango in Bazarcms::Oferta.Ambitos.sort{|a,b| a[1]<=>b[1]} %>
           <% next if rango[1].to_i == 1 %>
           <% if @oferta.ambito.to_i == rango[1].to_i %>  
