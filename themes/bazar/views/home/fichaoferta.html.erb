@@ -218,35 +218,66 @@ end
   </div>
 <% end %>
 
+<div class="ficha-caja-detalle" >
+
 <% if @owner %>
     
-<div class="ficha-caja-detalle" onclick="document.location.href='<%= @oferta.url -%>';">
+  <div id="gourl" class="ficha-caja-enlace" >
 
-  <div class="ficha-caja-enlace" >
-
-        <div class="ficha-caja-enlace-texto" >
-        
-          <br/><br/><br/>
+    <div class="ficha-caja-enlace-texto" >
     
-          <%= t(:text_web_externa) -%> <br/></br>
-    
-          <% if !@oferta.url.nil? %>
-            <%= @oferta.url %>
-          <% else %>
-            <%= t(:text_incluir_web_externa) -%>
-          <% end %>
-        
-        </div>
+      <br/><br/><br/>
 
-        <div class="ficha-caja-enlace-edit" onclick="document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';">
-          <img src="<%= current_theme_image_path('editar.png') %>"  >
-        </div>
+      <%= t(:text_web_externa) -%> <br/></br>
 
+      <% if !@oferta.url.nil? %>
+        <%= @oferta.url %>
+      <% else %>
+        <%= t(:text_incluir_web_externa) -%>
+      <% end %>
     
-      
     </div>
+
+    <div id="editurl" class="ficha-caja-enlace-edit" >
+      <img src="<%= current_theme_image_path('editar.png') %>"  >
+    </div>
+    
+    <script>
+      $("#editurl").live("click", function(event) {
+        event.stopPropagation();
+        document.location.href='/home/ofertadatosgenerales/<%= @oferta.bazar_id -%>/<%= @oferta.id -%>?edit=url';
+      });
+    </script>
   </div>
+
+<% else %>
+
+  <% if !@oferta.url.nil? %>
+  <div id="gourl" class="ficha-caja-enlace" >
+  
+    <div class="ficha-caja-enlace-imagen">
+      <img src="<%= current_theme_image_path('flecha.png') %>">
+    </div>
+
+    <div class="ficha-caja-enlace-texto">
+      <% if @oferta.tipo == 'O'%>
+        <%= t(:text_web_mas_informacion_oferta) -%>
+      <% else %>
+        <%= t(:text_web_mas_informacion_demanda) -%>
+      <% end %>
+
+    </div>
+   </div> 
+  <% end %>
+
 <% end %>
+
+<script>
+  $("#gourl").live("click", function(event) {
+    event.stopPropagation();
+    window.open('<%= @oferta.url -%>');
+  });
+</script>
 
     <div class="ficha-caja-gris trans25">
       <div class="ficha-caja-gris-titulo">
