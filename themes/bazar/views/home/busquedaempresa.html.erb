@@ -35,6 +35,22 @@
         <%= t(:text_ver_solo_empresas_de_mi_bazar) %>
       </div>
     </div>
+
+    <% if cuantas > 0 %>
+    
+    <div class="resultado-filtro ilumina10" onclick="$('#fichaeditaroferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= current_user.id -%>?tipo=O&auto=true').trigger('click');">
+      <div class="resultado-filtro-texto">
+        <%= t(:text_enviar_una_oferta_estas_empresas) %>
+      </div>
+    </div>
+
+    <div class="resultado-filtro ilumina10" onclick="$('#fichaeditaroferta').attr('href', '/home/crearoferta/<%= BZ_param("BazarId")-%>/<%= current_user.id -%>?tipo=D&auto=true').trigger('click');">
+      <div class="resultado-filtro-texto">
+        <%= t(:text_enviar_una_demanda_estas_empresas) %>
+      </div>
+    </div>
+
+    <% end %>
     
   </div>
 
@@ -70,6 +86,7 @@
 </div>
 
 <a id="fichaempresa" class="fancybox.ajax" href=""></a>
+<a id="fichaeditaroferta" class="fancybox.ajax" href=""></a>
 
 <script>
 
@@ -91,6 +108,21 @@ $(document).ready(function() {
 		 'transitionOut' : 'none',
 		 'type' : 'iframe'
 	 });
+	
+	 $("#fichaeditaroferta").fancybox({
+ 		 'width' : 850,
+ 		 'height' : 600,
+     'margin' : 0,
+ 		 'autoScale' : false,
+ 		 'transitionIn' : 'none',
+ 		 'transitionOut' : 'none',
+ 		 'hideOnOverlayClick':false,
+     'hideOnContentClick':false,
+		 'modal': true,
+		 'boder': 0,
+     'padding': 0,
+ 		 'type' : 'iframe'
+ 	 });
 	
   $('input[placeholder]').placeholder();
 

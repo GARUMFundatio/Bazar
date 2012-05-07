@@ -117,6 +117,9 @@ es:
   text_visitas_de_esta_demanda: "visitas de esta demanda"
   text_ficha_empresa_incompleta: "Ficha de empresa incompleta"
 
+# ficha de oferta no existe  fichaofertanoexiste.html -> ventana emergente con la oferta/demanda
+
+  text_esta_oferta_demanda_ya_no_existe: "Esta Oferta/Demanda ya no existe"
 
 # ficha de empresa  fichaempresa.html
 
@@ -248,6 +251,8 @@ es:
   text_ver_solo_empresas_de_mi_bazar: "ver solo las empresas de mi bazar"
   text_no_se_ha_encontrado_ninguna: "No se ha encontrado ninguna."
   text_prueba_con_otra_busqueda: "Prueba con otra búsqueda."
+  text_enviar_una_oferta_estas_empresas: "Enviar una oferta a las empresas seleccionadas"
+  text_enviar_una_demanda_estas_empresas: "Enviar una demanda a las empresas seleccionadas"
 
 # partial _empresaresultado.html
 
