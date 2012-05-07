@@ -5,5 +5,6 @@ xml.info do
   xml.url @info[:url]
   xml.empresas @info[:empresas]
   xml.consultas @info[:consultas]
+  xml.consultasofertas @info[:consultasofertas]
   xml.clusteractivos @info[:clusteractivos]
 end

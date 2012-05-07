@@ -43,6 +43,7 @@ class ApiController < ApplicationController
     @info[:url] = Cluster.find(BZ_param("BazarId")).url
     @info[:empresas] = Bazarcms::Empresa.count_by_sql("select count(*) from empresas")
     @info[:consultas] = Bazarcms::Empresasconsulta.count_by_sql("select count(*) from empresasconsultas")
+    @info[:consultasofertas] = Bazarcms::Ofertasconsulta.count_by_sql("select count(*) from ofertasconsultas")
     @info[:clustersactivos] = Cluster.count_by_sql("select count(*) from clusters where activo = 'S' ")
     
     respond_to do |format|
