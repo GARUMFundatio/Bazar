@@ -487,7 +487,7 @@ class ApplicationController < ActionController::Base
   
    def helper_formatea(texto)
 
-     if !text.nil?
+     if !texto.nil?
        texto.gsub(/\n/,'<br/>').html_safe
      else 
        ""
