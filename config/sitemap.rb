@@ -26,6 +26,8 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
   bazar = Conf.find_by_nombre('BazarId').valor.to_i
   
   Bazarcms::Oferta.find_each do |oferta|
+    next if oferta.tipo == "EO"
+    next if oferta.tipo == "ED"
     # sitemap.add "/bazarcms/ofertas/#{oferta.friendly_id}?bazar_id=#{oferta.bazar_id}", :priority => 0.9, :changefreq => 'daily',:lastmod => oferta.fecha
     sitemap.add "/home/fichaoferta/#{oferta.bazar_id}/#{oferta.id}/?go=oferta&oferta=#{oferta.id}", :priority => 0.9, :changefreq => 'daily',:lastmod => oferta.fecha
   end
