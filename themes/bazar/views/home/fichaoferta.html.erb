@@ -311,6 +311,10 @@ end
       </div>
 
       <div class="ficha-caja-gris-fecha">
+        <% if @oferta.fecha.nil? %>
+          <% @oferta.fecha = DateTime.now %>
+          <% @oferta.save %>
+        <% end %>
         <%= @oferta.fecha.strftime("%d-%m-%Y") %>
       </div>
 
