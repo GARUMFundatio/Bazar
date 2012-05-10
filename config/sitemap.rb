@@ -29,7 +29,7 @@ SitemapGenerator::Sitemap.add_links do |sitemap|
     next if oferta.tipo == "EO"
     next if oferta.tipo == "ED"
     # sitemap.add "/bazarcms/ofertas/#{oferta.friendly_id}?bazar_id=#{oferta.bazar_id}", :priority => 0.9, :changefreq => 'daily',:lastmod => oferta.fecha
-    sitemap.add "/home/fichaoferta/#{oferta.bazar_id}/#{oferta.id}/?go=oferta&oferta=#{oferta.id}", :priority => 0.9, :changefreq => 'daily',:lastmod => oferta.fecha
+    sitemap.add "/home/fichaempresa/#{oferta.bazar_id}/#{oferta.empresa_id}/?go=oferta&oferta=#{oferta.id}", :priority => 0.9, :changefreq => 'daily',:lastmod => oferta.fecha
   end
 
   Bazarcms::Empresa.find_each do |empresa|
