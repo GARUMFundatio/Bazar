@@ -6,38 +6,41 @@
 <%= stylesheet_link_tag(current_theme_stylesheet_path('queesbazar')) %>
 
 <div class="ficha-container">
+<div id="tabs-6content" style="width: 460px; margin-bottom: 50px;">
+  <div class="edit_user"> 
 
+  <%= flash[:error] %><br/>
 
-<div id="caja-login">
-<br/>
-<br/>
-<br/>
-
-
-<%= flash[:error] %><br/>
-
-
-<% form_tag password_resets_path do %>
-
-
-  <%= text_field_tag :email, nil, :placeholder => "Tu correo", :class => "login-input"%>
-  
+  <% form_tag password_resets_path do %>
   <br/>
   <br/>
-  
-  <%= submit_tag "Cambiar Contraseña", :class => "login-boton cambiar" %> 
-  
-  
-<% end %>
-<br/>
-<br/>
-<br/>
+  <br/>
+  <br/>
 
+    <div class="field">
+      <%= text_field_tag :email, nil,  :placeholder => "Tu correo", :class => "login-input" %>
+    </div>
+  
+    <br/>
+    <br/>
+  
+  
+    <div class="login-caja-botones">
+      <div class="actions" style="float: bottom;">
+        <%= submit_tag 'Recordar Contraseña', :class => "login-boton" %>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <% end %>
+  </div>
 </div>
-
 </div>
-
-<script>
-    $('input[placeholder]').placeholder();
-</script>
 
