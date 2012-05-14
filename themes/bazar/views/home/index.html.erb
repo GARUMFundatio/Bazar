@@ -129,7 +129,7 @@ function borraoferta (bazar, oferta) {
   
   <div class="seccion-contenido">
     
-    <div class="seccion-cajon ilumina5">  
+    <div class="seccion-cajon ilumina5" onclick="parent.location='/home/favoritos'">  
       <div class="seccion-cifra">
         <%= @totalfavoritosempresa %> 
       </div>
@@ -138,7 +138,7 @@ function borraoferta (bazar, oferta) {
       </div>    
     </div>
 
-    <div class="seccion-cajon ilumina5">  
+    <div class="seccion-cajon ilumina5"  onclick="parent.location='/home/favoritos'">  
       <div class="seccion-cifra">
         <%= @totalfavoritosoferta %> 
       </div>
@@ -147,7 +147,7 @@ function borraoferta (bazar, oferta) {
       </div>    
     </div>
 
-    <div class="seccion-cajon ilumina5">  
+    <div class="seccion-cajon ilumina5" onclick="parent.location='/home/favoritos'">  
       <div class="seccion-cifra">
         <%= @totalfavoritosdemanda %> 
       </div>
@@ -156,7 +156,7 @@ function borraoferta (bazar, oferta) {
       </div>    
     </div>
 
-    <div class="seccion-cajon ilumina5">  
+    <div class="seccion-cajon ilumina5" onclick="parent.location='/home/favoritos'">  
       <div class="seccion-cifra">
         <% if !@miempresa.nil? %>
           <%= @miempresa.total_mostradas %>
@@ -169,7 +169,7 @@ function borraoferta (bazar, oferta) {
       </div>    
     </div>
 
-    <div class="seccion-cajon ilumina5">  
+    <div class="seccion-cajon ilumina5" onclick="parent.location='/home/favoritos'">  
       <div class="seccion-cifra">
         <% if !@miempresa.nil? %>
           <% if @miempresa.rating == 0 %>

@@ -15,10 +15,11 @@ class PasswordResetsController < ApplicationController
     if @user
       Notifier.password_reset_instructions(@user, Cluster.find(BZ_param("BazarId")).url.gsub("http://","")).deliver
       flash[:notice] = "Se han enviado instrucciones a tu dirección de correo"
-      redirect_to "/"
+      # redirect_to "/"
+      render :text => "<script>parent.location.href='/home'</script>", :layout => false
     else
       flash[:error] = "Esta dirección no se corresponde con ningún usuario: #{params[:email]}"
-      render :action => :new
+      render :action => :new, :layout => false
     end
   end
 
@@ -37,7 +38,8 @@ class PasswordResetsController < ApplicationController
     if @user.save
       # logger.debug "actualizada la clave #{params.inspect} #{@user.inspect}"
       flash[:success] = "Tu contraseña se ha actualizado correctamente"
-      redirect_to "/home"
+      # redirect_to "/home"
+      render :text => "<script>parent.location.href='/home'</script>", :layout => false
     else
       render :action => :edit
     end
