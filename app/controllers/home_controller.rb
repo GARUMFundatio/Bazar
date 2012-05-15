@@ -365,11 +365,11 @@ class HomeController < ApplicationController
     
     case params[:tipo]
     when "recientes"
-      #resus = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i)
-      # for resu in resus 
-      #   resu.orden = resu.enlace
-      #  resu.save
-      #end 
+      resus = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i)
+      for resu in resus 
+        resu.orden = resu.enlace
+        resu.save
+      end 
       @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i).order("orden desc")  
     when "cercanas"      
       resus = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i)
