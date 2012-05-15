@@ -367,7 +367,7 @@ class HomeController < ApplicationController
     when "recientes"
       resus = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i)
       for resu in resus 
-        resu.orden = resu.enlace
+        resu.orden = resu.enlace.split("|")[1]
         resu.save
       end 
       @ofertasresultados = Bazarcms::Ofertasresultado.where("ofertasconsulta_id = ?", params[:resu].to_i).order("orden desc")  
