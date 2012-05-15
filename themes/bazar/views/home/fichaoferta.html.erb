@@ -230,7 +230,7 @@ end
 
       <%= t(:text_web_externa) -%> <br/></br>
 
-      <% if !@oferta.url.nil? %>
+      <% if !@oferta.url.nil? and @oferta.url != "" %>
         <%= @oferta.url %>
       <% else %>
         <%= t(:text_incluir_web_externa) -%>
@@ -252,7 +252,7 @@ end
 
 <% else %>
 
-  <% if !@oferta.url.nil? %>
+  <% if !@oferta.url.nil? and @oferta.url != "" %>
   <div id="gourl" class="ficha-caja-enlace" >
   
     <div class="ficha-caja-enlace-imagen">
@@ -272,12 +272,14 @@ end
 
 <% end %>
 
+<% if @oferta.url.nil? and @oferta.url != "" %>
 <script>
   $("#gourl").live("click", function(event) {
     event.stopPropagation();
     window.open('<%= @oferta.url -%>');
   });
 </script>
+<% end %>
 
     <div class="ficha-caja-gris trans25">
       <div class="ficha-caja-gris-titulo">
