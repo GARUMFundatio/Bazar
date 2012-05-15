@@ -197,27 +197,6 @@ end
 
 <div class="caja-seccion-oferta">
 
-<% if !@oferta.url.nil? and !@owner %>
-  <div class="ficha-caja-detalle" onclick="document.location.href='<%= @oferta.url -%>';">
-
-    <div class="ficha-caja-enlace" >
-  
-      <div class="ficha-caja-enlace-imagen">
-        <img src="<%= current_theme_image_path('flecha.png') %>" >
-      </div>
-    
-      <div class="ficha-caja-enlace-texto">
-        <% if @oferta.tipo == 'O'%>
-          <%= t(:text_web_mas_informacion_oferta) -%>
-        <% else %>
-          <%= t(:text_web_mas_informacion_demanda) -%>
-        <% end %>
-      
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <div class="ficha-caja-detalle" >
 
 <% if @owner %>
