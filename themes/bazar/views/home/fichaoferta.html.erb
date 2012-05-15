@@ -251,7 +251,7 @@ end
 
 <% end %>
 
-<% if @oferta.url.nil? and @oferta.url != "" %>
+<% if !@oferta.url.nil? and @oferta.url != "" %>
 <script>
   $("#gourl").live("click", function(event) {
     event.stopPropagation();
