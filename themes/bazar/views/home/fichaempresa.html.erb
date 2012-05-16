@@ -59,15 +59,27 @@
 
     <div class="fichaempresa-titular">
       
-      <div class="fichaempresa-titulo">
+      <% if editar %>
+        <div class="fichaempresa-titulo mouse" onclick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+      <% else %>
+        <div class="fichaempresa-titulo nomouse">
+      <% end %>
+      
         <%= @empresa.nombre -%>
       </div>
       
-      <div class="fichaempresa-cajaicono">
+      <% if editar %>
+        <div class="fichaempresa-cajaicono mouse" onclick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales2/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+      <% else %>
+        <div class="fichaempresa-cajaicono nomouse">
+      <% end %>
         <img src="<%= current_theme_image_path("sector#{@empresa.sector}white.png") %>" width="40px" />
       </div>
-
-      <div class="fichaempresa-cajaicono">
+      <% if editar %>
+        <div class="fichaempresa-cajaicono mouse" onclick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales2/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+      <% else %>
+        <div class="fichaempresa-cajaicono nomouse">
+      <% end %>  
         <p>
           <%= Bazarcms::Empresasdato.RDtexto(@empresasdatos.ventas).split("-")[1] -%> 
           <% if @empresa.moneda == 0 %>
@@ -95,7 +107,11 @@
 
       <% end %>
       
-      <div class="fichaempresa-enlace">
+      <% if editar %>
+        <div class="fichaempresa-enlace mouse" onclick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+      <% else %>
+        <div class="fichaempresa-enlace nomouse">
+      <% end %>
         <%= @empresa.url -%>
       </div>
 
@@ -103,7 +119,12 @@
 
     <a id="fichaempresa" class="fancybox.ajax" href=""></a>
     
-    <div class="fichaempresa-desc">
+    <% if editar %>
+      <div class="fichaempresa-desc mouse" onclick="$('#fichaempresa').attr('href', '/home/empresadatosgenerales/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+    <% else %>
+      <div class="fichaempresa-desc nomouse">
+    <% end %>
+        
       <%= helper_formatea(@empresa.desc) -%>
     </div>
       

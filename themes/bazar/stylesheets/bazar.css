@@ -2702,3 +2702,8 @@ background:#77b6ef;
 .nomouse {
   cursor: default;
 }
+
+.mouse {
+  cursor: pointer;
+}
+
