@@ -11,7 +11,7 @@
 	</td>
 
 	<td>
-		<%= link_to(Bazarcms::Empresa.find(ubicacion.empresa_id).nombre, bazarcms_empresa_path(ubicacion.empresa_id, :bazar_id => BZ_param('BazarId'))) %>
+		<%= link_to(Bazarcms::Empresa.find(ubicacion.empresa_id).nombre, "/home/fichaempresa/#{BZ_param('BazarId')}/#{ubicacion.empresa_id}") %>
 	</td>
 
 </tr>
