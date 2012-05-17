@@ -32,7 +32,7 @@
 
 		<td>
 			<% empre = Bazarcms::Empresa.find(ubicacion.empresa_id) %>
-			<%= link_to(empre.nombre, '/home/fichaempresa/#{BZ_param("BazarId")}/'+empre.id) %>
+			<%= link_to(empre.nombre, "/home/fichaempresa/#{BZ_param('BazarId')}/#{empre.id}") %>
 		</td>
 		
 	</tr>
