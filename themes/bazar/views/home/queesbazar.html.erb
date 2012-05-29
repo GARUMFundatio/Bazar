@@ -292,7 +292,7 @@ $(document).ready(function() {
 	 'type' : 'iframe'
  });
  
-<% if params[:go] == "login" %>
+<% if params[:go] == "login" || params[:action] == "login"  %>
   $('#login').attr('href', '/login').trigger('click');
 <% end %>
 
