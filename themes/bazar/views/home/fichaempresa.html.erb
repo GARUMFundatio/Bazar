@@ -23,13 +23,21 @@
     <% if editar %>
       <%= t(:text_tus_datos)%>
     <% else %>
-
+      <% if !current_user.nil? %>
       <div class="fichaempresa-iconos" onclick="$('#correo').attr('href', '/home/editarcorreo/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
+      <% else %>
+      <div class="fichaempresa-iconos" onclick="parent.location.href='/?go=login';">
+      <% end %>
+      
         <img class="fichaempresa-icono" src="<%= current_theme_image_path('sobre.png') %>">
       </div>
       
+      <% if !current_user.nil? %>
       <div id="fav-<%= params[:bazar]-%>-<%= params[:id] -%>" class="fichaempresa-iconos">
-  
+      <% else %>
+      <div id="fav-<%= params[:bazar]-%>-<%= params[:id] -%>" class="fichaempresa-iconos" onclick="parent.location.href='/?go=login';">      
+      <% end %>
+      
         <% if !@fav.nil? %>
           <img class="fichaempresa-icono" src="<%= current_theme_image_path('corazon-white.png') %>">
 
