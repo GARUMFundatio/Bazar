@@ -87,7 +87,11 @@ end
 
 <div class="ficha-opciones">
 
-  <div class="ficha-opciones-item">
+  <% if !current_user.nil? %>
+    <div class="ficha-opciones-item" >
+  <% else %>
+    <div class="ficha-opciones-item" onclick="parent.location.href='/?go=login';">
+  <% end %>
       
       <div id="favofe-<%= params[:bazar]-%>-<%= params[:id] -%>" class="ficha-opciones-item-icono">
 
