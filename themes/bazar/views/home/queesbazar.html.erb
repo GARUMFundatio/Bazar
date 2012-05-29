@@ -292,6 +292,10 @@ $(document).ready(function() {
 	 'type' : 'iframe'
  });
  
+<% if params[:go] == "login" %>
+  $('#login').attr('href', '/login').trigger('click');
+<% end %>
+
  
 </script>
 

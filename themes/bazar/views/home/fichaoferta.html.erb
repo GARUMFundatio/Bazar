@@ -126,7 +126,11 @@ end
       </div>      
   </div>
 
+<% if !current_user.nil? %>
   <div class="ficha-opciones-item" onclick="location.href='/home/editarcorreo/<%= params[:bazar]-%>/<%= @empresa.id -%>';">
+<% else %>
+  <div class="ficha-opciones-item" onclick="location.href='';">
+<% end %>
 
     <div class="ficha-opciones-item-icono">
       <img src="<%= current_theme_image_path('sobre.png') %>" >
