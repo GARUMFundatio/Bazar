@@ -828,18 +828,22 @@ class HomeController < ApplicationController
         @empresasdatos = @ed[0]
       end 
       
-      render
+      if params[:display] == "inside"
+        render :layout => false
+      else 
+        render
+      end 
       
     else 
       # TODO: cachearlo para que vaya más rápido
       
-      res = dohttpget(params[:bazar], "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}")
+      res = dohttpget(params[:bazar], "/home/fichaempresa/#{params[:bazar]}/#{params[:id]}?locale=#{I18n.locale}&display=inside")
       
       if (res == "404")
         res = dohttpget(params[:bazar], "/bazarcms/empresas/#{params[:id]}?bazar_id=#{params[:bazar]}&display=inside")        
       end 
       
-      render :text => res, :layout => false 
+      render :text => res #, :layout => false 
       
     end 
     
