@@ -127,9 +127,9 @@ end
   </div>
 
 <% if !current_user.nil? %>
-  <div class="ficha-opciones-item" onclick="location.href='/home/editarcorreo/<%= params[:bazar]-%>/<%= @empresa.id -%>';">
+  <div class="ficha-opciones-item" onclick="parent.location.href='/home/editarcorreo/<%= params[:bazar]-%>/<%= @empresa.id -%>';">
 <% else %>
-  <div class="ficha-opciones-item" onclick="location.href='/?go=login';">
+  <div class="ficha-opciones-item" onclick="parent.location.href='/?go=login';">
 <% end %>
 
     <div class="ficha-opciones-item-icono">
