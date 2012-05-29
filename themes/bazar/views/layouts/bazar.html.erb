@@ -79,6 +79,9 @@
       </div>
 
       <% if current_user.nil? %>
+        <div id="socioenlaces" class="ilumina">
+          <a href="/?go=login"><%=t(:text_entrar)%></a>
+        </div>      
       <% else %>
       
       <div id="socioenlaces" class="ilumina">  
