@@ -246,7 +246,12 @@ $(document).ready(function() {
     $('.item-delete-icono').show();
   });
 
-
+  <% if params[:tipo] == 'O'%>
+    $('#menuofertas').transify({opacityOrig:.20});
+  <% else %>
+    $('#menudemandas').transify({opacityOrig:.20});
+  <% end %>
+  
  });
  
 </script>
