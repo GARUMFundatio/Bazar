@@ -68,23 +68,23 @@
     </div> <!-- fin caja logo -->
 
   
-      <div id="socioenlaces" class="socioenlaces ilumina">
+      <div id="menuofertas" class="socioenlaces ilumina">
         <a href="/home/ofertas/O"><%=t(:text_ofertas_layout)%></a>
       </div>
-      <div id="socioenlaces"  class="socioenlaces ilumina">
+      <div id="menudemandas"  class="socioenlaces ilumina">
         <a href="/home/ofertas/D"><%=t(:text_demandas_layout)%></a>
       </div>
-      <div id="socioenlaces" class="socioenlaces ilumina">
+      <div id="menuempresas" class="socioenlaces ilumina">
         <a href="/home/empresas"><%=t(:text_empresas_layout)%></a>
       </div>
 
       <% if current_user.nil? %>
-        <div id="socioenlaces" class="socioenlaces ilumina">
+        <div id="menutupagina" class="socioenlaces ilumina">
           <a href="/?go=login"><%=t(:text_entrar)%></a>
         </div>      
       <% else %>
       
-      <div id="socioenlaces" class="socioenlaces ilumina">  
+      <div id="menutupagina" class="socioenlaces ilumina">  
         <ul class="menu">
           <li>
             <a href="#" onclick="javascript:showlayer('sm_1')"><%=t(:text_tu_pagina)%></a>
@@ -111,7 +111,7 @@
       </div>
       <% end %>
       
-      <div id="socioenlaces" class="socioenlaces ilumina" style="width:304px;" onclick="$('#busquedageneral').attr('href', '/home/busquedageneral/').trigger('click');">
+      <div id="menubuscar" class="socioenlaces ilumina" style="width:304px;" onclick="$('#busquedageneral').attr('href', '/home/busquedageneral/').trigger('click');">
         <div class="home-lupa">
           <img src="<%= current_theme_image_path('lupa-white.png') %>"  >
         </div>

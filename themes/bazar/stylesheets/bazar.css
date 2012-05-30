@@ -2674,6 +2674,22 @@ background:#77b6ef;
   font-size: 14px;
 }
 
+.sociosenlaces-seleccionado {
+
+  float: left;
+  bottom: 0px;
+  background-color: #000;
+  width: 121px;
+  height: 38px;
+  margin: 0 0 0 1px;
+  text-align: center;
+  padding-top: 22px;
+  color: #fff;
+  font-family: Helvetica,sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+    
+}
 
 
 .socioenlaces a {
