@@ -21,7 +21,7 @@
   <div class="ficha-indice">
 
     <% if editar %>
-      <%= t(:text_tus_datos)%>
+      <% t(:text_tus_datos) %>
     <% else %>
       <% if !current_user.nil? %>
       <div class="fichaempresa-iconos" onclick="$('#correo').attr('href', '/home/editarcorreo/<%= BZ_param("BazarId")-%>/<%= @empresa.id -%>').trigger('click');">
@@ -62,9 +62,11 @@
     <% end %>
 
   </div>
-  
-  <div class="seccion-contenido">
-
+  <% if editar %>
+  <div class="seccion-contenido-editar">
+  <% else %>
+  <div class="seccion-contenido">  
+  <% end %>
     <div class="fichaempresa-titular">
       
       <% if editar %>
@@ -135,33 +137,31 @@
         
       <%= helper_formatea(@empresa.desc) -%>
     </div>
-      
-    <div class="seccion-menu">
-      
-      <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas', 'slow')">
-        <%= t(:text_ofertas_layout)%>
-      </div>
-      
-      <div class="seccion-menu-item" onclick="$.scrollTo('#demandas', 'slow')">
-        <%= t(:text_demandas_layout)%>
-      </div>
- 
-      <div class="seccion-menu-item" onclick="$.scrollTo('#imagenes', 'slow')">
-        <%= t(:text_imagenes)%>
-      </div>
-      
-      <div class="seccion-menu-item" onclick="$.scrollTo('#sobre', 'slow')">
-        <%= t(:text_sobre_empresa)%>
-      </div>
-      
-      <div class="seccion-menu-item" onclick="$.scrollTo('#sedes', 'slow')">
-        <%= t(:text_sedes)%>
-      </div>
-      
-    </div>
 
+</div>
+
+<div class="seccion-menu" style="margin-left:307px;">
+  
+  <div class="seccion-menu-item" onclick="$.scrollTo('#ofertas', 'slow')">
+    <%= t(:text_ofertas_layout)%>
+  </div>
+  
+  <div class="seccion-menu-item" onclick="$.scrollTo('#demandas', 'slow')">
+    <%= t(:text_demandas_layout)%>
   </div>
 
+  <div class="seccion-menu-item" onclick="$.scrollTo('#imagenes', 'slow')">
+    <%= t(:text_imagenes)%>
+  </div>
+  
+  <div class="seccion-menu-item" onclick="$.scrollTo('#sobre', 'slow')">
+    <%= t(:text_sobre_empresa)%>
+  </div>
+  
+  <div class="seccion-menu-item" onclick="$.scrollTo('#sedes', 'slow')">
+    <%= t(:text_sedes)%>
+  </div>
+  
 </div>
 
 

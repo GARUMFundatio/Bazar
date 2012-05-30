@@ -843,7 +843,7 @@ class HomeController < ApplicationController
         res = dohttpget(params[:bazar], "/bazarcms/empresas/#{params[:id]}?bazar_id=#{params[:bazar]}&display=inside")        
       end 
       
-      render :text => res #, :layout => false 
+      render :text => res, :layout => true 
       
     end 
     

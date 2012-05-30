@@ -239,6 +239,17 @@ a {
   
 }
 
+.seccion-contenido-editar {
+  position: relative;
+  float: left;
+  width: 794px;
+  margin-bottom: 60px;  
+  background-image: url(bgblack05.png);
+  background-repeat: repeat;
+  
+}
+
+
 .seccion-header {
   color: #ffffff;
   width: 794px;
