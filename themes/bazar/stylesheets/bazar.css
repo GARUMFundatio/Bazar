@@ -2585,28 +2585,37 @@ input[type="text"]:focus{
 
 ul, li{margin:0; border:0; padding:0; list-style:none;}
 
-#socioenlaces .menu li {
+.socioenlaces .menu ul {
 float:left;
+width:121px;
 }
 
-#socioenlaces .menu li a{
+.socioenlaces .menu li {
+float:left;
+width:121px;
+text-align: center;
+
+}
+
+.socioenlaces .menu li a{
 color: #ffffff;
 text-decoration:none;
 height:46px;
+width:121px;
 display:block;
 float:left;
-padding:0 26px 0 10px;
+text-align: center;
 
 }
 
-#socioenlaces .menu li a:hover{
+.socioenlaces .menu li a:hover{
 
 }
 
-#socioenlaces ul .submenu {
+.socioenlaces ul .submenu {
 
 position:relative;
-top:0px;
+top:-8px;
 left: -121px;
 width:243px;
 padding:0px 0;
@@ -2615,7 +2624,7 @@ z-index:-2;
 display:none;
 }
 
-#socioenlaces ul .submenu li{
+.socioenlaces ul .submenu li{
 background-color:#4aa3e5;
 height:60px;
 width:243px;
@@ -2627,11 +2636,12 @@ margin-bottom: 1px;
 z-index:-2;
 }
 
-#socioenlaces .submenu li a{
+.socioenlaces .submenu li a{
 background:none;
 display:block;
 float:none;
-padding:20px 20px;
+width:243px;
+padding-top:20px;
 margin:0;
 border:0;
 height:20px;
@@ -2639,32 +2649,34 @@ color:#000000;
 z-index: -2;
 }
 
-#socioenlaces .submenu li:hover {
+.socioenlaces .submenu li:hover {
 background:#77b6ef;
 }
 
-#socioenlaces .submenu li:hover a:hover {
+.socioenlaces .submenu li:hover a:hover {
   color: #ffffff;
 }
 
 /* enlaces publicos */ 
 
-#socioenlaces {
+.socioenlaces {
   float: left;
   bottom: 0px;
   background-color: #000;
   width: 121px;
-  height: 45px;
+  height: 38px;
   margin: 0 0 0 1px;
   text-align: center;
-  padding-top: 15px;
+  padding-top: 22px;
   color: #fff;
   font-family: Helvetica,sans-serif;
   font-weight: bold;
   font-size: 14px;
 }
 
-#socioenlaces a {
+
+
+.socioenlaces a {
   color: #fff;
   text-decoration: none;
   font-family: Helvetica,sans-serif;
