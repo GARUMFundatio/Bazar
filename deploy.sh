@@ -38,10 +38,6 @@ touch tmp/restart.txt
 rake paperclip:refresh:thumbnails CLASS=Bazarcms::Empresa
 rake paperclip:refresh:thumbnails CLASS=Bazarcms::Empresasimagen
 rake paperclip:refresh:thumbnails CLASS=Bazarcms::Ofertasimagen
-<<<<<<< HEAD
-=======
-
->>>>>>> 786874be77666f0bee5ca75aa4d5b0407a23621d
 rake bazar:actualiza
 rake sitemap:refresh
 
