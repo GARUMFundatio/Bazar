@@ -243,6 +243,7 @@ a {
   position: relative;
   float: left;
   width: 794px;
+  padding-top: 15px;
   margin-bottom: 60px;  
   background-image: url(bgblack05.png);
   background-repeat: repeat;
