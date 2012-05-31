@@ -468,6 +468,25 @@ function borrasede (empresa, sede) {
   </div>
 <div/>
 
+<% if editar %>
+
+<div class="caja-seccion" id="color">
+  <div class="ficha-indice">
+    <%= t(:text_elige_tu_color) %>
+  </div>
+  
+  <div class="seccion-contenido" id="contenido-datos-bazar">
+    
+      <div class="seccion-cajon-color" onclick="$('#sede').attr('href', '/home/addsede/<%= @empresa.id -%>').trigger('click');">
+        <img src="<%= current_theme_image_path('color01.png') %>" >
+      </div>
+    
+  </div>
+
+<div/>
+
+<% end %>
+
 <a id="fichaoferta" class="fancybox.ajax" href=""></a>
 <a id="fichaeditaroferta" class="fancybox.ajax" href=""></a>
 <a id="fichaempresa" class="fancybox.ajax" href=""></a>
