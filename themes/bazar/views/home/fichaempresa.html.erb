@@ -621,6 +621,10 @@ $(document).ready(function() {
   <% if params[:go] == "oferta" %>
     $('#fichaeditaroferta').attr('href', '/home/fichaoferta/<%= BZ_param("BazarId") -%>/<%= params[:oferta] -%>').trigger('click');
   <% end %>
+
+  <% if params[:go] == "correo" %>
+    $('#correo').attr('href', '/home/editarcorreo/<%= params[:bazar] -%>/<%= @empresa.id -%>').trigger('click');
+  <% end %>
   
   <% if editar %>
     $('#menutupagina').transify({opacityOrig:.20});

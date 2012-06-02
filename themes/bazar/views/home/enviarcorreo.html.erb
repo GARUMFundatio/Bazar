@@ -11,7 +11,7 @@
     <br/>
     <br/>
    
-    <%= t(:text_enviando_el_correo) -%> 
+    <%= t(:text_enviando_el_correo) -%> <p id="desde"></p>
 
   </div>
 
@@ -20,6 +20,7 @@
 
 <script>
 
-parent.location.reload();
+parent.location.href=parent.location.href+"&go=''";
+// $('#desde').html(parent.location.href);
 
 </script>
