@@ -1555,34 +1555,42 @@ class HomeController < ApplicationController
   
   def ficharating
     
-    if params[:valor].to_i <= 0 || params[:valor].to_i > 5 
-      valor = 2
+    # TODO: hay que ver si tiene sentido que no se esté loggueado
+    # de momento si no lo esta como los googlebots le redirigimos 
+    # a la home
+    
+    if !current_user.nil?
+      if params[:valor].to_i <= 0 || params[:valor].to_i > 5 
+        valor = 2
+      else 
+        valor = params[:valor]
+      end
+    
+      @rating = Bazarcms::Rating.new
+      @rating.ori_fecha = DateTime.now      
+      @rating.role = "C"
+      @rating.token = rand(99999)+1
+
+      @rating.ori_bazar_id = BZ_param("BazarId").to_i 
+      @rating.ori_empresa_id = current_user.id 
+      @rating.ori_empresa_nombre = Bazarcms::Empresa.find_by_id(current_user.id).nombre
+    
+      @rating.des_bazar_id = params[:bazar]
+      @rating.des_empresa_id = params[:id]
+    
+      @rating.ori_valor = valor
+      @rating.ori_cliente_plazos = valor
+      @rating.ori_cliente_comunicacion = valor
+       
+      @rating.ori_proveedor_expectativas = valor
+      @rating.ori_proveedor_plazos = valor
+      @rating.ori_proveedor_comunicacion = valor
+    
+      render :layout => false
     else 
-      valor = params[:valor]
+      redirect_to "/"
     end
     
-    @rating = Bazarcms::Rating.new
-    @rating.ori_fecha = DateTime.now      
-    @rating.role = "C"
-    @rating.token = rand(99999)+1
-
-    @rating.ori_bazar_id = BZ_param("BazarId").to_i 
-    @rating.ori_empresa_id = current_user.id 
-    @rating.ori_empresa_nombre = Bazarcms::Empresa.find_by_id(current_user.id).nombre
-    
-    @rating.des_bazar_id = params[:bazar]
-    @rating.des_empresa_id = params[:id]
-    
-    @rating.ori_valor = valor
-    @rating.ori_cliente_plazos = valor
-    @rating.ori_cliente_comunicacion = valor
-       
-    @rating.ori_proveedor_expectativas = valor
-    @rating.ori_proveedor_plazos = valor
-    @rating.ori_proveedor_comunicacion = valor
-    
-    render :layout => false
-
   end
   
   def addsede
