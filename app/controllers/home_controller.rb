@@ -1661,6 +1661,17 @@ class HomeController < ApplicationController
     end
   end 
   
+  def setcolortema
+    
+    if !current_user.nil?
+      current_user.temacolor = params[:color]
+      current_user.save
+    end
+    
+    render :text => "OK", :layout => false
+    
+  end 
+  
   def test
     
   end

@@ -376,6 +376,57 @@ a {
   background-repeat: repeat;
 }
 
+.seccion-cajon-color {
+  float: left;
+  color: #ffffff;
+  width: 243px;
+  height: 233px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 10px;
+  background-image: url(bgblack10.png);
+  background-repeat: repeat;
+}
+
+.seccion-cajon-color:hover {
+  float: left;
+  color: #ffffff;
+  width: 243px;
+  height: 233px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 10px;
+  background-color: #ffffff;
+}
+
+.seccion-cajon-color-selected {
+  float: left;
+  color: #ffffff;
+  width: 243px;
+  height: 233px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  font-family: Arial,sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 10px;
+  background-color: #ffffff;
+}
+
+
+
 
 .cajon-titulo {
   position: absolute;

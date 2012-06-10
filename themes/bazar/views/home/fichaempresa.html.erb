@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+<% # stylesheet_link_tag(current_theme_stylesheet_path('bazar07'), :id => "estilo") %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.scrollTo-1.4.2-min')) %>
 <%= javascript_include_tag(current_theme_javascript_path('si.files')) %>
 <%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
@@ -477,10 +477,58 @@ function borrasede (empresa, sede) {
   
   <div class="seccion-contenido" id="contenido-datos-bazar">
     
-      <div class="seccion-cajon-color" onclick="$('#sede').attr('href', '/home/addsede/<%= @empresa.id -%>').trigger('click');">
+      <div id="color01" class="seccion-cajon-color" onclick="setcolor('01')">
         <img src="<%= current_theme_image_path('color01.png') %>" >
       </div>
-    
+
+      <div id="color02" class="seccion-cajon-color" onclick="setcolor('02')">
+        <img src="<%= current_theme_image_path('color02.png') %>" >
+      </div>
+          
+      <div id="color03" class="seccion-cajon-color" onclick="setcolor('03')">
+        <img src="<%= current_theme_image_path('color03.png') %>" >
+      </div>
+          
+      <div id="color04" class="seccion-cajon-color" onclick="setcolor('04')">
+        <img src="<%= current_theme_image_path('color04.png') %>" >
+      </div>
+          
+      <div id="color05" class="seccion-cajon-color" onclick="setcolor('05')">
+        <img src="<%= current_theme_image_path('color05.png') %>" >
+      </div>
+          
+      <div id="color06" class="seccion-cajon-color" onclick="setcolor('06')">
+        <img src="<%= current_theme_image_path('color06.png') %>" >
+      </div>
+          
+      <div id="color07" class="seccion-cajon-color" onclick="setcolor('07')">
+        <img src="<%= current_theme_image_path('color07.png') %>" >
+      </div>
+          
+      <div id="color08" class="seccion-cajon-color" onclick="setcolor('08')">
+        <img src="<%= current_theme_image_path('color08.png') %>" >
+      </div>
+          
+      <div id="color09" class="seccion-cajon-color" onclick="setcolor('09')">
+        <img src="<%= current_theme_image_path('color09.png') %>" >
+      </div>
+          
+      <div id="color10" class="seccion-cajon-color" onclick="setcolor('10')">
+        <img src="<%= current_theme_image_path('color10.png') %>" >
+      </div>
+          
+      <div id="color11" class="seccion-cajon-color" onclick="setcolor('11')">
+        <img src="<%= current_theme_image_path('color11.png') %>" >
+      </div>
+          
+      <div id="color12" class="seccion-cajon-color" onclick="setcolor('12')">
+        <img src="<%= current_theme_image_path('color12.png') %>" >
+      </div>
+          
+      <div id="color13" class="seccion-cajon-color" onclick="setcolor('13')">
+        <img src="<%= current_theme_image_path('color13.png') %>" >
+      </div>
+          
   </div>
 
 <div/>
@@ -629,6 +677,27 @@ $(document).ready(function() {
   <% if editar %>
     $('#menutupagina').transify({opacityOrig:.20});
   <% end %>
+  
+  color = '<%= user_theme_color %>'; 
+
+  $('#color'+color).addClass("seccion-cajon-color-selected");
+  $('#color'+color).removeClass("seccion-cajon-color");  
+  
  });
+
+function setcolor(color) {
+  colortema = "/themes/bazar/stylesheets/bazar"+color+".css";
+  $('#estilo').attr('href', colortema);
+
+  $('.seccion-cajon-color-selected').addClass("seccion-cajon-color");
+  $('.seccion-cajon-color').removeClass("seccion-cajon-color-selected");
+  
+  $('#color'+color).addClass("seccion-cajon-color-selected");
+  $('#color'+color).removeClass("seccion-cajon-color"); 
+  
+  $.ajax({
+    url: "/home/setcolortema/"+color
+  });
+};
 
 </script>

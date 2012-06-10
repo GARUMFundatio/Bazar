@@ -16,7 +16,7 @@
   <%= javascript_include_tag(current_theme_javascript_path('jquery.fancybox.pack')) %>  
   <%= javascript_include_tag(current_theme_javascript_path('jquery.placeholder.min')) %>
 
-  <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar')) %>
+  <%= stylesheet_link_tag(current_theme_stylesheet_path('bazar'+user_theme_color()), :id => "estilo") %>
   <%= stylesheet_link_tag(current_theme_stylesheet_path('fancybox/jquery.fancybox')) %>
  
   <%= csrf_meta_tag %>
