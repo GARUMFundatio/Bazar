@@ -1,6 +1,9 @@
-for i in 02 03 04 05 06 07 08 09 10 11 12 13
+for i in 01 02 03 04 05 06 07 08 09 10 11 12 13
 do 
  case $i in
+   "01")
+     cat bazar.css > bazar01.css
+     ;;
    "02")
      cat bazar.css | sed -e 's/3C97E8/3398CC/g'  > bazar$i.css
      ;;
