@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
             :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota,
             :logo_helper, :logo_grande_helper, :datos_oferta_remota, :helper_rating_show_ng, :helper_rating_show_detail_ng,
-            :set_theme
+            :set_theme, :user_theme_color
   
   helper :all
   
@@ -117,6 +117,23 @@ class ApplicationController < ActionController::Base
     end 
   end
     
+    
+  def user_theme_color 
+    
+    if current_user.nil?
+      return "01"
+    else 
+      if !current_user.temacolor.nil?
+        return current_user.temacolor
+      else
+        current_user.temacolor = "01"
+        current_user.save
+        return "01" 
+      end
+    end
+    
+  end 
+  
   def helper_rating_show2(bazar, empresa)
      
      if (bazar.to_i == BZ_param("BazarId").to_i)

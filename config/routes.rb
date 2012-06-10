@@ -404,6 +404,9 @@ Bazar::Application.routes.draw do
   
   match "/avisos/dashboard" => 'home#avisos'
   
+  match '/home/setcolortema/:color' => "home#setcolortema", :constrants => { :color => /\s+/ }
+  
+  
   scope '/translate' do
     match '/translate_list', :to => 'translate#index'
     match '/translate', :to => 'translate#translate'
