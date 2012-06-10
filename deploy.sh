@@ -1,7 +1,7 @@
 set -x
 export RAILS_ENV=production
 
-exec 9> deploy.log
+exec 9> $1/deploy.log
 exec 1>&9
 exec 2>&9
 
