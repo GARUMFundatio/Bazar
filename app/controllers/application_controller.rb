@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :current_user_is_admin, :current_user_is_dinamizador, 
             :current_user_is_invitado, :BZ_param, :dohttp, :helper_rating_show2, :helper_formatea, :datos_empresa_remota,
             :logo_helper, :logo_grande_helper, :datos_oferta_remota, :helper_rating_show_ng, :helper_rating_show_detail_ng,
-            :set_theme, :user_theme_color
+            :set_theme, :user_theme_color, :user_news, :user_favoritos, :user_correos
   
   helper :all
   
@@ -133,6 +133,55 @@ class ApplicationController < ActionController::Base
     end
     
   end 
+
+  def user_news 
+    
+    if current_user.nil?
+      return "S"
+    else 
+      if !current_user.news.nil?
+        return current_user.news
+      else
+        current_user.temacolor = "S"
+        current_user.save
+        return "S" 
+      end
+    end
+    
+  end 
+
+  def user_favoritos 
+    
+    if current_user.nil?
+      return "S"
+    else 
+      if !current_user.favoritos.nil?
+        return current_user.favoritos
+      else
+        current_user.favoritos = "S"
+        current_user.save
+        return "S" 
+      end
+    end
+    
+  end 
+
+  def user_correos 
+    
+    if current_user.nil?
+      return "S"
+    else 
+      if !current_user.correos.nil?
+        return current_user.correos
+      else
+        current_user.correos = "S"
+        current_user.save
+        return "S" 
+      end
+    end
+    
+  end 
+
   
   def helper_rating_show2(bazar, empresa)
      
