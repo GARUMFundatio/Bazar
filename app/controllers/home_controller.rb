@@ -3,7 +3,6 @@ class HomeController < ApplicationController
   require 'dalli'
   before_filter :require_user, :only => [:index, :editarcorreo, :enviarcorreo, :busquedaempresa, :busquedaoferta]
   # theme :set_tema
-
   # theme "bazar"
   
   # homepage de usuario 
