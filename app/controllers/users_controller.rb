@@ -100,8 +100,13 @@ class UsersController < ApplicationController
     
     if @user.save
       
-      empresa = Bazarcms::Empresa.new 
-      empresa.id = @user.id 
+      empresa = Bazarcms::Empresa.find(@user.id)
+      
+      if empresa.nil? 
+        empresa = Bazarcms::Empresa.new 
+        empresa.id = @user.id 
+      end
+      
       empresa.user_id = @user.id 
       empresa.nombre = "Escriba su nombre Aquí"
       empresa.desc = ""
