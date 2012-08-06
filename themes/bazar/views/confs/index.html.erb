@@ -12,8 +12,7 @@
 <% @confs.each do |conf| %>
   <tr>
     <td><%= conf.nombre %></td>
-	<% grupo = Gruposconf.find(conf.grupo_id)%>
-    <td><%= grupo.desc %></td>
+	<td></td>
 	<td><%= conf.desc %></td>
 	<td><%= conf.valor %></td>
 	<td><%= link_to (image_tag("pencil.png", :border => "0"), edit_conf_path(conf))  %></td>
