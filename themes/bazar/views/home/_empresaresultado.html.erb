@@ -14,6 +14,8 @@ else
 end 
 %>
 
+<% if !f.nil? %>
+
 <div class="seccion-cajon" onClick="window.location = '/home/fichaempresa/<%= empresaresultado.cluster_id -%>/<%= empresaresultado.empresa_id -%>';">
   
   <div class="empresa-fondo">
@@ -45,6 +47,9 @@ end
 </div>
 
 <% @item += 1 %>
+
+<% end %> 
+
 
 <% if @item % 15 == 0 || @item == @total%>
  
