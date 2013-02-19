@@ -13,5 +13,27 @@ def deliver_password_reset_instructions!
   Notifier.deliver_password_reset_instructions(self)
 end
 
+def self.borrarcuenta(id) 
+
+  logger.debug "Borrando usuario: #{id}"
+  user = User.find(id) 
+  if user.nil? 
+    logger.debug "No existe esta cuenta" 
+    return 
+  end 
+
+  logger.debug "Borramos información de la empresa" 
+
+  compa = Bazarcms::Empresa.find_by_user_id(id) 
+  if compa.nil? 
+    logger.debug "No existe esta empresa" 
+    return 
+  else 
+
+
+  # compa.delete 
+  end 
+
+end 
 
 end
