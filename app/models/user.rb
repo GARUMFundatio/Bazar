@@ -15,24 +15,16 @@ end
 
 def self.borrarcuenta(id) 
 
-  logger.debug "Borrando usuario: #{id}"
-  user = User.find(id) 
-  if user.nil? 
-    logger.debug "No existe esta cuenta" 
-    return 
-  end 
-
-  logger.debug "Borramos información de la empresa" 
-
-  compa = Bazarcms::Empresa.find_by_user_id(id) 
-  if compa.nil? 
-    logger.debug "No existe esta empresa" 
-    return 
-  else 
-
-
-  # compa.delete 
-  end 
+  User.where(:id => id).destroy_all
+  Bazarcms::Empresa.where(:user_id => id).destroy_all
+  Bazarcms::Empresasconsulta.where(:empresa_id => id).destroy_all
+  Bazarcms::Empresasdato.where(:empresa_id => id).destroy_all
+  Bazarcms::Empresasimagen.where(:empresa_id => id).destroy_all
+  Bazarcms::Empresasperfil.where(:empresa_id => id).destroy_all
+  Favorito.where(:empresa_id => id).destroy_all
+  Bazarcms::Oferta.where(:empresa_id => id).destroy_all
+  Bazarcms::Ofertasconsulta.where(:empresa_id => id).destroy_all
+  Bazarcms::Ubicacion.where(:empresa_id => id).destroy_all
 
 end 
 
