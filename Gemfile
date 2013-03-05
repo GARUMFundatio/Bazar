@@ -29,11 +29,7 @@ gem 'yaml_db'
 gem 'bazarcms', :path => '../bazarcms'
 
 # gem 'bazarcms', :git => "git://github.com/GARUMfundatio/bazarcms.git"
-
 # revisar para cuando este lista esta gema gem 'activerecord-mysql2-adapter'
-
-
-
 # gem 'ruby-debug'
 group :development, :test do
 	gem 'ruby-debug'
